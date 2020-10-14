@@ -1,0 +1,13 @@
+FR
+
+1. The system shall provide a keywords-based search. 
+2. The system shall provide a profile customization page. 
+3. The system shall provide an upload image feature.
+
+Dictionary
+
+Keywords: people,places,jobs,activities.
+Profile customization: change bio settings such as name,surname,address,age,telephone number,profile picture,skills,biography. 
+
+
+
