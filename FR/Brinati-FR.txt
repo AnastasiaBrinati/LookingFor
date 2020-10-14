@@ -1,0 +1,6 @@
+The system shall provide an upload PDF feature.
+
+The system shall provide a connection to google maps.
+
+The system Shall provide a feature to delete advertisments.
+
