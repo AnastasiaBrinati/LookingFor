@@ -1,5 +1,7 @@
 US
 
 1. As a guitarist,I want to search for other musicians,so I can eventually join a band for a gig. 
+
 2. As a user, I want to modify my personal informations,so I can add experiences and be suitable for a future job. 
+
 3. As a painter, I want to show pictures of my works,so I can attract new customers.
