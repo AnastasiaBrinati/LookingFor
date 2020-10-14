@@ -1,0 +1,6 @@
+As a user, I want to see ads in my area, so I can keep up with new job offerings.
+
+As a restaurant owner, I want to look for experienced chefs, so I can attract new customers.
+
+As a photographer, I want others to read my CV and see my work through pictures, 
+so they can contact me for their private events and photoshoots.
