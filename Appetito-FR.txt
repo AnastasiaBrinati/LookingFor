@@ -2,16 +2,18 @@ FR
 
 1. The system shall provide a keywords-based search. 
 
-2. The system shall provide a profile customization page.
+2. The system shall provide an upload images feature.
 
-3. The system shall provide an upload image feature.
+3. The system shall provide a profile customization page.
+
 
 
 Dictionary
 
-Keywords: people,places,jobs,activities.
+Keywords: sports, places, users..
 
-Profile customization: change bio settings such as name,surname,address,age,telephone number,profile picture,skills,biography. 
+Profile customization: for a simple user: name, surname, email address, age, profile picture, biography;
+		       for an organization (such as a sport center, gym, swimming pool): name, photos, bio (address, phone number), time tables, courses;
 
 
 
