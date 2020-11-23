@@ -2,4 +2,4 @@ As a volleyball lover, I want to see posts in my area, so I can keep up with loc
 
 As a swimming pool owner, I want to organize our programs, so I can display our courses.
 
-As a user, I want to modify my personal informations, so I can find people with similar interests.  ####
+As a user, I want to modify my personal informations, so I can find people with similar interests.
