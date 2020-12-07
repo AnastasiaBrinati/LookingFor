@@ -1,4 +1,4 @@
-# LookingFor
+# Sporty
 ISPW project
 
 The wonders of the magical land you're about to visit by reading this fascinating project will bring back the furthest memories from your childhood dreams.
