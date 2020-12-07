@@ -1,52 +1,46 @@
-package controllers;
+package coursePage;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import models.LoginModel;
-import views.CourseUI;
-import views.LoginUI;
+import login.LoginController;
+import login.LoginModel;
+import login.LoginUI;
 
-public class CourseController {
+public class CourseController{
 
-	private static CourseUI view;
+	private CourseUI vista;
 
 	private static CourseController instance = null;
 
-	private CourseController(CourseUI vista) {
-		this.view = vista;
+	private CourseController(CourseUI vista){
+		this.vista = vista;
 	}
 
-	public synchronized static CourseController getInstance(CourseUI vista) {
+	public synchronized static CourseController getInstance(CourseUI vista){
 		if (instance == null) {
 			instance = new CourseController(vista);
 		}
-		showLoginUI();
 		return instance;
 
 	}
 
-	public void assegnaGestoriCourse() {
+	public void assegnaGestoriCourse(){
 
-		ActionListener gestoreSignUp = new ActionListener() {
+		ActionListener gestoreSignUp = new ActionListener(){
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e){
 				// TODO Auto-generated method stub
-				view.setVisible(false);
+				vista.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				LoginController control = LoginController.getInstance(view,
-						model);
-
+				LoginController control = LoginController.getInstance(view,	model);
 			}
 
 		};
-		view.getProfileButton().addActionListener(gestoreSignUp);
+		vista.getProfileButton().addActionListener(gestoreSignUp);
 
-	}
-	public static void showLoginUI() {
-		view.setVisible(true);
 	}
 
 }
