@@ -9,18 +9,19 @@ import views.LoginUI;
 
 public class CourseController {
 
-	private CourseUI vista;
+	private static CourseUI view;
 
 	private static CourseController instance = null;
 
 	private CourseController(CourseUI vista) {
-		this.vista = vista;
+		this.view = vista;
 	}
 
 	public synchronized static CourseController getInstance(CourseUI vista) {
 		if (instance == null) {
 			instance = new CourseController(vista);
 		}
+		showLoginUI();
 		return instance;
 
 	}
@@ -32,19 +33,20 @@ public class CourseController {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				vista.setVisible(false);
+				view.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
 				LoginController control = LoginController.getInstance(view,
 						model);
-				control.assegnaGestori();
-				view.setVisible(true);
 
 			}
 
 		};
-		vista.getProfileButton().addActionListener(gestoreSignUp);
+		view.getProfileButton().addActionListener(gestoreSignUp);
 
+	}
+	public static void showLoginUI() {
+		view.setVisible(true);
 	}
 
 }
