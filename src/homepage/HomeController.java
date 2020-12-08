@@ -31,7 +31,7 @@ public class HomeController {
 			view.setVisible(false);
 			LoginUI vista = new LoginUI();
 			LoginModel modello = new LoginModel();
-			LoginController control = LoginController.getInstance(vista,
+			 LoginController.getInstance(vista,
 					modello);
 
 		};
