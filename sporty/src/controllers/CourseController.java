@@ -1,11 +1,12 @@
-package coursePage;
+package controllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import login.LoginController;
-import login.LoginModel;
-import login.LoginUI;
+import controllers.LoginController;
+import models.LoginModel;
+import views.CourseUI;
+import views.LoginUI;
 
 public class CourseController{
 
