@@ -9,7 +9,6 @@ import login.LoginController;
 public class HomeController {
 
 	private static HomeUI view;
-
 	private static HomeController instance = null;
 
 	private HomeController(HomeUI vista) {
