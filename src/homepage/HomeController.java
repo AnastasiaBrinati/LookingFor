@@ -34,7 +34,6 @@ public class HomeController {
 			LoginModel modello = new LoginModel();
 			LoginController control = LoginController.getInstance(vista,
 					modello);
-			
 
 		};
 		view.getProfileButton().addActionListener(gestoreSignUp);
