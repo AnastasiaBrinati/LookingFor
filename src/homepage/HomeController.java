@@ -1,6 +1,5 @@
 package homepage;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import login.LoginModel;
@@ -14,7 +13,7 @@ public class HomeController {
 	private static HomeController instance = null;
 
 	private HomeController(HomeUI vista) {
-		this.view = vista;
+		view = vista;
 	}
 
 	public synchronized static HomeController getInstance(HomeUI vista) {
@@ -28,23 +27,21 @@ public class HomeController {
 
 	public void assegnaGestori() {
 
-		ActionListener gestoreSignUp = new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				view.setVisible(false);
-				LoginUI view = new LoginUI();
-				LoginModel model = new LoginModel();
-				LoginController control = LoginController.getInstance(view,
-						model);
-
-			}
+		ActionListener gestoreSignUp = e -> {
+			// TODO Auto-generated method stub
+			view.setVisible(false);
+			LoginUI vista = new LoginUI();
+			LoginModel modello = new LoginModel();
+			LoginController control = LoginController.getInstance(vista,
+					modello);
+			
 
 		};
 		view.getProfileButton().addActionListener(gestoreSignUp);
 
 	}
+	
+	
 	public static void showLoginUI() {
 		view.setVisible(true);
 	}
