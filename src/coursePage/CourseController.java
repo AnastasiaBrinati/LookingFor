@@ -3,7 +3,7 @@ package controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+import controllers.LoginController;
 import models.LoginModel;
 import views.CourseUI;
 import views.LoginUI;
@@ -32,10 +32,11 @@ public class CourseController{
 
 			@Override
 			public void actionPerformed(ActionEvent e){
+				// TODO Auto-generated method stub
 				vista.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				LoginController.getInstance(view,	model);
+				LoginController control = LoginController.getInstance(view,	model);
 			}
 
 		};
