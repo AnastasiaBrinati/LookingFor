@@ -17,18 +17,22 @@ import javax.swing.border.EmptyBorder;
 
 public class LoginUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private JPanel contentPane;
-	private JTextField textField_password;
-	private JTextField textField_email;
-	private JTextField textField_name;
-	private JTextField textField_surname;
-	private JTextField textField_username;
+	
+	private JTextField textFieldName;
+	private JTextField textFieldSurname;
+	private JTextField textFieldUsername;
+	private JTextField textFieldEmail;
+	private JTextField textFieldPassword;
+	
 	JButton resetButton = new JButton("Reset");
 	JButton signUpButton = new JButton("Sign Up");
 
-	/**
-	 * Launch the application.
-	 */
 
 	// Create the frame.
 	public LoginUI() {
@@ -61,9 +65,9 @@ public class LoginUI extends JFrame {
 		lblName.setBackground(Color.WHITE);
 		lblName.setBounds(447, 34, 118, 14);
 
-		textField_name = new JTextField();
-		textField_name.setBounds(447, 48, 289, 20);
-		textField_name.setColumns(10);
+		textFieldName = new JTextField();
+		textFieldName.setBounds(447, 48, 289, 20);
+		textFieldName.setColumns(10);
 
 		JSeparator separator_1_1_1 = new JSeparator();
 		separator_1_1_1.setBackground(Color.GRAY);
@@ -74,9 +78,9 @@ public class LoginUI extends JFrame {
 		lblSurname.setBackground(Color.WHITE);
 		lblSurname.setBounds(447, 92, 118, 14);
 
-		textField_surname = new JTextField();
-		textField_surname.setColumns(10);
-		textField_surname.setBounds(447, 107, 289, 20);
+		textFieldSurname = new JTextField();
+		textFieldSurname.setColumns(10);
+		textFieldSurname.setBounds(447, 107, 289, 20);
 
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBackground(Color.GRAY);
@@ -91,9 +95,9 @@ public class LoginUI extends JFrame {
 		separator_3.setBackground(Color.GRAY);
 		separator_3.setBounds(457, 322, 289, 2);
 
-		textField_username = new JTextField();
-		textField_username.setColumns(10);
-		textField_username.setBounds(447, 164, 289, 20);
+		textFieldUsername = new JTextField();
+		textFieldUsername.setColumns(10);
+		textFieldUsername.setBounds(447, 164, 289, 20);
 
 		JLabel lblEmail = new JLabel("E-MAIL");
 		lblEmail.setBounds(447, 208, 46, 14);
@@ -104,9 +108,9 @@ public class LoginUI extends JFrame {
 		separator.setBackground(Color.GRAY);
 		separator.setBounds(447, 253, 289, 2);
 
-		textField_email = new JTextField();
-		textField_email.setBounds(447, 222, 289, 20);
-		textField_email.setColumns(10);
+		textFieldEmail = new JTextField();
+		textFieldEmail.setBounds(447, 222, 289, 20);
+		textFieldEmail.setColumns(10);
 
 		JLabel lblPassword = new JLabel("PASSWORD");
 		lblPassword.setBounds(447, 266, 92, 14);
@@ -117,9 +121,9 @@ public class LoginUI extends JFrame {
 		separator_1.setBackground(Color.GRAY);
 		separator_1.setBounds(447, 195, 289, 2);
 
-		textField_password = new JTextField();
-		textField_password.setBounds(447, 281, 289, 20);
-		textField_password.setColumns(10);
+		textFieldPassword = new JTextField();
+		textFieldPassword.setBounds(447, 281, 289, 20);
+		textFieldPassword.setColumns(10);
 
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 382, 512);
@@ -180,11 +184,11 @@ public class LoginUI extends JFrame {
 		contentPane.add(lblUsername);
 		contentPane.add(lblEmail);
 		contentPane.add(lblSurname);
-		contentPane.add(textField_name);
-		contentPane.add(textField_surname);
-		contentPane.add(textField_username);
-		contentPane.add(textField_email);
-		contentPane.add(textField_password);
+		contentPane.add(textFieldName);
+		contentPane.add(textFieldSurname);
+		contentPane.add(textFieldUsername);
+		contentPane.add(textFieldEmail);
+		contentPane.add(textFieldPassword);
 		contentPane.add(btn_login);
 		contentPane.add(btnNewButton_1);
 		contentPane.add(btnNewButton_2);
@@ -202,29 +206,29 @@ public class LoginUI extends JFrame {
 		return signUpButton;
 	}
 	public void resetForm() {
-		textField_password.setText(" ");
-		textField_email.setText(" ");
-		textField_name.setText(" ");
-		textField_surname.setText(" ");
-		textField_username.setText(" ");
+		textFieldPassword.setText(" ");
+		textFieldEmail.setText(" ");
+		textFieldName.setText(" ");
+		textFieldSurname.setText(" ");
+		textFieldUsername.setText(" ");
 	}
 	public void displayErrorMessage(String errorMessage) {
 		JOptionPane.showMessageDialog(this, errorMessage);
 	}
 
 	public String getName() {
-		return textField_password.getText();
+		return textFieldPassword.getText();
 	}
 	public String getSurname() {
-		return textField_email.getText();
+		return textFieldEmail.getText();
 	}
 	public String getUsername() {
-		return textField_name.getText();
+		return textFieldName.getText();
 	}
 	public String getEmail() {
-		return textField_surname.getText();
+		return textFieldSurname.getText();
 	}
 	public String getPassword() {
-		return textField_username.getText();
+		return textFieldUsername.getText();
 	}
 }
