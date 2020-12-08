@@ -9,8 +9,14 @@ import views.CourseUI;
 import views.LoginUI;
 
 //ciao sta funzionando? 
+<<<<<<< .mine
+//come va?
+||||||| .r48
+
+=======
 //prova giulio
 
+>>>>>>> .r49
 public class CourseController{
 
 	private CourseUI vista;
