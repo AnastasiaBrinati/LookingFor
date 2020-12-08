@@ -19,11 +19,11 @@ public class HomeUI extends JFrame {
 	private JButton settingsButton = new JButton("");
 	private JPanel headerPanel = new JPanel();
 	private JButton profileButton = new JButton("");
-	private JPanel panel_1 = new JPanel();
-	private final JPanel panel_2 = new JPanel();
+	private JPanel panel1 = new JPanel();
+	private final JPanel panel2 = new JPanel();
 	private final JLabel lblNewLabel = new JLabel("");
 	private final JButton btnJoin = new JButton("Join");
-	private final JButton profileButton_1 = new JButton("");
+	private final JButton profileButton1 = new JButton("");
 
 	public HomeUI() {
 
@@ -42,11 +42,11 @@ public class HomeUI extends JFrame {
 		headerPanel.setBounds(0, 0, 1317, 42);
 		headerPanel.setLayout(null);
 
-		profileButton_1.setIcon(new ImageIcon(
+		profileButton1.setIcon(new ImageIcon(
 				"C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
-		profileButton_1.setContentAreaFilled(false);
-		profileButton_1.setBorder(null);
-		profileButton_1.setBounds(1211, 0, 38, 42);
+		profileButton1.setContentAreaFilled(false);
+		profileButton1.setBorder(null);
+		profileButton1.setBounds(1211, 0, 38, 42);
 
 		searchBar = new JTextField();
 		searchBar.setBounds(416, 11, 349, 20);
@@ -64,11 +64,11 @@ public class HomeUI extends JFrame {
 		profileButton.setBorder(null);
 		profileButton.setBounds(1269, 0, 38, 42);
 
-		panel_1.setBounds(0, 42, 1317, 691);
-		panel_1.setLayout(null);
+		panel1.setBounds(0, 42, 1317, 691);
+		panel1.setLayout(null);
 
-		panel_2.setBounds(0, 0, 184, 716);
-		panel_2.setLayout(null);
+		panel2.setBounds(0, 0, 184, 716);
+		panel2.setLayout(null);
 
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 72, 154, 2);
@@ -81,18 +81,18 @@ public class HomeUI extends JFrame {
 		btnJoin.setIcon(
 				new ImageIcon("C:\\Users\\giuli\\Downloads\\images.jpg"));
 		headerPanel.add(searchBar);
-		headerPanel.add(profileButton_1);
+		headerPanel.add(profileButton1);
 		headerPanel.add(settingsButton);
 		headerPanel.add(profileButton);
 
 		contentPane.add(headerPanel);
 
-		panel_1.add(panel_2);
-		panel_2.add(separator);
-		panel_2.add(lblNewLabel);
-		panel_2.add(btnJoin);
+		panel1.add(panel2);
+		panel2.add(separator);
+		panel2.add(lblNewLabel);
+		panel2.add(btnJoin);
 
-		contentPane.add(panel_1);
+		contentPane.add(panel1);
 	}
 
 	public JButton getProfileButton() {
