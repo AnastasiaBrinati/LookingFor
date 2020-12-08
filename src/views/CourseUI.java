@@ -1,8 +1,4 @@
-//CIAO GIULY
-
 package views;
-
-//commento di giuli
 
 import java.awt.Color;
 import java.awt.Toolkit;
