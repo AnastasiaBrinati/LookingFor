@@ -36,6 +36,7 @@ public class LoginUI extends JFrame {
 
 	// Create the frame.
 	public LoginUI() {
+		
 		setTitle("SignUp");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				"C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
@@ -47,18 +48,19 @@ public class LoginUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		Button btn_login = new Button("Login");
-		btn_login.setBounds(565, 480, 70, 22);
-		btn_login.setForeground(Color.WHITE);
-		btn_login.addActionListener(new ActionListener() {
+		Button btnLogin = new Button("Login");
+		btnLogin.setBounds(565, 480, 70, 22);
+		btnLogin.setForeground(Color.WHITE);
+		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				//still to fill
 			}
 		});
-		btn_login.setBackground(Color.GRAY);
+		btnLogin.setBackground(Color.GRAY);
 
-		JSeparator separator_1_1 = new JSeparator();
-		separator_1_1.setBackground(Color.GRAY);
-		separator_1_1.setBounds(447, 136, 289, 2);
+		JSeparator separator4 = new JSeparator();
+		separator4.setBackground(Color.GRAY);
+		separator4.setBounds(447, 136, 289, 2);
 
 		JLabel lblName = new JLabel("NAME");
 		lblName.setForeground(Color.WHITE);
@@ -69,9 +71,9 @@ public class LoginUI extends JFrame {
 		textFieldName.setBounds(447, 48, 289, 20);
 		textFieldName.setColumns(10);
 
-		JSeparator separator_1_1_1 = new JSeparator();
-		separator_1_1_1.setBackground(Color.GRAY);
-		separator_1_1_1.setBounds(447, 79, 289, 2);
+		JSeparator separator5 = new JSeparator();
+		separator5.setBackground(Color.GRAY);
+		separator5.setBounds(447, 79, 289, 2);
 
 		JLabel lblSurname = new JLabel("SURNAME");
 		lblSurname.setForeground(Color.WHITE);
@@ -82,18 +84,18 @@ public class LoginUI extends JFrame {
 		textFieldSurname.setColumns(10);
 		textFieldSurname.setBounds(447, 107, 289, 20);
 
-		JSeparator separator_2 = new JSeparator();
-		separator_2.setBackground(Color.GRAY);
-		separator_2.setBounds(406, 363, 362, -9);
+		JSeparator separator2 = new JSeparator();
+		separator2.setBackground(Color.GRAY);
+		separator2.setBounds(406, 363, 362, -9);
 
 		JLabel lblUsername = new JLabel("USERNAME");
 		lblUsername.setBounds(447, 149, 118, 14);
 		lblUsername.setForeground(Color.WHITE);
 		lblUsername.setBackground(Color.WHITE);
 
-		JSeparator separator_3 = new JSeparator();
-		separator_3.setBackground(Color.GRAY);
-		separator_3.setBounds(457, 322, 289, 2);
+		JSeparator separator3 = new JSeparator();
+		separator3.setBackground(Color.GRAY);
+		separator3.setBounds(457, 322, 289, 2);
 
 		textFieldUsername = new JTextField();
 		textFieldUsername.setColumns(10);
@@ -117,9 +119,9 @@ public class LoginUI extends JFrame {
 		lblPassword.setForeground(Color.WHITE);
 		lblPassword.setBackground(Color.WHITE);
 
-		JSeparator separator_1 = new JSeparator();
-		separator_1.setBackground(Color.GRAY);
-		separator_1.setBounds(447, 195, 289, 2);
+		JSeparator separator1 = new JSeparator();
+		separator1.setBackground(Color.GRAY);
+		separator1.setBounds(447, 195, 289, 2);
 
 		textFieldPassword = new JTextField();
 		textFieldPassword.setBounds(447, 281, 289, 20);
@@ -130,33 +132,33 @@ public class LoginUI extends JFrame {
 		panel.setLayout(null);
 		contentPane.add(panel);
 
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setBounds(-80, -12, 512, 537);
-		panel.add(lblNewLabel_3);
-		lblNewLabel_3.setIcon(new ImageIcon(
+		JLabel lblNewLabel3 = new JLabel("");
+		lblNewLabel3.setBounds(-80, -12, 512, 537);
+		panel.add(lblNewLabel3);
+		lblNewLabel3.setIcon(new ImageIcon(
 				"C:\\Users\\giuli\\Pictures\\Wallpapers\\Sports-Wallpapers-and-Backgrounds-HD-by-Pocket-Books.jpg"));
 
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnNewButton1 = new JButton("");
+		btnNewButton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton_1.setIcon(new ImageIcon(
+		btnNewButton1.setIcon(new ImageIcon(
 				"C:\\Users\\giuli\\Downloads\\Facebook_logo_(square) (1).png"));
-		btnNewButton_1.setBounds(552, 416, 40, 40);
+		btnNewButton1.setBounds(552, 416, 40, 40);
 
-		JButton btnNewButton_2 = new JButton("");
-		btnNewButton_2.setIcon(new ImageIcon(
+		JButton btnNewButton2 = new JButton("");
+		btnNewButton2.setIcon(new ImageIcon(
 				"C:\\Users\\giuli\\Downloads\\219-2197783_training-documents-google-logo-icon-png (1).png"));
-		btnNewButton_2.setBounds(602, 416, 40, 40);
+		btnNewButton2.setBounds(602, 416, 40, 40);
 
 		JLabel lblAlternative = new JLabel("Or sign up with:");
 		lblAlternative.setForeground(Color.WHITE);
 		lblAlternative.setBounds(552, 393, 96, 14);
 
-		JLabel lblNewLabel_5 = new JLabel("Or");
-		lblNewLabel_5.setForeground(Color.WHITE);
-		lblNewLabel_5.setBounds(589, 460, 46, 14);
+		JLabel lblOr = new JLabel("Or");
+		lblOr.setForeground(Color.WHITE);
+		lblOr.setBounds(589, 460, 46, 14);
 
 		resetButton.setBackground(Color.GRAY);
 		resetButton.addActionListener(new ActionListener() {
@@ -174,11 +176,12 @@ public class LoginUI extends JFrame {
 
 		// adding stuff to content pane
 		contentPane.add(separator);
-		contentPane.add(separator_2);
-		contentPane.add(separator_3);
-		contentPane.add(separator_1);
-		contentPane.add(separator_1_1);
-		contentPane.add(separator_1_1_1);
+		contentPane.add(separator1);
+		contentPane.add(separator2);
+		contentPane.add(separator3);
+		contentPane.add(separator4);
+		contentPane.add(separator5);
+		
 		contentPane.add(lblName);
 		contentPane.add(lblPassword);
 		contentPane.add(lblUsername);
@@ -189,11 +192,11 @@ public class LoginUI extends JFrame {
 		contentPane.add(textFieldUsername);
 		contentPane.add(textFieldEmail);
 		contentPane.add(textFieldPassword);
-		contentPane.add(btn_login);
-		contentPane.add(btnNewButton_1);
-		contentPane.add(btnNewButton_2);
+		contentPane.add(btnLogin);
+		contentPane.add(btnNewButton1);
+		contentPane.add(btnNewButton2);
 		contentPane.add(lblAlternative);
-		contentPane.add(lblNewLabel_5);
+		contentPane.add(lblOr);
 		contentPane.add(resetButton);
 		contentPane.add(signUpButton);
 	}
