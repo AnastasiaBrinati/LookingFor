@@ -31,11 +31,10 @@ public class CourseController{
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				// TODO Auto-generated method stub
 				vista.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				LoginController control = LoginController.getInstance(view,	model);
+				 LoginController.getInstance(view,	model);
 			}
 
 		};
