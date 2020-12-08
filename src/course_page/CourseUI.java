@@ -1,4 +1,4 @@
-package coursePage;
+package course_page;
 
 import java.awt.Color;
 import java.awt.Toolkit;

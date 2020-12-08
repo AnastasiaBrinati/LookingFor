@@ -1,4 +1,4 @@
-package coursePage;
+package course_page;
 
 import login.LoginUI;
 import login.LoginController;
