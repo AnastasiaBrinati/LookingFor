@@ -8,6 +8,8 @@ import models.LoginModel;
 import views.CourseUI;
 import views.LoginUI;
 
+//ciao sta funzionando? 
+
 public class CourseController{
 
 	private CourseUI vista;
