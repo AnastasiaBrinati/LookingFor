@@ -2,8 +2,6 @@ package views;
 
 import java.awt.Color;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -22,13 +20,13 @@ public class CourseUI extends JFrame {
 	private JTextField searchBar;
 	private JButton settingsButton = new JButton("");
 	private JPanel headerPanel = new JPanel();
-	private JButton profileButton = new JButton("");
-	private JPanel panel_1 = new JPanel();
+	
+	private JPanel panel1 = new JPanel();
 	private JButton homeButton = new JButton("");
-	private final JPanel panel_2 = new JPanel();
+	private final JPanel panel2 = new JPanel();
 	private final JLabel lblNewLabel = new JLabel("");
-	private final JButton btnJoin_1 = new JButton("     Join Course");
-	private final JButton profileButton_1 = new JButton("");
+	private final JButton joinButton = new JButton("     Join Course");
+	private final JButton profileButton = new JButton("");
 
 	public CourseUI() {
 
@@ -53,10 +51,10 @@ public class CourseUI extends JFrame {
 		
 			
 
-		profileButton_1.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
-		profileButton_1.setContentAreaFilled(false);
-		profileButton_1.setBorder(null);
-		profileButton_1.setBounds(1211, 0, 38, 42);
+		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorder(null);
+		profileButton.setBounds(1211, 0, 38, 42);
 
 		searchBar = new JTextField();
 		searchBar.setBounds(416, 11, 349, 20);
@@ -72,39 +70,39 @@ public class CourseUI extends JFrame {
 		profileButton.setBorder(null);
 		profileButton.setBounds(1269, 0, 38, 42);
 
-		panel_1.setBounds(0, 42, 1317, 691);
-		btnJoin_1.setBounds(10, 20, 154, 41);
+		panel1.setBounds(0, 42, 1317, 691);
+		joinButton.setBounds(10, 20, 154, 41);
 
 		
-		btnJoin_1.setForeground(Color.WHITE);
-		btnJoin_1.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\plus-7-32.png"));
-		btnJoin_1.setBackground(Color.DARK_GRAY);
+		joinButton.setForeground(Color.WHITE);
+		joinButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\plus-7-32.png"));
+		joinButton.setBackground(Color.DARK_GRAY);
 
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 72, 154, 2);
 
 		headerPanel.add(homeButton);
 		headerPanel.add(searchBar);
-		headerPanel.add(profileButton_1);
+		headerPanel.add(profileButton);
 		headerPanel.add(settingsButton);
 		headerPanel.add(profileButton);
 
 		contentPane.add(headerPanel);
-		panel_1.setLayout(new BoxLayout(panel_1, BoxLayout.X_AXIS));
+		panel1.setLayout(new BoxLayout(panel1, BoxLayout.X_AXIS));
 
-		panel_1.add(panel_2);
-		panel_2.setLayout(null);
-		panel_2.add(btnJoin_1);
-		panel_2.add(separator);
+		panel1.add(panel2);
+		panel2.setLayout(null);
+		panel2.add(joinButton);
+		panel2.add(separator);
 		lblNewLabel.setBounds(0, 0, 184, 692);
-		panel_2.add(lblNewLabel);
+		panel2.add(lblNewLabel);
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\5923e27e1c9c5b5d4a3e2604b17b638b.jpg"));
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(431, 243, 2, 2);
-		panel_2.add(scrollPane);
+		panel2.add(scrollPane);
 
-		contentPane.add(panel_1);
+		contentPane.add(panel1);
 	}
 
 	public JButton getProfileButton() {

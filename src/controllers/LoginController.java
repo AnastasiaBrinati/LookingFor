@@ -9,15 +9,15 @@ import views.LoginUI;
 public class LoginController {
 
 	private static LoginUI view;
-	private LoginModel model;
+	
 	private static LoginController instance = null;
 
 	private LoginController(LoginUI vista, LoginModel modello) {
-		this.view = vista;
-		this.model = modello;
+		view = vista;
+		
 	}
 
-	public synchronized static LoginController getInstance(LoginUI vista,
+	public static  synchronized LoginController getInstance(LoginUI vista,
 			LoginModel model) {
 		if (instance == null) {
 			instance = new LoginController(vista, model);
@@ -33,7 +33,6 @@ public class LoginController {
 
 			@Override
 			public void actionPerformed(ActionEvent e2) {
-				// TODO Auto-generated method stub
 
 				HomeUI homeView = new HomeUI();
 
