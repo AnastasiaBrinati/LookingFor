@@ -15,7 +15,7 @@ public class HomeController {
 		view = vista;
 	}
 
-	public synchronized static HomeController getInstance(HomeUI vista) {
+	public static synchronized  HomeController getInstance(HomeUI vista) {
 		if (instance == null) {
 			instance = new HomeController(vista);
 		}
@@ -27,7 +27,6 @@ public class HomeController {
 	public void assegnaGestori() {
 
 		ActionListener gestoreSignUp = e -> {
-			// TODO Auto-generated method stub
 			view.setVisible(false);
 			LoginUI vista = new LoginUI();
 			LoginModel modello = new LoginModel();
