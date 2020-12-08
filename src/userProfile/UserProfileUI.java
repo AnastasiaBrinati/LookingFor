@@ -1,4 +1,4 @@
-package views;
+package userProfile;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

@@ -1,10 +1,10 @@
-package controllers;
+package login;
+
+import homepage.HomeController;
+import homepage.HomeUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import models.LoginModel;
-import views.HomeUI;
-import views.LoginUI;
 
 public class LoginController {
 

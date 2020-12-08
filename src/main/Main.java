@@ -1,9 +1,11 @@
 package main;
+
 import javax.swing.SwingUtilities;
 
-import controllers.LoginController;
-import models.LoginModel;
-import views.LoginUI;
+import login.LoginController;
+import login.LoginModel;
+import login.LoginUI;
+
 public class Main {
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
