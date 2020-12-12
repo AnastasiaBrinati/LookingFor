@@ -154,7 +154,7 @@ public class OrganizationProfileUI extends JFrame {
 										lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 										lblNewLabel.setForeground(Color.BLACK);
 										lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
-										lblNewLabel.setBounds(0, 9, 269, 71);
+										lblNewLabel.setBounds(0, 11, 269, 71);
 										panel.add(lblNewLabel);
 										
 										

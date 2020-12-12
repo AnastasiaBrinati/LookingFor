@@ -3,14 +3,37 @@ package logic.homepage;
 import java.awt.Color;
 import java.awt.Toolkit;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.border.BevelBorder;
+import java.awt.GridBagLayout;
+import javax.swing.JTabbedPane;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import javax.swing.JComboBox;
+import javax.swing.SwingConstants;
+import java.awt.FlowLayout;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+import com.jgoodies.forms.layout.FormSpecs;
+import java.awt.BorderLayout;
+import javax.swing.JLayeredPane;
+import java.awt.ScrollPane;
+import java.awt.Panel;
 
 public class HomeUI extends JFrame {
 
@@ -19,87 +42,74 @@ public class HomeUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField searchBar;
 	private JButton settingsButton = new JButton("");
 	private JPanel headerPanel = new JPanel();
-	private JButton profileButton1 = new JButton("");
-	private JPanel panel1 = new JPanel();
-	private final JPanel panel2 = new JPanel();
-	private final JLabel lblNewLabel = new JLabel("");
-	private final JButton btnJoin = new JButton("Join");
-	private final JButton profileButton2 = new JButton("");
+	private final JButton profileButton = new JButton("");
+	private final JPanel panel = new JPanel();
 
 	public HomeUI() {
 
-		setTitle("Sporty");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				"C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
+		setTitle("Sportee");
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1333, 772);
+		setBounds(100, 100, 1102, 682);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		headerPanel.setBounds(0, 0, 1086, 40);
+		
+		
 
 		headerPanel.setBackground(Color.ORANGE);
 		headerPanel.setForeground(new Color(255, 165, 0));
-		headerPanel.setBounds(0, 0, 1317, 42);
-		headerPanel.setLayout(null);
+		profileButton.setBounds(1046, 0, 38, 42);
+		profileButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		contentPane.setLayout(null);
+		
+			
 
-		profileButton2.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
-		profileButton2.setContentAreaFilled(false);
-		profileButton2.setBorder(null);
-		profileButton2.setBounds(1211, 0, 38, 42);
-
-		searchBar = new JTextField();
-		searchBar.setBounds(416, 11, 349, 20);
-		searchBar.setColumns(10);
-
-		settingsButton.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
+		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorder(null);
 		settingsButton.setBounds(10, 0, 38, 42);
-		settingsButton.setContentAreaFilled(false);
-		settingsButton.setBorder(null);
-
-		profileButton1.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
-		profileButton1.setContentAreaFilled(false);
-		profileButton1.setBorder(null);
-		profileButton1.setBounds(1269, 0, 38, 42);
-
-		panel1.setBounds(0, 42, 1317, 691);
-		panel1.setLayout(null);
-
-		panel2.setBounds(0, 0, 184, 716);
-		panel2.setLayout(null);
-
-		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 72, 154, 2);
-
-		lblNewLabel.setBounds(0, 0, 184, 692);
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Downloads\\5923e27e1c9c5b5d4a3e2604b17b638b.jpg"));
-
-		btnJoin.setBounds(53, 95, 89, 23);
-		btnJoin.setIcon(
-				new ImageIcon("C:\\Users\\giuli\\Downloads\\images.jpg"));
-		headerPanel.add(searchBar);
-		headerPanel.add(profileButton2);
-		headerPanel.add(settingsButton);
-		headerPanel.add(profileButton1);
-
-		contentPane.add(headerPanel);
-
-		panel1.add(panel2);
-		panel2.add(separator);
-		panel2.add(lblNewLabel);
-		panel2.add(btnJoin);
-
-		contentPane.add(panel1);
+		
+				settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
+				settingsButton.setContentAreaFilled(false);
+				settingsButton.setBorder(null);
+				
+						profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
+						profileButton.setContentAreaFilled(false);
+						profileButton.setBorder(null);
+						headerPanel.setLayout(null);
+								headerPanel.add(profileButton);
+								headerPanel.add(settingsButton);
+								headerPanel.add(profileButton);
+										contentPane.add(headerPanel);
+										
+										JLayeredPane layeredPane = new JLayeredPane();
+										layeredPane.setBounds(0, 0, 1, 1);
+										headerPanel.add(layeredPane);
+										panel.setBounds(0, 39, 269, 604);
+										panel.setBackground(new Color(255, 215, 0));
+										
+										contentPane.add(panel);
+										panel.setLayout(null);
+										
+										JLabel lblNewLabel = new JLabel("Sportee");
+										lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+										lblNewLabel.setForeground(Color.BLACK);
+										lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
+										lblNewLabel.setBounds(0, 11, 269, 71);
+										panel.add(lblNewLabel);
+				LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
 	public JButton getProfileButton() {
-		return profileButton1;
-	}
+		return profileButton;
+	}	
+	
 }
+	
