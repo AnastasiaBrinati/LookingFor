@@ -1,8 +1,8 @@
 package course_page;
 
-import login.LoginUI;
-import login.LoginController;
-import login.LoginModel;
+import logic.login.LoginUI;
+import logic.login.LoginController;
+import logic.login.LoginModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
