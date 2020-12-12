@@ -32,7 +32,7 @@ public class UserProfileUI extends JFrame {
 	private TextArea textArea = new TextArea();
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
-	private final JButton profileButton = new JButton("");
+	private final JButton exitButton = new JButton("");
 	private final JPanel panel2 = new JPanel();
 	private final JLabel lblNewLabel = new JLabel("About me");
 	//non penso servirà più
@@ -92,10 +92,10 @@ public class UserProfileUI extends JFrame {
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);	
 
-		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
-		profileButton.setContentAreaFilled(false);
-		profileButton.setBorder(null);
-		profileButton.setBounds(1262, 0, 42, 42);
+		exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
+		exitButton.setContentAreaFilled(false);
+		exitButton.setBorder(null);
+		exitButton.setBounds(1262, 0, 42, 42);
 
 		searchBar = new JTextField();
 		searchBar.setBounds(416, 11, 349, 31);
@@ -106,23 +106,18 @@ public class UserProfileUI extends JFrame {
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
 
-		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
-		profileButton.setContentAreaFilled(false);
-		profileButton.setBorder(null);
-		profileButton.setBounds(1269, 0, 38, 42);
+		exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
+		exitButton.setContentAreaFilled(false);
+		exitButton.setBorder(null);
+		exitButton.setBounds(1269, 0, 38, 42);
 
 		headerPanel.add(homeButton);
 		headerPanel.add(searchBar);
-		headerPanel.add(profileButton);
+		headerPanel.add(exitButton);
 		headerPanel.add(settingsButton);
-		headerPanel.add(profileButton);
+		headerPanel.add(exitButton);
 
 		contentPane.add(headerPanel);
-		
-		lblTitle.setBounds(84, 10, 141, 41);
-		headerPanel.add(lblTitle);
-		lblTitle.setForeground(Color.DARK_GRAY);
-		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
 
 		panel1.setBounds(305, 51, 1012, 674);
 		panel1.setLayout(null);
@@ -179,10 +174,14 @@ public class UserProfileUI extends JFrame {
 		panelSettings.add(btnSettings);
 		btnHelp.setBounds(0, 55, 287, 57);
 		panelSettings.add(btnHelp);
+		lblTitle.setBounds(89, 27, 141, 41);
+		panel.add(lblTitle);
+		lblTitle.setForeground(new Color(0, 0, 0));
+		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
 	}
 
-	public JButton getProfileButton() {
-		return profileButton;
+	public JButton getExitButton() {
+		return exitButton;
 	}
 	
 	
@@ -231,6 +230,9 @@ public class UserProfileUI extends JFrame {
 	
 	public JButton getbtnEvents() {
 		return btnEvents;
+	}
+	public JButton getHomeButton() {
+		return homeButton;
 	}
 	
 	public void setPanel1Visible() {

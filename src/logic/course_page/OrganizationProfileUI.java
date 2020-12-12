@@ -194,22 +194,27 @@ public class OrganizationProfileUI extends JFrame {
 										lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 										lblNewLabel.setBounds(0, 11, 269, 71);
 										panel.add(lblNewLabel);
+										coursesButton.setBackground(new Color(255, 69, 0));
 										
 										
 										coursesButton.setBounds(0, 91, 269, 59);
 										panel.add(coursesButton);
+										eventsButton.setBackground(new Color(255, 69, 0));
 										
 										
 										eventsButton.setBounds(0, 156, 269, 59);
 										panel.add(eventsButton);
+										courtsButton.setBackground(new Color(255, 69, 0));
 										
 										
 										courtsButton.setBounds(0, 221, 269, 59);
 										panel.add(courtsButton);
+										btnNewButton_2_3.setBackground(new Color(255, 69, 0));
 										
 										
 										btnNewButton_2_3.setBounds(0, 285, 269, 59);
 										panel.add(btnNewButton_2_3);
+										helpButton.setBackground(new Color(255, 69, 0));
 										
 									
 										helpButton.setBounds(0, 349, 269, 59);
@@ -260,6 +265,10 @@ public class OrganizationProfileUI extends JFrame {
 	public JButton getEventsButton() {
 		return eventsButton;
 	}
+	public JButton getHomeButton() {
+		return homeButton;
+	}
+	
 	public void setDescriptionPanelVisible() {
 		descriptionPanel.setVisible(true);
 		coursesPanel.setVisible(false);
@@ -288,6 +297,7 @@ public class OrganizationProfileUI extends JFrame {
 		eventsPanel.setVisible(false);
 		
 	}
+	
 	
 }
 	

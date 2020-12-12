@@ -4,6 +4,8 @@ import java.awt.event.ActionListener;
 
 import logic.login.LoginModel;
 import logic.login.LoginUI;
+import user_profile.UserProfileController;
+import user_profile.UserProfileUI;
 import logic.course_page.OrganizationController;
 import logic.course_page.OrganizationProfileUI;
 import logic.login.LoginController;
@@ -40,10 +42,10 @@ public class HomeController {
 		
 		ActionListener gestoreProfile= e -> {
 			view.setVisible(false);
-			OrganizationProfileUI vista = new OrganizationProfileUI();
-			OrganizationController controller=OrganizationController.getInstance(vista);
+			UserProfileUI vista = new UserProfileUI();
+			UserProfileController controller=UserProfileController.getInstance(vista);
 			controller.assegnaGestori();
-			vista.setDescriptionPanelVisible();
+			
 
 		};
 		view.getProfileButton().addActionListener(gestoreProfile);

@@ -1,7 +1,7 @@
 package login;
 
-import homepage.HomeController;
-import homepage.HomeUI;
+import logic.homepage.HomeController;
+import logic.homepage.HomeUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

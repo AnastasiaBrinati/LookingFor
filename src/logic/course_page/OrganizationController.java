@@ -3,8 +3,13 @@ package logic.course_page;
 import logic.login.LoginUI;
 import logic.login.LoginController;
 import logic.login.LoginModel;
+
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import logic.homepage.HomeController;
+import logic.homepage.HomeUI;
 
 
 public class OrganizationController{
@@ -47,9 +52,10 @@ public class OrganizationController{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			 vista.setCoursesPanelVisible();
+			 vista.getCoursesButton().setBackground(Color.blue);
 			}
 		};
-		vista.getCoursesButton().addActionListener(gestoreCourses);
+	
 		
         ActionListener gestoreCourts =new ActionListener() {
 			
@@ -68,6 +74,19 @@ public class OrganizationController{
 			}
 		};
 		vista.getEventsButton().addActionListener(gestoreEvents);
+		
+         ActionListener gestoreHome =new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				HomeUI view=new HomeUI();
+				HomeController controller=HomeController.getInstance(view);
+				vista.setVisible(false);
+				
+			 
+			}
+		};
+		vista.getHomeButton().addActionListener(gestoreHome);
 
 	}
 	

@@ -3,6 +3,12 @@ package user_profile;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import logic.homepage.HomeController;
+import logic.homepage.HomeUI;
+import logic.login.LoginController;
+import logic.login.LoginModel;
+import logic.login.LoginUI;
+
 public class UserProfileController {
 	
 	public static UserProfileUI view;
@@ -51,6 +57,33 @@ public class UserProfileController {
 
 		};
 		view.getbtnEvents().addActionListener(gestoreEvents);
+		
+		ActionListener gestoreHome = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				view.setVisible(false);
+				HomeUI vista=new HomeUI();
+				HomeController controller=HomeController.getInstance(vista);
+							
+			}
+
+		};
+		view.getHomeButton().addActionListener(gestoreHome);
+		
+		ActionListener gestoreExit = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				LoginUI vista=new LoginUI();
+				LoginModel model=new LoginModel();
+				LoginController controller=LoginController.getInstance(vista, model);
+				view.setVisible(false);
+							
+			}
+
+		};
+		view.getExitButton().addActionListener(gestoreExit);
 
 	}
 
