@@ -43,6 +43,7 @@ public class LoginController {
 				homeController.assegnaGestori();
 
 				view.setVisible(false);
+				view.resetForm();
 
 			}
 

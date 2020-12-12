@@ -6,8 +6,6 @@ import logic.login.LoginModel;
 import logic.login.LoginUI;
 import user_profile.UserProfileController;
 import user_profile.UserProfileUI;
-import logic.course_page.OrganizationController;
-import logic.course_page.OrganizationProfileUI;
 import logic.login.LoginController;
 
 public class HomeController {
