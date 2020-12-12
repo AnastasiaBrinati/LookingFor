@@ -3,6 +3,8 @@ package user_profile;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import logic.course_page.OrganizationController;
+import logic.course_page.OrganizationProfileUI;
 import logic.homepage.HomeController;
 import logic.homepage.HomeUI;
 import logic.login.LoginController;
@@ -84,6 +86,21 @@ public class UserProfileController {
 
 		};
 		view.getExitButton().addActionListener(gestoreExit);
+		
+		ActionListener gestoreOrganizations = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				OrganizationProfileUI vista=new OrganizationProfileUI();
+				
+				OrganizationController controller=OrganizationController.getInstance(vista);
+				controller.assegnaGestori();
+				view.setVisible(false);
+							
+			}
+
+		};
+		view.getOrganizationsButton().addActionListener(gestoreOrganizations);
 
 	}
 

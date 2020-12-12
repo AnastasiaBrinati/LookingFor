@@ -55,6 +55,7 @@ public class UserProfileUI extends JFrame {
 	private JPanel panel5 = new JPanel();
 	private final JButton btnProva1 = new JButton("Hello4!!!!");
 	private final JButton btnProva2 = new JButton("HELLO5!!!");
+	private final JButton organizationsButton = new JButton("Organizations");
 
 	public UserProfileUI() {
 
@@ -178,10 +179,17 @@ public class UserProfileUI extends JFrame {
 		panel.add(lblTitle);
 		lblTitle.setForeground(new Color(0, 0, 0));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
+		organizationsButton.setBounds(10, 201, 287, 57);
+		
+		panel.add(organizationsButton);
 	}
 
 	public JButton getExitButton() {
 		return exitButton;
+	}
+	
+	public JButton getOrganizationsButton() {
+		return organizationsButton;
 	}
 	
 	
