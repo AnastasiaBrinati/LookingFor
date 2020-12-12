@@ -22,12 +22,12 @@ public class HomeUI extends JFrame {
 	private JTextField searchBar;
 	private JButton settingsButton = new JButton("");
 	private JPanel headerPanel = new JPanel();
-	private JButton profileButton1 = new JButton("");
 	private JPanel panel1 = new JPanel();
 	private final JPanel panel2 = new JPanel();
 	private final JLabel lblNewLabel = new JLabel("");
 	private final JButton btnJoin = new JButton("Join");
-	private final JButton profileButton2 = new JButton("");
+	private final JButton profileButton = new JButton("PROFILO");
+	private final JButton escButton = new JButton("Esc");
 
 	public HomeUI() {
 
@@ -45,12 +45,13 @@ public class HomeUI extends JFrame {
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1317, 42);
 		headerPanel.setLayout(null);
-
-		profileButton2.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
-		profileButton2.setContentAreaFilled(false);
-		profileButton2.setBorder(null);
-		profileButton2.setBounds(1211, 0, 38, 42);
+		profileButton.setForeground(Color.BLACK);
+		
+		profileButton.setBackground(Color.CYAN);
+		//profileButton.setIcon(new ImageIcon "C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorder(null);
+		profileButton.setBounds(1253, 0, 38, 42);
 
 		searchBar = new JTextField();
 		searchBar.setBounds(416, 11, 349, 20);
@@ -62,12 +63,6 @@ public class HomeUI extends JFrame {
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
 
-		profileButton1.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
-		profileButton1.setContentAreaFilled(false);
-		profileButton1.setBorder(null);
-		profileButton1.setBounds(1269, 0, 38, 42);
-
 		panel1.setBounds(0, 42, 1317, 691);
 		panel1.setLayout(null);
 
@@ -78,18 +73,18 @@ public class HomeUI extends JFrame {
 		separator.setBounds(10, 72, 154, 2);
 
 		lblNewLabel.setBounds(0, 0, 184, 692);
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Downloads\\5923e27e1c9c5b5d4a3e2604b17b638b.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\5923e27e1c9c5b5d4a3e2604b17b638b.jpg"));
 
 		btnJoin.setBounds(53, 95, 89, 23);
-		btnJoin.setIcon(
-				new ImageIcon("C:\\Users\\giuli\\Downloads\\images.jpg"));
+		btnJoin.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\images.jpg"));
 		headerPanel.add(searchBar);
-		headerPanel.add(profileButton2);
+		headerPanel.add(profileButton);
 		headerPanel.add(settingsButton);
-		headerPanel.add(profileButton1);
 
 		contentPane.add(headerPanel);
+		escButton.setBounds(1180, 1, 44, 38);
+		
+		headerPanel.add(escButton);
 
 		panel1.add(panel2);
 		panel2.add(separator);
@@ -100,6 +95,10 @@ public class HomeUI extends JFrame {
 	}
 
 	public JButton getProfileButton() {
-		return profileButton1;
+		return profileButton;
+	}
+	
+	public JButton getEscButton() {
+		return escButton;
 	}
 }

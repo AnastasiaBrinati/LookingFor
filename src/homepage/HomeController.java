@@ -1,5 +1,8 @@
 package homepage;
 
+import user_profile.UserProfileController;
+import user_profile.UserProfileUI;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import login.LoginModel;
@@ -26,18 +29,29 @@ public class HomeController {
 
 	public void assegnaGestori() {
 
-		ActionListener gestoreSignUp = e -> {
+		ActionListener gestoreEsc = e -> {
 			view.setVisible(false);
 			LoginUI vista = new LoginUI();
 			LoginModel modello = new LoginModel();
-			 LoginController.getInstance(vista,
-					modello);
+			LoginController.getInstance(vista,modello);
 
 		};
-		view.getProfileButton().addActionListener(gestoreSignUp);
+		view.getEscButton().addActionListener(gestoreEsc);
 
-	}
 	
+		ActionListener gestoreProfile = new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				view.setVisible(false);
+				UserProfileUI upView = new UserProfileUI();
+				UserProfileController.getInstance(upView);
+			}
+
+		};
+		view.getProfileButton().addActionListener(gestoreProfile);
+
+}
 	
 	public static void showLoginUI() {
 		view.setVisible(true);

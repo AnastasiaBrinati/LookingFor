@@ -9,12 +9,12 @@ import java.awt.event.ActionListener;
 
 public class CourseController{
 
-	private CourseUI vista;
+	private CourseUI view;
 
 	private static CourseController instance = null;
 
 	private CourseController(CourseUI vista){
-		this.vista = vista;
+		this.view = vista;
 	}
 
 	public synchronized static CourseController getInstance(CourseUI vista){
@@ -25,20 +25,20 @@ public class CourseController{
 
 	}
 
-	public void assegnaGestoriCourse(){
+	public void assegnaGestori(){
 
 		ActionListener gestoreSignUp = new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				vista.setVisible(false);
+				view.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				 LoginController.getInstance(view,	model);
+				LoginController.getInstance(view, model);
 			}
 
 		};
-		vista.getProfileButton().addActionListener(gestoreSignUp);
+		view.getProfileButton().addActionListener(gestoreSignUp);
 
 	}
 
