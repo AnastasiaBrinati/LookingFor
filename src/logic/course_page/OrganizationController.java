@@ -52,9 +52,10 @@ public class OrganizationController{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 			 vista.setCoursesPanelVisible();
-			 vista.getCoursesButton().setBackground(Color.blue);
+			 
 			}
 		};
+		vista.getCoursesButton().addActionListener(gestoreCourses);
 	
 		
         ActionListener gestoreCourts =new ActionListener() {
