@@ -36,7 +36,7 @@ public class OrganizationController{
 				vista.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				 LoginController.getInstance(view,	model);
+				LoginController.getInstance(view,	model);
 			}
 
 		};
@@ -50,6 +50,24 @@ public class OrganizationController{
 			}
 		};
 		vista.getCoursesButton().addActionListener(gestoreCourses);
+		
+        ActionListener gestoreCourts =new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			 vista.setCourtsPanelVisible();
+			}
+		};
+		vista.getCourtsButton().addActionListener(gestoreCourts);
+		
+        ActionListener gestoreEvents =new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			 vista.setEventsPanelVisible();
+			}
+		};
+		vista.getEventsButton().addActionListener(gestoreEvents);
 
 	}
 	

@@ -43,6 +43,7 @@ public class HomeController {
 			OrganizationProfileUI vista = new OrganizationProfileUI();
 			OrganizationController controller=OrganizationController.getInstance(vista);
 			controller.assegnaGestori();
+			vista.setDescriptionPanelVisible();
 
 		};
 		view.getProfileButton().addActionListener(gestoreProfile);

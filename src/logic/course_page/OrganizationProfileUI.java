@@ -63,6 +63,15 @@ public class OrganizationProfileUI extends JFrame {
 	private final JButton btnNewButton_4 = new JButton("New button");
 	private final JButton btnNewButton_5 = new JButton("New button");
 	private final JLabel lblNewLabel_2 = new JLabel("Courses");
+	private final JPanel courtsPanel = new JPanel();
+	private final JLabel lblNewLabel_3 = new JLabel("Courts");
+	private final JButton btnNewButton_3_1 = new JButton("New button");
+	private final JButton btnNewButton_3_1_1 = new JButton("New button");
+	private final JButton btnNewButton_3_1_2 = new JButton("New button");
+	private final JPanel eventsPanel = new JPanel();
+	private final JButton btnNewButton_3_1_1_1 = new JButton("New button");
+	private final JButton btnNewButton_3_1_1_1_1 = new JButton("New button");
+	private final JLabel lblNewLabel_4 = new JLabel("Events");
 
 	public OrganizationProfileUI() {
 		descriptionTextfield.setBackground(new Color(220, 220, 220));
@@ -92,6 +101,35 @@ public class OrganizationProfileUI extends JFrame {
 			}
 		});
 		contentPane.setLayout(null);
+		eventsPanel.setBounds(268, 132, 818, 511);
+		
+		contentPane.add(eventsPanel);
+		eventsPanel.setLayout(null);
+		btnNewButton_3_1_1_1.setBounds(10, 62, 256, 123);
+		
+		eventsPanel.add(btnNewButton_3_1_1_1);
+		btnNewButton_3_1_1_1_1.setBounds(276, 62, 256, 123);
+		
+		eventsPanel.add(btnNewButton_3_1_1_1_1);
+		lblNewLabel_4.setBounds(10, 37, 46, 14);
+		
+		eventsPanel.add(lblNewLabel_4);
+		courtsPanel.setBounds(268, 132, 818, 511);
+		
+		contentPane.add(courtsPanel);
+		courtsPanel.setLayout(null);
+		lblNewLabel_3.setBounds(10, 34, 46, 14);
+		
+		courtsPanel.add(lblNewLabel_3);
+		btnNewButton_3_1.setBounds(10, 59, 256, 123);
+		
+		courtsPanel.add(btnNewButton_3_1);
+		btnNewButton_3_1_1.setBounds(276, 59, 256, 123);
+		
+		courtsPanel.add(btnNewButton_3_1_1);
+		btnNewButton_3_1_2.setBounds(542, 59, 256, 123);
+		
+		courtsPanel.add(btnNewButton_3_1_2);
 		
 		
 		coursesPanel.setBounds(268, 132, 818, 511);
@@ -225,12 +263,31 @@ public class OrganizationProfileUI extends JFrame {
 	public void setDescriptionPanelVisible() {
 		descriptionPanel.setVisible(true);
 		coursesPanel.setVisible(false);
+		courtsPanel.setVisible(false);
+		eventsPanel.setVisible(false);
 		
 	}
 	public void setCoursesPanelVisible() {
 		coursesPanel.setVisible(true);
 		descriptionPanel.setVisible(false);
+		courtsPanel.setVisible(false);
+		eventsPanel.setVisible(false);
 		
 	}
+	public void setEventsPanelVisible() {
+		coursesPanel.setVisible(false);
+		descriptionPanel.setVisible(false);
+		courtsPanel.setVisible(false);
+		eventsPanel.setVisible(true);
+		
+	}
+	public void setCourtsPanelVisible() {
+		coursesPanel.setVisible(false);
+		descriptionPanel.setVisible(false);
+		courtsPanel.setVisible(true);
+		eventsPanel.setVisible(false);
+		
+	}
+	
 }
 	
