@@ -38,9 +38,9 @@ public class HomeUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JButton settingsButton = new JButton("");
+	private JButton settingsButton = new JButton("sett");
 	private JPanel headerPanel = new JPanel();
-	private final JButton exitButton = new JButton("");
+	private final JButton exitButton = new JButton("X");
 	private final JPanel panel = new JPanel();
 	private final JButton profileButton = new JButton("");
 
@@ -72,42 +72,42 @@ public class HomeUI extends JFrame {
 		exitButton.setContentAreaFilled(false);
 		exitButton.setBorder(null);
 		settingsButton.setBounds(10, 0, 38, 42);
-		
-				settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
-				settingsButton.setContentAreaFilled(false);
-				settingsButton.setBorder(null);
-				
-						exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
-						exitButton.setContentAreaFilled(false);
-						exitButton.setBorder(null);
-						headerPanel.setLayout(null);
-								profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
-								profileButton.setContentAreaFilled(false);
-								profileButton.setBorder(null);
-								profileButton.setBounds(986, 0, 38, 42);
+	
+		settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
+		settingsButton.setContentAreaFilled(false);
+		settingsButton.setBorder(null);
+	
+		exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
+		exitButton.setContentAreaFilled(false);
+		exitButton.setBorder(null);
+		headerPanel.setLayout(null);
+		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorder(null);
+		profileButton.setBounds(986, 0, 38, 42);
 								
-								headerPanel.add(profileButton);
-								headerPanel.add(exitButton);
-								headerPanel.add(settingsButton);
-								headerPanel.add(exitButton);
-										contentPane.add(headerPanel);
+		headerPanel.add(profileButton);
+		headerPanel.add(exitButton);
+		headerPanel.add(settingsButton);
+		headerPanel.add(exitButton);
+		contentPane.add(headerPanel);
 										
-										JLayeredPane layeredPane = new JLayeredPane();
-										layeredPane.setBounds(0, 0, 1, 1);
-										headerPanel.add(layeredPane);
-										panel.setBounds(0, 39, 269, 604);
-										panel.setBackground(new Color(255, 215, 0));
+		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setBounds(0, 0, 1, 1);
+		headerPanel.add(layeredPane);
+		panel.setBounds(0, 39, 269, 604);
+		panel.setBackground(new Color(255, 215, 0));
 										
-										contentPane.add(panel);
-										panel.setLayout(null);
+		contentPane.add(panel);
+		panel.setLayout(null);
 										
-										JLabel lblNewLabel = new JLabel("Sportee");
-										lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-										lblNewLabel.setForeground(Color.BLACK);
-										lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
-										lblNewLabel.setBounds(0, 11, 269, 71);
-										panel.add(lblNewLabel);
-				LineBorder lineBorder=new LineBorder(Color.white,8,true);
+		JLabel lblTitle = new JLabel("Sportee");
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setForeground(Color.BLACK);
+		lblTitle.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
+		lblTitle.setBounds(0, 11, 269, 71);
+		panel.add(lblTitle);
+		LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
 	public JButton getProfileButton() {
