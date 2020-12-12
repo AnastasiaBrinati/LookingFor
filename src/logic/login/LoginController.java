@@ -1,7 +1,9 @@
-package login;
+package logic.login;
 
-import homepage.HomeController;
-import homepage.HomeUI;
+import logic.course_page.OrganizationController;
+import logic.course_page.OrganizationProfileUI;
+import logic.homepage.HomeController;
+import logic.homepage.HomeUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,7 +38,7 @@ public class LoginController {
 
 				HomeUI homeView = new HomeUI();
 
-				HomeController homeController = HomeController
+				HomeController  homeController = HomeController
 						.getInstance(homeView);
 				homeController.assegnaGestori();
 

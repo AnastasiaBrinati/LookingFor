@@ -1,10 +1,10 @@
-package main;
+package logic.main;
 
 import javax.swing.SwingUtilities;
 
-import login.LoginController;
-import login.LoginModel;
-import login.LoginUI;
+import logic.login.LoginController;
+import logic.login.LoginModel;
+import logic.login.LoginUI;
 
 public class Main {
 	public static void main(String[] args) {

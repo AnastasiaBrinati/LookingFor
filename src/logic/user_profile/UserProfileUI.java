@@ -1,4 +1,4 @@
-package user_profile;
+package logic.user_profile;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

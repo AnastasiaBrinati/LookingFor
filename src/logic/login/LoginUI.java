@@ -1,4 +1,4 @@
-package login;
+package logic.login;
 
 import java.awt.Button;
 import java.awt.Color;
@@ -56,7 +56,7 @@ public class LoginUI extends JFrame {
 	// Create the frame.
 	public LoginUI() {
 		
-		setTitle("SignUp");
+		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				"C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -184,7 +184,7 @@ public class LoginUI extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		resetButton.setBounds(450, 345, 89, 23);
+		resetButton.setBounds(503, 345, 89, 23);
 
 		signUpButton.setBackground(Color.ORANGE);
 		signUpButton.addActionListener(new ActionListener() {

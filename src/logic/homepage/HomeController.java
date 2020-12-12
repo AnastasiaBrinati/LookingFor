@@ -1,10 +1,10 @@
-package homepage;
+package logic.homepage;
 
 import java.awt.event.ActionListener;
 
-import login.LoginModel;
-import login.LoginUI;
-import login.LoginController;
+import logic.login.LoginModel;
+import logic.login.LoginUI;
+import logic.login.LoginController;
 
 public class HomeController {
 
