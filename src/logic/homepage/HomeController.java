@@ -4,8 +4,8 @@ import java.awt.event.ActionListener;
 
 import logic.login.LoginModel;
 import logic.login.LoginUI;
-import user_profile.UserProfileController;
-import user_profile.UserProfileUI;
+import logic.user_profile.UserProfileController;
+import logic.user_profile.UserProfileUI;
 import logic.login.LoginController;
 
 public class HomeController {
