@@ -1,4 +1,4 @@
-package organization_profile;
+package logic.organization_profile;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

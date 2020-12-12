@@ -1,5 +1,6 @@
 package login;
 
+import logic.course_page.OrganizationProfileUI;
 import logic.homepage.HomeController;
 import logic.homepage.HomeUI;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,8 @@ public class LoginController {
 		
 	}
 
-	public static  synchronized LoginController getInstance(LoginUI vista, LoginModel model) {
+	public static  synchronized LoginController getInstance(LoginUI vista,
+			LoginModel model) {
 		if (instance == null) {
 			instance = new LoginController(vista, model);
 		}
@@ -25,7 +27,7 @@ public class LoginController {
 		return instance;
 	}
 
-	
+	//
 	public void assegnaGestori() {
 
 		ActionListener gestoreSignUp = new ActionListener() {
@@ -34,10 +36,13 @@ public class LoginController {
 			public void actionPerformed(ActionEvent e2) {
 
 				HomeUI homeView = new HomeUI();
-				HomeController homeController = HomeController.getInstance(homeView);
+
+				HomeController  homeController = HomeController
+						.getInstance(homeView);
 				homeController.assegnaGestori();
 
 				view.setVisible(false);
+				view.resetForm();
 
 			}
 
@@ -54,13 +59,10 @@ public class LoginController {
 			}
 
 		};
-		
 		view.getDeleteButton().addActionListener(gestoreDelete);
 
 	}
-	
 	public static void showLoginUI() {
-		view.resetForm();
 		view.setVisible(true);
 	}
 

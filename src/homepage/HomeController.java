@@ -1,13 +1,12 @@
 package homepage;
 
-import user_profile.UserProfileController;
-import user_profile.UserProfileUI;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import login.LoginModel;
-import login.LoginUI;
-import login.LoginController;
+import logic.login.LoginModel;
+import logic.login.LoginUI;
+import user_profile.UserProfileController;
+import user_profile.UserProfileUI;
+import logic.login.LoginController;
 
 public class HomeController {
 
@@ -29,29 +28,28 @@ public class HomeController {
 
 	public void assegnaGestori() {
 
-		ActionListener gestoreEsc = e -> {
+		ActionListener gestoreExit = e -> {
 			view.setVisible(false);
 			LoginUI vista = new LoginUI();
 			LoginModel modello = new LoginModel();
-			LoginController.getInstance(vista,modello);
+			 LoginController.getInstance(vista,
+					modello);
 
 		};
-		view.getEscButton().addActionListener(gestoreEsc);
-
-	
-		ActionListener gestoreProfile = new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				view.setVisible(false);
-				UserProfileUI upView = new UserProfileUI();
-				UserProfileController.getInstance(upView);
-			}
+		view.getExitButton().addActionListener(gestoreExit);
+		
+		ActionListener gestoreProfile= e -> {
+			view.setVisible(false);
+			UserProfileUI vista = new UserProfileUI();
+			UserProfileController controller=UserProfileController.getInstance(vista);
+			controller.assegnaGestori();
+			
 
 		};
 		view.getProfileButton().addActionListener(gestoreProfile);
 
-}
+	}
+	
 	
 	public static void showLoginUI() {
 		view.setVisible(true);
