@@ -1,5 +1,6 @@
-package login;
+package logic.login;
 
+import logic.course_page.OrganizationController;
 import logic.course_page.OrganizationProfileUI;
 import logic.homepage.HomeController;
 import logic.homepage.HomeUI;

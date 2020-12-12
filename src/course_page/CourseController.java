@@ -1,4 +1,4 @@
-package course_page;
+package logic.course_page;
 
 import logic.login.LoginUI;
 import logic.login.LoginController;
@@ -9,12 +9,12 @@ import java.awt.event.ActionListener;
 
 public class CourseController{
 
-	private CourseUI view;
+	private CourseUI vista;
 
 	private static CourseController instance = null;
 
 	private CourseController(CourseUI vista){
-		this.view = vista;
+		this.vista = vista;
 	}
 
 	public synchronized static CourseController getInstance(CourseUI vista){
@@ -25,20 +25,20 @@ public class CourseController{
 
 	}
 
-	public void assegnaGestori(){
+	public void assegnaGestoriCourse(){
 
 		ActionListener gestoreSignUp = new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				view.setVisible(false);
+				vista.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				LoginController.getInstance(view, model);
+				 LoginController.getInstance(view,	model);
 			}
 
 		};
-		view.getProfileButton().addActionListener(gestoreSignUp);
+		vista.getProfileButton().addActionListener(gestoreSignUp);
 
 	}
 

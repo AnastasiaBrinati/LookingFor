@@ -1,4 +1,4 @@
-package homepage;
+package logic.homepage;
 
 import java.awt.event.ActionListener;
 

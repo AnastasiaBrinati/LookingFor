@@ -1,4 +1,4 @@
-package course_page;
+package logic.course_page;
 
 import java.awt.Color;
 import java.awt.Toolkit;

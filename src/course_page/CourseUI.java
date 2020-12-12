@@ -1,4 +1,4 @@
-package course_page;
+package logic.course_page;
 
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -16,6 +16,10 @@ import javax.swing.border.EmptyBorder;
 
 public class CourseUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField searchBar;
 	private JButton settingsButton = new JButton("");
@@ -24,8 +28,6 @@ public class CourseUI extends JFrame {
 	private JPanel panel1 = new JPanel();
 	private JButton homeButton = new JButton("");
 	private final JPanel panel2 = new JPanel();
-	private final JLabel lblNewLabel = new JLabel("");
-	private final JButton joinButton = new JButton("     Join Course");
 	private final JButton profileButton = new JButton("");
 
 	public CourseUI() {
@@ -71,15 +73,6 @@ public class CourseUI extends JFrame {
 		profileButton.setBounds(1269, 0, 38, 42);
 
 		panel1.setBounds(0, 42, 1317, 691);
-		joinButton.setBounds(10, 20, 154, 41);
-
-		
-		joinButton.setForeground(Color.WHITE);
-		joinButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\plus-7-32.png"));
-		joinButton.setBackground(Color.DARK_GRAY);
-
-		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 72, 154, 2);
 
 		headerPanel.add(homeButton);
 		headerPanel.add(searchBar);
@@ -92,11 +85,6 @@ public class CourseUI extends JFrame {
 
 		panel1.add(panel2);
 		panel2.setLayout(null);
-		panel2.add(joinButton);
-		panel2.add(separator);
-		lblNewLabel.setBounds(0, 0, 184, 692);
-		panel2.add(lblNewLabel);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\5923e27e1c9c5b5d4a3e2604b17b638b.jpg"));
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(431, 243, 2, 2);

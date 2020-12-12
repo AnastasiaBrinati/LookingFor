@@ -1,4 +1,4 @@
-package login;
+package logic.login;
 
 import java.awt.Button;
 import java.awt.Color;

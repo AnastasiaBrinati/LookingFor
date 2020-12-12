@@ -1,4 +1,4 @@
-package login;
+package logic.login;
 
 public class LoginModel {
 
