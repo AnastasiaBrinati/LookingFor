@@ -3,10 +3,11 @@ package logic.user_profile;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.course_page.OrganizationController;
-import logic.course_page.OrganizationProfileUI;
 import logic.homepage.*;
 import logic.login.*;
+import logic.course_page.AddCourseUI;
+import logic.organization_profile.OrganizationController;
+import logic.organization_profile.OrganizationProfileUI;
 import logic.sign_in.SignInController;
 import logic.sign_in.SignInUI;
 
@@ -92,9 +93,10 @@ public class UserProfileController {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				OrganizationProfileUI vista=new OrganizationProfileUI();
 				
-				OrganizationController controller=OrganizationController.getInstance(vista);
+				OrganizationProfileUI vista=new OrganizationProfileUI();
+				AddCourseUI view2 = new AddCourseUI();
+				OrganizationController controller=OrganizationController.getInstance(vista, view2);
 				controller.assegnaGestori();
 				view.setVisible(false);
 							

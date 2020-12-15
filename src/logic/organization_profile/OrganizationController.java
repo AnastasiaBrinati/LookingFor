@@ -1,5 +1,7 @@
-package logic.course_page;
+package logic.organization_profile;
 
+import logic.course_page.AddCourseUI;
+import logic.course_page.Course;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,16 +11,20 @@ import logic.login.*;
 public class OrganizationController{
 
 	private static  OrganizationProfileUI organizationProfileView;
+	private static AddCourseUI addCourseView;
+	private OrganizationProfile orgmodel;
+	private Course course;
 
 	private static OrganizationController instance = null;
 
-	private OrganizationController(OrganizationProfileUI view){
+	private OrganizationController(OrganizationProfileUI view, AddCourseUI view2){
 		organizationProfileView = view;
+		addCourseView = view2;
 	}
 
-	public synchronized static OrganizationController getInstance(OrganizationProfileUI view){
+	public synchronized static OrganizationController getInstance(OrganizationProfileUI view, AddCourseUI view2){
 		if (instance == null) {
-			instance = new OrganizationController(view);
+			instance = new OrganizationController(view, view2);
 			instance.assegnaGestori();
 		}
 		viewOrganizationProfileUI();
@@ -28,8 +34,9 @@ public class OrganizationController{
 	}
 
 	public void assegnaGestori(){
-
-		ActionListener gestoreSignUp = new ActionListener(){
+		
+		
+		ActionListener gestoreLogin = new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -40,19 +47,35 @@ public class OrganizationController{
 			}
 
 		};
-		organizationProfileView.getProfileButton().addActionListener(gestoreSignUp);
+		//profileButton???
+		organizationProfileView.getProfileButton().addActionListener(gestoreLogin);
 		
+		//showing CoursesPanel
 		ActionListener gestoreCourses = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 organizationProfileView.setCoursesPanelVisible();
+				
+				organizationProfileView.setCoursesPanelVisible();
 			 
 			}
 		};
 		organizationProfileView.getCoursesButton().addActionListener(gestoreCourses);
-	
 		
+		
+		//click on the add button on the CoursesPanel 
+		ActionListener gestoreAddCourse = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				addCourseView.setVisible(true);
+			 
+			}
+		};
+		organizationProfileView.getAddButton().addActionListener(gestoreAddCourse);
+		
+		//showing CourtsPanel
         ActionListener gestoreCourts = new ActionListener() {
 			
 			@Override
@@ -62,6 +85,7 @@ public class OrganizationController{
 		};
 		organizationProfileView.getCourtsButton().addActionListener(gestoreCourts);
 		
+		//showing EventsPanel
         ActionListener gestoreEvents = new ActionListener() {
 			
 			@Override
@@ -83,6 +107,23 @@ public class OrganizationController{
 			}
 		};
 		organizationProfileView.getHomeButton().addActionListener(gestoreHome);
+		
+		//click on addCourse on AddCourseView
+		ActionListener gestoreNewCourse = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				addCourseView.setVisible(false);
+				String name = addCourseView.getName();
+				Double priceForLesson = addCourseView.getPriceForLesson();
+				Double priceMonthly = addCourseView.getPriceMonthly();
+				course = new Course(name, priceForLesson, priceMonthly);
+				orgmodel.addCourse(course);
+				organizationProfileView.addCourse(name);
+			}
+		};
+		addCourseView.getAddCourseButton().addActionListener(gestoreNewCourse);
+		
 
 	}
 	

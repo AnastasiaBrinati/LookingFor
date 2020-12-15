@@ -1,9 +1,9 @@
 package logic.sign_in;
 
-import logic.course_page.OrganizationController;
-import logic.course_page.OrganizationProfileUI;
 import logic.homepage.*;
 import logic.login.*;
+import logic.organization_profile.OrganizationController;
+import logic.organization_profile.OrganizationProfileUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
