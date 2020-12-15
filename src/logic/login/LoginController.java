@@ -1,70 +1,65 @@
 package logic.login;
 
-import logic.course_page.OrganizationController;
-import logic.course_page.OrganizationProfileUI;
-import logic.homepage.HomeController;
-import logic.homepage.HomeUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import logic.sign_in.*;
+import logic.homepage.*;
 
 public class LoginController {
-
-	private static LoginUI view;
 	
+	private static LoginUI loginView;
+	private static LoginModel loginModel;
 	private static LoginController instance = null;
-
-	private LoginController(LoginUI vista, LoginModel modello) {
-		view = vista;
-		
+	
+	private LoginController(LoginUI view, LoginModel model) {
+		loginView = view;
+		loginModel = model;
 	}
-
-	public static  synchronized LoginController getInstance(LoginUI vista,
-			LoginModel model) {
-		if (instance == null) {
-			instance = new LoginController(vista, model);
+	
+	public static synchronized LoginController getInstance(LoginUI view, LoginModel model) {
+		if(instance==null) {
+			instance = new LoginController(view, model);
+			instance.assegnaGestori();
 		}
-		showLoginUI();
+		showSignInUI();
 		return instance;
 	}
+	
+	public static void showSignInUI() {
+		loginView.setVisible(true);
+	}
 
-	//
-	public void assegnaGestori() {
+	
+	public void assegnaGestori(){
 
-		ActionListener gestoreSignUp = new ActionListener() {
+		ActionListener gestoreSignUp = new ActionListener(){
 
 			@Override
-			public void actionPerformed(ActionEvent e2) {
-
-				HomeUI homeView = new HomeUI();
-
-				HomeController  homeController = HomeController
-						.getInstance(homeView);
-				homeController.assegnaGestori();
-
-				view.setVisible(false);
-				view.resetForm();
-
+			public void actionPerformed(ActionEvent e){
+				loginView.setVisible(false);
+				SignInUI signInView = new SignInUI();
+				SignInModel model = new SignInModel();
+				SignInController.getInstance(signInView, model);
 			}
 
 		};
-
-		view.getSignUpButton().addActionListener(gestoreSignUp);
-
-		ActionListener gestoreDelete = new ActionListener() {
+		loginView.getSignInButton().addActionListener(gestoreSignUp);
+		
+		ActionListener gestoreLogin = new ActionListener(){
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				view.resetForm();
-
+			public void actionPerformed(ActionEvent e){
+				loginView.setVisible(false);
+				HomeUI homepageView = new HomeUI();
+				HomeModel model = new HomeModel();
+				HomeController.getInstance(homepageView, model);
 			}
 
 		};
-		view.getDeleteButton().addActionListener(gestoreDelete);
+		loginView.getLoginButton().addActionListener(gestoreLogin);
 
 	}
-	public static void showLoginUI() {
-		view.setVisible(true);
-	}
+
 
 }

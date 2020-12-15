@@ -5,11 +5,10 @@ import java.awt.event.ActionListener;
 
 import logic.course_page.OrganizationController;
 import logic.course_page.OrganizationProfileUI;
-import logic.homepage.HomeController;
-import logic.homepage.HomeUI;
-import logic.login.LoginController;
-import logic.login.LoginModel;
-import logic.login.LoginUI;
+import logic.homepage.*;
+import logic.login.*;
+import logic.sign_in.SignInController;
+import logic.sign_in.SignInUI;
 
 public class UserProfileController {
 	
@@ -21,9 +20,10 @@ public class UserProfileController {
 		view = vista;
 	}
 
-	public synchronized static UserProfileController getInstance(UserProfileUI vista){
+	public static synchronized UserProfileController getInstance(UserProfileUI vista){
 		if (instance == null) {
 			instance = new UserProfileController(vista);
+			instance.assegnaGestori();
 		}
 		
 		showUserProfileUI();
@@ -66,7 +66,8 @@ public class UserProfileController {
 			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				HomeUI vista=new HomeUI();
-				HomeController controller=HomeController.getInstance(vista);
+				HomeModel homeModel = new HomeModel();
+				HomeController controller=HomeController.getInstance(vista, homeModel);
 							
 			}
 
@@ -77,9 +78,9 @@ public class UserProfileController {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				LoginUI vista=new LoginUI();
+				LoginUI view=new LoginUI();
 				LoginModel model=new LoginModel();
-				LoginController controller=LoginController.getInstance(vista, model);
+				LoginController controller=LoginController.getInstance(view, model);
 				view.setVisible(false);
 							
 			}

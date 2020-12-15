@@ -1,33 +1,28 @@
 package logic.course_page;
 
-import logic.login.LoginUI;
-import logic.login.LoginController;
-import logic.login.LoginModel;
-
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.homepage.HomeController;
-import logic.homepage.HomeUI;
-
+import logic.homepage.*;
+import logic.login.*;
 
 public class OrganizationController{
 
-	private static  OrganizationProfileUI vista;
+	private static  OrganizationProfileUI organizationProfileView;
 
 	private static OrganizationController instance = null;
 
-	private OrganizationController(OrganizationProfileUI vista){
-		this.vista = vista;
+	private OrganizationController(OrganizationProfileUI view){
+		organizationProfileView = view;
 	}
 
-	public synchronized static OrganizationController getInstance(OrganizationProfileUI vista){
+	public synchronized static OrganizationController getInstance(OrganizationProfileUI view){
 		if (instance == null) {
-			instance = new OrganizationController(vista);
+			instance = new OrganizationController(view);
+			instance.assegnaGestori();
 		}
 		viewOrganizationProfileUI();
-		vista.setDescriptionPanelVisible();
+		view.setDescriptionPanelVisible();
 		return instance;
 
 	}
@@ -38,61 +33,61 @@ public class OrganizationController{
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				vista.setVisible(false);
+				organizationProfileView.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				LoginController.getInstance(view,	model);
+				LoginController.getInstance(view, model);
 			}
 
 		};
-		vista.getProfileButton().addActionListener(gestoreSignUp);
+		organizationProfileView.getProfileButton().addActionListener(gestoreSignUp);
 		
-		ActionListener gestoreCourses =new ActionListener() {
+		ActionListener gestoreCourses = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 vista.setCoursesPanelVisible();
+			 organizationProfileView.setCoursesPanelVisible();
 			 
 			}
 		};
-		vista.getCoursesButton().addActionListener(gestoreCourses);
+		organizationProfileView.getCoursesButton().addActionListener(gestoreCourses);
 	
 		
-        ActionListener gestoreCourts =new ActionListener() {
+        ActionListener gestoreCourts = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 vista.setCourtsPanelVisible();
+			 organizationProfileView.setCourtsPanelVisible();
 			}
 		};
-		vista.getCourtsButton().addActionListener(gestoreCourts);
+		organizationProfileView.getCourtsButton().addActionListener(gestoreCourts);
 		
-        ActionListener gestoreEvents =new ActionListener() {
+        ActionListener gestoreEvents = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 vista.setEventsPanelVisible();
+			 organizationProfileView.setEventsPanelVisible();
 			}
 		};
-		vista.getEventsButton().addActionListener(gestoreEvents);
+		organizationProfileView.getEventsButton().addActionListener(gestoreEvents);
 		
-         ActionListener gestoreHome =new ActionListener() {
+         ActionListener gestoreHome = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				HomeUI view=new HomeUI();
-				HomeController controller=HomeController.getInstance(view);
-				vista.setVisible(false);
-				
+				HomeUI homeView = new HomeUI();
+				HomeModel homeModel = new HomeModel();
+				HomeController controller = HomeController.getInstance(homeView, homeModel);
+				organizationProfileView.setVisible(false);
 			 
 			}
 		};
-		vista.getHomeButton().addActionListener(gestoreHome);
+		organizationProfileView.getHomeButton().addActionListener(gestoreHome);
 
 	}
 	
 	public static void viewOrganizationProfileUI() {
-		vista.setVisible(true);
+		organizationProfileView.setVisible(true);
 	}
 
 }

@@ -2,48 +2,38 @@ package logic.homepage;
 
 import java.awt.event.ActionListener;
 
-import logic.login.LoginModel;
-import logic.login.LoginUI;
+import logic.login.*;
 import logic.user_profile.UserProfileController;
 import logic.user_profile.UserProfileUI;
-import logic.login.LoginController;
 
 public class HomeController {
 
 	private static HomeUI view;
+	private static HomeModel model;
 	private static HomeController instance = null;
 
-	private HomeController(HomeUI vista) {
+	private HomeController(HomeUI vista,HomeModel model) {
 		view = vista;
 	}
 
-	public static synchronized  HomeController getInstance(HomeUI vista) {
+	public static synchronized  HomeController getInstance(HomeUI vista, HomeModel model) {
 		if (instance == null) {
-			instance = new HomeController(vista);
+			instance = new HomeController(vista, model);
+			instance.assegnaGestori();
 		}
-		showLoginUI();
+		showHomepage();
 		return instance;
 
 	}
 
 	public void assegnaGestori() {
 
-		ActionListener gestoreExit = e -> {
-			view.setVisible(false);
-			LoginUI vista = new LoginUI();
-			LoginModel modello = new LoginModel();
-			 LoginController.getInstance(vista,
-					modello);
-
-		};
-		view.getExitButton().addActionListener(gestoreExit);
 		
-		ActionListener gestoreProfile= e -> {
+		ActionListener gestoreProfile = e -> {
 			view.setVisible(false);
 			UserProfileUI vista = new UserProfileUI();
 			UserProfileController controller=UserProfileController.getInstance(vista);
 			controller.assegnaGestori();
-			
 
 		};
 		view.getProfileButton().addActionListener(gestoreProfile);
@@ -51,7 +41,7 @@ public class HomeController {
 	}
 	
 	
-	public static void showLoginUI() {
+	public static void showHomepage() {
 		view.setVisible(true);
 	}
 

@@ -2,9 +2,7 @@ package logic.main;
 
 import javax.swing.SwingUtilities;
 
-import logic.login.LoginController;
-import logic.login.LoginModel;
-import logic.login.LoginUI;
+import logic.login.*;
 
 public class Main {
 	public static void main(String[] args) {
@@ -15,8 +13,7 @@ public class Main {
 
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				LoginController control = LoginController.getInstance(view,
-						model);
+				LoginController control = LoginController.getInstance(view, model);
 				control.assegnaGestori();
 
 			}

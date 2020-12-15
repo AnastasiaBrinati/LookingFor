@@ -1,45 +1,49 @@
 package logic.course_page;
 
-import logic.login.LoginUI;
-import logic.login.LoginController;
-import logic.login.LoginModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import logic.login.*;
 
 
 public class CourseController{
 
-	private CourseUI vista;
+	private CourseUI view;
 
 	private static CourseController instance = null;
 
 	private CourseController(CourseUI vista){
-		this.vista = vista;
+		this.view = vista;
 	}
 
 	public synchronized static CourseController getInstance(CourseUI vista){
 		if (instance == null) {
 			instance = new CourseController(vista);
+			instance.assegnaGestori();
 		}
 		return instance;
 
 	}
 
-	public void assegnaGestoriCourse(){
+	public void assegnaGestori(){
 
 		ActionListener gestoreSignUp = new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				vista.setVisible(false);
+				view.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
-				 LoginController.getInstance(view,	model);
+				LoginController.getInstance(view, model);
 			}
 
 		};
-		vista.getProfileButton().addActionListener(gestoreSignUp);
+		view.getProfileButton().addActionListener(gestoreSignUp);
 
+	}
+	
+	public void showCouseView() {
+		view.setVisible(true);
 	}
 
 }
