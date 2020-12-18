@@ -78,7 +78,7 @@ public class UserProfileUI extends JFrame {
 		panel4.add(btnProva1);
 		
 		//header
-		headerPanel.setBackground(Color.ORANGE);
+		headerPanel.setBackground(new Color(102, 205, 170));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1317, 51);
 		headerPanel.setLayout(null);
@@ -151,12 +151,13 @@ public class UserProfileUI extends JFrame {
 		
 		contentPane.add(panel1);
 		
-		panel.setBackground(Color.ORANGE);
+		panel.setBackground(new Color(102, 205, 170));
 		panel.setBounds(0, 51, 307, 674);
 		panel.setLayout(null);
-		btnCourses.setBackground(Color.ORANGE);
+		btnCourses.setBackground(new Color(102, 205, 170));
 		btnCourses.setBounds(10, 79, 287, 57);
 		panel.add(btnCourses);
+		btnEvents.setBackground(new Color(102, 205, 170));
 		btnEvents.setBounds(10, 133, 287, 57);
 		panel.add(btnEvents);
 		
@@ -166,14 +167,17 @@ public class UserProfileUI extends JFrame {
 		panelSettings.setBounds(10, 275, 287, 114);
 		panel.add(panelSettings);
 		panelSettings.setLayout(null);
+		btnSettings.setBackground(new Color(102, 205, 170));
 		btnSettings.setBounds(0, 0, 287, 57);
 		panelSettings.add(btnSettings);
+		btnHelp.setBackground(new Color(102, 205, 170));
 		btnHelp.setBounds(0, 55, 287, 57);
 		panelSettings.add(btnHelp);
 		lblTitle.setBounds(89, 27, 141, 41);
 		panel.add(lblTitle);
 		lblTitle.setForeground(new Color(0, 0, 0));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
+		organizationsButton.setBackground(new Color(102, 205, 170));
 		organizationsButton.setBounds(10, 201, 287, 57);
 		
 		panel.add(organizationsButton);
