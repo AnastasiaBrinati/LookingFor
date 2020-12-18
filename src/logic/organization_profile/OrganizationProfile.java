@@ -13,13 +13,12 @@ public class OrganizationProfile {
 	private Course c;
 	private static ArrayList<Course> courses;
 	
-	public OrganizationProfile(String name, String username, Course c) {
+	public OrganizationProfile() {
+		//String name, String username
 		//se credenziali ok
 		//inizializzo l'array di corsi dal db		
 		
 		//esempio
-		courses.add(c);
-		
 	}
 	
 	public void addCourse(Course course) {

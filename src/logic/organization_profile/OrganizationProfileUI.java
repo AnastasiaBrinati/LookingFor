@@ -1,7 +1,9 @@
 package logic.organization_profile;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.Window;
 
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -45,20 +47,15 @@ public class OrganizationProfileUI extends JFrame {
 	private JButton homeButton = new JButton("");
 	private final JButton profileButton = new JButton("profile");
 	private final JPanel panel = new JPanel();
-	JPanel coursesPanel = new JPanel();
-	JButton coursesButton = new JButton("Courses");
-	JButton eventsButton = new JButton("Events");
-	JButton courtsButton = new JButton("Courts");
-	JButton btnNewButton_2_3 = new JButton("Settings");
-	JButton helpButton = new JButton("Help");
+	private JPanel coursesPanel = new JPanel();
+	private JButton coursesButton = new JButton("Courses");
+	private JButton eventsButton = new JButton("Events");
+	private JButton courtsButton = new JButton("Courts");
+	private JButton btnNewButton_2_3 = new JButton("Settings");
+	private JButton helpButton = new JButton("Help");
 	private final JPanel descriptionPanel = new JPanel();
 	private final JLabel lblNewLabel_1 = new JLabel("Description");
 	private final JTextField descriptionTextfield = new JTextField();
-	private final JButton btnNewButton_1 = new JButton("New button");
-	private final JButton btnNewButton_2 = new JButton("New button");
-	private final JButton btnNewButton_3 = new JButton("New button");
-	private final JButton btnNewButton_4 = new JButton("New button");
-	private final JButton btnNewButton_5 = new JButton("New button");
 	private final JLabel lblNewLabel_2 = new JLabel("Courses");
 	private final JPanel courtsPanel = new JPanel();
 	private final JLabel lblNewLabel_3 = new JLabel("Courts");
@@ -70,7 +67,8 @@ public class OrganizationProfileUI extends JFrame {
 	private final JButton btnNewButton_3_1_1_1_1 = new JButton("New button");
 	private final JLabel lblNewLabel_4 = new JLabel("Events");
 	
-	
+	private Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+	private JPanel PANEL = new JPanel();
 	private final JButton addButton = new JButton("+");
 
 	public OrganizationProfileUI() {
@@ -89,23 +87,49 @@ public class OrganizationProfileUI extends JFrame {
 	
 		
 		//courses
+		
+		//coursesPanel.pack();
+        //coursesPanel.setLocation(null);
+
+		
+		profileButton.setBounds(1046, 0, 38, 42);
+		profileButton.setIcon(null);
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorder(null);
+		settingsButton.setBounds(10, 0, 38, 42);
+		
+	    settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
+	    settingsButton.setContentAreaFilled(false);
+	    settingsButton.setBorder(null);
+	    
+		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorder(null);
+		
+		headerPanel.setBounds(0, 0, 1086, 40);
+		headerPanel.setBackground(new Color(0, 128, 128));
+		headerPanel.setForeground(new Color(255, 165, 0));
+		homeButton.setBounds(58, 0, 45, 42);
+		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
+		homeButton.setBorder(null);
+		homeButton.setContentAreaFilled(false);
+		headerPanel.setLayout(null);
+		headerPanel.add(homeButton);
+		headerPanel.add(profileButton);
+		headerPanel.add(settingsButton);
+		headerPanel.add(profileButton);
+		contentPane.add(headerPanel);
+        
 		coursesPanel.setBounds(268, 132, 818, 511);
 		coursesPanel.add(addButton);
-		btnNewButton_1.setBounds(276, 63, 256, 123);
-		coursesPanel.add(btnNewButton_1);
-		btnNewButton_2.setBounds(542, 63, 256, 123);
-		coursesPanel.add(btnNewButton_2);
-		btnNewButton_3.setBounds(10, 197, 256, 123);
-		coursesPanel.add(btnNewButton_3);
-		btnNewButton_4.setBounds(276, 197, 256, 123);
-		coursesPanel.add(btnNewButton_4);
-		btnNewButton_5.setBounds(542, 197, 256, 123);
-		coursesPanel.add(btnNewButton_5);
-		addButton.setBounds(10, 63, 256, 123);
+		addButton.setBounds(10, 63, 130, 63);
 		lblNewLabel_2.setBounds(10, 38, 73, 14);
 		coursesPanel.add(lblNewLabel_2);
 		contentPane.add(coursesPanel);
 		coursesPanel.setLayout(null);
+		
+		PANEL.setBounds(10, 147, 599, 243);
+		coursesPanel.add(PANEL);
 		
 		//events
 		eventsPanel.setBounds(268, 132, 818, 511);
@@ -131,40 +155,8 @@ public class OrganizationProfileUI extends JFrame {
 		courtsPanel.add(btnNewButton_3_1_1);
 		btnNewButton_3_1_2.setBounds(542, 59, 256, 123);
 		courtsPanel.add(btnNewButton_3_1_2);
-		
-		profileButton.setBounds(1046, 0, 38, 42);
-		profileButton.setIcon(null);
-		profileButton.setContentAreaFilled(false);
-		profileButton.setBorder(null);
-		settingsButton.setBounds(10, 0, 38, 42);
-		
-	    settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
-		settingsButton.setContentAreaFilled(false);
-		settingsButton.setBorder(null);
-				
-		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
-		profileButton.setContentAreaFilled(false);
-		profileButton.setBorder(null);
-		
-		headerPanel.setBounds(0, 0, 1086, 40);
-		headerPanel.setBackground(new Color(0, 128, 128));
-		headerPanel.setForeground(new Color(255, 165, 0));
-		homeButton.setBounds(58, 0, 45, 42);
-		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
-		homeButton.setBorder(null);
-		homeButton.setContentAreaFilled(false);
-		headerPanel.setLayout(null);
-		headerPanel.add(homeButton);
-		headerPanel.add(profileButton);
-		headerPanel.add(settingsButton);
-		headerPanel.add(profileButton);
-		contentPane.add(headerPanel);
-										
-		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(0, 0, 1, 1);
-		headerPanel.add(layeredPane);
 		panel.setBounds(0, 39, 269, 604);
-		panel.setBackground(new Color(0, 206, 209));
+		panel.setBackground(new Color(102, 205, 170));
 		
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -180,38 +172,37 @@ public class OrganizationProfileUI extends JFrame {
 		coursesButton.setBounds(0, 91, 269, 59);
 		panel.add(coursesButton);
 		
-		eventsButton.setBackground(new Color(0, 206, 209));
+		eventsButton.setBackground(new Color(102, 205, 170));
 		eventsButton.setBounds(0, 156, 269, 59);
 		panel.add(eventsButton);
 										
-		courtsButton.setBackground(new Color(0, 206, 209));
+		courtsButton.setBackground(new Color(102, 205, 170));
 		courtsButton.setBounds(0, 221, 269, 59);
 		panel.add(courtsButton);
 		
-		btnNewButton_2_3.setBackground(new Color(0, 206, 209));
+		btnNewButton_2_3.setBackground(new Color(102, 205, 170));
 		btnNewButton_2_3.setBounds(0, 285, 269, 59);
 		panel.add(btnNewButton_2_3);
 										
-		helpButton.setBackground(new Color(0, 206, 209));
+		helpButton.setBackground(new Color(102, 205, 170));
 		helpButton.setBounds(0, 349, 269, 59);
 		panel.add(helpButton);
 		
 		//profile header
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(192, 192, 192));
+		panel_1.setBounds(268, 39, 818, 93);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
 										
-										JPanel panel_1 = new JPanel();
-										panel_1.setBackground(new Color(192, 192, 192));
-										panel_1.setBounds(268, 39, 818, 93);
-										contentPane.add(panel_1);
-										panel_1.setLayout(null);
+		JLabel orgLocationLbl = new JLabel("Location");
+		orgLocationLbl.setBounds(104, 68, 73, 14);
+		panel_1.add(orgLocationLbl);
 										
-										JLabel orgLocationLbl = new JLabel("Location");
-										orgLocationLbl.setBounds(104, 68, 73, 14);
-										panel_1.add(orgLocationLbl);
-										
-										JLabel organizationNameLbl = new JLabel("Organization Name");
-										organizationNameLbl.setBounds(104, 26, 179, 25);
-										organizationNameLbl.setFont(new Font("Tahoma", Font.PLAIN, 20));
-										panel_1.add(organizationNameLbl);
+		JLabel organizationNameLbl = new JLabel("Organization Name");
+		organizationNameLbl.setBounds(104, 26, 179, 25);
+		organizationNameLbl.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		panel_1.add(organizationNameLbl);
 										
 		JLabel organizationImageLbl = new JLabel("");
 		organizationImageLbl.setHorizontalAlignment(SwingConstants.CENTER);
@@ -228,6 +219,8 @@ public class OrganizationProfileUI extends JFrame {
 										
 		descriptionPanel.add(descriptionTextfield);
 		LineBorder lineBorder=new LineBorder(Color.white,8,true);
+		
+		
 	}
 
 	public JButton getProfileButton() {
@@ -249,12 +242,17 @@ public class OrganizationProfileUI extends JFrame {
 		return addButton;
 	}
 	
-	public void addCourse(String name) {
-		JButton b = new JButton(name);
-		b.setBounds(276, 63, 256, 123);
-		coursesPanel.add(b);
-		
-	}
+	public void createFrame(String name) {
+
+        JButton frame = new JButton(name);
+        frame.setBorder(new LineBorder(Color.BLACK));
+        frame.setPreferredSize(new Dimension(80, 80));
+        frame.setVisible(true);
+        PANEL.add(frame);
+        coursesPanel.revalidate();
+        //contentPane.revalidate();
+
+    }
 	
 	public void setDescriptionPanelVisible() {
 		descriptionPanel.setVisible(true);
@@ -270,8 +268,8 @@ public class OrganizationProfileUI extends JFrame {
 		eventsPanel.setVisible(false);
 		
 		coursesButton.setBackground(new Color(0, 128, 128));
-		eventsButton.setBackground(new Color(0, 206, 209));
-		courtsButton.setBackground(new Color(0, 206, 209));		
+		eventsButton.setBackground(new Color(102, 205, 170));
+		courtsButton.setBackground(new Color(102, 205, 170));		
 	}
 	
 	public void setEventsPanelVisible() {
@@ -280,9 +278,9 @@ public class OrganizationProfileUI extends JFrame {
 		courtsPanel.setVisible(false);
 		eventsPanel.setVisible(true);
 		
-		coursesButton.setBackground(new Color(0, 206, 209));
+		coursesButton.setBackground(new Color(102, 205, 170));
 		eventsButton.setBackground(new Color(0, 128, 128));
-		courtsButton.setBackground(new Color(0, 206, 209));
+		courtsButton.setBackground(new Color(102, 205, 170));
 	}
 	
 	public void setCourtsPanelVisible() {
@@ -291,11 +289,9 @@ public class OrganizationProfileUI extends JFrame {
 		courtsPanel.setVisible(true);
 		eventsPanel.setVisible(false);
 		
-		coursesButton.setBackground(new Color(0, 206, 209));
-		eventsButton.setBackground(new Color(0, 206, 209));
+		coursesButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setBackground(new Color(102, 205, 170));
 		courtsButton.setBackground(new Color(0, 128, 128));
 	}
-	
-	
 }
 	

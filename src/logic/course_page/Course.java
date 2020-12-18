@@ -5,9 +5,9 @@ import com.sun.prism.Image;
 public class Course {
 	
 	String name;
-	Double pricForLesson;
+	Double priceForLesson;
 	Double priceMonthly;
-	Image img;
+	//Image img;
 	
 	
 	public String getCourseName() {
@@ -15,6 +15,8 @@ public class Course {
 	}
 	
 	public Course(String name, Double priceForLesson, Double priceMonthly) {
-		Course course = new Course(name, priceForLesson, priceMonthly);
+		this.name = name;
+		this.priceForLesson = priceForLesson;
+		this.priceMonthly = priceMonthly;
 	}
 }
