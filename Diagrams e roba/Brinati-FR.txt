@@ -1,6 +1,0 @@
-The system shall provide a calendar feature.
-
-The system shall provide a connection to google maps.
-
-The system Shall provide a feature to delete posts. 
-
