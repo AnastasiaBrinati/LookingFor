@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.TextArea;
 
 public class UserProfileUI extends JFrame {
@@ -23,8 +24,7 @@ public class UserProfileUI extends JFrame {
 	private JButton settingsButton = new JButton("");
 	private JPanel headerPanel = new JPanel();
 	
-	private JPanel panel1 = new JPanel();
-	private JLabel lblImg = new JLabel("img");
+	private JPanel descriprionPanel = new JPanel();
 	private TextArea textArea = new TextArea();
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
@@ -33,10 +33,6 @@ public class UserProfileUI extends JFrame {
 	private final JLabel lblNewLabel = new JLabel("About me");
 	//non penso servirà più
 	private JPanel panel3 = new JPanel();
-	private JButton btnNewButton = new JButton("New button");
-	private JButton btnNewButton1 = new JButton("New button");
-	private JButton btnNewButton2 = new JButton("New button");
-	private JButton btnNewButton3 = new JButton("New button");
 	
 	//profilo
 	private final JLabel lblUsername = new JLabel("username");
@@ -47,40 +43,22 @@ public class UserProfileUI extends JFrame {
 	private final JButton btnHelp = new JButton("Help");
 	private final JButton btnSettings = new JButton("Settings");
 	private final JPanel panelSettings = new JPanel();
-	private final JPanel panel4 = new JPanel();
-	private JPanel panel5 = new JPanel();
-	private final JButton btnProva1 = new JButton("Hello4!!!!");
-	private final JButton btnProva2 = new JButton("HELLO5!!!");
 	private final JButton organizationsButton = new JButton("Organizations");
 
 	public UserProfileUI() {
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1333, 772);
+		setBounds(100, 100, 1283, 682);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		panel5.setBounds(306, 51, 1011, 673);
-		contentPane.add(panel5);
-		panel5.setLayout(null);
-		btnProva2.setBounds(463, 5, 266, 124);
-		
-		panel5.add(btnProva2);
-		panel4.setBounds(305, 51, 1012, 674);
-		
-		contentPane.add(panel4);
-		panel4.setLayout(null);
-		btnProva1.setBounds(165, 96, 85, 21);
-		
-		panel4.add(btnProva1);
-		
 		//header
 		headerPanel.setBackground(new Color(102, 205, 170));
 		headerPanel.setForeground(new Color(255, 165, 0));
-		headerPanel.setBounds(0, 0, 1317, 51);
+		headerPanel.setBounds(0, 0, 1269, 51);
 		headerPanel.setLayout(null);
 
 		homeButton.setBounds(370, 0, 45, 42);
@@ -115,17 +93,16 @@ public class UserProfileUI extends JFrame {
 
 		contentPane.add(headerPanel);
 
-		panel1.setBounds(305, 51, 1012, 674);
-		panel1.setLayout(null);
-		panel1.add(panel2);
-		lblImg.setBounds(29, 27, 174, 153);
-		panel1.add(lblImg);
+		descriprionPanel.setBounds(305, 51, 1012, 620);
+		descriprionPanel.setLayout(null);
+		descriprionPanel.add(panel2);
+		
 		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 23));
 		lblUsername.setBounds(274, 27, 134, 25);
-		panel1.add(lblUsername);
+		descriprionPanel.add(lblUsername);
 		name.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		name.setBounds(274, 75, 134, 25);
-		panel1.add(name);
+		descriprionPanel.add(name);
 		
 		panel2.setBounds(29, 203, 940, 161);
 		panel2.setLayout(null);
@@ -135,24 +112,20 @@ public class UserProfileUI extends JFrame {
 		panel2.add(lblNewLabel);
 		panel2.add(textArea);
 		
-		panel3.setBounds(29, 404, 940, 174);
+		panel3.setBounds(29, 423, 940, 155);
 		panel3.setLayout(null);
 		
-		btnNewButton.setBounds(10, 10, 164, 154);
-		panel3.add(btnNewButton);
-		btnNewButton1.setBounds(184, 10, 164, 154);
-		panel3.add(btnNewButton1);
-		btnNewButton2.setBounds(358, 10, 164, 154);
-		panel3.add(btnNewButton2);
-		btnNewButton3.setBounds(532, 10, 164, 154);
-		panel3.add(btnNewButton3);
+		descriprionPanel.add(panel3);
 		
-		panel1.add(panel3);
+		contentPane.add(descriprionPanel);
 		
-		contentPane.add(panel1);
+		JLabel myCoursesLbl = new JLabel("MyCourses");
+		myCoursesLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		myCoursesLbl.setBounds(29, 384, 116, 29);
+		descriprionPanel.add(myCoursesLbl);
 		
 		panel.setBackground(new Color(102, 205, 170));
-		panel.setBounds(0, 51, 307, 674);
+		panel.setBounds(0, 51, 307, 584);
 		panel.setLayout(null);
 		btnCourses.setBackground(new Color(102, 205, 170));
 		btnCourses.setBounds(10, 79, 287, 57);
@@ -163,16 +136,16 @@ public class UserProfileUI extends JFrame {
 		
 		contentPane.add(panel);
 		
-		panelSettings.setBackground(Color.ORANGE);
+		panelSettings.setBackground(new Color(102, 205, 170));
 		panelSettings.setBounds(10, 275, 287, 114);
 		panel.add(panelSettings);
 		panelSettings.setLayout(null);
 		btnSettings.setBackground(new Color(102, 205, 170));
 		btnSettings.setBounds(0, 0, 287, 57);
 		panelSettings.add(btnSettings);
-		btnHelp.setBackground(new Color(102, 205, 170));
-		btnHelp.setBounds(0, 55, 287, 57);
+		btnHelp.setBounds(0, 57, 287, 57);
 		panelSettings.add(btnHelp);
+		btnHelp.setBackground(new Color(102, 205, 170));
 		lblTitle.setBounds(89, 27, 141, 41);
 		panel.add(lblTitle);
 		lblTitle.setForeground(new Color(0, 0, 0));
@@ -189,22 +162,6 @@ public class UserProfileUI extends JFrame {
 	
 	public JButton getOrganizationsButton() {
 		return organizationsButton;
-	}
-	
-	
-	public JButton getButton1() {
-		return btnNewButton1;
-	}
-	
-
-	public JButton getButton2() {
-		return btnNewButton2;
-	}
-	
-	
-
-	public JButton getButton3() {
-		return btnNewButton3;
 	}
 	
 	
@@ -240,23 +197,5 @@ public class UserProfileUI extends JFrame {
 	}
 	public JButton getHomeButton() {
 		return homeButton;
-	}
-	
-	public void setPanel1Visible() {
-		panel1.setVisible(true);
-		panel5.setVisible(false);
-		panel4.setVisible(false);
-	}
-	
-	public void setPanel4Visible() {
-		panel4.setVisible(true);
-		panel5.setVisible(false);
-		panel1.setVisible(false);
-	}
-	
-	public void setPanel5Visible() {
-		panel5.setVisible(true);
-		panel4.setVisible(false);
-		panel1.setVisible(false);
 	}
 }

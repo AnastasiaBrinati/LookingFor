@@ -9,18 +9,19 @@ import logic.organization_profile.*;
 public class AddCourseController {
 
 	 private static AddCourseUI view;
-	// private OrganizationProfile model;
-	 private OrganizationProfileUI orgview;
+	 private static OrganizationProfileUI orgview;
 	 private static AddCourseController instance = null;
 	 private static OrganizationProfile model;
 	 
-	 private AddCourseController(AddCourseUI view, OrganizationProfile model) {
-		 this.view = view;
+	 private AddCourseController(AddCourseUI addCourseView, OrganizationProfileUI organizationView, OrganizationProfile orgModel) {
+		 view = addCourseView;
+		 orgview = organizationView;
+		 model = orgModel;
 	 }
 	 
-	 public static synchronized AddCourseController getInstance(AddCourseUI view, OrganizationProfile model) {
+	 public static synchronized AddCourseController getInstance(AddCourseUI view, OrganizationProfileUI orgview, OrganizationProfile model) {
 		 if(instance == null) {
-			 instance = new AddCourseController(view, model);
+			 instance = new AddCourseController(view, orgview, model);
 			 instance.assegnaGestori();
 		 }
 		 displayAddCourseView();
@@ -37,15 +38,22 @@ public class AddCourseController {
 					String name = view.getName();
 					Double priceForLesson = view.getPriceForLesson();
 					Double priceMonthly = view.getPriceMonthly();		
-					OrganizationController c = OrganizationController.getInstance(orgview, model);
-					c.addCourse(name, priceForLesson, priceMonthly);
-					//view.setVisible(false);
-					view.getDefaultCloseOperation();
+					addCourse(name, priceForLesson, priceMonthly);
+					view.setVisible(false);
+					//view.getDefaultCloseOperation();
 					
 				}
 			};
 			view.getAddCourseButton().addActionListener(gestoreNewCourse);
 	 }
+	 
+	 public static void addCourse(String name, Double x, Double y) {
+			
+			Course c = new Course(name, x , y);
+			model.addCourse(c);
+			orgview.createFrame(name);
+			
+	}
 	 
 	 public static void displayAddCourseView() {
 		 view.setVisible(true);

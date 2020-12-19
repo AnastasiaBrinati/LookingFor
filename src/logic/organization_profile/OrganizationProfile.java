@@ -11,8 +11,8 @@ public class OrganizationProfile {
 	private String password;
 	
 	private Course c;
-	private static ArrayList<Course> courses;
-	
+	//private static ArrayList<Course> courses;
+	private ArrayList<Course> courses = new ArrayList<Course>();
 	public OrganizationProfile() {
 		//String name, String username
 		//se credenziali ok

@@ -7,8 +7,6 @@ import logic.add_course.AddCourseUI;
 import logic.homepage.*;
 import logic.login.*;
 import logic.organization_profile.*;
-import logic.sign_in.SignInController;
-import logic.sign_in.SignInUI;
 
 public class UserProfileController {
 	
@@ -38,6 +36,7 @@ public class UserProfileController {
 	
 	public void assegnaGestori(){
 
+		/*
 		ActionListener gestoreCourses = new ActionListener(){
 
 			@Override
@@ -59,6 +58,7 @@ public class UserProfileController {
 
 		};
 		view.getbtnEvents().addActionListener(gestoreEvents);
+		*/
 		
 		ActionListener gestoreHome = new ActionListener(){
 

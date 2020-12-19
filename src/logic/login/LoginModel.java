@@ -7,7 +7,8 @@ public class LoginModel {
 	private String username;
 	private String email;
 	private String password;
-
+	
+	//getters
 	public String getName() {
 		return name;
 	}
@@ -23,7 +24,7 @@ public class LoginModel {
 	public String getPassword() {
 		return password;
 	}
-	// setters
+	//setters
 	public void setName(String name) {
 		this.name = name;
 	}

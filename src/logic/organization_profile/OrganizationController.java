@@ -11,14 +11,14 @@ import logic.login.*;
 
 public class OrganizationController{
 
-	private static  OrganizationProfileUI organizationProfileView;
+	private static  OrganizationProfileUI view;
 	private static OrganizationProfile orgmodel;
-	private Course course;
+	//private Course course;
 
 	private static OrganizationController instance = null;
 
-	private OrganizationController(OrganizationProfileUI view, OrganizationProfile model){
-		organizationProfileView = view;
+	private OrganizationController(OrganizationProfileUI orgview, OrganizationProfile model){
+		view = orgview;
 		orgmodel = model;
 	}
 
@@ -28,7 +28,6 @@ public class OrganizationController{
 			instance.assegnaGestori();
 		}
 		viewOrganizationProfileUI();
-		//view.setDescriptionPanelVisible();
 		return instance;
 
 	}
@@ -40,7 +39,7 @@ public class OrganizationController{
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				organizationProfileView.setVisible(false);
+				view.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginModel model = new LoginModel();
 				LoginController.getInstance(view, model);
@@ -48,7 +47,7 @@ public class OrganizationController{
 
 		};
 		//profileButton???
-		organizationProfileView.getProfileButton().addActionListener(gestoreLogin);
+		view.getProfileButton().addActionListener(gestoreLogin);
 		
 		//showing CoursesPanel
 		ActionListener gestoreCourses = new ActionListener() {
@@ -56,12 +55,11 @@ public class OrganizationController{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				organizationProfileView.setCoursesPanelVisible();
+				view.setCoursesPanelVisible();
 			 
 			}
 		};
-		organizationProfileView.getCoursesButton().addActionListener(gestoreCourses);
-		
+		view.getCoursesButton().addActionListener(gestoreCourses);
 		
 		
 		//click on the add button on the CoursesPanel 
@@ -69,11 +67,10 @@ public class OrganizationController{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				AddCourseUI addCourseView = new AddCourseUI();
-				AddCourseController controller = AddCourseController.getInstance(addCourseView, orgmodel);
+				AddCourseController controller = AddCourseController.getInstance(addCourseView, view, orgmodel);
 			}
 		};
-		organizationProfileView.getAddButton().addActionListener(gestoreAddCourse);
-		
+		view.getAddButton().addActionListener(gestoreAddCourse);
 		
 		
 		//showing CourtsPanel
@@ -81,47 +78,40 @@ public class OrganizationController{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 organizationProfileView.setCourtsPanelVisible();
+			 view.setCourtsPanelVisible();
 			}
 		};
-		organizationProfileView.getCourtsButton().addActionListener(gestoreCourts);
+		view.getCourtsButton().addActionListener(gestoreCourts);
 		
 		//showing EventsPanel
         ActionListener gestoreEvents = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			 organizationProfileView.setEventsPanelVisible();
+			 view.setEventsPanelVisible();
 			}
 		};
-		organizationProfileView.getEventsButton().addActionListener(gestoreEvents);
+		view.getEventsButton().addActionListener(gestoreEvents);
 		
-         ActionListener gestoreHome = new ActionListener() {
+        ActionListener gestoreHome = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				HomeUI homeView = new HomeUI();
 				HomeModel homeModel = new HomeModel();
 				HomeController controller = HomeController.getInstance(homeView, homeModel);
-				organizationProfileView.setVisible(false);
+				view.setVisible(false);
 			 
 			}
 		};
-		organizationProfileView.getHomeButton().addActionListener(gestoreHome);
-		
+		view.getHomeButton().addActionListener(gestoreHome);
 
 	}
 	
-	public static void addCourse(String name, Double x, Double y) {
-		
-		//Course c = new Course(name, x , y);
-		//orgmodel.addCourse(c);
-		organizationProfileView.createFrame(name);
-		
-	}
 	
 	public static void viewOrganizationProfileUI() {
-		organizationProfileView.setVisible(true);
+		view.setVisible(true);
+		view.setDescriptionPanelVisible();
 	}
 
 }
