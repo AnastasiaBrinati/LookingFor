@@ -1,0 +1,7 @@
+US
+
+1. As a tennis player, I want to search for other team mates, so I can organize matches and tournaments. 
+
+2. As the owner of a gym, I want to show pictures of the location, so I can attract future members.
+
+3. As a football player, I want to check the fields free time slots, so I can book them for private games.
