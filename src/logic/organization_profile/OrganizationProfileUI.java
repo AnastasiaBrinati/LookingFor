@@ -151,8 +151,8 @@ public class OrganizationProfileUI extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(0, 11, 269, 71);
 		panel.add(lblNewLabel);
-		coursesButton.setBackground(new Color(0, 128, 128));
-										
+		
+		coursesButton.setBackground(new Color(102, 205, 170));
 		coursesButton.setBounds(0, 91, 269, 59);
 		panel.add(coursesButton);
 		

@@ -48,7 +48,7 @@ public class UserProfileUI extends JFrame {
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1283, 682);
+		setBounds(100, 100, 1311, 682);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -57,7 +57,7 @@ public class UserProfileUI extends JFrame {
 		//header
 		headerPanel.setBackground(new Color(102, 205, 170));
 		headerPanel.setForeground(new Color(255, 165, 0));
-		headerPanel.setBounds(0, 0, 1269, 51);
+		headerPanel.setBounds(0, 0, 1297, 51);
 		headerPanel.setLayout(null);
 
 		homeButton.setBounds(367, 0, 48, 51);
@@ -79,10 +79,8 @@ public class UserProfileUI extends JFrame {
 		headerPanel.add(settingsButton);
 
 		contentPane.add(headerPanel);
-		coursesPanel.setBounds(307, 51, 962, 585);
-		contentPane.add(coursesPanel);
 
-		descriptionPanel.setBounds(305, 51, 1012, 620);
+		descriptionPanel.setBounds(305, 51, 992, 620);
 		descriptionPanel.setLayout(null);
 		descriptionPanel.add(panel2);
 		
@@ -105,6 +103,8 @@ public class UserProfileUI extends JFrame {
 		panel3.setLayout(null);
 		
 		descriptionPanel.add(panel3);
+		coursesPanel.setBounds(0, -417, 975, 585);
+		panel3.add(coursesPanel);
 		
 		contentPane.add(descriptionPanel);
 		
@@ -115,7 +115,7 @@ public class UserProfileUI extends JFrame {
 		panel.setBackground(new Color(102, 205, 170));
 		panel.setBounds(0, 51, 307, 584);
 		panel.setLayout(null);
-		coursesButton.setBackground(new Color(0, 128, 128));
+		coursesButton.setBackground(new Color(102, 205, 170));
 		coursesButton.setBounds(10, 79, 287, 57);
 		panel.add(coursesButton);
 		eventsButton.setBackground(new Color(102, 205, 170));
