@@ -21,14 +21,13 @@ public class UserProfileUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField searchBar;
-	private JButton settingsButton = new JButton("");
 	private JPanel headerPanel = new JPanel();
 	
-	private JPanel descriprionPanel = new JPanel();
+	private JPanel descriptionPanel = new JPanel();
 	private TextArea textArea = new TextArea();
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
-	private final JButton exitButton = new JButton("");
+	private JButton settingsButton = new JButton("Settings");
 	private final JPanel panel2 = new JPanel();
 	private final JLabel lblNewLabel = new JLabel("About me");
 	//non penso servirà più
@@ -38,12 +37,12 @@ public class UserProfileUI extends JFrame {
 	private final JLabel lblUsername = new JLabel("username");
 	private final JLabel name = new JLabel("AnastasiaBR");
 	private final JPanel panel = new JPanel();
-	private final JButton btnCourses = new JButton("Courses");
-	private final JButton btnEvents = new JButton("Events");
-	private final JButton btnHelp = new JButton("Help");
-	private final JButton btnSettings = new JButton("Settings");
-	private final JPanel panelSettings = new JPanel();
+	private final JButton coursesButton = new JButton("Courses");
+	private final JButton eventsButton = new JButton("Events");
 	private final JButton organizationsButton = new JButton("Organizations");
+	private JLabel myCoursesLbl = new JLabel("MyCourses");
+	private final JPanel coursesPanel = new JPanel();
+	private final JPanel eventsPanel = new JPanel();
 
 	public UserProfileUI() {
 
@@ -61,15 +60,10 @@ public class UserProfileUI extends JFrame {
 		headerPanel.setBounds(0, 0, 1269, 51);
 		headerPanel.setLayout(null);
 
-		homeButton.setBounds(370, 0, 45, 42);
+		homeButton.setBounds(367, 0, 48, 51);
 		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
 		homeButton.setBorder(null);
-		homeButton.setContentAreaFilled(false);	
-
-		exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\contacts-32.png"));
-		exitButton.setContentAreaFilled(false);
-		exitButton.setBorder(null);
-		exitButton.setBounds(1262, 0, 42, 42);
+		homeButton.setContentAreaFilled(false);
 
 		searchBar = new JTextField();
 		searchBar.setBounds(416, 11, 349, 31);
@@ -80,29 +74,24 @@ public class UserProfileUI extends JFrame {
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
 
-		exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
-		exitButton.setContentAreaFilled(false);
-		exitButton.setBorder(null);
-		exitButton.setBounds(1269, 0, 38, 42);
-
 		headerPanel.add(homeButton);
 		headerPanel.add(searchBar);
-		headerPanel.add(exitButton);
 		headerPanel.add(settingsButton);
-		headerPanel.add(exitButton);
 
 		contentPane.add(headerPanel);
+		coursesPanel.setBounds(307, 51, 962, 585);
+		contentPane.add(coursesPanel);
 
-		descriprionPanel.setBounds(305, 51, 1012, 620);
-		descriprionPanel.setLayout(null);
-		descriprionPanel.add(panel2);
+		descriptionPanel.setBounds(305, 51, 1012, 620);
+		descriptionPanel.setLayout(null);
+		descriptionPanel.add(panel2);
 		
 		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 23));
 		lblUsername.setBounds(274, 27, 134, 25);
-		descriprionPanel.add(lblUsername);
+		descriptionPanel.add(lblUsername);
 		name.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		name.setBounds(274, 75, 134, 25);
-		descriprionPanel.add(name);
+		descriptionPanel.add(name);
 		
 		panel2.setBounds(29, 203, 940, 161);
 		panel2.setLayout(null);
@@ -115,37 +104,25 @@ public class UserProfileUI extends JFrame {
 		panel3.setBounds(29, 423, 940, 155);
 		panel3.setLayout(null);
 		
-		descriprionPanel.add(panel3);
+		descriptionPanel.add(panel3);
 		
-		contentPane.add(descriprionPanel);
+		contentPane.add(descriptionPanel);
 		
-		JLabel myCoursesLbl = new JLabel("MyCourses");
 		myCoursesLbl.setFont(new Font("Arial", Font.PLAIN, 18));
 		myCoursesLbl.setBounds(29, 384, 116, 29);
-		descriprionPanel.add(myCoursesLbl);
+		descriptionPanel.add(myCoursesLbl);
 		
 		panel.setBackground(new Color(102, 205, 170));
 		panel.setBounds(0, 51, 307, 584);
 		panel.setLayout(null);
-		btnCourses.setBackground(new Color(102, 205, 170));
-		btnCourses.setBounds(10, 79, 287, 57);
-		panel.add(btnCourses);
-		btnEvents.setBackground(new Color(102, 205, 170));
-		btnEvents.setBounds(10, 133, 287, 57);
-		panel.add(btnEvents);
+		coursesButton.setBackground(new Color(0, 128, 128));
+		coursesButton.setBounds(10, 79, 287, 57);
+		panel.add(coursesButton);
+		eventsButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setBounds(10, 133, 287, 57);
+		panel.add(eventsButton);
 		
 		contentPane.add(panel);
-		
-		panelSettings.setBackground(new Color(102, 205, 170));
-		panelSettings.setBounds(10, 275, 287, 114);
-		panel.add(panelSettings);
-		panelSettings.setLayout(null);
-		btnSettings.setBackground(new Color(102, 205, 170));
-		btnSettings.setBounds(0, 0, 287, 57);
-		panelSettings.add(btnSettings);
-		btnHelp.setBounds(0, 57, 287, 57);
-		panelSettings.add(btnHelp);
-		btnHelp.setBackground(new Color(102, 205, 170));
 		lblTitle.setBounds(89, 27, 141, 41);
 		panel.add(lblTitle);
 		lblTitle.setForeground(new Color(0, 0, 0));
@@ -154,48 +131,51 @@ public class UserProfileUI extends JFrame {
 		organizationsButton.setBounds(10, 201, 287, 57);
 		
 		panel.add(organizationsButton);
+		
 	}
 
-	public JButton getExitButton() {
-		return exitButton;
-	}
 	
 	public JButton getOrganizationsButton() {
 		return organizationsButton;
 	}
-	
-	
 
 	public JButton getButton4() {
-		return btnCourses;
+		return coursesButton;
 	}
-	
-	
 
 	public JButton getButton5() {
-		return btnEvents;
+		return eventsButton;
 	}
 	
-	
-
-	public JButton getButton6() {
-		return btnHelp;
+	public JButton getButtonSettings() {
+		return settingsButton;
 	}
 	
-	
-
-	public JButton getButton7() {
-		return btnSettings;
+	public JButton getCoursesButton() {
+		return coursesButton;
 	}
 	
-	public JButton getbtnCourses() {
-		return btnCourses;
-	}
-	
-	public JButton getbtnEvents() {
-		return btnEvents;
+	public JButton getEventsButton() {
+		return eventsButton;
 	}
 	public JButton getHomeButton() {
 		return homeButton;
 	}
+	
+	public void setCoursesPanelVisible() {
+		coursesPanel.setVisible(true);
+		descriptionPanel.setVisible(false);
+		eventsPanel.setVisible(false);
+		coursesButton.setBackground(new Color(0, 128, 128));
+		eventsButton.setBackground(new Color(102, 205, 170));	
+	}
+	
+	public void setEventsPanelVisible() {
+		coursesPanel.setVisible(false);
+		descriptionPanel.setVisible(false);
+		eventsPanel.setVisible(true);
+		coursesButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setBackground(new Color(0, 128, 128));	
+	}
+	
 }

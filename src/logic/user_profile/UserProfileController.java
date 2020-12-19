@@ -36,29 +36,6 @@ public class UserProfileController {
 	
 	public void assegnaGestori(){
 
-		/*
-		ActionListener gestoreCourses = new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e){
-				view.setPanel4Visible();
-							
-			}
-
-		};
-		view.getbtnCourses().addActionListener(gestoreCourses);
-		
-		ActionListener gestoreEvents = new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e){
-				view.setPanel5Visible();
-							
-			}
-
-		};
-		view.getbtnEvents().addActionListener(gestoreEvents);
-		*/
 		
 		ActionListener gestoreHome = new ActionListener(){
 
@@ -74,19 +51,6 @@ public class UserProfileController {
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
-		ActionListener gestoreExit = new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e){
-				LoginUI view=new LoginUI();
-				LoginModel model=new LoginModel();
-				LoginController controller=LoginController.getInstance(view, model);
-				view.setVisible(false);
-							
-			}
-
-		};
-		view.getExitButton().addActionListener(gestoreExit);
 		
 		ActionListener gestoreOrganizations = new ActionListener(){
 
@@ -104,6 +68,27 @@ public class UserProfileController {
 
 		};
 		view.getOrganizationsButton().addActionListener(gestoreOrganizations);
+		
+		//showing CoursesPanel
+		ActionListener gestoreCourses = new ActionListener() {
+					
+			@Override
+			public void actionPerformed(ActionEvent e) {
+					view.setCoursesPanelVisible();
+			}
+		};
+		view.getCoursesButton().addActionListener(gestoreCourses);
+		
+		
+		//showing EventsPanel
+		ActionListener gestoreEvents = new ActionListener() {
+					
+			@Override
+			public void actionPerformed(ActionEvent e) {
+					view.setEventsPanelVisible();
+			}
+		};
+		view.getEventsButton().addActionListener(gestoreEvents);
 
 	}
 

@@ -46,17 +46,15 @@ public class OrganizationController{
 			}
 
 		};
-		//profileButton???
 		view.getProfileButton().addActionListener(gestoreLogin);
+		
 		
 		//showing CoursesPanel
 		ActionListener gestoreCourses = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
 				view.setCoursesPanelVisible();
-			 
 			}
 		};
 		view.getCoursesButton().addActionListener(gestoreCourses);
@@ -101,7 +99,6 @@ public class OrganizationController{
 				HomeModel homeModel = new HomeModel();
 				HomeController controller = HomeController.getInstance(homeView, homeModel);
 				view.setVisible(false);
-			 
 			}
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
