@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.view.desktop.AddCourseUI;
+import logic.controller.graphic.HomeController;
 import logic.model.HomeModel;
 import logic.model.OrganizationProfile;
 import logic.view.desktop.HomeUI;

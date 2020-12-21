@@ -3,6 +3,7 @@ package logic.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import logic.controller.graphic.HomeController;
 import logic.controller.graphic.LoginControllerG;
 import logic.model.HomeModel;
 import logic.model.OrganizationProfile;

@@ -1,8 +1,8 @@
-package logic.controller;
+package logic.controller.graphic;
 
 import java.awt.event.ActionListener;
 
-
+import logic.controller.UserProfileController;
 import logic.model.HomeModel;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.UserProfileUI;

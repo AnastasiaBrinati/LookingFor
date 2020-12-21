@@ -2,6 +2,7 @@
 package logic.controller;
 
 
+import logic.controller.graphic.HomeController;
 import logic.controller.graphic.LoginControllerG;
 import logic.model.HomeModel;
 import logic.model.SignInModel;
