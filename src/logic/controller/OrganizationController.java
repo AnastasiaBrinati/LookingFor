@@ -3,8 +3,8 @@ package logic.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import logic.controller.graphic.LoginControllerG;
 import logic.model.HomeModel;
-import logic.model.LoginModel;
 import logic.model.OrganizationProfile;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.LoginUI;
@@ -43,8 +43,7 @@ public class OrganizationController{
 			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				LoginUI view = new LoginUI();
-				LoginModel model = new LoginModel();
-				LoginController.getInstance(view, model);
+				LoginControllerG.getInstance(view);
 			}
 
 		};

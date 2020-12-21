@@ -12,9 +12,10 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+
 public class LoginUI extends JFrame {
 
-/**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -28,6 +29,7 @@ public class LoginUI extends JFrame {
 	private JTextField textFieldpassword;
 	private Button btnLogin = new Button("Login");
 	private Button btnSignUp = new Button("Sign Up");
+
 	
 
 	// Create the frame.
@@ -57,7 +59,7 @@ public class LoginUI extends JFrame {
 	
 		textFieldusername = new JTextField();
 		textFieldusername.setColumns(10);
-		textFieldusername.setBounds(450, 235, 290, 20);
+		textFieldusername.setBounds(450, 165, 290, 20);
 		contentPane.add(textFieldusername);
 	
 		JSeparator separator = new JSeparator();
@@ -70,7 +72,7 @@ public class LoginUI extends JFrame {
 	
 		textFieldpassword = new JTextField();
 		textFieldpassword.setColumns(10);
-		textFieldpassword.setBounds(450, 155, 290, 20);
+		textFieldpassword.setBounds(449, 245, 290, 20);
 		contentPane.add(textFieldpassword);
 	
 		//login button
@@ -89,10 +91,22 @@ public class LoginUI extends JFrame {
 		Alternative.setBounds(586, 370, 46, 14);
 		contentPane.add(Alternative);
 	}
+	
 
 	public String getUsername() {
 		return textFieldusername.getText();
 	}
+	
+	public void WrongUsername() {
+		textFieldusername.setText("WRONG!");
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	public String getPassword() {
 		return textFieldpassword.getText();

@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sun.jdi.event.Event;
-
+import logic.model.UserProfileDAO;
 
 
 public class UserProfile {
+	
 	private String name;
 	private String surname;
 	private String username;
@@ -16,8 +17,8 @@ public class UserProfile {
 	private List<Course> courses = new ArrayList<>();
 	private List<Event> events=new ArrayList<>();
 	 
-	 
-	 
+	private UserProfileDAO usDAO;
+	
 	public String getName() {
 		return name;
 	}
@@ -30,12 +31,27 @@ public class UserProfile {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public String getUsername() {
-		return username;
-	}
+	
+	////////////
+	
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public String getUsername(String email) {
+		return username;
+	}
+	
+	public boolean checkCredentials(String username) {
+		
+		usDAO = new UserProfileDAO();
+		if(usDAO.goCheckAndTellMe(username)) {
+			return true;
+		}
+		return false;
+		
+	}
+	///////////
+	
 	public String getEmail() {
 		return email;
 	}

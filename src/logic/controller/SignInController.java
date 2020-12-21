@@ -2,8 +2,8 @@
 package logic.controller;
 
 
+import logic.controller.graphic.LoginControllerG;
 import logic.model.HomeModel;
-import logic.model.LoginModel;
 import logic.model.SignInModel;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
@@ -71,8 +71,7 @@ public class SignInController {
 			public void actionPerformed(ActionEvent e) {
 				
 				LoginUI loginView = new LoginUI();
-				LoginModel loginModel = new LoginModel();
-				LoginController  loginController = LoginController.getInstance(loginView, loginModel);
+				LoginControllerG  loginController = LoginControllerG.getInstance(loginView);
 				loginController.assegnaGestori();
 				
 				view.resetForm();
