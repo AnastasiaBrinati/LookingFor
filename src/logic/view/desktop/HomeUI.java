@@ -43,8 +43,8 @@ public class HomeUI extends JFrame {
 	private JPanel contentPane;
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
-	private JLabel lblNewLabel_1 = new JLabel("setings");
 	private JButton profileButton = new JButton("profile");
+	private JButton settingsButton = new JButton("Settings");
 
 	public HomeUI() {
 
@@ -66,17 +66,21 @@ public class HomeUI extends JFrame {
 		lblNewLabel.setBounds(438, 10, 151, 44);
 		panel.add(lblNewLabel);
 		
-		lblNewLabel_1.setBounds(10, 10, 75, 34);
-		panel.add(lblNewLabel_1);
-		
 		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(997, 10, 81, 34);
+		profileButton.setBounds(1017, 10, 61, 34);
 		panel.add(profileButton);
+		
+		
+		settingsButton.setBounds(10, 10, 85, 34);
+		panel.add(settingsButton);
 		LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
 	public JButton getProfileButton() {
 		return profileButton;
+	}
+	public JButton getSettingsButton() {
+		return settingsButton;
 	}	
 }
 	

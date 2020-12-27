@@ -93,7 +93,7 @@ public class OrganizationProfileUI extends JFrame {
 		profileButton.setBorder(null);
 		
 		headerPanel.setBounds(0, 0, 1312, 40);
-		headerPanel.setBackground(new Color(0, 128, 128));
+		headerPanel.setBackground(new Color(102, 205, 170));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		homeButton.setBounds(314, 0, 45, 42);
 		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));

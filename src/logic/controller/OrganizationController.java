@@ -3,7 +3,7 @@ package logic.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.controller.graphic.HomeController;
+import logic.controller.graphic.HomeControllerG;
 import logic.controller.graphic.LoginControllerG;
 import logic.model.HomeModel;
 import logic.model.OrganizationProfile;
@@ -98,8 +98,7 @@ public class OrganizationController{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				HomeUI homeView = new HomeUI();
-				HomeModel homeModel = new HomeModel();
-				HomeController controller = HomeController.getInstance(homeView, homeModel);
+				HomeControllerG controller = HomeControllerG.getInstance(homeView);
 				view.setVisible(false);
 			}
 		};

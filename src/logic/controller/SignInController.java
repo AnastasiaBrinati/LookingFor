@@ -2,7 +2,7 @@
 package logic.controller;
 
 
-import logic.controller.graphic.HomeController;
+import logic.controller.graphic.HomeControllerG;
 import logic.controller.graphic.LoginControllerG;
 import logic.model.HomeModel;
 import logic.model.SignInModel;
@@ -41,8 +41,7 @@ public class SignInController {
 			public void actionPerformed(ActionEvent e2) {
 
 				HomeUI homeView = new HomeUI();
-				HomeModel homeModel = new HomeModel();
-				HomeController  homeController = HomeController.getInstance(homeView, homeModel);
+				HomeControllerG  homeController = HomeControllerG.getInstance(homeView);
 				homeController.assegnaGestori();
 
 				view.setVisible(false);

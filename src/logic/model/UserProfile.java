@@ -19,6 +19,7 @@ public class UserProfile {
 	 
 	private UserProfileDAO usDAO;
 	
+	
 	public String getName() {
 		return name;
 	}
@@ -32,25 +33,14 @@ public class UserProfile {
 		this.surname = surname;
 	}
 	
-	////////////
+	
 	
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getUsername(String email) {
+	public String getUsername() {
 		return username;
 	}
-	
-	public boolean checkCredentials(String username) {
-		
-		usDAO = new UserProfileDAO();
-		if(usDAO.goCheckAndTellMe(username)) {
-			return true;
-		}
-		return false;
-		
-	}
-	///////////
 	
 	public String getEmail() {
 		return email;
@@ -58,12 +48,36 @@ public class UserProfile {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public boolean checkCredentials(UserProfile user) {
+		usDAO = new UserProfileDAO();
+		if(usDAO.goCheckAndTellMe(user)) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void getCredentials(SettingsBean settingsBean) {
+		settingsBean.setName(name);
+		settingsBean.setSurname(surname);
+		settingsBean.setUsername(username);
+		settingsBean.setEmail(email);
+		settingsBean.setPassword(password);
+	}
+	
+	//Overload
+	public void getCredentials() {
+		
+	}
+	
+
 	public List<Course> getCourses() {
 		return courses;
 	}

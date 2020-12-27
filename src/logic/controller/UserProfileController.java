@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.view.desktop.AddCourseUI;
-import logic.controller.graphic.HomeController;
+import logic.controller.graphic.HomeControllerG;
 import logic.model.HomeModel;
 import logic.model.OrganizationProfile;
 import logic.view.desktop.HomeUI;
@@ -46,8 +46,7 @@ public class UserProfileController {
 			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				HomeUI vista=new HomeUI();
-				HomeModel homeModel = new HomeModel();
-				HomeController controller=HomeController.getInstance(vista, homeModel);
+				HomeControllerG controller=HomeControllerG.getInstance(vista);
 							
 			}
 

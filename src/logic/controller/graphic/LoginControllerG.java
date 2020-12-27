@@ -60,12 +60,11 @@ public class LoginControllerG {
 			public void actionPerformed(ActionEvent e){
 				loginBean = new LoginBean();
 				loginBean.setUsername(loginView.getUsername());
-				LoginController loginController = LoginController.getInstance();
-				if(loginController.isAValidUser(loginBean)) {
+				loginBean.setPassword(loginView.getPassword());
+				if(LoginBean.checkCredentials(loginBean)) {
 					loginView.setVisible(false);
 					HomeUI homepageView = new HomeUI();
-					HomeModel model = new HomeModel();
-					HomeController.getInstance(homepageView, model);
+					HomeControllerG.getInstance(homepageView);
 				}
 				else {
 					loginView.WrongUsername();
