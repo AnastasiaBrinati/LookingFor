@@ -23,7 +23,8 @@ public class SettingsControllerG {
 		if(instance == null) {
 			instance = new SettingsControllerG(view);
 		}
-
+		
+		setCredentials();
 		showSettingsView();
 		return instance;
 	}
@@ -32,7 +33,9 @@ public class SettingsControllerG {
 		view.setVisible(true);
 	}
 	
-	public static void setCredentials(SettingsBean settingsBean) {
+	private static void setCredentials() {
+		SettingsBean settingsBean = new SettingsBean();
+		SettingsBean.setCredentials(settingsBean);
 		String name = settingsBean.getName();
 		String surname = settingsBean.getSurname();
 		String username = settingsBean.getUsername();

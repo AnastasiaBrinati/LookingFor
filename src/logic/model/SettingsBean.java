@@ -2,47 +2,48 @@ package logic.model;
 
 public class SettingsBean {
 	
-	private String name;
-	public String surname;
-	public String username;
-	public String email;
-	public String password;
+	private static String name;
+	public static String surname;
+	public static String username;
+	public static String email;
+	public static String password;
 	
+	//
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String nome) {
+		name = nome;
 	}
-	
+	//
 	public String getSurname() {
 		return surname;
 	}
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setSurname(String cognome) {
+		surname = cognome;
 	}
-	
+	//
 	public String getUsername() {
 		return username;
 	}
-	public void setUsername(String username) {
-		this.username= username;
+	public void setUsername(String usern) {
+		username= usern;
 	}
-	
+	//
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String iemail) {
+		email = iemail;
 	}
-	
+	//
 	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String passwd) {
+		password = passwd;
 	}
-	
+	//
 	public static void setCredentials(SettingsBean settingBean) {
 		UserProfile.getCredentials(settingBean);
 	}

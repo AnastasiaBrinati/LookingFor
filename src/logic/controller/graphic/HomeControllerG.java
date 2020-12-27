@@ -3,8 +3,6 @@ package logic.controller.graphic;
 import java.awt.event.ActionListener;
 
 import logic.controller.UserProfileController;
-import logic.model.HomeModel;
-import logic.model.SettingsBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.SettingsUI;
 import logic.view.desktop.UserProfileUI;
@@ -45,10 +43,7 @@ public class HomeControllerG {
 		ActionListener gestoreSettings = e -> {
 			view.setVisible(false);
 			SettingsUI vista = new SettingsUI();
-			SettingsBean settingsBean = new SettingsBean();
 			SettingsControllerG controller = SettingsControllerG.getInstance(vista);
-			SettingsBean.setCredentials(settingsBean);
-			SettingsControllerG.setCredentials(settingsBean);
 			controller.assegnaGestori();
 
 		};
