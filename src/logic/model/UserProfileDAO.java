@@ -18,7 +18,7 @@ public class UserProfileDAO {
 	private static String USER = "d0cl8zm89gc67d2t";
     private static String PASS = "n1161ldsuifnjou5";
     private static String DB_URL = "jdbc:mysql://d0cl8zm89gc67d2t:n1161ldsuifnjou5@r6ze0q02l4me77k3.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/w2l441mj7t77vuhd";
-    private static String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
+    private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     
 
    

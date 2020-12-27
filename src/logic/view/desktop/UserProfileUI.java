@@ -64,7 +64,7 @@ public class UserProfileUI extends JFrame {
 								workoutPanel.setBounds(305, 51, 992, 584);
 								workoutPanel.setLayout(null);
 								
-								newWorkoutPanel.setBounds(677, 400, 305, 174);
+								newWorkoutPanel.setBounds(10, 30, 958, 509);
 								workoutPanel.add(newWorkoutPanel);
 								newWorkoutPanel.setLayout(null);
 								workoutlbl.setBounds(428, 257, 136, 36);
