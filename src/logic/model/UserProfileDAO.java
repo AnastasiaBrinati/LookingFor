@@ -36,8 +36,7 @@ public class UserProfileDAO {
 			
 			//step3: apertura connessione
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
-			
-			//step4: creazione ed esecuzione query 
+						//step4: creazione ed esecuzione query 
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			
 			ResultSet rs = Queries.checkSignedUser(stmt, username,password);
