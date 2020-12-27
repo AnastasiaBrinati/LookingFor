@@ -15,6 +15,8 @@ import java.awt.Image;
 import java.awt.TextArea;
 import javax.swing.JTable;
 import javax.swing.JList;
+import javax.swing.JTree;
+import javax.swing.JCheckBox;
 
 public class UserProfileUI extends JFrame {
 
@@ -46,6 +48,7 @@ public class UserProfileUI extends JFrame {
 	private final JPanel eventsPanel = new JPanel();
 	private final JButton backButton = new JButton("<-");
 	private JTextField textField;
+	private JTextField textField_1;
 
 	public UserProfileUI() {
 
@@ -61,7 +64,7 @@ public class UserProfileUI extends JFrame {
 								workoutPanel.setBounds(305, 51, 992, 584);
 								workoutPanel.setLayout(null);
 								
-								newWorkoutPanel.setBounds(768, 449, 214, 125);
+								newWorkoutPanel.setBounds(677, 400, 305, 174);
 								workoutPanel.add(newWorkoutPanel);
 								newWorkoutPanel.setLayout(null);
 								workoutlbl.setBounds(428, 257, 136, 36);
@@ -80,32 +83,38 @@ public class UserProfileUI extends JFrame {
 								workoutPanel.add(textField);
 								textField.setColumns(10);
 								
-								JLabel activeDayslbl = new JLabel("Choose Active Days:");
-								activeDayslbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
-								activeDayslbl.setBounds(28, 119, 180, 20);
-								workoutPanel.add(activeDayslbl);
-								
-								JList<String> list = new JList();
+								JList<String> list = new JList<String>();
 								DefaultListModel<String> listModel1 = new DefaultListModel<String>();
-								listModel1.addElement("Lunedì");
-								listModel1.addElement("Martedì");
-								listModel1.addElement("Mercoledì");
-								listModel1.addElement("Giovedì");
-								listModel1.addElement("Venerdì");
-								listModel1.addElement("Sabato");
-								listModel1.addElement("Domenica");
+								listModel1.addElement("none");
+								listModel1.addElement("Monday");
+								listModel1.addElement("Tuesday");
+								listModel1.addElement("Wednesday");
+								listModel1.addElement("Thursday");
+								listModel1.addElement("Friday");
+								listModel1.addElement("Saturday");
+								listModel1.addElement("Sunday");
 								list.setModel(listModel1);
-								list.setBounds(218, 119, 167, 142);
+								list.setBounds(233, 132, 167, 142);
 								workoutPanel.add(list);
 								
 								JLabel lblChooseOffDays = new JLabel("Choose Off Days:");
 								lblChooseOffDays.setFont(new Font("Tahoma", Font.PLAIN, 15));
-								lblChooseOffDays.setBounds(445, 119, 180, 20);
+								lblChooseOffDays.setBounds(28, 127, 180, 20);
 								workoutPanel.add(lblChooseOffDays);
 								
-								JList list_1 = new JList();
-								list_1.setBounds(649, 114, 167, 155);
-								workoutPanel.add(list_1);
+								JCheckBox notifyMeCheckBox = new JCheckBox("Want to recive a reminder?");
+								notifyMeCheckBox.setBounds(28, 328, 273, 21);
+								workoutPanel.add(notifyMeCheckBox);
+								
+								JLabel lblTime = new JLabel("-how much?");
+								lblTime.setFont(new Font("Tahoma", Font.PLAIN, 15));
+								lblTime.setBounds(484, 127, 180, 23);
+								workoutPanel.add(lblTime);
+								
+								textField_1 = new JTextField();
+								textField_1.setBounds(639, 130, 96, 19);
+								workoutPanel.add(textField_1);
+								textField_1.setColumns(10);
 						
 								descriptionPanel.setBounds(305, 51, 992, 584);
 								descriptionPanel.setLayout(null);

@@ -32,7 +32,7 @@ public class UserProfileDAO {
 		try {
 			//step2: loading dinamico driver mysql
 			
-			
+			Class.forName(DRIVER_CLASS_NAME);
 			
 			//step3: apertura connessione
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
