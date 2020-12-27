@@ -58,6 +58,15 @@ public class SettingsControllerG {
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
+		ActionListener gestoreCancel = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				setCredentials();
+			}
+
+		};
+		view.getCancelButton().addActionListener(gestoreCancel);
 		
 		ActionListener gestoreCredentials = new ActionListener(){
 
