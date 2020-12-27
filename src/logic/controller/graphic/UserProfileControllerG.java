@@ -7,6 +7,7 @@ import logic.view.desktop.AddCourseUI;
 import logic.controller.OrganizationController;
 import logic.model.HomeModel;
 import logic.model.OrganizationProfile;
+import logic.model.SettingsBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.UserProfileUI;
@@ -26,6 +27,7 @@ public class UserProfileControllerG {
 			instance.assegnaGestori();
 		}
 		
+		setCredentials();
 		showUserProfileUI();
 		return instance;
 
@@ -35,6 +37,14 @@ public class UserProfileControllerG {
 		view.setVisible(true);
 	}
 
+	public static void setCredentials() {
+		SettingsBean settingsBean = new SettingsBean();
+		SettingsBean.setCredentials(settingsBean);
+		String name = settingsBean.getName();
+		String surname = settingsBean.getSurname();
+		String username = settingsBean.getUsername();
+		view.setCredentials(name, surname, username);
+	}
 	
 	public void assegnaGestori(){
 
@@ -91,23 +101,6 @@ public class UserProfileControllerG {
 		};
 		view.getEventsButton().addActionListener(gestoreEvents);
 		
-		ActionListener gestoreWorkout = new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-					view.setWorkoutPanelVisible();
-			}
-		};
-		view.getWorkoutButton().addActionListener(gestoreWorkout);
-		
-		ActionListener gestoreAddWorkoutRoutine = new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-					view.enableNewWorkoutPanel();
-			}
-		};
-		view.getWorkoutButton().addActionListener(gestoreAddWorkoutRoutine);
 		
 		ActionListener gestoreBack = new ActionListener() {
 			

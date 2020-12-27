@@ -22,13 +22,13 @@ public class UserProfile {
 	private static UserProfileDAO usDAO;
 	
 	
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 	public static void setName(String nome) {
 		name = nome;
 	}
-	public String getSurname() {
+	public static String getSurname() {
 		return surname;
 	}
 	public static void setSurname(String cognome) {
@@ -38,18 +38,18 @@ public class UserProfile {
 	public static void setUsername(String usern) {
 		username = usern;
 	}
-	public String getUsername() {
+	public static String getUsername() {
 		return username;
 	}
 	
-	public String getEmail() {
+	public static String getEmail() {
 		return email;
 	}
 	public static void setEmail(String iemail) {
 		email = iemail;
 	}
 	
-	public String getPassword() {
+	public static String getPassword() {
 		return password;
 	}
 	public static void setPassword(String passwd) {
@@ -58,23 +58,13 @@ public class UserProfile {
 	
 	public static boolean checkCredentials(LoginBean lb) throws Exception {
 		usDAO = new UserProfileDAO();
+
 		if(usDAO.goCheckAndTellMe(lb.getUsername(),lb.getPassword())) {
+			username = lb.getUsername();
+			password = lb.getPassword();
 			return true;
 		}
 		return false;
-	}
-	
-	public static void getCredentials(SettingsBean settingsBean) {
-		settingsBean.setName(name);
-		settingsBean.setSurname(surname);
-		settingsBean.setUsername(username);
-		settingsBean.setEmail(email);
-		settingsBean.setPassword(password);
-	}
-	
-	//Overload
-	public void getCredentials() {
-		
 	}
 	
 

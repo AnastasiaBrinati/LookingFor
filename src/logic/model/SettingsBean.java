@@ -45,6 +45,10 @@ public class SettingsBean {
 	}
 	//
 	public static void setCredentials(SettingsBean settingBean) {
-		UserProfile.getCredentials(settingBean);
+		name = UserProfile.getName();
+		surname = UserProfile.getSurname();
+		username = UserProfile.getUsername();
+		email = UserProfile.getEmail();
+		password = UserProfile.getPassword();
 	}
 }
