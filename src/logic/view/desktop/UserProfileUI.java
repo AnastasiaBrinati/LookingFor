@@ -1,5 +1,6 @@
 package logic.view.desktop;
 
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,6 +13,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.TextArea;
+import javax.swing.JTable;
+import javax.swing.JList;
 
 public class UserProfileUI extends JFrame {
 
@@ -24,35 +27,102 @@ public class UserProfileUI extends JFrame {
 	private JPanel headerPanel = new JPanel();
 	
 	private JPanel descriptionPanel = new JPanel();
-	private TextArea textArea = new TextArea();
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
 	private JButton settingsButton = new JButton("Settings");
-	private final JPanel panel2 = new JPanel();
-	private final JLabel lblNewLabel = new JLabel("About me");
-	//non penso servirà più
-	private JPanel panel3 = new JPanel();
+	private final JPanel workoutPanel = new JPanel();
+	private JButton workoutButton = new JButton("My Workout Routine");
+	private JLabel workoutlbl = new JLabel("my workout routine");
+	JButton addWorkoutButton = new JButton("Start Your Workout With Us!");
+	private JPanel newWorkoutPanel = new JPanel();
 	
-	//profilo
 	private final JLabel lblUsername = new JLabel("username");
-	private final JLabel name = new JLabel("AnastasiaBR");
+	private final JLabel name = new JLabel("name");
 	private final JPanel panel = new JPanel();
 	private final JButton coursesButton = new JButton("Courses");
 	private final JButton eventsButton = new JButton("Events");
 	private final JButton organizationsButton = new JButton("Organizations");
-	private JLabel myCoursesLbl = new JLabel("MyCourses");
 	private final JPanel coursesPanel = new JPanel();
 	private final JPanel eventsPanel = new JPanel();
+	private final JButton backButton = new JButton("<-");
+	private JTextField textField;
 
 	public UserProfileUI() {
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1311, 682);
+		setBounds(100, 100, 1311, 683);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+								
+								contentPane.add(workoutPanel);
+								workoutPanel.setBounds(305, 51, 992, 584);
+								workoutPanel.setLayout(null);
+								
+								newWorkoutPanel.setBounds(768, 449, 214, 125);
+								workoutPanel.add(newWorkoutPanel);
+								newWorkoutPanel.setLayout(null);
+								workoutlbl.setBounds(428, 257, 136, 36);
+								newWorkoutPanel.add(workoutlbl);
+								workoutlbl.setFont(new Font("Microsoft JhengHei UI Light", Font.PLAIN, 15));
+								addWorkoutButton.setBounds(368, 303, 265, 59);
+								newWorkoutPanel.add(addWorkoutButton);
+								
+								JLabel RoutineName = new JLabel("Choose a name for your routine:");
+								RoutineName.setFont(new Font("Tahoma", Font.PLAIN, 15));
+								RoutineName.setBounds(28, 40, 248, 20);
+								workoutPanel.add(RoutineName);
+								
+								textField = new JTextField();
+								textField.setBounds(332, 41, 200, 23);
+								workoutPanel.add(textField);
+								textField.setColumns(10);
+								
+								JLabel activeDayslbl = new JLabel("Choose Active Days:");
+								activeDayslbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+								activeDayslbl.setBounds(28, 119, 180, 20);
+								workoutPanel.add(activeDayslbl);
+								
+								JList<String> list = new JList();
+								DefaultListModel<String> listModel1 = new DefaultListModel<String>();
+								listModel1.addElement("Lunedì");
+								listModel1.addElement("Martedì");
+								listModel1.addElement("Mercoledì");
+								listModel1.addElement("Giovedì");
+								listModel1.addElement("Venerdì");
+								listModel1.addElement("Sabato");
+								listModel1.addElement("Domenica");
+								list.setModel(listModel1);
+								list.setBounds(218, 119, 167, 142);
+								workoutPanel.add(list);
+								
+								JLabel lblChooseOffDays = new JLabel("Choose Off Days:");
+								lblChooseOffDays.setFont(new Font("Tahoma", Font.PLAIN, 15));
+								lblChooseOffDays.setBounds(445, 119, 180, 20);
+								workoutPanel.add(lblChooseOffDays);
+								
+								JList list_1 = new JList();
+								list_1.setBounds(649, 114, 167, 155);
+								workoutPanel.add(list_1);
+						
+								descriptionPanel.setBounds(305, 51, 992, 584);
+								descriptionPanel.setLayout(null);
+								
+								lblUsername.setFont(new Font("Arial", Font.PLAIN, 23));
+								lblUsername.setBounds(274, 67, 134, 25);
+								descriptionPanel.add(lblUsername);
+								name.setFont(new Font("Arial", Font.PLAIN, 20));
+								name.setBounds(274, 102, 134, 25);
+								descriptionPanel.add(name);
+								
+								contentPane.add(descriptionPanel);
+								
+								JLabel lblNewLabel = new JLabel("cognome");
+								lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+								lblNewLabel.setBounds(274, 139, 134, 25);
+								descriptionPanel.add(lblNewLabel);
 		
 		//header
 		headerPanel.setBackground(new Color(102, 205, 170));
@@ -79,47 +149,21 @@ public class UserProfileUI extends JFrame {
 		headerPanel.add(settingsButton);
 
 		contentPane.add(headerPanel);
-
-		descriptionPanel.setBounds(305, 51, 992, 620);
-		descriptionPanel.setLayout(null);
-		descriptionPanel.add(panel2);
 		
-		lblUsername.setFont(new Font("Arial Black", Font.PLAIN, 23));
-		lblUsername.setBounds(274, 27, 134, 25);
-		descriptionPanel.add(lblUsername);
-		name.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		name.setBounds(274, 75, 134, 25);
-		descriptionPanel.add(name);
-		
-		panel2.setBounds(29, 203, 940, 161);
-		panel2.setLayout(null);
-		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 22));
-		lblNewLabel.setBounds(10, 0, 154, 38);
-		textArea.setBounds(20, 44, 493, 107);
-		panel2.add(lblNewLabel);
-		panel2.add(textArea);
-		
-		panel3.setBounds(29, 423, 940, 155);
-		panel3.setLayout(null);
-		
-		descriptionPanel.add(panel3);
-		coursesPanel.setBounds(0, -417, 975, 585);
-		panel3.add(coursesPanel);
-		
-		contentPane.add(descriptionPanel);
-		
-		myCoursesLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		myCoursesLbl.setBounds(29, 384, 116, 29);
-		descriptionPanel.add(myCoursesLbl);
+		contentPane.add(eventsPanel);
+		eventsPanel.setBounds(307, 52, 990, 585);
+		contentPane.add(eventsPanel);
+		coursesPanel.setBounds(307, 52, 990, 585);
+		contentPane.add(coursesPanel);
 		
 		panel.setBackground(new Color(102, 205, 170));
 		panel.setBounds(0, 51, 307, 584);
 		panel.setLayout(null);
 		coursesButton.setBackground(new Color(102, 205, 170));
-		coursesButton.setBounds(10, 79, 287, 57);
+		coursesButton.setBounds(10, 220, 287, 57);
 		panel.add(coursesButton);
 		eventsButton.setBackground(new Color(102, 205, 170));
-		eventsButton.setBounds(10, 133, 287, 57);
+		eventsButton.setBounds(10, 287, 287, 57);
 		panel.add(eventsButton);
 		
 		contentPane.add(panel);
@@ -128,23 +172,26 @@ public class UserProfileUI extends JFrame {
 		lblTitle.setForeground(new Color(0, 0, 0));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
 		organizationsButton.setBackground(new Color(102, 205, 170));
-		organizationsButton.setBounds(10, 201, 287, 57);
+		organizationsButton.setBounds(10, 354, 287, 57);
 		
 		panel.add(organizationsButton);
 		
+		workoutButton.setBackground(new Color(102, 205, 170));
+		workoutButton.setBounds(10, 153, 287, 57);
+		panel.add(workoutButton);
+		backButton.setBounds(10, 107, 64, 36);
+		panel.add(backButton);
+		backButton.setFont(new Font("Arial Black", Font.PLAIN, 10));
+		
+		
 	}
-
 	
 	public JButton getOrganizationsButton() {
 		return organizationsButton;
 	}
 
-	public JButton getButton4() {
-		return coursesButton;
-	}
-
-	public JButton getButton5() {
-		return eventsButton;
+	public JButton getWorkoutButton() {
+		return workoutButton;
 	}
 	
 	public JButton getButtonSettings() {
@@ -158,24 +205,61 @@ public class UserProfileUI extends JFrame {
 	public JButton getEventsButton() {
 		return eventsButton;
 	}
+	
+	public JButton getBackButton() {
+		return backButton;
+	}
+	
 	public JButton getHomeButton() {
 		return homeButton;
 	}
 	
+	public void setDescriptionPanelVisible() {
+		backButton.setVisible(false);
+		coursesPanel.setVisible(false);
+		descriptionPanel.setVisible(true);
+		workoutPanel.setVisible(false);
+		eventsPanel.setVisible(false);
+		coursesButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setBackground(new Color(102, 205, 170));
+		workoutButton.setBackground(new Color(102, 205, 170));
+	}
+	
+	public void setWorkoutPanelVisible() {
+		backButton.setVisible(true);
+		coursesPanel.setVisible(false);
+		descriptionPanel.setVisible(false);
+		workoutPanel.setVisible(true);
+		eventsPanel.setVisible(false);
+		coursesButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setBackground(new Color(102, 205, 170));
+		workoutButton.setBackground(new Color(0, 128, 128));
+	}
+	
 	public void setCoursesPanelVisible() {
+		backButton.setVisible(true);
 		coursesPanel.setVisible(true);
 		descriptionPanel.setVisible(false);
+		workoutPanel.setVisible(false);
 		eventsPanel.setVisible(false);
 		coursesButton.setBackground(new Color(0, 128, 128));
-		eventsButton.setBackground(new Color(102, 205, 170));	
+		eventsButton.setBackground(new Color(102, 205, 170));
+		workoutButton.setBackground(new Color(102, 205, 170));
 	}
 	
 	public void setEventsPanelVisible() {
+		backButton.setVisible(true);
 		coursesPanel.setVisible(false);
 		descriptionPanel.setVisible(false);
+		workoutPanel.setVisible(false);
 		eventsPanel.setVisible(true);
 		coursesButton.setBackground(new Color(102, 205, 170));
 		eventsButton.setBackground(new Color(0, 128, 128));	
+		workoutButton.setBackground(new Color(102, 205, 170));
 	}
 	
+	public void enableNewWorkoutPanel() {
+		newWorkoutPanel.setVisible(false);
+		
+	}
 }

@@ -3,12 +3,10 @@ package logic.controller.graphic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.controller.SignInController;
 import logic.model.SettingsBean;
-import logic.model.SignInModel;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.SettingsUI;
-import logic.view.desktop.SignInUI;
+
 
 public class SettingsControllerG {
 	

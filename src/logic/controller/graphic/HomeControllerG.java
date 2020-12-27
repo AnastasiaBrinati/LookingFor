@@ -2,7 +2,6 @@ package logic.controller.graphic;
 
 import java.awt.event.ActionListener;
 
-import logic.controller.UserProfileController;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.SettingsUI;
 import logic.view.desktop.UserProfileUI;
@@ -32,7 +31,7 @@ public class HomeControllerG {
 		ActionListener gestoreProfile = e -> {
 			view.setVisible(false);
 			UserProfileUI vista = new UserProfileUI();
-			UserProfileController controller=UserProfileController.getInstance(vista);
+			UserProfileControllerG controller=UserProfileControllerG.getInstance(vista);
 			controller.assegnaGestori();
 
 		};
