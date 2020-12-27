@@ -68,109 +68,36 @@ public class SettingsUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		textFieldName.setText("Anastasia");
-		textFieldName.setBounds(223, 58, 241, 25);
-		textFieldName.setColumns(10);
-		namePanel.setBounds(305, 168, 992, 478);
-		
-		contentPane.add(namePanel);
-		namePanel.setLayout(null);
-		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		surnamelbl.setBounds(49, 146, 134, 25);
-		namePanel.add(surnamelbl);
-		
-		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		nameLbl.setBounds(49, 54, 116, 29);
-		namePanel.add(nameLbl);
-		
-		namePanel.add(textFieldName);
-		textFieldSurname.setColumns(10);
-		textFieldSurname.setBounds(223, 148, 241, 25);
-		
-		namePanel.add(textFieldSurname);
-		textFieldUsername.setText("PinkiePie");
-		textFieldUsername.setColumns(10);
-		textFieldUsername.setBounds(223, 252, 241, 25);
-		
-		namePanel.add(textFieldUsername);
-		usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		usernamelbl.setBounds(49, 250, 134, 25);
-		
-		namePanel.add(usernamelbl);
-		saveButton.setBackground(new Color(218, 165, 32));
-		saveButton.setBounds(262, 355, 158, 38);
-		
-		namePanel.add(saveButton);
-		cancelButton.setBounds(94, 355, 158, 38);
-		
-		namePanel.add(cancelButton);
-		namePanel.setLayout(null);
-		
-		//namePanel.add(namePanel);
-		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		surnamelbl.setBounds(49, 146, 134, 25);
-		
-		namePanel.add(surnamelbl);
-		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		nameLbl.setBounds(49, 54, 116, 29);
-		
-		namePanel.add(nameLbl);
-		textFieldName.setText("Anastasia");
-		textFieldName.setColumns(10);
-		textFieldName.setBounds(223, 58, 241, 25);
-		
-		namePanel.add(textFieldName);
-		
-		namePanel.add(textFieldSurname);
-		textFieldUsername.setText("PinkiePie");
-		textFieldUsername.setColumns(10);
-		textFieldUsername.setBounds(223, 252, 241, 25);
-		
-		namePanel.add(textFieldUsername);
-		usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		usernamelbl.setBounds(49, 250, 134, 25);
-		
-		namePanel.add(usernamelbl);
-		saveButton.setBackground(new Color(218, 165, 32));
-		saveButton.setBounds(262, 355, 158, 38);
-		
-		namePanel.add(saveButton);
-		cancelButton.setBounds(94, 355, 158, 38);
-		
-		namePanel.add(cancelButton);
-		textFieldSurname.setText("Brinati");
-		textFieldSurname.setColumns(10);
-		textFieldSurname.setBounds(223, 148, 241, 25);
 		emailPanel.setBounds(305, 168, 992, 477);
 		contentPane.add(emailPanel);
 		emailPanel.setLayout(null);
-
-		textFieldPsswd.setColumns(10);
-		textFieldPsswd.setBounds(308, 137, 241, 25);
 		
-		emailPanel.add(textFieldPsswd);
-		confirmPsswdtextField.setText("***");
-		confirmPsswdtextField.setColumns(10);
-		confirmPsswdtextField.setBounds(308, 219, 241, 25);
-		
-		emailPanel.add(confirmPsswdtextField);
-		emaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		emaillbl.setBounds(53, 53, 116, 29);
-		
-		emailPanel.add(emaillbl);
-		lblPassword.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblPassword.setBounds(53, 133, 116, 29);
-		
-		emailPanel.add(lblPassword);
-		lblConfirmPassword.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblConfirmPassword.setBounds(53, 215, 154, 29);
-		
-		emailPanel.add(lblConfirmPassword);
-		
-		textFieldEmail = new JTextField();
-		textFieldEmail.setColumns(10);
-		textFieldEmail.setBounds(308, 60, 241, 25);
-		emailPanel.add(textFieldEmail);
+				textFieldPsswd.setColumns(10);
+				textFieldPsswd.setBounds(308, 137, 241, 25);
+				
+				emailPanel.add(textFieldPsswd);
+				confirmPsswdtextField.setText("***");
+				confirmPsswdtextField.setColumns(10);
+				confirmPsswdtextField.setBounds(308, 219, 241, 25);
+				
+				emailPanel.add(confirmPsswdtextField);
+				emaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				emaillbl.setBounds(53, 53, 116, 29);
+				
+				emailPanel.add(emaillbl);
+				lblPassword.setFont(new Font("Arial", Font.PLAIN, 18));
+				lblPassword.setBounds(53, 133, 116, 29);
+				
+				emailPanel.add(lblPassword);
+				lblConfirmPassword.setFont(new Font("Arial", Font.PLAIN, 18));
+				lblConfirmPassword.setBounds(53, 215, 154, 29);
+				
+				emailPanel.add(lblConfirmPassword);
+				
+				textFieldEmail = new JTextField();
+				textFieldEmail.setColumns(10);
+				textFieldEmail.setBounds(308, 60, 241, 25);
+				emailPanel.add(textFieldEmail);
 		
 		//header
 		headerPanel.setBackground(new Color(102, 205, 170));
@@ -239,6 +166,79 @@ public class SettingsUI extends JFrame {
 		subtitlelbl.setBounds(50, 35, 185, 43);
 		
 		subtitlePanel.add(subtitlelbl);
+				textFieldName.setText("Anastasia");
+				textFieldName.setBounds(223, 58, 241, 25);
+				textFieldName.setColumns(10);
+				namePanel.setBounds(305, 168, 992, 478);
+				
+				contentPane.add(namePanel);
+				namePanel.setLayout(null);
+				surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				surnamelbl.setBounds(49, 146, 134, 25);
+				namePanel.add(surnamelbl);
+				
+				nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				nameLbl.setBounds(49, 54, 116, 29);
+				namePanel.add(nameLbl);
+				
+				namePanel.add(textFieldName);
+				textFieldSurname.setColumns(10);
+				textFieldSurname.setBounds(223, 148, 241, 25);
+				
+				namePanel.add(textFieldSurname);
+				textFieldUsername.setText("PinkiePie");
+				textFieldUsername.setColumns(10);
+				textFieldUsername.setBounds(223, 252, 241, 25);
+				
+				namePanel.add(textFieldUsername);
+				usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				usernamelbl.setBounds(49, 250, 134, 25);
+				
+				namePanel.add(usernamelbl);
+				saveButton.setBackground(new Color(218, 165, 32));
+				saveButton.setBounds(262, 355, 158, 38);
+				
+				namePanel.add(saveButton);
+				cancelButton.setBounds(94, 355, 158, 38);
+				
+				namePanel.add(cancelButton);
+				namePanel.setLayout(null);
+				
+				//namePanel.add(namePanel);
+				surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				surnamelbl.setBounds(49, 146, 134, 25);
+				
+				namePanel.add(surnamelbl);
+				nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				nameLbl.setBounds(49, 54, 116, 29);
+				
+				namePanel.add(nameLbl);
+				textFieldName.setText("Anastasia");
+				textFieldName.setColumns(10);
+				textFieldName.setBounds(223, 58, 241, 25);
+				
+				namePanel.add(textFieldName);
+				
+				namePanel.add(textFieldSurname);
+				textFieldUsername.setText("PinkiePie");
+				textFieldUsername.setColumns(10);
+				textFieldUsername.setBounds(223, 252, 241, 25);
+				
+				namePanel.add(textFieldUsername);
+				usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				usernamelbl.setBounds(49, 250, 134, 25);
+				
+				namePanel.add(usernamelbl);
+				saveButton.setBackground(new Color(218, 165, 32));
+				saveButton.setBounds(262, 355, 158, 38);
+				
+				namePanel.add(saveButton);
+				cancelButton.setBounds(94, 355, 158, 38);
+				
+				namePanel.add(cancelButton);
+				textFieldSurname.setText("Brinati");
+				textFieldSurname.setColumns(10);
+				textFieldSurname.setBounds(223, 148, 241, 25);
 		
 	}
 	

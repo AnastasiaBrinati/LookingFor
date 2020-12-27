@@ -2,8 +2,14 @@ package logic.view.desktop;
 
 import java.awt.Button;
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
 
 
 public class LoginUI extends JFrame {
@@ -27,13 +34,14 @@ public class LoginUI extends JFrame {
 	private JLabel lblpassword = new JLabel("PASSWORD");
 	private JTextField textFieldusername;
 	private JTextField textFieldpassword;
-	private Button btnLogin = new Button("Login");
+	private JButton btnLogin = new JButton("");
 	private Button btnSignUp = new Button("Sign Up");
+	private final JLabel label = new JLabel("");
 
 	
 
 	// Create the frame.
-	public LoginUI() {
+	public LoginUI()  {
 	
 		setTitle("LOGIN");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\biril\\Downloads\\loginIcon.png"));
@@ -46,7 +54,12 @@ public class LoginUI extends JFrame {
 		contentPane.setLayout(null);
 	
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(0, -10, 401, 524);
+		panel.setBounds(0, 0, 401, 514);
+		panel.setLayout(null);
+		label.setBounds(10, 0, 46, 14);
+		
+		panel.add(label);
+		leftSideImage.setBounds(226, 12, 0, 0);
 		panel.add(leftSideImage);
 		contentPane.add(panel);
 
@@ -75,12 +88,6 @@ public class LoginUI extends JFrame {
 		textFieldpassword.setBounds(449, 245, 290, 20);
 		contentPane.add(textFieldpassword);
 	
-		//login button
-		btnLogin.setForeground(Color.WHITE);
-		btnLogin.setBackground(new Color(210, 105, 30));
-		btnLogin.setBounds(503, 289, 171, 42);
-		contentPane.add(btnLogin);
-	
 		//alternative button
 		btnSignUp.setForeground(Color.WHITE);
 		btnSignUp.setBackground(Color.GRAY);
@@ -90,6 +97,14 @@ public class LoginUI extends JFrame {
 		Alternative.setForeground(Color.WHITE);
 		Alternative.setBounds(586, 370, 46, 14);
 		contentPane.add(Alternative);
+		
+		
+		btnLogin.setBounds(526, 303, 126, 36);
+		contentPane.add(btnLogin);
+		
+		Image img=new ImageIcon(this.getClass().getResource("/button.png")).getImage();
+		btnLogin.setIcon(new ImageIcon(img));
+		btnLogin.setContentAreaFilled(false);
 	}
 	
 
@@ -112,13 +127,11 @@ public class LoginUI extends JFrame {
 		return textFieldpassword.getText();
 	}
 
-	public Button getLoginButton() {
+	public JButton getLoginButton() {
 		return btnLogin;
 	}
 	
 	public Button getSignInButton() {
 		return btnSignUp;
 	}
-	
-
 }
