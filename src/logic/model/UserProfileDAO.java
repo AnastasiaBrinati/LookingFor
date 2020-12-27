@@ -3,12 +3,12 @@ package logic.model;
 
 public class UserProfileDAO {
 	
-	private static UserProfile user;
+	//private static UserProfile user;
 	
 	//connection to DB
 
 	
-	public boolean goCheckAndTellMe(UserProfile user) {
+	public boolean goCheckAndTellMe() {
 		
 		//connection to DB
 		//connection.createStatement();
@@ -25,14 +25,12 @@ public class UserProfileDAO {
 		
 		//close connection
 		
-		
-		//user = new UserProfile();
-		if((user.getUsername().equals(USERNAME) || user.getEmail().equals(EMAIL)) && user.getPassword().equals(PASSWORD)) {
-			user.setUsername(USERNAME);
-			user.setPassword(PASSWORD);
-			user.setName(NAME);
-			user.setSurname(COGNOME);
-			user.setEmail(EMAIL);
+		UserProfile up = new UserProfile();
+		if((up.getUsername().equals(USERNAME) || up.getEmail().equals(EMAIL)) && up.getPassword().equals(PASSWORD)) {
+			UserProfile.setUsername(USERNAME);
+			UserProfile.setName(NAME);
+			UserProfile.setSurname(COGNOME);
+			UserProfile.setEmail(EMAIL);
 			return true;
 		}
 		return false;

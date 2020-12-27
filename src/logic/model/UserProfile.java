@@ -9,34 +9,32 @@ import logic.model.UserProfileDAO;
 
 public class UserProfile {
 	
-	private String name;
-	private String surname;
-	private String username;
-	private String email;
-	private String password;
+	private static String name;
+	private static String surname;
+	private static String username;
+	private static String email;
+	private static String password;
 	private List<Course> courses = new ArrayList<>();
 	private List<Event> events=new ArrayList<>();
 	 
-	private UserProfileDAO usDAO;
+	private static UserProfileDAO usDAO;
 	
 	
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public static void setName(String nome) {
+		name = nome;
 	}
 	public String getSurname() {
 		return surname;
 	}
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public static void setSurname(String cognome) {
+		surname = cognome;
 	}
 	
-	
-	
-	public void setUsername(String username) {
-		this.username = username;
+	public static void setUsername(String usern) {
+		username = usern;
 	}
 	public String getUsername() {
 		return username;
@@ -45,26 +43,26 @@ public class UserProfile {
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public static void setEmail(String iemail) {
+		email = iemail;
 	}
 	
 	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public static void setPassword(String passwd) {
+		password = passwd;
 	}
 	
-	public boolean checkCredentials(UserProfile user) {
+	public static boolean checkCredentials() {
 		usDAO = new UserProfileDAO();
-		if(usDAO.goCheckAndTellMe(user)) {
+		if(usDAO.goCheckAndTellMe()) {
 			return true;
 		}
 		return false;
 	}
 	
-	public void getCredentials(SettingsBean settingsBean) {
+	public static void getCredentials(SettingsBean settingsBean) {
 		settingsBean.setName(name);
 		settingsBean.setSurname(surname);
 		settingsBean.setUsername(username);

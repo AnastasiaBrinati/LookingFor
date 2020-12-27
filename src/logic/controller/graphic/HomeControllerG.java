@@ -12,7 +12,6 @@ import logic.view.desktop.UserProfileUI;
 public class HomeControllerG {
 
 	private static HomeUI view;
-	//private static HomeModel model;
 	private static HomeControllerG instance = null;
 
 	private HomeControllerG(HomeUI vista) {

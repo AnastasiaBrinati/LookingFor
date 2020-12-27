@@ -44,7 +44,6 @@ public class SettingsBean {
 	}
 	
 	public static void setCredentials(SettingsBean settingBean) {
-		UserProfile userProfile = new UserProfile();
-		userProfile.getCredentials(settingBean);
+		UserProfile.getCredentials(settingBean);
 	}
 }

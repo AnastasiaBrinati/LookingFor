@@ -38,7 +38,6 @@ public class SettingsControllerG {
 		String username = settingsBean.getUsername();
 		String email = settingsBean.getEmail();
 		String password = settingsBean.getPassword();
-		System.out.println(name + surname + username + email + password);
 		view.setCredentials(name, surname, username, email, password);
 	}
 	
