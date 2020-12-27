@@ -19,12 +19,12 @@ public class LoginController {
 	}
 	
 	
-	public boolean isAValidUser(LoginBean loginBean) {
+	public boolean isAValidUser(LoginBean loginBean) throws Exception {
 		
 		UserProfile.setUsername(loginBean.getUsername());
 		UserProfile.setPassword(loginBean.getPassword());
 		UserProfile.setEmail(loginBean.getEmail());
-		if(UserProfile.checkCredentials()) {
+		if(UserProfile.checkCredentials(loginBean)) {
 			return true;
 		}
 

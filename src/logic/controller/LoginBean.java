@@ -32,7 +32,7 @@ public class LoginBean {
 	}
 	////
 	
-	public static boolean checkCredentials(LoginBean lb) {
+	public static boolean checkCredentials(LoginBean lb) throws Exception {
 		LoginController loginController = LoginController.getInstance();
 		if(loginController.isAValidUser(lb)) {
 			return true;

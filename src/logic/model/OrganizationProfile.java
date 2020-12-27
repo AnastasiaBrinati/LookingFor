@@ -15,7 +15,6 @@ public class OrganizationProfile {
 		//String name, String username
 		//se credenziali ok
 		//inizializzo l'array di corsi dal db		
-		
 		//esempio
 	}
 	

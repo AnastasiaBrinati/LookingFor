@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sun.jdi.event.Event;
+
+import logic.controller.LoginBean;
 import logic.model.UserProfileDAO;
 
 
@@ -54,9 +56,9 @@ public class UserProfile {
 		password = passwd;
 	}
 	
-	public static boolean checkCredentials() {
+	public static boolean checkCredentials(LoginBean lb) throws Exception {
 		usDAO = new UserProfileDAO();
-		if(usDAO.goCheckAndTellMe()) {
+		if(usDAO.goCheckAndTellMe(lb.getUsername(),lb.getPassword())) {
 			return true;
 		}
 		return false;

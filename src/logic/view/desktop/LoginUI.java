@@ -97,9 +97,9 @@ public class LoginUI extends JFrame {
 		return textFieldusername.getText();
 	}
 	
-	public void WrongUsername() {
+	/*public void WrongUsername() {
 		textFieldusername.setText("WRONG!");
-	}
+	}*/
 	
 	
 	

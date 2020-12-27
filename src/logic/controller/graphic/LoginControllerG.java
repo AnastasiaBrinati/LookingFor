@@ -61,13 +61,18 @@ public class LoginControllerG {
 				loginBean = new LoginBean();
 				loginBean.setUsername(loginView.getUsername());
 				loginBean.setPassword(loginView.getPassword());
-				if(LoginBean.checkCredentials(loginBean)) {
-					loginView.setVisible(false);
-					HomeUI homepageView = new HomeUI();
-					HomeControllerG.getInstance(homepageView);
-				}
-				else {
-					loginView.WrongUsername();
+				try {
+					if(LoginBean.checkCredentials(loginBean)) {
+						loginView.setVisible(false);
+						HomeUI homepageView = new HomeUI();
+						HomeControllerG.getInstance(homepageView);
+					}
+					/*else {
+						loginView.WrongUsername();
+					}*/
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 			}
 
