@@ -3,6 +3,7 @@ package logic.view.desktop;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -25,7 +26,7 @@ public class SettingsUI extends JFrame {
 
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
-	private JButton settingsButton = new JButton("Settings");
+	private JButton settingsButton = new JButton("");
 	
 	private final JPanel panel = new JPanel();
 	private final JButton credentialsButton = new JButton("Name");
@@ -100,7 +101,7 @@ public class SettingsUI extends JFrame {
 				emailPanel.add(textFieldEmail);
 		
 		//header
-		headerPanel.setBackground(new Color(102, 205, 170));
+		headerPanel.setBackground(new Color(0, 255, 102));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1297, 51);
 		headerPanel.setLayout(null);
@@ -115,7 +116,7 @@ public class SettingsUI extends JFrame {
 		searchBar.setColumns(10);
 
 		settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
-		settingsButton.setBounds(10, 0, 55, 51);
+		settingsButton.setBounds(0, 0, 55, 51);
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
 
@@ -125,7 +126,7 @@ public class SettingsUI extends JFrame {
 
 		contentPane.add(headerPanel);
 		
-		panel.setBackground(new Color(102, 205, 170));
+		panel.setBackground(new Color(0, 255, 102));
 		panel.setBounds(0, 51, 307, 594);
 		panel.setLayout(null);
 		credentialsButton.setBackground(new Color(0, 128, 128));
@@ -239,6 +240,14 @@ public class SettingsUI extends JFrame {
 				textFieldSurname.setText("Brinati");
 				textFieldSurname.setColumns(10);
 				textFieldSurname.setBounds(223, 148, 241, 25);
+	
+				Image img1=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
+				homeButton.setIcon(new ImageIcon(img1));
+				homeButton.setContentAreaFilled(false);
+				
+				Image img2=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
+				settingsButton.setIcon(new ImageIcon(img2));
+				settingsButton.setContentAreaFilled(false);
 		
 	}
 	

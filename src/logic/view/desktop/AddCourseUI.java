@@ -3,8 +3,11 @@ package logic.view.desktop;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Image;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -36,7 +39,7 @@ public class AddCourseUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		addCourseButton.setBackground(new Color(255, 0, 0));
-		addCourseButton.setBounds(136, 211, 114, 35);
+		addCourseButton.setBounds(136, 197, 137, 49);
 		contentPane.add(addCourseButton);
 		
 		nameLabel.setBounds(10, 22, 90, 25);
@@ -70,6 +73,10 @@ public class AddCourseUI extends JFrame {
 		textFieldImg.setBounds(136, 127, 204, 25);
 		contentPane.add(textFieldImg);
 		textFieldImg.setColumns(10);
+		
+		Image img3=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
+		addCourseButton.setIcon(new ImageIcon(img3));
+		addCourseButton.setContentAreaFilled(true);
 	}
 	
 	public JButton getAddCourseButton() {

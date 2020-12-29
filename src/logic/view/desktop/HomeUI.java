@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.border.BevelBorder;
 import java.awt.GridBagLayout;
+import java.awt.Image;
+
 import javax.swing.JTabbedPane;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -43,8 +45,8 @@ public class HomeUI extends JFrame {
 	private JPanel contentPane;
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
-	private JButton profileButton = new JButton("profile");
-	private JButton settingsButton = new JButton("Settings");
+	private JButton profileButton = new JButton("");
+	private JButton settingsButton = new JButton("");
 
 	public HomeUI() {
 
@@ -57,7 +59,7 @@ public class HomeUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		panel.setBackground(new Color(102, 205, 170));
+		panel.setBackground(new Color(0, 255, 102));
 		panel.setBounds(0, 0, 1088, 54);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -67,12 +69,18 @@ public class HomeUI extends JFrame {
 		panel.add(lblNewLabel);
 		
 		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(1017, 10, 61, 34);
+		profileButton.setBounds(1029, 5, 49, 49);
 		panel.add(profileButton);
-		
-		
-		settingsButton.setBounds(10, 10, 85, 34);
+		settingsButton.setBounds(10, 10, 40, 43);
 		panel.add(settingsButton);
+		settingsButton.setEnabled(false);
+		
+		settingsButton.setContentAreaFilled(false);
+		Image img2=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
+		settingsButton.setIcon(new ImageIcon(img2));
+		Image img3=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
+		profileButton.setIcon(new ImageIcon(img3));
+		profileButton.setContentAreaFilled(false);
 		LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 

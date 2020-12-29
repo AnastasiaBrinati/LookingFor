@@ -18,6 +18,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import java.awt.SystemColor;
 
 
 public class LoginUI extends JFrame {
@@ -31,11 +32,11 @@ public class LoginUI extends JFrame {
 	private JLabel leftSideImage = new JLabel("");
 	private JLabel lblusername = new JLabel("USERNAME\\E-MAIL");
 	private JLabel Alternative = new JLabel("Or");
-	private JLabel lblpassword = new JLabel("PASSWORD");
+	private JLabel lblpassword = new JLabel("PASSWORDeeee");
 	private JTextField textFieldusername;
 	private JTextField textFieldpassword;
-	private JButton btnLogin = new JButton("");
-	private Button btnSignUp = new Button("Sign Up");
+	private JButton btnLogin = new JButton("Login");
+	private JButton btnSignUp = new JButton("Sign Up ");
 	private final JLabel label = new JLabel("");
 
 	
@@ -48,13 +49,13 @@ public class LoginUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 822, 539);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBackground(new Color(0, 255, 102));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 	
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(0, 0, 401, 514);
+		panel.setBounds(0, 0, 401, 500);
 		panel.setLayout(null);
 		label.setBounds(10, 0, 46, 14);
 		
@@ -90,21 +91,24 @@ public class LoginUI extends JFrame {
 	
 		//alternative button
 		btnSignUp.setForeground(Color.WHITE);
-		btnSignUp.setBackground(Color.GRAY);
-		btnSignUp.setBounds(558, 422, 70, 22);
+		btnSignUp.setBackground(SystemColor.textInactiveText);
+		btnSignUp.setBounds(537, 408, 115, 49);
+		Image img2=new ImageIcon(this.getClass().getResource("/028-upload.png")).getImage();
+		btnSignUp.setIcon(new ImageIcon(img2));
 		contentPane.add(btnSignUp);
 
 		Alternative.setForeground(Color.WHITE);
 		Alternative.setBounds(586, 370, 46, 14);
 		contentPane.add(Alternative);
+		btnLogin.setForeground(SystemColor.info);
+		btnLogin.setBackground(SystemColor.textInactiveText);
 		
 		
-		btnLogin.setBounds(526, 303, 126, 36);
+		btnLogin.setBounds(526, 306, 126, 42);
 		contentPane.add(btnLogin);
 		
-		Image img=new ImageIcon(this.getClass().getResource("/button.png")).getImage();
-		btnLogin.setIcon(new ImageIcon(img));
-		btnLogin.setContentAreaFilled(false);
+		Image img4=new ImageIcon(this.getClass().getResource("/001-download.png")).getImage();
+		btnLogin.setIcon(null);
 	}
 	
 
@@ -131,7 +135,7 @@ public class LoginUI extends JFrame {
 		return btnLogin;
 	}
 	
-	public Button getSignInButton() {
+	public JButton getSignInButton() {
 		return btnSignUp;
 	}
 }

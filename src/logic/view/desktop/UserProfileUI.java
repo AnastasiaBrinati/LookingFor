@@ -31,7 +31,7 @@ public class UserProfileUI extends JFrame {
 	private JPanel descriptionPanel = new JPanel();
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
-	private JButton settingsButton = new JButton("Settings");
+	private JButton settingsButton = new JButton("");
 	
 	private final JLabel lblUsername = new JLabel("username");
 	private final JLabel namelbl = new JLabel("name");
@@ -80,7 +80,7 @@ public class UserProfileUI extends JFrame {
 								listModel1.addElement("Sunday");
 		
 		//header
-		headerPanel.setBackground(new Color(102, 205, 170));
+		headerPanel.setBackground(new Color(0, 255, 102));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1297, 51);
 		headerPanel.setLayout(null);
@@ -95,7 +95,7 @@ public class UserProfileUI extends JFrame {
 		searchBar.setColumns(10);
 
 		settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
-		settingsButton.setBounds(10, 0, 55, 51);
+		settingsButton.setBounds(0, 0, 55, 51);
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
 
@@ -105,14 +105,14 @@ public class UserProfileUI extends JFrame {
 
 		contentPane.add(headerPanel);
 		
-		panel.setBackground(new Color(102, 205, 170));
+		panel.setBackground(new Color(0, 255, 102));
 		panel.setBounds(0, 51, 307, 584);
 		panel.setLayout(null);
 		coursesButton.setBackground(new Color(102, 205, 170));
 		coursesButton.setBounds(10, 153, 287, 57);
 		panel.add(coursesButton);
 		eventsButton.setBackground(new Color(102, 205, 170));
-		eventsButton.setBounds(10, 220, 287, 57);
+		eventsButton.setBounds(10, 207, 287, 57);
 		panel.add(eventsButton);
 		
 		contentPane.add(panel);
@@ -121,7 +121,7 @@ public class UserProfileUI extends JFrame {
 		lblTitle.setForeground(new Color(0, 0, 0));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
 		organizationsButton.setBackground(new Color(102, 205, 170));
-		organizationsButton.setBounds(10, 354, 287, 57);
+		organizationsButton.setBounds(10, 261, 287, 57);
 		
 		panel.add(organizationsButton);
 		backButton.setBounds(10, 107, 64, 36);
@@ -133,6 +133,23 @@ public class UserProfileUI extends JFrame {
 		contentPane.add(eventsPanel);
 		eventsPanel.setBounds(307, 52, 990, 585);
 		contentPane.add(eventsPanel);
+		
+		Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
+		coursesButton.setIcon(new ImageIcon(img3));
+		coursesButton.setContentAreaFilled(true);
+		
+		
+		Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
+		eventsButton.setIcon(new ImageIcon(img4));
+		eventsButton.setContentAreaFilled(true);
+		
+		Image img5=new ImageIcon(this.getClass().getResource("/014-placeholder.png")).getImage();
+		organizationsButton.setIcon(new ImageIcon(img5));
+		organizationsButton.setContentAreaFilled(true);
+		
+		
+		
+		
 		
 		
 	}
