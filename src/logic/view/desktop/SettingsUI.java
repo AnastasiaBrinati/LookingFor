@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JPasswordField;
 
 
 public class SettingsUI extends JFrame {
@@ -53,12 +54,12 @@ public class SettingsUI extends JFrame {
 	private final JButton cancelButton = new JButton("Cancel");
 	
 	private final JPanel emailPanel = new JPanel();
-	private final JTextField textFieldPsswd = new JTextField();
-	private final JTextField confirmPsswdtextField = new JTextField();
 	private final JLabel emaillbl = new JLabel("Email");
 	private final JLabel lblPassword = new JLabel("Password");
 	private final JLabel lblConfirmPassword = new JLabel("Confirm Password");
 	private JTextField textFieldEmail;
+	private final JPasswordField confirmPsswdtextField = new JPasswordField();
+	private final JPasswordField passwordField = new JPasswordField();
 
 	public SettingsUI() {
 
@@ -69,19 +70,96 @@ public class SettingsUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		emailPanel.setBounds(305, 168, 992, 477);
+		
+				
+		textFieldName.setBounds(223, 58, 241, 25);
+		textFieldName.setColumns(10);
+		namePanel.setBounds(305, 168, 992, 478);
+		
+		contentPane.add(namePanel);
+		namePanel.setLayout(null);
+		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		surnamelbl.setBounds(49, 146, 134, 25);
+		namePanel.add(surnamelbl);
+		
+		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		nameLbl.setBounds(49, 54, 116, 29);
+		namePanel.add(nameLbl);
+		
+		namePanel.add(textFieldName);
+		textFieldSurname.setColumns(10);
+		textFieldSurname.setBounds(223, 148, 241, 25);
+		
+		namePanel.add(textFieldSurname);
+		textFieldUsername.setColumns(10);
+		textFieldUsername.setBounds(223, 252, 241, 25);
+		
+		namePanel.add(textFieldUsername);
+		usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		usernamelbl.setBounds(49, 250, 134, 25);
+		
+		namePanel.add(usernamelbl);
+		saveButton.setBackground(new Color(218, 165, 32));
+		saveButton.setBounds(262, 355, 158, 38);
+		
+		namePanel.add(saveButton);
+		cancelButton.setBounds(94, 355, 158, 38);
+		
+		namePanel.add(cancelButton);
+		namePanel.setLayout(null);
+		
+		//namePanel.add(namePanel);
+		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		surnamelbl.setBounds(49, 146, 134, 25);
+		
+		namePanel.add(surnamelbl);
+		
+		namePanel.add(textFieldSurname);
+		
+		textFieldSurname.setColumns(10);
+		textFieldSurname.setBounds(223, 148, 241, 25);
+		namePanel.setBounds(305, 168, 992, 478);
+		
+		contentPane.add(namePanel);
+		
+		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		nameLbl.setBounds(49, 54, 116, 29);
+		namePanel.add(nameLbl);
+		
+		
+		namePanel.setLayout(null);
+		
+		//namePanel.add(namePanel);
+		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		surnamelbl.setBounds(49, 146, 134, 25);
+		
+		namePanel.add(surnamelbl);
+		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		nameLbl.setBounds(49, 54, 116, 29);
+		
+		namePanel.add(nameLbl);
+		textFieldName.setColumns(10);
+		textFieldName.setBounds(223, 58, 241, 25);
+		
+		namePanel.add(textFieldName);
+		
+		namePanel.add(textFieldSurname);
+		textFieldUsername.setColumns(10);
+		textFieldUsername.setBounds(223, 252, 241, 25);
+		
+		namePanel.add(textFieldUsername);
+		usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		usernamelbl.setBounds(49, 250, 134, 25);
+		
+		namePanel.add(usernamelbl);
+		
+		namePanel.add(cancelButton);
+		textFieldSurname.setColumns(10);
+		textFieldSurname.setBounds(223, 148, 241, 25);
+		emailPanel.setBounds(305, 168, 1003, 477);
 		contentPane.add(emailPanel);
 		emailPanel.setLayout(null);
 		
-				textFieldPsswd.setColumns(10);
-				textFieldPsswd.setBounds(308, 137, 241, 25);
-				
-				emailPanel.add(textFieldPsswd);
-				confirmPsswdtextField.setText("***");
-				confirmPsswdtextField.setColumns(10);
-				confirmPsswdtextField.setBounds(308, 219, 241, 25);
-				
-				emailPanel.add(confirmPsswdtextField);
 				emaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
 				emaillbl.setBounds(53, 53, 116, 29);
 				
@@ -99,12 +177,53 @@ public class SettingsUI extends JFrame {
 				textFieldEmail.setColumns(10);
 				textFieldEmail.setBounds(308, 60, 241, 25);
 				emailPanel.add(textFieldEmail);
-		
+				confirmPsswdtextField.setBounds(308, 215, 241, 26);
+				
+				emailPanel.add(confirmPsswdtextField);
+				passwordField.setBounds(308, 137, 241, 25);
+				
+				emailPanel.add(passwordField);
+
+		subtitlePanel.setBackground(new Color(192, 192, 192));
+		subtitlePanel.setBounds(305, 51, 1003, 117);
+
+		contentPane.add(subtitlePanel);
+		subtitlePanel.setLayout(null);
+		subtitlelbl.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		subtitlelbl.setBounds(50, 35, 185, 43);
+
+				
+
+		subtitlePanel.add(subtitlelbl);
+
 		//header
 		headerPanel.setBackground(new Color(0, 255, 102));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1297, 51);
 		headerPanel.setLayout(null);
+<<<<<<< .mine
+||||||| .r129
+
+		homeButton.setBounds(367, 0, 48, 51);
+		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
+		homeButton.setBorder(null);
+		homeButton.setContentAreaFilled(false);
+
+		searchBar = new JTextField();
+		searchBar.setBounds(416, 11, 349, 31);
+		searchBar.setColumns(10);
+
+		settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
+		settingsButton.setBounds(10, 0, 55, 51);
+		settingsButton.setContentAreaFilled(false);
+		settingsButton.setBorder(null);
+
+		headerPanel.add(homeButton);
+		headerPanel.add(searchBar);
+		headerPanel.add(settingsButton);
+
+		contentPane.add(headerPanel);
+=======
 
 		homeButton.setBounds(367, 0, 48, 51);
 		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
@@ -125,13 +244,51 @@ public class SettingsUI extends JFrame {
 		headerPanel.add(settingsButton);
 
 		contentPane.add(headerPanel);
+>>>>>>> .r130
 		
+<<<<<<< .mine
+				homeButton.setBounds(367, 0, 48, 51);
+				homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
+				homeButton.setBorder(null);
+				homeButton.setContentAreaFilled(false);
+				
+						searchBar = new JTextField();
+						searchBar.setBounds(416, 11, 349, 31);
+						searchBar.setColumns(10);
+						
+								settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
+								settingsButton.setBounds(10, 0, 55, 51);
+								settingsButton.setContentAreaFilled(false);
+								settingsButton.setBorder(null);
+								
+										headerPanel.add(homeButton);
+										headerPanel.add(searchBar);
+										headerPanel.add(settingsButton);
+										
+												contentPane.add(headerPanel);
+														
+														panel.setBackground(new Color(102, 205, 170));
+														panel.setBounds(0, 51, 307, 594);
+														panel.setLayout(null);
+														credentialsButton.setBackground(new Color(0, 128, 128));
+														credentialsButton.setBounds(10, 79, 287, 57);
+														panel.add(credentialsButton);
+														
+||||||| .r129
+		panel.setBackground(new Color(102, 205, 170));
+		panel.setBounds(0, 51, 307, 594);
+		panel.setLayout(null);
+		credentialsButton.setBackground(new Color(0, 128, 128));
+		credentialsButton.setBounds(10, 79, 287, 57);
+		panel.add(credentialsButton);
+=======
 		panel.setBackground(new Color(0, 255, 102));
 		panel.setBounds(0, 51, 307, 594);
 		panel.setLayout(null);
 		credentialsButton.setBackground(new Color(0, 128, 128));
 		credentialsButton.setBounds(10, 79, 287, 57);
 		panel.add(credentialsButton);
+>>>>>>> .r130
 		
 		contentPane.add(panel);
 		lblTitle.setBounds(89, 27, 141, 41);
@@ -166,80 +323,6 @@ public class SettingsUI extends JFrame {
 		subtitlelbl.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		subtitlelbl.setBounds(50, 35, 185, 43);
 		
-		subtitlePanel.add(subtitlelbl);
-				textFieldName.setText("Anastasia");
-				textFieldName.setBounds(223, 58, 241, 25);
-				textFieldName.setColumns(10);
-				namePanel.setBounds(305, 168, 992, 478);
-				
-				contentPane.add(namePanel);
-				namePanel.setLayout(null);
-				surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				surnamelbl.setBounds(49, 146, 134, 25);
-				namePanel.add(surnamelbl);
-				
-				nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				nameLbl.setBounds(49, 54, 116, 29);
-				namePanel.add(nameLbl);
-				
-				namePanel.add(textFieldName);
-				textFieldSurname.setColumns(10);
-				textFieldSurname.setBounds(223, 148, 241, 25);
-				
-				namePanel.add(textFieldSurname);
-				textFieldUsername.setText("PinkiePie");
-				textFieldUsername.setColumns(10);
-				textFieldUsername.setBounds(223, 252, 241, 25);
-				
-				namePanel.add(textFieldUsername);
-				usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				usernamelbl.setBounds(49, 250, 134, 25);
-				
-				namePanel.add(usernamelbl);
-				saveButton.setBackground(new Color(218, 165, 32));
-				saveButton.setBounds(262, 355, 158, 38);
-				
-				namePanel.add(saveButton);
-				cancelButton.setBounds(94, 355, 158, 38);
-				
-				namePanel.add(cancelButton);
-				namePanel.setLayout(null);
-				
-				//namePanel.add(namePanel);
-				surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				surnamelbl.setBounds(49, 146, 134, 25);
-				
-				namePanel.add(surnamelbl);
-				nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				nameLbl.setBounds(49, 54, 116, 29);
-				
-				namePanel.add(nameLbl);
-				textFieldName.setText("Anastasia");
-				textFieldName.setColumns(10);
-				textFieldName.setBounds(223, 58, 241, 25);
-				
-				namePanel.add(textFieldName);
-				
-				namePanel.add(textFieldSurname);
-				textFieldUsername.setText("PinkiePie");
-				textFieldUsername.setColumns(10);
-				textFieldUsername.setBounds(223, 252, 241, 25);
-				
-				namePanel.add(textFieldUsername);
-				usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				usernamelbl.setBounds(49, 250, 134, 25);
-				
-				namePanel.add(usernamelbl);
-				saveButton.setBackground(new Color(218, 165, 32));
-				saveButton.setBounds(262, 355, 158, 38);
-				
-				namePanel.add(saveButton);
-				cancelButton.setBounds(94, 355, 158, 38);
-				
-				namePanel.add(cancelButton);
-				textFieldSurname.setText("Brinati");
-				textFieldSurname.setColumns(10);
-				textFieldSurname.setBounds(223, 148, 241, 25);
 	
 				Image img1=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
 				homeButton.setIcon(new ImageIcon(img1));
@@ -249,6 +332,9 @@ public class SettingsUI extends JFrame {
 				settingsButton.setIcon(new ImageIcon(img2));
 				settingsButton.setContentAreaFilled(false);
 		
+		contentPane.add(subtitlePanel);
+		subtitlePanel.setLayout(null);
+
 	}
 	
 	public JButton getHomeButton() {
@@ -261,6 +347,10 @@ public class SettingsUI extends JFrame {
 	
 	public JButton getCancelButton() {
 		return cancelButton;
+	}
+	
+	public JButton getSaveButton() {
+		return saveButton;
 	}
 	
 	public JButton getSecurityButton() {
@@ -286,14 +376,29 @@ public class SettingsUI extends JFrame {
 		
 	}
 	
+	
+	
+	public String getName() {
+		return textFieldName.getText();
+	}
+	
+	public String getSurname() {
+		return textFieldSurname.getText();
+	}
+	
+	public String getUsername() {
+		return textFieldUsername.getText();
+	}
+	
 	public void setCredentials(String name, String surname, String username, String email, String password) {
 		
 		textFieldName.setText(name);
 		textFieldSurname.setText(surname);
 		textFieldUsername.setText(username);
 		textFieldEmail.setText(email);
-		textFieldPsswd.setText(password);
+		passwordField.setText(password);
 		
 	}
+	
 	
 }
