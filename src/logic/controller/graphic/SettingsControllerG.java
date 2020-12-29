@@ -3,7 +3,9 @@ package logic.controller.graphic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.model.SettingsBean;
+import logic.controller.LoginBean;
+import logic.controller.SettingsBean;
+import logic.model.ProfileBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.SettingsUI;
 
@@ -32,13 +34,13 @@ public class SettingsControllerG {
 	}
 	
 	private static void setCredentials() {
-		SettingsBean settingsBean = new SettingsBean();
-		SettingsBean.setCredentials(settingsBean);
-		String name = settingsBean.getName();
-		String surname = settingsBean.getSurname();
-		String username = settingsBean.getUsername();
-		String email = settingsBean.getEmail();
-		String password = settingsBean.getPassword();
+		ProfileBean profileBean = new ProfileBean();
+		ProfileBean.setCredentials(profileBean);
+		String name = profileBean.getName();
+		String surname = profileBean.getSurname();
+		String username = profileBean.getUsername();
+		String email = profileBean.getEmail();
+		String password = profileBean.getPassword();
 		view.setCredentials(name, surname, username, email, password);
 	}
 	
@@ -86,5 +88,28 @@ public class SettingsControllerG {
 
 		};
 		view.getSecurityButton().addActionListener(gestoreSecurity);
+		
+		ActionListener gestoreSave = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				SettingsBean settingBean = new SettingsBean();
+				settingBean.setUsername(view.getUsername());
+				settingBean.setName(view.getName());
+				settingBean.setSurname(view.getSurname());
+				//exceptions
+				try {
+					SettingsBean.changeCredentials(settingBean);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				setCredentials();
+				view.repaint();
+				
+			}
+
+		};
+		view.getSaveButton().addActionListener(gestoreSave);
 	}
 }

@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import logic.model.Course;
-import logic.controller.Queries;
 
 
 

@@ -12,7 +12,6 @@ public class LoginController {
 	public static synchronized LoginController getInstance() {
 		if(instance==null) {
 			instance = new LoginController();
-			//instance.assegnaGestori();
 		}
 	
 		return instance;
@@ -24,7 +23,7 @@ public class LoginController {
 		UserProfile.setUsername(loginBean.getUsername());
 		UserProfile.setPassword(loginBean.getPassword());
 		UserProfile.setEmail(loginBean.getEmail());
-		if(UserProfile.checkCredentials(loginBean)) {
+		if(UserProfile.checkCredentials()) {
 			return true;
 		}
 

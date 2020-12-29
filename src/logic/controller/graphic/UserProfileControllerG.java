@@ -7,7 +7,7 @@ import logic.view.desktop.AddCourseUI;
 import logic.controller.OrganizationController;
 import logic.model.HomeModel;
 import logic.model.OrganizationProfile;
-import logic.model.SettingsBean;
+import logic.model.ProfileBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.UserProfileUI;
@@ -38,8 +38,8 @@ public class UserProfileControllerG {
 	}
 
 	public static void setCredentials() {
-		SettingsBean settingsBean = new SettingsBean();
-		SettingsBean.setCredentials(settingsBean);
+		ProfileBean settingsBean = new ProfileBean();
+		ProfileBean.setCredentials(settingsBean);
 		String name = settingsBean.getName();
 		String surname = settingsBean.getSurname();
 		String username = settingsBean.getUsername();

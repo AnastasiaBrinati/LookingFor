@@ -12,7 +12,6 @@ import logic.model.SignInModel;
 
 import logic.controller.LoginBean;
 import logic.controller.LoginController;
-import logic.controller.SignInController;
 
 public class LoginControllerG {
 	
@@ -48,7 +47,7 @@ public class LoginControllerG {
 				loginView.setVisible(false);
 				SignInUI signInView = new SignInUI();
 				SignInModel model = new SignInModel();
-				SignInController.getInstance(signInView, model);
+				SignInControllerG.getInstance(signInView, model);
 			}
 
 		};

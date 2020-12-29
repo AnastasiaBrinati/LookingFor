@@ -56,15 +56,18 @@ public class UserProfile {
 		password = passwd;
 	}
 	
-	public static boolean checkCredentials(LoginBean lb) throws Exception {
+	public static boolean checkCredentials() throws Exception {
 		usDAO = new UserProfileDAO();
 
-		if(usDAO.goCheckAndTellMe(lb.getUsername(),lb.getPassword())) {
-			username = lb.getUsername();
-			password = lb.getPassword();
+		if(usDAO.goCheckAndTellMe(username,password)) {
 			return true;
 		}
 		return false;
+	}
+	
+	public static boolean applyChange() throws Exception{
+		//if DAO says ok its ok
+		return true;
 	}
 	
 
