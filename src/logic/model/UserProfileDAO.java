@@ -19,7 +19,9 @@ public class UserProfileDAO {
     private static String DB_URL = "jdbc:mysql://d0cl8zm89gc67d2t:n1161ldsuifnjou5@r6ze0q02l4me77k3.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/w2l441mj7t77vuhd";
     private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     
- 
+    public void goChangeAndTellMe(String a, String b) {
+    	
+    }
 	
 	public boolean goCheckAndTellMe(String username,String password) throws Exception {
 		
@@ -29,28 +31,25 @@ public class UserProfileDAO {
 		
 		try {
 			//step2: loading dinamico driver mysql
-			
 			Class.forName(DRIVER_CLASS_NAME);
 			
 			//step3: apertura connessione
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
-						//step4: creazione ed esecuzione query 
+			//step4: creazione ed esecuzione query 
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-
-			
 			ResultSet rs = Queries.checkSignedUser(stmt, username,password);
 			
 			if (!rs.first()){ // rs empty
             	Exception e = new Exception("No username Found matching with username: "+username);
             	throw e;
             }
-            
-            // riposizionamento del cursore
+           
+            //riposizionamento del cursore
             rs.first();
             do{
             	String foundPassword=rs.getString("password");
             	if(foundPassword.equals(password)) {
-            		System.out.println("Correct password!");
+            		//System.out.println("Correct password!");
             		
             		String nome = rs.getString("name");
             		String cognome = rs.getString("surname");
@@ -67,9 +66,11 @@ public class UserProfileDAO {
             
             
             return false;
+            
+            
 		}finally {
 			
-			// STEP 5.2: Clean-up dell'ambiente
+			//STEP 5.2: Clean-up dell'ambiente
             try {
                 if (stmt != null)
                     stmt.close();
@@ -83,14 +84,9 @@ public class UserProfileDAO {
             }
 			
 		}
-		
-		
-		
-		
-		
-		
 			
-		
 	}
+	
+	
 	
 }

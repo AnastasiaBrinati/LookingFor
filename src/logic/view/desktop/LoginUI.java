@@ -51,19 +51,17 @@ public class LoginUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 822, 539);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 255, 102));
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 	
 		panel.setBackground(Color.DARK_GRAY);
-<<<<<<< .mine
-		panel.setBounds(0, 0, 401, 502);
-||||||| .r129
+
 		panel.setBounds(0, 0, 401, 514);
-=======
+
 		panel.setBounds(0, 0, 401, 500);
->>>>>>> .r130
+
 		panel.setLayout(null);
 		label.setBounds(10, 0, 46, 14);
 		
@@ -95,42 +93,33 @@ public class LoginUI extends JFrame {
 		//alternative button
 		btnSignUp.setForeground(Color.WHITE);
 		btnSignUp.setBackground(SystemColor.textInactiveText);
-		btnSignUp.setBounds(537, 408, 115, 49);
+		btnSignUp.setBounds(545, 388, 108, 42);
 		Image img2=new ImageIcon(this.getClass().getResource("/028-upload.png")).getImage();
 		btnSignUp.setIcon(new ImageIcon(img2));
 		contentPane.add(btnSignUp);
 
 		Alternative.setForeground(Color.WHITE);
-		Alternative.setBounds(582, 387, 21, 14);
+		Alternative.setBounds(585, 364, 21, 14);
 		contentPane.add(Alternative);
-<<<<<<< .mine
 
 		lblTitle.setForeground(Color.BLACK);
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 70));
 		lblTitle.setBounds(470, 51, 263, 103);
-||||||| .r129
-=======
+
 		btnLogin.setForeground(SystemColor.info);
 		btnLogin.setBackground(SystemColor.textInactiveText);
->>>>>>> .r130
-		
+
 		contentPane.add(lblTitle);
-		
-<<<<<<< .mine
+
 		textFieldpassword = new JPasswordField();
 		textFieldpassword.setBounds(450, 274, 290, 20);
 		contentPane.add(textFieldpassword);
 
-		
-		btnLogin.setBounds(527, 330, 126, 36);
-||||||| .r129
-		btnLogin.setBounds(526, 303, 126, 36);
-=======
-		btnLogin.setBounds(526, 306, 126, 42);
->>>>>>> .r130
+	
+		btnLogin.setBounds(526, 312, 140, 42);
 		contentPane.add(btnLogin);
 		
-		Image img4=new ImageIcon(this.getClass().getResource("/001-download.png")).getImage();
+		//Image img4=new ImageIcon(this.getClass().getResource("/001-download.png")).getImage();
 		btnLogin.setIcon(null);
 
 	}

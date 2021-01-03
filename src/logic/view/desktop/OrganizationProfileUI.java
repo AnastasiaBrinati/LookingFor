@@ -95,8 +95,8 @@ public class OrganizationProfileUI extends JFrame {
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorder(null);
 		
-		headerPanel.setBounds(0, 0, 1312, 40);
-		headerPanel.setBackground(new Color(0, 255, 102));
+		headerPanel.setBounds(0, 0, 1400, 54);
+		headerPanel.setBackground(new Color(0, 128, 128));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		homeButton.setBounds(314, 0, 45, 42);
 		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
@@ -109,7 +109,7 @@ public class OrganizationProfileUI extends JFrame {
 		contentPane.add(headerPanel);
 		
 		textField = new JTextField();
-		textField.setBounds(369, 12, 364, 19);
+		textField.setBounds(369, 12, 364, 30);
 		headerPanel.add(textField);
 		textField.setColumns(10);
 		
@@ -119,7 +119,7 @@ public class OrganizationProfileUI extends JFrame {
 		headerPanel.add(settingsButton);
         
 		//courses
-		coursesPanel.setBounds(268, 132, 972, 511);
+		coursesPanel.setBounds(268, 145, 972, 498);
 		addButton.setBackground(new Color(255, 204, 102));
 		coursesPanel.add(addButton);
 		addButton.setBounds(10, 63, 130, 63);
@@ -127,11 +127,11 @@ public class OrganizationProfileUI extends JFrame {
 		coursesPanel.add(lblNewLabel_2);
 		contentPane.add(coursesPanel);
 		coursesPanel.setLayout(null);
-		PANEL.setBounds(10, 136, 931, 365);
+		PANEL.setBounds(10, 136, 1000, 450);
 		coursesPanel.add(PANEL);
 		
 		//events
-		eventsPanel.setBounds(268, 132, 972, 511);
+		eventsPanel.setBounds(268, 145, 972, 498);
 		contentPane.add(eventsPanel);
 		eventsPanel.setLayout(null);
 		lblNewLabel_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
@@ -139,13 +139,13 @@ public class OrganizationProfileUI extends JFrame {
 		eventsPanel.add(lblNewLabel_4);
 		
 		//courts
-		courtsPanel.setBounds(268, 132, 972, 511);
+		courtsPanel.setBounds(268, 145, 972, 498);
 		contentPane.add(courtsPanel);
 		courtsPanel.setLayout(null);
 		lblNewLabel_3.setBounds(10, 34, 46, 14);
 		courtsPanel.add(lblNewLabel_3);
-		panel.setBounds(0, 39, 269, 604);
-		panel.setBackground(new Color(0, 255, 102));
+		panel.setBounds(0, 53, 269, 590);
+		panel.setBackground(new Color(102, 205, 170));
 		
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -172,7 +172,7 @@ public class OrganizationProfileUI extends JFrame {
 		//profile header
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(192, 192, 192));
-		panel_1.setBounds(268, 39, 972, 93);
+		panel_1.setBounds(268, 53, 972, 92);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 										
@@ -190,7 +190,7 @@ public class OrganizationProfileUI extends JFrame {
 		organizationImageLbl.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\icons8-ping-pong-64.png"));
 		organizationImageLbl.setBounds(10, 11, 73, 71);
 		panel_1.add(organizationImageLbl);
-		descriptionPanel.setBounds(268, 132, 972, 511);
+		descriptionPanel.setBounds(268, 145, 972, 498);
 										
 		contentPane.add(descriptionPanel);
 		descriptionPanel.setLayout(null);

@@ -65,9 +65,43 @@ public class UserProfile {
 		return false;
 	}
 	
-	public static boolean applyChange() throws Exception{
-		//if DAO says ok its ok
+	public static boolean canIChange(String username) throws Exception{
+		/*
+		usDAO = new UserProfileDAO();
+
+		if(usDAO.changingData(username)) {
+			return true;
+			
+			//se username è unique o uguale a prima
+		}
+		return false;
+		*/
+		
 		return true;
+	}
+	
+	public static void change(String credential1, String credential2, int x) {
+		
+		/*
+		usDAO = new UserProfileDAO();
+		
+		if(x==1) {
+			//credential1=name
+			//credential2=surname
+			usDAO.goChangeAndTellMe(credential1,credential2);
+		}
+		else if(x==2) {
+			//credential1=email
+			//credential2=password
+			usDAO.goChangeAndTellMe(credential1,credential2);
+		}
+		*/
+		
+		
+		//simulazione
+		name = credential1;
+		surname = credential2;
+
 	}
 	
 

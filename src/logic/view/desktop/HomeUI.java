@@ -59,7 +59,7 @@ public class HomeUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		panel.setBackground(new Color(0, 255, 102));
+		panel.setBackground(new Color(0, 128, 128));
 		panel.setBounds(0, 0, 1088, 54);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -71,9 +71,9 @@ public class HomeUI extends JFrame {
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(1029, 5, 49, 49);
 		panel.add(profileButton);
-		settingsButton.setBounds(10, 10, 40, 43);
+		settingsButton.setBounds(10, 5, 40, 43);
 		panel.add(settingsButton);
-		settingsButton.setEnabled(false);
+		//settingsButton.setEnabled(false);
 		
 		settingsButton.setContentAreaFilled(false);
 		Image img2=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();

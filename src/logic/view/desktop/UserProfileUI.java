@@ -31,7 +31,7 @@ public class UserProfileUI extends JFrame {
 	private JPanel descriptionPanel = new JPanel();
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
-	private JButton settingsButton = new JButton("");
+	private JButton settingsButton = new JButton("Settings");
 	
 	private final JLabel lblUsername = new JLabel("username");
 	private final JLabel namelbl = new JLabel("name");
@@ -80,7 +80,7 @@ public class UserProfileUI extends JFrame {
 								listModel1.addElement("Sunday");
 		
 		//header
-		headerPanel.setBackground(new Color(0, 255, 102));
+		headerPanel.setBackground(new Color(0, 128, 128));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1297, 51);
 		headerPanel.setLayout(null);
@@ -94,7 +94,7 @@ public class UserProfileUI extends JFrame {
 		searchBar.setBounds(416, 11, 349, 31);
 		searchBar.setColumns(10);
 
-		settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
+		settingsButton.setIcon(null);
 		settingsButton.setBounds(0, 0, 55, 51);
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
@@ -105,7 +105,7 @@ public class UserProfileUI extends JFrame {
 
 		contentPane.add(headerPanel);
 		
-		panel.setBackground(new Color(0, 255, 102));
+		panel.setBackground(new Color(102, 205, 170));
 		panel.setBounds(0, 51, 307, 584);
 		panel.setLayout(null);
 		coursesButton.setBackground(new Color(102, 205, 170));

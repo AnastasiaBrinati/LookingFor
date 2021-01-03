@@ -1,15 +1,14 @@
 package logic.controller;
 
-//import logic.view.desktop.LoginUI;
 
 public class LoginBean {
 	
-	public LoginBean() {
-	}
-		
 	private static String email;
 	private String username;
 	private String password;
+	
+	public LoginBean() {
+	}
 	
 	public void setUsername(String username) {
 		this.username = username;

@@ -4,10 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.view.desktop.AddCourseUI;
-import logic.controller.OrganizationController;
+import logic.controller.ProfileBean;
 import logic.model.HomeModel;
 import logic.model.OrganizationProfile;
-import logic.model.ProfileBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.UserProfileUI;
@@ -38,11 +37,11 @@ public class UserProfileControllerG {
 	}
 
 	public static void setCredentials() {
-		ProfileBean settingsBean = new ProfileBean();
-		ProfileBean.setCredentials(settingsBean);
-		String name = settingsBean.getName();
-		String surname = settingsBean.getSurname();
-		String username = settingsBean.getUsername();
+		ProfileBean profileBean = new ProfileBean();
+		ProfileBean.setCredentials(profileBean);
+		String name = profileBean.getName();
+		String surname = profileBean.getSurname();
+		String username = profileBean.getUsername();
 		view.setCredentials(name, surname, username);
 	}
 	
@@ -71,7 +70,7 @@ public class UserProfileControllerG {
 				OrganizationProfileUI vista=new OrganizationProfileUI();
 				AddCourseUI view2 = new AddCourseUI();
 				OrganizationProfile orgmodel = new OrganizationProfile();
-				OrganizationController controller=OrganizationController.getInstance(vista, orgmodel);
+				OrganizationControllerG controller=OrganizationControllerG.getInstance(vista, orgmodel);
 				controller.assegnaGestori();
 				view.setVisible(false);
 							

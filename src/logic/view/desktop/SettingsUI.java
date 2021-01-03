@@ -185,7 +185,7 @@ public class SettingsUI extends JFrame {
 				emailPanel.add(passwordField);
 
 		subtitlePanel.setBackground(new Color(192, 192, 192));
-		subtitlePanel.setBounds(305, 51, 1003, 117);
+		subtitlePanel.setBounds(305, 80, 992, 115);
 
 		contentPane.add(subtitlePanel);
 		subtitlePanel.setLayout(null);
@@ -197,33 +197,10 @@ public class SettingsUI extends JFrame {
 		subtitlePanel.add(subtitlelbl);
 
 		//header
-		headerPanel.setBackground(new Color(0, 255, 102));
+		headerPanel.setBackground(new Color(0, 128, 128));
 		headerPanel.setForeground(new Color(255, 165, 0));
-		headerPanel.setBounds(0, 0, 1297, 51);
+		headerPanel.setBounds(0, 0, 1297, 54);
 		headerPanel.setLayout(null);
-<<<<<<< .mine
-||||||| .r129
-
-		homeButton.setBounds(367, 0, 48, 51);
-		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
-		homeButton.setBorder(null);
-		homeButton.setContentAreaFilled(false);
-
-		searchBar = new JTextField();
-		searchBar.setBounds(416, 11, 349, 31);
-		searchBar.setColumns(10);
-
-		settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
-		settingsButton.setBounds(10, 0, 55, 51);
-		settingsButton.setContentAreaFilled(false);
-		settingsButton.setBorder(null);
-
-		headerPanel.add(homeButton);
-		headerPanel.add(searchBar);
-		headerPanel.add(settingsButton);
-
-		contentPane.add(headerPanel);
-=======
 
 		homeButton.setBounds(367, 0, 48, 51);
 		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
@@ -244,51 +221,13 @@ public class SettingsUI extends JFrame {
 		headerPanel.add(settingsButton);
 
 		contentPane.add(headerPanel);
->>>>>>> .r130
-		
-<<<<<<< .mine
-				homeButton.setBounds(367, 0, 48, 51);
-				homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
-				homeButton.setBorder(null);
-				homeButton.setContentAreaFilled(false);
-				
-						searchBar = new JTextField();
-						searchBar.setBounds(416, 11, 349, 31);
-						searchBar.setColumns(10);
-						
-								settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
-								settingsButton.setBounds(10, 0, 55, 51);
-								settingsButton.setContentAreaFilled(false);
-								settingsButton.setBorder(null);
-								
-										headerPanel.add(homeButton);
-										headerPanel.add(searchBar);
-										headerPanel.add(settingsButton);
-										
-												contentPane.add(headerPanel);
 														
-														panel.setBackground(new Color(102, 205, 170));
-														panel.setBounds(0, 51, 307, 594);
-														panel.setLayout(null);
-														credentialsButton.setBackground(new Color(0, 128, 128));
-														credentialsButton.setBounds(10, 79, 287, 57);
-														panel.add(credentialsButton);
-														
-||||||| .r129
 		panel.setBackground(new Color(102, 205, 170));
-		panel.setBounds(0, 51, 307, 594);
+		panel.setBounds(0, 54, 307, 591);
 		panel.setLayout(null);
 		credentialsButton.setBackground(new Color(0, 128, 128));
 		credentialsButton.setBounds(10, 79, 287, 57);
 		panel.add(credentialsButton);
-=======
-		panel.setBackground(new Color(0, 255, 102));
-		panel.setBounds(0, 51, 307, 594);
-		panel.setLayout(null);
-		credentialsButton.setBackground(new Color(0, 128, 128));
-		credentialsButton.setBounds(10, 79, 287, 57);
-		panel.add(credentialsButton);
->>>>>>> .r130
 		
 		contentPane.add(panel);
 		lblTitle.setBounds(89, 27, 141, 41);
@@ -315,15 +254,7 @@ public class SettingsUI extends JFrame {
 		coursesButton_5.setBounds(10, 369, 287, 57);
 		
 		panel.add(coursesButton_5);
-		subtitlePanel.setBackground(new Color(192, 192, 192));
-		subtitlePanel.setBounds(305, 51, 992, 117);
 		
-		contentPane.add(subtitlePanel);
-		subtitlePanel.setLayout(null);
-		subtitlelbl.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		subtitlelbl.setBounds(50, 35, 185, 43);
-		
-	
 				Image img1=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
 				homeButton.setIcon(new ImageIcon(img1));
 				homeButton.setContentAreaFilled(false);
@@ -331,10 +262,6 @@ public class SettingsUI extends JFrame {
 				Image img2=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
 				settingsButton.setIcon(new ImageIcon(img2));
 				settingsButton.setContentAreaFilled(false);
-		
-		contentPane.add(subtitlePanel);
-		subtitlePanel.setLayout(null);
-
 	}
 	
 	public JButton getHomeButton() {

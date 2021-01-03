@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.controller.LoginBean;
+import logic.controller.ProfileBean;
 import logic.controller.SettingsBean;
-import logic.model.ProfileBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.SettingsUI;
 
@@ -100,6 +100,7 @@ public class SettingsControllerG {
 				//exceptions
 				try {
 					SettingsBean.changeCredentials(settingBean);
+					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
