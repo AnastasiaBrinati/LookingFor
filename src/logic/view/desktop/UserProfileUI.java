@@ -12,11 +12,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.TextArea;
-import javax.swing.JTable;
-import javax.swing.JList;
-import javax.swing.JTree;
-import javax.swing.JCheckBox;
+
 
 public class UserProfileUI extends JFrame {
 

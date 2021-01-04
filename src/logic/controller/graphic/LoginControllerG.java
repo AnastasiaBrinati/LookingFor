@@ -7,11 +7,9 @@ import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SignInUI;
 
-import logic.model.HomeModel;
 import logic.model.SignInModel;
-
 import logic.controller.LoginBean;
-import logic.controller.LoginController;
+
 
 public class LoginControllerG {
 	
