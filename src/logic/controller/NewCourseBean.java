@@ -1,10 +1,6 @@
+package logic.controller;
 
-package logic.model;
-
-
-
-public class Course {
-	
+public class NewCourseBean {
 	private String name;
 	private int courseID;
 	private String organization;
@@ -13,9 +9,8 @@ public class Course {
 	private String sport;
 	private String instructorName;
 	private String imgSrc;
-	private int availability;
+	private int avaialbility;
 	private String description;
-	
 	public String getName() {
 		return name;
 	}
@@ -64,11 +59,11 @@ public class Course {
 	public void setImgSrc(String imgSrc) {
 		this.imgSrc = imgSrc;
 	}
-	public int getAvailability() {
-		return availability;
+	public int getAvaialbility() {
+		return avaialbility;
 	}
-	public void setAvailability(int availability) {
-		this.availability = availability;
+	public void setAvaialbility(int avaialbility) {
+		this.avaialbility = avaialbility;
 	}
 	public String getDescription() {
 		return description;
@@ -77,19 +72,6 @@ public class Course {
 		this.description = description;
 	}
 	
-	public void addCourse() throws Exception {
-		
-		CourseDAO.addCourse(this);
-	}
+	
+
 }
-
-	
-
-	
-	
-	
-	
-
-
-
-	

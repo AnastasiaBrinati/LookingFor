@@ -65,7 +65,7 @@ public class OrganizationControllerG{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				AddCourseUI addCourseView = new AddCourseUI();
-				AddCourseController controller = AddCourseController.getInstance(addCourseView, view, orgmodel);
+				AddCourseController controller = AddCourseController.getInstance();
 			}
 		};
 		view.getAddButton().addActionListener(gestoreAddCourse);

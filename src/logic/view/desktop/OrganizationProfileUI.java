@@ -86,7 +86,7 @@ public class OrganizationProfileUI extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 	
-		profileButton.setBounds(1236, 0, 66, 42);
+		profileButton.setBounds(1166, 0, 66, 42);
 		profileButton.setIcon(null);
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorder(null);
@@ -98,7 +98,7 @@ public class OrganizationProfileUI extends JFrame {
 		headerPanel.setBounds(0, 0, 1400, 54);
 		headerPanel.setBackground(new Color(0, 128, 128));
 		headerPanel.setForeground(new Color(255, 165, 0));
-		homeButton.setBounds(314, 0, 45, 42);
+		homeButton.setBounds(313, 0, 45, 42);
 		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);
@@ -122,12 +122,12 @@ public class OrganizationProfileUI extends JFrame {
 		coursesPanel.setBounds(268, 145, 972, 498);
 		addButton.setBackground(new Color(255, 204, 102));
 		coursesPanel.add(addButton);
-		addButton.setBounds(10, 63, 130, 63);
+		addButton.setBounds(10, 58, 130, 56);
 		lblNewLabel_2.setBounds(10, 38, 73, 14);
 		coursesPanel.add(lblNewLabel_2);
 		contentPane.add(coursesPanel);
 		coursesPanel.setLayout(null);
-		PANEL.setBounds(10, 136, 1000, 450);
+		PANEL.setBounds(10, 166, 962, 420);
 		coursesPanel.add(PANEL);
 		
 		//events

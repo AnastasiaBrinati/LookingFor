@@ -27,18 +27,14 @@ public class LoginUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JPanel panel = new JPanel();
-	private JLabel leftSideImage = new JLabel("");
 	private JLabel lblusername = new JLabel("USERNAME\\E-MAIL");
 	private JLabel Alternative = new JLabel("Or");
-	private JLabel lblpassword = new JLabel("PASSWORDeeee");
+	private JLabel lblpassword = new JLabel("PASSWORD");
 	private JTextField textFieldusername;
 	private JButton btnLogin = new JButton("Login");
 	private JButton btnSignUp = new JButton("Sign Up ");
 	private final JLabel lblTitle = new JLabel("Sportee");
 	private JPasswordField textFieldpassword;
-
-	private final JLabel label = new JLabel("");
 
 
 	
@@ -46,77 +42,62 @@ public class LoginUI extends JFrame {
 	// Create the frame.
 	public LoginUI()  {
 	
-		setTitle("LOGIN");
+		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\biril\\Downloads\\loginIcon.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 822, 539);
+		setBounds(100, 100, 437, 539);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 	
-		panel.setBackground(Color.DARK_GRAY);
-
-		panel.setBounds(0, 0, 401, 514);
-
-		panel.setBounds(0, 0, 401, 500);
-
-		panel.setLayout(null);
-		label.setBounds(10, 0, 46, 14);
-		
-		panel.add(label);
-		leftSideImage.setBounds(226, 12, 0, 0);
-		panel.add(leftSideImage);
-		contentPane.add(panel);
-
-		leftSideImage.setIcon(new ImageIcon("C:\\Users\\biril\\Downloads\\Sports-Wallpapers-and-Backgrounds-HD-by-Pocket-Books.jpg"));
-	
 		//user credentials
 		lblusername.setForeground(Color.WHITE);
-		lblusername.setBounds(450, 164, 140, 15);
+		lblusername.setBounds(57, 162, 140, 15);
 		contentPane.add(lblusername);
 	
 		textFieldusername = new JTextField();
 		textFieldusername.setColumns(10);
-		textFieldusername.setBounds(450, 196, 290, 20);
+		textFieldusername.setBounds(57, 188, 290, 20);
 		contentPane.add(textFieldusername);
+		
 	
 		JSeparator separator = new JSeparator();
-		separator.setBounds(451, 237, 289, 2);
+		separator.setBounds(57, 219, 289, 2);
 		contentPane.add(separator);
 	
 		lblpassword.setForeground(Color.WHITE);
-		lblpassword.setBounds(449, 249, 90, 15);
+		lblpassword.setBounds(57, 232, 90, 15);
 		contentPane.add(lblpassword);
 
 		//alternative button
 		btnSignUp.setForeground(Color.WHITE);
 		btnSignUp.setBackground(SystemColor.textInactiveText);
-		btnSignUp.setBounds(545, 388, 108, 42);
-		Image img2=new ImageIcon(this.getClass().getResource("/028-upload.png")).getImage();
-		btnSignUp.setIcon(new ImageIcon(img2));
+		btnSignUp.setBounds(144, 427, 108, 42);
+		//Image img2=new ImageIcon(this.getClass().getResource("/028-upload.png")).getImage();
+		//btnSignUp.setIcon(new ImageIcon(img2));
 		contentPane.add(btnSignUp);
 
 		Alternative.setForeground(Color.WHITE);
-		Alternative.setBounds(585, 364, 21, 14);
+		Alternative.setBounds(192, 402, 21, 14);
 		contentPane.add(Alternative);
 
-		lblTitle.setForeground(Color.BLACK);
+		lblTitle.setForeground(new Color(0, 0, 0));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 70));
-		lblTitle.setBounds(470, 51, 263, 103);
+		lblTitle.setBounds(84, 34, 263, 103);
 
 		btnLogin.setForeground(SystemColor.info);
-		btnLogin.setBackground(SystemColor.textInactiveText);
+		btnLogin.setBackground(new Color(255, 99, 71));
 
 		contentPane.add(lblTitle);
 
 		textFieldpassword = new JPasswordField();
-		textFieldpassword.setBounds(450, 274, 290, 20);
+		textFieldpassword.setBounds(57, 258, 290, 20);
 		contentPane.add(textFieldpassword);
 
 	
-		btnLogin.setBounds(526, 312, 140, 42);
+		btnLogin.setBounds(128, 329, 140, 42);
 		contentPane.add(btnLogin);
 		
 		//Image img4=new ImageIcon(this.getClass().getResource("/001-download.png")).getImage();
