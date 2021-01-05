@@ -10,7 +10,6 @@ import logic.view.desktop.SignInUI;
 import logic.model.SignInModel;
 import logic.controller.LoginBean;
 
-
 public class LoginControllerG {
 	
 	private static LoginUI loginView;
@@ -59,14 +58,20 @@ public class LoginControllerG {
 				loginBean.setUsername(loginView.getUsername());
 				loginBean.setPassword(loginView.getPassword());
 				try {
-					if(LoginBean.checkCredentials(loginBean)) {
-						loginView.setVisible(false);
+					String typeOfUser = LoginBean.checkCredentials(loginBean);
+					loginView.setVisible(false);
+					if(typeOfUser.equals("singleuser")) {
 						HomeUI homepageView = new HomeUI();
-						HomeControllerG.getInstance(homepageView);
+						HomeControllerGSUs.getInstance(homepageView);
 					}
-					/*else {
-						loginView.WrongUsername();
-					}*/
+					else if(typeOfUser.equals("organization")) {
+						HomeUI homepageView = new HomeUI();
+						HomeControllerGOrg.getInstance(homepageView);
+						
+					}
+					else {
+						//try again
+					}
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -80,4 +85,3 @@ public class LoginControllerG {
 
 
 }
-

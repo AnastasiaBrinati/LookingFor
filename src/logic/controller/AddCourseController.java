@@ -29,6 +29,8 @@ public class AddCourseController {
 		newCourse.setOrganization(bean.getOrganization());
 		newCourse.setSport(bean.getSport());
 		
+		
+		
 		newCourse.addCourse(newCourse);
 	}
 

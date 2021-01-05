@@ -31,12 +31,9 @@ public class LoginBean {
 	}
 	////
 	
-	public static boolean checkCredentials(LoginBean lb) throws Exception {
+	public static String checkCredentials(LoginBean lb) throws Exception {
 		LoginController loginController = LoginController.getInstance();
-		if(loginController.isAValidUser(lb)) {
-			return true;
-		}
-		return false;
+		return loginController.isAValidUser(lb);
 	}
 	
 }

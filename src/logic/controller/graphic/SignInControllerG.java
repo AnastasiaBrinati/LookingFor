@@ -38,7 +38,7 @@ public class SignInControllerG {
 			public void actionPerformed(ActionEvent e2) {
 
 				HomeUI homeView = new HomeUI();
-				HomeControllerG  homeController = HomeControllerG.getInstance(homeView);
+				HomeControllerGSUs  homeController = HomeControllerGSUs.getInstance(homeView);
 				homeController.assegnaGestori();
 
 				view.setVisible(false);

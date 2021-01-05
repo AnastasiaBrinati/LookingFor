@@ -52,7 +52,7 @@ public class UserProfileControllerG {
 			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				HomeUI vista=new HomeUI();
-				HomeControllerG controller = HomeControllerG.getInstance(vista);
+				HomeControllerGSUs controller = HomeControllerGSUs.getInstance(vista);
 							
 			}
 

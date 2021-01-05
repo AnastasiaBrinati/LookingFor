@@ -52,7 +52,7 @@ public class SettingsControllerG {
 			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				HomeUI homeview = new HomeUI();
-				HomeControllerG.getInstance(homeview);
+				HomeControllerGSUs.getInstance(homeview);
 			}
 
 		};

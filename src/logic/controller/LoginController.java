@@ -18,21 +18,16 @@ public class LoginController {
 	}
 	
 	
-	public boolean isAValidUser(LoginBean loginBean) throws Exception {
+	public String isAValidUser(LoginBean loginBean) throws Exception {
 		
 		UserProfile.setUsername(loginBean.getUsername());
 		UserProfile.setPassword(loginBean.getPassword());
 		UserProfile.setEmail(loginBean.getEmail());
-		if(UserProfile.checkCredentials()) {
-			return true;
-		}
-
-		return false;
+		return UserProfile.checkCredentials(); 
 		
-	}
 	
 	
 	
 	
 	
-}
+	}}
