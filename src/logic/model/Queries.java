@@ -8,7 +8,7 @@ public class Queries {
 
 	//query to check if a user is signed or not 
 	public static ResultSet checkSignedUser(Statement stmt, String username, String password) throws SQLException {
-		// TODO Auto-generated method stub
+		
 		String sql = "SELECT * FROM singleUser WHERE username = '" + username + "';";
 		
         System.out.println(sql);

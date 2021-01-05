@@ -14,9 +14,9 @@ import logic.model.Course;
 public class UserProfileDAO {
 	
 	
-	private static String USER = "d0cl8zm89gc67d2t";
-    private static String PASS = "n1161ldsuifnjou5";
-    private static String DB_URL = "jdbc:mysql://d0cl8zm89gc67d2t:n1161ldsuifnjou5@r6ze0q02l4me77k3.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/w2l441mj7t77vuhd";
+	private static String USER = "u0uxwvy2unqsxnql";
+    private static String PASS = "nH1ORFX9CBydKKphGtBO";
+    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nH1ORFX9CBydKKphGtBO@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
     private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     
     public void goChangeAndTellMe(String a, String b) {

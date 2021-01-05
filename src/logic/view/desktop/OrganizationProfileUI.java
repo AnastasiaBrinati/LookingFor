@@ -54,6 +54,7 @@ public class OrganizationProfileUI extends JFrame {
 	private JPanel contentPane;
 	private JPanel headerPanel = new JPanel();
 	private JButton homeButton = new JButton("");
+	JPanel newCoursePanel = new JPanel();
 	private final JButton profileButton = new JButton("");
 	private final JPanel panel = new JPanel();
 	private JPanel coursesPanel = new JPanel();
@@ -61,6 +62,7 @@ public class OrganizationProfileUI extends JFrame {
 	private JButton eventsButton = new JButton("Events");
 	private JButton courtsButton = new JButton("Courts");
 	private JButton settingsButton = new JButton("");
+	private JTextArea descriptionTextArea = new JTextArea();
 	private final JPanel descriptionPanel = new JPanel();
 	private final JLabel lblNewLabel_1 = new JLabel("Description");
 	private final JTextField descriptionTextfield = new JTextField();
@@ -69,12 +71,14 @@ public class OrganizationProfileUI extends JFrame {
 	private final JLabel lblNewLabel_3 = new JLabel("Courts");
 	private final JPanel eventsPanel = new JPanel();
 	private final JLabel lblNewLabel_4 = new JLabel("Events");
+	private final JButton saveButton = new JButton("SAVE");
 	
 	//private Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 	private final JButton addButton = new JButton("+");
 	private final JPanel PANEL = new JPanel();
 	private JTextField textField;
 	private JTextField titleTextField;
+	
 	private final JLabel priceForLessonlbl = new JLabel("price for 1 lesson:");
 	private final JLabel monthlyPricelbl = new JLabel("monthly price:");
 	private final JTextField priceForLessonTextField = new JTextField();
@@ -134,7 +138,7 @@ public class OrganizationProfileUI extends JFrame {
 		coursesPanel.setBounds(268, 145, 972, 568);
 		coursesPanel.setLayout(null);
 		
-		JPanel newCoursePanel = new JPanel();
+		
 		newCoursePanel.setBackground(new Color(211, 211, 211));
 		newCoursePanel.setBounds(0, 0, 972, 568);
 		coursesPanel.add(newCoursePanel);
@@ -144,7 +148,7 @@ public class OrganizationProfileUI extends JFrame {
 		cancelButton.setBounds(52, 498, 162, 40);
 		newCoursePanel.add(cancelButton);
 		
-		JButton saveButton = new JButton("SAVE");
+		
 		saveButton.setBackground(new Color(255, 99, 71));
 		saveButton.setBounds(247, 498, 162, 40);
 		newCoursePanel.add(saveButton);
@@ -320,24 +324,7 @@ public class OrganizationProfileUI extends JFrame {
 		
 	}
 
-	public JButton getProfileButton() {
-		return profileButton;
-	}	
-	public JButton getCoursesButton() {
-		return coursesButton;
-	}
-	public JButton getCourtsButton() {
-		return courtsButton;
-	}
-	public JButton getEventsButton() {
-		return eventsButton;
-	}
-	public JButton getHomeButton() {
-		return homeButton;
-	}
-	public JButton getAddButton() {
-		return addButton;
-	}
+
 	
 	public void createFrame(String name) {
 
@@ -390,4 +377,52 @@ public class OrganizationProfileUI extends JFrame {
 		eventsButton.setBackground(new Color(102, 205, 170));
 		courtsButton.setBackground(new Color(0, 128, 128));
 	}
+	
+	
+	public void showNewCoursePanel() {
+			newCoursePanel.setVisible(true);
+			descriptionPanel.setVisible(false);
+			coursesPanel.setVisible(false);
+			courtsPanel.setVisible(false);
+			eventsPanel.setVisible(false);
+		}
+	
+	public JButton getProfileButton() {
+		return profileButton;
+		}
+		public JButton getCoursesButton() {
+		return coursesButton;
+		}
+		public JButton getCourtsButton() {
+		return courtsButton;
+		}
+		public JButton getEventsButton() {
+		return eventsButton;
+		}
+		public JButton getHomeButton() {
+		return homeButton;
+		}
+		public JButton getAddButton() {
+		return addButton;
+		}
+		public JButton getSaveButton() {
+		return saveButton;
+		}
+
+
+		public String getName() {
+		return titleTextField.getText();
+		}
+
+		public String getMonthlyPrice() {
+		return monthlyPriceTextField.getText();
+		}
+
+		public String getPriceForLesson() {
+		return priceForLessonTextField.getText();
+		}
+
+		public String getDescription() {
+		return descriptionTextArea.getText();
+		}
 }
