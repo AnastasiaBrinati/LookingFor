@@ -6,8 +6,6 @@ import java.awt.event.ActionListener;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SignInUI;
-
-
 import logic.controller.LoginBean;
 
 public class LoginControllerG {
@@ -42,8 +40,7 @@ public class LoginControllerG {
 			@Override
 			public void actionPerformed(ActionEvent e){
 				loginView.setVisible(false);
-				SignInUI signInView = new SignInUI();
-				
+				SignInUI signInView = new SignInUI();		
 				SignInControllerG.getInstance(signInView);
 			}
 
@@ -60,6 +57,7 @@ public class LoginControllerG {
 				try {
 					String typeOfUser = LoginBean.checkCredentials(loginBean);
 					loginView.setVisible(false);
+					
 					if(typeOfUser.equals("singleuser")) {
 						HomeUI homepageView = new HomeUI();
 						HomeControllerGSUs.getInstance(homepageView);
