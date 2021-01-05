@@ -72,7 +72,7 @@ public class NewCourseBean {
 		this.description = description;
 	}
 	
-	public void addCourse(NewCourseBean bean) throws Exception {
+	public static void addCourse(NewCourseBean bean) throws Exception {
 		AddCourseController controller=new AddCourseController();
 		controller.addCourse(bean);
 	}
