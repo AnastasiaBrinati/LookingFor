@@ -59,7 +59,7 @@ public class UserProfileControllerG {
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
-		
+		/*
 		ActionListener gestoreOrganizations = new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -69,6 +69,8 @@ public class UserProfileControllerG {
 			}
 		};
 		view.getOrganizationsButton().addActionListener(gestoreOrganizations);
+		*/
+		
 		
 		//showing CoursesPanel
 		ActionListener gestoreCourses = new ActionListener() {

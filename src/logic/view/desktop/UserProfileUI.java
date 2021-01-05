@@ -35,10 +35,10 @@ public class UserProfileUI extends JFrame {
 	private final JPanel panel = new JPanel();
 	private final JButton coursesButton = new JButton("Courses");
 	private final JButton eventsButton = new JButton("Events");
-	private final JButton organizationsButton = new JButton("Organizations");
 	private final JPanel coursesPanel = new JPanel();
 	private final JPanel eventsPanel = new JPanel();
 	private final JButton backButton = new JButton("<-");
+	private final JButton RoutineButton = new JButton("MyRoutine");
 
 	public UserProfileUI() {
 
@@ -65,6 +65,7 @@ public class UserProfileUI extends JFrame {
 										surnamelbl.setFont(new Font("Arial", Font.PLAIN, 20));
 										surnamelbl.setBounds(274, 139, 134, 25);
 										descriptionPanel.add(surnamelbl);
+								/*
 								DefaultListModel<String> listModel1 = new DefaultListModel<String>();
 								listModel1.addElement("none");
 								listModel1.addElement("Monday");
@@ -74,6 +75,7 @@ public class UserProfileUI extends JFrame {
 								listModel1.addElement("Friday");
 								listModel1.addElement("Saturday");
 								listModel1.addElement("Sunday");
+								*/
 		
 		//header
 		headerPanel.setBackground(new Color(0, 128, 128));
@@ -116,10 +118,7 @@ public class UserProfileUI extends JFrame {
 		panel.add(lblTitle);
 		lblTitle.setForeground(new Color(0, 0, 0));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
-		organizationsButton.setBackground(new Color(102, 205, 170));
-		organizationsButton.setBounds(10, 261, 287, 57);
-		
-		panel.add(organizationsButton);
+		backButton.setBackground(new Color(102, 205, 170));
 		backButton.setBounds(10, 107, 64, 36);
 		panel.add(backButton);
 		backButton.setFont(new Font("Arial Black", Font.PLAIN, 10));
@@ -138,20 +137,13 @@ public class UserProfileUI extends JFrame {
 		Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
 		eventsButton.setIcon(new ImageIcon(img4));
 		eventsButton.setContentAreaFilled(true);
+		RoutineButton.setContentAreaFilled(true);
+		RoutineButton.setBackground(new Color(102, 205, 170));
+		RoutineButton.setBounds(10, 332, 287, 57);
 		
-		Image img5=new ImageIcon(this.getClass().getResource("/014-placeholder.png")).getImage();
-		organizationsButton.setIcon(new ImageIcon(img5));
-		organizationsButton.setContentAreaFilled(true);
-		
-		
-		
-		
-		
-		
-	}
+		panel.add(RoutineButton);
 	
-	public JButton getOrganizationsButton() {
-		return organizationsButton;
+		
 	}
 	
 	public JButton getButtonSettings() {
