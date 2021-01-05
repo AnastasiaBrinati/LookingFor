@@ -277,14 +277,12 @@ public class OrganizationProfileUI extends JFrame {
 		descriptionPanel.setLayout(null);
 		lblNewLabel_1.setBounds(10, 41, 86, 14);
 										
-		descriptionPanel.add(lblNewLabel_1);
-										
+		descriptionPanel.add(lblNewLabel_1);				
 		descriptionPanel.add(descriptionTextfield);
 		
 		Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
 		coursesButton.setIcon(new ImageIcon(img3));
 		coursesButton.setContentAreaFilled(true);
-		
 		
 		Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
 		eventsButton.setIcon(new ImageIcon(img4));
@@ -401,15 +399,12 @@ public class OrganizationProfileUI extends JFrame {
 		public String getName() {
 		return titleTextField.getText();
 		}
-
 		public String getMonthlyPrice() {
 		return monthlyPriceTextField.getText();
 		}
-
 		public String getPriceForLesson() {
 		return priceForLessonTextField.getText();
 		}
-
 		public String getDescription() {
 		return descriptionTextArea.getText();
 		}

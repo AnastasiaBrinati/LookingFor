@@ -65,7 +65,6 @@ public class UserProfileControllerG {
 			public void actionPerformed(ActionEvent e){
 				OrganizationProfileUI vista=new OrganizationProfileUI();
 				OrganizationControllerG controller=OrganizationControllerG.getInstance(vista);
-				controller.assegnaGestori();
 				view.setVisible(false);				
 			}
 		};

@@ -32,7 +32,6 @@ public class HomeControllerG {
 			view.setVisible(false);
 			UserProfileUI vista = new UserProfileUI();
 			UserProfileControllerG controller=UserProfileControllerG.getInstance(vista);
-			controller.assegnaGestori();
 
 		};
 		view.getProfileButton().addActionListener(gestoreProfile);
