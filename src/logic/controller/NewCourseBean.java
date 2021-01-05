@@ -11,6 +11,8 @@ public class NewCourseBean {
 	private String imgSrc;
 	private int avaialbility;
 	private String description;
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -32,14 +34,15 @@ public class NewCourseBean {
 	public double getMonthlyPrice() {
 		return monthlyPrice;
 	}
-	public void setMonthlyPrice(double monthlyPrice) {
-		this.monthlyPrice = monthlyPrice;
+	public void setMonthlyPrice(String monthlyPrice) {
+		
+		this.monthlyPrice = Double.parseDouble(monthlyPrice);
 	}
 	public double getLessonPrice() {
 		return lessonPrice;
 	}
-	public void setLessonPrice(double lessonPrice) {
-		this.lessonPrice = lessonPrice;
+	public void setLessonPrice(String lessonPrice) {
+		this.lessonPrice = Double.parseDouble(lessonPrice);;
 	}
 	public String getSport() {
 		return sport;

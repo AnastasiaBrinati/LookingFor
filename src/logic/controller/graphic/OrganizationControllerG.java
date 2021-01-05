@@ -3,29 +3,23 @@ package logic.controller.graphic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.controller.AddCourseController;
-import logic.model.OrganizationProfile;
+import logic.controller.NewCourseBean;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.LoginUI;
-import logic.view.desktop.AddCourseUI;
 import logic.view.desktop.HomeUI;
 
 public class OrganizationControllerG{
 
-	private static  OrganizationProfileUI view;
-	private static OrganizationProfile orgmodel;
-	//private Course course;
-
+	private static OrganizationProfileUI view;
 	private static OrganizationControllerG instance = null;
 
-	private OrganizationControllerG(OrganizationProfileUI orgview, OrganizationProfile model){
+	private OrganizationControllerG(OrganizationProfileUI orgview){
 		view = orgview;
-		orgmodel = model;
 	}
 
-	public synchronized static OrganizationControllerG getInstance(OrganizationProfileUI view, OrganizationProfile model){
+	public synchronized static OrganizationControllerG getInstance(OrganizationProfileUI view){
 		if (instance == null) {
-			instance = new OrganizationControllerG(view, model);
+			instance = new OrganizationControllerG(view);
 			instance.assegnaGestori();
 		}
 		viewOrganizationProfileUI();
@@ -46,7 +40,7 @@ public class OrganizationControllerG{
 		};
 		view.getProfileButton().addActionListener(gestoreLogin);
 		
-		
+		//Da qui inizia la sequenza di bottoni per il caso d'uso new course
 		//showing CoursesPanel
 		ActionListener gestoreCourses = new ActionListener() {
 			
@@ -62,11 +56,26 @@ public class OrganizationControllerG{
 		ActionListener gestoreAddCourse = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				AddCourseUI addCourseView = new AddCourseUI();
-				AddCourseController controller = AddCourseController.getInstance();
+				view.showNewCoursePanel();
 			}
 		};
 		view.getAddButton().addActionListener(gestoreAddCourse);
+		
+		
+		ActionListener gestoreSaveCourse = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				NewCourseBean newCourseBean = new NewCourseBean();
+				getCredentials(newCourseBean);
+				try {
+					NewCourseBean.addCourse(newCourseBean);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		};
+		view.getSaveButton().addActionListener(gestoreSaveCourse);
 		
 		
 		//showing CourtsPanel
@@ -100,6 +109,13 @@ public class OrganizationControllerG{
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 
+	}
+	
+	private void getCredentials(NewCourseBean newCourseBean){
+		newCourseBean.setName(view.getName());
+		newCourseBean.setMonthlyPrice(view.getMonthlyPrice());
+		newCourseBean.setLessonPrice(view.getPriceForLesson());
+		newCourseBean.setDescription(view.getDescription());
 	}
 	
 	

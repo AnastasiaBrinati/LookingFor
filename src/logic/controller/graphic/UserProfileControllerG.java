@@ -3,10 +3,8 @@ package logic.controller.graphic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.view.desktop.AddCourseUI;
+
 import logic.controller.ProfileBean;
-import logic.model.HomeModel;
-import logic.model.OrganizationProfile;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.UserProfileUI;
@@ -66,9 +64,7 @@ public class UserProfileControllerG {
 			@Override
 			public void actionPerformed(ActionEvent e){
 				OrganizationProfileUI vista=new OrganizationProfileUI();
-				AddCourseUI view2 = new AddCourseUI();
-				OrganizationProfile orgmodel = new OrganizationProfile();
-				OrganizationControllerG controller=OrganizationControllerG.getInstance(vista, orgmodel);
+				OrganizationControllerG controller=OrganizationControllerG.getInstance(vista);
 				controller.assegnaGestori();
 				view.setVisible(false);				
 			}
