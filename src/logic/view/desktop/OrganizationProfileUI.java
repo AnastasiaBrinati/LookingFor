@@ -1,4 +1,3 @@
-
 package logic.view.desktop;
 
 import java.awt.Color;
