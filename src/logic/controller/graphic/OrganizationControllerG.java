@@ -40,6 +40,7 @@ public class OrganizationControllerG{
 		};
 		view.getProfileButton().addActionListener(gestoreLogin);
 		
+		////////////////////////////////////////////////////////////////////////
 		//Da qui inizia la sequenza di bottoni per il caso d'uso new course
 		//showing CoursesPanel
 		ActionListener gestoreCourses = new ActionListener() {
@@ -74,12 +75,15 @@ public class OrganizationControllerG{
 					e1.printStackTrace();
 				}
 				
+				view.createCourseFrame(newCourseBean.getName(), newCourseBean.getImgSrc());
+				view.setCourtsPanelVisible();
+				
 			}
 		};
 		view.getSaveButton().addActionListener(gestoreSaveCourse);
 		
 		//fine caso d'uso new course
-		
+		//////////////////////////////////////////////////////////////////
 		
 		//showing CourtsPanel
         ActionListener gestoreCourts = new ActionListener() {
@@ -119,6 +123,7 @@ public class OrganizationControllerG{
 		newCourseBean.setMonthlyPrice(view.getMonthlyPrice());
 		newCourseBean.setLessonPrice(view.getPriceForLesson());
 		newCourseBean.setDescription(view.getDescription());
+		
 	}
 	
 	

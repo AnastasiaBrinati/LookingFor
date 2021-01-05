@@ -4,45 +4,18 @@ package logic.view.desktop;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.Window;
-
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Font;
-import javax.swing.border.BevelBorder;
-import java.awt.GridBagLayout;
 import java.awt.Image;
-
-import javax.swing.JTabbedPane;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import javax.swing.JLayeredPane;
-import javax.swing.JOptionPane;
-
-import java.awt.ScrollPane;
-import java.awt.Panel;
-import java.awt.Scrollbar;
-import javax.swing.ScrollPaneConstants;
-import java.awt.SystemColor;
 import javax.swing.JTextArea;
-import java.awt.Component;
-import javax.swing.Box;
 import java.awt.Checkbox;
 
 public class OrganizationProfileUI extends JFrame {
@@ -54,7 +27,6 @@ public class OrganizationProfileUI extends JFrame {
 	private JPanel contentPane;
 	private JPanel headerPanel = new JPanel();
 	private JButton homeButton = new JButton("");
-	JPanel newCoursePanel = new JPanel();
 	private final JButton profileButton = new JButton("");
 	private final JPanel panel = new JPanel();
 	private JPanel coursesPanel = new JPanel();
@@ -66,20 +38,16 @@ public class OrganizationProfileUI extends JFrame {
 	private final JPanel descriptionPanel = new JPanel();
 	private final JLabel lblNewLabel_1 = new JLabel("Description");
 	private final JTextField descriptionTextfield = new JTextField();
-	private final JLabel lblNewLabel_2 = new JLabel("Courses");
 	private final JPanel courtsPanel = new JPanel();
 	private final JLabel lblNewLabel_3 = new JLabel("Courts");
 	private final JPanel eventsPanel = new JPanel();
 	private final JLabel lblNewLabel_4 = new JLabel("Events");
-	private final JButton saveButton = new JButton("SAVE");
-	JButton cancelButton = new JButton("cancel");
-	
-	//private Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-	private final JButton addButton = new JButton("+");
-	private final JPanel PANEL = new JPanel();
 	private JTextField textField;
 	private JTextField titleTextField;
 	
+	private JPanel newCoursePanel = new JPanel();
+	private final JButton saveButton = new JButton("SAVE");
+	private JButton cancelButton = new JButton("cancel");
 	private final JLabel priceForLessonlbl = new JLabel("price for 1 lesson:");
 	private final JLabel monthlyPricelbl = new JLabel("monthly price:");
 	private final JTextField priceForLessonTextField = new JTextField();
@@ -87,6 +55,12 @@ public class OrganizationProfileUI extends JFrame {
 	private JTextField sportTextField;
 	private JTextField instructorNameTextField;
 	private JTextField availabilityTextField;
+	
+
+	private JLabel coursesTitlelbl = new JLabel("Courses");
+	private JPanel upperPanel = new JPanel();
+	private JButton addButton = new JButton("+");
+	private JPanel lowerPanel = new JPanel();
 
 	public OrganizationProfileUI() {
 		
@@ -102,57 +76,36 @@ public class OrganizationProfileUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
-	
-		profileButton.setBounds(1168, 6, 45, 42);
-		profileButton.setIcon(null);
-		profileButton.setContentAreaFilled(false);
-		profileButton.setBorder(null);
-	    
-		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
-		profileButton.setContentAreaFilled(false);
-		profileButton.setBorder(null);
 		
-		headerPanel.setBounds(0, 0, 1400, 54);
-		headerPanel.setBackground(new Color(0, 128, 128));
-		headerPanel.setForeground(new Color(255, 165, 0));
-		homeButton.setBounds(314, 0, 45, 42);
-		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
-		homeButton.setBorder(null);
-		homeButton.setContentAreaFilled(false);
-		headerPanel.setLayout(null);
-		headerPanel.add(homeButton);
-		headerPanel.add(profileButton);
-		headerPanel.add(profileButton);
-		contentPane.add(headerPanel);
-		
-		textField = new JTextField();
-		textField.setBounds(369, 12, 364, 30);
-		headerPanel.add(textField);
-		textField.setColumns(10);
-		
-		settingsButton.setBackground(new Color(0, 139, 139));
-		settingsButton.setForeground(new Color(0, 0, 0));
-		settingsButton.setBounds(0, 0, 55, 54);
-		headerPanel.add(settingsButton);
-        
 		//courses
 		coursesPanel.setBounds(268, 145, 972, 568);
 		coursesPanel.setLayout(null);
+		
+		lowerPanel.setBounds(0, 136, 992, 496);
+		coursesPanel.add(lowerPanel);
+		lowerPanel.setLayout(null);
+		upperPanel.setBounds(0, 0, 972, 134);
+		coursesPanel.add(upperPanel);
+		upperPanel.setLayout(null);
+		coursesTitlelbl.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		coursesTitlelbl.setBounds(10, 25, 96, 13);
+		upperPanel.add(coursesTitlelbl);
+		addButton.setBackground(Color.ORANGE);
+		addButton.setBounds(10, 48, 98, 48);
+		upperPanel.add(addButton);
+		contentPane.add(coursesPanel);
 		
 		
 		newCoursePanel.setBackground(new Color(211, 211, 211));
 		newCoursePanel.setBounds(0, 0, 972, 568);
 		coursesPanel.add(newCoursePanel);
-		newCoursePanel.setLayout(null);
-		
-		
+		newCoursePanel.setLayout(null);		
 		cancelButton.setBounds(52, 498, 162, 40);
-		newCoursePanel.add(cancelButton);
-		
-		
+		newCoursePanel.add(cancelButton);		
 		saveButton.setBackground(new Color(255, 99, 71));
 		saveButton.setBounds(247, 498, 162, 40);
 		newCoursePanel.add(saveButton);
+		
 		
 		JLabel titleLable = new JLabel("Insert Title:");
 		titleLable.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -174,7 +127,7 @@ public class OrganizationProfileUI extends JFrame {
 		imgLabel.setBounds(573, 23, 140, 23);
 		newCoursePanel.add(imgLabel);
 		
-		JTextArea descriptionTextArea = new JTextArea();
+		//JTextArea descriptionTextArea = new JTextArea();
 		descriptionTextArea.setBounds(143, 76, 266, 112);
 		newCoursePanel.add(descriptionTextArea);
 		
@@ -225,14 +178,38 @@ public class OrganizationProfileUI extends JFrame {
 		JLabel availabilityLbl = new JLabel("Availability:");
 		availabilityLbl.setBounds(10, 419, 114, 14);
 		newCoursePanel.add(availabilityLbl);
-		addButton.setBounds(10, 63, 130, 63);
-		addButton.setBackground(new Color(255, 204, 102));
-		coursesPanel.add(addButton);
-		lblNewLabel_2.setBounds(10, 38, 73, 14);
-		coursesPanel.add(lblNewLabel_2);
-		contentPane.add(coursesPanel);
-		PANEL.setBounds(10, 136, 1000, 450);
-		coursesPanel.add(PANEL);
+	
+		profileButton.setBounds(1168, 6, 45, 42);
+		profileButton.setIcon(null);
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorder(null);
+	    
+		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
+		profileButton.setContentAreaFilled(false);
+		profileButton.setBorder(null);
+		
+		headerPanel.setBounds(0, 0, 1400, 54);
+		headerPanel.setBackground(new Color(0, 128, 128));
+		headerPanel.setForeground(new Color(255, 165, 0));
+		homeButton.setBounds(314, 0, 45, 42);
+		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
+		homeButton.setBorder(null);
+		homeButton.setContentAreaFilled(false);
+		headerPanel.setLayout(null);
+		headerPanel.add(homeButton);
+		headerPanel.add(profileButton);
+		headerPanel.add(profileButton);
+		contentPane.add(headerPanel);
+		
+		textField = new JTextField();
+		textField.setBounds(369, 12, 364, 30);
+		headerPanel.add(textField);
+		textField.setColumns(10);
+		
+		settingsButton.setBackground(new Color(0, 139, 139));
+		settingsButton.setForeground(new Color(0, 0, 0));
+		settingsButton.setBounds(0, 0, 55, 54);
+		headerPanel.add(settingsButton);
 		
 		//events
 		eventsPanel.setBounds(268, 145, 972, 568);
@@ -327,13 +304,13 @@ public class OrganizationProfileUI extends JFrame {
 
 
 	
-	public void createFrame(String name) {
+	public void createCourseFrame(String name, String imgsrc) {
 
         JButton frame = new JButton(name);
         frame.setBorder(new LineBorder(Color.BLACK));
-        frame.setPreferredSize(new Dimension(80, 80));
+        frame.setPreferredSize(new Dimension(100, 100));
         frame.setVisible(true);
-        PANEL.add(frame);
+        lowerPanel.add(frame);
         coursesPanel.revalidate();
         //contentPane.revalidate();
 
@@ -344,10 +321,15 @@ public class OrganizationProfileUI extends JFrame {
 		coursesPanel.setVisible(false);
 		courtsPanel.setVisible(false);
 		eventsPanel.setVisible(false);
+		newCoursePanel.setVisible(false);
 	}
 
 	public void setCoursesPanelVisible() {
 		coursesPanel.setVisible(true);
+		upperPanel.setVisible(true);
+		lowerPanel.setVisible(true);
+		newCoursePanel.setVisible(false);
+		
 		descriptionPanel.setVisible(false);
 		courtsPanel.setVisible(false);
 		eventsPanel.setVisible(false);
@@ -362,6 +344,7 @@ public class OrganizationProfileUI extends JFrame {
 		descriptionPanel.setVisible(false);
 		courtsPanel.setVisible(false);
 		eventsPanel.setVisible(true);
+		newCoursePanel.setVisible(false);
 		
 		coursesButton.setBackground(new Color(102, 205, 170));
 		eventsButton.setBackground(new Color(0, 128, 128));
@@ -373,20 +356,24 @@ public class OrganizationProfileUI extends JFrame {
 		descriptionPanel.setVisible(false);
 		courtsPanel.setVisible(true);
 		eventsPanel.setVisible(false);
+		newCoursePanel.setVisible(false);
 		
 		coursesButton.setBackground(new Color(102, 205, 170));
 		eventsButton.setBackground(new Color(102, 205, 170));
 		courtsButton.setBackground(new Color(0, 128, 128));
 	}
 	
-	
+
 	public void showNewCoursePanel() {
-			newCoursePanel.setVisible(true);
-			descriptionPanel.setVisible(false);
-			coursesPanel.setVisible(false);
-			courtsPanel.setVisible(false);
-			eventsPanel.setVisible(false);
-		}
+		coursesPanel.setVisible(true);
+		upperPanel.setVisible(false);
+		lowerPanel.setVisible(false);
+		newCoursePanel.setVisible(true);
+		
+		courtsPanel.setVisible(false);
+		eventsPanel.setVisible(false);
+		descriptionPanel.setVisible(false);
+	}
 	
 	public JButton getProfileButton() {
 		return profileButton;

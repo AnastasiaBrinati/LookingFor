@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import logic.model.Course;
 import logic.model.OrganizationProfile;
-import logic.view.desktop.AddCourseUI;
 import logic.view.desktop.OrganizationProfileUI;
 
 
