@@ -18,23 +18,18 @@ public class SettingsBean {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
 	public String getName() {
 		return name;
 	}
-	
 	public String getSurname() {
 		return surname;
 	}
-	
 	public String getUsername() {
 		return username;
 	}
@@ -54,6 +49,5 @@ public class SettingsBean {
 	public static void changeCredentials(SettingsBean settingBean) throws Exception {
 		CustomizationController customizer = new CustomizationController();
 		customizer.changeCredentials(settingBean);
-		
 	}
 }

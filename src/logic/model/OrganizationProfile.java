@@ -56,6 +56,10 @@ public class OrganizationProfile {
 	public static ArrayList<SportEvent> getEvents() {
 		return events;
 	}
+	
+	public static void setCredentials() {
+		
+	}
 
 	
 }
