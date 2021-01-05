@@ -53,13 +53,12 @@ public class UserProfile {
 		password = passwd;
 	}
 	
-	public static boolean checkCredentials() throws Exception {
+	public static String checkCredentials() throws Exception {
 		usDAO = new UserProfileDAO();
 
-		if(usDAO.goCheckAndTellMe(username,password)) {
-			return true;
-		}
-		return false;
+		String result= usDAO.goCheckAndTellMe(username,password); 
+		return result;
+		
 	}
 	
 	public static boolean canIChange(String username) throws Exception{

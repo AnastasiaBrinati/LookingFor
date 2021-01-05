@@ -25,7 +25,7 @@ public class UserProfileDAO {
     	
     }
 	
-	public boolean goCheckAndTellMe(String username,String password) throws Exception {
+	public String goCheckAndTellMe(String username,String password) throws Exception {
 		
 		//dichiarazioni 
 		Statement stmt=null;
@@ -41,12 +41,12 @@ public class UserProfileDAO {
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs = Queries.checkSignedUser(stmt, username,password);
 			
-			if (!rs.first()){ // rs empty
-            	Exception e = new Exception("No username Found matching with username: "+username);
-            	throw e;
-            }
-           
-            //riposizionamento del cursore
+			if (!rs.first()){ // if there's not a singleuser,I search for an organization
+				
+				
+					Exception e = new Exception("No username Found matching with username: "+username);
+	            	throw e;
+			}
             rs.first();
             do{
             	String foundPassword=rs.getString("password");
@@ -60,14 +60,16 @@ public class UserProfileDAO {
             		UserProfile.setSurname(cognome);
             		UserProfile.setEmail(email);
             		
-            		return true;
+            		return rs.getString("type");
+            		
+            		
             	}
                 
 
             }while(rs.next());
             
             
-            return false;
+            return "null";
             
             
 		}finally {

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class OrganizationProfile {
 	
-	private String name;
-	private String email;
-	private String password;
-	private ArrayList<Course> courses = new ArrayList<Course>();
-	private ArrayList<SportEvent> events=new ArrayList<SportEvent>();
+	private static  String name;
+	private static String email;
+	private static String password;
+	private static ArrayList<Course> courses = new ArrayList<Course>();
+	private static ArrayList<SportEvent> events=new ArrayList<SportEvent>();
 	
 	
 	public OrganizationProfile() {
@@ -18,35 +18,35 @@ public class OrganizationProfile {
 		//esempio
 	}
 	
-	public void addCourse(Course course) {
+	public static void addCourse(Course course) {
 		courses.add(course);
 	}
 
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public static void setName(String name) {
+		name = name;
 	}
 
-	public String getEmail() {
+	public static String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public static void setEmail(String email) {
+		email = email;
 	}
 
-	public String getPassword() {
+	public static String getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public static void setPassword(String password) {
+		password = password;
 	}
 
-	public ArrayList<SportEvent> getEvents() {
+	public static ArrayList<SportEvent> getEvents() {
 		return events;
 	}
 	
