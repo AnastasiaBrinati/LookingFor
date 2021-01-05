@@ -327,14 +327,6 @@ public class OrganizationProfileUI extends JFrame {
 
 
 	
-	public void showNewCoursePanel() {
-		newCoursePanel.setVisible(true);
-		descriptionPanel.setVisible(false);
-		coursesPanel.setVisible(false);
-		courtsPanel.setVisible(false);
-		eventsPanel.setVisible(false);
-	}
-	
 	public void createFrame(String name) {
 
         JButton frame = new JButton(name);

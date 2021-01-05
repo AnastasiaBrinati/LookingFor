@@ -73,11 +73,13 @@ public class OrganizationControllerG{
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				
 			}
 		};
 		view.getSaveButton().addActionListener(gestoreSaveCourse);
 		
-		//fine caso d'uso
+		//fine caso d'uso new course
+		
 		
 		//showing CourtsPanel
         ActionListener gestoreCourts = new ActionListener() {
