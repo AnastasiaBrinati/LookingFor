@@ -77,9 +77,9 @@ public class Course {
 		this.description = description;
 	}
 	
-	public void addCourse() throws Exception {
+	public void addCourse(Course course) throws Exception {
 		
-		CourseDAO.addCourse(this);
+		CourseDAO.addCourse(course);
 	}
 }
 

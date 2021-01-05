@@ -18,19 +18,9 @@ public class Queries {
 	
 	//query to add a new Course to the DB
 	public static int addCourse(Statement stmt, Course course) throws SQLException  {
-        String insertStatement = String.format("INSERT INTO `courses`\r\n"
-        		+ "	(`name`,\r\n"
-        		+ "	`courseID`,\r\n"
-        		+ "	`organization`,\r\n"
-        		+ "	`monthlyPrice`,\r\n"
-        		+ "	`lessonPrice`,\r\n"
-        		+ "	`sport`,\r\n"
-        		+ "	`instructorName`,\r\n"
-        		+ "	`imgSrc`,\r\n"
-        		+ "	`availability`,\r\n"
-        		+ "	`description`)  VALUES (%s,'%d','%s','%d','%d','%s','%s','%s','%d','%s')",course.getName(),course.getCourseID(),
-        		course.getOrganization(),course.getMonthlyPrice(),course.getLessonPrice(),course.getSport(),course.getInstructorName(),
-        		course.getImgSrc(),course.getAvailability(),course.getDescription());
+        String insertStatement = String.format("INSERT INTO courses ( name , organization , sport , instructorName , description ) VALUES (%s,%s,%s,%s,%s,%s)",course.getName(),
+        		course.getOrganization(),course.getSport(),course.getInstructorName(),
+        		course.getDescription());
         System.out.println(insertStatement);
         return stmt.executeUpdate(insertStatement);
     }

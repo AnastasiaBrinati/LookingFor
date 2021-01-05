@@ -72,6 +72,7 @@ public class OrganizationProfileUI extends JFrame {
 	private final JPanel eventsPanel = new JPanel();
 	private final JLabel lblNewLabel_4 = new JLabel("Events");
 	private final JButton saveButton = new JButton("SAVE");
+	JButton cancelButton = new JButton("cancel");
 	
 	//private Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 	private final JButton addButton = new JButton("+");
@@ -144,7 +145,7 @@ public class OrganizationProfileUI extends JFrame {
 		coursesPanel.add(newCoursePanel);
 		newCoursePanel.setLayout(null);
 		
-		JButton cancelButton = new JButton("cancel");
+		
 		cancelButton.setBounds(52, 498, 162, 40);
 		newCoursePanel.add(cancelButton);
 		
