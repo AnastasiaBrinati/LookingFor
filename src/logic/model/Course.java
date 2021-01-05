@@ -6,14 +6,14 @@ package logic.model;
 public class Course {
 	
 	private String name;
-	private int courseID;
+	private double courseID;
 	private String organization;
 	private double monthlyPrice;
 	private double lessonPrice;
 	private String sport;
 	private String instructorName;
 	private String imgSrc;
-	private int availability;
+	private double availability;
 	private String description;
 	
 	public String getName() {
@@ -22,10 +22,10 @@ public class Course {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getCourseID() {
+	public double getCourseID() {
 		return courseID;
 	}
-	public void setCourseID(int courseID) {
+	public void setCourseID(double courseID) {
 		this.courseID = courseID;
 	}
 	public String getOrganization() {
@@ -64,10 +64,10 @@ public class Course {
 	public void setImgSrc(String imgSrc) {
 		this.imgSrc = imgSrc;
 	}
-	public int getAvailability() {
+	public double getAvailability() {
 		return availability;
 	}
-	public void setAvailability(int availability) {
+	public void setAvailability(double availability) {
 		this.availability = availability;
 	}
 	public String getDescription() {

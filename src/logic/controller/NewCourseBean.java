@@ -2,14 +2,14 @@ package logic.controller;
 
 public class NewCourseBean {
 	private String name;
-	private int courseID;
+	private double courseID;
 	private String organization;
 	private double monthlyPrice;
 	private double lessonPrice;
 	private String sport;
 	private String instructorName;
 	private String imgSrc;
-	private int avaialbility;
+	private double avaialbility;
 	private String description;
 	
 	
@@ -19,7 +19,7 @@ public class NewCourseBean {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getCourseID() {
+	public double getCourseID() {
 		return courseID;
 	}
 	public void setCourseID(int courseID) {
@@ -62,7 +62,7 @@ public class NewCourseBean {
 	public void setImgSrc(String imgSrc) {
 		this.imgSrc = imgSrc;
 	}
-	public int getAvaialbility() {
+	public double getAvaialbility() {
 		return avaialbility;
 	}
 	public void setAvaialbility(int avaialbility) {
