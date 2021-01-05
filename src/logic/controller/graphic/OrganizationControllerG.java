@@ -122,7 +122,10 @@ public class OrganizationControllerG{
 		newCourseBean.setMonthlyPrice(view.getMonthlyPrice());
 		newCourseBean.setLessonPrice(view.getPriceForLesson());
 		newCourseBean.setDescription(view.getDescription());
-		
+
+		newCourseBean.setSport(view.getSport());
+		newCourseBean.setInstructorName(view.getInstructorName());
+
 	}
 	
 	
