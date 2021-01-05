@@ -20,7 +20,7 @@ public class Queries {
 	//query to ckeck if an organization is signed or not
     public static ResultSet checkSignedOrganization(Statement stmt, String username, String password) throws SQLException {
 		
-		String sql = "SELECT * FROM organizations WHERE username = '" + username + "';";
+		String sql = "SELECT * FROM users WHERE username = '" + username + "';";
 		
         System.out.println(sql);
         return stmt.executeQuery(sql);

@@ -1,9 +1,6 @@
-
 package logic.controller.graphic;
 
 
-import logic.model.HomeModel;
-import logic.model.SignInModel;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SignInUI;
@@ -14,17 +11,16 @@ import java.awt.event.ActionListener;
 public class SignInControllerG {
 
 	private static SignInUI view;
-	private static SignInModel model;
 	private static SignInControllerG instance = null;
 
-	private SignInControllerG(SignInUI vista, SignInModel modello) {
+	private SignInControllerG(SignInUI vista) {
 		view = vista;
 		
 	}
 
-	public static synchronized SignInControllerG getInstance(SignInUI vista, SignInModel model) {
+	public static synchronized SignInControllerG getInstance(SignInUI vista) {
 		if (instance == null) {
-			instance = new SignInControllerG(vista, model);
+			instance = new SignInControllerG(vista);
 			instance.assegnaGestori();
 		}
 		showLoginUI();
@@ -39,7 +35,6 @@ public class SignInControllerG {
 
 				HomeUI homeView = new HomeUI();
 				HomeControllerGSUs  homeController = HomeControllerGSUs.getInstance(homeView);
-				homeController.assegnaGestori();
 
 				view.setVisible(false);
 				view.resetForm();

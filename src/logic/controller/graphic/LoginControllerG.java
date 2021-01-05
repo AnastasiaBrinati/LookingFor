@@ -7,7 +7,7 @@ import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SignInUI;
 
-import logic.model.SignInModel;
+
 import logic.controller.LoginBean;
 
 public class LoginControllerG {
@@ -43,8 +43,8 @@ public class LoginControllerG {
 			public void actionPerformed(ActionEvent e){
 				loginView.setVisible(false);
 				SignInUI signInView = new SignInUI();
-				SignInModel model = new SignInModel();
-				SignInControllerG.getInstance(signInView, model);
+				
+				SignInControllerG.getInstance(signInView);
 			}
 
 		};
