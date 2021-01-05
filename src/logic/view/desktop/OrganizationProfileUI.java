@@ -302,7 +302,7 @@ public class OrganizationProfileUI extends JFrame {
 
 
 	
-	public void createCourseFrame(String name, String imgsrc) {
+	public void createCourseFrame(String name) {
 
         JButton frame = new JButton(name);
         frame.setBorder(new LineBorder(Color.BLACK));
@@ -374,38 +374,44 @@ public class OrganizationProfileUI extends JFrame {
 	}
 	
 	public JButton getProfileButton() {
-		return profileButton;
+			return profileButton;
 		}
-		public JButton getCoursesButton() {
+	public JButton getCoursesButton() {
 		return coursesButton;
-		}
-		public JButton getCourtsButton() {
+	}
+	public JButton getCourtsButton() {
 		return courtsButton;
-		}
-		public JButton getEventsButton() {
+	}
+	public JButton getEventsButton() {
 		return eventsButton;
-		}
-		public JButton getHomeButton() {
+	}
+	public JButton getHomeButton() {
 		return homeButton;
-		}
-		public JButton getAddButton() {
+	}
+	public JButton getAddButton() {
 		return addButton;
-		}
-		public JButton getSaveButton() {
+	}
+	public JButton getSaveButton() {
 		return saveButton;
-		}
+	}
 
 
 		public String getName() {
-		return titleTextField.getText();
+			return titleTextField.getText();
 		}
 		public String getMonthlyPrice() {
-		return monthlyPriceTextField.getText();
+			return monthlyPriceTextField.getText();
 		}
 		public String getPriceForLesson() {
-		return priceForLessonTextField.getText();
+			return priceForLessonTextField.getText();
 		}
 		public String getDescription() {
-		return descriptionTextArea.getText();
+			return descriptionTextArea.getText();
+		}
+		public String getSport() {
+			return sportTextField.getText();
+		}
+		public String getInstructorName() {
+			return instructorNameTextField.getText();
 		}
 }

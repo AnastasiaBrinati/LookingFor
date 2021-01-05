@@ -70,8 +70,8 @@ public class OrganizationControllerG{
 				getCredentials(newCourseBean);
 				try {
 					NewCourseBean.addCourse(newCourseBean);
-					view.createCourseFrame(newCourseBean.getName(), newCourseBean.getImgSrc());
-					view.setCourtsPanelVisible();
+					view.createCourseFrame(newCourseBean.getName());
+					view.setCoursesPanelVisible();
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
