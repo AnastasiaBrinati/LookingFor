@@ -26,8 +26,6 @@ public class LoginController {
 		return UserProfile.checkCredentials(); 
 		
 	
+	}
 	
-	
-	
-	
-	}}
+}

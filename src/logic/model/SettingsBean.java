@@ -8,7 +8,7 @@ public class SettingsBean {
 	public static String email;
 	public static String password;
 	
-	//single user
+	//just for single user
 	public String getName() {
 		return name;
 	}
