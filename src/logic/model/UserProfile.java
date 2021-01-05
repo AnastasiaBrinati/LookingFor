@@ -5,9 +5,6 @@ import java.util.List;
 
 import com.sun.jdi.event.Event;
 
-import logic.controller.LoginBean;
-import logic.model.UserProfileDAO;
-
 
 public class UserProfile {
 	

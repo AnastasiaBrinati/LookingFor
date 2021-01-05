@@ -40,6 +40,10 @@ import java.awt.Panel;
 import java.awt.Scrollbar;
 import javax.swing.ScrollPaneConstants;
 import java.awt.SystemColor;
+import javax.swing.JTextArea;
+import java.awt.Component;
+import javax.swing.Box;
+import java.awt.Checkbox;
 
 public class OrganizationProfileUI extends JFrame {
 
@@ -70,6 +74,11 @@ public class OrganizationProfileUI extends JFrame {
 	private final JButton addButton = new JButton("+");
 	private final JPanel PANEL = new JPanel();
 	private JTextField textField;
+	private JTextField textField_1;
+	private final JLabel priceForLessonlbl = new JLabel("price for 1 lesson:");
+	private final JLabel monthlyPricelbl = new JLabel("monthly price:");
+	private final JTextField priceForLessonTextField = new JTextField();
+	private final JTextField monthlyPriceTextField = new JTextField();
 
 	public OrganizationProfileUI() {
 		
@@ -80,13 +89,13 @@ public class OrganizationProfileUI extends JFrame {
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1254, 682);
+		setBounds(100, 100, 1254, 750);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 	
-		profileButton.setBounds(1166, 0, 66, 42);
+		profileButton.setBounds(1236, 0, 66, 42);
 		profileButton.setIcon(null);
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorder(null);
@@ -98,7 +107,7 @@ public class OrganizationProfileUI extends JFrame {
 		headerPanel.setBounds(0, 0, 1400, 54);
 		headerPanel.setBackground(new Color(0, 128, 128));
 		headerPanel.setForeground(new Color(255, 165, 0));
-		homeButton.setBounds(313, 0, 45, 42);
+		homeButton.setBounds(314, 0, 45, 42);
 		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);
@@ -115,23 +124,82 @@ public class OrganizationProfileUI extends JFrame {
 		
 		settingsButton.setBackground(new Color(0, 139, 139));
 		settingsButton.setForeground(new Color(0, 0, 0));
-		settingsButton.setBounds(0, 0, 45, 42);
+		settingsButton.setBounds(0, 0, 55, 54);
 		headerPanel.add(settingsButton);
         
 		//courses
-		coursesPanel.setBounds(268, 145, 972, 498);
+		coursesPanel.setBounds(268, 145, 972, 568);
+		coursesPanel.setLayout(null);
+		
+		JPanel newCoursePanel = new JPanel();
+		newCoursePanel.setBounds(10, 10, 952, 548);
+		coursesPanel.add(newCoursePanel);
+		newCoursePanel.setLayout(null);
+		
+		JButton cancelButton = new JButton("cancel");
+		cancelButton.setBounds(52, 498, 162, 40);
+		newCoursePanel.add(cancelButton);
+		
+		JButton saveButton = new JButton("SAVE");
+		saveButton.setBackground(Color.ORANGE);
+		saveButton.setBounds(247, 498, 162, 40);
+		newCoursePanel.add(saveButton);
+		
+		JLabel titleLable = new JLabel("Insert Title:");
+		titleLable.setFont(new Font("Arial", Font.PLAIN, 20));
+		titleLable.setBounds(10, 23, 114, 23);
+		newCoursePanel.add(titleLable);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(143, 23, 266, 24);
+		newCoursePanel.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel descriptionlbl = new JLabel("Description:");
+		descriptionlbl.setFont(new Font("Arial", Font.PLAIN, 20));
+		descriptionlbl.setBounds(10, 74, 114, 23);
+		newCoursePanel.add(descriptionlbl);
+		
+		JLabel imgLabel = new JLabel("Insert Image:");
+		imgLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+		imgLabel.setBounds(573, 23, 140, 23);
+		newCoursePanel.add(imgLabel);
+		
+		JTextArea descriptionTextArea = new JTextArea();
+		descriptionTextArea.setBounds(143, 76, 266, 112);
+		newCoursePanel.add(descriptionTextArea);
+		
+		Checkbox utilitiesCheckbox = new Checkbox("equipment required");
+		utilitiesCheckbox.setFont(new Font("Arial", Font.PLAIN, 20));
+		utilitiesCheckbox.setBounds(10, 188, 250, 47);
+		newCoursePanel.add(utilitiesCheckbox);
+		priceForLessonlbl.setFont(new Font("Arial", Font.PLAIN, 20));
+		priceForLessonlbl.setBounds(10, 277, 170, 23);
+		
+		newCoursePanel.add(priceForLessonlbl);
+		monthlyPricelbl.setFont(new Font("Arial", Font.PLAIN, 20));
+		monthlyPricelbl.setBounds(10, 310, 162, 23);
+		
+		newCoursePanel.add(monthlyPricelbl);
+		priceForLessonTextField.setColumns(10);
+		priceForLessonTextField.setBounds(190, 277, 219, 23);
+		
+		newCoursePanel.add(priceForLessonTextField);
+		monthlyPriceTextField.setColumns(10);
+		monthlyPriceTextField.setBounds(190, 313, 219, 23);
+		
+		newCoursePanel.add(monthlyPriceTextField);
+		addButton.setBounds(10, 63, 130, 63);
 		addButton.setBackground(new Color(255, 204, 102));
 		coursesPanel.add(addButton);
-		addButton.setBounds(10, 58, 130, 56);
 		lblNewLabel_2.setBounds(10, 38, 73, 14);
 		coursesPanel.add(lblNewLabel_2);
 		contentPane.add(coursesPanel);
-		coursesPanel.setLayout(null);
-		PANEL.setBounds(10, 166, 962, 420);
+		PANEL.setBounds(10, 136, 1000, 450);
 		coursesPanel.add(PANEL);
 		
 		//events
-		eventsPanel.setBounds(268, 145, 972, 498);
+		eventsPanel.setBounds(268, 145, 972, 568);
 		contentPane.add(eventsPanel);
 		eventsPanel.setLayout(null);
 		lblNewLabel_4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 20));
@@ -139,12 +207,12 @@ public class OrganizationProfileUI extends JFrame {
 		eventsPanel.add(lblNewLabel_4);
 		
 		//courts
-		courtsPanel.setBounds(268, 145, 972, 498);
+		courtsPanel.setBounds(268, 145, 972, 568);
 		contentPane.add(courtsPanel);
 		courtsPanel.setLayout(null);
 		lblNewLabel_3.setBounds(10, 34, 46, 14);
 		courtsPanel.add(lblNewLabel_3);
-		panel.setBounds(0, 53, 269, 590);
+		panel.setBounds(0, 53, 269, 660);
 		panel.setBackground(new Color(102, 205, 170));
 		
 		contentPane.add(panel);
@@ -190,7 +258,7 @@ public class OrganizationProfileUI extends JFrame {
 		organizationImageLbl.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\icons8-ping-pong-64.png"));
 		organizationImageLbl.setBounds(10, 11, 73, 71);
 		panel_1.add(organizationImageLbl);
-		descriptionPanel.setBounds(268, 145, 972, 498);
+		descriptionPanel.setBounds(268, 145, 972, 568);
 										
 		contentPane.add(descriptionPanel);
 		descriptionPanel.setLayout(null);

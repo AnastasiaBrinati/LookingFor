@@ -63,19 +63,15 @@ public class UserProfileControllerG {
 		
 		
 		ActionListener gestoreOrganizations = new ActionListener(){
-
 			@Override
 			public void actionPerformed(ActionEvent e){
-				
 				OrganizationProfileUI vista=new OrganizationProfileUI();
 				AddCourseUI view2 = new AddCourseUI();
 				OrganizationProfile orgmodel = new OrganizationProfile();
 				OrganizationControllerG controller=OrganizationControllerG.getInstance(vista, orgmodel);
 				controller.assegnaGestori();
-				view.setVisible(false);
-							
+				view.setVisible(false);				
 			}
-
 		};
 		view.getOrganizationsButton().addActionListener(gestoreOrganizations);
 		

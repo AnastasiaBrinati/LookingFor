@@ -47,8 +47,7 @@ public class SettingsUI extends JFrame {
 	private final JTextField textFieldName = new JTextField();
 	private final JLabel usernamelbl = new JLabel("Username");
 	private final JTextField textFieldUsername = new JTextField();
-	
-	
+
 	
 	private final JButton saveButton = new JButton("Save");
 	private final JButton cancelButton = new JButton("Cancel");
@@ -105,57 +104,14 @@ public class SettingsUI extends JFrame {
 		namePanel.add(saveButton);
 		cancelButton.setBounds(94, 355, 158, 38);
 		
-		namePanel.add(cancelButton);
-		namePanel.setLayout(null);
-		
-		//namePanel.add(namePanel);
 		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
 		surnamelbl.setBounds(49, 146, 134, 25);
 		
 		namePanel.add(surnamelbl);
-		
-		namePanel.add(textFieldSurname);
-		
-		textFieldSurname.setColumns(10);
-		textFieldSurname.setBounds(223, 148, 241, 25);
-		namePanel.setBounds(305, 168, 992, 478);
-		
-		contentPane.add(namePanel);
-		
-		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		nameLbl.setBounds(49, 54, 116, 29);
-		namePanel.add(nameLbl);
-		
-		
-		namePanel.setLayout(null);
-		
-		//namePanel.add(namePanel);
-		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		surnamelbl.setBounds(49, 146, 134, 25);
-		
-		namePanel.add(surnamelbl);
-		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		nameLbl.setBounds(49, 54, 116, 29);
-		
-		namePanel.add(nameLbl);
-		textFieldName.setColumns(10);
-		textFieldName.setBounds(223, 58, 241, 25);
-		
-		namePanel.add(textFieldName);
-		
-		namePanel.add(textFieldSurname);
-		textFieldUsername.setColumns(10);
-		textFieldUsername.setBounds(223, 252, 241, 25);
-		
-		namePanel.add(textFieldUsername);
-		usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		usernamelbl.setBounds(49, 250, 134, 25);
-		
-		namePanel.add(usernamelbl);
-		
 		namePanel.add(cancelButton);
-		textFieldSurname.setColumns(10);
-		textFieldSurname.setBounds(223, 148, 241, 25);
+		
+		
+		
 		emailPanel.setBounds(305, 168, 1003, 477);
 		contentPane.add(emailPanel);
 		emailPanel.setLayout(null);
@@ -185,7 +141,7 @@ public class SettingsUI extends JFrame {
 				emailPanel.add(passwordField);
 
 		subtitlePanel.setBackground(new Color(192, 192, 192));
-		subtitlePanel.setBounds(305, 80, 992, 115);
+		subtitlePanel.setBounds(305, 54, 992, 115);
 
 		contentPane.add(subtitlePanel);
 		subtitlePanel.setLayout(null);

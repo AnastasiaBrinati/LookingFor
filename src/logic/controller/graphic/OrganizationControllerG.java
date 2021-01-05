@@ -35,16 +35,14 @@ public class OrganizationControllerG{
 
 	public void assegnaGestori(){
 		
-		
+		//trasformare in uscita
 		ActionListener gestoreLogin = new ActionListener(){
-
 			@Override
 			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginControllerG.getInstance(view);
 			}
-
 		};
 		view.getProfileButton().addActionListener(gestoreLogin);
 		
