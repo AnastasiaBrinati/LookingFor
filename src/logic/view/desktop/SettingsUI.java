@@ -27,7 +27,6 @@ public class SettingsUI extends JFrame {
 
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
-	private JButton settingsButton = new JButton("");
 	
 	private final JPanel panel = new JPanel();
 	private final JButton credentialsButton = new JButton("Name");
@@ -98,7 +97,7 @@ public class SettingsUI extends JFrame {
 		usernamelbl.setBounds(49, 250, 134, 25);
 		
 		namePanel.add(usernamelbl);
-		saveButton.setBackground(new Color(218, 165, 32));
+		saveButton.setBackground(new Color(255, 99, 71));
 		saveButton.setBounds(262, 355, 158, 38);
 		
 		namePanel.add(saveButton);
@@ -167,19 +166,13 @@ public class SettingsUI extends JFrame {
 		searchBar.setBounds(416, 11, 349, 31);
 		searchBar.setColumns(10);
 
-		settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\gear-2-32.png"));
-		settingsButton.setBounds(0, 0, 55, 51);
-		settingsButton.setContentAreaFilled(false);
-		settingsButton.setBorder(null);
-
 		headerPanel.add(homeButton);
 		headerPanel.add(searchBar);
-		headerPanel.add(settingsButton);
 
 		contentPane.add(headerPanel);
 														
 		panel.setBackground(new Color(102, 205, 170));
-		panel.setBounds(0, 54, 307, 591);
+		panel.setBounds(0, 54, 307, 602);
 		panel.setLayout(null);
 		credentialsButton.setBackground(new Color(0, 128, 128));
 		credentialsButton.setBounds(10, 79, 287, 57);
@@ -216,8 +209,6 @@ public class SettingsUI extends JFrame {
 				homeButton.setContentAreaFilled(false);
 				
 				Image img2=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
-				settingsButton.setIcon(new ImageIcon(img2));
-				settingsButton.setContentAreaFilled(false);
 	}
 	
 	public JButton getHomeButton() {

@@ -44,8 +44,6 @@ public class SignInUI extends JFrame {
 	JLabel lblEmail = new JLabel("E-MAIL");
 	JSeparator separator2 = new JSeparator();
 	JLabel lblPassword = new JLabel("PASSWORD");
-	JPanel panel = new JPanel();
-	JLabel lblNewLabel3 = new JLabel("");
 	JButton btnNewButton1 = new JButton("");
 	JButton btnNewButton2 = new JButton("");
 	JLabel lblAlternative = new JLabel("Or sign up with:");
@@ -59,9 +57,9 @@ public class SignInUI extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				"C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 826, 551);
+		setBounds(100, 100, 829, 551);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -128,14 +126,6 @@ public class SignInUI extends JFrame {
 		textFieldPassword.setBounds(447, 281, 289, 20);
 		textFieldPassword.setColumns(10);
 		
-		panel.setBounds(0, 0, 382, 512);
-		panel.setLayout(null);
-		contentPane.add(panel);
-		
-		lblNewLabel3.setBounds(-80, -12, 512, 537);
-		panel.add(lblNewLabel3);
-		lblNewLabel3.setIcon(new ImageIcon("C:\\Users\\giuli\\Pictures\\Wallpapers\\Sports-Wallpapers-and-Backgrounds-HD-by-Pocket-Books.jpg"));
-		
 		btnNewButton1.setIcon(new ImageIcon(
 				"C:\\Users\\giuli\\Downloads\\Facebook_logo_(square) (1).png"));
 		btnNewButton1.setBounds(552, 416, 40, 40);
@@ -153,7 +143,7 @@ public class SignInUI extends JFrame {
 		resetButton.setBackground(Color.GRAY);
 		resetButton.setBounds(503, 345, 89, 23);
 
-		signUpButton.setBackground(Color.ORANGE);
+		signUpButton.setBackground(new Color(255, 99, 71));
 		signUpButton.setBounds(602, 345, 89, 23);
 
 		// adding stuff to content pane

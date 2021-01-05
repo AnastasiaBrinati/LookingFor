@@ -50,7 +50,7 @@ public class UserProfileUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 								
-										descriptionPanel.setBounds(305, 51, 992, 584);
+										descriptionPanel.setBounds(305, 51, 992, 593);
 										descriptionPanel.setLayout(null);
 										
 										lblUsername.setFont(new Font("Arial", Font.PLAIN, 23));
@@ -102,7 +102,7 @@ public class UserProfileUI extends JFrame {
 		contentPane.add(headerPanel);
 		
 		panel.setBackground(new Color(102, 205, 170));
-		panel.setBounds(0, 51, 307, 584);
+		panel.setBounds(0, 51, 307, 593);
 		panel.setLayout(null);
 		coursesButton.setBackground(new Color(102, 205, 170));
 		coursesButton.setBounds(10, 153, 287, 57);

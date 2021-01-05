@@ -95,7 +95,7 @@ public class OrganizationProfileUI extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 	
-		profileButton.setBounds(1236, 0, 66, 42);
+		profileButton.setBounds(1168, 6, 66, 42);
 		profileButton.setIcon(null);
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorder(null);
@@ -141,7 +141,7 @@ public class OrganizationProfileUI extends JFrame {
 		newCoursePanel.add(cancelButton);
 		
 		JButton saveButton = new JButton("SAVE");
-		saveButton.setBackground(Color.ORANGE);
+		saveButton.setBackground(new Color(255, 99, 71));
 		saveButton.setBounds(247, 498, 162, 40);
 		newCoursePanel.add(saveButton);
 		
@@ -245,7 +245,7 @@ public class OrganizationProfileUI extends JFrame {
 		panel_1.setLayout(null);
 										
 		JLabel orgLocationLbl = new JLabel("Location");
-		orgLocationLbl.setBounds(104, 68, 73, 14);
+		orgLocationLbl.setBounds(104, 62, 73, 14);
 		panel_1.add(orgLocationLbl);
 										
 		JLabel organizationNameLbl = new JLabel("Organization Name");

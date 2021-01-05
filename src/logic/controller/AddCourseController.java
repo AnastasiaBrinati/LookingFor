@@ -5,7 +5,7 @@ import logic.model.Course;
 public class AddCourseController {
 	
 	private static AddCourseController instance;
-	private AddCourseController() {
+	public AddCourseController() {
 		}
 		
 	public static synchronized AddCourseController getInstance() {
@@ -16,7 +16,7 @@ public class AddCourseController {
 		return instance;
 	}
 	
-	public void addCourse(NewCourseBean bean) {
+	public void addCourse(NewCourseBean bean) throws Exception {
 		Course newCourse=new Course();
 		newCourse.setAvailability(bean.getAvaialbility());
 		newCourse.setCourseID(0);
@@ -29,13 +29,7 @@ public class AddCourseController {
 		newCourse.setOrganization(bean.getOrganization());
 		newCourse.setSport(bean.getSport());
 		
-		try {
-			newCourse.addCourse();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		newCourse.addCourse();
 	}
 
 }
