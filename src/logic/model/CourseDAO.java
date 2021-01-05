@@ -18,7 +18,7 @@ public class CourseDAO {
     private static String PASS = "nH1ORFX9CBydKKphGtBO";
     private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nH1ORFX9CBydKKphGtBO@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
     
-    //MANCA LA REFLECTION
+    
     
 	
     public static void addCourse(Course course) throws Exception {
