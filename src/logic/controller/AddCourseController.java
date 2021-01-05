@@ -1,6 +1,7 @@
 package logic.controller;
 
 import logic.model.Course;
+import logic.model.OrganizationProfile;
 
 public class AddCourseController {
 	
@@ -32,6 +33,7 @@ public class AddCourseController {
 		
 		
 		newCourse.addCourse(newCourse);
+		OrganizationProfile.addCourse(newCourse);
 	}
 
 }

@@ -295,8 +295,6 @@ public class OrganizationProfileUI extends JFrame {
 		settingsButton.setIcon(new ImageIcon(img6));
 		settingsButton.setContentAreaFilled(false);
 		
-		
-		
 	}
 
 

@@ -13,8 +13,8 @@ public class UserProfile {
 	private static String username;
 	private static String email;
 	private static String password;
-	private List<Course> courses = new ArrayList<>();
-	private List<Event> events=new ArrayList<>();
+	private List<Course> courses = new ArrayList<Course>();
+	private List<Event> events=new ArrayList<Event>();
 	 
 	private static UserProfileDAO usDAO;
 	
@@ -25,6 +25,7 @@ public class UserProfile {
 	public static void setName(String nome) {
 		name = nome;
 	}
+	
 	public static String getSurname() {
 		return surname;
 	}
@@ -49,8 +50,8 @@ public class UserProfile {
 	public static String getPassword() {
 		return password;
 	}
-	public static void setPassword(String passwd) {
-		password = passwd;
+	public static void setPassword(String psswd) {
+		password = psswd;
 	}
 	
 	public static String checkCredentials() throws Exception {

@@ -70,6 +70,7 @@ public class OrganizationControllerG{
 				getCredentials(newCourseBean);
 				try {
 					NewCourseBean.addCourse(newCourseBean);
+					System.out.println(newCourseBean.getName());
 					view.createCourseFrame(newCourseBean.getName());
 					view.setCoursesPanelVisible();
 				} catch (Exception e1) {
@@ -109,7 +110,7 @@ public class OrganizationControllerG{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				HomeUI homeView = new HomeUI();
-				HomeControllerG controller = HomeControllerG.getInstance(homeView);
+				HomeControllerGSUs controller = HomeControllerGSUs.getInstance(homeView);
 				view.setVisible(false);
 			}
 		};
@@ -122,7 +123,6 @@ public class OrganizationControllerG{
 		newCourseBean.setMonthlyPrice(view.getMonthlyPrice());
 		newCourseBean.setLessonPrice(view.getPriceForLesson());
 		newCourseBean.setDescription(view.getDescription());
-
 		newCourseBean.setSport(view.getSport());
 		newCourseBean.setInstructorName(view.getInstructorName());
 
