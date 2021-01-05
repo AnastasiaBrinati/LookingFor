@@ -2,14 +2,14 @@ package logic.controller;
 
 public class NewCourseBean {
 	private String name;
-	private double courseID;
+	private int courseID;
 	private String organization;
-	private double monthlyPrice;
-	private double lessonPrice;
+	private float monthlyPrice;
+	private float lessonPrice;
 	private String sport;
 	private String instructorName;
 	private String imgSrc;
-	private double avaialbility;
+	private float avaialbility;
 	private String description;
 	
 	
@@ -19,7 +19,7 @@ public class NewCourseBean {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getCourseID() {
+	public float getCourseID() {
 		return courseID;
 	}
 	public void setCourseID(int courseID) {
@@ -31,18 +31,18 @@ public class NewCourseBean {
 	public void setOrganization(String organization) {
 		this.organization = organization;
 	}
-	public double getMonthlyPrice() {
+	public float getMonthlyPrice() {
 		return monthlyPrice;
 	}
 	public void setMonthlyPrice(String monthlyPrice) {
 		
-		this.monthlyPrice = Double.parseDouble(monthlyPrice);
+		this.monthlyPrice = Float.parseFloat(monthlyPrice);
 	}
-	public double getLessonPrice() {
+	public float getLessonPrice() {
 		return lessonPrice;
 	}
 	public void setLessonPrice(String lessonPrice) {
-		this.lessonPrice = Double.parseDouble(lessonPrice);;
+		this.lessonPrice = Float.parseFloat(lessonPrice);;
 	}
 	public String getSport() {
 		return sport;
@@ -62,11 +62,11 @@ public class NewCourseBean {
 	public void setImgSrc(String imgSrc) {
 		this.imgSrc = imgSrc;
 	}
-	public double getAvaialbility() {
+	public float getAvaialbility() {
 		return avaialbility;
 	}
-	public void setAvaialbility(int avaialbility) {
-		this.avaialbility = avaialbility;
+	public void setAvaialbility(int availability) {
+		this.avaialbility = availability;
 	}
 	public String getDescription() {
 		return description;

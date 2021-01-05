@@ -22,30 +22,27 @@ public class CourseDAO {
     
 	
     public static void addCourse(Course course) throws Exception {
-       
+        // STEP 1: dichiarazioni
         Statement stmt = null;
         Connection conn = null;
         
         try {
+            // STEP 2: loading dinamico del driver mysql
             
+
+            // STEP 3: apertura connessione
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY);
-            int rs = Queries.addCourse(stmt, course);
             
-            
-           
-            stmt.close();
-
+            // STEP 4.2: creazione ed esecuzione della query
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             int result = Queries.addCourse(stmt, course);
             
-          
+            // STEP 5.1: Clean-up dell'ambiente
             
         } finally {
-            	
+            // STEP 5.2: Clean-up dell'ambiente        	
                 if (stmt != null)
                     stmt.close();
                 if (conn != null)

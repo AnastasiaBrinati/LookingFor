@@ -18,11 +18,12 @@ public class Queries {
 	
 	//query to add a new Course to the DB
 	public static int addCourse(Statement stmt, Course course) throws SQLException  {
-        String insertStatement = String.format("INSERT INTO courses ( name , organization , sport , instructorName , description ) VALUES (%s,%s,%s,%s,%s,%s)",course.getName(),
-        		course.getOrganization(),course.getSport(),course.getInstructorName(),
-        		course.getDescription());
+        String insertStatement = String.format("INSERT INTO `courses`(name,description,sport,instructorName,lessonPrice,monthlyPrice) VALUES ('%s','%s','%s','%s',%f,%f)",
+        course.getName(),course.getDescription(),course.getSport(),course.getInstructorName(),course.getLessonPrice(),course.getMonthlyPrice());
+        
         System.out.println(insertStatement);
         return stmt.executeUpdate(insertStatement);
     }
 	
 }
+

@@ -6,14 +6,14 @@ package logic.model;
 public class Course {
 	
 	private String name;
-	private double courseID;
+	private int courseID;
 	private String organization;
-	private double monthlyPrice;
-	private double lessonPrice;
+	private float monthlyPrice;
+	private float lessonPrice;
 	private String sport;
 	private String instructorName;
 	private String imgSrc;
-	private double availability;
+	private float availability;
 	private String description;
 	
 	public String getName() {
@@ -22,10 +22,10 @@ public class Course {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getCourseID() {
+	public float getCourseID() {
 		return courseID;
 	}
-	public void setCourseID(double courseID) {
+	public void setCourseID(int courseID) {
 		this.courseID = courseID;
 	}
 	public String getOrganization() {
@@ -34,16 +34,16 @@ public class Course {
 	public void setOrganization(String organization) {
 		this.organization = organization;
 	}
-	public double getMonthlyPrice() {
+	public float getMonthlyPrice() {
 		return monthlyPrice;
 	}
-	public void setMonthlyPrice(double monthlyPrice) {
+	public void setMonthlyPrice(float monthlyPrice) {
 		this.monthlyPrice = monthlyPrice;
 	}
-	public double getLessonPrice() {
+	public float getLessonPrice() {
 		return lessonPrice;
 	}
-	public void setLessonPrice(double lessonPrice) {
+	public void setLessonPrice(float lessonPrice) {
 		this.lessonPrice = lessonPrice;
 	}
 	public String getSport() {
@@ -64,10 +64,10 @@ public class Course {
 	public void setImgSrc(String imgSrc) {
 		this.imgSrc = imgSrc;
 	}
-	public double getAvailability() {
+	public float getAvailability() {
 		return availability;
 	}
-	public void setAvailability(double availability) {
+	public void setAvailability(float availability) {
 		this.availability = availability;
 	}
 	public String getDescription() {
