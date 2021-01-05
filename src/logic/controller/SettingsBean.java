@@ -2,9 +2,15 @@ package logic.controller;
 
 public class SettingsBean {
 	
+	//1
 	private String name;
 	private String surname;
 	private String username;
+	
+	
+	//2
+	private String email;
+	private String password;
 	
 	public SettingsBean() {
 	}
@@ -32,9 +38,20 @@ public class SettingsBean {
 	public String getUsername() {
 		return username;
 	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getPassword() {
+		return password;
+	}
 	
 	public static void changeCredentials(SettingsBean settingBean) throws Exception {
-		//lancia exception
 		CustomizationController customizer = new CustomizationController();
 		customizer.changeCredentials(settingBean);
 		

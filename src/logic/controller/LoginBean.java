@@ -25,11 +25,11 @@ public class LoginBean {
 		return password;
 	}
 	
-	////
+	///////////////////////////
 	public String getEmail() {
 		return email;
 	}
-	////
+	///////////////////////////
 	
 	public static String checkCredentials(LoginBean lb) throws Exception {
 		LoginController loginController = LoginController.getInstance();
