@@ -53,9 +53,6 @@ public class SettingsBean {
 	
 	public static void changeCredentials(SettingsBean settingBean) throws Exception {
 		CustomizationController customizer = new CustomizationController();
-		if(!confirmPassword.equals(password)) {
-			//failure
-		}
 		customizer.changeCredentials(settingBean);
 	}
 }
