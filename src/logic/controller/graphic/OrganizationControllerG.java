@@ -33,10 +33,7 @@ public class OrganizationControllerG{
 	public static void setCredentials() {
 		OrganizationBean orgBean = new OrganizationBean();
 		OrganizationBean.setCredentials(orgBean);
-		String name = orgBean.getName();
-		String email = orgBean.getEmail();
-		String password = orgBean.getPassword();
-		view.setCredentials(name, email, password);
+		view.setCredentials(orgBean.getName());
 	}
 
 	public void assegnaGestori(){
@@ -141,6 +138,7 @@ public class OrganizationControllerG{
 	}
 	
 	private void getCredentials(NewCourseBean newCourseBean){
+		
 		newCourseBean.setName(view.getName());
 		newCourseBean.setMonthlyPrice(view.getMonthlyPrice());
 		newCourseBean.setLessonPrice(view.getPriceForLesson());

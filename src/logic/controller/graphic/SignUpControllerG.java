@@ -52,10 +52,7 @@ public class SignUpControllerG {
 					e.printStackTrace();
 				}
 				
-				
-				
-				
-				
+
 				HomeUI homeView = new HomeUI();
 				HomeControllerGSUs  homeController = HomeControllerGSUs.getInstance(homeView);
 

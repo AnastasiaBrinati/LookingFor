@@ -3,8 +3,6 @@ package logic.view.desktop;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,11 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JToggleButton;
-import javax.swing.JEditorPane;
 import javax.swing.JRadioButton;
 import java.awt.Font;
-import javax.swing.JRadioButtonMenuItem;
 
 public class SignInUI extends JFrame {
 	/**
@@ -61,8 +56,7 @@ public class SignInUI extends JFrame {
 	public SignInUI() {
 		
 		setTitle("Sportee");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				"C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 472, 630);
 		contentPane = new JPanel();
@@ -133,12 +127,10 @@ public class SignInUI extends JFrame {
 		textFieldPassword.setBounds(104, 223, 289, 20);
 		textFieldPassword.setColumns(10);
 		
-		btnNewButton1.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Downloads\\Facebook_logo_(square) (1).png"));
+		btnNewButton1.setIcon(new ImageIcon(""));
 		btnNewButton1.setBounds(194, 388, 40, 40);
 		
-		btnNewButton2.setIcon(new ImageIcon(
-				"C:\\Users\\giuli\\Downloads\\219-2197783_training-documents-google-logo-icon-png (1).png"));
+		btnNewButton2.setIcon(new ImageIcon(""));
 		btnNewButton2.setBounds(240, 388, 40, 40);
 		
 		lblAlternative.setForeground(Color.WHITE);

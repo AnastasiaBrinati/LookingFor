@@ -369,9 +369,10 @@ public class OrganizationProfileUI extends JFrame {
 		descriptionPanel.setVisible(false);
 	}
 	
-	public void setCredentials(String name, String surname, String username) {
+	public void setCredentials(String name) {
 	
 		organizationNameLbl.setText(name);
+		
 		
 	}
 	

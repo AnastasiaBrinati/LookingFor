@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.OrganizationProfileUI;
+import logic.view.desktop.SettingsUIOrg;
 import logic.view.desktop.SettingsUISUs;
 
 
@@ -42,8 +43,8 @@ import logic.view.desktop.SettingsUISUs;
 
 			ActionListener gestoreSettings = e -> {
 				view.setVisible(false);
-				SettingsUISUs vista = new SettingsUISUs();
-				SettingsControllerGSUs controller = SettingsControllerGSUs.getInstance(vista);
+				SettingsUIOrg vista = new SettingsUIOrg();
+				SettingsControllerGOrg controller = SettingsControllerGOrg.getInstance(vista);
 
 			};
 			view.getSettingsButton().addActionListener(gestoreSettings);
