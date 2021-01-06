@@ -252,6 +252,11 @@ public class SettingsUIOrg extends JFrame {
 		return passwordField.getText();
 	}
 	
+	public String getConfirmPassword() {
+		return confirmPsswdtextField.getText();
+	}
+	
+	
 	public JButton getSaveButton2() {
 		return SaveButton_2;
 	}
@@ -265,6 +270,7 @@ public class SettingsUIOrg extends JFrame {
 		textFieldName.setText(name);
 		textFieldEmail.setText(email);
 		passwordField.setText(password);
+		confirmPsswdtextField.setText("");
 		//set img
 		
 	}

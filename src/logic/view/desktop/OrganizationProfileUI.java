@@ -43,6 +43,7 @@ public class OrganizationProfileUI extends JFrame {
 	private final JLabel lblNewLabel_4 = new JLabel("Events");
 	private JTextField textField;
 	private JTextField titleTextField;
+	private JLabel organizationNameLbl = new JLabel("Organization Name");
 	
 	private JPanel newCoursePanel = new JPanel();
 	private final JButton saveButton = new JButton("SAVE");
@@ -259,8 +260,7 @@ public class OrganizationProfileUI extends JFrame {
 		JLabel orgLocationLbl = new JLabel("Location");
 		orgLocationLbl.setBounds(104, 62, 73, 14);
 		panel_1.add(orgLocationLbl);
-										
-		JLabel organizationNameLbl = new JLabel("Organization Name");
+									
 		organizationNameLbl.setBounds(104, 26, 179, 25);
 		organizationNameLbl.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		panel_1.add(organizationNameLbl);
@@ -307,8 +307,7 @@ public class OrganizationProfileUI extends JFrame {
         frame.setVisible(true);
         lowerPanel.add(frame);
         coursesPanel.revalidate();
-        //contentPane.revalidate();
-
+        
     }
 	
 	public void setDescriptionPanelVisible() {
@@ -368,6 +367,12 @@ public class OrganizationProfileUI extends JFrame {
 		courtsPanel.setVisible(false);
 		eventsPanel.setVisible(false);
 		descriptionPanel.setVisible(false);
+	}
+	
+	public void setCredentials(String name, String surname, String username) {
+	
+		organizationNameLbl.setText(name);
+		
 	}
 	
 	public JButton getProfileButton() {
