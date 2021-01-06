@@ -21,14 +21,17 @@ public class OrganizationProfile {
 	
 	public static void addCourse(Course course) {
 		courses.add(course);
+		OrganizationBean.setCourses(courses);
 	}
 	
 	public static void addEvent(Event event) {
 		events.add(event);
+		OrganizationBean.setEvents(events);
 	}
 	
 	public static void addCourt(Court court) {
 		courts.add(court);
+		OrganizationBean.setCourts(courts);
 	}
 
 

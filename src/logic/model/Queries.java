@@ -18,7 +18,7 @@ public class Queries {
 	
 	public static ResultSet getCourses(Statement stmt,String username) throws SQLException {
 		
-		String sql="SELECT * FROM courses WHERE username = '" + username + "';";
+		String sql="SELECT * FROM courses WHERE organization = '" + username + "';";
 		System.out.println(sql);
 		return stmt.executeQuery(sql);
 		
@@ -36,7 +36,7 @@ public class Queries {
 
     public static ResultSet getEvents(Statement stmt,String username) throws SQLException {
 		
-		String sql="SELECT * FROM events WHERE username = '" + username + "';";
+		String sql="SELECT * FROM events WHERE organization = '" + username + "';";
 		System.out.println(sql);
 		return stmt.executeQuery(sql);
 		
@@ -44,7 +44,7 @@ public class Queries {
 
     public static ResultSet getCourts(Statement stmt,String username) throws SQLException {
 	
-	String sql="SELECT * FROM courts WHERE username = '" + username + "';";
+	String sql="SELECT * FROM courts WHERE organization = '" + username + "';";
 	System.out.println(sql);
 	return stmt.executeQuery(sql);
 	
