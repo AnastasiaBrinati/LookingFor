@@ -18,9 +18,10 @@ public class AddCourseController {
 	}
 	
 	public void addCourse(NewCourseBean bean) throws Exception {
-		Course newCourse = new Course();
-		newCourse.setAvailability(bean.getAvaialbility());
 		
+		Course newCourse = new Course();
+		
+		newCourse.setAvailability(bean.getAvaialbility());
 		newCourse.setDescription(bean.getDescription());
 		newCourse.setImgSrc(bean.getImgSrc());
 		newCourse.setInstructorName(bean.getInstructorName());
@@ -32,7 +33,7 @@ public class AddCourseController {
 		newCourse.setOrganization(OrganizationProfile.getName());
 		System.out.println(OrganizationProfile.getName());
 		
-		//metodo per chiamare il DAO
+		//metodo per giungere sul DAO
 		newCourse.addCourse(newCourse);
 		
 		//metodo per aggiungere il corso alla lista dell'org

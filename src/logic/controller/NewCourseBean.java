@@ -71,8 +71,8 @@ public class NewCourseBean {
 	}
 	
 	public static void addCourse(NewCourseBean bean) throws Exception {
-		AddCourseController controller=new AddCourseController();
-		controller.addCourse(bean);
+		AddCourseController addCourseController=new AddCourseController();
+		addCourseController.addCourse(bean);
 	}
 	
 	

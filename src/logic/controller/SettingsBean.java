@@ -7,10 +7,10 @@ public class SettingsBean {
 	private String surname;
 	private String username;
 	
-	
 	//2
 	private String email;
-	private String password;
+	private static String password;
+	private static String confirmPassword;
 	
 	public SettingsBean() {
 	}
@@ -46,8 +46,16 @@ public class SettingsBean {
 		return password;
 	}
 	
+	public void setConfirmPassword(String confPassword) {
+		confirmPassword = confPassword;
+	}
+	
+	
 	public static void changeCredentials(SettingsBean settingBean) throws Exception {
 		CustomizationController customizer = new CustomizationController();
+		if(!confirmPassword.equals(password)) {
+			//failure
+		}
 		customizer.changeCredentials(settingBean);
 	}
 }

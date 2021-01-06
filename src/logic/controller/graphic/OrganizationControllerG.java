@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.controller.NewCourseBean;
+import logic.controller.ProfileBean;
+import logic.model.OrganizationBean;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.HomeUI;
@@ -22,9 +24,19 @@ public class OrganizationControllerG{
 			instance = new OrganizationControllerG(view);
 			instance.assegnaGestori();
 		}
+		setCredentials();
 		viewOrganizationProfileUI();
 		return instance;
 
+	}
+	
+	public static void setCredentials() {
+		OrganizationBean orgBean = new OrganizationBean();
+		OrganizationBean.setCredentials(orgBean);
+		String name = orgBean.getName();
+		String email = orgBean.getEmail();
+		String password = orgBean.getPassword();
+		view.setCredentials(name, email, password);
 	}
 
 	public void assegnaGestori(){
@@ -70,7 +82,7 @@ public class OrganizationControllerG{
 				getCredentials(newCourseBean);
 				try {
 					NewCourseBean.addCourse(newCourseBean);
-					view.createCourseFrame();
+					displayCourses();
 					view.setCoursesPanelVisible();
 					view.repaint();
 				} catch (Exception e1) {
@@ -80,10 +92,11 @@ public class OrganizationControllerG{
 				
 			}
 		};
-		view.getSaveButton().addActionListener(gestoreSaveCourse);
-		
+		view.getSaveButton().addActionListener(gestoreSaveCourse);		
 		//fine caso d'uso new course
 		//////////////////////////////////////////////////////////////////
+		
+		
 		
 		//showing CourtsPanel
         ActionListener gestoreCourts = new ActionListener() {
@@ -116,6 +129,15 @@ public class OrganizationControllerG{
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 
+	}
+	
+	private static void displayCourses() {
+		
+		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
+			String name = OrganizationBean.getCourses().get(i).getName();
+			view.createCourseFrame(name);
+		}
+		
 	}
 	
 	private void getCredentials(NewCourseBean newCourseBean){

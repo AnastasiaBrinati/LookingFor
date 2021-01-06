@@ -120,6 +120,7 @@ public class SettingsControllerGOrg {
 				SettingsBean settingBean = new SettingsBean();
 				settingBean.setEmail(view.getEmail());
 				settingBean.setPassword(view.getPassword());
+				settingBean.setConfirmPassword(view.getConfirmPassword());
 
 				try {
 					SettingsBean.changeCredentials(settingBean);
