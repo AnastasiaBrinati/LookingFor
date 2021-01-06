@@ -54,6 +54,10 @@ public class UserProfileDAO {
             		UserProfile.setName(nome);
             		UserProfile.setSurname(cognome);
             		UserProfile.setEmail(email);
+            		
+            		UserProfile.setUsername(username);
+            		UserProfile.setPassword(password);
+            		
             		System.out.println(rs.getString("type"));
             		return rs.getString("type");
             		

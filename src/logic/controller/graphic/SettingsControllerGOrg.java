@@ -88,6 +88,8 @@ public class SettingsControllerGOrg {
 		};
 		view.getSecurityButton().addActionListener(gestoreSecurity);
 		
+		
+		
 		ActionListener gestoreSave = new ActionListener(){
 
 			@Override
