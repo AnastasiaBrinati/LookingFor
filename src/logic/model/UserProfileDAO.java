@@ -79,8 +79,8 @@ public class UserProfileDAO {
         		   		ResultSet tupleCourses = Queries.getCourses(stmtCourses, username);
         		   		//scorrere tuple ed aggiungerle all'organizationProfile
         		   		if(!tupleCourses.first()) {
-        		   			Exception e = new Exception("No username Found matching with username: "+username);
-        	            	throw e;
+        		   			System.out.println("No Courses Found on organization:" + username);
+        		   			return null;
         		   			
         		   		}
         		   		tupleCourses.first();
@@ -114,8 +114,8 @@ public class UserProfileDAO {
         		   		ResultSet tupleEvents = Queries.getEvents(stmtEvents, username);
         		   		//scorrere tuple ed aggiungerle all'organizationProfile
         		   		if(!tupleCourses.first()) {
-        		   			Exception e = new Exception("No username Found matching with username: "+username);
-        	            	throw e;
+        		   			System.out.println("No events Found on organization:" + username);
+        		   			return null;
         		   			
         		   		}
         		   		tupleEvents.first();
@@ -150,8 +150,8 @@ public class UserProfileDAO {
         		   		ResultSet tupleCourts = Queries.getCourts(stmtCourts, username);
         		   		//scorrere tuple ed aggiungerle all'organizationProfile
         		   		if(!tupleCourses.first()) {
-        		   			Exception e = new Exception("No username Found matching with username: "+username);
-        	            	throw e;
+        		   			System.out.println("No courts Found on organization:" + username);
+        		   			return null;
         		   			
         		   		}
         		   		tupleCourts.first();
@@ -160,7 +160,6 @@ public class UserProfileDAO {
         		   			String organization=tupleCourts.getString("organization");
         		   			String price=tupleCourts.getString("price");
         		   			String sport=tupleCourts.getString("sport");
-        		   			String instructorName=tupleCourts.getString("instructorName");
         		   			String availability=tupleCourts.getString("availability");
         		   			String description=tupleCourts.getString("description");
         		   			

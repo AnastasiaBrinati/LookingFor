@@ -27,7 +27,7 @@ public class Queries {
 	//query to ckeck if an organization is signed or not
     public static ResultSet checkSignedOrganization(Statement stmt, String username, String password) throws SQLException {
 		
-		String sql = "SELECT * FROM users WHERE username = '" + username + "';";
+		String sql = "SELECT * FROM users WHERE name = '" + username + "';";
 		
         System.out.println(sql);
         return stmt.executeQuery(sql);
@@ -63,8 +63,8 @@ public class Queries {
     }
 	
 	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type) throws SQLException  {
-        String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password) VALUES ('%s','%s','%s','%s','%s')", name,surname,username,email,password,type);
-        
+        String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password,type) VALUES ('%s','%s','%s','%s','%s','%s')", name,surname,username,email,password,type);
+        System.out.println("in Queries ho:" + username);
         System.out.println(insertStatement);
         return stmt.executeUpdate(insertStatement);
         

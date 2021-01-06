@@ -218,19 +218,20 @@ public class SignInUI extends JFrame {
 		JOptionPane.showMessageDialog(this, errorMessage);
 	}
 
-	public String getName() {
+	public String getPassword() {
 		return textFieldPassword.getText();
 	}
-	public String getSurname() {
+	public String getEmail() {
 		return textFieldEmail.getText();
 	}
-	public String getUsername() {
+	public String getName() {
 		return textFieldName.getText();
 	}
-	public String getEmail() {
+	public String getSurname() {
 		return textFieldSurname.getText();
 	}
-	public String getPassword() {
+	public String getUsername() {
+		
 		return textFieldUsername.getText();
 	}
 	public String getUserType() {

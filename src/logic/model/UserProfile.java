@@ -111,6 +111,7 @@ public class UserProfile {
 		return events;
 	}
 	public static void createNewProfile(String name, String surname, String username, String email,String password,String type) throws SQLException {
+		System.out.println("in UserProfile ho:" + username);
 		UserProfileDAO.addNewProfile(name,surname,username,email,password,type);
 		
 	}

@@ -43,7 +43,9 @@ public class SignUpControllerG {
 				bean.setEmail(view.getEmail());
 				bean.setPassword(view.getPassword());
 				bean.setType(view.getUserType());
+				bean.setUsername(view.getUsername());
 				try {
+					System.out.println("Dentro SignUPControllerG username vale: " + bean.getUsername());
 					SignUpBean.signUpUser(bean);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
