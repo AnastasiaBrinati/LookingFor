@@ -54,7 +54,7 @@ public class UserProfile {
 		password = psswd;
 	}
 	
-	public static String checkCredentials(String Username, String password) throws Exception {
+	public static String checkCredentials(String username, String password) throws Exception {
 		usDAO = new UserProfileDAO();
 
 		String result = usDAO.goCheckAndTellMe(username,password); 

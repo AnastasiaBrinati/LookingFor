@@ -39,7 +39,7 @@ public class SettingsControllerGOrg {
 		String name = orgBean.getName();
 		String email = orgBean.getEmail();
 		String password = orgBean.getPassword();
-		//sey img
+		//set img
 		view.setCredentials(name, email, password);
 	}
 	
@@ -120,7 +120,6 @@ public class SettingsControllerGOrg {
 				SettingsBean settingBean = new SettingsBean();
 				settingBean.setEmail(view.getEmail());
 				settingBean.setPassword(view.getPassword());
-				//settingBean.setImg(view.getImg());
 
 				try {
 					SettingsBean.changeCredentials(settingBean);

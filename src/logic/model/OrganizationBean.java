@@ -1,12 +1,15 @@
 package logic.model;
 
+import java.util.ArrayList;
+
 public class OrganizationBean {
 	
 	private static String name;
-	public static String surname;
-	public static String username;
 	public static String email;
 	public static String password;
+	private static ArrayList<Course> courses = new ArrayList<Course>();
+	private static ArrayList<Event> events = new ArrayList<Event>();
+	private static ArrayList<Court> courts = new ArrayList<Court>();
 	
 	public OrganizationBean() {
 	}

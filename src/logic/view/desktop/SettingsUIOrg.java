@@ -88,7 +88,7 @@ public class SettingsUIOrg extends JFrame {
 		
 		JLabel imglbl = new JLabel("Image");
 		imglbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		imglbl.setBounds(49, 134, 116, 29);
+		imglbl.setBounds(49, 136, 116, 29);
 		namePanel.add(imglbl);
 		
 		JLabel lblNewLabel = new JLabel("New label");

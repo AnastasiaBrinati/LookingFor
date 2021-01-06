@@ -6,6 +6,10 @@ public class Event {
 	private String date;
 	private String imgSrc;
 	private String description;
+	private String organization;
+	private String sport;
+	private String availability;
+	private String price;
 	
 	
 	
@@ -33,6 +37,30 @@ public class Event {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getOrganization() {
+		return organization;
+	}
+	public void setOrganization(String organization) {
+		this.organization = organization;
+	}
+	public String getSport() {
+		return sport;
+	}
+	public void setSport(String sport) {
+		this.sport = sport;
+	}
+	public String getAvailability() {
+		return availability;
+	}
+	public void setAvailability(String availability) {
+		this.availability = availability;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	
 

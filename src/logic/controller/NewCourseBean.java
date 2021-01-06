@@ -19,8 +19,8 @@ public class NewCourseBean {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public float getCourseID() {
-		return courseID;
+	public String getCourseID() {
+		return String.valueOf(courseID);
 	}
 	public void setCourseID(int courseID) {
 		this.courseID = courseID;
@@ -31,15 +31,15 @@ public class NewCourseBean {
 	public void setOrganization(String organization) {
 		this.organization = organization;
 	}
-	public float getMonthlyPrice() {
-		return monthlyPrice;
+	public String getMonthlyPrice() {
+		return String.valueOf(monthlyPrice);
 	}
 	public void setMonthlyPrice(String monthlyPrice) {
 		
 		this.monthlyPrice = Float.parseFloat(monthlyPrice);
 	}
-	public float getLessonPrice() {
-		return lessonPrice;
+	public String getLessonPrice() {
+		return String.valueOf(lessonPrice);
 	}
 	public void setLessonPrice(String lessonPrice) {
 		this.lessonPrice = Float.parseFloat(lessonPrice);;
@@ -62,8 +62,8 @@ public class NewCourseBean {
 	public void setImgSrc(String imgSrc) {
 		this.imgSrc = imgSrc;
 	}
-	public float getAvaialbility() {
-		return avaialbility;
+	public String getAvaialbility() {
+		return String.valueOf(avaialbility);
 	}
 	public void setAvaialbility(int availability) {
 		this.avaialbility = availability;

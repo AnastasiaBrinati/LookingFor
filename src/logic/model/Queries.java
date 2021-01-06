@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class Queries {
 
 	//query to check if a user is signed or not 
-	public static ResultSet checkSignedUser(Statement stmt, String username, String password) throws SQLException {
+	public static ResultSet checkSignedUser(Statement stmt, String username) throws SQLException {
 		
 		String sql = "SELECT * FROM users WHERE username = '" + username + "';";
 		
@@ -16,16 +16,30 @@ public class Queries {
 		
 	}
 	
-	
-	//query to ckeck if an organization is signed or not
-    public static ResultSet checkSignedOrganization(Statement stmt, String username, String password) throws SQLException {
+	public static ResultSet getCourses(Statement stmt,String username) throws SQLException {
 		
-		String sql = "SELECT * FROM users WHERE username = '" + username + "';";
-		
-        System.out.println(sql);
-        return stmt.executeQuery(sql);
+		String sql="SELECT * FROM courses WHERE username = '" + username + "';";
+		System.out.println(sql);
+		return stmt.executeQuery(sql);
 		
 	}
+	
+public static ResultSet getEvents(Statement stmt,String username) throws SQLException {
+		
+		String sql="SELECT * FROM events WHERE username = '" + username + "';";
+		System.out.println(sql);
+		return stmt.executeQuery(sql);
+		
+	}
+
+public static ResultSet getCourts(Statement stmt,String username) throws SQLException {
+	
+	String sql="SELECT * FROM courts WHERE username = '" + username + "';";
+	System.out.println(sql);
+	return stmt.executeQuery(sql);
+	
+}
+	
 	
 	//query to add a new Course to the DB
 	public static int addCourse(Statement stmt, Course course) throws SQLException  {

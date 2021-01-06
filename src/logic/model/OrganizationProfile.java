@@ -8,7 +8,8 @@ public class OrganizationProfile {
 	private static String email;
 	private static String password;
 	private static ArrayList<Course> courses = new ArrayList<Course>();
-	private static ArrayList<SportEvent> events = new ArrayList<SportEvent>();
+	private static ArrayList<Event> events = new ArrayList<Event>();
+	private static ArrayList<Court> courts = new ArrayList<Court>();
 
 	
 	public OrganizationProfile() {
@@ -20,6 +21,14 @@ public class OrganizationProfile {
 	
 	public static void addCourse(Course course) {
 		courses.add(course);
+	}
+	
+	public static void addEvent(Event event) {
+		events.add(event);
+	}
+	
+	public static void addCourt(Court court) {
+		courts.add(court);
 	}
 
 
@@ -53,7 +62,7 @@ public class OrganizationProfile {
 		return courses;
 	}
 	
-	public static ArrayList<SportEvent> getEvents() {
+	public static ArrayList<Event> getEvents() {
 		return events;
 	}
 	

@@ -20,7 +20,7 @@ public class AddCourseController {
 	public void addCourse(NewCourseBean bean) throws Exception {
 		Course newCourse = new Course();
 		newCourse.setAvailability(bean.getAvaialbility());
-		newCourse.setCourseID(0);
+		
 		newCourse.setDescription(bean.getDescription());
 		newCourse.setImgSrc(bean.getImgSrc());
 		newCourse.setInstructorName(bean.getInstructorName());
