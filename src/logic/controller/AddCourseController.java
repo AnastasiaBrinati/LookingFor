@@ -32,6 +32,7 @@ public class AddCourseController {
 		
 		
 		
+		
 		newCourse.addCourse(newCourse);
 		OrganizationProfile.addCourse(newCourse);
 	}
