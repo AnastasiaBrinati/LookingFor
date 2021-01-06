@@ -34,7 +34,7 @@ public class Queries {
 		
 	}
 
-public static ResultSet getEvents(Statement stmt,String username) throws SQLException {
+    public static ResultSet getEvents(Statement stmt,String username) throws SQLException {
 		
 		String sql="SELECT * FROM events WHERE username = '" + username + "';";
 		System.out.println(sql);
@@ -42,7 +42,7 @@ public static ResultSet getEvents(Statement stmt,String username) throws SQLExce
 		
 	}
 
-public static ResultSet getCourts(Statement stmt,String username) throws SQLException {
+    public static ResultSet getCourts(Statement stmt,String username) throws SQLException {
 	
 	String sql="SELECT * FROM courts WHERE username = '" + username + "';";
 	System.out.println(sql);
@@ -55,6 +55,15 @@ public static ResultSet getCourts(Statement stmt,String username) throws SQLExce
 	public static int addCourse(Statement stmt, Course course) throws SQLException  {
         String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
         course.getOrganization(),course.getName(),course.getSport(),course.getDescription(),course.getInstructorName(),String.valueOf(course.getLessonPrice()),String.valueOf(course.getMonthlyPrice()),String.valueOf(course.getAvailability()));
+        
+        System.out.println(insertStatement);
+        return stmt.executeUpdate(insertStatement);
+        
+        
+    }
+	
+	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type) throws SQLException  {
+        String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password) VALUES ('%s','%s','%s','%s','%s')", name,surname,username,email,password,type);
         
         System.out.println(insertStatement);
         return stmt.executeUpdate(insertStatement);

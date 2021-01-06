@@ -1,5 +1,6 @@
 package logic.model;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,6 +109,10 @@ public class UserProfile {
 	
 	public List<Event> getEvents() {
 		return events;
+	}
+	public static void createNewProfile(String name, String surname, String username, String email,String password,String type) throws SQLException {
+		UserProfileDAO.addNewProfile(name,surname,username,email,password,type);
+		
 	}
 	
      

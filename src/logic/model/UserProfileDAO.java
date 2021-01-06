@@ -215,6 +215,43 @@ public class UserProfileDAO {
 		}
 			
 	}
+
+	public static void addNewProfile(String name, String surname, String username, String email, String password,String type) throws SQLException {
+		Statement stmt=null;
+		
+		Connection conn=null;
+		
+		try {
+			
+			conn=DriverManager.getConnection(DB_URL,USER,PASS);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			Queries.addProfile(stmt, name, surname, username, email, password,type);
+		}
+			catch (SQLException se) {
+                se.printStackTrace();
+			}
+           
+			
+            
+		finally {
+			
+			
+            try {
+                if (stmt != null)
+                    stmt.close();
+               
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+			
+		}
+		
+	}
 	
 	
 	

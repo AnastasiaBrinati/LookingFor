@@ -1,12 +1,14 @@
 package logic.controller.graphic;
 
 
+import logic.controller.SignUpBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SignInUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class SignUpControllerG {
 
@@ -29,10 +31,26 @@ public class SignUpControllerG {
 
 	public void assegnaGestori() {
 
+		
+		//gestore per registrarsi nel sistema
 		ActionListener gestoreSignUp = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e2) {
 
+				SignUpBean bean=new SignUpBean();
+				bean.setName(view.getName());
+				bean.setSurname(view.getSurname());
+				bean.setEmail(view.getEmail());
+				bean.setPassword(view.getPassword());
+				bean.setType(view.getUserType());
+				try {
+					SignUpBean.signUpUser(bean);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
 				
 				
 				

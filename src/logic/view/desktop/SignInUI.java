@@ -233,7 +233,12 @@ public class SignInUI extends JFrame {
 	public String getPassword() {
 		return textFieldUsername.getText();
 	}
-	public String getType() {
+	public String getUserType() {
+		if(organizationRadioButton.isSelected()) {
+			return "organization";
+		}else {
+			return "singleuser";
+		}
 		
 	}
 }

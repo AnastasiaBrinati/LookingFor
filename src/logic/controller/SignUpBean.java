@@ -1,5 +1,7 @@
 package logic.controller;
 
+import java.sql.SQLException;
+
 public class SignUpBean {
 	
 	private String name;
@@ -57,6 +59,11 @@ public class SignUpBean {
 	}
 	public void setBio(String bio) {
 		this.bio = bio;
+	}
+	
+	public static void signUpUser(SignUpBean signUpBean) throws SQLException {
+		SignUpController controller=new SignUpController();
+		controller.signUpUser(signUpBean);
 	}
 	
 
