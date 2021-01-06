@@ -11,7 +11,7 @@ public class UserProfileDAO {
 	
 	private static String USER = "u0uxwvy2unqsxnql";
     private static String PASS = "nH1ORFX9CBydKKphGtBO";
-    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nh1orfx9cbydkkphgtbo@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
+    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nH1ORFX9CBydKKphGtBO@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
     //private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     
    //MANCA LA REFLECTION
@@ -54,7 +54,7 @@ public class UserProfileDAO {
             		UserProfile.setName(nome);
             		UserProfile.setSurname(cognome);
             		UserProfile.setEmail(email);
-            		
+            		System.out.println(rs.getString("type"));
             		return rs.getString("type");
             		
             		

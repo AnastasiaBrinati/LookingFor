@@ -76,10 +76,9 @@ public class HomeUI extends JFrame {
 		//settingsButton.setEnabled(false);
 		
 		settingsButton.setContentAreaFilled(false);
-		Image img2=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img2));
-		Image img3=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
-		profileButton.setIcon(new ImageIcon(img3));
+
+		
+		
 		profileButton.setContentAreaFilled(false);
 		LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
