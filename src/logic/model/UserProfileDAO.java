@@ -193,7 +193,7 @@ public class UserProfileDAO {
             
 		}finally {
 			
-			//STEP 5.2: Clean-up dell'ambiente
+			
             try {
                 if (stmt != null)
                     stmt.close();

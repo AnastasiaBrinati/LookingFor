@@ -27,13 +27,15 @@ public class AddCourseController {
 		newCourse.setLessonPrice(bean.getLessonPrice());
 		newCourse.setMonthlyPrice(bean.getMonthlyPrice());
 		newCourse.setName(bean.getName());
-		newCourse.setOrganization(bean.getOrganization());
 		newCourse.setSport(bean.getSport());
 		
+		newCourse.setOrganization(OrganizationProfile.getName());
+		System.out.println(OrganizationProfile.getName());
 		
-		
-		
+		//metodo per chiamare il DAO
 		newCourse.addCourse(newCourse);
+		
+		//metodo per aggiungere il corso alla lista dell'org
 		OrganizationProfile.addCourse(newCourse);
 	}
 

@@ -3,7 +3,7 @@ package logic.controller;
 public class NewCourseBean {
 	private String name;
 	private int courseID;
-	private String organization;
+	
 	private float monthlyPrice;
 	private float lessonPrice;
 	private String sport;
@@ -25,12 +25,7 @@ public class NewCourseBean {
 	public void setCourseID(int courseID) {
 		this.courseID = courseID;
 	}
-	public String getOrganization() {
-		return organization;
-	}
-	public void setOrganization(String organization) {
-		this.organization = organization;
-	}
+	
 	public String getMonthlyPrice() {
 		return String.valueOf(monthlyPrice);
 	}

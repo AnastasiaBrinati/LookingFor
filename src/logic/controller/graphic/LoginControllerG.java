@@ -41,7 +41,7 @@ public class LoginControllerG {
 			public void actionPerformed(ActionEvent e){
 				loginView.setVisible(false);
 				SignInUI signInView = new SignInUI();		
-				SignInControllerG.getInstance(signInView);
+				SignUpControllerG.getInstance(signInView);
 			}
 
 		};

@@ -15,6 +15,11 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JToggleButton;
+import javax.swing.JEditorPane;
+import javax.swing.JRadioButton;
+import java.awt.Font;
+import javax.swing.JRadioButtonMenuItem;
 
 public class SignInUI extends JFrame {
 	/**
@@ -48,6 +53,8 @@ public class SignInUI extends JFrame {
 	JButton btnNewButton2 = new JButton("");
 	JLabel lblAlternative = new JLabel("Or sign up with:");
 	JLabel lblOr = new JLabel("Or");
+	JRadioButton singleUserRadioButton = new JRadioButton("Single User");
+	JRadioButton organizationRadioButton = new JRadioButton("Organization");
 
 
 	// Create the frame.
@@ -57,94 +64,94 @@ public class SignInUI extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(
 				"C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 829, 551);
+		setBounds(100, 100, 472, 630);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		btnLogin.setBounds(561, 480, 74, 22);
+		btnLogin.setBounds(194, 459, 74, 22);
 		btnLogin.setForeground(Color.WHITE);
 		btnLogin.setBackground(Color.GRAY);
 		
 		separator4.setBackground(Color.GRAY);
-		separator4.setBounds(447, 136, 289, 2);
+		separator4.setBounds(104, 124, 289, 2);
 		
 		lblName.setForeground(Color.WHITE);
 		lblName.setBackground(Color.WHITE);
-		lblName.setBounds(447, 34, 118, 14);
+		lblName.setBounds(61, 52, 33, 14);
 
 		textFieldName = new JTextField();
-		textFieldName.setBounds(447, 48, 289, 20);
+		textFieldName.setBounds(104, 49, 289, 20);
 		textFieldName.setColumns(10);
 		
 		separator5.setBackground(Color.GRAY);
-		separator5.setBounds(447, 79, 289, 2);
+		separator5.setBounds(104, 80, 289, 2);
 	
 		lblSurname.setForeground(Color.WHITE);
 		lblSurname.setBackground(Color.WHITE);
-		lblSurname.setBounds(447, 92, 118, 14);
+		lblSurname.setBounds(39, 93, 118, 14);
 
 		textFieldSurname = new JTextField();
 		textFieldSurname.setColumns(10);
-		textFieldSurname.setBounds(447, 107, 289, 20);
+		textFieldSurname.setBounds(104, 93, 289, 20);
 		
 		separator2.setBackground(Color.GRAY);
 		separator2.setBounds(406, 363, 362, -9);
 		
-		lblUsername.setBounds(447, 149, 118, 14);
+		lblUsername.setBounds(39, 141, 118, 14);
 		lblUsername.setForeground(Color.WHITE);
 		lblUsername.setBackground(Color.WHITE);
 		
 		separator3.setBackground(Color.GRAY);
-		separator3.setBounds(457, 322, 289, 2);
+		separator3.setBounds(104, 255, 289, 2);
 
 		textFieldUsername = new JTextField();
 		textFieldUsername.setColumns(10);
-		textFieldUsername.setBounds(447, 164, 289, 20);
+		textFieldUsername.setBounds(104, 137, 289, 20);
 		
-		lblEmail.setBounds(447, 208, 46, 14);
+		lblEmail.setBounds(48, 180, 46, 14);
 		lblEmail.setForeground(Color.WHITE);
 		lblEmail.setBackground(Color.WHITE);
 		
 		separator.setBackground(Color.GRAY);
-		separator.setBounds(447, 253, 289, 2);
+		separator.setBounds(104, 210, 289, 2);
 
 		textFieldEmail = new JTextField();
-		textFieldEmail.setBounds(447, 222, 289, 20);
+		textFieldEmail.setBounds(104, 179, 289, 20);
 		textFieldEmail.setColumns(10);
 		
-		lblPassword.setBounds(447, 266, 92, 14);
+		lblPassword.setBounds(39, 223, 92, 14);
 		lblPassword.setForeground(Color.WHITE);
 		lblPassword.setBackground(Color.WHITE);
 		
 		separator1.setBackground(Color.GRAY);
-		separator1.setBounds(447, 195, 289, 2);
+		separator1.setBounds(104, 166, 289, 2);
 
 		textFieldPassword = new JTextField();
-		textFieldPassword.setBounds(447, 281, 289, 20);
+		textFieldPassword.setBounds(104, 223, 289, 20);
 		textFieldPassword.setColumns(10);
 		
 		btnNewButton1.setIcon(new ImageIcon(
 				"C:\\Users\\giuli\\Downloads\\Facebook_logo_(square) (1).png"));
-		btnNewButton1.setBounds(552, 416, 40, 40);
+		btnNewButton1.setBounds(194, 388, 40, 40);
 		
 		btnNewButton2.setIcon(new ImageIcon(
 				"C:\\Users\\giuli\\Downloads\\219-2197783_training-documents-google-logo-icon-png (1).png"));
-		btnNewButton2.setBounds(602, 416, 40, 40);
+		btnNewButton2.setBounds(240, 388, 40, 40);
 		
 		lblAlternative.setForeground(Color.WHITE);
-		lblAlternative.setBounds(561, 392, 74, 14);
+		lblAlternative.setBounds(206, 363, 74, 14);
 		
 		lblOr.setForeground(Color.WHITE);
-		lblOr.setBounds(589, 460, 46, 14);
+		lblOr.setBounds(227, 439, 46, 14);
 
 		resetButton.setBackground(Color.GRAY);
-		resetButton.setBounds(503, 345, 89, 23);
+		resetButton.setBounds(205, 320, 89, 23);
 
 		signUpButton.setBackground(new Color(255, 99, 71));
-		signUpButton.setBounds(602, 345, 89, 23);
+		signUpButton.setBounds(304, 320, 89, 23);
 
 		// adding stuff to content pane
 		contentPane.add(separator);
@@ -171,6 +178,24 @@ public class SignInUI extends JFrame {
 		contentPane.add(lblOr);
 		contentPane.add(resetButton);
 		contentPane.add(signUpButton);
+		singleUserRadioButton.setForeground(Color.WHITE);
+		
+		singleUserRadioButton.setContentAreaFilled(false);
+		organizationRadioButton.setForeground(Color.WHITE);
+		organizationRadioButton.setContentAreaFilled(false);
+		
+		
+		singleUserRadioButton.setBounds(104, 264, 109, 23);
+		contentPane.add(singleUserRadioButton);
+		
+		
+		organizationRadioButton.setBounds(104, 290, 109, 23);
+		contentPane.add(organizationRadioButton);
+		
+		JLabel lblNewLabel = new JLabel("Sportee");
+		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 74));
+		lblNewLabel.setBounds(121, 510, 289, 70);
+		contentPane.add(lblNewLabel);
 	}
 
 	public JButton getDeleteButton() {
@@ -207,5 +232,8 @@ public class SignInUI extends JFrame {
 	}
 	public String getPassword() {
 		return textFieldUsername.getText();
+	}
+	public String getType() {
+		
 	}
 }

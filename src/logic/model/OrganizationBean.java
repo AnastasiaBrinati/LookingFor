@@ -9,8 +9,8 @@ public class OrganizationBean {
 	public static String password;
 	private static ArrayList<Course> courses = new ArrayList<Course>();
 	private static ArrayList<Event> events = new ArrayList<Event>();
-	private static ArrayList<Court> courts = new ArrayList<Court>();
 	
+	private static ArrayList<Court> courts = new ArrayList<Court>();
 	public OrganizationBean() {
 	}
 	
