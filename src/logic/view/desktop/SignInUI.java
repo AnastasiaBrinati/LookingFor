@@ -65,85 +65,85 @@ public class SignInUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		btnLogin.setBounds(194, 459, 74, 22);
+		btnLogin.setBounds(199, 559, 74, 22);
 		btnLogin.setForeground(Color.WHITE);
 		btnLogin.setBackground(Color.GRAY);
 		
 		separator4.setBackground(Color.GRAY);
-		separator4.setBounds(104, 124, 289, 2);
+		separator4.setBounds(104, 179, 289, 2);
 		
 		lblName.setForeground(Color.WHITE);
 		lblName.setBackground(Color.WHITE);
-		lblName.setBounds(61, 52, 33, 14);
+		lblName.setBounds(61, 93, 33, 14);
 
 		textFieldName = new JTextField();
-		textFieldName.setBounds(104, 49, 289, 20);
+		textFieldName.setBounds(104, 93, 289, 20);
 		textFieldName.setColumns(10);
 		
 		separator5.setBackground(Color.GRAY);
-		separator5.setBounds(104, 80, 289, 2);
+		separator5.setBounds(104, 128, 289, 8);
 	
 		lblSurname.setForeground(Color.WHITE);
 		lblSurname.setBackground(Color.WHITE);
-		lblSurname.setBounds(39, 93, 118, 14);
+		lblSurname.setBounds(37, 154, 118, 14);
 
 		textFieldSurname = new JTextField();
 		textFieldSurname.setColumns(10);
-		textFieldSurname.setBounds(104, 93, 289, 20);
+		textFieldSurname.setBounds(104, 148, 289, 20);
 		
 		separator2.setBackground(Color.GRAY);
 		separator2.setBounds(406, 363, 362, -9);
 		
-		lblUsername.setBounds(39, 141, 118, 14);
+		lblUsername.setBounds(37, 198, 118, 14);
 		lblUsername.setForeground(Color.WHITE);
 		lblUsername.setBackground(Color.WHITE);
 		
 		separator3.setBackground(Color.GRAY);
-		separator3.setBounds(104, 255, 289, 2);
+		separator3.setBounds(104, 316, 289, 2);
 
 		textFieldUsername = new JTextField();
 		textFieldUsername.setColumns(10);
-		textFieldUsername.setBounds(104, 137, 289, 20);
+		textFieldUsername.setBounds(104, 192, 289, 20);
 		
-		lblEmail.setBounds(48, 180, 46, 14);
+		lblEmail.setBounds(48, 244, 46, 14);
 		lblEmail.setForeground(Color.WHITE);
 		lblEmail.setBackground(Color.WHITE);
 		
 		separator.setBackground(Color.GRAY);
-		separator.setBounds(104, 210, 289, 2);
+		separator.setBounds(104, 272, 289, 2);
 
 		textFieldEmail = new JTextField();
-		textFieldEmail.setBounds(104, 179, 289, 20);
+		textFieldEmail.setBounds(104, 241, 289, 20);
 		textFieldEmail.setColumns(10);
 		
-		lblPassword.setBounds(39, 223, 92, 14);
+		lblPassword.setBounds(26, 291, 94, 14);
 		lblPassword.setForeground(Color.WHITE);
 		lblPassword.setBackground(Color.WHITE);
 		
 		separator1.setBackground(Color.GRAY);
-		separator1.setBounds(104, 166, 289, 2);
+		separator1.setBounds(104, 223, 289, 2);
 
 		textFieldPassword = new JTextField();
-		textFieldPassword.setBounds(104, 223, 289, 20);
+		textFieldPassword.setBounds(104, 285, 289, 20);
 		textFieldPassword.setColumns(10);
 		
 		btnNewButton1.setIcon(new ImageIcon(""));
-		btnNewButton1.setBounds(194, 388, 40, 40);
+		btnNewButton1.setBounds(189, 480, 40, 40);
 		
 		btnNewButton2.setIcon(new ImageIcon(""));
-		btnNewButton2.setBounds(240, 388, 40, 40);
+		btnNewButton2.setBounds(239, 480, 40, 40);
 		
 		lblAlternative.setForeground(Color.WHITE);
-		lblAlternative.setBounds(206, 363, 74, 14);
+		lblAlternative.setBounds(189, 455, 90, 14);
 		
 		lblOr.setForeground(Color.WHITE);
-		lblOr.setBounds(227, 439, 46, 14);
+		lblOr.setBounds(227, 531, 46, 14);
 
 		resetButton.setBackground(Color.GRAY);
-		resetButton.setBounds(205, 320, 89, 23);
+		resetButton.setBounds(199, 387, 89, 23);
 
 		signUpButton.setBackground(new Color(255, 99, 71));
-		signUpButton.setBounds(304, 320, 89, 23);
+		signUpButton.setBounds(304, 387, 89, 23);
 
 		// adding stuff to content pane
 		contentPane.add(separator);
@@ -173,23 +173,26 @@ public class SignInUI extends JFrame {
 		singleUserRadioButton.setForeground(Color.WHITE);
 		
 		singleUserRadioButton.setContentAreaFilled(false);
+		
 		organizationRadioButton.setForeground(Color.WHITE);
 		organizationRadioButton.setContentAreaFilled(false);
 		
 		
-		singleUserRadioButton.setBounds(104, 264, 109, 23);
+		singleUserRadioButton.setBounds(104, 331, 109, 23);
 		contentPane.add(singleUserRadioButton);
 		
 		
-		organizationRadioButton.setBounds(104, 290, 109, 23);
+		organizationRadioButton.setBounds(104, 352, 109, 23);
 		contentPane.add(organizationRadioButton);
 		
 		JLabel lblNewLabel = new JLabel("Sportee");
+		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 74));
-		lblNewLabel.setBounds(121, 510, 289, 70);
+		lblNewLabel.setBounds(104, 11, 289, 82);
 		contentPane.add(lblNewLabel);
 	}
 
+	
 	public JButton getDeleteButton() {
 		return resetButton;
 	}
@@ -205,6 +208,8 @@ public class SignInUI extends JFrame {
 		textFieldName.setText(" ");
 		textFieldSurname.setText(" ");
 		textFieldUsername.setText(" ");
+		organizationRadioButton.setSelected(false);
+		singleUserRadioButton.setSelected(false);
 	}
 	public void displayErrorMessage(String errorMessage) {
 		JOptionPane.showMessageDialog(this, errorMessage);
