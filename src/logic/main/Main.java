@@ -1,10 +1,7 @@
-
-
 package logic.main;
 
 import javax.swing.SwingUtilities;
 
-import logic.controller.LoginBean;
 import logic.controller.graphic.LoginControllerG;
 import logic.view.desktop.LoginUI;
 
