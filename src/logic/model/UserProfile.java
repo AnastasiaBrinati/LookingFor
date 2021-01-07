@@ -87,6 +87,14 @@ public class UserProfile {
 			return false;	
 	}
 	
+	public static boolean changeCredentials(String newName,String newSurname) throws SQLException {
+		
+		if(UserProfileDAO.updateCredentials(newName, newSurname, username)) {
+			return true;
+		}
+		return false;	
+}
+	
 	public static boolean changeCredentials(String newEmail) throws SQLException {
 		
 		if(UserProfileDAO.updateEmail(newEmail,username)) {

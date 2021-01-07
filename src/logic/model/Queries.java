@@ -62,6 +62,26 @@ public class Queries {
         
     }
 	
+	public static int addEvent(Statement stmt, Course course) throws SQLException  {
+        String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
+        course.getOrganization(),course.getName(),course.getSport(),course.getDescription(),course.getInstructorName(),String.valueOf(course.getLessonPrice()),String.valueOf(course.getMonthlyPrice()),String.valueOf(course.getAvailability()));
+        
+        System.out.println(insertStatement);
+        return stmt.executeUpdate(insertStatement);
+        
+        
+    }
+	
+	public static int addCourse(Statement stmt, Course course) throws SQLException  {
+        String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
+        course.getOrganization(),course.getName(),course.getSport(),course.getDescription(),course.getInstructorName(),String.valueOf(course.getLessonPrice()),String.valueOf(course.getMonthlyPrice()),String.valueOf(course.getAvailability()));
+        
+        System.out.println(insertStatement);
+        return stmt.executeUpdate(insertStatement);
+        
+        
+    }
+	
 	//query to insert a new user
 	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type) throws SQLException  {
         String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password,type) VALUES ('%s','%s','%s','%s','%s','%s')", name,surname,username,email,password,type);
@@ -91,6 +111,12 @@ public class Queries {
 	//per il singolo utente
 	public static int updateCredentials(Statement stmt, String newName,String newSurname,String newUsername,String oldUsername) throws SQLException  {
         String updateStatement = String.format("UPDATE  users set name='%s', surname='%s', username=%s WHERE username = %s", newName,newSurname,newUsername,oldUsername);
+        System.out.println(updateStatement);
+        return stmt.executeUpdate(updateStatement);
+    }
+	
+	public static int updateCredentialsNoUsername(Statement stmt, String newName,String newSurname,String oldUsername) throws SQLException  {
+        String updateStatement = String.format("UPDATE  users set name='%s', surname='%s' WHERE username = %s", newName,newSurname,oldUsername);
         System.out.println(updateStatement);
         return stmt.executeUpdate(updateStatement);
     }

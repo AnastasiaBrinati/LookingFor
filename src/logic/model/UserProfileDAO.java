@@ -302,7 +302,48 @@ public class UserProfileDAO {
 		
 	}
 	
-	public static boolean updateEmail(String newEmail,String username) throws SQLException {
+	public static boolean updateCredentialsWithoutUsername(String newName,String newSurname,String oldUsername) throws SQLException {
+		Statement stmt=null;
+		
+		Connection conn=null;
+		
+		try {
+			
+			conn=DriverManager.getConnection(DB_URL,USER,PASS);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			Queries.updateCredentialsNoUsername(stmt, newName, newSurname, oldUsername);
+			return true;
+			
+		}
+			catch (SQLException se) {
+                se.printStackTrace();
+                
+			}
+           
+			
+            
+		finally {
+			
+			
+            try {
+                if (stmt != null)
+                    stmt.close();
+               
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+			
+		}
+		return false;
+		
+	}
+	
+	public static boolean updateEmail(String newEmail,String newPassword,String username) throws SQLException {
 		Statement stmt=null;
 		
 		Connection conn=null;
@@ -312,9 +353,7 @@ public class UserProfileDAO {
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			Queries.updateEmail(stmt,newEmail,username);
-			
-            
-		
+			return true;	
 		
 	}
 	
