@@ -87,5 +87,11 @@ public class Queries {
         System.out.println(sql);
         return stmt.executeQuery(sql);
 	}
+	
+	public static int updateCredentials(Statement stmt, String newName,String newSurname,String newUsername,String oldUsername) throws SQLException  {
+        String updateStatement = String.format("UPDATE  users set name='%s', surname='%s', username=%s WHERE username = %s", newName,newSurname,newUsername,oldUsername);
+        System.out.println(updateStatement);
+        return stmt.executeUpdate(updateStatement);
+    }
 }
 

@@ -113,7 +113,7 @@ public class SettingsControllerGSUs {
 				settingBean.setSurname(view.getSurname());
 				//exceptions
 				try {
-					SettingsBean.changeCredentials(settingBean);
+					SettingsBean.changeUCredentials(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block

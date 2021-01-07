@@ -53,6 +53,10 @@ public class SettingsBean {
 		confirmPassword = confPassword;
 	}
 
+	public void changeUCredentials(SettingsBean settingBean) {
+		CustomizationController customizer=new CustomizationController();
+		customizer.changeCredentials(settingBean);
+	}
 	
 	public static void changeNameLocation(SettingsBean settingBean) throws Exception {
 		CustomizationController customizer = new CustomizationController();

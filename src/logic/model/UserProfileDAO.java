@@ -252,6 +252,43 @@ public class UserProfileDAO {
 		
 	}
 	
+	public static void updateCredentials(String newName,String newSurname,String newUsername,String oldUsername) throws SQLException {
+		Statement stmt=null;
+		
+		Connection conn=null;
+		
+		try {
+			
+			conn=DriverManager.getConnection(DB_URL,USER,PASS);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			Queries.updateCredentials(stmt, newName, newSurname, newUsername, oldUsername);
+		}
+			catch (SQLException se) {
+                se.printStackTrace();
+			}
+           
+			
+            
+		finally {
+			
+			
+            try {
+                if (stmt != null)
+                    stmt.close();
+               
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+			
+		}
+		
+	}
+	
 	
 	
 }
