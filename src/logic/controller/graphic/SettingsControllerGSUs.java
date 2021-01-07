@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.controller.ProfileBean;
-import logic.controller.SettingsBean;
+import logic.controller.SettingsSingleUserBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SettingsUISUs;
@@ -136,13 +136,13 @@ public class SettingsControllerGSUs {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				SettingsBean settingBean = new SettingsBean();
+				SettingsSingleUserBean settingBean = new SettingsSingleUserBean();
 				settingBean.setUsername(view.getUsername());
 				settingBean.setName(view.getName());
 				settingBean.setSurname(view.getSurname());
 				//exceptions
 				try {
-					SettingsBean.changeUCredentialsName(settingBean);
+					SettingsSingleUserBean.changeUCredentialsName(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -161,12 +161,12 @@ public class SettingsControllerGSUs {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				SettingsBean settingBean = new SettingsBean();
+				SettingsSingleUserBean settingBean = new SettingsSingleUserBean();
 				settingBean.setEmail(view.getEmail());
 				settingBean.setPassword(view.getPassword());
 				
 				try {
-					SettingsBean.changeUCredentialsEmail(settingBean);
+					SettingsSingleUserBean.changeUCredentialsEmail(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -184,12 +184,12 @@ public class SettingsControllerGSUs {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				SettingsBean settingBean = new SettingsBean();
+				SettingsSingleUserBean settingBean = new SettingsSingleUserBean();
 				settingBean.setNewPassword(view.getNewPassword());
 				settingBean.setPassword(view.getOldPassword());
 				
 				try {
-					SettingsBean.changeUCredentialsPassword(settingBean);
+					SettingsSingleUserBean.changeUCredentialsPassword(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block

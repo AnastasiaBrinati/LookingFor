@@ -29,11 +29,9 @@ public class SettingsUIOrg extends JFrame {
 	private JButton homeButton = new JButton("");
 	
 	private final JPanel panel = new JPanel();
-	private final JButton credentialsButton = new JButton("Name");
-	private final JButton securityButton = new JButton("email and password");
-	private final JButton coursesButton_2 = new JButton("Courses");
-	private final JButton courtsButton = new JButton("Courts");
-	private final JButton eventsButton = new JButton("Events");
+	private final JButton nameButton = new JButton("name");
+	private final JButton emailButton = new JButton("email");
+	private final JButton passwordButton = new JButton("password");
 	
 	private final JPanel subtitlePanel = new JPanel();
 	private final JLabel subtitlelbl = new JLabel("Settings");
@@ -49,17 +47,24 @@ public class SettingsUIOrg extends JFrame {
 	private final JPanel emailPanel = new JPanel();
 	private final JLabel emaillbl = new JLabel("Email");
 	private final JLabel lblPassword = new JLabel("Password");
-	private final JLabel lblConfirmPassword = new JLabel("Confirm Password");
+	private final JLabel changeYourEmaillbl = new JLabel("Change your email");
 	private JTextField textFieldEmail;
-	private final JPasswordField confirmPsswdtextField = new JPasswordField();
-	private final JPasswordField passwordField = new JPasswordField();
+	private final JPasswordField confirmPasswordTextField = new JPasswordField();
 	private JButton cancelButton_2 = new JButton("Cancel");
 	private JButton SaveButton_2 = new JButton("SAVE");
 	private final JLabel pencilTextField2 = new JLabel("");
 	private final JLabel pencilTextField5 = new JLabel("New label");
 	private final JLabel pencilTextField4 = new JLabel("New label");
-	private final JLabel pencilTextField3 = new JLabel("New label");
 	private final JButton exitButton = new JButton("");
+	
+	private final JPanel passwordPanel = new JPanel();
+	private final JButton cancelButton3 = new JButton("Cancel");
+	private final JButton saveButton3 = new JButton("SAVE");
+	private final JLabel changeYourPasswordlbl = new JLabel("Change your password");
+	private final JLabel lblNewPassword = new JLabel("New Password");
+	private final JLabel oldPasswordlbl = new JLabel("Old Password");
+	private final JTextField textFieldNewPassword = new JTextField();
+	private final JTextField textFieldOldPassword = new JTextField();
 	
 
 	public SettingsUIOrg() {
@@ -75,35 +80,99 @@ public class SettingsUIOrg extends JFrame {
 		panel.setBackground(new Color(102, 205, 170));
 		panel.setBounds(0, 54, 307, 605);
 		panel.setLayout(null);
-		credentialsButton.setBackground(new Color(0, 128, 128));
-		credentialsButton.setBounds(10, 79, 287, 57);
-		panel.add(credentialsButton);
+		nameButton.setBackground(new Color(0, 128, 128));
+		nameButton.setBounds(10, 163, 287, 57);
+		panel.add(nameButton);
 		
-		Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
-		exitButton.setIcon(new ImageIcon(img5));
+		//Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+		//exitButton.setIcon(new ImageIcon(img5));
 		exitButton.setContentAreaFilled(false);
+		
+		//Image img3=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
+		//pencilTextField2.setIcon(new ImageIcon(img3));
+		
+		
+		
+		emailPanel.setBounds(305, 168, 1003, 491);
+		contentPane.add(emailPanel);
+		emailPanel.setLayout(null);
+		
+				emaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				emaillbl.setBounds(53, 155, 116, 29);
+				
+				emailPanel.add(emaillbl);
+				lblPassword.setFont(new Font("Arial", Font.PLAIN, 18));
+				lblPassword.setBounds(53, 241, 116, 29);
+				
+				emailPanel.add(lblPassword);
+				changeYourEmaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				changeYourEmaillbl.setBounds(53, 41, 154, 29);
+				
+				emailPanel.add(changeYourEmaillbl);
+				
+				textFieldEmail = new JTextField();
+				textFieldEmail.setColumns(10);
+				textFieldEmail.setBounds(308, 159, 241, 25);
+				emailPanel.add(textFieldEmail);
+				confirmPasswordTextField.setBounds(308, 245, 241, 25);
+				
+				emailPanel.add(confirmPasswordTextField);
+				
+				cancelButton_2.setBounds(122, 395, 158, 38);
+				emailPanel.add(cancelButton_2);
+				SaveButton_2.setBackground(Color.ORANGE);
+				SaveButton_2.setBounds(323, 395, 158, 38);
+				emailPanel.add(SaveButton_2);
+				pencilTextField5.setBounds(559, 152, 44, 38);
+				
+				emailPanel.add(pencilTextField5);
+				pencilTextField4.setBounds(559, 238, 44, 38);
+				
+				emailPanel.add(pencilTextField4);
+		passwordPanel.setBounds(305, 168, 992, 491);
+		
+		contentPane.add(passwordPanel);
+		passwordPanel.setLayout(null);
+		cancelButton3.setBounds(126, 397, 158, 38);
+		
+		passwordPanel.add(cancelButton3);
+		saveButton3.setBackground(Color.ORANGE);
+		saveButton3.setBounds(310, 397, 158, 38);
+		
+		passwordPanel.add(saveButton3);
+		changeYourPasswordlbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		changeYourPasswordlbl.setBounds(50, 54, 284, 29);
+		
+		passwordPanel.add(changeYourPasswordlbl);
+		lblNewPassword.setFont(new Font("Arial", Font.PLAIN, 18));
+		lblNewPassword.setBounds(50, 162, 147, 29);
+		
+		passwordPanel.add(lblNewPassword);
+		oldPasswordlbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		oldPasswordlbl.setBounds(50, 246, 132, 29);
+		
+		passwordPanel.add(oldPasswordlbl);
+		textFieldNewPassword.setColumns(10);
+		textFieldNewPassword.setBounds(227, 166, 241, 25);
+		
+		passwordPanel.add(textFieldNewPassword);
+		textFieldOldPassword.setColumns(10);
+		textFieldOldPassword.setBounds(227, 246, 241, 25);
+		
+		passwordPanel.add(textFieldOldPassword);
 		
 		contentPane.add(panel);
 		lblTitle.setBounds(89, 27, 141, 41);
 		panel.add(lblTitle);
 		lblTitle.setForeground(new Color(0, 0, 0));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
-		securityButton.setBackground(new Color(102, 205, 170));
-		securityButton.setBounds(10, 137, 287, 57);
-		panel.add(securityButton);
-		coursesButton_2.setBackground(new Color(102, 205, 170));
-		coursesButton_2.setBounds(10, 195, 287, 57);
+		emailButton.setBackground(new Color(102, 205, 170));
+		emailButton.setBounds(10, 219, 287, 57);
+		panel.add(emailButton);
+		passwordButton.setBackground(new Color(102, 205, 170));
+		passwordButton.setBounds(10, 274, 287, 57);
 		
-		panel.add(coursesButton_2);
-		courtsButton.setBackground(new Color(102, 205, 170));
-		courtsButton.setBounds(10, 253, 287, 57);
-		
-		panel.add(courtsButton);
-		eventsButton.setBackground(new Color(102, 205, 170));
-		eventsButton.setBounds(10, 311, 287, 57);
-		
-		
-		panel.add(eventsButton);
+		panel.add(passwordButton);
 					
 							//header
 							headerPanel.setBackground(new Color(0, 128, 128));
@@ -177,56 +246,7 @@ public class SettingsUIOrg extends JFrame {
 			pencilTextField2.setBounds(474, 51, 44, 38);
 			
 			namePanel.add(pencilTextField2);
-			
-			Image img3=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
-			pencilTextField2.setIcon(new ImageIcon(img3));
-			
-		
-			
-			
-			
-			emailPanel.setBounds(305, 168, 1003, 491);
-			contentPane.add(emailPanel);
-			emailPanel.setLayout(null);
-			
-					emaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
-					emaillbl.setBounds(53, 53, 116, 29);
-					
-					emailPanel.add(emaillbl);
-					lblPassword.setFont(new Font("Arial", Font.PLAIN, 18));
-					lblPassword.setBounds(53, 133, 116, 29);
-					
-					emailPanel.add(lblPassword);
-					lblConfirmPassword.setFont(new Font("Arial", Font.PLAIN, 18));
-					lblConfirmPassword.setBounds(53, 215, 154, 29);
-					
-					emailPanel.add(lblConfirmPassword);
-					
-					textFieldEmail = new JTextField();
-					textFieldEmail.setColumns(10);
-					textFieldEmail.setBounds(308, 60, 241, 25);
-					emailPanel.add(textFieldEmail);
-					confirmPsswdtextField.setBounds(308, 215, 241, 26);
-					
-					emailPanel.add(confirmPsswdtextField);
-					passwordField.setBounds(308, 137, 241, 25);
-					
-					emailPanel.add(passwordField);
-					
-					cancelButton_2.setBounds(122, 395, 158, 38);
-					emailPanel.add(cancelButton_2);
-					SaveButton_2.setBackground(Color.ORANGE);
-					SaveButton_2.setBounds(323, 395, 158, 38);
-					emailPanel.add(SaveButton_2);
-					pencilTextField5.setBounds(559, 44, 44, 38);
-					
-					emailPanel.add(pencilTextField5);
-					pencilTextField4.setBounds(559, 119, 44, 38);
-					
-					emailPanel.add(pencilTextField4);
-					pencilTextField3.setBounds(559, 195, 44, 38);
-					
-					emailPanel.add(pencilTextField3);
+					/*
 		Image img1=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 		
 		Image img2=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
@@ -244,37 +264,54 @@ public class SettingsUIOrg extends JFrame {
 				Image img7=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
 				
 				Image img8=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
+				*/
 	}
 	
 	public JButton getHomeButton() {
 		return homeButton;
 	}
 	
-	public JButton getCredentialsButton() {
-		return credentialsButton;
+	public JButton getNameButton() {
+		return nameButton;
 	}
 		
-	public JButton getSecurityButton() {
-		return securityButton;
+	public JButton getEmailButton() {
+		return emailButton;
+	}
+	
+	public JButton getPasswordButton() {
+		return passwordButton;
 	}
 	
 		
 	public void setNamePanelVisible() {
 		namePanel.setVisible(true);
 		emailPanel.setVisible(false);
+		passwordPanel.setVisible(false);
 		
-		credentialsButton.setBackground(new Color(0, 128, 128));
-		securityButton.setBackground(new Color(102, 205, 170));
-		
+		nameButton.setBackground(new Color(0, 128, 128));
+		emailButton.setBackground(new Color(102, 205, 170));
+		passwordButton.setBackground(new Color(102, 205, 170));
 	}
 	
 	public void setEmailPanelVisible() {
 		namePanel.setVisible(false);
 		emailPanel.setVisible(true);
+		passwordPanel.setVisible(false);
 		
-		credentialsButton.setBackground(new Color(102, 205, 170));
-		securityButton.setBackground(new Color(0, 128, 128));
+		nameButton.setBackground(new Color(102, 205, 170));
+		emailButton.setBackground(new Color(0, 128, 128));
+		passwordButton.setBackground(new Color(102, 205, 170));
+	}
+	
+	public void setPasswordPanelVisible() {
+		namePanel.setVisible(false);
+		emailPanel.setVisible(false);
+		passwordPanel.setVisible(true);
 		
+		nameButton.setBackground(new Color(102, 205, 170));
+		emailButton.setBackground(new Color(102, 205, 170));
+		passwordButton.setBackground(new Color(0, 128, 128));
 	}
 	
 	
@@ -291,13 +328,17 @@ public class SettingsUIOrg extends JFrame {
 	
 	@SuppressWarnings("deprecation")
 	public String getPassword() {
-		return passwordField.getText();
+		return confirmPasswordTextField.getText();
+	}
+
+	public String getNewPassword() {
+		return textFieldNewPassword.getText();
+	}
+	public String getOldPassword() {
+		return textFieldOldPassword.getText();
 	}
 	
-	@SuppressWarnings("deprecation")
-	public String getConfirmPassword() {
-		return confirmPsswdtextField.getText();
-	}
+	
 	
 	public JButton getCancelButton() {
 		return cancelButton;
@@ -315,13 +356,22 @@ public class SettingsUIOrg extends JFrame {
 		return cancelButton_2;
 	}
 	
-	public void setCredentials(String name, String email, String password) {
+	public JButton getSaveButton3() {
+		return saveButton3;
+	}
+	
+	public JButton getCancelButton3() {
+		return cancelButton3;
+	}
+	
+	public void setCredentials(String name, String email) {
 		
 		textFieldName.setText(name);
 		textFieldEmail.setText(email);
-		passwordField.setText(password);
-		confirmPsswdtextField.setText("");
-		//set img
+		confirmPasswordTextField.setText("");
+		textFieldNewPassword.setText("");
+		textFieldOldPassword.setText("");
+		
 		
 	}
 	

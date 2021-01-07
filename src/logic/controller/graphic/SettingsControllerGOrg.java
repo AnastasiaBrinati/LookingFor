@@ -3,7 +3,8 @@ package logic.controller.graphic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.controller.SettingsBean;
+import logic.controller.SettingsOrgBean;
+import logic.controller.SettingsSingleUserBean;
 import logic.model.OrganizationBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
@@ -38,9 +39,7 @@ public class SettingsControllerGOrg {
 		OrganizationBean.setCredentials(orgBean);
 		String name = orgBean.getName();
 		String email = orgBean.getEmail();
-		String password = orgBean.getPassword();
-		//set img
-		view.setCredentials(name, email, password);
+		view.setCredentials(name, email);
 	}
 	
 	private static void assegnaGestori() {
@@ -94,7 +93,7 @@ public class SettingsControllerGOrg {
 		view.getCancelButton2().addActionListener(gestoreCancel2);
 		
 		
-		ActionListener gestoreCredentials = new ActionListener(){
+		ActionListener gestoreName = new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -102,10 +101,10 @@ public class SettingsControllerGOrg {
 			}
 
 		};
-		view.getCredentialsButton().addActionListener(gestoreCredentials);
+		view.getNameButton().addActionListener(gestoreName);
 		
 		
-		ActionListener gestoreSecurity = new ActionListener(){
+		ActionListener gestoreEmail = new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -113,7 +112,7 @@ public class SettingsControllerGOrg {
 			}
 
 		};
-		view.getSecurityButton().addActionListener(gestoreSecurity);
+		view.getEmailButton().addActionListener(gestoreEmail);
 		
 		
 		
@@ -121,12 +120,11 @@ public class SettingsControllerGOrg {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				SettingsBean settingBean = new SettingsBean();
+				SettingsOrgBean settingBean = new SettingsOrgBean();
 				settingBean.setName(view.getName());
-				//settingBean.setImg(view.getImg());
 				
 				try {
-					SettingsBean.changeNameLocation(settingBean);
+					SettingsOrgBean.changeName(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -144,13 +142,12 @@ public class SettingsControllerGOrg {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				SettingsBean settingBean = new SettingsBean();
+				SettingsOrgBean settingBean = new SettingsOrgBean();
 				settingBean.setEmail(view.getEmail());
 				settingBean.setPassword(view.getPassword());
-				settingBean.setConfirmPassword(view.getConfirmPassword());
 
 				try {
-					SettingsBean.changeEmailPassword(settingBean);
+					SettingsOrgBean.changeEmail(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -163,5 +160,28 @@ public class SettingsControllerGOrg {
 
 		};
 		view.getSaveButton2().addActionListener(gestoreSave2);
+		
+		ActionListener gestoreSave3 = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				SettingsOrgBean settingBean = new SettingsOrgBean();
+				settingBean.setNewPassword(view.getNewPassword());
+				settingBean.setPassword(view.getOldPassword());
+
+				try {
+					SettingsOrgBean.changeEmail(settingBean);
+					System.out.println("Changing credentials");
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				setCredentials();
+				view.repaint();
+				
+			}
+
+		};
+		view.getSaveButton3().addActionListener(gestoreSave3);
 	}
 }

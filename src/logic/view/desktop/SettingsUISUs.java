@@ -170,7 +170,7 @@ public class SettingsUISUs extends JFrame {
 		textFieldOldPassword.setColumns(10);
 		textFieldOldPassword.setBounds(222, 226, 241, 25);
 		passwordPanel.add(textFieldOldPassword);
-				
+				/*
 				Image img1=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 				
 				Image img2=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
@@ -184,9 +184,10 @@ public class SettingsUISUs extends JFrame {
 				Image img6=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 				
 				Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+				*/
 		
 
-		exitButton.setIcon(new ImageIcon(img7));
+		//exitButton.setIcon(new ImageIcon(img7));
 		exitButton.setContentAreaFilled(false);
 
 		subtitlePanel.setBackground(new Color(192, 192, 192));
@@ -250,8 +251,8 @@ public class SettingsUISUs extends JFrame {
 		
 		panel.add(eventsButton);
 		
-				Image img8=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
-				homeButton.setIcon(new ImageIcon(img8));
+				//Image img8=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
+				//homeButton.setIcon(new ImageIcon(img8));
 				homeButton.setContentAreaFilled(false);
 				exitButton.setBounds(1240, 0, 57, 51);
 				
@@ -305,11 +306,13 @@ public class SettingsUISUs extends JFrame {
 				pencilLbl3.setBounds(474, 233, 46, 44);
 				
 				namePanel.add(pencilLbl3);
+				/*
 				pencilLbl1.setIcon(new ImageIcon(img1));
 				pencilLbl2.setIcon(new ImageIcon(img2));
 				pencilLbl3.setIcon(new ImageIcon(img3));
+				*/
 				
-				Image img9=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
+				//Image img9=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
 	}
 	
 	public JButton getHomeButton() {

@@ -133,18 +133,18 @@ public class UserProfileUI extends JFrame {
 		eventsPanel.setBounds(307, 52, 990, 585);
 		contentPane.add(eventsPanel);
 		
-		Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
-		coursesButton.setIcon(new ImageIcon(img3));
+		//Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
+		//coursesButton.setIcon(new ImageIcon(img3));
 		coursesButton.setContentAreaFilled(true);
 		
-		Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
-		exitButton.setIcon(new ImageIcon(img5));
+		//Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+		//exitButton.setIcon(new ImageIcon(img5));
 		exitButton.setContentAreaFilled(false);
 		
 		
 		
-		Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
-		eventsButton.setIcon(new ImageIcon(img4));
+		//Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
+		//eventsButton.setIcon(new ImageIcon(img4));
 		eventsButton.setContentAreaFilled(true);
 		RoutineButton.setContentAreaFilled(true);
 		RoutineButton.setBackground(new Color(102, 205, 170));

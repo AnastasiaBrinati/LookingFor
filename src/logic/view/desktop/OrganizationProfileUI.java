@@ -279,24 +279,24 @@ public class OrganizationProfileUI extends JFrame {
 		descriptionPanel.add(lblNewLabel_1);				
 		descriptionPanel.add(descriptionTextfield);
 		
-		Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
-		coursesButton.setIcon(new ImageIcon(img3));
+		//Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
+		//coursesButton.setIcon(new ImageIcon(img3));
 		coursesButton.setContentAreaFilled(true);
 		
-		Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
-		eventsButton.setIcon(new ImageIcon(img4));
+		//Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
+		//eventsButton.setIcon(new ImageIcon(img4));
 		eventsButton.setContentAreaFilled(true);
 		
-		Image img5=new ImageIcon(this.getClass().getResource("/015-idea.png")).getImage();
-		courtsButton.setIcon(new ImageIcon(img5));
+		//Image img5=new ImageIcon(this.getClass().getResource("/015-idea.png")).getImage();
+		//courtsButton.setIcon(new ImageIcon(img5));
 		courtsButton.setContentAreaFilled(true);
 		
-		Image img6=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img6));
+		//Image img6=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
+		//settingsButton.setIcon(new ImageIcon(img6));
 		settingsButton.setContentAreaFilled(false);
 		
-		Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
-		exitButton.setIcon(new ImageIcon(img7));
+		//Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+		//exitButton.setIcon(new ImageIcon(img7));
 		exitButton.setContentAreaFilled(false);
 		
 	}

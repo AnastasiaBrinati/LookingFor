@@ -9,7 +9,7 @@ public class CustomizationController {
 	
 
 	//single user
-	public void changeCredentialsName(SettingsBean settingBean) throws SQLException {
+	public void changeCredentialsName(SettingsSingleUserBean settingBean) throws SQLException {
 		if(settingBean.getUsername().equals(UserProfile.getUsername())) {
 			UserProfile.changeCredentials(settingBean.getName(), settingBean.getSurname());
 			return;
@@ -18,22 +18,24 @@ public class CustomizationController {
 	}
 	
 	
-	public void changeCredentialsEmail(SettingsBean settingBean) throws SQLException {
+	public void changeCredentialsEmail(SettingsSingleUserBean settingBean) throws SQLException {
 		//cerco conferma se password inserita è uguale
 		if(settingBean.getPassword().equals(UserProfile.getPassword())) {
 			UserProfile.changeCredentials(settingBean.getEmail());
 		}
 	}
 	
-	public void changeCredentialsPassword(SettingsBean settingBean) throws SQLException {
+	public void changeCredentialsPassword(SettingsSingleUserBean settingBean) throws SQLException {
 		if(settingBean.getPassword().equals(UserProfile.getPassword())) {
 			UserProfile.changeCredentials(settingBean.getEmail(), settingBean.getNewPassword());
 		}
 	}
 	
 	
+	
+	
 	//organization
-	public void changeNameLocation(SettingsBean settingBean) throws Exception {
+	public void changeName(SettingsOrgBean settingBean) throws Exception {
 		
 		if(!OrganizationProfile.changeUsername(settingBean.getName())) {
 			//va male
@@ -41,17 +43,20 @@ public class CustomizationController {
 		
 	}
 	
-	public void changeEmailPassword(SettingsBean settingBean) throws Exception {
+	public void changeEmail(SettingsOrgBean settingBean) throws Exception {
 		
-		if(!OrganizationProfile.changeEmail(settingBean.getEmail())) {
-			//va male
+		if(settingBean.getPassword().equals(OrganizationProfile.getPassword())) {
+			//fai il metodo
 		}
 	}
 	
 	//for single user
-	public void changeCredentials(SettingsBean settingBean) {
-		
+	public void changePassword(SettingsOrgBean settingBean) {
+		if(settingBean.getPassword().equals(OrganizationProfile.getPassword())) {
+			OrganizationProfile.changeCredentials(settingBean.getEmail(), settingBean.getNewPassword());
+		}
 		
 	}
+
 
 }
