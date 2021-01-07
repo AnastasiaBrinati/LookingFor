@@ -138,9 +138,11 @@ public class SignInUI extends JFrame {
 		
 		lblOr.setForeground(Color.WHITE);
 		lblOr.setBounds(227, 531, 46, 14);
+		resetButton.setForeground(Color.WHITE);
 
 		resetButton.setBackground(Color.GRAY);
 		resetButton.setBounds(199, 387, 89, 23);
+		signUpButton.setForeground(Color.WHITE);
 
 		signUpButton.setBackground(new Color(255, 99, 71));
 		signUpButton.setBounds(304, 387, 89, 23);
