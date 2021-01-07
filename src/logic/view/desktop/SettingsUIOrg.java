@@ -238,7 +238,7 @@ public class SettingsUIOrg extends JFrame {
 		pencilTextField4.setIcon(new ImageIcon(img4));
 		
 		
-		Image img5=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
+		Image img6=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 		pencilTextField5.setIcon(new ImageIcon(img5));
 		
 				Image img7=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
