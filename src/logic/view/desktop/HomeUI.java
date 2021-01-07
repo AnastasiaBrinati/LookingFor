@@ -47,6 +47,7 @@ public class HomeUI extends JFrame {
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("");
+	private JButton exitButton = new JButton("");
 
 	public HomeUI() {
 
@@ -70,17 +71,33 @@ public class HomeUI extends JFrame {
 		panel.add(lblNewLabel);
 		
 		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(1029, 5, 49, 49);
+		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
 		settingsButton.setBounds(10, 5, 40, 43);
 		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		
 		settingsButton.setContentAreaFilled(false);
+		
+		Image img3=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
+		settingsButton.setIcon(new ImageIcon(img3));
+		settingsButton.setContentAreaFilled(false);
+		
+		Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+		exitButton.setIcon(new ImageIcon(img5));
+		exitButton.setContentAreaFilled(false);
+		
+		Image img4=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
+		profileButton.setIcon(new ImageIcon(img4));
+		profileButton.setContentAreaFilled(false);
 
 		
 		
 		profileButton.setContentAreaFilled(false);
+		
+		
+		exitButton.setBounds(1039, 0, 49, 49);
+		panel.add(exitButton);
 		LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
