@@ -59,7 +59,7 @@ public class SettingsUISUs extends JFrame {
 	private final JLabel emaillbl = new JLabel("Email");
 	private final JLabel lblPassword = new JLabel("Insert your password");
 	private JTextField textFieldEmail;
-	private final JPasswordField passwordField = new JPasswordField();
+	private final JPasswordField confirmPasswordField = new JPasswordField();
 	private final JLabel pencilLbl1 = new JLabel("");
 	private final JLabel pencilLbl2 = new JLabel("");
 	private final JLabel pencilLbl3 = new JLabel("");
@@ -140,9 +140,9 @@ public class SettingsUISUs extends JFrame {
 				textFieldEmail.setColumns(10);
 				textFieldEmail.setBounds(308, 163, 241, 25);
 				emailPanel.add(textFieldEmail);
-				passwordField.setBounds(308, 254, 241, 25);
+				confirmPasswordField.setBounds(308, 254, 241, 25);
 				
-				emailPanel.add(passwordField);
+				emailPanel.add(confirmPasswordField);
 				pencilLbl4.setBounds(559, 41, 46, 44);
 				
 				emailPanel.add(pencilLbl4);
@@ -351,6 +351,10 @@ public class SettingsUISUs extends JFrame {
 		return exitButton;
 	}
 	
+	public JButton getPasswordButton() {
+		return passwordButton;
+	}
+	
 		
 	public void setNamePanelVisible() {
 		namePanel.setVisible(true);
@@ -370,6 +374,7 @@ public class SettingsUISUs extends JFrame {
 		
 		credentialsButton.setBackground(new Color(102, 205, 170));
 		securityButton.setBackground(new Color(0, 128, 128));
+		passwordButton.setBackground(new Color(102, 205, 170));
 		
 	}
 	
@@ -379,7 +384,8 @@ public class SettingsUISUs extends JFrame {
 		passwordPanel.setVisible(true);
 		
 		credentialsButton.setBackground(new Color(102, 205, 170));
-		securityButton.setBackground(new Color(0, 128, 128));
+		securityButton.setBackground(new Color(102, 205, 170));
+		passwordButton.setBackground(new Color(0, 128, 128));
 		
 	}
 	
@@ -404,16 +410,27 @@ public class SettingsUISUs extends JFrame {
 	}
 	@SuppressWarnings("deprecation")
 	public String getPassword() {
-		return passwordField.getText();
+		return confirmPasswordField.getText();
 	}
 	
-	public void setCredentials(String name, String surname, String username, String email, String password) {
+	public String getNewPassword() {
+		return textFieldNewPassword.getText();
+	}
+	
+	public String getOldPassword() {
+		return 	textFieldOldPassword.getText();
+	}
+	
+	public void setCredentials(String name, String surname, String username, String email) {
 		
 		textFieldName.setText(name);
 		textFieldSurname.setText(surname);
 		textFieldUsername.setText(username);
 		textFieldEmail.setText(email);
-		passwordField.setText(password);
+		confirmPasswordField.setText("");
+		textFieldNewPassword.setText("");
+		textFieldOldPassword.setText("");
+		
 		
 	}
 }
