@@ -55,10 +55,11 @@ public class SettingsUIOrg extends JFrame {
 	private final JPasswordField passwordField = new JPasswordField();
 	private JButton cancelButton_2 = new JButton("Cancel");
 	private JButton SaveButton_2 = new JButton("SAVE");
-	private final JLabel pencilTextField2 = new JLabel("New label");
+	private final JLabel pencilTextField2 = new JLabel("");
 	private final JLabel pencilTextField5 = new JLabel("New label");
 	private final JLabel pencilTextField4 = new JLabel("New label");
 	private final JLabel pencilTextField3 = new JLabel("New label");
+	private final JButton exitButton = new JButton("");
 	
 
 	public SettingsUIOrg() {
@@ -77,6 +78,10 @@ public class SettingsUIOrg extends JFrame {
 		credentialsButton.setBackground(new Color(0, 128, 128));
 		credentialsButton.setBounds(10, 79, 287, 57);
 		panel.add(credentialsButton);
+		
+		Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+		exitButton.setIcon(new ImageIcon(img5));
+		exitButton.setContentAreaFilled(false);
 		
 		contentPane.add(panel);
 		lblTitle.setBounds(89, 27, 141, 41);
@@ -119,11 +124,14 @@ public class SettingsUIOrg extends JFrame {
 													headerPanel.add(searchBar);
 													
 															contentPane.add(headerPanel);
-															homeButton.setIcon(new ImageIcon(img2));
+															
 															homeButton.setContentAreaFilled(false);
 															homeButton.setContentAreaFilled(false);
-															homeButton.setIcon(new ImageIcon(img7));
+															
 															homeButton.setContentAreaFilled(false);
+															exitButton.setBounds(1239, 0, 58, 51);
+															
+															headerPanel.add(exitButton);
 			
 					subtitlePanel.setBackground(new Color(192, 192, 192));
 					subtitlePanel.setBounds(305, 54, 992, 115);
@@ -165,10 +173,14 @@ public class SettingsUIOrg extends JFrame {
 			JLabel lblNewLabel = new JLabel("New label");
 			lblNewLabel.setBounds(223, 144, 241, 151);
 			namePanel.add(lblNewLabel);
-			pencilTextField2.setIcon(new ImageIcon(img1));
+			
 			pencilTextField2.setBounds(474, 51, 44, 38);
 			
 			namePanel.add(pencilTextField2);
+			
+			Image img3=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
+			pencilTextField2.setIcon(new ImageIcon(img3));
+			
 		
 			
 			
@@ -219,8 +231,8 @@ public class SettingsUIOrg extends JFrame {
 		
 		Image img2=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
 		
-		Image img3=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
-		pencilTextField3.setIcon(new ImageIcon(img3));
+		Image img9=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
+		pencilTextField3.setIcon(new ImageIcon(img9));
 		
 		Image img4=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 		pencilTextField4.setIcon(new ImageIcon(img4));
@@ -311,5 +323,9 @@ public class SettingsUIOrg extends JFrame {
 		confirmPsswdtextField.setText("");
 		//set img
 		
+	}
+	
+	public JButton getExitButton() {
+		return exitButton;
 	}
 }

@@ -38,6 +38,20 @@ public class OrganizationControllerG{
 
 	public void assegnaGestori(){
 		
+		ActionListener gestoreExit = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				LoginUI loginUI=new LoginUI();
+				loginUI.resetForm();
+				view.setVisible(false);
+				LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+				
+			}
+
+		};
+		view.getExitButton().addActionListener(gestoreExit);
+		
 		//trasformare in uscita
 		ActionListener gestoreLogin = new ActionListener(){
 			@Override

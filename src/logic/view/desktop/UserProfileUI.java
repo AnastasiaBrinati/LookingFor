@@ -39,6 +39,7 @@ public class UserProfileUI extends JFrame {
 	private final JPanel eventsPanel = new JPanel();
 	private final JButton backButton = new JButton("<-");
 	private final JButton RoutineButton = new JButton("MyRoutine");
+	private final JButton exitButton = new JButton("");
 
 	public UserProfileUI() {
 
@@ -102,6 +103,9 @@ public class UserProfileUI extends JFrame {
 		headerPanel.add(settingsButton);
 
 		contentPane.add(headerPanel);
+		exitButton.setBounds(1242, 0, 55, 51);
+		
+		headerPanel.add(exitButton);
 		
 		panel.setBackground(new Color(102, 205, 170));
 		panel.setBounds(0, 51, 307, 593);
@@ -132,6 +136,11 @@ public class UserProfileUI extends JFrame {
 		Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
 		coursesButton.setIcon(new ImageIcon(img3));
 		coursesButton.setContentAreaFilled(true);
+		
+		Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+		exitButton.setIcon(new ImageIcon(img5));
+		exitButton.setContentAreaFilled(false);
+		
 		
 		
 		Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
@@ -208,6 +217,10 @@ public class UserProfileUI extends JFrame {
 		namelbl.setText(name);
 		surnamelbl.setText(surname);
 		
+	}
+	
+	public JButton getExitButton() {
+		return exitButton;
 	}
 	
 

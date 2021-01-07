@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import logic.controller.ProfileBean;
 import logic.view.desktop.HomeUI;
+import logic.view.desktop.LoginUI;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.UserProfileUI;
 
@@ -44,6 +45,20 @@ public class UserProfileControllerG {
 	}
 	
 	public void assegnaGestori(){
+		
+		ActionListener gestoreExit = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				LoginUI loginUI=new LoginUI();
+				loginUI.resetForm();
+				view.setVisible(false);
+				LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+				
+			}
+
+		};
+		view.getExitButton().addActionListener(gestoreExit);
 
 		
 		ActionListener gestoreHome = new ActionListener(){

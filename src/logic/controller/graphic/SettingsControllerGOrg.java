@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import logic.controller.SettingsBean;
 import logic.model.OrganizationBean;
 import logic.view.desktop.HomeUI;
+import logic.view.desktop.LoginUI;
 import logic.view.desktop.SettingsUIOrg;
 
 
@@ -44,6 +45,21 @@ public class SettingsControllerGOrg {
 	}
 	
 	private static void assegnaGestori() {
+		
+		ActionListener gestoreExit = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				LoginUI loginUI=new LoginUI();
+				loginUI.resetForm();
+				view.setVisible(false);
+				LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+				
+			}
+
+		};
+		
+		
 		
 		ActionListener gestoreHome = new ActionListener(){
 

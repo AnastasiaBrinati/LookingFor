@@ -105,6 +105,11 @@ public class LoginUI extends JFrame {
 
 	}
 	
+	public void resetForm() {
+		textFieldusername.setText("");
+		textFieldpassword.setText("");
+	}
+	
 
 	public String getUsername() {
 		return textFieldusername.getText();

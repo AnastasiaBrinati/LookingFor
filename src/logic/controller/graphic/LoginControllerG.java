@@ -24,11 +24,13 @@ public class LoginControllerG {
 			instance = new LoginControllerG(view);
 			instance.assegnaGestori();
 		}
+		
 		showLoginUI();
 		return instance;
 	}
 	
 	public static void showLoginUI() {
+		loginView.resetForm();
 		loginView.setVisible(true);
 	}
 
@@ -51,6 +53,7 @@ public class LoginControllerG {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
+				
 				loginBean = new LoginBean();
 				loginBean.setUsername(loginView.getUsername());
 				loginBean.setPassword(loginView.getPassword());

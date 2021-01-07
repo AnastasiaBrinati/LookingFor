@@ -106,6 +106,9 @@ public class HomeUI extends JFrame {
 	}
 	public JButton getSettingsButton() {
 		return settingsButton;
-	}	
+	}
+	public JButton getExitButton() {
+		return exitButton;
+	}
 }
 	

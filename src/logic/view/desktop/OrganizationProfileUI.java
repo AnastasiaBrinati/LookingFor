@@ -179,7 +179,7 @@ public class OrganizationProfileUI extends JFrame {
 		availabilityLbl.setBounds(10, 419, 114, 14);
 		newCoursePanel.add(availabilityLbl);
 	
-		profileButton.setBounds(1168, 6, 45, 42);
+		profileButton.setBounds(1181, 0, 55, 54);
 		profileButton.setIcon(null);
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorder(null);
@@ -295,6 +295,10 @@ public class OrganizationProfileUI extends JFrame {
 		settingsButton.setIcon(new ImageIcon(img6));
 		settingsButton.setContentAreaFilled(false);
 		
+		Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+		profileButton.setIcon(new ImageIcon(img7));
+		profileButton.setContentAreaFilled(false);
+		
 	}
 
 
@@ -397,6 +401,10 @@ public class OrganizationProfileUI extends JFrame {
 	}
 	public JButton getSaveButton() {
 		return saveButton;
+	}
+	
+	public JButton getExitButton() {
+		return exitButton;
 	}
 
 
