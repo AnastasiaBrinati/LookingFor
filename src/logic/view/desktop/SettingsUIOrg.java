@@ -253,15 +253,7 @@ public class SettingsUIOrg extends JFrame {
 	public JButton getCredentialsButton() {
 		return credentialsButton;
 	}
-	
-	public JButton getCancelButton() {
-		return cancelButton;
-	}
-	
-	public JButton getSaveButton() {
-		return saveButton;
-	}
-	
+		
 	public JButton getSecurityButton() {
 		return securityButton;
 	}
@@ -302,10 +294,18 @@ public class SettingsUIOrg extends JFrame {
 		return passwordField.getText();
 	}
 	
+	@SuppressWarnings("deprecation")
 	public String getConfirmPassword() {
 		return confirmPsswdtextField.getText();
 	}
 	
+	public JButton getCancelButton() {
+		return cancelButton;
+	}
+	
+	public JButton getSaveButton() {
+		return saveButton;
+	}
 	
 	public JButton getSaveButton2() {
 		return SaveButton_2;
