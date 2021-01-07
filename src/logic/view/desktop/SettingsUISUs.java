@@ -49,6 +49,8 @@ public class SettingsUISUs extends JFrame {
 	
 	private final JButton saveButton = new JButton("Save");
 	private final JButton cancelButton = new JButton("Cancel");
+	private JButton saveButton2 = new JButton("SAVE");
+	private JButton cancelButton2 = new JButton("Cancel");
 	
 	private final JPanel emailPanel = new JPanel();
 	private final JLabel emaillbl = new JLabel("Email");
@@ -116,63 +118,11 @@ public class SettingsUISUs extends JFrame {
 				
 				emailPanel.add(pencilLbl6);
 		
-				
-		textFieldName.setBounds(223, 58, 241, 25);
-		textFieldName.setColumns(10);
-		namePanel.setBounds(305, 168, 992, 491);
-		
-		contentPane.add(namePanel);
-		namePanel.setLayout(null);
-		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		surnamelbl.setBounds(49, 146, 134, 25);
-		namePanel.add(surnamelbl);
-		
-		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		nameLbl.setBounds(49, 54, 116, 29);
-		namePanel.add(nameLbl);
-		
-		namePanel.add(textFieldName);
-		textFieldSurname.setColumns(10);
-		textFieldSurname.setBounds(223, 148, 241, 25);
-		
-		namePanel.add(textFieldSurname);
-		textFieldUsername.setColumns(10);
-		textFieldUsername.setBounds(223, 252, 241, 25);
-		
-		namePanel.add(textFieldUsername);
-		usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		usernamelbl.setBounds(49, 250, 134, 25);
-		
-		namePanel.add(usernamelbl);
-		saveButton.setBackground(new Color(255, 99, 71));
-		saveButton.setBounds(262, 355, 158, 38);
-		
-		namePanel.add(saveButton);
-		cancelButton.setBounds(94, 355, 158, 38);
-		
-		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-		surnamelbl.setBounds(49, 146, 134, 25);
-		
-		namePanel.add(surnamelbl);
-		namePanel.add(cancelButton);
-		pencilLbl1.setBounds(474, 39, 46, 44);
-		
-		namePanel.add(pencilLbl1);
-		pencilLbl2.setBounds(474, 128, 46, 44);
-		
-		namePanel.add(pencilLbl2);
-		pencilLbl3.setBounds(474, 233, 46, 44);
-		
-		namePanel.add(pencilLbl3);
-		
 		Image img1=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
-		pencilLbl1.setIcon(new ImageIcon(img1));
 		
 		Image img2=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
-		pencilLbl2.setIcon(new ImageIcon(img2));
 		
 		Image img3=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
-		pencilLbl3.setIcon(new ImageIcon(img3));
 		
 		Image img4=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 		pencilLbl4.setIcon(new ImageIcon(img4));
@@ -182,6 +132,14 @@ public class SettingsUISUs extends JFrame {
 		
 		Image img6=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 		pencilLbl6.setIcon(new ImageIcon(img3));
+		
+		saveButton2.setBackground(new Color(255, 99, 71));
+		saveButton2.setBounds(308, 343, 158, 38);
+		emailPanel.add(saveButton2);
+		
+		cancelButton2.setBackground(new Color(255, 99, 71));
+		cancelButton2.setBounds(129, 343, 158, 38);
+		emailPanel.add(cancelButton2);
 		
 		Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
 		exitButton.setIcon(new ImageIcon(img7));
@@ -255,6 +213,58 @@ public class SettingsUISUs extends JFrame {
 				
 				headerPanel.add(exitButton);
 				
+						
+				textFieldName.setBounds(223, 58, 241, 25);
+				textFieldName.setColumns(10);
+				namePanel.setBounds(305, 168, 992, 491);
+				
+				contentPane.add(namePanel);
+				namePanel.setLayout(null);
+				surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				surnamelbl.setBounds(49, 146, 134, 25);
+				namePanel.add(surnamelbl);
+				
+				nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				nameLbl.setBounds(49, 54, 116, 29);
+				namePanel.add(nameLbl);
+				
+				namePanel.add(textFieldName);
+				textFieldSurname.setColumns(10);
+				textFieldSurname.setBounds(223, 148, 241, 25);
+				
+				namePanel.add(textFieldSurname);
+				textFieldUsername.setColumns(10);
+				textFieldUsername.setBounds(223, 252, 241, 25);
+				
+				namePanel.add(textFieldUsername);
+				usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				usernamelbl.setBounds(49, 250, 134, 25);
+				
+				namePanel.add(usernamelbl);
+				saveButton.setBackground(new Color(255, 99, 71));
+				saveButton.setBounds(262, 355, 158, 38);
+				
+				namePanel.add(saveButton);
+				cancelButton.setBounds(94, 355, 158, 38);
+				
+				surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				surnamelbl.setBounds(49, 146, 134, 25);
+				
+				namePanel.add(surnamelbl);
+				namePanel.add(cancelButton);
+				pencilLbl1.setBounds(474, 39, 46, 44);
+				
+				namePanel.add(pencilLbl1);
+				pencilLbl2.setBounds(474, 128, 46, 44);
+				
+				namePanel.add(pencilLbl2);
+				pencilLbl3.setBounds(474, 233, 46, 44);
+				
+				namePanel.add(pencilLbl3);
+				pencilLbl1.setIcon(new ImageIcon(img1));
+				pencilLbl2.setIcon(new ImageIcon(img2));
+				pencilLbl3.setIcon(new ImageIcon(img3));
+				
 				Image img9=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
 	}
 	
@@ -272,6 +282,14 @@ public class SettingsUISUs extends JFrame {
 	
 	public JButton getSaveButton() {
 		return saveButton;
+	}
+	
+	public JButton getCancelButton2() {
+		return cancelButton2;
+	}
+	
+	public JButton getSaveButton2() {
+		return saveButton2;
 	}
 	
 	public JButton getSecurityButton() {
@@ -324,6 +342,4 @@ public class SettingsUISUs extends JFrame {
 		passwordField.setText(password);
 		
 	}
-	
-	
 }
