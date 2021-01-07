@@ -1,5 +1,7 @@
 package logic.controller;
 
+import java.sql.SQLException;
+
 public class SettingsBean {
 	
 	//1
@@ -9,8 +11,8 @@ public class SettingsBean {
 	
 	//2
 	private String email;
-	private static String password;
-	private static String confirmPassword;
+	private static String oldPassword;
+	private static String newPassword;
 	
 	public SettingsBean() {
 	}
@@ -43,36 +45,51 @@ public class SettingsBean {
 		return email;
 	}
 	public void setPassword(String psswd) {
-		password = psswd;
+		oldPassword = psswd;
 	}
 	public String getPassword() {
-		return password;
+		return oldPassword;
 	}
 	
-	public void setConfirmPassword(String confPassword) {
-		confirmPassword = confPassword;
+	public void setNewPassword(String newPasswd) {
+		newPassword = newPasswd;
 	}
+	
+	public String getNewPassword() {
+		return newPassword;
+	}
+	
+	
 	
 	//single user
-	public static void changeUCredentials(SettingsBean settingBean) {
-
+	public static void changeUCredentialsName(SettingsBean settingBean) throws SQLException {
 		CustomizationController customizer=new CustomizationController();
 		customizer.changeCredentialsName(settingBean);
 	}
 	
-	public static void changeUCredentialsEmail(SettingsBean settingBean) {
+	public static void changeUCredentialsEmail(SettingsBean settingBean) throws SQLException {
 		CustomizationController customizer=new CustomizationController();
 		customizer.changeCredentialsEmail(settingBean);
 	}
 	
-	//organization
-	public static void changeNameLocation(SettingsBean settingBean) throws Exception {
-		CustomizationController customizer = new CustomizationController();
-		customizer.changeNameLocation(settingBean);
+	public static void changeUCredentialsPassword(SettingsBean settingBean) throws SQLException {
+		CustomizationController customizer=new CustomizationController();
+		customizer.changeCredentialsPassword(settingBean);
 	}
 	
-	public static void changeEmailPassword(SettingsBean settingBean) throws Exception {
+	//organization
+	public static void changeName(SettingsBean settingBean) throws Exception {
 		CustomizationController customizer = new CustomizationController();
-		customizer.changeEmailPassword(settingBean);
+		customizer.changeName(settingBean);
+	}
+	
+	public static void changeEmail(SettingsBean settingBean) throws Exception {
+		CustomizationController customizer = new CustomizationController();
+		customizer.changeEmail(settingBean);
+	}
+	
+	public static void changePassword(SettingsBean settingBean) throws Exception {
+		CustomizationController customizer = new CustomizationController();
+		customizer.changePassword(settingBean);
 	}
 }
