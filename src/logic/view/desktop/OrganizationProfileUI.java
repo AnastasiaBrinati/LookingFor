@@ -306,6 +306,7 @@ public class OrganizationProfileUI extends JFrame {
         frame.setPreferredSize(new Dimension(100, 100));
         frame.setVisible(true);
         lowerPanel.add(frame);
+        lowerPanel.revalidate();
         coursesPanel.revalidate();
         
     }
