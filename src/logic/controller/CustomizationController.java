@@ -1,16 +1,23 @@
 package logic.controller;
 
-import logic.model.UserProfile;
+import logic.model.OrganizationProfile;
 
 public class CustomizationController {
 	
 	
-	public void changeCredentials(SettingsBean settingBean) throws Exception {
+	public void changeNameLocation(SettingsBean settingBean) throws Exception {
 		
-		if(UserProfile.canIChange(settingBean.getUsername())) {
-			UserProfile.change(settingBean.getName(), settingBean.getSurname(), 1);
+		if(!OrganizationProfile.changeUsername(settingBean.getName())) {
+			//va male
 		}
 		
-		
 	}
+	
+	public void changeEmailPassword(SettingsBean settingBean) throws Exception {
+		
+		if(!OrganizationProfile.changeEmail(settingBean.getEmail())) {
+			//va male
+		}
+	}
+
 }

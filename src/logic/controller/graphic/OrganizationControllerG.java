@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.controller.NewCourseBean;
-import logic.controller.ProfileBean;
 import logic.model.OrganizationBean;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.LoginUI;
@@ -134,7 +133,7 @@ public class OrganizationControllerG{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				HomeUI homeView = new HomeUI();
-				HomeControllerGSUs controller = HomeControllerGSUs.getInstance(homeView);
+				HomeControllerGOrg controller = HomeControllerGOrg.getInstance(homeView);
 				view.setVisible(false);
 			}
 		};

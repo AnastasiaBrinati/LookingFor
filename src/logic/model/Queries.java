@@ -16,21 +16,21 @@ public class Queries {
 		
 	}
 	
-	public static ResultSet getCourses(Statement stmt,String username) throws SQLException {
-		
-		String sql="SELECT * FROM courses WHERE organization = '" + username + "';";
-		System.out.println(sql);
-		return stmt.executeQuery(sql);
-		
-	}
-
-	//query to ckeck if an organization is signed or not
+	//query to check if an organization is signed or not
     public static ResultSet checkSignedOrganization(Statement stmt, String username, String password) throws SQLException {
 		
 		String sql = "SELECT * FROM users WHERE name = '" + username + "';";
 		
         System.out.println(sql);
         return stmt.executeQuery(sql);
+		
+	}
+    
+    public static ResultSet getCourses(Statement stmt,String username) throws SQLException {
+		
+		String sql="SELECT * FROM courses WHERE organization = '" + username + "';";
+		System.out.println(sql);
+		return stmt.executeQuery(sql);
 		
 	}
 
@@ -48,7 +48,7 @@ public class Queries {
 	System.out.println(sql);
 	return stmt.executeQuery(sql);
 	
-}
+    }
 	
 	
 	//query to add a new Course to the DB
@@ -62,6 +62,7 @@ public class Queries {
         
     }
 	
+	//query to insert a new user
 	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type) throws SQLException  {
         String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password,type) VALUES ('%s','%s','%s','%s','%s','%s')", name,surname,username,email,password,type);
         System.out.println("in Queries ho:" + username);
@@ -71,8 +72,20 @@ public class Queries {
         
     }
 	
+	public static ResultSet doesThisUsernameAlreadyExist(Statement stmt, String username) throws SQLException {
+		
+		String sql = "SELECT * FROM users WHERE username = '" + username + "';";
+		
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+	}
 	
-	
-	
+	public static ResultSet doesThisEmailAlreadyExist(Statement stmt, String email) throws SQLException {
+		
+		String sql = "SELECT * FROM users WHERE email = '" + email + "';";
+		
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+	}
 }
 

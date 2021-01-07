@@ -69,7 +69,27 @@ public class OrganizationProfile {
 		return events;
 	}
 	
-	public static void setCredentials() {
+	
+	public static boolean changeUsername(String username) throws Exception{
+		
+		OrganizationDAO orgDAO = new OrganizationDAO();
+		if(orgDAO.usernameAlreadyExists(username)) {
+			return false;
+		}
+		orgDAO.changeUsername(username);
+		return true;
+		
+	}
+
+	
+	public static boolean changeEmail(String email) throws Exception {
+		
+		OrganizationDAO orgDAO = new OrganizationDAO();
+		if(orgDAO.emailAlreadyExists(email, name)) {
+			return false;
+		}
+		orgDAO.changeUsername(email);
+		return true;
 		
 	}
 

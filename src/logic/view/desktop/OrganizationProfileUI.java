@@ -69,7 +69,7 @@ public class OrganizationProfileUI extends JFrame {
 		descriptionTextfield.setColumns(10);
 
 		setTitle("Sportee");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1254, 750);
 		contentPane = new JPanel();
@@ -184,7 +184,7 @@ public class OrganizationProfileUI extends JFrame {
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorder(null);
 	    
-		profileButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\exit-32.png"));
+		profileButton.setIcon(new ImageIcon(""));
 		profileButton.setContentAreaFilled(false);
 		profileButton.setBorder(null);
 		
@@ -192,7 +192,7 @@ public class OrganizationProfileUI extends JFrame {
 		headerPanel.setBackground(new Color(0, 128, 128));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		homeButton.setBounds(314, 0, 45, 42);
-		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
+		homeButton.setIcon(new ImageIcon(""));
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);
 		headerPanel.setLayout(null);
@@ -375,10 +375,8 @@ public class OrganizationProfileUI extends JFrame {
 	}
 	
 	public void setCredentials(String name) {
-	
 		organizationNameLbl.setText(name);
-		
-		
+		//set img
 	}
 	
 	public JButton getProfileButton() {

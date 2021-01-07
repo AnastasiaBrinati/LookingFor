@@ -73,6 +73,7 @@ public class SettingsControllerGOrg {
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
+		
 		ActionListener gestoreCancel = new ActionListener(){
 
 			@Override
@@ -82,6 +83,7 @@ public class SettingsControllerGOrg {
 
 		};
 		view.getCancelButton().addActionListener(gestoreCancel);
+		
 		
 		ActionListener gestoreCredentials = new ActionListener(){
 
@@ -115,7 +117,7 @@ public class SettingsControllerGOrg {
 				//settingBean.setImg(view.getImg());
 				//exceptions
 				try {
-					SettingsBean.changeCredentials(settingBean);
+					SettingsBean.changeNameLocation(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -139,7 +141,7 @@ public class SettingsControllerGOrg {
 				settingBean.setConfirmPassword(view.getConfirmPassword());
 
 				try {
-					SettingsBean.changeCredentials(settingBean);
+					SettingsBean.changeEmailPassword(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block

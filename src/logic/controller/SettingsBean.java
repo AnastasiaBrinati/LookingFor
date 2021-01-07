@@ -15,20 +15,23 @@ public class SettingsBean {
 	public SettingsBean() {
 	}
 	
+	//just for single user
 	public void setName(String name) {
 		this.name = name;
 	}
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	public String getName() {
 		return name;
 	}
 	public String getSurname() {
 		return surname;
+	}
+	
+	//for both users
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getUsername() {
 		return username;
@@ -39,8 +42,8 @@ public class SettingsBean {
 	public String getEmail() {
 		return email;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String psswd) {
+		password = psswd;
 	}
 	public String getPassword() {
 		return password;
@@ -49,10 +52,15 @@ public class SettingsBean {
 	public void setConfirmPassword(String confPassword) {
 		confirmPassword = confPassword;
 	}
+
 	
-	
-	public static void changeCredentials(SettingsBean settingBean) throws Exception {
+	public static void changeNameLocation(SettingsBean settingBean) throws Exception {
 		CustomizationController customizer = new CustomizationController();
-		customizer.changeCredentials(settingBean);
+		customizer.changeNameLocation(settingBean);
+	}
+	
+	public static void changeEmailPassword(SettingsBean settingBean) throws Exception {
+		CustomizationController customizer = new CustomizationController();
+		customizer.changeEmailPassword(settingBean);
 	}
 }
