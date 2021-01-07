@@ -16,9 +16,6 @@ public class UserProfileDAO {
     
    //MANCA LA REFLECTION
     
-    public void goChangeAndTellMe(String a, String b) {
-    	
-    }
 	
 	public String goCheckAndTellMe(String username,String password) throws Exception {
 		
@@ -304,7 +301,6 @@ public class UserProfileDAO {
 	
 	public static boolean updateCredentialsWithoutUsername(String newName,String newSurname,String oldUsername) throws SQLException {
 		Statement stmt=null;
-		
 		Connection conn=null;
 		
 		try {
@@ -343,7 +339,7 @@ public class UserProfileDAO {
 		
 	}
 	
-	public static boolean updateEmail(String newEmail,String newPassword,String username) throws SQLException {
+	public static boolean updateEmail(String newEmail,String username) throws SQLException {
 		Statement stmt=null;
 		
 		Connection conn=null;

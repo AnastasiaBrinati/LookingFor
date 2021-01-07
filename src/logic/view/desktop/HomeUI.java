@@ -79,16 +79,16 @@ public class HomeUI extends JFrame {
 		
 		settingsButton.setContentAreaFilled(false);
 		
-		Image img3=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img3));
+		//Image img3=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
+		//settingsButton.setIcon(new ImageIcon(img3));
 		settingsButton.setContentAreaFilled(false);
 		
-		Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
-		exitButton.setIcon(new ImageIcon(img5));
+		//Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
+		//exitButton.setIcon(new ImageIcon(img5));
 		exitButton.setContentAreaFilled(false);
 		
-		Image img4=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
-		profileButton.setIcon(new ImageIcon(img4));
+		//Image img4=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
+		//profileButton.setIcon(new ImageIcon(img4));
 		profileButton.setContentAreaFilled(false);
 
 		

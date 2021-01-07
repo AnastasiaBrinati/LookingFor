@@ -7,11 +7,12 @@ import logic.model.UserProfile;
 
 public class CustomizationController {
 	
-	//for organization
+
 	//single user
 	public void changeCredentialsName(SettingsBean settingBean) throws SQLException {
 		if(settingBean.getUsername().equals(UserProfile.getUsername())) {
 			UserProfile.changeCredentials(settingBean.getName(), settingBean.getSurname());
+			return;
 		}
 		UserProfile.changeCredentials(settingBean.getName(), settingBean.getSurname(), settingBean.getUsername());
 	}
@@ -26,7 +27,7 @@ public class CustomizationController {
 	
 	public void changeCredentialsPassword(SettingsBean settingBean) throws SQLException {
 		if(settingBean.getPassword().equals(UserProfile.getPassword())) {
-		UserProfile.changeCredentials(settingBean.getEmail());
+			UserProfile.changeCredentials(settingBean.getEmail(), settingBean.getNewPassword());
 		}
 	}
 	

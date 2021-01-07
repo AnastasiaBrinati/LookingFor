@@ -82,6 +82,58 @@ public class SettingsUISUs extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
+		
+		
+		
+		emailPanel.setBounds(305, 168, 1003, 491);
+		contentPane.add(emailPanel);
+		emailPanel.setLayout(null);
+		
+				emaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				emaillbl.setBounds(53, 159, 116, 29);
+				
+				emailPanel.add(emaillbl);
+				lblPassword.setFont(new Font("Arial", Font.PLAIN, 18));
+				lblPassword.setBounds(53, 250, 189, 29);
+				
+				emailPanel.add(lblPassword);
+				
+				textFieldEmail = new JTextField();
+				textFieldEmail.setColumns(10);
+				textFieldEmail.setBounds(308, 163, 241, 25);
+				emailPanel.add(textFieldEmail);
+				confirmPasswordField.setBounds(308, 254, 241, 25);
+				
+				emailPanel.add(confirmPasswordField);
+				pencilLbl4.setBounds(559, 41, 46, 44);
+				
+				emailPanel.add(pencilLbl4);
+				pencilLbl5.setBounds(559, 118, 46, 44);
+				
+				emailPanel.add(pencilLbl5);
+				pencilLbl6.setBounds(559, 200, 46, 44);
+				
+				emailPanel.add(pencilLbl6);
+				/*
+				pencilLbl4.setIcon(new ImageIcon(img4));
+				pencilLbl5.setIcon(new ImageIcon(img5));
+				pencilLbl6.setIcon(new ImageIcon(img6));
+				*/
+				
+				saveButton2.setBackground(new Color(255, 99, 71));
+				saveButton2.setBounds(308, 343, 158, 38);
+				emailPanel.add(saveButton2);
+				
+				cancelButton2.setBackground(new Color(255, 99, 71));
+				cancelButton2.setBounds(129, 343, 158, 38);
+				emailPanel.add(cancelButton2);
+				
+				JLabel changeYourEmaillbl = new JLabel("Change your email");
+				changeYourEmaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
+				changeYourEmaillbl.setBounds(53, 65, 328, 29);
+				emailPanel.add(changeYourEmaillbl);
+		
 		passwordPanel.setBounds(305, 168, 992, 491);
 		contentPane.add(passwordPanel);
 		passwordPanel.setLayout(null);
@@ -118,40 +170,6 @@ public class SettingsUISUs extends JFrame {
 		textFieldOldPassword.setColumns(10);
 		textFieldOldPassword.setBounds(222, 226, 241, 25);
 		passwordPanel.add(textFieldOldPassword);
-		
-		
-		
-		
-		
-		emailPanel.setBounds(305, 168, 1003, 491);
-		contentPane.add(emailPanel);
-		emailPanel.setLayout(null);
-		
-				emaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				emaillbl.setBounds(53, 159, 116, 29);
-				
-				emailPanel.add(emaillbl);
-				lblPassword.setFont(new Font("Arial", Font.PLAIN, 18));
-				lblPassword.setBounds(53, 250, 189, 29);
-				
-				emailPanel.add(lblPassword);
-				
-				textFieldEmail = new JTextField();
-				textFieldEmail.setColumns(10);
-				textFieldEmail.setBounds(308, 163, 241, 25);
-				emailPanel.add(textFieldEmail);
-				confirmPasswordField.setBounds(308, 254, 241, 25);
-				
-				emailPanel.add(confirmPasswordField);
-				pencilLbl4.setBounds(559, 41, 46, 44);
-				
-				emailPanel.add(pencilLbl4);
-				pencilLbl5.setBounds(559, 118, 46, 44);
-				
-				emailPanel.add(pencilLbl5);
-				pencilLbl6.setBounds(559, 200, 46, 44);
-				
-				emailPanel.add(pencilLbl6);
 				
 				Image img1=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 				
@@ -166,23 +184,6 @@ public class SettingsUISUs extends JFrame {
 				Image img6=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 				
 				Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
-				
-				pencilLbl4.setIcon(new ImageIcon(img4));
-				pencilLbl5.setIcon(new ImageIcon(img5));
-				pencilLbl6.setIcon(new ImageIcon(img6));
-				
-				saveButton2.setBackground(new Color(255, 99, 71));
-				saveButton2.setBounds(308, 343, 158, 38);
-				emailPanel.add(saveButton2);
-				
-				cancelButton2.setBackground(new Color(255, 99, 71));
-				cancelButton2.setBounds(129, 343, 158, 38);
-				emailPanel.add(cancelButton2);
-				
-				JLabel changeYourEmaillbl = new JLabel("Change your email");
-				changeYourEmaillbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				changeYourEmaillbl.setBounds(53, 65, 328, 29);
-				emailPanel.add(changeYourEmaillbl);
 		
 
 		exitButton.setIcon(new ImageIcon(img7));

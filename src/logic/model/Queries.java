@@ -72,7 +72,7 @@ public class Queries {
         
     }
 	
-	public static int addCourse(Statement stmt, Course course) throws SQLException  {
+	public static int addCourt(Statement stmt, Course course) throws SQLException  {
         String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
         course.getOrganization(),course.getName(),course.getSport(),course.getDescription(),course.getInstructorName(),String.valueOf(course.getLessonPrice()),String.valueOf(course.getMonthlyPrice()),String.valueOf(course.getAvailability()));
         

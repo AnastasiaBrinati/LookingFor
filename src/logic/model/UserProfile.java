@@ -63,7 +63,6 @@ public class UserProfile {
 		return result;
 		
 	}
-	
 
 	public List<Course> getCourses() {
 		return courses;
@@ -89,7 +88,7 @@ public class UserProfile {
 	
 	public static boolean changeCredentials(String newName,String newSurname) throws SQLException {
 		
-		if(UserProfileDAO.updateCredentials(newName, newSurname, username)) {
+		if(UserProfileDAO.updateCredentialsWithoutUsername(newName, newSurname, username)) {
 			return true;
 		}
 		return false;	

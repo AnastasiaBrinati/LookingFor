@@ -163,7 +163,7 @@ public class SettingsControllerGSUs {
 			public void actionPerformed(ActionEvent e){
 				SettingsBean settingBean = new SettingsBean();
 				settingBean.setEmail(view.getEmail());
-				settingBean.setOldPassword(view.getPassword());
+				settingBean.setPassword(view.getPassword());
 				
 				try {
 					SettingsBean.changeUCredentialsEmail(settingBean);
@@ -186,7 +186,7 @@ public class SettingsControllerGSUs {
 			public void actionPerformed(ActionEvent e){
 				SettingsBean settingBean = new SettingsBean();
 				settingBean.setNewPassword(view.getNewPassword());
-				settingBean.setOldPassword(view.getOldPassword());
+				settingBean.setPassword(view.getOldPassword());
 				
 				try {
 					SettingsBean.changeUCredentialsPassword(settingBean);
