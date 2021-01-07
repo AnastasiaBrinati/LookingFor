@@ -53,7 +53,7 @@ public class SettingsBean {
 		confirmPassword = confPassword;
 	}
 
-	public void changeUCredentials(SettingsBean settingBean) {
+	public static void changeUCredentials(SettingsBean settingBean) {
 		CustomizationController customizer=new CustomizationController();
 		customizer.changeCredentials(settingBean);
 	}

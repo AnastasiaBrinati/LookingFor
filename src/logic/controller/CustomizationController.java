@@ -4,7 +4,7 @@ import logic.model.OrganizationProfile;
 
 public class CustomizationController {
 	
-	
+	//for organization
 	public void changeNameLocation(SettingsBean settingBean) throws Exception {
 		
 		if(!OrganizationProfile.changeUsername(settingBean.getName())) {
@@ -18,6 +18,12 @@ public class CustomizationController {
 		if(!OrganizationProfile.changeEmail(settingBean.getEmail())) {
 			//va male
 		}
+	}
+	
+	//for single user
+	public void changeCredentials(SettingsBean settingBean) {
+		
+		
 	}
 
 }
