@@ -68,6 +68,16 @@ public class SettingsControllerGSUs {
 		};
 		view.getCancelButton().addActionListener(gestoreCancel);
 		
+		ActionListener gestoreCancel2 = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				setCredentials();
+			}
+
+		};
+		view.getCancelButton2().addActionListener(gestoreCancel2);
+		
 		ActionListener gestoreExit = new ActionListener(){
 
 			@Override
@@ -103,7 +113,7 @@ public class SettingsControllerGSUs {
 		};
 		view.getSecurityButton().addActionListener(gestoreSecurity);
 		
-		ActionListener gestoreSave = new ActionListener(){
+		ActionListener gestoreSave2 = new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -113,7 +123,30 @@ public class SettingsControllerGSUs {
 				settingBean.setSurname(view.getSurname());
 				//exceptions
 				try {
-					SettingsBean.changeUCredentials(settingBean);
+					SettingsBean.changeUCredentialsName(settingBean);
+					System.out.println("Changing credentials");
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				setCredentials();
+				view.repaint();
+				
+			}
+
+		};
+		view.getSaveButton2().addActionListener(gestoreSave2);
+		
+		ActionListener gestoreSave = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				SettingsBean settingBean = new SettingsBean();
+				settingBean.setEmail(view.getEmail());
+				settingBean.setPassword(view.getPassword());
+				
+				try {
+					SettingsBean.changeUCredentialsEmail(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block

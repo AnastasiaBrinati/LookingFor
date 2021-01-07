@@ -12,7 +12,6 @@ import logic.view.desktop.SettingsUIOrg;
 
 public class SettingsControllerGOrg {
 
-
 	private static SettingsUIOrg view;
 	private static SettingsControllerGOrg instance = null;
 	
@@ -84,6 +83,16 @@ public class SettingsControllerGOrg {
 		};
 		view.getCancelButton().addActionListener(gestoreCancel);
 		
+		ActionListener gestoreCancel2 = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				setCredentials();
+			}
+
+		};
+		view.getCancelButton2().addActionListener(gestoreCancel2);
+		
 		
 		ActionListener gestoreCredentials = new ActionListener(){
 
@@ -115,7 +124,7 @@ public class SettingsControllerGOrg {
 				SettingsBean settingBean = new SettingsBean();
 				settingBean.setName(view.getName());
 				//settingBean.setImg(view.getImg());
-				//exceptions
+				
 				try {
 					SettingsBean.changeNameLocation(settingBean);
 					System.out.println("Changing credentials");

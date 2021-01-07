@@ -52,12 +52,20 @@ public class SettingsBean {
 	public void setConfirmPassword(String confPassword) {
 		confirmPassword = confPassword;
 	}
-
+	
+	//single user
 	public static void changeUCredentials(SettingsBean settingBean) {
+
 		CustomizationController customizer=new CustomizationController();
-		customizer.changeCredentials(settingBean);
+		customizer.changeCredentialsName(settingBean);
 	}
 	
+	public static void changeUCredentialsEmail(SettingsBean settingBean) {
+		CustomizationController customizer=new CustomizationController();
+		customizer.changeCredentialsEmail(settingBean);
+	}
+	
+	//organization
 	public static void changeNameLocation(SettingsBean settingBean) throws Exception {
 		CustomizationController customizer = new CustomizationController();
 		customizer.changeNameLocation(settingBean);
