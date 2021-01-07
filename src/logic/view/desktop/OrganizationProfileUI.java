@@ -26,7 +26,7 @@ public class OrganizationProfileUI extends JFrame {
 	private JPanel contentPane;
 	private JPanel headerPanel = new JPanel();
 	private JButton homeButton = new JButton("");
-	private final JButton profileButton = new JButton("");
+	private final JButton exitButton = new JButton("");
 	private final JPanel panel = new JPanel();
 	private JPanel coursesPanel = new JPanel();
 	private JButton coursesButton = new JButton("Courses");
@@ -179,14 +179,14 @@ public class OrganizationProfileUI extends JFrame {
 		availabilityLbl.setBounds(10, 419, 114, 14);
 		newCoursePanel.add(availabilityLbl);
 	
-		profileButton.setBounds(1181, 0, 55, 54);
-		profileButton.setIcon(null);
-		profileButton.setContentAreaFilled(false);
-		profileButton.setBorder(null);
+		exitButton.setBounds(1181, 0, 55, 54);
+		exitButton.setIcon(null);
+		exitButton.setContentAreaFilled(false);
+		exitButton.setBorder(null);
 	    
-		profileButton.setIcon(new ImageIcon(""));
-		profileButton.setContentAreaFilled(false);
-		profileButton.setBorder(null);
+		exitButton.setIcon(new ImageIcon(""));
+		exitButton.setContentAreaFilled(false);
+		exitButton.setBorder(null);
 		
 		headerPanel.setBounds(0, 0, 1400, 54);
 		headerPanel.setBackground(new Color(0, 128, 128));
@@ -197,8 +197,8 @@ public class OrganizationProfileUI extends JFrame {
 		homeButton.setContentAreaFilled(false);
 		headerPanel.setLayout(null);
 		headerPanel.add(homeButton);
-		headerPanel.add(profileButton);
-		headerPanel.add(profileButton);
+		headerPanel.add(exitButton);
+		headerPanel.add(exitButton);
 		contentPane.add(headerPanel);
 		
 		textField = new JTextField();
@@ -296,8 +296,8 @@ public class OrganizationProfileUI extends JFrame {
 		settingsButton.setContentAreaFilled(false);
 		
 		Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
-		profileButton.setIcon(new ImageIcon(img7));
-		profileButton.setContentAreaFilled(false);
+		exitButton.setIcon(new ImageIcon(img7));
+		exitButton.setContentAreaFilled(false);
 		
 	}
 
@@ -380,7 +380,7 @@ public class OrganizationProfileUI extends JFrame {
 	}
 	
 	public JButton getProfileButton() {
-			return profileButton;
+			return exitButton;
 		}
 	public JButton getCoursesButton() {
 		return coursesButton;
