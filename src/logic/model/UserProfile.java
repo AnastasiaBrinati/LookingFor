@@ -117,14 +117,24 @@ public class UserProfile {
 		
 	}
 	
-	public static void changeCredentials(String newName,String newSurname,String newUsername) {
-		try {
-			UserProfileDAO.updateCredentials(newName, newSurname, newUsername, username);
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
+	
+	public static boolean changeCredentials(String newName,String newSurname,String newUsername) throws SQLException {
+		
+			if(UserProfileDAO.updateCredentials(newName, newSurname, newUsername, username)) {
+				return true;
+			}
+			return false;	
 	}
+	
+	public static boolean changeCredentials(String newEmail) throws SQLException {
+		
+		if(UserProfileDAO.updateEmail(newEmail,username)) {
+			return true;
+		}
+		return false;	
+} 
+	
+	
 	
      
 	 

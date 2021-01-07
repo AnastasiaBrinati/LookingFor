@@ -252,7 +252,7 @@ public class UserProfileDAO {
 		
 	}
 	
-	public static void updateCredentials(String newName,String newSurname,String newUsername,String oldUsername) throws SQLException {
+	public static boolean updateCredentials(String newName,String newSurname,String newUsername,String oldUsername) throws SQLException {
 		Statement stmt=null;
 		
 		Connection conn=null;
@@ -261,10 +261,22 @@ public class UserProfileDAO {
 			
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			Queries.updateCredentials(stmt, newName, newSurname, newUsername, oldUsername);
+			if(Queries.doesThisUsernameAlreadyExist(stmt, newUsername)==null) {
+				Queries.updateCredentials(stmt, newName, newSurname, newUsername, oldUsername);
+				return true;
+				
+			}
+			//se il nuovo username esiste già
+			else {
+				System.out.println("Username update failed:Username" + newUsername + "already exists!");
+				return false;
+				
+			}
+			
 		}
 			catch (SQLException se) {
                 se.printStackTrace();
+                
 			}
            
 			
@@ -286,6 +298,23 @@ public class UserProfileDAO {
             }
 			
 		}
+		return false;
+		
+	}
+	
+	public static boolean updateEmail(String newEmail,String username) throws SQLException {
+		Statement stmt=null;
+		
+		Connection conn=null;
+		
+		
+			
+			conn=DriverManager.getConnection(DB_URL,USER,PASS);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			Queries.updateEmail(stmt,newEmail,username);
+			
+            
+		
 		
 	}
 	
