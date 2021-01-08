@@ -4,6 +4,7 @@ import java.awt.Button;
 import java.awt.Color;
 import java.awt.Toolkit;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,6 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JRadioButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class SignInUI extends JFrame {
 	/**
@@ -50,6 +53,7 @@ public class SignInUI extends JFrame {
 	JLabel lblOr = new JLabel("Or");
 	JRadioButton singleUserRadioButton = new JRadioButton("Single User");
 	JRadioButton organizationRadioButton = new JRadioButton("Organization");
+	ButtonGroup group=new ButtonGroup();
 
 
 	// Create the frame.
@@ -64,6 +68,10 @@ public class SignInUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		group.add(singleUserRadioButton);
+		group.add(organizationRadioButton);
+		
 		
 		btnLogin.setBounds(199, 559, 74, 22);
 		btnLogin.setForeground(Color.WHITE);
@@ -171,9 +179,32 @@ public class SignInUI extends JFrame {
 		contentPane.add(lblOr);
 		contentPane.add(resetButton);
 		contentPane.add(signUpButton);
+		
+		
+		singleUserRadioButton.addActionListener(new ActionListener() {
+		
+			
+		public void actionPerformed(ActionEvent arg0) {
+			
+				organizationRadioButton.setSelected(false);
+				singleUserRadioButton.setSelected(true);
+			
+			}
+		});
 		singleUserRadioButton.setForeground(Color.WHITE);
 		
 		singleUserRadioButton.setContentAreaFilled(false);
+		
+		
+		organizationRadioButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+					singleUserRadioButton.setSelected(false);
+					organizationRadioButton.setSelected(true);
+					
+				}
+			
+		});
 		
 		organizationRadioButton.setForeground(Color.WHITE);
 		organizationRadioButton.setContentAreaFilled(false);
@@ -194,13 +225,7 @@ public class SignInUI extends JFrame {
 	}
 
 	
-	public JRadioButton getOrganizationRadioButton() {
-		return organizationRadioButton;
-	}
 	
-	public JRadioButton getSingleUserRadioButton() {
-		return singleUserRadioButton;
-	}
 	
 	public JButton getDeleteButton() {
 		return resetButton;

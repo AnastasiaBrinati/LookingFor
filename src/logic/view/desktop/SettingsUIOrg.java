@@ -77,7 +77,7 @@ public class SettingsUIOrg extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 							
-		panel.setBackground(new Color(255, 51, 51));
+		panel.setBackground(new Color(204, 0, 0));
 		panel.setBounds(0, 54, 307, 605);
 		panel.setLayout(null);
 		nameButton.setBackground(new Color(0, 128, 128));
