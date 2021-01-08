@@ -27,7 +27,7 @@ public class UserProfileUI extends JFrame {
 	private JPanel descriptionPanel = new JPanel();
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
-	private JButton settingsButton = new JButton("Settings");
+	private JButton settingsButton = new JButton("");
 	
 	private final JLabel lblUsername = new JLabel("username");
 	private final JLabel namelbl = new JLabel("name");
@@ -92,7 +92,7 @@ public class UserProfileUI extends JFrame {
 		searchBar.setBounds(416, 11, 349, 31);
 		searchBar.setColumns(10);
 
-		settingsButton.setIcon(null);
+		
 		settingsButton.setBounds(0, 0, 55, 51);
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
@@ -106,7 +106,7 @@ public class UserProfileUI extends JFrame {
 		
 		headerPanel.add(exitButton);
 		
-		panel.setBackground(new Color(105, 105, 105));
+		panel.setBackground(new Color(204, 0, 0));
 		panel.setBounds(0, 51, 307, 593);
 		panel.setLayout(null);
 		coursesButton.setBackground(new Color(102, 205, 170));
@@ -145,13 +145,16 @@ public class UserProfileUI extends JFrame {
 		//Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
 		//eventsButton.setIcon(new ImageIcon(img4));
 		
-		Image img6=new ImageIcon(this.getClass().getResource("/house-32.png")).getImage();
-		homeButton.setIcon(new ImageIcon(img6));
-		homeButton.setContentAreaFilled(false);
+		Image img= new ImageIcon(this.getClass().getResource("/house32.png")).getImage();
+		homeButton.setIcon(new ImageIcon(img));
+		
+		Image img2= new ImageIcon(this.getClass().getResource("/settings-32.png")).getImage();
+		settingsButton.setIcon(new ImageIcon(img2));
+		
 		
 		RoutineButton.setContentAreaFilled(true);
 		RoutineButton.setBackground(new Color(102, 205, 170));
-		RoutineButton.setBounds(10, 332, 287, 57);
+		RoutineButton.setBounds(10, 262, 287, 57);
 		
 		panel.add(RoutineButton);
 	
