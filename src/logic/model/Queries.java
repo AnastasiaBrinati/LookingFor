@@ -128,6 +128,13 @@ public class Queries {
 
 	}
 	
+	public static int updatePassword(Statement stmt,String newPassword,String username) throws SQLException {
+		String updateStatement = String.format("UPDATE  users set password='%s' WHERE username = %s",newPassword,username);
+        System.out.println(updateStatement);
+        return stmt.executeUpdate(updateStatement);
+
+	}
+	
 	
 	
 }

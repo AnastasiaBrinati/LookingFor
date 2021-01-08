@@ -30,7 +30,7 @@ public class OrganizationBean {
 	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String passwd) {
+	public static void setPassword(String passwd) {
 		password = passwd;
 	}
 	

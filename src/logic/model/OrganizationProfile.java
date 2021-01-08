@@ -92,6 +92,17 @@ public class OrganizationProfile {
 		return true;
 		
 	}
+	
+	public static boolean changePassword(String newPassword) throws Exception {
+		
+		OrganizationDAO orgDAO = new OrganizationDAO();
+		if(orgDAO.emailAlreadyExists(email, name)) {
+			return false;
+		}
+		orgDAO.changeUsername(email);
+		return true;
+		
+	}
 
 	
 }

@@ -110,6 +110,8 @@ public class UserProfile {
 	public List<Event> getEvents() {
 		return events;
 	}
+	
+	
 	public static void createNewProfile(String name, String surname, String username, String email,String password,String type) throws SQLException {
 		
 		UserProfileDAO.addNewProfile(name,surname,username,email,password,type);
@@ -117,6 +119,8 @@ public class UserProfile {
 	}
 	
 	
+	//UPDATES
+	//changing name, surname and username
 	public static boolean changeCredentials(String newName,String newSurname,String newUsername) throws SQLException {
 		
 			if(UserProfileDAO.updateCredentials(newName, newSurname, newUsername, username)) {
@@ -125,21 +129,27 @@ public class UserProfile {
 			return false;	
 	}
 	
-	public static boolean changeCredentials(String newName,String newSurname) throws SQLException {
+	//changing only name and surname
+	public static void changeCredentials(String newName,String newSurname) throws SQLException {
 		
 		if(UserProfileDAO.updateCredentialsWithoutUsername(newName, newSurname, username)) {
-			return true;
+			return;
 		}
-		return false;	
-}
+	}
 	
-	public static boolean changeCredentials(String newEmail) throws SQLException {
+	public static void changeCredentials(String newEmail) throws SQLException {
 		
 		if(UserProfileDAO.updateEmail(newEmail,username)) {
-			return true;
+			return;	
 		}
-		return false;	
-} 
+	} 
+	
+	public static void changePassword(String newPassword) throws SQLException {
+		
+		if(UserProfileDAO.updatePassword(newPassword ,username)) {
+			return;
+		}
+	} 
 	
 	
 	
