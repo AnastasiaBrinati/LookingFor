@@ -72,6 +72,7 @@ public class SettingsControllerGOrg {
 		view.getHomeButton().addActionListener(gestoreHome);
 		
 		
+		
 		ActionListener gestoreCancel = new ActionListener(){
 
 			@Override
@@ -91,6 +92,17 @@ public class SettingsControllerGOrg {
 
 		};
 		view.getCancelButton2().addActionListener(gestoreCancel2);
+		
+		ActionListener gestoreCancel3 = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				setCredentials();
+			}
+
+		};
+		view.getCancelButton3().addActionListener(gestoreCancel3);
+		
 		
 		
 		ActionListener gestoreName = new ActionListener(){
@@ -113,6 +125,16 @@ public class SettingsControllerGOrg {
 
 		};
 		view.getEmailButton().addActionListener(gestoreEmail);
+		
+		ActionListener gestorePassword = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				view.setPasswordPanelVisible();
+			}
+
+		};
+		view.getPasswordButton().addActionListener(gestorePassword);
 		
 		
 		

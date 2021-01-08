@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import logic.controller.NewCourseBean;
 import logic.model.OrganizationBean;
 import logic.view.desktop.OrganizationProfileUI;
+import logic.view.desktop.SettingsUIOrg;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.HomeUI;
 
@@ -22,6 +23,7 @@ public class OrganizationControllerG{
 		if (instance == null) {
 			instance = new OrganizationControllerG(view);
 			instance.assegnaGestori();
+			displayCourses();
 		}
 		setCredentials();
 		viewOrganizationProfileUI();
@@ -62,6 +64,17 @@ public class OrganizationControllerG{
 		};
 		view.getProfileButton().addActionListener(gestoreLogin);
 		
+		ActionListener gestoreBack = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+					view.setDescriptionPanelVisible();
+			}
+		};
+		view.getBackButton().addActionListener(gestoreBack);
+		
+		
+		
 		////////////////////////////////////////////////////////////////////////
 		//Da qui inizia la sequenza di bottoni per il caso d'uso new course
 		//showing CoursesPanel
@@ -70,7 +83,6 @@ public class OrganizationControllerG{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				view.setCoursesPanelVisible();
-				displayCourses();
 			}
 		};
 		view.getCoursesButton().addActionListener(gestoreCourses);
@@ -94,7 +106,7 @@ public class OrganizationControllerG{
 				try {
 					NewCourseBean.addCourse(newCourseBean);
 					view.setCoursesPanelVisible();
-					displayCourses();
+					displayOneCourse(newCourseBean.getName());
 					
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -139,14 +151,31 @@ public class OrganizationControllerG{
 			}
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
+		
+		ActionListener gestoreSettings = new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					SettingsUIOrg settingUI = new SettingsUIOrg();
+					SettingsControllerGOrg controller = SettingsControllerGOrg.getInstance(settingUI);
+					view.setVisible(false);
+				}
+			};
+			view.getSettingButton().addActionListener(gestoreSettings);
 
+	}
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	private static void displayOneCourse(String name) {
+		view.createCourseFrame(name);
 	}
 	
 	private static void displayCourses() {
 		
 		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
 			String name = OrganizationBean.getCourses().get(i).getName();
-			System.out.println(name);
+			System.out.println("considero il seguente corso"+name);
 			view.createCourseFrame(name);
 		}
 		
