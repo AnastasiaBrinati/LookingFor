@@ -134,8 +134,16 @@ public class Queries {
         return stmt.executeUpdate(updateStatement);
 
 	}
+
+	public static ResultSet getUserCourse(Statement stmt, String organizationName,String courseName) throws SQLException {
+		
+        String sql = "SELECT * FROM courses WHERE organization= '" + organizationName + "' AND name = '" + courseName + "';";       
+		
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+	}
 	
-	
+  
 	
 }
 

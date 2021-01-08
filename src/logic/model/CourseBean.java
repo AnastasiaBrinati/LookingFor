@@ -3,7 +3,7 @@ package logic.model;
 
 
 
-public class Course {
+public class CourseBean {
 	
 	private String name;
 	private String courseID;
@@ -76,17 +76,24 @@ public class Course {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public static void setCourse(CourseBean courseBean,String courseName,String organizationName) throws Exception {
+		// TODO Auto-generated method stub
+		Course course=new Course();
+		course=Course.setCourseCredentials(courseName,organizationName);
+		courseBean.setName(course.getName());
+		courseBean.setOrganization(course.getOrganization());
+		courseBean.setLessonPrice(course.getLessonPrice());
+		courseBean.setMonthlyPrice(course.getMonthlyPrice());
+		courseBean.setSport(course.getSport());
+		courseBean.setAvailability(course.getAvailability());
+		courseBean.setDescription(course.getDescription());
+		
+		
+		
+	}
 	
-	public void addCourse(Course course) throws Exception {
-		
-		CourseDAO.addCourse(course);
-	}
-	public static Course setCourseCredentials(String courseName,String organizationName) throws Exception {
-		CourseDAO courseDAO=new CourseDAO();
-		return courseDAO.getCourse(courseName,organizationName);
-		
-		
-	}
+	
+	
 }
 
 	

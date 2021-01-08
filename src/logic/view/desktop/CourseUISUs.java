@@ -52,7 +52,14 @@ public class CourseUISUs extends JFrame {
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("");
 	private JButton exitButton = new JButton("");
-
+	JLabel nameLbl = new JLabel("Name");
+	JLabel sportLbl = new JLabel("Sport");
+	JLabel organizationLbl = new JLabel("Organization");
+	JLabel availabilityLbl = new JLabel("7");
+	JLabel lessonPriceLbl = new JLabel("$20.00");
+	JLabel instructorNameLbl = new JLabel("John");
+	JLabel monthlyPriceLbl = new JLabel("$50.00");
+	JTextArea descriptionTextArea = new JTextArea();
 
 	public CourseUISUs() {
 
@@ -139,13 +146,13 @@ public class CourseUISUs extends JFrame {
 		lblNewLabel_1.setBounds(10, 11, 126, 126);
 		panel_1.add(lblNewLabel_1);
 		
-		JLabel nameLbl = new JLabel("Name");
+		
 		nameLbl.setForeground(new Color(255, 255, 255));
 		nameLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 23));
 		nameLbl.setBounds(146, 22, 61, 14);
 		panel_1.add(nameLbl);
 		
-		JLabel sportLbl = new JLabel("Sport");
+		
 		sportLbl.setForeground(Color.WHITE);
 		sportLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		sportLbl.setBounds(146, 47, 61, 14);
@@ -153,17 +160,17 @@ public class CourseUISUs extends JFrame {
 		
 		JButton joinButton = new JButton("Join");
 		joinButton.setForeground(new Color(255, 255, 255));
-		joinButton.setBackground(new Color(105, 105, 105));
-		joinButton.setBounds(900, 44, 157, 65);
+		joinButton.setBackground(new Color(0, 128, 0));
+		joinButton.setBounds(884, 47, 157, 65);
 		panel_1.add(joinButton);
 		
-		JLabel organizationLbl = new JLabel("Organization");
+		
 		organizationLbl.setForeground(Color.WHITE);
 		organizationLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		organizationLbl.setBounds(146, 72, 145, 14);
 		panel_1.add(organizationLbl);
 		
-		JTextArea descriptionTextArea = new JTextArea();
+		
 		descriptionTextArea.setBackground(new Color(230, 230, 250));
 		descriptionTextArea.setBounds(61, 197, 758, 128);
 		mainPanel.add(descriptionTextArea);
@@ -186,13 +193,13 @@ public class CourseUISUs extends JFrame {
 		lblMonthlyPrice.setBounds(61, 410, 113, 14);
 		mainPanel.add(lblMonthlyPrice);
 		
-		JLabel lessonPriceLbl = new JLabel("$20.00");
+		
 		lessonPriceLbl.setForeground(new Color(0, 0, 0));
 		lessonPriceLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		lessonPriceLbl.setBounds(71, 381, 61, 14);
 		mainPanel.add(lessonPriceLbl);
 		
-		JLabel monthlyPriceLbl = new JLabel("$50.00");
+		
 		monthlyPriceLbl.setForeground(Color.BLACK);
 		monthlyPriceLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		monthlyPriceLbl.setBounds(71, 435, 61, 14);
@@ -204,7 +211,7 @@ public class CourseUISUs extends JFrame {
 		lblInstructor.setBounds(61, 460, 113, 14);
 		mainPanel.add(lblInstructor);
 		
-		JLabel instructorNameLbl = new JLabel("John");
+		
 		instructorNameLbl.setForeground(Color.BLACK);
 		instructorNameLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		instructorNameLbl.setBounds(71, 485, 61, 14);
@@ -216,7 +223,7 @@ public class CourseUISUs extends JFrame {
 		lblAvailability.setBounds(61, 510, 113, 14);
 		mainPanel.add(lblAvailability);
 		
-		JLabel availabilityLbl = new JLabel("7");
+		
 		availabilityLbl.setForeground(Color.BLACK);
 		availabilityLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		availabilityLbl.setBounds(71, 535, 61, 14);
@@ -232,6 +239,20 @@ public class CourseUISUs extends JFrame {
 	}
 	public JButton getExitButton() {
 		return exitButton;
+	}
+
+	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice,
+			String description, String instructorName, String sport) {
+		// TODO Auto-generated method stub
+		nameLbl.setText(name);
+		organizationLbl.setText(organization);
+		lessonPriceLbl.setText(lessonPrice);
+		monthlyPriceLbl.setText(monthlyPrice);
+		descriptionTextArea.setText(description);
+		instructorNameLbl.setText(instructorName);
+		sportLbl.setText(sport);
+		
+		
 	}
 }
 	

@@ -151,6 +151,12 @@ public class CourseUIOrg extends JFrame {
 		sportLbl.setBounds(146, 47, 61, 14);
 		panel_1.add(sportLbl);
 		
+		JButton deleteButton = new JButton("Delete ");
+		deleteButton.setForeground(Color.WHITE);
+		deleteButton.setBackground(Color.RED);
+		deleteButton.setBounds(920, 44, 133, 63);
+		panel_1.add(deleteButton);
+		
 		JTextArea descriptionTextArea = new JTextArea();
 		descriptionTextArea.setBackground(new Color(230, 230, 250));
 		descriptionTextArea.setBounds(61, 197, 758, 128);

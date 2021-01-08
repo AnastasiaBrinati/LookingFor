@@ -153,7 +153,7 @@ public class EventUISUs extends JFrame {
 		
 		JButton joinButton = new JButton("Join");
 		joinButton.setForeground(new Color(255, 255, 255));
-		joinButton.setBackground(new Color(105, 105, 105));
+		joinButton.setBackground(new Color(0, 128, 0));
 		joinButton.setBounds(900, 44, 157, 65);
 		panel_1.add(joinButton);
 		
