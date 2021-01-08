@@ -337,14 +337,10 @@ public class UserProfileDAO {
 	}
 	
 	public static boolean updateEmail(String newEmail,String username) throws SQLException {
+		
 		Statement stmt=null;
-<<<<<<< .mine
 		Connection conn=null;
-		
-||||||| .r218
-		
-=======
->>>>>>> .r226
+
 		
 			
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
@@ -359,21 +355,6 @@ public class UserProfileDAO {
 		
 	}
 	
-	public static boolean updatePassword(String newPassword,String username) throws SQLException {
-		
-		Statement stmt=null;
-		Connection conn=null;
-		
-		
-			
-			conn=DriverManager.getConnection(DB_URL,USER,PASS);
-			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			Queries.updatePassword(stmt,newPassword,username);
-			UserProfile.setPassword(newPassword);
-			UserProfile.setEmail(newEmail);
-			return true;	
-		
-	}
 	
 	public static boolean updatePassword(String newPassword,String username) throws SQLException {
 		
