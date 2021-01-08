@@ -110,26 +110,26 @@ public class Queries {
 	
 	//per il singolo utente
 	public static int updateCredentials(Statement stmt, String newName,String newSurname,String newUsername,String oldUsername) throws SQLException  {
-        String updateStatement = String.format("UPDATE  users set name='%s', surname='%s', username=%s WHERE username = %s", newName,newSurname,newUsername,oldUsername);
+        String updateStatement = String.format("UPDATE  users set name='%s', surname='%s', username='%s' WHERE username = '%s' ", newName,newSurname,newUsername,oldUsername);
         System.out.println(updateStatement);
         return stmt.executeUpdate(updateStatement);
     }
 	
 	public static int updateCredentialsNoUsername(Statement stmt, String newName,String newSurname,String oldUsername) throws SQLException  {
-        String updateStatement = String.format("UPDATE  users set name='%s', surname='%s' WHERE username = %s", newName,newSurname,oldUsername);
+        String updateStatement = String.format("UPDATE  users set name='%s', surname='%s' WHERE username = '%s' ", newName,newSurname,oldUsername);
         System.out.println(updateStatement);
         return stmt.executeUpdate(updateStatement);
     }
 
 	public static int updateEmail(Statement stmt,String newEmail,String username) throws SQLException {
-		String updateStatement = String.format("UPDATE  users set email='%s' WHERE username = %s",newEmail,username);
+		String updateStatement = String.format("UPDATE  users set email='%s' WHERE username = '%s' ",newEmail,username);
         System.out.println(updateStatement);
         return stmt.executeUpdate(updateStatement);
 
 	}
 	
 	public static int updatePassword(Statement stmt,String newPassword,String username) throws SQLException {
-		String updateStatement = String.format("UPDATE  users set password='%s' WHERE username = %s",newPassword,username);
+		String updateStatement = String.format("UPDATE  users set password='%s' WHERE username = '%s' ",newPassword,username);
         System.out.println(updateStatement);
         return stmt.executeUpdate(updateStatement);
 

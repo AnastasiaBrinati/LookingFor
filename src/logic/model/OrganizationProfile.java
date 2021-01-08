@@ -70,37 +70,33 @@ public class OrganizationProfile {
 	}
 	
 	
-	public static boolean changeUsername(String username) throws Exception{
+	public static void changeUsername(String newUsername) throws Exception{
 		
 		OrganizationDAO orgDAO = new OrganizationDAO();
-		if(orgDAO.usernameAlreadyExists(username)) {
-			return false;
-		}
-		orgDAO.changeUsername(username);
-		return true;
+		
+		orgDAO.changeUsername(newUsername, name);
 		
 	}
 
 	
-	public static boolean changeEmail(String email) throws Exception {
+	public static void changeEmail(String newEmail) throws Exception {
 		
 		OrganizationDAO orgDAO = new OrganizationDAO();
-		if(orgDAO.emailAlreadyExists(email, name)) {
-			return false;
+		if(!orgDAO.changeEmail(newEmail, name)) {
+			//handle failure
+			return;
 		}
-		orgDAO.changeUsername(email);
-		return true;
 		
 	}
 	
-	public static boolean changePassword(String newPassword) throws Exception {
+	public static void changePassword(String newPassword) throws Exception {
 		
 		OrganizationDAO orgDAO = new OrganizationDAO();
-		if(orgDAO.emailAlreadyExists(email, name)) {
-			return false;
+		if(!orgDAO.changePassword(newPassword, name)) {
+			//handle failure
+			return;
 		}
-		orgDAO.changeUsername(email);
-		return true;
+
 		
 	}
 

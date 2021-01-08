@@ -88,6 +88,39 @@ public class SettingsUIOrg extends JFrame {
 		//exitButton.setIcon(new ImageIcon(img5));
 		exitButton.setContentAreaFilled(false);
 		
+				
+		textFieldName.setBounds(223, 58, 241, 25);
+		textFieldName.setColumns(10);
+		namePanel.setBounds(305, 168, 992, 491);
+		
+		contentPane.add(namePanel);
+		namePanel.setLayout(null);
+		
+		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		nameLbl.setBounds(49, 54, 116, 29);
+		namePanel.add(nameLbl);
+		
+		namePanel.add(textFieldName);
+		saveButton.setBackground(new Color(255, 99, 71));
+		saveButton.setBounds(262, 355, 158, 38);
+		
+		namePanel.add(saveButton);
+		cancelButton.setBounds(94, 355, 158, 38);
+		namePanel.add(cancelButton);
+		
+		JLabel imglbl = new JLabel("Image");
+		imglbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		imglbl.setBounds(49, 136, 116, 29);
+		namePanel.add(imglbl);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(223, 144, 241, 151);
+		namePanel.add(lblNewLabel);
+		
+		pencilTextField2.setBounds(474, 51, 44, 38);
+		
+		namePanel.add(pencilTextField2);
+		
 		//Image img3=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 		//pencilTextField2.setIcon(new ImageIcon(img3));
 		
@@ -213,39 +246,6 @@ public class SettingsUIOrg extends JFrame {
 											
 							
 									subtitlePanel.add(subtitlelbl);
-			
-					
-			textFieldName.setBounds(223, 58, 241, 25);
-			textFieldName.setColumns(10);
-			namePanel.setBounds(305, 168, 992, 491);
-			
-			contentPane.add(namePanel);
-			namePanel.setLayout(null);
-			
-			nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-			nameLbl.setBounds(49, 54, 116, 29);
-			namePanel.add(nameLbl);
-			
-			namePanel.add(textFieldName);
-			saveButton.setBackground(new Color(255, 99, 71));
-			saveButton.setBounds(262, 355, 158, 38);
-			
-			namePanel.add(saveButton);
-			cancelButton.setBounds(94, 355, 158, 38);
-			namePanel.add(cancelButton);
-			
-			JLabel imglbl = new JLabel("Image");
-			imglbl.setFont(new Font("Arial", Font.PLAIN, 18));
-			imglbl.setBounds(49, 136, 116, 29);
-			namePanel.add(imglbl);
-			
-			JLabel lblNewLabel = new JLabel("New label");
-			lblNewLabel.setBounds(223, 144, 241, 151);
-			namePanel.add(lblNewLabel);
-			
-			pencilTextField2.setBounds(474, 51, 44, 38);
-			
-			namePanel.add(pencilTextField2);
 					/*
 		Image img1=new ImageIcon(this.getClass().getResource("/049-edit.png")).getImage();
 		

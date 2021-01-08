@@ -17,94 +17,81 @@ public class OrganizationDAO {
     
    //MANCA LA REFLECTION
     
-    public void changeUsername(String username) {
-    	
+    public void changeUsername(String newUsername, String oldUsername) {
+    	Statement stmt=null;
+		
+		Connection conn=null;
+		
+		try {
+			
+			conn=DriverManager.getConnection(DB_URL,USER,PASS);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			if(Queries.doesThisUsernameAlreadyExist(stmt, oldUsername)==null) {
+				Queries.updateCredentials(stmt, "", "", newUsername, oldUsername);
+				OrganizationProfile.setName(newUsername);
+			}
+		}
+			catch (SQLException se) {
+                se.printStackTrace();
+                
+			}
+           
+			
+            
+		finally {
+			
+			
+            try {
+                if (stmt != null)
+                    stmt.close();
+               
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+			
+		}
+
     }
-	public Boolean usernameAlreadyExists(String username) throws Exception {
-		
-		//dichiarazioni 
-		Statement stmt=null;
-		Connection conn=null;
-		
-		try {
-			//step2: loading dinamico driver mysql
-			//Class.forName(DRIVER_CLASS_NAME);
-			
-			//step3: apertura connessione
-			conn=DriverManager.getConnection(DB_URL,USER,PASS);
-			//step4: creazione ed esecuzione query 
-			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = Queries.doesThisUsernameAlreadyExist(stmt, username);
-			
-			if (rs.first()){				
-					Exception e = new Exception("Username Found matching with username: "+username);
-	            	throw e;
-			}
-			return false;
-            
-            
-		}finally {
-			
-			
-            try {
-                if (stmt != null)
-                    stmt.close();
-                
-            } catch (SQLException se2) {
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-			
-		}
-			
-	}
+    
+    
+    
 	
-	public Boolean emailAlreadyExists(String email, String username) throws Exception {
+    public boolean changeEmail(String newEmail,String username) throws SQLException {
 		
-		//dichiarazioni 
+    	Statement stmt=null;
+		Connection conn=null;
+		
+		
+			
+			conn=DriverManager.getConnection(DB_URL,USER,PASS);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			if(Queries.doesThisEmailAlreadyExist(stmt, newEmail)!=null) {
+				Queries.updateEmail(stmt,newEmail,username);
+				OrganizationProfile.setEmail(newEmail);
+				return true;	
+			}
+			return false;	
+		
+	}
+    
+    public boolean changePassword(String newPassword,String username) throws SQLException {
+		
 		Statement stmt=null;
 		Connection conn=null;
 		
-		try {
-			//step2: loading dinamico driver mysql
-			//Class.forName(DRIVER_CLASS_NAME);
+		
 			
-			//step3: apertura connessione
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
-			//step4: creazione ed esecuzione query 
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = Queries.doesThisEmailAlreadyExist(stmt, email);
-			
-			if (rs.first()){
-				
-					Exception e = new Exception("Email Found matching with email: "+email);
-	            	throw e;
-			}
-			return false;
-            
-            
-		}finally {
-			
-			
-            try {
-                if (stmt != null)
-                    stmt.close();
-                
-            } catch (SQLException se2) {
-            }
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }
-			
-		}
-			
+			Queries.updatePassword(stmt,newPassword,username);
+			OrganizationProfile.setPassword(newPassword);
+			return true;	
+		
 	}
 
 	public static void addNewProfile(String name, String surname, String username, String email, String password,String type) throws SQLException {

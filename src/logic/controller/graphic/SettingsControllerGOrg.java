@@ -148,7 +148,6 @@ public class SettingsControllerGOrg {
 
 				try {
 					SettingsOrgBean.changeEmail(settingBean);
-					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}

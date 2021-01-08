@@ -2,7 +2,6 @@ package logic.controller;
 
 import java.sql.SQLException;
 
-import logic.model.OrganizationBean;
 import logic.model.OrganizationProfile;
 import logic.model.UserProfile;
 
@@ -10,12 +9,12 @@ public class CustomizationController {
 	
 
 	//single user
-	public String changeCredentialsName(SettingsSingleUserBean settingBean) throws SQLException {
+	public void changeCredentialsName(SettingsSingleUserBean settingBean) throws SQLException {
 		if(settingBean.getUsername().equals(UserProfile.getUsername())) {
-			UserProfile.changeCredentials(settingBean.getName(), settingBean.getSurname()));
+			UserProfile.changeCredentials(settingBean.getName(), settingBean.getSurname());
 		}
 		if(!UserProfile.changeCredentials(settingBean.getName(), settingBean.getSurname(), settingBean.getUsername())) {
-			return "username already in use";
+			//return "username already in use";
 		}
 	}
 	
@@ -40,8 +39,8 @@ public class CustomizationController {
 	//organization
 	public void changeName(SettingsOrgBean settingBean) throws Exception {
 		
-		if(!OrganizationProfile.changeUsername(settingBean.getName())) {
-			//va male
+		if(settingBean.getName().equals(OrganizationProfile.getName())) {
+			OrganizationProfile.changeUsername(settingBean.getName());
 		}
 		
 	}
@@ -49,14 +48,14 @@ public class CustomizationController {
 	public void changeEmail(SettingsOrgBean settingBean) throws Exception {
 		
 		if(settingBean.getPassword().equals(OrganizationProfile.getPassword())) {
-			//fai il metodo
+			OrganizationProfile.changeEmail(settingBean.getEmail());
 		}
 	}
 	
 
-	public void changePassword(SettingsOrgBean settingBean) {
+	public void changePassword(SettingsOrgBean settingBean) throws Exception {
 		if(settingBean.getPassword().equals(OrganizationProfile.getPassword())) {
-			OrganizationProfile.changeCredentials(settingBean.getEmail());
+			OrganizationProfile.changePassword(settingBean.getPassword());
 		}
 		
 	}

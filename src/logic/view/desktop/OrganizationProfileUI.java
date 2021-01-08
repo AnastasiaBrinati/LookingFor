@@ -237,16 +237,19 @@ public class OrganizationProfileUI extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(0, 11, 269, 71);
 		panel.add(lblNewLabel);
+		coursesButton.setForeground(new Color(245, 255, 250));
 		
-		coursesButton.setBackground(new Color(102, 205, 170));
+		coursesButton.setBackground(new Color(139, 0, 0));
 		coursesButton.setBounds(0, 91, 269, 59);
 		panel.add(coursesButton);
+		eventsButton.setForeground(new Color(245, 255, 250));
 		
-		eventsButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setBackground(new Color(255, 0, 0));
 		eventsButton.setBounds(0, 147, 269, 59);
 		panel.add(eventsButton);
+		courtsButton.setForeground(new Color(245, 255, 250));
 										
-		courtsButton.setBackground(new Color(102, 205, 170));
+		courtsButton.setBackground(new Color(255, 0, 0));
 		courtsButton.setBounds(0, 203, 269, 59);
 		panel.add(courtsButton);
 		
@@ -267,7 +270,7 @@ public class OrganizationProfileUI extends JFrame {
 										
 		JLabel organizationImageLbl = new JLabel("");
 		organizationImageLbl.setHorizontalAlignment(SwingConstants.CENTER);
-		organizationImageLbl.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\icons8-ping-pong-64.png"));
+		organizationImageLbl.setIcon(new ImageIcon(""));
 		organizationImageLbl.setBounds(10, 11, 73, 71);
 		panel_1.add(organizationImageLbl);
 		descriptionPanel.setBounds(268, 145, 972, 568);
@@ -281,23 +284,23 @@ public class OrganizationProfileUI extends JFrame {
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
 		//coursesButton.setIcon(new ImageIcon(img3));
-		coursesButton.setContentAreaFilled(true);
+		//coursesButton.setContentAreaFilled(true);
 		
 		//Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
 		//eventsButton.setIcon(new ImageIcon(img4));
-		eventsButton.setContentAreaFilled(true);
+		//eventsButton.setContentAreaFilled(true);
 		
 		//Image img5=new ImageIcon(this.getClass().getResource("/015-idea.png")).getImage();
 		//courtsButton.setIcon(new ImageIcon(img5));
-		courtsButton.setContentAreaFilled(true);
+		//courtsButton.setContentAreaFilled(true);
 		
 		//Image img6=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
 		//settingsButton.setIcon(new ImageIcon(img6));
-		settingsButton.setContentAreaFilled(false);
+		//settingsButton.setContentAreaFilled(false);
 		
 		//Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
 		//exitButton.setIcon(new ImageIcon(img7));
-		exitButton.setContentAreaFilled(false);
+		//exitButton.setContentAreaFilled(false);
 		
 	}
 
@@ -306,6 +309,7 @@ public class OrganizationProfileUI extends JFrame {
 	public void createCourseFrame(String name) {
 
         JButton frame = new JButton(name);
+        System.out.println("nuovo bottone:"+name);
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
         frame.setVisible(true);
@@ -333,9 +337,9 @@ public class OrganizationProfileUI extends JFrame {
 		courtsPanel.setVisible(false);
 		eventsPanel.setVisible(false);
 		
-		coursesButton.setBackground(new Color(0, 128, 128));
-		eventsButton.setBackground(new Color(102, 205, 170));
-		courtsButton.setBackground(new Color(102, 205, 170));		
+		coursesButton.setBackground(new Color(245, 255, 250));
+		eventsButton.setBackground(new Color(255, 0, 0));
+		courtsButton.setBackground(new Color(255, 0, 0));		
 	}
 	
 	public void setEventsPanelVisible() {
@@ -345,9 +349,9 @@ public class OrganizationProfileUI extends JFrame {
 		eventsPanel.setVisible(true);
 		newCoursePanel.setVisible(false);
 		
-		coursesButton.setBackground(new Color(102, 205, 170));
-		eventsButton.setBackground(new Color(0, 128, 128));
-		courtsButton.setBackground(new Color(102, 205, 170));
+		coursesButton.setBackground(new Color(255, 0, 0));
+		eventsButton.setBackground(new Color(245, 255, 250));
+		courtsButton.setBackground(new Color(255, 0, 0));
 	}
 	
 	public void setCourtsPanelVisible() {
@@ -357,9 +361,9 @@ public class OrganizationProfileUI extends JFrame {
 		eventsPanel.setVisible(false);
 		newCoursePanel.setVisible(false);
 		
-		coursesButton.setBackground(new Color(102, 205, 170));
-		eventsButton.setBackground(new Color(102, 205, 170));
-		courtsButton.setBackground(new Color(0, 128, 128));
+		coursesButton.setBackground(new Color(255, 0, 0));
+		eventsButton.setBackground(new Color(255, 0, 0));
+		courtsButton.setBackground(new Color(245, 255, 250));
 	}
 	
 
