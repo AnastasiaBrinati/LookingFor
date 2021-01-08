@@ -73,6 +73,31 @@ public class SignUpControllerG {
 		view.getDeleteButton().addActionListener(gestoreDelete);
 		
 		
+		ActionListener gestoreTypeOrgSelected=new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				view.getSingleUserRadioButton().setSelected(false);
+				
+		}
+		};
+		view.getOrganizationRadioButton().addActionListener(gestoreTypeOrgSelected);
+		
+		ActionListener gestoreTypeSingleUserSelected=new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				view.getOrganizationRadioButton().setSelected(false);
+				
+		}
+		};
+		view.getSingleUserRadioButton().addActionListener(gestoreTypeSingleUserSelected);
+		
+		
+	
+		
 		ActionListener gestoreLogin = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

@@ -194,6 +194,14 @@ public class SignInUI extends JFrame {
 	}
 
 	
+	public JRadioButton getOrganizationRadioButton() {
+		return organizationRadioButton;
+	}
+	
+	public JRadioButton getSingleUserRadioButton() {
+		return singleUserRadioButton;
+	}
+	
 	public JButton getDeleteButton() {
 		return resetButton;
 	}

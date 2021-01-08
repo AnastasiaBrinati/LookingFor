@@ -1,4 +1,4 @@
-package logic.model;
+ package logic.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ public class UserProfileDAO {
 	
 	private static String USER = "u0uxwvy2unqsxnql";
     private static String PASS = "nH1ORFX9CBydKKphGtBO";
-    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nH1ORFX9CBydKKphGtBO@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
+    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nh1orfx9cbydkkphgtbo@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
     //private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     
    //MANCA LA REFLECTION
@@ -260,17 +260,11 @@ public class UserProfileDAO {
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			if(Queries.doesThisUsernameAlreadyExist(stmt, newUsername)==null) {
 				Queries.updateCredentials(stmt, newName, newSurname, newUsername, oldUsername);
+				UserProfile.setName(newName);
+				UserProfile.setSurname(newSurname);
+				UserProfile.setUsername(newUsername);
 				return true;
-				
 			}
-			//se il nuovo username esiste già
-			else {
-				
-				System.out.println("Username update failed:Username" + newUsername + "already exists!");
-				return false;
-				
-			}
-			
 		}
 			catch (SQLException se) {
                 se.printStackTrace();
@@ -309,6 +303,8 @@ public class UserProfileDAO {
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			Queries.updateCredentialsNoUsername(stmt, newName, newSurname, oldUsername);
+			UserProfile.setName(newName);
+			UserProfile.setSurname(newSurname);
 			return true;
 			
 		}
@@ -342,7 +338,6 @@ public class UserProfileDAO {
 	
 	public static boolean updateEmail(String newEmail,String username) throws SQLException {
 		Statement stmt=null;
-		
 		Connection conn=null;
 		
 		
@@ -350,6 +345,22 @@ public class UserProfileDAO {
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			Queries.updateEmail(stmt,newEmail,username);
+			UserProfile.setEmail(newEmail);
+			return true;	
+		
+	}
+	
+	public static boolean updatePassword(String newPassword,String username) throws SQLException {
+		
+		Statement stmt=null;
+		Connection conn=null;
+		
+		
+			
+			conn=DriverManager.getConnection(DB_URL,USER,PASS);
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			Queries.updatePassword(stmt,newPassword,username);
+			UserProfile.setPassword(newPassword);
 			return true;	
 		
 	}

@@ -137,7 +137,7 @@ public class UserProfile {
 		}
 	}
 	
-	public static void changeCredentials(String newEmail) throws SQLException {
+public static void changeCredentials(String newEmail) throws SQLException {
 		
 		if(UserProfileDAO.updateEmail(newEmail,username)) {
 			return;	

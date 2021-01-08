@@ -52,7 +52,7 @@ public class Queries {
 	
 	
 	//query to add a new Course to the DB
-	public static int addCourse(Statement stmt, Course course) throws SQLException  {
+    public static int addCourse(Statement stmt, Course course) throws SQLException  {
         String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
         course.getOrganization(),course.getName(),course.getSport(),course.getDescription(),course.getInstructorName(),String.valueOf(course.getLessonPrice()),String.valueOf(course.getMonthlyPrice()),String.valueOf(course.getAvailability()));
         
@@ -72,16 +72,16 @@ public class Queries {
         
     }
 	
-	public static int addCourt(Statement stmt, Course course) throws SQLException  {
-        String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
-        course.getOrganization(),course.getName(),course.getSport(),course.getDescription(),course.getInstructorName(),String.valueOf(course.getLessonPrice()),String.valueOf(course.getMonthlyPrice()),String.valueOf(course.getAvailability()));
-        
-        System.out.println(insertStatement);
-        return stmt.executeUpdate(insertStatement);
-        
-        
-    }
-	
+	/*public static int addCourt(Statement stmt, Court court) throws SQLException  {
+    String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
+    		court.getOrganization(),court.getName(),court.getSport(),court.getDescription(),court.getInstructorName(),String.valueOf(court.getLessonPrice()),String.valueOf(court.getMonthlyPrice()),String.valueOf(course.getAvailability()));
+    
+    System.out.println(insertStatement);
+    return stmt.executeUpdate(insertStatement);
+    
+    
+}
+*/
 	//query to insert a new user
 	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type) throws SQLException  {
         String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password,type) VALUES ('%s','%s','%s','%s','%s','%s')", name,surname,username,email,password,type);
