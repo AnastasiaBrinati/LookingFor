@@ -365,9 +365,9 @@ public class OrganizationProfileUI extends JFrame {
 
 
 	
-	public void createFrame(String name) {
+	public void createFrame(String name, String organizationName) {
 
-        JButton frame = new JButton(name);
+        ItemButton frame = new ItemButton(organizationName);
         //System.out.println("nuovo bottone:"+name);
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
