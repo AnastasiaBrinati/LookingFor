@@ -95,7 +95,7 @@ public class OrganizationControllerG{
 				view.showNewCoursePanel();
 			}
 		};
-		view.getAddButton().addActionListener(gestoreAddCourse);
+		view.getAddCourseButton().addActionListener(gestoreAddCourse);
 		
 		
 		ActionListener gestoreSaveCourse = new ActionListener() {
@@ -131,6 +131,10 @@ public class OrganizationControllerG{
 		};
 		view.getCourtsButton().addActionListener(gestoreCourts);
 		
+		
+		
+		///////////////////////////////////////////////////////////////////
+		//da qui inizia caso d'uso per aggiungere evento		
 		//showing EventsPanel
         ActionListener gestoreEvents = new ActionListener() {
 			
@@ -140,6 +144,18 @@ public class OrganizationControllerG{
 			}
 		};
 		view.getEventsButton().addActionListener(gestoreEvents);
+		
+		//click on the add button on the CoursesPanel 
+		ActionListener gestoreAddEvent = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				view.showNewEventPanel();
+			}
+		};
+		view.getAddEventButton().addActionListener(gestoreAddEvent);
+		
+		//fine caso d'uso
+		///////////////////////////////////////////////////////////////////
 		
         ActionListener gestoreHome = new ActionListener() {
 			
@@ -168,7 +184,7 @@ public class OrganizationControllerG{
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	private static void displayOneCourse(String name) {
-		view.createCourseFrame(name);
+		view.createFrame(name);
 	}
 	
 	private static void displayCourses() {
@@ -176,7 +192,7 @@ public class OrganizationControllerG{
 		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
 			String name = OrganizationBean.getCourses().get(i).getName();
 			System.out.println("considero il seguente corso"+name);
-			view.createCourseFrame(name);
+			view.createFrame(name);
 		}
 		
 	}
