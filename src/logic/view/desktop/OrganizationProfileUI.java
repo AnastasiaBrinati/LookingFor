@@ -3,6 +3,8 @@ package logic.view.desktop;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,6 +28,10 @@ public class OrganizationProfileUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	
+	private ItemButton frame;
+	private ArrayList<ItemButton> coursesFrames;
+	 
 	private JPanel headerPanel = new JPanel();
 	private JButton homeButton = new JButton("");
 	private final JButton exitButton = new JButton("");
@@ -363,11 +369,11 @@ public class OrganizationProfileUI extends JFrame {
 		
 	}
 
-
 	
-	public void createFrame(String name, String organizationName) {
+	public void createCourseFrame(String name, String organizationName) {
 
-        ItemButton frame = new ItemButton(organizationName);
+        frame = new ItemButton(organizationName);
+        coursesFrames.add(frame);
         //System.out.println("nuovo bottone:"+name);
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
@@ -379,6 +385,15 @@ public class OrganizationProfileUI extends JFrame {
         coursesPanel.repaint();
         
     }
+	
+	public ItemButton getFrame(String frameName) {
+		for(int i=0; i<coursesFrames.size(); i++) {
+			if(coursesFrames.get(i).getText().equals(frameName)) {
+				return coursesFrames.get(i);
+			}
+		}
+		return null;
+	}
 	
 	public void setDescriptionPanelVisible() {
 		backButton.setVisible(false);

@@ -4,13 +4,13 @@ import javax.swing.JButton;
 
 public class ItemButton extends JButton {
 	
-	private String organizationName;
+	private static String organizationName;
 	
 	public ItemButton(String orgName) {
-		this.organizationName=orgName;
+		organizationName=orgName;
 	}
 
-	public String getOrganizationName() {
+	public  String getOrganizationName() {
 		return organizationName;
 	}
 
