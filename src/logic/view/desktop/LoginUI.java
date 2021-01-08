@@ -47,7 +47,7 @@ public class LoginUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 437, 539);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 128, 128));
+		contentPane.setBackground(new Color(255, 0, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -83,7 +83,7 @@ public class LoginUI extends JFrame {
 		Alternative.setBounds(192, 402, 21, 14);
 		contentPane.add(Alternative);
 
-		lblTitle.setForeground(new Color(0, 0, 0));
+		lblTitle.setForeground(new Color(255, 255, 255));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 70));
 		lblTitle.setBounds(84, 34, 263, 103);
 

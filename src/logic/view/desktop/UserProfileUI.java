@@ -79,13 +79,12 @@ public class UserProfileUI extends JFrame {
 								*/
 		
 		//header
-		headerPanel.setBackground(new Color(0, 128, 128));
+		headerPanel.setBackground(new Color(255, 0, 0));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1297, 51);
 		headerPanel.setLayout(null);
 
-		homeButton.setBounds(367, 0, 48, 51);
-		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
+		homeButton.setBounds(360, 0, 55, 51);
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);
 
@@ -107,7 +106,7 @@ public class UserProfileUI extends JFrame {
 		
 		headerPanel.add(exitButton);
 		
-		panel.setBackground(new Color(102, 205, 170));
+		panel.setBackground(new Color(105, 105, 105));
 		panel.setBounds(0, 51, 307, 593);
 		panel.setLayout(null);
 		coursesButton.setBackground(new Color(102, 205, 170));
@@ -120,7 +119,7 @@ public class UserProfileUI extends JFrame {
 		contentPane.add(panel);
 		lblTitle.setBounds(89, 27, 141, 41);
 		panel.add(lblTitle);
-		lblTitle.setForeground(new Color(0, 0, 0));
+		lblTitle.setForeground(new Color(255, 255, 255));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
 		backButton.setBackground(new Color(102, 205, 170));
 		backButton.setBounds(10, 107, 64, 36);
@@ -145,7 +144,11 @@ public class UserProfileUI extends JFrame {
 		
 		//Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
 		//eventsButton.setIcon(new ImageIcon(img4));
-		eventsButton.setContentAreaFilled(true);
+		
+		Image img6=new ImageIcon(this.getClass().getResource("/house-32.png")).getImage();
+		homeButton.setIcon(new ImageIcon(img6));
+		homeButton.setContentAreaFilled(false);
+		
 		RoutineButton.setContentAreaFilled(true);
 		RoutineButton.setBackground(new Color(102, 205, 170));
 		RoutineButton.setBounds(10, 332, 287, 57);

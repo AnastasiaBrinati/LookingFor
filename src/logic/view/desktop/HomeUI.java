@@ -60,11 +60,11 @@ public class HomeUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		panel.setBackground(new Color(0, 128, 128));
+		panel.setBackground(new Color(255, 0, 0));
 		panel.setBounds(0, 0, 1088, 54);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);

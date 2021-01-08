@@ -77,7 +77,7 @@ public class SettingsUIOrg extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 							
-		panel.setBackground(new Color(102, 205, 170));
+		panel.setBackground(new Color(255, 51, 51));
 		panel.setBounds(0, 54, 307, 605);
 		panel.setLayout(null);
 		nameButton.setBackground(new Color(0, 128, 128));
@@ -164,7 +164,7 @@ public class SettingsUIOrg extends JFrame {
 		contentPane.add(panel);
 		lblTitle.setBounds(89, 27, 141, 41);
 		panel.add(lblTitle);
-		lblTitle.setForeground(new Color(0, 0, 0));
+		lblTitle.setForeground(new Color(255, 255, 255));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
 		emailButton.setBackground(new Color(102, 205, 170));
 		emailButton.setBounds(10, 219, 287, 57);
@@ -175,7 +175,7 @@ public class SettingsUIOrg extends JFrame {
 		panel.add(passwordButton);
 					
 							//header
-							headerPanel.setBackground(new Color(0, 128, 128));
+							headerPanel.setBackground(new Color(255, 0, 0));
 							headerPanel.setForeground(new Color(255, 165, 0));
 							headerPanel.setBounds(0, 0, 1297, 54);
 							headerPanel.setLayout(null);

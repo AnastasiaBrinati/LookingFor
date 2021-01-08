@@ -60,7 +60,7 @@ public class SignInUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 472, 630);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 128, 128));
+		contentPane.setBackground(new Color(255, 0, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -142,7 +142,6 @@ public class SignInUI extends JFrame {
 
 		resetButton.setBackground(Color.GRAY);
 		resetButton.setBounds(199, 387, 89, 23);
-		signUpButton.setForeground(Color.WHITE);
 
 		signUpButton.setBackground(new Color(255, 99, 71));
 		signUpButton.setBounds(304, 387, 89, 23);
@@ -188,7 +187,7 @@ public class SignInUI extends JFrame {
 		contentPane.add(organizationRadioButton);
 		
 		JLabel lblNewLabel = new JLabel("Sportee");
-		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 74));
 		lblNewLabel.setBounds(104, 11, 289, 82);
 		contentPane.add(lblNewLabel);

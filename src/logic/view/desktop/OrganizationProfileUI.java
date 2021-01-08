@@ -189,7 +189,7 @@ public class OrganizationProfileUI extends JFrame {
 		exitButton.setBorder(null);
 		
 		headerPanel.setBounds(0, 0, 1400, 54);
-		headerPanel.setBackground(new Color(0, 128, 128));
+		headerPanel.setBackground(new Color(255, 0, 0));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		homeButton.setBounds(314, 0, 45, 42);
 		homeButton.setIcon(new ImageIcon(""));
@@ -226,7 +226,7 @@ public class OrganizationProfileUI extends JFrame {
 		lblNewLabel_3.setBounds(10, 34, 46, 14);
 		courtsPanel.add(lblNewLabel_3);
 		panel.setBounds(0, 53, 269, 660);
-		panel.setBackground(new Color(102, 205, 170));
+		panel.setBackground(new Color(255, 0, 0));
 		
 		contentPane.add(panel);
 		panel.setLayout(null);
