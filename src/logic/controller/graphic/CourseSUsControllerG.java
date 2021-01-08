@@ -16,18 +16,18 @@ public class CourseSUsControllerG {
 	private static CourseSUsControllerG instance=null;
 	//bean 
 	
-	private CourseSUsControllerG() {
-		
+	private CourseSUsControllerG(CourseUISUs view) {
+		this.view = view;
 	}
 	
-	public static synchronized CourseSUsControllerG getInstance(CourseUISUs view) {
+	public static synchronized CourseSUsControllerG getInstance(CourseUISUs view, String courseName, String orgName) throws Exception {
 		if(instance==null) {
-			instance = new LoginControllerG(view);
+			instance = new CourseSUsControllerG(view);
 			instance.assegnaGestori();
 		}
 		
 		//showLoginUI();
-		setCourseCredentials();
+		setCourseCredentials(courseName, orgName);
 		return instance;
 	}
 	
@@ -43,7 +43,7 @@ public class CourseSUsControllerG {
 
 	}
 	
-	private static void setCourseCredentials(String courseName,String organizationName) {
+	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {
 		CourseBean courseBean = new CourseBean();
 		CourseBean.setCourse(courseBean, courseName, organizationName);
 		view.setCredentials(courseBean.getName(),courseBean.getOrganization(),courseBean.getLessonPrice(),courseBean.getMonthlyPrice(),

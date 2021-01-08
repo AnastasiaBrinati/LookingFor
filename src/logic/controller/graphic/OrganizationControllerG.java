@@ -8,7 +8,10 @@ import logic.model.OrganizationBean;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.SettingsUIOrg;
 import logic.view.desktop.LoginUI;
+import logic.view.desktop.CourseUIOrg;
+import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.HomeUI;
+import logic.view.desktop.ItemButton;
 
 public class OrganizationControllerG{
 
@@ -38,6 +41,7 @@ public class OrganizationControllerG{
 	}
 
 	public void assegnaGestori(){
+		
 		
 		ActionListener gestoreExit = new ActionListener(){
 
@@ -157,6 +161,11 @@ public class OrganizationControllerG{
 		//fine caso d'uso
 		///////////////////////////////////////////////////////////////////
 		
+	
+		assegnaGestoriCorsi();
+			
+		
+		
         ActionListener gestoreHome = new ActionListener() {
 			
 			@Override
@@ -183,16 +192,42 @@ public class OrganizationControllerG{
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	private static void assegnaGestoriCorsi() {
+		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
+			
+			String courseName = OrganizationBean.getCourses().get(i).getName();
+			ActionListener gestoreCourseFrame = new ActionListener() {
+			
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					ItemButton ib = (ItemButton) e.getSource();
+					CourseUISUs courseUI = new CourseUISUs();
+					//PER ORA 
+					try {
+						CourseSUsControllerG controller = CourseSUsControllerG.getInstance(courseUI, ib.getText(), ib.getOrganizationName());
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					view.setVisible(false);
+				}
+			};
+		
+			view.getFrame(courseName).addActionListener(gestoreCourseFrame);
+			
+		}
+	}
+	
+	
 	private static void displayOneCourse(String name) {
-		view.createFrame(name);
+		view.createCourseFrame(name, OrganizationBean.getName());
 	}
 	
 	private static void displayCourses() {
 		
 		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
-			String name = OrganizationBean.getCourses().get(i).getName();
-			System.out.println("considero il seguente corso"+name);
-			view.createFrame(name);
+			String courseName = OrganizationBean.getCourses().get(i).getName();
+			view.createCourseFrame(courseName, OrganizationBean.getName());
 		}
 		
 	}
