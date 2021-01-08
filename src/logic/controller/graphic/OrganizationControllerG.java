@@ -70,6 +70,7 @@ public class OrganizationControllerG{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				view.setCoursesPanelVisible();
+				displayCourses();
 			}
 		};
 		view.getCoursesButton().addActionListener(gestoreCourses);
@@ -92,9 +93,9 @@ public class OrganizationControllerG{
 				getCredentials(newCourseBean);
 				try {
 					NewCourseBean.addCourse(newCourseBean);
-					displayCourses();
 					view.setCoursesPanelVisible();
-					view.repaint();
+					displayCourses();
+					
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -145,6 +146,7 @@ public class OrganizationControllerG{
 		
 		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
 			String name = OrganizationBean.getCourses().get(i).getName();
+			System.out.println(name);
 			view.createCourseFrame(name);
 		}
 		
