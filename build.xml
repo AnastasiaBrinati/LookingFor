@@ -5,27 +5,29 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="Sporty">
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../eclipse/java-2020-092/eclipse/"/>
+    <property name="ECLIPSE_HOME" value="../../../../../eclipse/java-2020-092/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="14"/>
     <property name="source" value="14"/>
-    <path id="JavaFX SDK.libraryclasspath"/>
     <path id="Sporty.classpath">
         <pathelement location="bin"/>
-        <path refid="JavaFX SDK.libraryclasspath"/>
+        <pathelement location="trunk/mysql-connector-java-8.0.22.jar"/>
+    </path>
+    <path id="run.DivisionTest.classpath">
+        <path refid="Sporty.classpath"/>
+        <pathelement location="trunk/mysql-connector-java-8.0.22.jar"/>
     </path>
     <path id="run.Main.classpath">
         <path refid="Sporty.classpath"/>
-        <path refid="JavaFX SDK.libraryclasspath"/>
-    </path>
-    <path id="run.OrganizationProfile.classpath">
-        <path refid="Sporty.classpath"/>
-        <path refid="JavaFX SDK.libraryclasspath"/>
+        <pathelement location="trunk/mysql-connector-java-8.0.22.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
-            <fileset dir="src">
+            <fileset dir="trunk/src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.xtend"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -39,13 +41,8 @@
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
+            <src path="trunk/src"/>
             <classpath refid="Sporty.classpath"/>
-            <bootclasspath>
-                <fileset dir="${java.home}/lib" includes="*.jar"/>
-                <fileset dir="${java.home}/lib/ext" includes="*.jar"/>
-                <path refid="JavaFX.bootclasspath"/>
-            </bootclasspath>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -62,15 +59,26 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+    <target name="DivisionTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.DivisionTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DivisionTest.classpath"/>
+        </junit>
+    </target>
     <target name="Main">
-        <java classname="main.Main" failonerror="true" fork="yes">
+        <java classname="logic.main.Main" failonerror="true" fork="yes">
             <classpath refid="run.Main.classpath"/>
         </java>
     </target>
-    <target name="OrganizationProfile">
-        <java classname="application.Calcolatore" failonerror="true" fork="yes">
-            <jvmarg line="--module-path &quot;C:\Program Files\Java\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml"/>
-            <classpath refid="run.OrganizationProfile.classpath"/>
-        </java>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
     </target>
 </project>
