@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import logic.controller.ProfileBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
-import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.UserProfileUI;
 
 public class UserProfileControllerG {
@@ -53,7 +52,7 @@ public class UserProfileControllerG {
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
-				LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+				LoginControllerG.getInstance(loginUI);
 				
 			}
 
@@ -67,7 +66,7 @@ public class UserProfileControllerG {
 			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				HomeUI vista=new HomeUI();
-				HomeControllerGSUs controller = HomeControllerGSUs.getInstance(vista);
+				HomeControllerGSUs.getInstance(vista);
 							
 			}
 

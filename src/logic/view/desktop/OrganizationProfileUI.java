@@ -20,6 +20,8 @@ import javax.swing.JTextArea;
 import java.awt.Checkbox;
 import javax.swing.UIManager;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class OrganizationProfileUI extends JFrame {
 
@@ -375,9 +377,10 @@ public class OrganizationProfileUI extends JFrame {
 	}
 
 	
-	public void createCourseFrame(String name) {
+	public JButton createCourseFrame(String name) {
 
-        JButton frame = new JButton();
+        JButton frame = new JButton(name);
+
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
         frame.setVisible(true);
@@ -387,7 +390,40 @@ public class OrganizationProfileUI extends JFrame {
         lowerPanel.repaint();
         coursesPanel.repaint();
         
+        return frame;
+        
     }
+
+	public void createEventFrame(String name) {
+
+        JButton frame = new JButton(name);
+        
+        frame.setBorder(new LineBorder(Color.BLACK));
+        frame.setPreferredSize(new Dimension(100, 100));
+        frame.setVisible(true);
+        lowerPanel2.add(frame);
+        lowerPanel2.setVisible(true);
+        lowerPanel2.revalidate();
+        lowerPanel2.repaint();
+        eventsPanel.repaint();
+        
+    }
+	
+	public void createCourtFrame(String name) {
+
+        JButton frame = new JButton(name);
+        frame.setBorder(new LineBorder(Color.BLACK));
+        frame.setPreferredSize(new Dimension(100, 100));
+        frame.setVisible(true);
+        lowerPanel3.add(frame);
+        lowerPanel3.setVisible(true);
+        lowerPanel3.revalidate();
+        lowerPanel3.repaint();
+        courtsPanel.repaint();
+        
+    }
+	
+	
 
 	
 	public void setDescriptionPanelVisible() {

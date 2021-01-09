@@ -46,10 +46,10 @@ public class ProfileBean {
 	}
 	
 	public static void setCredentials(ProfileBean profileBean) {
-		name = UserProfile.getName();
-		surname = UserProfile.getSurname();
-		username = UserProfile.getUsername();
-		email = UserProfile.getEmail();
-		password = UserProfile.getPassword();
+		profileBean.setName(UserProfile.getName());
+		profileBean.setSurname(UserProfile.getSurname());
+		profileBean.setUsername(UserProfile.getUsername());
+		profileBean.setEmail(UserProfile.getEmail());
+		profileBean.setPassword(UserProfile.getPassword());
 	}
 }

@@ -226,10 +226,49 @@ public class OrganizationControllerG{
 	
 	private static void displayCourses() {
 			
-		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
-				String courseName = OrganizationBean.getCourses().get(i).getName();
+		OrganizationBean orgBean = new OrganizationBean();
+		OrganizationBean.setCredentials(orgBean);
+		String orgName = orgBean.getName();
+		for(int i=0; i < orgBean.getCourses().size(); i++) {
+				String courseName = orgBean.getCourses().get(i).getName();
 				System.out.println("nome corso: " + courseName);
-				view.createCourseFrame(courseName);
+				view.createCourseFrame(courseName).addActionListener(new ActionListener() {
+														public void actionPerformed(ActionEvent e) {
+						
+															CourseUISUs courseUI = new CourseUISUs();
+															try {
+																CourseSUsControllerG.getInstance(courseUI, courseName, orgName);
+															} catch (Exception e1) {
+																// TODO Auto-generated catch block
+																e1.printStackTrace();
+															}
+															
+														}
+												});
+		}
+		
+	}
+	
+	private static void displayEvents() {
+		
+		OrganizationBean orgBean = new OrganizationBean();
+		OrganizationBean.setCredentials(orgBean);
+		for(int i=0; i < orgBean.getEvents().size(); i++) {
+				String eventName = orgBean.getEvents().get(i).getName();
+				System.out.println("nome corso: " + eventName);
+				view.createEventFrame(eventName);
+		}
+		
+	}
+	
+	private static void displayCourts() {
+		
+		OrganizationBean orgBean = new OrganizationBean();
+		OrganizationBean.setCredentials(orgBean);
+		for(int i=0; i < orgBean.getCourts().size(); i++) {
+				String courtName = orgBean.getCourts().get(i).getName();
+				System.out.println("nome corso: " + courtName);
+				view.createCourtFrame(courtName);
 		}
 		
 	}

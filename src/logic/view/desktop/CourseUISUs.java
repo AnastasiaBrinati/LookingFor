@@ -65,7 +65,7 @@ public class CourseUISUs extends JFrame {
 	public CourseUISUs() {
 
 		setTitle("Sportee");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1102, 682);
 		contentPane = new JPanel();
@@ -91,15 +91,16 @@ public class CourseUISUs extends JFrame {
 		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		
+		/*
 		settingsButton.setContentAreaFilled(false);
 		
-		Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img3));
-		settingsButton.setContentAreaFilled(false);
+		//Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
+		//settingsButton.setIcon(new ImageIcon(img3));
+		//settingsButton.setContentAreaFilled(false);
 
-		Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
-		exitButton.setIcon(new ImageIcon(img5));
-		exitButton.setContentAreaFilled(false);
+		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
+		//exitButton.setIcon(new ImageIcon(img5));
+		//exitButton.setContentAreaFilled(false);
 
 		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
 		//exitButton.setIcon(new ImageIcon(img5));
@@ -121,7 +122,7 @@ public class CourseUISUs extends JFrame {
 		
 		
 		profileButton.setContentAreaFilled(false);
-		
+		*/
 		
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
@@ -246,8 +247,7 @@ public class CourseUISUs extends JFrame {
 	}
 	
 
-	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice,
-			String description, String instructorName, String sport) {
+	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice, String description, String instructorName, String sport) {
 		// TODO Auto-generated method stub
 		nameLbl.setText(name);
 		organizationLbl.setText(organization);

@@ -54,7 +54,7 @@ public class SignUpControllerG {
 				
 
 				HomeUI homeView = new HomeUI();
-				HomeControllerGSUs  homeController = HomeControllerGSUs.getInstance(homeView);
+				HomeControllerGSUs.getInstance(homeView);
 
 				view.setVisible(false);
 				view.resetForm();
@@ -80,8 +80,8 @@ public class SignUpControllerG {
 			public void actionPerformed(ActionEvent e) {
 				
 				LoginUI loginView = new LoginUI();
-				LoginControllerG  loginController = LoginControllerG.getInstance(loginView);
-				loginController.assegnaGestori();
+				LoginControllerG.getInstance(loginView);
+				
 				
 				view.resetForm();
 				view.setVisible(false);

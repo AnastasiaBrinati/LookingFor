@@ -15,9 +15,11 @@ public class UserProfile {
 	private static String username;
 	private static String email;
 	private static String password;
+
 	private static List<Course> courses = new ArrayList<Course>();
 	private static List<Event> events=new ArrayList<Event>();
 	private static List<Court> courts = new ArrayList<Court>();
+
 	 
 	private static UserProfileDAO usDAO;
 	
@@ -88,9 +90,7 @@ public class UserProfile {
 	
 	
 	public static void createNewProfile(String name, String surname, String username, String email,String password,String type) throws SQLException {
-		
 		UserProfileDAO.addNewProfile(name,surname,username,email,password,type);
-		
 	}
 	
 	

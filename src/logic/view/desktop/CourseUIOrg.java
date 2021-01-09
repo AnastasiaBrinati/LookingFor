@@ -57,7 +57,7 @@ public class CourseUIOrg extends JFrame {
 	public CourseUIOrg() {
 
 		setTitle("Sportee");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1102, 682);
 		contentPane = new JPanel();
