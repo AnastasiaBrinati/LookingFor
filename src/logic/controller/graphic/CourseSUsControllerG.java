@@ -45,6 +45,19 @@ public class CourseSUsControllerG {
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
+		ActionListener gestoreExit = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				LoginUI loginUI=new LoginUI();
+				loginUI.resetForm();
+				view.setVisible(false);
+				LoginControllerG.getInstance(loginUI);
+			}
+
+		};
+		view.getExitButton().addActionListener(gestoreExit);
+		
 		
 	}
 
