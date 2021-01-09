@@ -136,8 +136,8 @@ public class UserProfileUI extends JFrame {
 		//coursesButton.setIcon(new ImageIcon(img3));
 		coursesButton.setContentAreaFilled(true);
 		
-		//Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
-		//exitButton.setIcon(new ImageIcon(img5));
+		Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
+		exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\exit-32.png"));
 		exitButton.setContentAreaFilled(false);
 		
 		
@@ -146,10 +146,10 @@ public class UserProfileUI extends JFrame {
 		//eventsButton.setIcon(new ImageIcon(img4));
 		
 		Image img= new ImageIcon(this.getClass().getResource("/house32.png")).getImage();
-		homeButton.setIcon(new ImageIcon(img));
+		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\house-32.png"));
 		
 		Image img2= new ImageIcon(this.getClass().getResource("/settings-32.png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img2));
+		settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\settings-32.png"));
 		
 		
 		RoutineButton.setContentAreaFilled(true);
