@@ -433,7 +433,6 @@ public class SettingsUISUs extends JFrame {
 		textFieldNewPassword.setText("");
 		textFieldOldPassword.setText("");
 		
-		
 	}
 	
 	public void showErrorMessage(String error) {
