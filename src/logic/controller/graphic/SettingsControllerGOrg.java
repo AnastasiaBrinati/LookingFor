@@ -17,7 +17,7 @@ public class SettingsControllerGOrg {
 	private static SettingsControllerGOrg instance = null;
 	
 	private SettingsControllerGOrg(SettingsUIOrg settingsview) {
-		view = settingsview;
+		SettingsControllerGOrg.view = settingsview;
 	}
 	
 	public synchronized static SettingsControllerGOrg getInstance(SettingsUIOrg view) {
@@ -51,12 +51,12 @@ public class SettingsControllerGOrg {
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
-				LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+				LoginControllerG.getInstance(loginUI);
 				
 			}
 
 		};
-		
+		view.getExitButton().addActionListener(gestoreExit);
 		
 		
 		ActionListener gestoreHome = new ActionListener(){

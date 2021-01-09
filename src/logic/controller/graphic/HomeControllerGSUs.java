@@ -14,7 +14,7 @@ public class HomeControllerGSUs {
 	private static HomeControllerGSUs instance = null;
 
 	private HomeControllerGSUs(HomeUI vista) {
-		view = vista;
+		HomeControllerGSUs.view = vista;
 	}
 
 	public static synchronized  HomeControllerGSUs getInstance(HomeUI vista) {

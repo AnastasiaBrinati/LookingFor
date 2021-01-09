@@ -2,9 +2,7 @@ package logic.controller.graphic;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
-import logic.controller.SignUpBean;
 import logic.model.CourseBean;
 import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.HomeUI;
@@ -17,7 +15,7 @@ public class CourseSUsControllerG {
 	//bean 
 	
 	private CourseSUsControllerG(CourseUISUs view) {
-		this.view = view;
+		CourseSUsControllerG.view = view;
 	}
 	
 	public static synchronized CourseSUsControllerG getInstance(CourseUISUs view, String courseName, String orgName) throws Exception {

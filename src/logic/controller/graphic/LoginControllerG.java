@@ -16,7 +16,7 @@ public class LoginControllerG {
 	
 	
 	private LoginControllerG(LoginUI view) {
-		loginView = view;
+		LoginControllerG.loginView = view;
 	}
 	
 	public static synchronized LoginControllerG getInstance(LoginUI view) {

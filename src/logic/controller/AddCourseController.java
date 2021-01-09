@@ -6,8 +6,10 @@ import logic.model.OrganizationProfile;
 public class AddCourseController {
 	
 	private static AddCourseController instance;
+	
 	public AddCourseController() {
-		}
+		//costruttore
+	}
 		
 	public static synchronized AddCourseController getInstance() {
 		if(instance==null) {

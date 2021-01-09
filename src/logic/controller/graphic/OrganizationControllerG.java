@@ -8,7 +8,6 @@ import logic.model.OrganizationBean;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.SettingsUIOrg;
 import logic.view.desktop.LoginUI;
-import logic.view.desktop.CourseUIOrg;
 import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.ItemButton;
@@ -19,7 +18,7 @@ public class OrganizationControllerG{
 	private static OrganizationControllerG instance = null;
 
 	private OrganizationControllerG(OrganizationProfileUI orgview){
-		view = orgview;
+		OrganizationControllerG.view = orgview;
 	}
 
 	public synchronized static OrganizationControllerG getInstance(OrganizationProfileUI view){
@@ -37,7 +36,7 @@ public class OrganizationControllerG{
 	public static void setCredentials() {
 		OrganizationBean orgBean = new OrganizationBean();
 		OrganizationBean.setCredentials(orgBean);
-		view.setCredentials(orgBean.getName());
+		view.setCredentials(OrganizationBean.getName());
 	}
 
 	public void assegnaGestori(){
@@ -50,7 +49,7 @@ public class OrganizationControllerG{
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
-				LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+				LoginControllerG.getInstance(loginUI);
 				
 			}
 
@@ -171,7 +170,7 @@ public class OrganizationControllerG{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				HomeUI homeView = new HomeUI();
-				HomeControllerGOrg controller = HomeControllerGOrg.getInstance(homeView);
+				HomeControllerGOrg.getInstance(homeView);
 				view.setVisible(false);
 			}
 		};
@@ -182,7 +181,7 @@ public class OrganizationControllerG{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					SettingsUIOrg settingUI = new SettingsUIOrg();
-					SettingsControllerGOrg controller = SettingsControllerGOrg.getInstance(settingUI);
+					SettingsControllerGOrg.getInstance(settingUI);
 					view.setVisible(false);
 				}
 			};
@@ -204,9 +203,9 @@ public class OrganizationControllerG{
 					CourseUISUs courseUI = new CourseUISUs();
 					//PER ORA 
 					try {
-						CourseSUsControllerG controller = CourseSUsControllerG.getInstance(courseUI, ib.getText(), ib.getOrganizationName());
+						CourseSUsControllerG.getInstance(courseUI, ib.getText(), ib.getOrganizationName());
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
+						// does whatever
 						e1.printStackTrace();
 					}
 					view.setVisible(false);

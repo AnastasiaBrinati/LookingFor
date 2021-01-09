@@ -16,7 +16,7 @@ public class SettingsControllerGSUs {
 	private static SettingsControllerGSUs instance = null;
 	
 	private SettingsControllerGSUs(SettingsUISUs settingsview) {
-		view = settingsview;
+		SettingsControllerGSUs.view = settingsview;
 	}
 	
 	public static synchronized SettingsControllerGSUs getInstance(SettingsUISUs view) {
