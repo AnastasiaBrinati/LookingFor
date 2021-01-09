@@ -50,6 +50,7 @@ public class CourseUISUs extends JFrame {
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
+	private JButton homeButton = new JButton("");
 	private JButton settingsButton = new JButton("");
 	private JButton exitButton = new JButton("");
 	JLabel nameLbl = new JLabel("Name");
@@ -125,9 +126,8 @@ public class CourseUISUs extends JFrame {
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
 		
-		JButton homeButton = new JButton("");
 		homeButton.setContentAreaFilled(false);
-		homeButton.setBounds(336, 10, 40, 43);
+		homeButton.setBounds(373, 1, 55, 53);
 		panel.add(homeButton);
 		
 		JPanel mainPanel = new JPanel();
@@ -228,7 +228,7 @@ public class CourseUISUs extends JFrame {
 		availabilityLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		availabilityLbl.setBounds(71, 535, 61, 14);
 		mainPanel.add(availabilityLbl);
-		LineBorder lineBorder=new LineBorder(Color.white,8,true);
+		//LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
 	public JButton getProfileButton() {
@@ -237,9 +237,14 @@ public class CourseUISUs extends JFrame {
 	public JButton getSettingsButton() {
 		return settingsButton;
 	}
+	
+	public JButton getHomeButton() {
+		return homeButton;
+	}
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	
 
 	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice,
 			String description, String instructorName, String sport) {

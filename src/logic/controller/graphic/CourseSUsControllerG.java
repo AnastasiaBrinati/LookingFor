@@ -32,23 +32,26 @@ public class CourseSUsControllerG {
 	}
 	
 	public void assegnaGestori() {
-		ActionListener gestoreSignUp = new ActionListener() {
+		
+		ActionListener gestoreHome = new ActionListener(){
+
 			@Override
-			public void actionPerformed(ActionEvent e2) {
-
-				
+			public void actionPerformed(ActionEvent e){
+				view.setVisible(false);
+				HomeUI homeview = new HomeUI();
+				HomeControllerGSUs.getInstance(homeview);
 			}
-		};
-		//view.getSignUpButton().addActionListener(gestoreSignUp);
 
+		};
+		view.getHomeButton().addActionListener(gestoreHome);
+		
+		
 	}
-	
+
 	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {
 		CourseBean courseBean = new CourseBean();
 		CourseBean.setCourse(courseBean, courseName, organizationName);
 		view.setCredentials(courseBean.getName(),courseBean.getOrganization(),courseBean.getLessonPrice(),courseBean.getMonthlyPrice(),
 				courseBean.getDescription(),courseBean.getInstructorName(),courseBean.getSport());
-		
 	}
-
 }
