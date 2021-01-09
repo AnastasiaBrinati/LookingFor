@@ -3,8 +3,6 @@ package logic.view.desktop;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -437,4 +435,12 @@ public class SettingsUISUs extends JFrame {
 		
 		
 	}
+	
+	public void showErrorMessage(String error) {
+		textFieldName.setText(error);
+	}
+	public void showErrorMessage2(String error) {
+		textFieldEmail.setText(error);
+	}
+	
 }

@@ -24,7 +24,6 @@ public class HomeControllerGSUs {
 		}
 		showHomepage();
 		return instance;
-
 	}
 
 	private void assegnaGestori() {
@@ -36,7 +35,7 @@ public class HomeControllerGSUs {
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
-				LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+				LoginControllerG.getInstance(loginUI);
 				
 			}
 
@@ -48,7 +47,7 @@ public class HomeControllerGSUs {
 		ActionListener gestoreProfile = e -> {
 			view.setVisible(false);
 			UserProfileUI vista = new UserProfileUI();
-			UserProfileControllerG controller = UserProfileControllerG.getInstance(vista);
+			UserProfileControllerG.getInstance(vista);
 
 		};
 		view.getProfileButton().addActionListener(gestoreProfile);
@@ -58,7 +57,7 @@ public class HomeControllerGSUs {
 		ActionListener gestoreSettings = e -> {
 			view.setVisible(false);
 			SettingsUISUs vista = new SettingsUISUs();
-			SettingsControllerGSUs controller = SettingsControllerGSUs.getInstance(vista);
+			SettingsControllerGSUs.getInstance(vista);
 
 		};
 		view.getSettingsButton().addActionListener(gestoreSettings);

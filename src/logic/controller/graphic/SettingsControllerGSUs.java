@@ -19,7 +19,7 @@ public class SettingsControllerGSUs {
 		view = settingsview;
 	}
 	
-	public synchronized static SettingsControllerGSUs getInstance(SettingsUISUs view) {
+	public static synchronized SettingsControllerGSUs getInstance(SettingsUISUs view) {
 		if(instance == null) {
 			instance = new SettingsControllerGSUs(view);
 			assegnaGestori();
@@ -94,7 +94,7 @@ public class SettingsControllerGSUs {
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
-				LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+				LoginControllerG.getInstance(loginUI);
 				
 			}
 
@@ -140,12 +140,11 @@ public class SettingsControllerGSUs {
 				settingBean.setUsername(view.getUsername());
 				settingBean.setName(view.getName());
 				settingBean.setSurname(view.getSurname());
-				//exceptions
+				
 				try {
 					SettingsSingleUserBean.changeUCredentialsName(settingBean);
-					System.out.println("Changing credentials");
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
+					view.showErrorMessage("username already in use");
 					e1.printStackTrace();
 				}
 				setCredentials();
@@ -167,9 +166,9 @@ public class SettingsControllerGSUs {
 				
 				try {
 					SettingsSingleUserBean.changeUCredentialsEmail(settingBean);
-					System.out.println("Changing credentials");
+					
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
+					view.showErrorMessage2("either one your email or password is incorrect");
 					e1.printStackTrace();
 				}
 				setCredentials();
@@ -192,7 +191,7 @@ public class SettingsControllerGSUs {
 					SettingsSingleUserBean.changeUCredentialsPassword(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
+					view.showErrorMessage2("wrong password");
 					e1.printStackTrace();
 				}
 				setCredentials();

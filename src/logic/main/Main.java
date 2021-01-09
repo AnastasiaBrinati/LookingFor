@@ -13,8 +13,7 @@ public class Main {
 			public void run() {
 
 				LoginUI view = new LoginUI();
-				LoginControllerG control = LoginControllerG.getInstance(view);
-				control.assegnaGestori();
+				LoginControllerG.getInstance(view);
 
 			}
 		});

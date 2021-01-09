@@ -39,7 +39,7 @@ import logic.view.desktop.SettingsUISUs;
 					LoginUI loginUI=new LoginUI();
 					loginUI.resetForm();
 					view.setVisible(false);
-					LoginControllerG loginControllerG=LoginControllerG.getInstance(loginUI);
+					LoginControllerG.getInstance(loginUI);
 					
 				}
 
@@ -50,7 +50,7 @@ import logic.view.desktop.SettingsUISUs;
 			ActionListener gestoreProfile = e -> {
 				view.setVisible(false);
 				OrganizationProfileUI vista = new OrganizationProfileUI();
-				OrganizationControllerG controller = OrganizationControllerG.getInstance(vista);
+				OrganizationControllerG.getInstance(vista);
 
 			};
 			view.getProfileButton().addActionListener(gestoreProfile);
@@ -60,7 +60,7 @@ import logic.view.desktop.SettingsUISUs;
 			ActionListener gestoreSettings = e -> {
 				view.setVisible(false);
 				SettingsUIOrg vista = new SettingsUIOrg();
-				SettingsControllerGOrg controller = SettingsControllerGOrg.getInstance(vista);
+				SettingsControllerGOrg.getInstance(vista);
 
 			};
 			view.getSettingsButton().addActionListener(gestoreSettings);
