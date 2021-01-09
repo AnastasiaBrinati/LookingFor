@@ -11,7 +11,7 @@ public class UserProfileDAO {
 	
 	private static String USER = "u0uxwvy2unqsxnql";
     private static String PASS = "nH1ORFX9CBydKKphGtBO";
-    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nH1ORFX9CBydKKphGtBO@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
+    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nh1orfx9cbydkkphgtbo@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
     //private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     
    //MANCA LA REFLECTION
@@ -25,6 +25,7 @@ public class UserProfileDAO {
 		Statement stmtEvents = null;
 		Statement stmtCourts = null;
 		Connection conn=null;
+		String type=null;
 		
 		try {
 			
@@ -40,11 +41,13 @@ public class UserProfileDAO {
 			
             rs.first();
             do{
+            	//verificare se la password è corretta
             	String foundPassword=rs.getString("password");
             	if(foundPassword.equals(password)) {
-            		String type = rs.getString("type");
+            		 type = rs.getString("type");
             		if(type.equals("singleuser")) {
             	
+            			    //setting the user profile 
             		   		String nome = rs.getString("name");
             		   		String cognome = rs.getString("surname");
             		   		String email = rs.getString("email");
@@ -56,10 +59,44 @@ public class UserProfileDAO {
             		   		UserProfile.setPassword(password);
             		
             		   		System.out.println(type);
+            		   		
+            		      	//get list of courses
+            		   		stmtCourses = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            		   		
+            		   		ResultSet tupleCourses=Queries.getCourses(stmtCourses, username);
+            		   		if(tupleCourses.first()) {
+            		   			while(tupleCourses.next()) {
+            		   				OrganizationProfile.addCourse(courseRetreiver(tupleCourses));
+            		   			}
+            		   			tupleCourses.close();
+            		   		}
+            		   		
+            		   		//get list of events
+            		   		stmtEvents = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            		   		ResultSet tupleEvents=Queries.getEvents(stmtEvents, username);
+            		   		if(tupleEvents.first()) {
+            		   			while(tupleEvents.next()) {
+            		   				OrganizationProfile.addEvent(eventRetreiver(tupleEvents));
+            		   			}
+            		   			tupleEvents.close();
+            		   		}
+            		   		
+            		   	    //get list of courts
+            		   		stmtCourts = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            		   		ResultSet tupleCourts=Queries.getCourts(stmtCourts, username);
+            		   		if(tupleCourts.first()) {
+            		   			while(tupleCourts.next()) {
+            		   				OrganizationProfile.addCourt(courtRetreiver(tupleCourts));
+            		   			}
+            		   			tupleCourts.close();
+            		   		}
+            		   		
+            		   		type="singleuser";
             		   		return type;
             		}
             		else {
             			
+            			//being an organization,I set the org profile
         		   		OrganizationProfile.setName(username);
         		   		//null:OrganizationProfile.setSurname(cognome);
         		   		OrganizationProfile.setEmail(rs.getString("email"));
@@ -70,109 +107,40 @@ public class UserProfileDAO {
         		   		
         		   		//get list of courses
         		   		stmtCourses = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-        		   		ResultSet tupleCourses = Queries.getCourses(stmtCourses, username);
-        		   		//scorrere tuple ed aggiungerle all'organizationProfile
-        		   		if(!tupleCourses.first()) {
-        		   			System.out.println("No Courses Found on organization:" + username);
-        		   			return null;
-        		   			
+        		   		
+        		   		ResultSet tupleCourses=Queries.getCourses(stmtCourses, username);
+        		   		if(tupleCourses.first()) {
+        		   			while(tupleCourses.next()) {
+        		   				OrganizationProfile.addCourse(courseRetreiver(tupleCourses));
+        		   			}
+        		   			tupleCourses.close();
         		   		}
-        		   		tupleCourses.first();
-        		   		do {
-        		   			String name=tupleCourses.getString("name");
-        		   			String organization=tupleCourses.getString("organization");
-        		   			String lessonPrice=tupleCourses.getString("lessonPrice");
-        		   			String monthlyPrice=tupleCourses.getString("monthlyPrice");
-        		   			String sport=tupleCourses.getString("sport");
-        		   			String instructorName=tupleCourses.getString("instructorName");
-        		   			String availability=tupleCourses.getString("availability");
-        		   			String description=tupleCourses.getString("description");
-        		   			
-        		   			Course course=new Course();
-        		   			course.setName(name);
-        		   			course.setOrganization(organization);
-        		   			course.setLessonPrice(lessonPrice);
-        		   			course.setMonthlyPrice(monthlyPrice);
-        		   			course.setSport(sport);
-        		   			course.setInstructorName(instructorName);
-        		   			course.setAvailability(availability);
-        		   			course.setDescription(description);
-        		   			
-        		   			OrganizationProfile.addCourse(course);
-        		   			
-        		   		}while(tupleCourses.next());
-
         		   		
         		   		//get list of events
         		   		stmtEvents = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-        		   		ResultSet tupleEvents = Queries.getEvents(stmtEvents, username);
-        		   		//scorrere tuple ed aggiungerle all'organizationProfile
-        		   		if(!tupleCourses.first()) {
-        		   			System.out.println("No events Found on organization:" + username);
-        		   			return null;
-        		   			
+        		   		ResultSet tupleEvents=Queries.getEvents(stmtEvents, username);
+        		   		if(tupleEvents.first()) {
+        		   			while(tupleEvents.next()) {
+        		   				OrganizationProfile.addEvent(eventRetreiver(tupleEvents));
+        		   			}
+        		   			tupleEvents.close();
         		   		}
-        		   		tupleEvents.first();
-        		   		do {
-        		   			String name=tupleEvents.getString("name");
-        		   			String organization=tupleEvents.getString("organization");
-        		   			String imgSrc=tupleEvents.getString("imgSrc");
-        		   			String date=tupleEvents.getString("date");
-        		   			String price=tupleEvents.getString("price");
-        		   			String sport=tupleEvents.getString("sport");
-        		   			
-        		   			String availability=tupleEvents.getString("availability");
-        		   			String description=tupleEvents.getString("description");
-        		   			
-        		   			Event event=new Event();
-        		   			event.setName(name);
-        		   			event.setOrganization(organization);
-        		   			event.setImgSrc(imgSrc);
-        		   			event.setDate(date);
-        		   			event.setPrice(price);
-        		   			event.setSport(sport);
-        		   			event.setAvailability(availability);
-        		   			event.setDescription(description);
-        		   			
-        		   			OrganizationProfile.addEvent(event);
-        		   			
-        		   		}while(tupleEvents.next());
-
         		   		
-        		   		//get list of courts
+        		   	    //get list of courts
         		   		stmtCourts = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-        		   		ResultSet tupleCourts = Queries.getCourts(stmtCourts, username);
-        		   		//scorrere tuple ed aggiungerle all'organizationProfile
-        		   		if(!tupleCourses.first()) {
-        		   			System.out.println("No courts Found on organization:" + username);
-        		   			return null;
-        		   			
+        		   		ResultSet tupleCourts=Queries.getCourts(stmtCourts, username);
+        		   		if(tupleCourts.first()) {
+        		   			while(tupleCourts.next()) {
+        		   				OrganizationProfile.addCourt(courtRetreiver(tupleCourts));
+        		   			}
+        		   			tupleCourts.close();
         		   		}
-        		   		tupleCourts.first();
-        		   		do {
-        		   			String name=tupleCourts.getString("name");
-        		   			String organization=tupleCourts.getString("organization");
-        		   			String price=tupleCourts.getString("price");
-        		   			String sport=tupleCourts.getString("sport");
-        		   			String availability=tupleCourts.getString("availability");
-        		   			String description=tupleCourts.getString("description");
-        		   			
-        		   			Court court=new Court();
-        		   			court.setName(name);
-        		   			court.setOrganization(organization);
-        		   			
-        		   			court.setSport(sport);
-        		   			
-        		   			court.setAvailability(availability);
-        		   			court.setDescription(description);
-        		   			
-        		   			OrganizationProfile.addCourt(court);
-        		   			
-        		   		}while(tupleCourses.next());
+        		   		
+        		   		type="organization";
 
         		   		
-        		   		//System.out.println(type);
-        		   		return type;
+        		   		
+        		   		
             		}
             		
             	}
@@ -181,8 +149,7 @@ public class UserProfileDAO {
             }while(rs.next());
             
             
-            return "null";
-            
+           return type;            
             
 		}finally {
 			
@@ -206,6 +173,7 @@ public class UserProfileDAO {
             }
 			
 		}
+		
 			
 	}
 
@@ -350,6 +318,71 @@ public class UserProfileDAO {
 			return false;
 	
 		
+	}
+	
+	public Event eventRetreiver(ResultSet tupleEvents ) throws SQLException {
+		    String name=tupleEvents.getString("name");
+			String organization=tupleEvents.getString("organization");
+			String imgSrc=tupleEvents.getString("imgSrc");
+			String date=tupleEvents.getString("date");
+			String price=tupleEvents.getString("price");
+			String sport=tupleEvents.getString("sport");
+			
+			String availability=tupleEvents.getString("availability");
+			String description=tupleEvents.getString("description");
+			
+			Event event=new Event();
+			event.setName(name);
+			event.setOrganization(organization);
+			event.setImgSrc(imgSrc);
+			event.setDate(date);
+			event.setPrice(price);
+			event.setSport(sport);
+			event.setAvailability(availability);
+			event.setDescription(description);
+			return event;
+	}
+	
+	public Course courseRetreiver(ResultSet tupleCourses) throws SQLException {
+		    String name=tupleCourses.getString("name");
+			String organization=tupleCourses.getString("organization");
+			String lessonPrice=tupleCourses.getString("lessonPrice");
+			String monthlyPrice=tupleCourses.getString("monthlyPrice");
+			String sport=tupleCourses.getString("sport");
+			String instructorName=tupleCourses.getString("instructorName");
+			String availability=tupleCourses.getString("availability");
+			String description=tupleCourses.getString("description");
+			
+			Course course=new Course();
+			course.setName(name);
+			course.setOrganization(organization);
+			course.setLessonPrice(lessonPrice);
+			course.setMonthlyPrice(monthlyPrice);
+			course.setSport(sport);
+			course.setInstructorName(instructorName);
+			course.setAvailability(availability);
+			course.setDescription(description);
+			
+			return course;
+	}
+	
+	public Court courtRetreiver(ResultSet tupleCourts) throws SQLException {
+		    String name=tupleCourts.getString("name");
+			String organization=tupleCourts.getString("organization");
+			String price=tupleCourts.getString("price");
+			String sport=tupleCourts.getString("sport");
+			String availability=tupleCourts.getString("availability");
+			String description=tupleCourts.getString("description");
+			
+			Court court=new Court();
+			court.setName(name);
+			court.setOrganization(organization);
+			
+			court.setSport(sport);
+			
+			court.setAvailability(availability);
+			court.setDescription(description);
+			return court;
 	}
 	
 	

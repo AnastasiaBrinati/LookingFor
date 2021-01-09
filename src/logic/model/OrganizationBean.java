@@ -12,6 +12,7 @@ public class OrganizationBean {
 	private static ArrayList<Court> courts = new ArrayList<Court>();
 	
 	public OrganizationBean() {
+		//constructor
 	}
 	
 	
@@ -39,6 +40,7 @@ public class OrganizationBean {
 	}
 	
 	public static ArrayList<Course> getCourses(){
+		
 		return courses;
 	}
 	
@@ -62,5 +64,8 @@ public class OrganizationBean {
 		name = OrganizationProfile.getName();
 		email = OrganizationProfile.getEmail();
 		password = OrganizationProfile.getPassword();
+		courses = OrganizationProfile.getCourses();
+		events = OrganizationProfile.getEvents();
+		courts = OrganizationProfile.getCourts();
 	}
 }

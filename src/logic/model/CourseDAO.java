@@ -41,6 +41,7 @@ public class CourseDAO {
             
             // STEP 5.1: Clean-up dell'ambiente
             
+ 
         } finally {
             // STEP 5.2: Clean-up dell'ambiente        	
                 if (stmt != null)

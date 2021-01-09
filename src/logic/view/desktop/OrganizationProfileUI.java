@@ -29,8 +29,7 @@ public class OrganizationProfileUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	
-	private ItemButton frame;
-	private ArrayList<ItemButton> coursesFrames;
+	//private ArrayList<JButton> coursesFrames;
 	 
 	private JPanel headerPanel = new JPanel();
 	private JButton homeButton = new JButton("");
@@ -368,13 +367,17 @@ public class OrganizationProfileUI extends JFrame {
 		//exitButton.setContentAreaFilled(false);
 		
 	}
+	
+	public void doubleCourseErrorMessage(String error){
+		resetNewCourseForm();
+		titleTextField.setText(error);
+		
+	}
 
 	
-	public void createCourseFrame(String name, String organizationName) {
+	public void createCourseFrame(String name) {
 
-        frame = new ItemButton(organizationName);
-        coursesFrames.add(frame);
-        //System.out.println("nuovo bottone:"+name);
+        JButton frame = new JButton();
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
         frame.setVisible(true);
@@ -385,15 +388,7 @@ public class OrganizationProfileUI extends JFrame {
         coursesPanel.repaint();
         
     }
-	
-	public ItemButton getFrame(String frameName) {
-		for(int i=0; i<coursesFrames.size(); i++) {
-			if(coursesFrames.get(i).getText().equals(frameName)) {
-				return coursesFrames.get(i);
-			}
-		}
-		return null;
-	}
+
 	
 	public void setDescriptionPanelVisible() {
 		backButton.setVisible(false);

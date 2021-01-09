@@ -8,7 +8,7 @@ import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.SettingsUIOrg;
-import logic.view.desktop.SettingsUISUs;
+
 
 
 	public class HomeControllerGOrg {

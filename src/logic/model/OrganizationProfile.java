@@ -13,10 +13,7 @@ public class OrganizationProfile {
 
 	
 	public OrganizationProfile() {
-		//String name, String username
-		//se credenziali ok
-		//inizializzo l'array di corsi dal db		
-		//esempio
+		//constructor
 	}
 	
 	public static void addCourse(Course course) {
@@ -69,6 +66,9 @@ public class OrganizationProfile {
 		return events;
 	}
 	
+	public static ArrayList<Court> getCourts() {
+		return courts;
+	}
 	
 	public static void changeUsername(String newUsername) throws Exception{
 		

@@ -109,10 +109,10 @@ public class OrganizationControllerG{
 				try {
 					NewCourseBean.addCourse(newCourseBean);
 					view.setCoursesPanelVisible();
-					displayOneCourse(newCourseBean.getName());
+					view.createCourseFrame(newCourseBean.getName());
 					
 				} catch (Exception e1) {
-					// TODO Auto-generated catch block
+					view.doubleCourseErrorMessage("Course already exists");
 					e1.printStackTrace();
 				}
 				
@@ -160,9 +160,8 @@ public class OrganizationControllerG{
 		//fine caso d'uso
 		///////////////////////////////////////////////////////////////////
 		
-	
-		assegnaGestoriCorsi();
-			
+		
+		//assegnaGestoriCorsi();
 		
 		
         ActionListener gestoreHome = new ActionListener() {
@@ -191,7 +190,9 @@ public class OrganizationControllerG{
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	/*
 	private static void assegnaGestoriCorsi() {
+		if(OrganizationBean.getCourses()!=null){
 		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
 			
 			String courseName = OrganizationBean.getCourses().get(i).getName();
@@ -211,22 +212,24 @@ public class OrganizationControllerG{
 					view.setVisible(false);
 				}
 			};
-		
-			view.getFrame(courseName).addActionListener(gestoreCourseFrame);
+			if(view.getFrame(courseName)!=null) {
+				view.getFrame(courseName).addActionListener(gestoreCourseFrame);
+			}
 			
+		}
 		}
 	}
 	
+	*/
 	
-	private static void displayOneCourse(String name) {
-		view.createCourseFrame(name, OrganizationBean.getName());
-	}
+	
 	
 	private static void displayCourses() {
-		
+			
 		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
-			String courseName = OrganizationBean.getCourses().get(i).getName();
-			view.createCourseFrame(courseName, OrganizationBean.getName());
+				String courseName = OrganizationBean.getCourses().get(i).getName();
+				System.out.println("nome corso: " + courseName);
+				view.createCourseFrame(courseName);
 		}
 		
 	}
