@@ -60,18 +60,21 @@ public class LoginControllerG {
 				try {
 					String typeOfUser = LoginBean.checkCredentials(loginBean);
 					loginView.setVisible(false);
-					
-					if(typeOfUser.equals("singleuser")) {
+					if(typeOfUser!=null) {
+						System.out.println("typeOfUser:"+ typeOfUser);
+					 if(typeOfUser.equals("singleuser")) {
 						HomeUI homepageView = new HomeUI();
 						HomeControllerGSUs.getInstance(homepageView);
-					}
-					else if(typeOfUser.equals("organization")) {
+					 }
+					 else if(typeOfUser.equals("organization")) {
 						HomeUI homepageView = new HomeUI();
 						HomeControllerGOrg.getInstance(homepageView);
 						
+					 }
 					}
 					else {
 						//try again
+						System.out.println("typeOfUser found results to be null...");
 					}
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block

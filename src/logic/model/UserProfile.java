@@ -15,8 +15,9 @@ public class UserProfile {
 	private static String username;
 	private static String email;
 	private static String password;
-	private List<Course> courses = new ArrayList<Course>();
-	private List<Event> events=new ArrayList<Event>();
+	private static List<Course> courses = new ArrayList<Course>();
+	private static List<Event> events=new ArrayList<Event>();
+	private static List<Court> courts = new ArrayList<Court>();
 	 
 	private static UserProfileDAO usDAO;
 	
@@ -62,6 +63,18 @@ public class UserProfile {
 		String result = usDAO.goCheckAndTellMe(username,password); 
 		return result;
 		
+	}
+	
+	public static void addCourse(Course newCourse) {
+		courses.add(newCourse);
+	}
+	
+	public static void addEvent(logic.model.Event event) {
+		events.add((Event) event);
+	}
+	
+	public static void addCourt(Court newCourt) {
+		courts.add(newCourt);
 	}
 	
 

@@ -201,7 +201,7 @@ public class SettingsUISUs extends JFrame {
 		subtitlePanel.add(subtitlelbl);
 
 		//header
-		headerPanel.setBackground(new Color(0, 128, 128));
+		headerPanel.setBackground(new Color(255, 0, 0));
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1297, 54);
 		headerPanel.setLayout(null);
@@ -220,31 +220,31 @@ public class SettingsUISUs extends JFrame {
 
 		contentPane.add(headerPanel);
 														
-		panel.setBackground(new Color(102, 205, 170));
+		panel.setBackground(new Color(204, 0, 0));
 		panel.setBounds(0, 54, 307, 605);
 		panel.setLayout(null);
-		credentialsButton.setBackground(new Color(0, 128, 128));
+		credentialsButton.setBackground(new Color(255, 0, 0));
 		credentialsButton.setBounds(10, 79, 287, 57);
 		panel.add(credentialsButton);
 		
 		contentPane.add(panel);
 		lblTitle.setBounds(89, 27, 141, 41);
 		panel.add(lblTitle);
-		lblTitle.setForeground(new Color(0, 0, 0));
+		lblTitle.setForeground(Color.WHITE);
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
-		securityButton.setBackground(new Color(102, 205, 170));
+		securityButton.setBackground(new Color(255, 0, 0));
 		securityButton.setBounds(10, 137, 287, 57);
 		
 		panel.add(securityButton);
-		passwordButton.setBackground(new Color(102, 205, 170));
+		passwordButton.setBackground(new Color(255, 0, 0));
 		passwordButton.setBounds(10, 195, 287, 57);
 		
 		panel.add(passwordButton);
-		courtsButton.setBackground(new Color(102, 205, 170));
+		courtsButton.setBackground(new Color(255, 0, 0));
 		courtsButton.setBounds(10, 253, 287, 57);
 		
 		panel.add(courtsButton);
-		eventsButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setBackground(new Color(255, 0, 0));
 		eventsButton.setBounds(10, 311, 287, 57);
 		
 		panel.add(eventsButton);
