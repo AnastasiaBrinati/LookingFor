@@ -69,7 +69,7 @@ public class CourseDAO {
                     ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = Queries.getUserCourse(stmt, courseName,organizationName);
             if (!rs.first()){				
-				Exception e = new Exception("No course Found matching with username: "+organizationName);
+				Exception e = new Exception("No course Found matching with username: "  + organizationName);
             	throw e;
 		    }
 		

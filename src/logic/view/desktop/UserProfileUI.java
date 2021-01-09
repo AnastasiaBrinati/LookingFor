@@ -109,10 +109,12 @@ public class UserProfileUI extends JFrame {
 		panel.setBackground(new Color(204, 0, 0));
 		panel.setBounds(0, 51, 307, 593);
 		panel.setLayout(null);
-		coursesButton.setBackground(new Color(102, 205, 170));
+		coursesButton.setForeground(Color.WHITE);
+		coursesButton.setBackground(new Color(204, 0, 0));
 		coursesButton.setBounds(10, 153, 287, 57);
 		panel.add(coursesButton);
-		eventsButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setForeground(Color.WHITE);
+		eventsButton.setBackground(new Color(204, 0, 0));
 		eventsButton.setBounds(10, 207, 287, 57);
 		panel.add(eventsButton);
 		
@@ -139,6 +141,7 @@ public class UserProfileUI extends JFrame {
 		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
 		//exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\exit-32.png"));
 		exitButton.setContentAreaFilled(false);
+		RoutineButton.setForeground(Color.WHITE);
 		
 		
 		
@@ -153,7 +156,7 @@ public class UserProfileUI extends JFrame {
 		
 		
 		RoutineButton.setContentAreaFilled(true);
-		RoutineButton.setBackground(new Color(102, 205, 170));
+		RoutineButton.setBackground(new Color(204, 0, 0));
 		RoutineButton.setBounds(10, 262, 287, 57);
 		
 		panel.add(RoutineButton);
@@ -186,7 +189,7 @@ public class UserProfileUI extends JFrame {
 		coursesPanel.setVisible(false);
 		descriptionPanel.setVisible(true);
 		eventsPanel.setVisible(false);
-		coursesButton.setBackground(new Color(102, 205, 170));
+		coursesButton.setBackground(new Color(204,0,0));
 		eventsButton.setBackground(new Color(102, 205, 170));
 	}
 	
@@ -204,8 +207,9 @@ public class UserProfileUI extends JFrame {
 		coursesPanel.setVisible(true);
 		descriptionPanel.setVisible(false);
 		eventsPanel.setVisible(false);
-		coursesButton.setBackground(new Color(0, 128, 128));
-		eventsButton.setBackground(new Color(102, 205, 170));
+		coursesButton.setBackground(new Color(139,0,0));
+		eventsButton.setBackground(new Color(204,0,0));
+		
 	}
 	
 	public void setEventsPanelVisible() {
@@ -213,8 +217,8 @@ public class UserProfileUI extends JFrame {
 		coursesPanel.setVisible(false);
 		descriptionPanel.setVisible(false);
 		eventsPanel.setVisible(true);
-		coursesButton.setBackground(new Color(102, 205, 170));
-		eventsButton.setBackground(new Color(0, 128, 128));	
+		coursesButton.setBackground(new Color(204,0,0));
+		eventsButton.setBackground(new Color(139,0,0));	
 	}
 	
 	public void setCredentials(String name, String surname, String username) {

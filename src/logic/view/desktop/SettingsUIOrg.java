@@ -80,6 +80,7 @@ public class SettingsUIOrg extends JFrame {
 		panel.setBackground(new Color(204, 0, 0));
 		panel.setBounds(0, 54, 307, 605);
 		panel.setLayout(null);
+		nameButton.setForeground(Color.WHITE);
 		nameButton.setBackground(new Color(139, 0, 0));
 		nameButton.setBounds(10, 163, 287, 57);
 		panel.add(nameButton);
@@ -202,10 +203,12 @@ public class SettingsUIOrg extends JFrame {
 		panel.add(lblTitle);
 		lblTitle.setForeground(new Color(255, 255, 255));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
-		emailButton.setBackground(Color.RED);
+		emailButton.setForeground(Color.WHITE);
+		emailButton.setBackground(new Color(204, 0, 0));
 		emailButton.setBounds(10, 219, 287, 57);
 		panel.add(emailButton);
-		passwordButton.setBackground(Color.RED);
+		passwordButton.setForeground(Color.WHITE);
+		passwordButton.setBackground(new Color(204, 0, 0));
 		passwordButton.setBounds(10, 274, 287, 57);
 		
 		panel.add(passwordButton);
