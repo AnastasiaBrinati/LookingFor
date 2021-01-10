@@ -34,6 +34,7 @@ import javax.swing.JLayeredPane;
 import java.awt.ScrollPane;
 import java.awt.Panel;
 import javax.swing.JMenuBar;
+import javax.swing.AbstractButton;
 import javax.swing.Box;
 import java.awt.SystemColor;
 import javax.swing.JRadioButtonMenuItem;
@@ -52,7 +53,18 @@ public class CourseUIOrg extends JFrame {
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("");
 	private JButton exitButton = new JButton("");
-
+	private JButton homeButton = new JButton("");
+	JLabel nameLbl = new JLabel("Name");
+	JLabel sportLbl = new JLabel("Sport");
+	JLabel lblAvailability = new JLabel("Availability");
+	JLabel instructorNameLbl = new JLabel("John");
+	JLabel lblDescription = new JLabel("Description");
+	JTextArea descriptionTextArea = new JTextArea();
+	JLabel lessonPriceLbl = new JLabel("$20.00");
+	JLabel lblMonthlyPrice = new JLabel("Monthly Price");
+	JLabel monthlyPriceLbl = new JLabel("$50.00");
+	JLabel lblInstructor = new JLabel("Instructor");
+	JLabel availabilityLbl = new JLabel("7");
 
 	public CourseUIOrg() {
 
@@ -85,21 +97,21 @@ public class CourseUIOrg extends JFrame {
 		
 		settingsButton.setContentAreaFilled(false);
 		
-		Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img3));
-		settingsButton.setContentAreaFilled(false);
+		//Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
+		//settingsButton.setIcon(new ImageIcon(img3));
+		//settingsButton.setContentAreaFilled(false);
 
-		Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
-		exitButton.setIcon(new ImageIcon(img5));
-		exitButton.setContentAreaFilled(false);
+		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
+		//exitButton.setIcon(new ImageIcon(img5));
+		//exitButton.setContentAreaFilled(false);
 
 		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
 		//exitButton.setIcon(new ImageIcon(img5));
 		exitButton.setContentAreaFilled(false);
 
-		Image img6=new ImageIcon(this.getClass().getResource("/settings-24.png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img6));
-		settingsButton.setContentAreaFilled(false);
+		//Image img6=new ImageIcon(this.getClass().getResource("/settings-24.png")).getImage();
+		//settingsButton.setIcon(new ImageIcon(img6));
+		//settingsButton.setContentAreaFilled(false);
 
 		//Image img6=new ImageIcon(this.getClass().getResource("/settings-24.png")).getImage();
 		//settingsButton.setIcon(new ImageIcon(img6));
@@ -118,7 +130,7 @@ public class CourseUIOrg extends JFrame {
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
 		
-		JButton homeButton = new JButton("");
+		
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(336, 10, 40, 43);
 		panel.add(homeButton);
@@ -139,16 +151,16 @@ public class CourseUIOrg extends JFrame {
 		lblNewLabel_1.setBounds(10, 11, 126, 126);
 		panel_1.add(lblNewLabel_1);
 		
-		JLabel nameLbl = new JLabel("Name");
+		
 		nameLbl.setForeground(new Color(255, 255, 255));
 		nameLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 23));
-		nameLbl.setBounds(146, 22, 61, 14);
+		nameLbl.setBounds(146, 22, 277, 14);
 		panel_1.add(nameLbl);
 		
-		JLabel sportLbl = new JLabel("Sport");
+		
 		sportLbl.setForeground(Color.WHITE);
 		sportLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
-		sportLbl.setBounds(146, 47, 61, 14);
+		sportLbl.setBounds(146, 47, 413, 14);
 		panel_1.add(sportLbl);
 		
 		JButton deleteButton = new JButton("Delete ");
@@ -157,12 +169,12 @@ public class CourseUIOrg extends JFrame {
 		deleteButton.setBounds(920, 44, 133, 63);
 		panel_1.add(deleteButton);
 		
-		JTextArea descriptionTextArea = new JTextArea();
+		
 		descriptionTextArea.setBackground(new Color(230, 230, 250));
 		descriptionTextArea.setBounds(61, 197, 758, 128);
 		mainPanel.add(descriptionTextArea);
 		
-		JLabel lblDescription = new JLabel("Description");
+		
 		lblDescription.setForeground(new Color(0, 0, 0));
 		lblDescription.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		lblDescription.setBounds(61, 172, 113, 14);
@@ -174,43 +186,40 @@ public class CourseUIOrg extends JFrame {
 		lblLessonPrice.setBounds(61, 356, 113, 14);
 		mainPanel.add(lblLessonPrice);
 		
-		JLabel lblMonthlyPrice = new JLabel("Monthly Price");
 		lblMonthlyPrice.setForeground(Color.BLACK);
 		lblMonthlyPrice.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		lblMonthlyPrice.setBounds(61, 410, 113, 14);
 		mainPanel.add(lblMonthlyPrice);
 		
-		JLabel lessonPriceLbl = new JLabel("$20.00");
+		
 		lessonPriceLbl.setForeground(new Color(0, 0, 0));
 		lessonPriceLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		lessonPriceLbl.setBounds(71, 381, 61, 14);
 		mainPanel.add(lessonPriceLbl);
 		
-		JLabel monthlyPriceLbl = new JLabel("$50.00");
 		monthlyPriceLbl.setForeground(Color.BLACK);
 		monthlyPriceLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		monthlyPriceLbl.setBounds(71, 435, 61, 14);
 		mainPanel.add(monthlyPriceLbl);
 		
-		JLabel lblInstructor = new JLabel("Instructor");
 		lblInstructor.setForeground(Color.BLACK);
 		lblInstructor.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		lblInstructor.setBounds(61, 460, 113, 14);
 		mainPanel.add(lblInstructor);
 		
-		JLabel instructorNameLbl = new JLabel("John");
+		
 		instructorNameLbl.setForeground(Color.BLACK);
 		instructorNameLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		instructorNameLbl.setBounds(71, 485, 61, 14);
 		mainPanel.add(instructorNameLbl);
 		
-		JLabel lblAvailability = new JLabel("Availability");
+		
 		lblAvailability.setForeground(Color.BLACK);
 		lblAvailability.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		lblAvailability.setBounds(61, 510, 113, 14);
 		mainPanel.add(lblAvailability);
 		
-		JLabel availabilityLbl = new JLabel("7");
+		
 		availabilityLbl.setForeground(Color.BLACK);
 		availabilityLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		availabilityLbl.setBounds(71, 535, 61, 14);
@@ -226,6 +235,22 @@ public class CourseUIOrg extends JFrame {
 	}
 	public JButton getExitButton() {
 		return exitButton;
+	}
+
+	public AbstractButton getHomeButton() {
+		
+		return homeButton;
+	}
+
+	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice,
+			String description, String instructorName, String sport) {
+		nameLbl.setText(name);
+		lessonPriceLbl.setText(lessonPrice);
+		monthlyPriceLbl.setText(monthlyPrice);
+		descriptionTextArea.setText(description);
+		instructorNameLbl.setText(instructorName);
+		sportLbl.setText(sport);
+		
 	}
 }
 	

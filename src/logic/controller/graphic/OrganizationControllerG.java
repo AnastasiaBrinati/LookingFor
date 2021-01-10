@@ -8,6 +8,7 @@ import logic.model.OrganizationBean;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.SettingsUIOrg;
 import logic.view.desktop.LoginUI;
+import logic.view.desktop.CourseUIOrg;
 import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.ItemButton;
@@ -203,9 +204,9 @@ public class OrganizationControllerG{
 				view.createCourseFrame(courseName).addActionListener(new ActionListener() {
 														public void actionPerformed(ActionEvent e) {
 						
-															CourseUISUs courseUI = new CourseUISUs();
+															CourseUIOrg courseUI = new CourseUIOrg();
 															try {
-																CourseSUsControllerG.getInstance(courseUI, courseName, orgName);
+																CourseOrgControllerG.getInstance(courseUI, courseName, orgName);
 																view.setVisible(false);
 															} catch (Exception e1) {
 																// TODO Auto-generated catch block

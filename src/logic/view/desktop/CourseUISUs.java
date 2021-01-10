@@ -150,25 +150,25 @@ public class CourseUISUs extends JFrame {
 		
 		nameLbl.setForeground(new Color(255, 255, 255));
 		nameLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 23));
-		nameLbl.setBounds(146, 22, 61, 14);
+		nameLbl.setBounds(146, 22, 251, 14);
 		panel_1.add(nameLbl);
 		
 		
 		sportLbl.setForeground(Color.WHITE);
 		sportLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
-		sportLbl.setBounds(146, 47, 61, 14);
+		sportLbl.setBounds(146, 47, 277, 14);
 		panel_1.add(sportLbl);
 		
 		JButton joinButton = new JButton("Join");
 		joinButton.setForeground(new Color(255, 255, 255));
-		joinButton.setBackground(new Color(0, 128, 0));
+		joinButton.setBackground(Color.RED);
 		joinButton.setBounds(884, 47, 157, 65);
 		panel_1.add(joinButton);
 		
 		
 		organizationLbl.setForeground(Color.WHITE);
 		organizationLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
-		organizationLbl.setBounds(146, 72, 145, 14);
+		organizationLbl.setBounds(146, 72, 311, 14);
 		panel_1.add(organizationLbl);
 		
 		
