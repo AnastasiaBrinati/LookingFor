@@ -190,39 +190,7 @@ public class OrganizationControllerG{
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	/*
-	private static void assegnaGestoriCorsi() {
-		if(OrganizationBean.getCourses()!=null){
-		for(int i=0; i < OrganizationBean.getCourses().size(); i++) {
-			
-			String courseName = OrganizationBean.getCourses().get(i).getName();
-			ActionListener gestoreCourseFrame = new ActionListener() {
-			
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					ItemButton ib = (ItemButton) e.getSource();
-					CourseUISUs courseUI = new CourseUISUs();
-					//PER ORA 
-					try {
-						CourseSUsControllerG.getInstance(courseUI, ib.getText(), ib.getOrganizationName());
-					} catch (Exception e1) {
-						// does whatever
-						e1.printStackTrace();
-					}
-					view.setVisible(false);
-				}
-			};
-			if(view.getFrame(courseName)!=null) {
-				view.getFrame(courseName).addActionListener(gestoreCourseFrame);
-			}
-			
-		}
-		}
-	}
-	
-	*/
-	
-	
+		
 	
 	private static void displayCourses() {
 		

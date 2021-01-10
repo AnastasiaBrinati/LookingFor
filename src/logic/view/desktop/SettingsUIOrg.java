@@ -3,7 +3,6 @@ package logic.view.desktop;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
