@@ -9,9 +9,9 @@ import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.SettingsUIOrg;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.CourseUIOrg;
-import logic.view.desktop.CourseUISUs;
+import logic.view.desktop.CourtUIOrg;
+import logic.view.desktop.EventUIOrg;
 import logic.view.desktop.HomeUI;
-import logic.view.desktop.ItemButton;
 
 public class OrganizationControllerG{
 
@@ -27,6 +27,8 @@ public class OrganizationControllerG{
 			instance = new OrganizationControllerG(view);
 			instance.assegnaGestori();
 			displayCourses();
+			displayEvents();
+			displayCourts();
 		}
 		setCredentials();
 		viewOrganizationProfileUI();
@@ -102,12 +104,20 @@ public class OrganizationControllerG{
 		};
 		view.getAddCourseButton().addActionListener(gestoreAddCourse);
 		
+		ActionListener gestoreCancelCourse = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				view.resetNewCourseForm();
+			}
+		};
+		view.getCancelCourseButton().addActionListener(gestoreCancelCourse);
+		
 		
 		ActionListener gestoreSaveCourse = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				NewCourseBean newCourseBean = new NewCourseBean();
-				getCredentials(newCourseBean);
+				getNewCourseCredentials(newCourseBean);
 				try {
 					NewCourseBean.addCourse(newCourseBean);
 					view.setCoursesPanelVisible();
@@ -120,12 +130,11 @@ public class OrganizationControllerG{
 				
 			}
 		};
-		view.getSaveButton().addActionListener(gestoreSaveCourse);		
+		view.getSaveCourseButton().addActionListener(gestoreSaveCourse);		
 		//fine caso d'uso new course
-		//////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////
 		
-		
-		
+		/////////////////////////////////////////////////////////////////
 		//showing CourtsPanel
         ActionListener gestoreCourts = new ActionListener() {
 			
@@ -137,6 +146,44 @@ public class OrganizationControllerG{
 		view.getCourtsButton().addActionListener(gestoreCourts);
 		
 		
+		//click on the add button on the CourtsPanel 
+		ActionListener gestoreAddCourt = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+					view.showNewCourtPanel();
+			}
+		};
+		view.getAddCourtButton().addActionListener(gestoreAddCourt);
+		
+		ActionListener gestoreCancelCourt = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				view.resetNewCourtForm();
+			}
+		};
+		view.getCancelCourtButton().addActionListener(gestoreCancelCourt);
+				
+				
+		ActionListener gestoreSaveCourt = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				NewCourtBean newCourseBean = new NewCourtBean();
+				getNewCourtCredentials(newCourtBean);
+					try {
+						NewCourtBean.addCourse(newCourtBean);
+						view.setCourtsPanelVisible();
+						view.createCourtFrame(newCourtBean.getName());
+							
+					} catch (Exception e1) {
+							view.doubleCourtErrorMessage("Court already exists");
+							e1.printStackTrace();
+						}
+						
+			}
+		};
+		view.getSaveCourtButton().addActionListener(gestoreSaveCourt);		
+		//fine caso d'uso new court
+		///////////////////////////////////////////////////////////////////
 		
 		///////////////////////////////////////////////////////////////////
 		//da qui inizia caso d'uso per aggiungere evento		
@@ -159,13 +206,38 @@ public class OrganizationControllerG{
 		};
 		view.getAddEventButton().addActionListener(gestoreAddEvent);
 		
+		ActionListener gestoreCancelEvent = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				view.resetNewEventForm();
+			}
+		};
+		view.getCancelEventButton().addActionListener(gestoreCancelEvent);
+				
+				
+		ActionListener gestoreSaveEvent = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				NewEventBean newEventBean = new NewEventBean();
+				getNewCourtCredentials(newEventBean);
+					try {
+						NewEventBean.addCourse(newEventBean);
+						view.setEventsPanelVisible();
+						view.createEventFrame(newEventBean.getName());
+							
+					} catch (Exception e1) {
+							view.doubleEventErrorMessage("event already exists");
+							e1.printStackTrace();
+						}
+						
+			}
+		};
+		view.getSaveEventButton().addActionListener(gestoreSaveEvent);
+		
 		//fine caso d'uso
 		///////////////////////////////////////////////////////////////////
 		
-		
-		//assegnaGestoriCorsi();
-		
-		
+	
         ActionListener gestoreHome = new ActionListener() {
 			
 			@Override
@@ -224,10 +296,24 @@ public class OrganizationControllerG{
 		
 		OrganizationBean orgBean = new OrganizationBean();
 		OrganizationBean.setCredentials(orgBean);
+		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getEvents().size(); i++) {
 				String eventName = orgBean.getEvents().get(i).getName();
-				System.out.println("nome corso: " + eventName);
-				view.createEventFrame(eventName);
+				System.out.println("nome evento: " + eventName);
+				view.createCourtFrame(eventName).addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+
+						EventUIOrg eventUI = new EventUIOrg();
+						try {
+							EventOrgControllerG.getInstance(eventUI, eventName, orgName);
+							view.setVisible(false);
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						
+					}
+			});
 		}
 		
 	}
@@ -236,15 +322,29 @@ public class OrganizationControllerG{
 		
 		OrganizationBean orgBean = new OrganizationBean();
 		OrganizationBean.setCredentials(orgBean);
+		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getCourts().size(); i++) {
 				String courtName = orgBean.getCourts().get(i).getName();
-				System.out.println("nome corso: " + courtName);
-				view.createCourtFrame(courtName);
+				System.out.println("nome campo: " + courtName);
+				view.createCourtFrame(courtName).addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+
+						CourtUIOrg courtUI = new CourtUIOrg();
+						try {
+							CourtOrgControllerG.getInstance(courtUI, courtName, orgName);
+							view.setVisible(false);
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+						
+					}
+			});
 		}
 		
 	}
 	
-	private void getCredentials(NewCourseBean newCourseBean){
+	private void getNewCourseCredentials(NewCourseBean newCourseBean){
 		
 		newCourseBean.setName(view.getName());
 		newCourseBean.setMonthlyPrice(view.getMonthlyPrice());
