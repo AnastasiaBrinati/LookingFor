@@ -232,7 +232,7 @@ public class CourseUIOrg extends JFrame {
 		return exitButton;
 	}
 
-	public AbstractButton getHomeButton() {
+	public JButton getHomeButton() {
 		
 		return homeButton;
 	}

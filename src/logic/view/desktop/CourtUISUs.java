@@ -52,6 +52,7 @@ public class CourtUISUs extends JFrame {
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("");
 	private JButton exitButton = new JButton("");
+	private JButton homeButton = new JButton("");
 
 
 	public CourtUISUs() {
@@ -118,7 +119,6 @@ public class CourtUISUs extends JFrame {
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
 		
-		JButton homeButton = new JButton("");
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(336, 10, 40, 43);
 		panel.add(homeButton);
@@ -224,6 +224,9 @@ public class CourtUISUs extends JFrame {
 	}
 	public JButton getExitButton() {
 		return exitButton;
+	}
+	public JButton getHomeButton() {
+		return homeButton;
 	}
 }
 	

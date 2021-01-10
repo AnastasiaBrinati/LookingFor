@@ -54,6 +54,20 @@ public class OrganizationProfileUI extends JFrame {
 	private JButton addButtonCourse = new JButton("+");
 	private JPanel lowerPanel = new JPanel();
 	private final JLabel courseslbl = new JLabel("Courses");
+	
+	//new course panel
+	private JPanel newCoursePanel = new JPanel();
+	private static JTextArea descriptionTextArea = new JTextArea();
+	private final JButton saveCourseButton = new JButton("SAVE");
+	private JButton cancelCourseButton = new JButton("cancel");
+	private static Checkbox utilitiesCheckbox = new Checkbox("equipment required");
+	private final JLabel priceForLessonlbl = new JLabel("price for 1 lesson:");
+	private final JLabel monthlyPricelbl = new JLabel("monthly price:");
+	private final static JTextField priceForLessonTextField = new JTextField();
+	private final static JTextField monthlyPriceTextField = new JTextField();
+	private static JTextField sportTextField;
+	private static JTextField instructorNameTextField;
+	private static JTextField availabilityTextField;
 
 	
 	//events
@@ -76,19 +90,6 @@ public class OrganizationProfileUI extends JFrame {
 	private static JTextField titleTextField;
 	private JLabel organizationNameLbl = new JLabel("");
 	
-	
-	private JPanel newCoursePanel = new JPanel();
-	private static JTextArea descriptionTextArea = new JTextArea();
-	private final JButton saveButton = new JButton("SAVE");
-	private JButton cancelButton = new JButton("cancel");
-	private static Checkbox utilitiesCheckbox = new Checkbox("equipment required");
-	private final JLabel priceForLessonlbl = new JLabel("price for 1 lesson:");
-	private final JLabel monthlyPricelbl = new JLabel("monthly price:");
-	private final static JTextField priceForLessonTextField = new JTextField();
-	private final static JTextField monthlyPriceTextField = new JTextField();
-	private static JTextField sportTextField;
-	private static JTextField instructorNameTextField;
-	private static JTextField availabilityTextField;
 
 
 	public OrganizationProfileUI() {
@@ -173,11 +174,11 @@ public class OrganizationProfileUI extends JFrame {
 		newCoursePanel.setBounds(0, 0, 972, 568);
 		coursesPanel.add(newCoursePanel);
 		newCoursePanel.setLayout(null);		
-		cancelButton.setBounds(52, 498, 162, 40);
-		newCoursePanel.add(cancelButton);		
-		saveButton.setBackground(new Color(255, 99, 71));
-		saveButton.setBounds(247, 498, 162, 40);
-		newCoursePanel.add(saveButton);
+		cancelCourseButton.setBounds(52, 498, 162, 40);
+		newCoursePanel.add(cancelCourseButton);		
+		saveCourseButton.setBackground(new Color(255, 99, 71));
+		saveCourseButton.setBounds(247, 498, 162, 40);
+		newCoursePanel.add(saveCourseButton);
 		
 		
 		JLabel titleLable = new JLabel("Insert Title:");
@@ -395,7 +396,7 @@ public class OrganizationProfileUI extends JFrame {
         
     }
 
-	public void createEventFrame(String name) {
+	public JButton createEventFrame(String name) {
 
         JButton frame = new JButton(name);
         
@@ -408,9 +409,11 @@ public class OrganizationProfileUI extends JFrame {
         lowerPanel2.repaint();
         eventsPanel.repaint();
         
+        return frame;
+        
     }
 	
-	public void createCourtFrame(String name) {
+	public JButton createCourtFrame(String name) {
 
         JButton frame = new JButton(name);
         frame.setBorder(new LineBorder(Color.BLACK));
@@ -421,6 +424,8 @@ public class OrganizationProfileUI extends JFrame {
         lowerPanel3.revalidate();
         lowerPanel3.repaint();
         courtsPanel.repaint();
+        
+        return frame;
         
     }
 	
@@ -529,7 +534,7 @@ public class OrganizationProfileUI extends JFrame {
 	
 	
 	
-	private static void resetNewCourseForm() {
+	public void resetNewCourseForm() {
 		titleTextField.setText("");
 		descriptionTextArea.setText("");
 		utilitiesCheckbox.setState(false);
@@ -573,8 +578,12 @@ public class OrganizationProfileUI extends JFrame {
 		return addButtonCourt;
 	}
 	
-	public JButton getSaveButton() {
-		return saveButton;
+	public JButton getSaveCourseButton() {
+		return saveCourseButton;
+	}
+	
+	public JButton getCancelCourseButton() {
+		return cancelCourseButton;
 	}
 	
 	public JButton getExitButton() {

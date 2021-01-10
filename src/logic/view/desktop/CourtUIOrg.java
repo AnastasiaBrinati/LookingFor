@@ -34,6 +34,7 @@ import javax.swing.JLayeredPane;
 import java.awt.ScrollPane;
 import java.awt.Panel;
 import javax.swing.JMenuBar;
+import javax.swing.AbstractButton;
 import javax.swing.Box;
 import java.awt.SystemColor;
 import javax.swing.JRadioButtonMenuItem;
@@ -52,7 +53,7 @@ public class CourtUIOrg extends JFrame {
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("");
 	private JButton exitButton = new JButton("");
-
+	private JButton homeButton = new JButton("");
 
 	public CourtUIOrg() {
 
@@ -118,8 +119,7 @@ public class CourtUIOrg extends JFrame {
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
 		
-		JButton homeButton = new JButton("");
-		homeButton.setContentAreaFilled(false);
+	    homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(336, 10, 40, 43);
 		panel.add(homeButton);
 		
@@ -214,6 +214,10 @@ public class CourtUIOrg extends JFrame {
 	}
 	public JButton getExitButton() {
 		return exitButton;
+	}
+
+	public JButton getHomeButton() {
+		return homeButton;
 	}
 }
 	
