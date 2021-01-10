@@ -10,6 +10,7 @@ public class Court {
 	private String sport;
 	private String availability;
 	private String price;
+	private String type;
 	
 	
 	
@@ -56,6 +57,18 @@ public class Court {
 	}
 	public void setPrice(String price) {
 		this.price = price;
+	}
+	public void addEvent(Court newCourt) {
+		CourtDAO courtDAO=new CourtDAO();
+		courtDAO.addCourt(newCourt);
+		
+		
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 

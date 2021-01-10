@@ -7,6 +7,7 @@ public class NewCourtBean {
 	private String imgSrc;
 	private float avaialbility;
 	private String description;
+	private String type;
 	
 	
 	public String getName() {
@@ -53,6 +54,12 @@ public class NewCourtBean {
 	public static void addCourt(NewCourtBean bean) throws Exception {
 		AddCourtController addCourtController=new AddCourtController();
 		addCourtController.addCourt(bean);
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	

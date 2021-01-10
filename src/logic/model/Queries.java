@@ -62,9 +62,9 @@ public class Queries {
         
     }
 	
-	public static int addEvent(Statement stmt, Course course) throws SQLException  {
-        String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
-        course.getOrganization(),course.getName(),course.getSport(),course.getDescription(),course.getInstructorName(),String.valueOf(course.getLessonPrice()),String.valueOf(course.getMonthlyPrice()),String.valueOf(course.getAvailability()));
+	public static int addEvent(Statement stmt, Event newEvent) throws SQLException  {
+        String insertStatement = String.format("INSERT INTO `events`(organization,name,sport,description,price,availability) VALUES ('%s','%s','%s','%s','%s','%s')",
+        newEvent.getOrganization(),newEvent.getName(),newEvent.getSport(),newEvent.getDescription(),String.valueOf(newEvent.getPrice()),String.valueOf(newEvent.getAvailability()));
         
         System.out.println(insertStatement);
         return stmt.executeUpdate(insertStatement);
@@ -72,16 +72,16 @@ public class Queries {
         
     }
 	
-	/*public static int addCourt(Statement stmt, Court court) throws SQLException  {
-    String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,instructorName,lessonPrice,monthlyPrice,availability) VALUES ('%s','%s','%s','%s','%s','%s','%s','%s')",
-    		court.getOrganization(),court.getName(),court.getSport(),court.getDescription(),court.getInstructorName(),String.valueOf(court.getLessonPrice()),String.valueOf(court.getMonthlyPrice()),String.valueOf(course.getAvailability()));
+	public static int addCourt(Statement stmt, Court court) throws SQLException  {
+    String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,price,availability,type) VALUES ('%s','%s','%s','%s','%s','%s','%s')",
+    		court.getOrganization(),court.getName(),court.getSport(),court.getDescription(),String.valueOf(court.getPrice()),String.valueOf(court.getAvailability()),court.getType());
     
     System.out.println(insertStatement);
     return stmt.executeUpdate(insertStatement);
     
     
 }
-*/
+
 	//query to insert a new user
 	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type,String location) throws SQLException  {
         String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password,type,location) VALUES ('%s','%s','%s','%s','%s','%s','%s')", name,surname,username,email,password,type,location);

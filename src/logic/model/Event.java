@@ -61,6 +61,16 @@ public class Event {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	public void addEvent(Event newEvent) {
+		EventDAO eventDAO=new EventDAO();
+		try {
+			eventDAO.addEvent(newEvent);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 	
 
 }
