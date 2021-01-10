@@ -46,7 +46,7 @@ public class HomeUI extends JFrame {
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
-	private JButton settingsButton = new JButton("");
+	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("");
 
 	public HomeUI() {
@@ -73,7 +73,9 @@ public class HomeUI extends JFrame {
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
-		settingsButton.setBounds(10, 5, 40, 43);
+		settingsButton.setForeground(Color.WHITE);
+		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 30));
+		settingsButton.setBounds(0, 1, 67, 53);
 		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		

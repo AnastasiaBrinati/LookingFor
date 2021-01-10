@@ -5,8 +5,10 @@ import java.awt.event.ActionListener;
 
 import logic.model.CourseBean;
 import logic.view.desktop.CourseUIOrg;
+import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
+import logic.view.desktop.OrganizationProfileUI;
 
 public class CourseOrgControllerG {
 	
@@ -35,17 +37,31 @@ public class CourseOrgControllerG {
 	
 	public void assegnaGestori() {
 		
-		ActionListener gestoreHome = new ActionListener(){
+		
+		
+        ActionListener gestoreHome = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				HomeUI homeView = new HomeUI();
+				HomeControllerGOrg.getInstance(homeView);
+				view.setVisible(false);
+			}
+		};
+		view.getHomeButton().addActionListener(gestoreHome);
+		
+		//gestore per tornare indietro dal corso alla sezione corsi della organizzazione
+		ActionListener gestoreBack = new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
-				HomeUI homeview = new HomeUI();
-				HomeControllerGOrg.getInstance(homeview);
+				OrganizationProfileUI profileView = new OrganizationProfileUI();
+				OrganizationControllerG.getInstance(profileView);
 			}
 
 		};
-		view.getHomeButton().addActionListener(gestoreHome);
+		view.getBackButton().addActionListener(gestoreBack);
 		
 		ActionListener gestoreExit = new ActionListener(){
 

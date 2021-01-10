@@ -51,9 +51,9 @@ public class CourseUIOrg extends JFrame {
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
-	private JButton settingsButton = new JButton("");
+	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("");
-	private JButton homeButton = new JButton("");
+	private JButton homeButton = new JButton("\u2302");
 	JLabel nameLbl = new JLabel("Name");
 	JLabel sportLbl = new JLabel("Sport");
 	JLabel lblAvailability = new JLabel("Availability");
@@ -65,7 +65,7 @@ public class CourseUIOrg extends JFrame {
 	JLabel monthlyPriceLbl = new JLabel("$50.00");
 	JLabel lblInstructor = new JLabel("Instructor");
 	JLabel availabilityLbl = new JLabel("7");
-	private final JButton backButton = new JButton("\u2190");
+	private final JButton backButton = new JButton("\u21E6");
 
 	public CourseUIOrg() {
 
@@ -92,8 +92,11 @@ public class CourseUIOrg extends JFrame {
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
-		settingsButton.setBounds(10, 5, 40, 43);
+		settingsButton.setForeground(Color.WHITE);
+		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 30));
+		settingsButton.setBounds(0, -23, 68, 97);
 		panel.add(settingsButton);
+		settingsButton.setContentAreaFilled(false);
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
 		//settingsButton.setIcon(new ImageIcon(img3));
@@ -115,18 +118,26 @@ public class CourseUIOrg extends JFrame {
 		
 		
 		profileButton.setContentAreaFilled(false);
+		backButton.setContentAreaFilled(false);
 		
 		
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
+		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 50));
+		homeButton.setForeground(Color.WHITE);
 		
 		
 		homeButton.setContentAreaFilled(false);
-		homeButton.setBounds(336, 10, 40, 43);
+		homeButton.setBounds(313, -27, 104, 97);
 		panel.add(homeButton);
+		backButton.setFont(new Font("Cambria Math", Font.PLAIN, 40));
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		backButton.setForeground(Color.WHITE);
 		backButton.setBackground(new Color(204, 0, 0));
-		backButton.setBounds(83, 10, 43, 23);
+		backButton.setBounds(90, 3, 85, 54);
 		
 		panel.add(backButton);
 		
@@ -149,7 +160,7 @@ public class CourseUIOrg extends JFrame {
 		
 		nameLbl.setForeground(new Color(255, 255, 255));
 		nameLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 23));
-		nameLbl.setBounds(146, 22, 277, 14);
+		nameLbl.setBounds(146, 11, 277, 25);
 		panel_1.add(nameLbl);
 		
 		
@@ -242,7 +253,7 @@ public class CourseUIOrg extends JFrame {
 	}
 
 	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice,
-			String description, String instructorName, String sport) {
+		String description, String instructorName, String sport) {
 		nameLbl.setText(name);
 		lessonPriceLbl.setText(lessonPrice);
 		monthlyPriceLbl.setText(monthlyPrice);

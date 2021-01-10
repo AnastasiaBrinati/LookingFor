@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.controller.NewCourseBean;
+import logic.controller.NewCourtBean;
 import logic.model.OrganizationBean;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.SettingsUIOrg;

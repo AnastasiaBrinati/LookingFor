@@ -25,7 +25,7 @@ public class SettingsUIOrg extends JFrame {
 	private JPanel headerPanel = new JPanel();
 
 	private JLabel lblTitle = new JLabel("Sportee");
-	private JButton homeButton = new JButton("");
+	private JButton homeButton = new JButton("\u2302");
 	
 	private final JPanel panel = new JPanel();
 	private final JButton nameButton = new JButton("name");
@@ -52,8 +52,8 @@ public class SettingsUIOrg extends JFrame {
 	private JButton cancelButton_2 = new JButton("Cancel");
 	private JButton SaveButton_2 = new JButton("SAVE");
 	private final JLabel pencilTextField2 = new JLabel("");
-	private final JLabel pencilTextField5 = new JLabel("New label");
-	private final JLabel pencilTextField4 = new JLabel("New label");
+	private final JLabel pencilTextField5 = new JLabel("");
+	private final JLabel pencilTextField4 = new JLabel("\u270E");
 	private final JButton exitButton = new JButton("");
 	
 	private final JPanel passwordPanel = new JPanel();
@@ -123,6 +123,7 @@ public class SettingsUIOrg extends JFrame {
 				SaveButton_2.setBackground(Color.ORANGE);
 				SaveButton_2.setBounds(323, 395, 158, 38);
 				emailPanel.add(SaveButton_2);
+				pencilTextField5.setFont(new Font("Tahoma", Font.PLAIN, 20));
 				pencilTextField5.setBounds(559, 152, 44, 38);
 				
 				emailPanel.add(pencilTextField5);
@@ -219,7 +220,6 @@ public class SettingsUIOrg extends JFrame {
 							headerPanel.setLayout(null);
 							
 									homeButton.setBounds(367, 0, 48, 51);
-									homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
 									homeButton.setBorder(null);
 									homeButton.setContentAreaFilled(false);
 									
