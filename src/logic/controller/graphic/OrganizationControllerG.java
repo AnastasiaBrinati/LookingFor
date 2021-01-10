@@ -30,6 +30,7 @@ public class OrganizationControllerG{
 		}
 		setCredentials();
 		viewOrganizationProfileUI();
+		
 		return instance;
 
 	}
@@ -202,19 +203,19 @@ public class OrganizationControllerG{
 				String courseName = orgBean.getCourses().get(i).getName();
 				System.out.println("nome corso: " + courseName);
 				view.createCourseFrame(courseName).addActionListener(new ActionListener() {
-														public void actionPerformed(ActionEvent e) {
+			      public void actionPerformed(ActionEvent e) {
 						
-															CourseUIOrg courseUI = new CourseUIOrg();
-															try {
-																CourseOrgControllerG.getInstance(courseUI, courseName, orgName);
-																view.setVisible(false);
-															} catch (Exception e1) {
-																// TODO Auto-generated catch block
-																e1.printStackTrace();
-															}
+						CourseUIOrg courseUI = new CourseUIOrg();
+							try {
+							   CourseOrgControllerG.getInstance(courseUI, courseName, orgName);
+							   view.setVisible(false);
+							} catch (Exception e1) {
+																
+							   e1.printStackTrace();
+							}
 															
-														}
-												});
+				}
+				});
 		}
 		
 	}

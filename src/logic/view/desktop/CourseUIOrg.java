@@ -65,6 +65,7 @@ public class CourseUIOrg extends JFrame {
 	JLabel monthlyPriceLbl = new JLabel("$50.00");
 	JLabel lblInstructor = new JLabel("Instructor");
 	JLabel availabilityLbl = new JLabel("7");
+	private final JButton backButton = new JButton("\u2190");
 
 	public CourseUIOrg() {
 
@@ -93,9 +94,6 @@ public class CourseUIOrg extends JFrame {
 		panel.add(profileButton);
 		settingsButton.setBounds(10, 5, 40, 43);
 		panel.add(settingsButton);
-		//settingsButton.setEnabled(false);
-		
-		settingsButton.setContentAreaFilled(false);
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
 		//settingsButton.setIcon(new ImageIcon(img3));
@@ -108,14 +106,6 @@ public class CourseUIOrg extends JFrame {
 		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
 		//exitButton.setIcon(new ImageIcon(img5));
 		exitButton.setContentAreaFilled(false);
-
-		//Image img6=new ImageIcon(this.getClass().getResource("/settings-24.png")).getImage();
-		//settingsButton.setIcon(new ImageIcon(img6));
-		//settingsButton.setContentAreaFilled(false);
-
-		//Image img6=new ImageIcon(this.getClass().getResource("/settings-24.png")).getImage();
-		//settingsButton.setIcon(new ImageIcon(img6));
-		settingsButton.setContentAreaFilled(false);
 
 		
 		//Image img4=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
@@ -134,6 +124,9 @@ public class CourseUIOrg extends JFrame {
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(336, 10, 40, 43);
 		panel.add(homeButton);
+		backButton.setBounds(83, 10, 43, 23);
+		
+		panel.add(backButton);
 		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBounds(0, 55, 1088, 588);
@@ -240,6 +233,10 @@ public class CourseUIOrg extends JFrame {
 	public AbstractButton getHomeButton() {
 		
 		return homeButton;
+	}
+	
+	public JButton getBackButton() {
+		return backButton;
 	}
 
 	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice,
