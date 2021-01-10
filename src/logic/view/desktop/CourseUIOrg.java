@@ -124,6 +124,8 @@ public class CourseUIOrg extends JFrame {
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(336, 10, 40, 43);
 		panel.add(homeButton);
+		backButton.setForeground(Color.WHITE);
+		backButton.setBackground(new Color(204, 0, 0));
 		backButton.setBounds(83, 10, 43, 23);
 		
 		panel.add(backButton);

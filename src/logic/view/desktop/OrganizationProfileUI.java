@@ -295,14 +295,14 @@ public class OrganizationProfileUI extends JFrame {
 		settingsButton.setBounds(10, 0, 55, 54);
 		headerPanel.add(settingsButton);
 		lateralPanel.setBounds(0, 53, 269, 660);
-		lateralPanel.setBackground(new Color(255, 0, 0));
+		lateralPanel.setBackground(new Color(204, 0, 0));
 		
 		contentPane.add(lateralPanel);
 		lateralPanel.setLayout(null);
 										
 		JLabel lblNewLabel = new JLabel("Sportee");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(0, 11, 269, 71);
 		lateralPanel.add(lblNewLabel);
@@ -321,6 +321,7 @@ public class OrganizationProfileUI extends JFrame {
 		courtsButton.setBackground(new Color(255, 0, 0));
 		courtsButton.setBounds(0, 267, 269, 59);
 		lateralPanel.add(courtsButton);
+		backButton.setForeground(Color.WHITE);
 		
 		backButton.setFont(new Font("Arial Black", Font.BOLD, 10));
 		backButton.setBackground(Color.RED);
