@@ -7,6 +7,7 @@ public class OrganizationProfile {
 	private static String name;
 	private static String email;
 	private static String password;
+	private static String location;
 	private static ArrayList<Course> courses = new ArrayList<Course>();
 	private static ArrayList<Event> events = new ArrayList<Event>();
 	private static ArrayList<Court> courts = new ArrayList<Court>();
