@@ -42,9 +42,6 @@ import javax.swing.JTextArea;
 
 public class EventUIOrg extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JPanel panel = new JPanel();
@@ -52,6 +49,15 @@ public class EventUIOrg extends JFrame {
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("");
 	private JButton exitButton = new JButton("");
+	private JButton homeButton = new JButton("");
+	
+	private JLabel priceLbl = new JLabel("$15.00");
+	private JLabel organizationLbl = new JLabel("Organization");
+	private JLabel availabilityLbl = new JLabel("7");
+	private JLabel nameLbl = new JLabel("Name");
+	private JLabel sportLbl = new JLabel("Sport");
+	private JLabel dateLbl = new JLabel("$20.00");
+	private JTextArea descriptionTextArea = new JTextArea();
 
 
 	public EventUIOrg() {
@@ -82,7 +88,7 @@ public class EventUIOrg extends JFrame {
 		settingsButton.setBounds(10, 5, 40, 43);
 		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
-		
+		/*
 		settingsButton.setContentAreaFilled(false);
 		
 		Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
@@ -113,12 +119,11 @@ public class EventUIOrg extends JFrame {
 		
 		
 		profileButton.setContentAreaFilled(false);
-		
+		*/
 		
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
 		
-		JButton homeButton = new JButton("");
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(336, 10, 40, 43);
 		panel.add(homeButton);
@@ -134,18 +139,11 @@ public class EventUIOrg extends JFrame {
 		mainPanel.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBackground(new Color(255, 0, 255));
-		lblNewLabel_1.setBounds(10, 11, 126, 126);
-		panel_1.add(lblNewLabel_1);
-		
-		JLabel nameLbl = new JLabel("Name");
 		nameLbl.setForeground(new Color(255, 255, 255));
 		nameLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 23));
 		nameLbl.setBounds(146, 22, 61, 14);
 		panel_1.add(nameLbl);
 		
-		JLabel sportLbl = new JLabel("Sport");
 		sportLbl.setForeground(Color.WHITE);
 		sportLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		sportLbl.setBounds(146, 47, 61, 14);
@@ -157,7 +155,11 @@ public class EventUIOrg extends JFrame {
 		deleteButton.setBounds(915, 47, 133, 63);
 		panel_1.add(deleteButton);
 		
-		JTextArea descriptionTextArea = new JTextArea();
+		organizationLbl.setForeground(Color.WHITE);
+		organizationLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
+		organizationLbl.setBounds(146, 72, 145, 14);
+		panel_1.add(organizationLbl);
+		
 		descriptionTextArea.setBackground(new Color(230, 230, 250));
 		descriptionTextArea.setBounds(61, 197, 758, 128);
 		mainPanel.add(descriptionTextArea);
@@ -180,13 +182,11 @@ public class EventUIOrg extends JFrame {
 		lblMonthlyPrice.setBounds(61, 410, 113, 14);
 		mainPanel.add(lblMonthlyPrice);
 		
-		JLabel dateLbl = new JLabel("$20.00");
 		dateLbl.setForeground(new Color(0, 0, 0));
 		dateLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		dateLbl.setBounds(71, 381, 61, 14);
 		mainPanel.add(dateLbl);
 		
-		JLabel priceLbl = new JLabel("$15.00");
 		priceLbl.setForeground(Color.BLACK);
 		priceLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		priceLbl.setBounds(71, 435, 61, 14);
@@ -210,12 +210,11 @@ public class EventUIOrg extends JFrame {
 		lblAvailability.setBounds(61, 510, 113, 14);
 		mainPanel.add(lblAvailability);
 		
-		JLabel availabilityLbl = new JLabel("7");
 		availabilityLbl.setForeground(Color.BLACK);
 		availabilityLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		availabilityLbl.setBounds(71, 535, 61, 14);
 		mainPanel.add(availabilityLbl);
-		LineBorder lineBorder=new LineBorder(Color.white,8,true);
+		//LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
 	public JButton getProfileButton() {
@@ -226,6 +225,21 @@ public class EventUIOrg extends JFrame {
 	}
 	public JButton getExitButton() {
 		return exitButton;
+	}
+	public JButton getHomeButton() {
+		return homeButton;
+	}
+	
+	public void setCredentials(String name, String date, String price, String description, String sport, String organization, String availability) {
+		
+		nameLbl.setText(name);
+		sportLbl.setText(sport);
+		organizationLbl.setText(organization);
+		availabilityLbl.setText(availability);
+		priceLbl.setText(price);
+		dateLbl.setText(date);
+		descriptionTextArea.setText(description);
+		
 	}
 }
 	

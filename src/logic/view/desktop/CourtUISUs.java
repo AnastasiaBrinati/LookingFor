@@ -54,6 +54,12 @@ public class CourtUISUs extends JFrame {
 	private JButton exitButton = new JButton("");
 	private JButton homeButton = new JButton("");
 
+	private JTextArea descriptionTextArea = new JTextArea();
+	private JLabel sportLbl = new JLabel("Sport");
+	private JLabel nameLbl = new JLabel("Name");
+	private JLabel priceLbl = new JLabel("$20.00");
+	private JLabel typeLbl = new JLabel("Synthetic");
+	private JLabel availabilityLbl = new JLabel("7");
 
 	public CourtUISUs() {
 
@@ -83,7 +89,7 @@ public class CourtUISUs extends JFrame {
 		settingsButton.setBounds(10, 5, 40, 43);
 		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
-		
+		/*
 		settingsButton.setContentAreaFilled(false);
 		
 		Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
@@ -111,7 +117,7 @@ public class CourtUISUs extends JFrame {
 		//profileButton.setIcon(new ImageIcon(img4));
 		profileButton.setContentAreaFilled(false);
 
-		
+		*/
 		
 		profileButton.setContentAreaFilled(false);
 		
@@ -139,13 +145,11 @@ public class CourtUISUs extends JFrame {
 		lblNewLabel_1.setBounds(10, 11, 126, 126);
 		panel_1.add(lblNewLabel_1);
 		
-		JLabel nameLbl = new JLabel("Name");
 		nameLbl.setForeground(new Color(255, 255, 255));
 		nameLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 23));
 		nameLbl.setBounds(146, 22, 61, 14);
 		panel_1.add(nameLbl);
 		
-		JLabel sportLbl = new JLabel("Sport");
 		sportLbl.setForeground(Color.WHITE);
 		sportLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		sportLbl.setBounds(146, 47, 61, 14);
@@ -167,7 +171,6 @@ public class CourtUISUs extends JFrame {
 		organizationLbl.setBounds(146, 72, 145, 14);
 		panel_1.add(organizationLbl);
 		
-		JTextArea descriptionTextArea = new JTextArea();
 		descriptionTextArea.setBackground(new Color(230, 230, 250));
 		descriptionTextArea.setBounds(61, 197, 758, 128);
 		mainPanel.add(descriptionTextArea);
@@ -190,13 +193,12 @@ public class CourtUISUs extends JFrame {
 		lblMonthlyPrice.setBounds(61, 410, 113, 14);
 		mainPanel.add(lblMonthlyPrice);
 		
-		JLabel priceLbl = new JLabel("$20.00");
 		priceLbl.setForeground(new Color(0, 0, 0));
 		priceLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		priceLbl.setBounds(71, 381, 61, 14);
 		mainPanel.add(priceLbl);
 		
-		JLabel typeLbl = new JLabel("Synthetic");
+
 		typeLbl.setForeground(Color.BLACK);
 		typeLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		typeLbl.setBounds(71, 435, 143, 14);
@@ -208,7 +210,6 @@ public class CourtUISUs extends JFrame {
 		lblAvailability.setBounds(61, 460, 113, 14);
 		mainPanel.add(lblAvailability);
 		
-		JLabel availabilityLbl = new JLabel("7");
 		availabilityLbl.setForeground(Color.BLACK);
 		availabilityLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		availabilityLbl.setBounds(71, 485, 61, 14);
@@ -227,6 +228,16 @@ public class CourtUISUs extends JFrame {
 	}
 	public JButton getHomeButton() {
 		return homeButton;
+	}
+	
+	public void setCredentials(String name, String price, String sport, String availability, String description, String type) {
+		
+		nameLbl.setText(name);
+		sportLbl.setText(sport);
+		descriptionTextArea.setText(description);
+		priceLbl.setText(price+"$");
+		typeLbl.setText(type);
+		availabilityLbl.setText(availability);
 	}
 }
 	
