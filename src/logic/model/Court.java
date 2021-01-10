@@ -3,10 +3,8 @@ package logic.model;
 public class Court {
 	
 	private String name;
-	
 	private String imgSrc;
 	private String description;
-	private String organization;
 	private String sport;
 	private String availability;
 	private String price;
@@ -34,12 +32,7 @@ public class Court {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getOrganization() {
-		return organization;
-	}
-	public void setOrganization(String organization) {
-		this.organization = organization;
-	}
+
 	public String getSport() {
 		return sport;
 	}
@@ -69,6 +62,12 @@ public class Court {
 		CourtDAO courtDAO=new CourtDAO();
 		courtDAO.addCourt(newCourt);
 		
+	}
+	
+	public static Court setCourtCredentials(String courtName,String organizationName) throws Exception {
+		CourtDAO courtDAO=new CourtDAO();
+		return courtDAO.getCourt(courtName,organizationName);
+
 	}
 	
 	

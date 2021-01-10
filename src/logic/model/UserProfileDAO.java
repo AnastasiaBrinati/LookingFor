@@ -374,18 +374,19 @@ public class UserProfileDAO {
 	
 	public Court courtRetreiver(ResultSet tupleCourts) throws SQLException {
 		    String name=tupleCourts.getString("name");
-			String organization=tupleCourts.getString("organization");
+			//String organization=tupleCourts.getString("organization");
 			String price=tupleCourts.getString("price");
 			String sport=tupleCourts.getString("sport");
 			String availability=tupleCourts.getString("availability");
 			String description=tupleCourts.getString("description");
-			
+			String type=tupleCourts.getString("type");
 			Court court=new Court();
+			
 			court.setName(name);
-			court.setOrganization(organization);
-			
+			//court.setOrganization(organization);
+			court.setType(type);
 			court.setSport(sport);
-			
+			court.setPrice(price);
 			court.setAvailability(availability);
 			court.setDescription(description);
 			return court;

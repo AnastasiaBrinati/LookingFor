@@ -5,7 +5,7 @@ public class NewCourtBean {
 	private float price;
 	private String sport;
 	private String imgSrc;
-	private float avaialbility;
+	private float availability;
 	private String description;
 	private String type;
 	
@@ -39,10 +39,10 @@ public class NewCourtBean {
 		this.imgSrc = imgSrc;
 	}
 	public String getAvailability() {
-		return String.valueOf(avaialbility);
+		return String.valueOf(availability);
 	}
 	public void setAvailability(String availability) {
-		this.avaialbility = Float.parseFloat(availability);
+		this.availability = Float.parseFloat(availability);
 	}
 	public String getDescription() {
 		return description;

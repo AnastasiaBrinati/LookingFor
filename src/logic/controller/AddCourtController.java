@@ -2,7 +2,6 @@ package logic.controller;
 
 
 import logic.model.Court;
-import logic.model.Event;
 import logic.model.OrganizationProfile;
 
 public class AddCourtController {
@@ -33,7 +32,7 @@ public class AddCourtController {
 		newCourt.setName(bean.getName());
 		newCourt.setSport(bean.getSport());
 		
-		newCourt.setOrganization(OrganizationProfile.getName());
+		//newCourt.setOrganization(OrganizationProfile.getName());
 		
 		newCourt.addCourt(newCourt);
 		

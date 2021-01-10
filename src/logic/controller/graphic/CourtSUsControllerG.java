@@ -13,20 +13,19 @@ public class CourtSUsControllerG {
 	
 	private static CourtUISUs view;
 	private static CourtSUsControllerG instance=null;
-	//bean 
 	
 	private CourtSUsControllerG(CourtUISUs view) {
 		CourtSUsControllerG.view = view;
 	}
 	
-	public static synchronized CourtSUsControllerG getInstance(CourtUISUs view, String courseName, String orgName) throws Exception {
+	public static synchronized CourtSUsControllerG getInstance(CourtUISUs view, String courtName, String orgName) throws Exception {
 		if(instance==null) {
 			instance = new CourtSUsControllerG(view);
 			instance.assegnaGestori();
 		}
 		
 		showCourseUI();
-		setCourseCredentials(courseName, orgName);
+		setCourtCredentials(courtName, orgName);
 		return instance;
 	}
 	
@@ -64,10 +63,9 @@ public class CourtSUsControllerG {
 		
 	}
 
-	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {
+	private static void setCourtCredentials(String courtName,String organizationName) throws Exception {
 		CourtBean courtBean = new CourtBean();
-		CourtBean.setCourt(courtBean, courseName, organizationName);
-		view.setCredentials(courtBean.getName(),courtBean.getOrganization(),courtBean.getLessonPrice(),courtBean.getMonthlyPrice(),
-				courtBean.getDescription(),courtBean.getInstructorName(),courtBean.getSport());
+		CourtBean.setCourt(courtBean, courtName, organizationName);
+		view.setCredentials(courtBean.getName(), courtBean.getPrice(),courtBean.getSport(),courtBean.getAvailability(),courtBean.getDescription(),courtBean.getType());
 	}
 }

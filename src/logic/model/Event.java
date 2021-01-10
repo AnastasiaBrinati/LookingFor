@@ -61,15 +61,14 @@ public class Event {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public void addEvent(Event newEvent) {
+	public void addEvent(Event newEvent) throws Exception {
+		EventDAO.addEvent(newEvent);
+	}
+	
+	public static Event setEventCredentials(String eventName,String organizationName) throws Exception {
 		EventDAO eventDAO=new EventDAO();
-		try {
-			eventDAO.addEvent(newEvent);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		return eventDAO.getEvent(eventName,organizationName);
+
 	}
 	
 

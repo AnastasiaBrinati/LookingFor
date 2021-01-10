@@ -73,14 +73,14 @@ public class Queries {
     }
 	
 	public static int addCourt(Statement stmt, Court court) throws SQLException  {
-    String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,price,availability,type) VALUES ('%s','%s','%s','%s','%s','%s','%s')",
-    		court.getOrganization(),court.getName(),court.getSport(),court.getDescription(),String.valueOf(court.getPrice()),String.valueOf(court.getAvailability()),court.getType());
+		String insertStatement = String.format("INSERT INTO `courses`(organization,name,sport,description,price,availability,type) VALUES ('%s','%s','%s','%s','%s','%s','%s')",
+		court.getName(),court.getSport(),court.getDescription(),String.valueOf(court.getPrice()),String.valueOf(court.getAvailability()),court.getType());
     
-    System.out.println(insertStatement);
-    return stmt.executeUpdate(insertStatement);
+		System.out.println(insertStatement);
+		return stmt.executeUpdate(insertStatement);
     
     
-}
+	}
 
 	//query to insert a new user
 	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type,String location) throws SQLException  {
@@ -138,6 +138,22 @@ public class Queries {
 	public static ResultSet getUserCourse(Statement stmt, String courseName, String organizationName) throws SQLException {
 		
         String sql = "SELECT * FROM courses WHERE organization= '" + organizationName + "' AND name = '" + courseName + "';";       
+		
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+	}
+	
+	public static ResultSet getUserCourt(Statement stmt, String courtName, String organizationName) throws SQLException {
+		
+        String sql = "SELECT * FROM courts WHERE organization= '" + organizationName + "' AND name = '" + courtName + "';";       
+		
+        System.out.println(sql);
+        return stmt.executeQuery(sql);
+	}
+	
+	public static ResultSet getUserEvent(Statement stmt, String eventName, String organizationName) throws SQLException {
+		
+        String sql = "SELECT * FROM events WHERE organization= '" + organizationName + "' AND name = '" + eventName + "';";       
 		
         System.out.println(sql);
         return stmt.executeQuery(sql);

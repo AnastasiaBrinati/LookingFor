@@ -332,7 +332,6 @@ public class OrganizationControllerG{
 		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getCourts().size(); i++) {
 				String courtName = orgBean.getCourts().get(i).getName();
-				System.out.println("nome campo: " + courtName);
 				view.createCourtFrame(courtName).addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 

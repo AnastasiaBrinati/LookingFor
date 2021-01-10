@@ -3,7 +3,7 @@ package logic.controller.graphic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.model.CourseBean;
+import logic.model.CourtBean;
 import logic.view.desktop.CourtUIOrg;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
@@ -12,20 +12,19 @@ public class CourtOrgControllerG {
 	
 	private static CourtUIOrg view;
 	private static CourtOrgControllerG instance=null;
-	//bean 
 	
 	private CourtOrgControllerG(CourtUIOrg view) {
 		CourtOrgControllerG.view = view;
 	}
 	
-	public static synchronized CourtOrgControllerG getInstance(CourtUIOrg view, String courseName, String orgName) throws Exception {
+	public static synchronized CourtOrgControllerG getInstance(CourtUIOrg view, String courtName, String orgName) throws Exception {
 		if(instance==null) {
 			instance = new CourtOrgControllerG(view);
 			instance.assegnaGestori();
 		}
 		
 		showCourseUI();
-		setCourseCredentials(courseName, orgName);
+		setCourtCredentials(courtName, orgName);
 		return instance;
 	}
 	
@@ -63,10 +62,9 @@ public class CourtOrgControllerG {
 		
 	}
 
-	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {
-		CourseBean courseBean = new CourseBean();
-		CourseBean.setCourt(courseBean, courseName, organizationName);
-		view.setCredentials(courseBean.getName(),courseBean.getOrganization(),courseBean.getLessonPrice(),courseBean.getMonthlyPrice(),
-				courseBean.getDescription(),courseBean.getInstructorName(),courseBean.getSport());
+	private static void setCourtCredentials(String courtName,String organizationName) throws Exception {
+		CourtBean courtBean = new CourtBean();
+		CourtBean.setCourt(courtBean, courtName, organizationName);
+		view.setCredentials(courtBean.getName(), courtBean.getPrice(),courtBean.getSport(),courtBean.getAvailability(),courtBean.getDescription(),courtBean.getType());
 	}
 }
