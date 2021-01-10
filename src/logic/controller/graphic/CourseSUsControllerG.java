@@ -24,9 +24,13 @@ public class CourseSUsControllerG {
 			instance.assegnaGestori();
 		}
 		
-		//showLoginUI();
+		showCourseUI();
 		setCourseCredentials(courseName, orgName);
 		return instance;
+	}
+	
+	private static void showCourseUI() {
+		view.setVisible(true);
 	}
 	
 	public void assegnaGestori() {

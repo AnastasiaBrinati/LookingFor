@@ -56,6 +56,14 @@ public class OrganizationProfile {
 		password = psswd;
 	}
 	
+	public static String getLocation() {
+		return location;
+	}
+
+	public static void setLocation(String loc) {
+		location = loc;
+	}
+	
 	public static ArrayList<Course> getCourses() {
 		return courses;
 	}

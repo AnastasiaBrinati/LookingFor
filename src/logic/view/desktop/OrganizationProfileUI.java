@@ -540,7 +540,7 @@ public class OrganizationProfileUI extends JFrame {
 		
 	}
 	
-	public void setCredentials(String name) {
+	public void setCredentials(String name, String location) {
 		organizationNameLbl.setText(name);
 		//set img
 	}

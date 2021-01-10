@@ -15,7 +15,8 @@ public class UserProfileDAO {
     //private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     
    //MANCA LA REFLECTION
-    
+   
+
 	
 	public String goCheckAndTellMe(String username,String password) throws Exception {
 		
@@ -51,14 +52,17 @@ public class UserProfileDAO {
             		   		String nome = rs.getString("name");
             		   		String cognome = rs.getString("surname");
             		   		String email = rs.getString("email");
+            		   		String location=rs.getString("location");
             		   		UserProfile.setName(nome);
             		   		UserProfile.setSurname(cognome);
             		   		UserProfile.setEmail(email);
+            		   		UserProfile.setLocation(location);
             		
             		   		UserProfile.setUsername(username);
             		   		UserProfile.setPassword(password);
             		
             		   		System.out.println(type);
+
             		   		
             		      	//get list of courses
             		   		stmtCourses = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
@@ -66,7 +70,7 @@ public class UserProfileDAO {
             		   		ResultSet tupleCourses=Queries.getCourses(stmtCourses, username);
             		   		if(tupleCourses.first()) {
             		   			while(tupleCourses.next()) {
-            		   				OrganizationProfile.addCourse(courseRetreiver(tupleCourses));
+            		   				UserProfile.addCourse(courseRetreiver(tupleCourses));
             		   			}
             		   			tupleCourses.close();
             		   		}
@@ -76,7 +80,7 @@ public class UserProfileDAO {
             		   		ResultSet tupleEvents=Queries.getEvents(stmtEvents, username);
             		   		if(tupleEvents.first()) {
             		   			while(tupleEvents.next()) {
-            		   				OrganizationProfile.addEvent(eventRetreiver(tupleEvents));
+            		   				UserProfile.addEvent(eventRetreiver(tupleEvents));
             		   			}
             		   			tupleEvents.close();
             		   		}
@@ -86,13 +90,15 @@ public class UserProfileDAO {
             		   		ResultSet tupleCourts=Queries.getCourts(stmtCourts, username);
             		   		if(tupleCourts.first()) {
             		   			while(tupleCourts.next()) {
-            		   				OrganizationProfile.addCourt(courtRetreiver(tupleCourts));
+            		   				UserProfile.addCourt(courtRetreiver(tupleCourts));
             		   			}
             		   			tupleCourts.close();
             		   		}
             		   		
             		   		type="singleuser";
-            		   		return type;
+
+            		   		
+            		      	
             		}
             		else {
             			
@@ -102,6 +108,7 @@ public class UserProfileDAO {
         		   		OrganizationProfile.setEmail(rs.getString("email"));
         		   		//OrganizationProfile.setUsername(username);
         		   		OrganizationProfile.setPassword(password);
+        		   		OrganizationProfile.setLocation(rs.getString("location"));
         		   		
         		   		
         		   		
@@ -112,6 +119,7 @@ public class UserProfileDAO {
         		   		if(tupleCourses.first()) {
         		   			while(tupleCourses.next()) {
         		   				OrganizationProfile.addCourse(courseRetreiver(tupleCourses));
+        		   			
         		   			}
         		   			tupleCourses.close();
         		   		}
@@ -177,7 +185,7 @@ public class UserProfileDAO {
 			
 	}
 
-	public static void addNewProfile(String name, String surname, String username, String email, String password,String type) throws SQLException {
+	public static void addNewProfile(String name, String surname, String username, String email, String password,String type,String location) throws SQLException {
 		Statement stmt=null;
 		
 		Connection conn=null;
@@ -186,7 +194,7 @@ public class UserProfileDAO {
 			
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			Queries.addProfile(stmt, name, surname, username, email, password,type);
+			Queries.addProfile(stmt, name, surname, username, email, password,type,location);
 		}
 			catch (SQLException se) {
                 se.printStackTrace();

@@ -36,7 +36,7 @@ public class OrganizationControllerG{
 	public static void setCredentials() {
 		OrganizationBean orgBean = new OrganizationBean();
 		OrganizationBean.setCredentials(orgBean);
-		view.setCredentials(OrganizationBean.getName(),OrganizationBean.getLocation());
+		view.setCredentials(orgBean.getName(),orgBean.getLocation());
 	}
 
 	public void assegnaGestori(){
@@ -238,6 +238,7 @@ public class OrganizationControllerG{
 															CourseUISUs courseUI = new CourseUISUs();
 															try {
 																CourseSUsControllerG.getInstance(courseUI, courseName, orgName);
+																view.setVisible(false);
 															} catch (Exception e1) {
 																// TODO Auto-generated catch block
 																e1.printStackTrace();

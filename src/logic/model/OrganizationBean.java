@@ -17,7 +17,7 @@ public class OrganizationBean {
 	}
 	
 	
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 	public void setName(String nome) {
@@ -34,6 +34,15 @@ public class OrganizationBean {
 	}
 	public  void setPassword(String passwd) {
 		password = passwd;
+	}
+	
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		OrganizationBean.location = location;
 	}
 	
 	public  void setCourses(ArrayList<Course> courseslist) {
@@ -73,12 +82,4 @@ public class OrganizationBean {
 	}
 
 
-	public static String getLocation() {
-		return location;
-	}
-
-
-	public void setLocation(String location) {
-		OrganizationBean.location = location;
-	}
 }

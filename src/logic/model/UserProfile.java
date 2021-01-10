@@ -16,6 +16,8 @@ public class UserProfile {
 	private static String email;
 	private static String password;
 
+	private static String location;
+
 	private static List<Course> courses = new ArrayList<Course>();
 	private static List<Event> events=new ArrayList<Event>();
 	private static List<Court> courts = new ArrayList<Court>();
@@ -59,6 +61,24 @@ public class UserProfile {
 		password = psswd;
 	}
 	
+	public static String getLocation() {
+		return location;
+	}
+	public static void setLocation(String location) {
+		UserProfile.location = location;
+	} 	
+	
+	public List<Course> getCourses() {
+		return courses;
+	}
+	
+	public List<Event> getEvents() {
+		return events;
+	}
+	
+	
+	
+	
 	public static String checkCredentials(String username, String password) throws Exception {
 		usDAO = new UserProfileDAO();
 
@@ -78,19 +98,10 @@ public class UserProfile {
 	public static void addCourt(Court newCourt) {
 		courts.add(newCourt);
 	}
+		
 	
-
-	public List<Course> getCourses() {
-		return courses;
-	}
-	
-	public List<Event> getEvents() {
-		return events;
-	}
-	
-	
-	public static void createNewProfile(String name, String surname, String username, String email,String password,String type) throws SQLException {
-		UserProfileDAO.addNewProfile(name,surname,username,email,password,type);
+	public static void createNewProfile(String name, String surname, String username, String email,String password,String type,String location) throws SQLException {
+		UserProfileDAO.addNewProfile(name,surname,username,email,password,type,location);
 	}
 	
 	
@@ -112,7 +123,7 @@ public class UserProfile {
 		}
 	}
 	
-public static void changeCredentials(String newEmail) throws SQLException {
+	public static void changeCredentials(String newEmail) throws SQLException {
 		
 		if(UserProfileDAO.updateEmail(newEmail,username)) {
 			return;	
@@ -124,11 +135,7 @@ public static void changeCredentials(String newEmail) throws SQLException {
 		if(UserProfileDAO.updatePassword(newPassword ,username)) {
 			return;
 		}
-	} 
-	
-	
-	
-     
+	}     
 	 
 
 }

@@ -135,7 +135,7 @@ public class Queries {
 
 	}
 
-	public static ResultSet getUserCourse(Statement stmt, String organizationName,String courseName) throws SQLException {
+	public static ResultSet getUserCourse(Statement stmt, String courseName, String organizationName) throws SQLException {
 		
         String sql = "SELECT * FROM courses WHERE organization= '" + organizationName + "' AND name = '" + courseName + "';";       
 		
