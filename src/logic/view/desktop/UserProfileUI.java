@@ -40,6 +40,7 @@ public class UserProfileUI extends JFrame {
 	private final JButton backButton = new JButton("<-");
 	private final JButton RoutineButton = new JButton("MyRoutine");
 	private final JButton exitButton = new JButton("");
+	private JLabel locationLbl = new JLabel("location");
 
 	public UserProfileUI() {
 
@@ -54,18 +55,29 @@ public class UserProfileUI extends JFrame {
 										descriptionPanel.setBounds(305, 51, 992, 593);
 										descriptionPanel.setLayout(null);
 										
-										lblUsername.setFont(new Font("Arial", Font.PLAIN, 23));
-										lblUsername.setBounds(274, 67, 134, 25);
-										descriptionPanel.add(lblUsername);
-										namelbl.setFont(new Font("Arial", Font.PLAIN, 20));
-										namelbl.setBounds(274, 102, 134, 25);
-										descriptionPanel.add(namelbl);
-										
 										contentPane.add(descriptionPanel);
 										
-										surnamelbl.setFont(new Font("Arial", Font.PLAIN, 20));
-										surnamelbl.setBounds(274, 139, 134, 25);
-										descriptionPanel.add(surnamelbl);
+										JPanel panel_1 = new JPanel();
+										panel_1.setBackground(Color.LIGHT_GRAY);
+										panel_1.setBounds(0, 0, 992, 155);
+										descriptionPanel.add(panel_1);
+										panel_1.setLayout(null);
+										namelbl.setBounds(112, 11, 216, 24);
+										panel_1.add(namelbl);
+										namelbl.setFont(new Font("Tahoma", Font.PLAIN, 20));
+										surnamelbl.setBounds(112, 35, 284, 25);
+										panel_1.add(surnamelbl);
+										
+										surnamelbl.setFont(new Font("Tahoma", Font.PLAIN, 20));
+										lblUsername.setBounds(112, 71, 284, 25);
+										panel_1.add(lblUsername);
+										
+										lblUsername.setFont(new Font("Tahoma", Font.BOLD, 20));
+										
+										
+										locationLbl.setFont(new Font("Tahoma", Font.PLAIN, 11));
+										locationLbl.setBounds(112, 107, 216, 24);
+										panel_1.add(locationLbl);
 								/*
 								DefaultListModel<String> listModel1 = new DefaultListModel<String>();
 								listModel1.addElement("none");
@@ -221,17 +233,16 @@ public class UserProfileUI extends JFrame {
 		eventsButton.setBackground(new Color(139,0,0));	
 	}
 	
-	public void setCredentials(String name, String surname, String username) {
+	public void setCredentials(String name, String surname, String username,String location) {
 		
 		lblUsername.setText(username);
 		namelbl.setText(name);
 		surnamelbl.setText(surname);
+		locationLbl.setText(location);
 		
 	}
 	
 	public JButton getExitButton() {
 		return exitButton;
 	}
-	
-
 }

@@ -40,7 +40,8 @@ public class UserProfileControllerG {
 		String name = profileBean.getName();
 		String surname = profileBean.getSurname();
 		String username = profileBean.getUsername();
-		view.setCredentials(name, surname, username);
+		String location = profileBean.getLocation();
+		view.setCredentials(name, surname, username,location);
 	}
 	
 	public void assegnaGestori(){

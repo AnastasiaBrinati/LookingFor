@@ -9,6 +9,7 @@ public class ProfileBean {
 	public static String username;
 	public static String email;
 	public static String password;
+	private static String location;
 	
 	public ProfileBean() {
 	}
@@ -51,5 +52,16 @@ public class ProfileBean {
 		profileBean.setUsername(UserProfile.getUsername());
 		profileBean.setEmail(UserProfile.getEmail());
 		profileBean.setPassword(UserProfile.getPassword());
+		profileBean.setLocation(UserProfile.getLocation());
+	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		ProfileBean.location = location;
 	}
 }

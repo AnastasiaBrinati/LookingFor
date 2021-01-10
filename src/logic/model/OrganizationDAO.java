@@ -94,7 +94,7 @@ public class OrganizationDAO {
 		
 	}
 
-	public static void addNewProfile(String name, String surname, String username, String email, String password,String type) throws SQLException {
+	public static void addNewProfile(String name, String surname, String username, String email, String password,String type,String location) throws SQLException {
 		Statement stmt=null;
 		
 		Connection conn=null;
@@ -103,7 +103,7 @@ public class OrganizationDAO {
 			
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			Queries.addProfile(stmt, name, surname, username, email, password,type);
+			Queries.addProfile(stmt, name, surname, username, email, password,type,location);
 		}
 			catch (SQLException se) {
                 se.printStackTrace();
