@@ -29,17 +29,15 @@ public class AddCourtController {
 		newCourt.setDescription(bean.getDescription());
 		newCourt.setImgSrc(bean.getImgSrc());
 		newCourt.setPrice(bean.getPrice());
-		
+		newCourt.setType(bean.getType());
 		newCourt.setName(bean.getName());
 		newCourt.setSport(bean.getSport());
+		
 		newCourt.setOrganization(OrganizationProfile.getName());
 		
-
-		//chiamo il model per mandarlo in persistenza sul DB
-		newCourt.addEvent(newCourt);
+		newCourt.addCourt(newCourt);
 		
-		//aggiungo l'evento al model
-		OrganizationProfile.addEvent(newCourt);
+		OrganizationProfile.addCourt(newCourt);
 	}
 
 }

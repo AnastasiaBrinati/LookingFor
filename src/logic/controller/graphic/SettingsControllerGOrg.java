@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.controller.SettingsOrgBean;
-import logic.controller.SettingsSingleUserBean;
+import logic.controller.SettingsSUsBean;
 import logic.model.OrganizationBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
@@ -36,7 +36,6 @@ public class SettingsControllerGOrg {
 	
 	private static void setCredentials() {
 		OrganizationBean orgBean = new OrganizationBean();
-		OrganizationBean.setCredentials(orgBean);
 		String name = orgBean.getName();
 		String email = orgBean.getEmail();
 		view.setCredentials(name, email);
@@ -147,7 +146,6 @@ public class SettingsControllerGOrg {
 				
 				try {
 					SettingsOrgBean.changeName(settingBean);
-					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -191,7 +189,6 @@ public class SettingsControllerGOrg {
 
 				try {
 					SettingsOrgBean.changeEmail(settingBean);
-					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

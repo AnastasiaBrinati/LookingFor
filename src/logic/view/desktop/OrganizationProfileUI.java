@@ -16,7 +16,6 @@ import java.awt.Font;
 import java.awt.Image;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
-import java.awt.Checkbox;
 import javax.swing.UIManager;
 import java.awt.FlowLayout;
 
@@ -524,12 +523,12 @@ public class OrganizationProfileUI extends JFrame {
 	}
 	public void doubleEventErrorMessage(String error){
 		//resetNewEventForm();
-		titleTextField.setText(error);
+		eventNameTextField.setText(error);
 		
 	}
 	public void doubleCourtErrorMessage(String error){
 		//resetNewCourtForm();
-		titleTextField.setText(error);
+		courtNameTextField.setText(error);
 		
 	}
 
@@ -829,20 +828,20 @@ public class OrganizationProfileUI extends JFrame {
 		}
 		
 		//court
-				public String getCourtName() {
-					return courtNameTextField.getText();
-				}
-				public String getCourtDescription() {
-					return courtDescriptionTextField.getText();
-				}
-				public String getCourtPrice() {
-					return courtPriceTextField.getText();
-				}
-				public String getCourtAvailability() {
-					return courtAvailabilityTextField.getText();
-				}
-				public String getCourtSport() {
-					return courtSportTextField.getText();
-				}
+		public String getCourtName() {
+			return courtNameTextField.getText();
+		}
+		public String getCourtDescription() {
+			return courtDescriptionTextField.getText();
+		}
+		public String getCourtPrice() {
+			return courtPriceTextField.getText();
+		}
+		public String getCourtAvailability() {
+			return courtAvailabilityTextField.getText();
+		}
+		public String getCourtSport() {
+			return courtSportTextField.getText();
+		}
 		
 }

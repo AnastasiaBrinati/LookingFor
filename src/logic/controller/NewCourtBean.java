@@ -50,11 +50,6 @@ public class NewCourtBean {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public static void addCourt(NewCourtBean bean) throws Exception {
-		AddCourtController addCourtController=new AddCourtController();
-		addCourtController.addCourt(bean);
-	}
 	public String getType() {
 		return type;
 	}
@@ -62,6 +57,11 @@ public class NewCourtBean {
 		this.type = type;
 	}
 	
+	
+	public static void addCourt(NewCourtBean bean) throws Exception {
+		AddCourtController addCourtController=new AddCourtController();
+		addCourtController.addCourt(bean);
+	}
 	
 
 }

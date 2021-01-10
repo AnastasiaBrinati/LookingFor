@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.controller.ProfileBean;
-import logic.controller.SettingsSingleUserBean;
+import logic.controller.SettingsSUsBean;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SettingsUISUs;
@@ -136,13 +136,13 @@ public class SettingsControllerGSUs {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				SettingsSingleUserBean settingBean = new SettingsSingleUserBean();
+				SettingsSUsBean settingBean = new SettingsSUsBean();
 				settingBean.setUsername(view.getUsername());
 				settingBean.setName(view.getName());
 				settingBean.setSurname(view.getSurname());
 				
 				try {
-					SettingsSingleUserBean.changeUCredentialsName(settingBean);
+					SettingsSUsBean.changeUCredentialsName(settingBean);
 				} catch (Exception e1) {
 					view.showErrorMessage("username already in use");
 					e1.printStackTrace();
@@ -160,12 +160,12 @@ public class SettingsControllerGSUs {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				SettingsSingleUserBean settingBean = new SettingsSingleUserBean();
+				SettingsSUsBean settingBean = new SettingsSUsBean();
 				settingBean.setEmail(view.getEmail());
 				settingBean.setPassword(view.getPassword());
 				
 				try {
-					SettingsSingleUserBean.changeUCredentialsEmail(settingBean);
+					SettingsSUsBean.changeUCredentialsEmail(settingBean);
 					
 				} catch (Exception e1) {
 					view.showErrorMessage2("either one your email or password is incorrect");
@@ -183,12 +183,12 @@ public class SettingsControllerGSUs {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				SettingsSingleUserBean settingBean = new SettingsSingleUserBean();
+				SettingsSUsBean settingBean = new SettingsSUsBean();
 				settingBean.setNewPassword(view.getNewPassword());
 				settingBean.setPassword(view.getOldPassword());
 				
 				try {
-					SettingsSingleUserBean.changeUCredentialsPassword(settingBean);
+					SettingsSUsBean.changeUCredentialsPassword(settingBean);
 					System.out.println("Changing credentials");
 				} catch (Exception e1) {
 					view.showErrorMessage2("wrong password");

@@ -9,7 +9,7 @@ public class CustomizationController {
 	
 
 	//single user
-	public void changeCredentialsName(SettingsSingleUserBean settingBean) throws SQLException {
+	public void changeCredentialsName(SettingsSUsBean settingBean) throws SQLException {
 		if(settingBean.getUsername().equals(UserProfile.getUsername())) {
 			UserProfile.changeCredentials(settingBean.getName(), settingBean.getSurname());
 		}
@@ -19,7 +19,7 @@ public class CustomizationController {
 	}
 	
 	
-	public void changeCredentialsEmail(SettingsSingleUserBean settingBean) throws SQLException {
+	public void changeCredentialsEmail(SettingsSUsBean settingBean) throws SQLException {
 		//cerco conferma se password inserita è uguale
 		if(settingBean.getPassword().equals(UserProfile.getPassword())) {
 			UserProfile.changeCredentials(settingBean.getEmail());
@@ -27,7 +27,7 @@ public class CustomizationController {
 	}
 	
 	
-	public void changeCredentialsPassword(SettingsSingleUserBean settingBean) throws SQLException {
+	public void changeCredentialsPassword(SettingsSUsBean settingBean) throws SQLException {
 		if(settingBean.getPassword().equals(UserProfile.getPassword())) {
 			UserProfile.changePassword(settingBean.getNewPassword());
 		}

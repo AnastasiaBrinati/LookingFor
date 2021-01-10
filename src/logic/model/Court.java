@@ -58,18 +58,19 @@ public class Court {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public void addEvent(Court newCourt) {
-		CourtDAO courtDAO=new CourtDAO();
-		courtDAO.addCourt(newCourt);
-		
-		
-	}
 	public String getType() {
 		return type;
 	}
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	public void addCourt(Court newCourt) throws Exception {
+		CourtDAO courtDAO=new CourtDAO();
+		courtDAO.addCourt(newCourt);
+		
+	}
+	
 	
 
 }

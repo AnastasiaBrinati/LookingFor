@@ -2,7 +2,7 @@ package logic.controller;
 
 import java.sql.SQLException;
 
-public class SettingsSingleUserBean {
+public class SettingsSUsBean {
 
 	private String name;
 	private String surname;
@@ -12,7 +12,7 @@ public class SettingsSingleUserBean {
 	private static String oldPassword;
 	private static String newPassword;
 	
-	public SettingsSingleUserBean() {
+	public SettingsSUsBean() {
 	}
 	
 	//just for single user
@@ -58,17 +58,17 @@ public class SettingsSingleUserBean {
 	}
 	
 	
-	public static void changeUCredentialsName(SettingsSingleUserBean settingBean) throws SQLException {
+	public static void changeUCredentialsName(SettingsSUsBean settingBean) throws SQLException {
 		CustomizationController customizer=new CustomizationController();
 		customizer.changeCredentialsName(settingBean);
 	}
 	
-	public static void changeUCredentialsEmail(SettingsSingleUserBean settingBean) throws SQLException {
+	public static void changeUCredentialsEmail(SettingsSUsBean settingBean) throws SQLException {
 		CustomizationController customizer=new CustomizationController();
 		customizer.changeCredentialsEmail(settingBean);
 	}
 	
-	public static void changeUCredentialsPassword(SettingsSingleUserBean settingBean) throws SQLException {
+	public static void changeUCredentialsPassword(SettingsSUsBean settingBean) throws SQLException {
 		CustomizationController customizer=new CustomizationController();
 		customizer.changeCredentialsPassword(settingBean);
 	}

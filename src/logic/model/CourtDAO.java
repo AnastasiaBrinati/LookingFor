@@ -15,7 +15,7 @@ public class CourtDAO {
 	    
 	    
 		
-	    public static void addCourt(Court newCourt) throws Exception {
+	    public void addCourt(Court newCourt) throws Exception {
 	        // STEP 1: dichiarazioni
 	        Statement stmt = null;
 	        Connection conn = null;
