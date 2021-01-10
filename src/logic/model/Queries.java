@@ -83,8 +83,8 @@ public class Queries {
 }
 */
 	//query to insert a new user
-	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type) throws SQLException  {
-        String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password,type) VALUES ('%s','%s','%s','%s','%s','%s')", name,surname,username,email,password,type);
+	public static int addProfile(Statement stmt,String name, String surname, String username, String email,String password,String type,String location) throws SQLException  {
+        String insertStatement = String.format("INSERT INTO `users`(name,surname,username,email,password,type,location) VALUES ('%s','%s','%s','%s','%s','%s','%s')", name,surname,username,email,password,type,location);
         System.out.println("in Queries ho:" + username);
         System.out.println(insertStatement);
         return stmt.executeUpdate(insertStatement);

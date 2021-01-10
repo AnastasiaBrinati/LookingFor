@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JRadioButton;
 import java.awt.Font;
+import java.awt.Point;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -54,6 +55,7 @@ public class SignInUI extends JFrame {
 	JRadioButton singleUserRadioButton = new JRadioButton("Single User");
 	JRadioButton organizationRadioButton = new JRadioButton("Organization");
 	ButtonGroup group=new ButtonGroup();
+	private JTextField locationTextField;
 
 
 	// Create the frame.
@@ -151,10 +153,10 @@ public class SignInUI extends JFrame {
 		
 
 		resetButton.setBackground(Color.GRAY);
-		resetButton.setBounds(199, 387, 89, 23);
+		resetButton.setBounds(199, 421, 89, 23);
 
 		signUpButton.setBackground(new Color(255, 99, 71));
-		signUpButton.setBounds(304, 387, 89, 23);
+		signUpButton.setBounds(298, 421, 89, 23);
 
 		// adding stuff to content pane
 		contentPane.add(separator);
@@ -212,11 +214,11 @@ public class SignInUI extends JFrame {
 		organizationRadioButton.setContentAreaFilled(false);
 		
 		
-		singleUserRadioButton.setBounds(104, 331, 109, 23);
+		singleUserRadioButton.setBounds(104, 365, 109, 23);
 		contentPane.add(singleUserRadioButton);
 		
 		
-		organizationRadioButton.setBounds(104, 352, 109, 23);
+		organizationRadioButton.setBounds(104, 391, 109, 23);
 		contentPane.add(organizationRadioButton);
 		
 		JLabel lblNewLabel = new JLabel("Sportee");
@@ -224,6 +226,17 @@ public class SignInUI extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 74));
 		lblNewLabel.setBounds(104, 11, 289, 82);
 		contentPane.add(lblNewLabel);
+		
+		locationTextField = new JTextField();
+		locationTextField.setColumns(10);
+		locationTextField.setBounds(104, 329, 289, 20);
+		contentPane.add(locationTextField);
+		
+		JLabel lblLocation = new JLabel("LOCATION");
+		lblLocation.setForeground(Color.WHITE);
+		lblLocation.setBackground(Color.WHITE);
+		lblLocation.setBounds(26, 329, 94, 14);
+		contentPane.add(lblLocation);
 	}
 
 	
@@ -251,6 +264,10 @@ public class SignInUI extends JFrame {
 		JOptionPane.showMessageDialog(this, errorMessage);
 	}
 
+	public String getUserLocation() {
+		return locationTextField.getText();
+	}
+	
 	public String getPassword() {
 		return textFieldPassword.getText();
 	}
@@ -263,6 +280,7 @@ public class SignInUI extends JFrame {
 	public String getSurname() {
 		return textFieldSurname.getText();
 	}
+	
 	public String getUsername() {
 		
 		return textFieldUsername.getText();

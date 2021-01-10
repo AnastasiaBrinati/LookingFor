@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public class OrganizationBean {
 	
 	private static String name;
-	public static String email;
-	public static String password;
+	private static String email;
+	private static String password;
+	private static String location;
 	private static ArrayList<Course> courses = new ArrayList<Course>();
 	private static ArrayList<Event> events = new ArrayList<Event>();
 	private static ArrayList<Court> courts = new ArrayList<Court>();
@@ -68,5 +69,16 @@ public class OrganizationBean {
 		orgBean.setCourses(OrganizationProfile.getCourses());
 		orgBean.setEvents(OrganizationProfile.getEvents());
 		orgBean.setCourts(OrganizationProfile.getCourts());
+		orgBean.setLocation(OrganizationProfile.getLocation());
+	}
+
+
+	public static String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		OrganizationBean.location = location;
 	}
 }

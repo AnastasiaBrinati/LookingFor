@@ -12,6 +12,7 @@ public class SignUpBean {
 	private String imgSrc;
 	private String type;
 	private String bio;
+	private String location;
 	public String getName() {
 		return name;
 	}
@@ -65,6 +66,13 @@ public class SignUpBean {
 		SignUpController controller=new SignUpController();
 		controller.signUpUser(signUpBean);
 	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
 	
 
 }

@@ -36,7 +36,7 @@ public class OrganizationControllerG{
 	public static void setCredentials() {
 		OrganizationBean orgBean = new OrganizationBean();
 		OrganizationBean.setCredentials(orgBean);
-		view.setCredentials(OrganizationBean.getName());
+		view.setCredentials(OrganizationBean.getName(),OrganizationBean.getLocation());
 	}
 
 	public void assegnaGestori(){
@@ -225,7 +225,7 @@ public class OrganizationControllerG{
 	
 	
 	private static void displayCourses() {
-			
+		
 		OrganizationBean orgBean = new OrganizationBean();
 		OrganizationBean.setCredentials(orgBean);
 		String orgName = orgBean.getName();
