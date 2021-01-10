@@ -78,15 +78,17 @@ public class Course {
 	}
 	
 	public void addCourse(Course course) throws Exception {
-		
 		CourseDAO.addCourse(course);
 	}
+	
+	
 	public static Course setCourseCredentials(String courseName,String organizationName) throws Exception {
 		CourseDAO courseDAO=new CourseDAO();
 		return courseDAO.getCourse(courseName,organizationName);
-		
-		
+
 	}
+	
+	
 }
 
 	

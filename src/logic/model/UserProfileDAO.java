@@ -187,11 +187,9 @@ public class UserProfileDAO {
 
 	public static void addNewProfile(String name, String surname, String username, String email, String password,String type,String location) throws SQLException {
 		Statement stmt=null;
-		
 		Connection conn=null;
 		
 		try {
-			
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			Queries.addProfile(stmt, name, surname, username, email, password,type,location);

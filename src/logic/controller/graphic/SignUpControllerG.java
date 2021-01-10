@@ -2,9 +2,8 @@ package logic.controller.graphic;
 
 
 import logic.controller.SignUpBean;
-import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
-import logic.view.desktop.SignInUI;
+import logic.view.desktop.SignUpUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,20 +11,20 @@ import java.sql.SQLException;
 
 public class SignUpControllerG {
 
-	private static SignInUI view;
+	private static SignUpUI view;
 	private static SignUpControllerG instance = null;
 
-	private SignUpControllerG(SignInUI vista) {
+	private SignUpControllerG(SignUpUI vista) {
 		view = vista;
 		
 	}
 
-	public static synchronized SignUpControllerG getInstance(SignInUI vista) {
+	public static synchronized SignUpControllerG getInstance(SignUpUI vista) {
 		if (instance == null) {
 			instance = new SignUpControllerG(vista);
 			instance.assegnaGestori();
 		}
-		showLoginUI();
+		showSignUpUI();
 		return instance;
 	}
 
@@ -53,9 +52,9 @@ public class SignUpControllerG {
 					e.printStackTrace();
 				}
 				
-
-				HomeUI homeView = new HomeUI();
-				HomeControllerGSUs.getInstance(homeView);
+				
+				LoginUI loginView = new LoginUI();
+				LoginControllerG.getInstance(loginView);
 
 				view.setVisible(false);
 				view.resetForm();
@@ -92,7 +91,7 @@ public class SignUpControllerG {
 		
 
 	}
-	public static void showLoginUI() {
+	public static void showSignUpUI() {
 		view.setVisible(true);
 	}
 

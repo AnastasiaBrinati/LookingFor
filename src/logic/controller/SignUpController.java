@@ -7,8 +7,8 @@ import logic.model.UserProfile;
 public class SignUpController {
 	
 	public void signUpUser(SignUpBean signUpBean) throws SQLException {
-		UserProfile.createNewProfile(signUpBean.getName(),signUpBean.getSurname(),signUpBean.getUsername(),signUpBean.getEmail(),signUpBean.getPassword(),signUpBean.getType(),signUpBean.getLocation());
 		
+		UserProfile.createNewProfile(signUpBean.getName(),signUpBean.getSurname(),signUpBean.getUsername(),signUpBean.getEmail(),signUpBean.getPassword(),signUpBean.getType(),signUpBean.getLocation());
 		
 	}
 

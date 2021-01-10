@@ -13,6 +13,7 @@ public class SignUpBean {
 	private String type;
 	private String bio;
 	private String location;
+	
 	public String getName() {
 		return name;
 	}
@@ -61,16 +62,17 @@ public class SignUpBean {
 	public void setBio(String bio) {
 		this.bio = bio;
 	}
-	
-	public static void signUpUser(SignUpBean signUpBean) throws SQLException {
-		SignUpController controller=new SignUpController();
-		controller.signUpUser(signUpBean);
-	}
+
 	public String getLocation() {
 		return location;
 	}
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	public static void signUpUser(SignUpBean signUpBean) throws SQLException {
+		SignUpController controller=new SignUpController();
+		controller.signUpUser(signUpBean);
 	}
 	
 	

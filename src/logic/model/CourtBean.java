@@ -1,5 +1,5 @@
 package logic.model;
 
-public class SignInModel {
+public class CourtBean {
 
 }

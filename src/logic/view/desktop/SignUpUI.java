@@ -16,11 +16,10 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JRadioButton;
 import java.awt.Font;
-import java.awt.Point;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class SignInUI extends JFrame {
+public class SignUpUI extends JFrame {
 	/**
 	 * 
 	 */
@@ -59,7 +58,7 @@ public class SignInUI extends JFrame {
 
 
 	// Create the frame.
-	public SignInUI() {
+	public SignUpUI() {
 		
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(""));

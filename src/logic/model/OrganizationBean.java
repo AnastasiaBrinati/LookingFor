@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class OrganizationBean {
 	
-	private static String name;
-	private static String email;
+	private String name;
+	private String email;
 	private static String password;
 	private static String location;
 	private static ArrayList<Course> courses = new ArrayList<Course>();
@@ -16,28 +16,27 @@ public class OrganizationBean {
 		//constructor
 	}
 	
-	
 	public String getName() {
-		return name;
+		return OrganizationProfile.getName();
 	}
 	public void setName(String nome) {
-		name = nome;
+		this.name = nome;
 	}
 	public String getEmail() {
-		return email;
+		return OrganizationProfile.getEmail();
 	}
 	public void setEmail(String iemail) {
 		email = iemail;
 	}
 	public String getPassword() {
-		return password;
+		return OrganizationProfile.getPassword();
 	}
-	public  void setPassword(String passwd) {
+	public void setPassword(String passwd) {
 		password = passwd;
 	}
 	
 	public String getLocation() {
-		return location;
+		return OrganizationProfile.getName();
 	}
 
 
@@ -51,7 +50,7 @@ public class OrganizationBean {
 	
 	public ArrayList<Course> getCourses(){
 		
-		return courses;
+		return OrganizationProfile.getCourses();
 	}
 	
 	public void setEvents(ArrayList<Event> eventslist) {
@@ -59,27 +58,16 @@ public class OrganizationBean {
 	}
 	
 	public ArrayList<Event> getEvents(){
-		return events;
+		return OrganizationProfile.getEvents();
 	}
 	
 	public  void setCourts(ArrayList<Court> courtslist) {
 		courts = courtslist;
 	}
 	
-
 	public ArrayList<Court> getCourts(){
-		return courts;
+		return OrganizationProfile.getCourts();
 	}
 	
-	public static void setCredentials(OrganizationBean orgBean) {
-		orgBean.setName(OrganizationProfile.getName());
-		orgBean.setEmail(OrganizationProfile.getEmail());
-		orgBean.setPassword(OrganizationProfile.getPassword());
-		orgBean.setCourses(OrganizationProfile.getCourses());
-		orgBean.setEvents(OrganizationProfile.getEvents());
-		orgBean.setCourts(OrganizationProfile.getCourts());
-		orgBean.setLocation(OrganizationProfile.getLocation());
-	}
-
 
 }

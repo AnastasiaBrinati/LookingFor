@@ -19,11 +19,7 @@ public class LoginController {
 	
 	
 	public String isAValidUser(LoginBean loginBean) throws Exception {
-		/*
-		UserProfile.setUsername(loginBean.getUsername());
-		UserProfile.setPassword(loginBean.getPassword());
-		UserProfile.setEmail(loginBean.getEmail());
-		*/
+		//or email
 		return UserProfile.checkCredentials(loginBean.getUsername(), loginBean.getPassword()); 
 		
 	

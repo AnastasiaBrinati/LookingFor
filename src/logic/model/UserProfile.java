@@ -1,11 +1,8 @@
 package logic.model;
 
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 
-import com.sun.jdi.event.Event;
 
 
 public class UserProfile {
@@ -15,12 +12,11 @@ public class UserProfile {
 	private static String username;
 	private static String email;
 	private static String password;
-
 	private static String location;
 
-	private static List<Course> courses = new ArrayList<Course>();
-	private static List<Event> events=new ArrayList<Event>();
-	private static List<Court> courts = new ArrayList<Court>();
+	private static ArrayList<Course> courses = new ArrayList<Course>();
+	private static ArrayList<Event> events=new ArrayList<Event>();
+	private static ArrayList<Court> courts = new ArrayList<Court>();
 
 	 
 	private static UserProfileDAO usDAO;
@@ -68,12 +64,16 @@ public class UserProfile {
 		UserProfile.location = location;
 	} 	
 	
-	public List<Course> getCourses() {
+	public ArrayList<Course> getCourses() {
 		return courses;
 	}
 	
-	public List<Event> getEvents() {
+	public ArrayList<Event> getEvents() {
 		return events;
+	}
+	
+	public ArrayList<Court> getCourt() {
+		return courts;
 	}
 	
 	
@@ -87,19 +87,20 @@ public class UserProfile {
 		
 	}
 	
+	
 	public static void addCourse(Course newCourse) {
 		courses.add(newCourse);
 	}
 	
-	public static void addEvent(logic.model.Event event) {
-		events.add((Event) event);
+	public static void addEvent(Event newEvent) {
+		events.add(newEvent);
 	}
 	
 	public static void addCourt(Court newCourt) {
 		courts.add(newCourt);
 	}
 		
-	
+	//from sign up use case
 	public static void createNewProfile(String name, String surname, String username, String email,String password,String type,String location) throws SQLException {
 		UserProfileDAO.addNewProfile(name,surname,username,email,password,type,location);
 	}

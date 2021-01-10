@@ -12,8 +12,7 @@ public class Event {
 	private String price;
 	
 	
-	
-	
+
 	public String getName() {
 		return name;
 	}

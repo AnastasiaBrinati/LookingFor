@@ -1,5 +1,5 @@
 package logic.model;
 
-public class SportEvent {
+public class EventBean {
 
 }

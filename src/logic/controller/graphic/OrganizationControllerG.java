@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import logic.controller.NewCourseBean;
 import logic.controller.NewCourtBean;
+import logic.controller.NewEventBean;
 import logic.model.OrganizationBean;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.SettingsUIOrg;
@@ -38,12 +39,17 @@ public class OrganizationControllerG{
 
 	}
 	
+	public static void viewOrganizationProfileUI() {
+		view.setVisible(true);
+		view.setDescriptionPanelVisible();
+	}
+	
 	public static void setCredentials() {
 		OrganizationBean orgBean = new OrganizationBean();
-		OrganizationBean.setCredentials(orgBean);
 		view.setCredentials(orgBean.getName(),orgBean.getLocation());
 	}
 
+	/////////////////////////////////////////////////////////////////////////////////////////
 	public void assegnaGestori(){
 		
 		
@@ -61,7 +67,6 @@ public class OrganizationControllerG{
 		};
 		view.getExitButton().addActionListener(gestoreExit);
 		
-		//trasformare in uscita
 		ActionListener gestoreLogin = new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -104,6 +109,7 @@ public class OrganizationControllerG{
 			}
 		};
 		view.getAddCourseButton().addActionListener(gestoreAddCourse);
+		
 		
 		ActionListener gestoreCancelCourse = new ActionListener() {
 			@Override
@@ -156,6 +162,7 @@ public class OrganizationControllerG{
 		};
 		view.getAddCourtButton().addActionListener(gestoreAddCourt);
 		
+		
 		ActionListener gestoreCancelCourt = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -168,10 +175,10 @@ public class OrganizationControllerG{
 		ActionListener gestoreSaveCourt = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				NewCourtBean newCourseBean = new NewCourtBean();
+				NewCourtBean newCourtBean = new NewCourtBean();
 				getNewCourtCredentials(newCourtBean);
 					try {
-						NewCourtBean.addCourse(newCourtBean);
+						NewCourtBean.addCourt(newCourtBean);
 						view.setCourtsPanelVisible();
 						view.createCourtFrame(newCourtBean.getName());
 							
@@ -207,6 +214,7 @@ public class OrganizationControllerG{
 		};
 		view.getAddEventButton().addActionListener(gestoreAddEvent);
 		
+		
 		ActionListener gestoreCancelEvent = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -220,9 +228,9 @@ public class OrganizationControllerG{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				NewEventBean newEventBean = new NewEventBean();
-				getNewCourtCredentials(newEventBean);
+				getNewEventCredentials(newEventBean);
 					try {
-						NewEventBean.addCourse(newEventBean);
+						NewEventBean.addEvent(newEventBean);
 						view.setEventsPanelVisible();
 						view.createEventFrame(newEventBean.getName());
 							
@@ -259,18 +267,18 @@ public class OrganizationControllerG{
 					view.setVisible(false);
 				}
 			};
-			view.getSettingButton().addActionListener(gestoreSettings);
+		view.getSettingButton().addActionListener(gestoreSettings);
 
 	}
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////
+	//fine gestori
 	
 		
 	
 	private static void displayCourses() {
 		
 		OrganizationBean orgBean = new OrganizationBean();
-		OrganizationBean.setCredentials(orgBean);
 		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getCourses().size(); i++) {
 				String courseName = orgBean.getCourses().get(i).getName();
@@ -296,7 +304,6 @@ public class OrganizationControllerG{
 	private static void displayEvents() {
 		
 		OrganizationBean orgBean = new OrganizationBean();
-		OrganizationBean.setCredentials(orgBean);
 		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getEvents().size(); i++) {
 				String eventName = orgBean.getEvents().get(i).getName();
@@ -322,7 +329,6 @@ public class OrganizationControllerG{
 	private static void displayCourts() {
 		
 		OrganizationBean orgBean = new OrganizationBean();
-		OrganizationBean.setCredentials(orgBean);
 		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getCourts().size(); i++) {
 				String courtName = orgBean.getCourts().get(i).getName();
@@ -356,10 +362,26 @@ public class OrganizationControllerG{
 
 	}
 	
-	
-	public static void viewOrganizationProfileUI() {
-		view.setVisible(true);
-		view.setDescriptionPanelVisible();
+	private void getNewEventCredentials(NewEventBean newEventBean){
+		
+		newEventBean.setName(view.getEventName());
+		newEventBean.setDate(view.getEventDate());
+		newEventBean.setSport(view.getEventSport());
+		newEventBean.setDescription(view.getEventDescription());
+		newEventBean.setPrice(view.getEventPrice());
+		newEventBean.setAvailability(view.getEventAvailability());
+
 	}
+
+	private void getNewCourtCredentials(NewCourtBean newCourtBean){
+	
+		newCourtBean.setName(view.getCourtName());
+		newCourtBean.setPrice(view.getCourtPrice());
+		newCourtBean.setDescription(view.getCourtDescription());
+		newCourtBean.setSport(view.getSport());
+		newCourtBean.setAvailability(view.getEventAvailability());
+
+	}
+	
 
 }
