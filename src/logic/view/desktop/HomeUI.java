@@ -104,7 +104,7 @@ public class HomeUI extends JFrame {
 		profileButton.setContentAreaFilled(false);
 		
 		
-		exitButton.setBounds(1014, -8, 74, 72);
+		exitButton.setBounds(1014, -2, 74, 72);
 		panel.add(exitButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("Home");

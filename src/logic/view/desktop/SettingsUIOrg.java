@@ -33,7 +33,7 @@ public class SettingsUIOrg extends JFrame {
 	private final JButton passwordButton = new JButton("password");
 	
 	private final JPanel subtitlePanel = new JPanel();
-	private final JLabel subtitlelbl = new JLabel("Settings");
+	private final JLabel subtitlelbl = new JLabel("SETTINGS");
 	
 	private JPanel namePanel = new JPanel();
 	private JLabel nameLbl = new JLabel("Name");
@@ -249,7 +249,7 @@ public class SettingsUIOrg extends JFrame {
 					
 							contentPane.add(subtitlePanel);
 							subtitlePanel.setLayout(null);
-							subtitlelbl.setFont(new Font("Arial Black", Font.PLAIN, 20));
+							subtitlelbl.setFont(new Font("Segoe Script", Font.PLAIN, 30));
 							subtitlelbl.setBounds(50, 35, 185, 43);
 							
 											
