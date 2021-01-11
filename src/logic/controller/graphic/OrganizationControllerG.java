@@ -282,7 +282,8 @@ public class OrganizationControllerG{
 	
 	
 	private static void displayOneCourse(String courseName, String orgName) {
-		view.createCourseFrame(courseName).addActionListener(new ActionListener() {
+			
+			  view.createCourseFrame(courseName).addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e) {
 					
 					CourseUIOrg courseUI = new CourseUIOrg();
@@ -299,7 +300,8 @@ public class OrganizationControllerG{
 	}
 	
 	private static void displayOneCourt(String courtName, String orgName) {
-		view.createCourtFrame(courtName).addActionListener(new ActionListener() {
+			
+			view.createCourtFrame(courtName).addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				CourtUIOrg courtUI = new CourtUIOrg();
@@ -316,7 +318,8 @@ public class OrganizationControllerG{
 	}
 	
 	private static void displayOneEvent(String eventName, String orgName) {
-		view.createCourtFrame(eventName).addActionListener(new ActionListener() {
+			
+			view.createEventFrame(eventName).addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				EventUIOrg eventUI = new EventUIOrg();
