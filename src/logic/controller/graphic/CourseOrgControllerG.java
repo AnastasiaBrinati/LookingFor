@@ -2,7 +2,9 @@ package logic.controller.graphic;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
+import logic.controller.DeleteCourseController;
 import logic.model.CourseBean;
 import logic.model.DeleteItemBean;
 import logic.view.desktop.CourseUIOrg;
@@ -83,6 +85,13 @@ public class CourseOrgControllerG {
 			public void actionPerformed(ActionEvent e){
 				DeleteItemBean deleteBean=new DeleteItemBean();
 				setDeleteItemCredentials(deleteBean);
+				DeleteCourseController controller=DeleteCourseController.getInstance();
+				try {
+					controller.deleteCourse(deleteBean);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 
 			
@@ -94,7 +103,7 @@ public class CourseOrgControllerG {
 	}
 
 	private void setDeleteItemCredentials(DeleteItemBean bean) {
-		bean.setItemName(view.getName());
+		bean.setItemName(view.getCourseName());
 		bean.setOrganizationName();
 		
 		

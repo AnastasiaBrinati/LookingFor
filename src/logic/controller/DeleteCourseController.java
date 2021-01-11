@@ -9,7 +9,7 @@ public class DeleteCourseController {
 	
 	private static DeleteCourseController instance=null;
 	
-	public DeleteCourseController getInstance() {
+	public static DeleteCourseController getInstance() {
 		if(instance==null) {
 			instance=new DeleteCourseController();
 		}
@@ -19,7 +19,11 @@ public class DeleteCourseController {
 	public void deleteCourse(DeleteItemBean deleteBean) throws SQLException {
 		
 		CourseDAO courseDAO=new CourseDAO();
+		
+		//chiamo il dao per cancellare il corso desiderato
 		courseDAO.deleteCourse(deleteBean.getItemName(),deleteBean.getOrganizationName());
+		
+		//aggiorno il model
 		
 	}
 
