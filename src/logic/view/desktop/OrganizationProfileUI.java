@@ -848,5 +848,8 @@ public class OrganizationProfileUI extends JFrame {
 		public String getCourtSport() {
 			return courtSportTextField.getText();
 		}
+		public JPanel getCoursesPanel() {
+			return coursesPanel;
+		}
 		
 }
