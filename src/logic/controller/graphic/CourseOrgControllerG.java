@@ -85,7 +85,8 @@ public class CourseOrgControllerG {
 			public void actionPerformed(ActionEvent e){
 				DeleteItemBean deleteBean=new DeleteItemBean();
 				
-				setDeleteItemCredentials(deleteBean);
+				String buttonCode=e.getSource().getClass().getName();
+				setDeleteItemCredentials(deleteBean,buttonCode);
 				DeleteCourseController controller=DeleteCourseController.getInstance();
 				view.setVisible(false);
 				
@@ -106,10 +107,10 @@ public class CourseOrgControllerG {
 		
 	}
 
-	private void setDeleteItemCredentials(DeleteItemBean bean) {
+	private void setDeleteItemCredentials(DeleteItemBean bean,String buttonCode) {
 		bean.setItemName(view.getCourseName());
 		bean.setOrganizationName();
-		bean.setButtonName(view.getName());
+		bean.setButtonName(buttonCode);
 		
 		
 	}

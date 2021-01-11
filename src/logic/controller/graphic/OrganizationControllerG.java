@@ -405,8 +405,11 @@ public class OrganizationControllerG{
 
 	}
 
+	//metodo per cancellare il bottone del corso cancellato dalla view
 	public void deleteCourseButton(String buttonName) {
 		JPanel coursesPanel=view.getCoursesPanel();
+	   
+		
 		
 	
 	}

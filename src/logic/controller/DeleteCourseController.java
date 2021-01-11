@@ -33,8 +33,10 @@ public class DeleteCourseController {
 		System.out.println("All courses:");
 		OrganizationProfile.printAllCourses();
 		
+		//torno al profilo della Organizzazione,cancellando il bottone del vecchio corso
 		OrganizationProfileUI view=new OrganizationProfileUI();
 		OrganizationControllerG orgController=OrganizationControllerG.getInstance(view);
+		orgController.deleteCourseButton(deleteBean.getButtonName());
 		
 		
 	}
