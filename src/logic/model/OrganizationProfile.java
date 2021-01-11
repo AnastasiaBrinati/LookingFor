@@ -94,6 +94,20 @@ public class OrganizationProfile {
 		
 	}
 	
+	public static void printAllCourses() {
+		for(int i=0;i<courses.size();i++) {
+			System.out.println("Course n°"+i+" : "+courses.get(i).getName());
+		}
+	}
+	
+	public static void deleteCourse(String courseName) {
+		for(int i=0;i<courses.size();i++) {
+			if(courses.get(i).getName().equals(courseName)) {
+				courses.remove(i);
+			}
+		}
+	}
+	
 	public static void changePassword(String newPassword) throws Exception {
 		
 		OrganizationDAO orgDAO = new OrganizationDAO();
