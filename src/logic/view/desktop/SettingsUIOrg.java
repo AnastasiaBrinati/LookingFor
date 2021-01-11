@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class SettingsUIOrg extends JFrame {
@@ -29,9 +31,9 @@ public class SettingsUIOrg extends JFrame {
 	private JButton homeButton = new JButton("\u2302");
 	
 	private final JPanel panel = new JPanel();
-	private final JButton nameButton = new JButton("name");
-	private final JButton emailButton = new JButton("email");
-	private final JButton passwordButton = new JButton("password");
+	private final JButton nameButton = new JButton("Name");
+	private final JButton emailButton = new JButton("E-Mail");
+	private final JButton passwordButton = new JButton("Password");
 	
 	private final JPanel subtitlePanel = new JPanel();
 	private final JLabel subtitlelbl = new JLabel("SETTINGS");
@@ -81,6 +83,7 @@ public class SettingsUIOrg extends JFrame {
 		panel.setBackground(new Color(204, 0, 0));
 		panel.setBounds(0, 54, 307, 605);
 		panel.setLayout(null);
+		
 		nameButton.setForeground(Color.WHITE);
 		nameButton.setBackground(new Color(139, 0, 0));
 		nameButton.setBounds(10, 163, 287, 57);
