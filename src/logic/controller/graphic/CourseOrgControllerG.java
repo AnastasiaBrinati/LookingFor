@@ -86,8 +86,10 @@ public class CourseOrgControllerG {
 				DeleteItemBean deleteBean=new DeleteItemBean();
 				setDeleteItemCredentials(deleteBean);
 				DeleteCourseController controller=DeleteCourseController.getInstance();
+				view.setVisible(false);
 				try {
 					controller.deleteCourse(deleteBean);
+					
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
