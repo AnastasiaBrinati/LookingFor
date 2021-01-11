@@ -96,7 +96,19 @@ public class OrganizationProfile {
 	
 	public static void printAllCourses() {
 		for(int i=0;i<courses.size();i++) {
-			System.out.println("Course n°"+i+" : "+courses.get(i).getName());
+			System.out.println("Course n°"+(i+1)+" : "+courses.get(i).getName());
+		}
+	}
+	
+	public static void printAllEvents() {
+		for(int i=0;i<events.size();i++) {
+			System.out.println("Event n°"+(i+1)+" : "+events.get(i).getName());
+		}
+	}
+	
+	public static void printAllCourts() {
+		for(int i=0;i<courts.size();i++) {
+			System.out.println("Court n°"+(i+1)+" : "+courts.get(i).getName());
 		}
 	}
 	
