@@ -400,4 +400,7 @@ public class SettingsUIOrg extends JFrame {
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	public JButton getSearchButton() {
+		return searchButton;
+	}
 }

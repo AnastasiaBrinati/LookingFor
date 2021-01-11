@@ -13,6 +13,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JPasswordField;
 import javax.swing.UIManager;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class SettingsUISUs extends JFrame {
@@ -30,8 +32,8 @@ public class SettingsUISUs extends JFrame {
 	
 	private final JPanel panel = new JPanel();
 	private final JButton credentialsButton = new JButton("Name");
-	private final JButton securityButton = new JButton("email");
-	private final JButton passwordButton = new JButton("password");
+	private final JButton securityButton = new JButton("E-Mail");
+	private final JButton passwordButton = new JButton("Password");
 	
 	private final JPanel subtitlePanel = new JPanel();
 	private final JLabel subtitlelbl = new JLabel("Settings");
@@ -276,6 +278,10 @@ public class SettingsUISUs extends JFrame {
 		panel.setBackground(new Color(204, 0, 0));
 		panel.setBounds(0, 54, 307, 605);
 		panel.setLayout(null);
+		credentialsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		credentialsButton.setForeground(Color.WHITE);
 		credentialsButton.setBackground(new Color(204, 0, 0));
 		credentialsButton.setBounds(10, 79, 287, 57);
@@ -447,5 +453,8 @@ public class SettingsUISUs extends JFrame {
 	}
 	public void showErrorMessage2(String error) {
 		textFieldEmail.setText(error);
+	}
+	public JButton getSearchButton() {
+		return searchButton;
 	}
 }

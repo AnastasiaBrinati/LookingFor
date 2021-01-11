@@ -293,4 +293,7 @@ import javax.swing.SwingConstants;
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	public JButton getSearchButton() {
+		return searchButton;
+	}
 }
