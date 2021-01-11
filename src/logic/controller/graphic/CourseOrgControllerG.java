@@ -111,8 +111,7 @@ public class CourseOrgControllerG {
 		bean.setItemName(view.getCourseName());
 		bean.setOrganizationName();
 		bean.setButtonName(buttonCode);
-		
-		
+
 	}
 	
 	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {

@@ -124,6 +124,104 @@ public class OrganizationProfileUI extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 		
+		//courses
+		coursesPanel.setBounds(268, 145, 972, 568);
+		coursesPanel.setLayout(null);
+		
+		
+		newCoursePanel.setBackground(new Color(211, 211, 211));
+		newCoursePanel.setBounds(0, 0, 972, 568);
+		coursesPanel.add(newCoursePanel);
+		newCoursePanel.setLayout(null);		
+		cancelCourseButton.setBounds(52, 498, 162, 40);
+		newCoursePanel.add(cancelCourseButton);		
+		saveCourseButton.setBackground(new Color(255, 99, 71));
+		saveCourseButton.setBounds(247, 498, 162, 40);
+		newCoursePanel.add(saveCourseButton);
+		
+		
+		JLabel titleLable = new JLabel("Insert Title:");
+		titleLable.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		titleLable.setBounds(10, 23, 114, 23);
+		newCoursePanel.add(titleLable);
+		
+		titleTextField = new JTextField();
+		titleTextField.setBounds(143, 23, 266, 24);
+		newCoursePanel.add(titleTextField);
+		titleTextField.setColumns(10);
+		
+		JLabel descriptionlbl = new JLabel("Description:");
+		descriptionlbl.setFont(new Font("Arial", Font.PLAIN, 20));
+		descriptionlbl.setBounds(10, 74, 114, 23);
+		newCoursePanel.add(descriptionlbl);
+		
+		JLabel imgLabel = new JLabel("Insert Image:");
+		imgLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+		imgLabel.setBounds(573, 23, 140, 23);
+		newCoursePanel.add(imgLabel);
+		
+		//JTextArea descriptionTextArea = new JTextArea();
+		descriptionTextArea.setBounds(143, 76, 266, 112);
+		newCoursePanel.add(descriptionTextArea);
+		priceForLessonlbl.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		priceForLessonlbl.setBounds(10, 277, 170, 23);
+		
+		newCoursePanel.add(priceForLessonlbl);
+		monthlyPricelbl.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		monthlyPricelbl.setBounds(10, 310, 162, 23);
+		
+		newCoursePanel.add(monthlyPricelbl);
+		priceForLessonTextField.setColumns(10);
+		priceForLessonTextField.setBounds(190, 277, 219, 23);
+		
+		newCoursePanel.add(priceForLessonTextField);
+		monthlyPriceTextField.setColumns(10);
+		monthlyPriceTextField.setBounds(190, 313, 219, 23);
+		
+		newCoursePanel.add(monthlyPriceTextField);
+		
+		JLabel lblNewLabel_5 = new JLabel("Sport:");
+		lblNewLabel_5.setBounds(10, 350, 46, 14);
+		newCoursePanel.add(lblNewLabel_5);
+		
+		sportTextField = new JTextField();
+		sportTextField.setColumns(10);
+		sportTextField.setBounds(190, 347, 219, 23);
+		newCoursePanel.add(sportTextField);
+		
+		instructorNameTextField = new JTextField();
+		instructorNameTextField.setColumns(10);
+		instructorNameTextField.setBounds(190, 381, 219, 23);
+		newCoursePanel.add(instructorNameTextField);
+		
+		availabilityTextField = new JTextField();
+		availabilityTextField.setColumns(10);
+		availabilityTextField.setBounds(190, 415, 219, 23);
+		newCoursePanel.add(availabilityTextField);
+		
+		JLabel instructorNameLbl = new JLabel("Instructor Name:");
+		instructorNameLbl.setBounds(10, 385, 170, 14);
+		newCoursePanel.add(instructorNameLbl);
+		
+		JLabel availabilityLbl = new JLabel("Availability:");
+		availabilityLbl.setBounds(10, 419, 114, 14);
+		newCoursePanel.add(availabilityLbl);
+		upperPanel.setBounds(0, 0, 972, 134);
+		coursesPanel.add(upperPanel);
+		upperPanel.setLayout(null);
+		addButtonCourse.setBackground(Color.PINK);
+		addButtonCourse.setBounds(10, 48, 98, 48);
+		upperPanel.add(addButtonCourse);
+		courseslbl.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		courseslbl.setBounds(10, 25, 96, 13);
+		
+		upperPanel.add(courseslbl);
+		
+		lowerPanel.setBounds(0, 136, 972, 432);
+		coursesPanel.add(lowerPanel);
+		lowerPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		contentPane.add(coursesPanel);
+		
 		descriptionTextfield.setBackground(new Color(220, 220, 220));
 		descriptionTextfield.setBounds(10, 66, 798, 119);
 		descriptionTextfield.setColumns(10);
@@ -400,104 +498,6 @@ public class OrganizationProfileUI extends JFrame {
 			
 			lowerPanel2.setBounds(0, 135, 972, 433);
 			eventsPanel.add(lowerPanel2);
-			
-			//courses
-			coursesPanel.setBounds(268, 145, 972, 568);
-			coursesPanel.setLayout(null);
-			
-			
-			newCoursePanel.setBackground(new Color(211, 211, 211));
-			newCoursePanel.setBounds(0, 0, 972, 568);
-			coursesPanel.add(newCoursePanel);
-			newCoursePanel.setLayout(null);		
-			cancelCourseButton.setBounds(52, 498, 162, 40);
-			newCoursePanel.add(cancelCourseButton);		
-			saveCourseButton.setBackground(new Color(255, 99, 71));
-			saveCourseButton.setBounds(247, 498, 162, 40);
-			newCoursePanel.add(saveCourseButton);
-			
-			
-			JLabel titleLable = new JLabel("Insert Title:");
-			titleLable.setFont(new Font("Tahoma", Font.PLAIN, 20));
-			titleLable.setBounds(10, 23, 114, 23);
-			newCoursePanel.add(titleLable);
-			
-			titleTextField = new JTextField();
-			titleTextField.setBounds(143, 23, 266, 24);
-			newCoursePanel.add(titleTextField);
-			titleTextField.setColumns(10);
-			
-			JLabel descriptionlbl = new JLabel("Description:");
-			descriptionlbl.setFont(new Font("Arial", Font.PLAIN, 20));
-			descriptionlbl.setBounds(10, 74, 114, 23);
-			newCoursePanel.add(descriptionlbl);
-			
-			JLabel imgLabel = new JLabel("Insert Image:");
-			imgLabel.setFont(new Font("Arial", Font.PLAIN, 20));
-			imgLabel.setBounds(573, 23, 140, 23);
-			newCoursePanel.add(imgLabel);
-			
-			//JTextArea descriptionTextArea = new JTextArea();
-			descriptionTextArea.setBounds(143, 76, 266, 112);
-			newCoursePanel.add(descriptionTextArea);
-			priceForLessonlbl.setFont(new Font("Tahoma", Font.PLAIN, 11));
-			priceForLessonlbl.setBounds(10, 277, 170, 23);
-			
-			newCoursePanel.add(priceForLessonlbl);
-			monthlyPricelbl.setFont(new Font("Tahoma", Font.PLAIN, 11));
-			monthlyPricelbl.setBounds(10, 310, 162, 23);
-			
-			newCoursePanel.add(monthlyPricelbl);
-			priceForLessonTextField.setColumns(10);
-			priceForLessonTextField.setBounds(190, 277, 219, 23);
-			
-			newCoursePanel.add(priceForLessonTextField);
-			monthlyPriceTextField.setColumns(10);
-			monthlyPriceTextField.setBounds(190, 313, 219, 23);
-			
-			newCoursePanel.add(monthlyPriceTextField);
-			
-			JLabel lblNewLabel_5 = new JLabel("Sport:");
-			lblNewLabel_5.setBounds(10, 350, 46, 14);
-			newCoursePanel.add(lblNewLabel_5);
-			
-			sportTextField = new JTextField();
-			sportTextField.setColumns(10);
-			sportTextField.setBounds(190, 347, 219, 23);
-			newCoursePanel.add(sportTextField);
-			
-			instructorNameTextField = new JTextField();
-			instructorNameTextField.setColumns(10);
-			instructorNameTextField.setBounds(190, 381, 219, 23);
-			newCoursePanel.add(instructorNameTextField);
-			
-			availabilityTextField = new JTextField();
-			availabilityTextField.setColumns(10);
-			availabilityTextField.setBounds(190, 415, 219, 23);
-			newCoursePanel.add(availabilityTextField);
-			
-			JLabel instructorNameLbl = new JLabel("Instructor Name:");
-			instructorNameLbl.setBounds(10, 385, 170, 14);
-			newCoursePanel.add(instructorNameLbl);
-			
-			JLabel availabilityLbl = new JLabel("Availability:");
-			availabilityLbl.setBounds(10, 419, 114, 14);
-			newCoursePanel.add(availabilityLbl);
-			upperPanel.setBounds(0, 0, 972, 134);
-			coursesPanel.add(upperPanel);
-			upperPanel.setLayout(null);
-			addButtonCourse.setBackground(Color.PINK);
-			addButtonCourse.setBounds(10, 48, 98, 48);
-			upperPanel.add(addButtonCourse);
-			courseslbl.setFont(new Font("Arial Black", Font.PLAIN, 15));
-			courseslbl.setBounds(10, 25, 96, 13);
-			
-			upperPanel.add(courseslbl);
-			
-			lowerPanel.setBounds(0, 136, 972, 432);
-			coursesPanel.add(lowerPanel);
-			lowerPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-			contentPane.add(coursesPanel);
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
 		//coursesButton.setIcon(new ImageIcon(img3));
