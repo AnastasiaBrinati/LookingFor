@@ -41,6 +41,7 @@ import java.awt.Font;
 	private final JButton routineButton = new JButton("MyRoutine");
 	private final JButton exitButton = new JButton("\u2398");
 	private JLabel locationLbl = new JLabel("location");
+	private final JLabel lblNewLabel_4 = new JLabel("Profile");
 
 	public UserProfileUI() {
 
@@ -110,7 +111,7 @@ import java.awt.Font;
 		contentPane.add(headerPanel);
 		exitButton.setForeground(Color.WHITE);
 		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
-		exitButton.setBounds(1226, 0, 71, 67);
+		exitButton.setBounds(1211, 1, 86, 67);
 		
 		headerPanel.add(exitButton);
 		
@@ -149,6 +150,11 @@ import java.awt.Font;
 		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
 		//exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\exit-32.png"));
 		exitButton.setContentAreaFilled(false);
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("Segoe Print", Font.PLAIN, 35));
+		lblNewLabel_4.setBounds(67, -3, 149, 54);
+		
+		headerPanel.add(lblNewLabel_4);
 		routineButton.setForeground(Color.WHITE);
 		
 		

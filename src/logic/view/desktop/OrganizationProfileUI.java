@@ -110,6 +110,7 @@ public class OrganizationProfileUI extends JFrame {
 	private JTextField courtAvailabilityTextField;
 	private JButton cancelCourtButton = new JButton("Cancel");
 	private JButton saveCourtButton = new JButton("Save");
+	private final JLabel lblNewLabel_4 = new JLabel("Profile");
 
 
 
@@ -355,6 +356,11 @@ public class OrganizationProfileUI extends JFrame {
 		settingsButton.setForeground(Color.WHITE);
 		settingsButton.setBounds(0, 0, 94, 54);
 		headerPanel.add(settingsButton);
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("Segoe Print", Font.PLAIN, 35));
+		lblNewLabel_4.setBounds(104, 0, 149, 54);
+		
+		headerPanel.add(lblNewLabel_4);
 		lateralPanel.setBounds(0, 53, 269, 660);
 		lateralPanel.setBackground(new Color(204, 0, 0));
 		
