@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import logic.model.CourseDAO;
 import logic.model.DeleteItemBean;
+import logic.model.OrganizationProfile;
 
 public class DeleteCourseController {
 	
@@ -24,6 +25,10 @@ public class DeleteCourseController {
 		courseDAO.deleteCourse(deleteBean.getItemName(),deleteBean.getOrganizationName());
 		
 		//aggiorno il model
+		OrganizationProfile.deleteCourse(deleteBean.getItemName());
+		System.out.println("Course "+deleteBean.getItemName()+" has been removed from organization "+deleteBean.getOrganizationName());
+		System.out.println("All courses:");
+		OrganizationProfile.printAllCourses();
 		
 	}
 
