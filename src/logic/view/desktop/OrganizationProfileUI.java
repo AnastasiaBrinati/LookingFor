@@ -353,7 +353,7 @@ public class OrganizationProfileUI extends JFrame {
 		
 		settingsButton.setBackground(UIManager.getColor("Button.background"));
 		settingsButton.setForeground(Color.WHITE);
-		settingsButton.setBounds(0, 0, 77, 54);
+		settingsButton.setBounds(0, 0, 94, 54);
 		headerPanel.add(settingsButton);
 		lateralPanel.setBounds(0, 53, 269, 660);
 		lateralPanel.setBackground(new Color(204, 0, 0));
