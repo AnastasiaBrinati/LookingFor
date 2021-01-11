@@ -92,6 +92,7 @@ public class CourseOrgControllerG {
 				
 				try {
 					controller.deleteCourse(view.getCourseName());
+					//cancella bottone
 					
 				} catch (SQLException e1) {
 					
