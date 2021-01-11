@@ -67,7 +67,7 @@ public class HomeUI extends JFrame {
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
-		lblNewLabel.setBounds(438, 10, 151, 44);
+		lblNewLabel.setBounds(707, -4, 151, 74);
 		panel.add(lblNewLabel);
 		profileButton.setForeground(Color.WHITE);
 		profileButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));

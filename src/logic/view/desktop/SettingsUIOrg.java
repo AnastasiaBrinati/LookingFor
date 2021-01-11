@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
 
 
 public class SettingsUIOrg extends JFrame {
@@ -64,6 +65,7 @@ public class SettingsUIOrg extends JFrame {
 	private final JLabel oldPasswordlbl = new JLabel("Old Password");
 	private final JTextField textFieldNewPassword = new JTextField();
 	private final JTextField textFieldOldPassword = new JTextField();
+	private final JButton searchButton = new JButton("\uD83D\uDD0D");
 	
 
 	public SettingsUIOrg() {
@@ -243,6 +245,14 @@ public class SettingsUIOrg extends JFrame {
 															exitButton.setBounds(1219, 0, 78, 72);
 															
 															headerPanel.add(exitButton);
+															searchButton.setVerticalAlignment(SwingConstants.TOP);
+															searchButton.setHorizontalAlignment(SwingConstants.LEADING);
+															searchButton.setForeground(Color.WHITE);
+															searchButton.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 25));
+															searchButton.setBackground(Color.DARK_GRAY);
+															searchButton.setBounds(764, 12, 71, 31);
+															
+															headerPanel.add(searchButton);
 			
 					subtitlePanel.setBackground(new Color(192, 192, 192));
 					subtitlePanel.setBounds(305, 54, 992, 115);

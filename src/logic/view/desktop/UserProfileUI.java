@@ -12,6 +12,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 
  public class UserProfileUI extends JFrame {
@@ -42,6 +43,7 @@ import java.awt.Font;
 	private final JButton exitButton = new JButton("\u2398");
 	private JLabel locationLbl = new JLabel("location");
 	private final JLabel lblNewLabel_4 = new JLabel("Profile");
+	private final JButton searchButton = new JButton("\uD83D\uDD0D");
 
 	public UserProfileUI() {
 
@@ -155,6 +157,14 @@ import java.awt.Font;
 		lblNewLabel_4.setBounds(67, -3, 149, 54);
 		
 		headerPanel.add(lblNewLabel_4);
+		searchButton.setVerticalAlignment(SwingConstants.TOP);
+		searchButton.setHorizontalAlignment(SwingConstants.LEADING);
+		searchButton.setForeground(Color.WHITE);
+		searchButton.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 25));
+		searchButton.setBackground(Color.DARK_GRAY);
+		searchButton.setBounds(764, 11, 71, 31);
+		
+		headerPanel.add(searchButton);
 		routineButton.setForeground(Color.WHITE);
 		
 		
