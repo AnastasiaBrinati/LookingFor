@@ -359,6 +359,7 @@ public class OrganizationControllerG{
 	}
 	
 	private static void displayCourts() {
+
 		
 		OrganizationBean orgBean = new OrganizationBean();
 		String orgName = orgBean.getName();
@@ -368,6 +369,7 @@ public class OrganizationControllerG{
 		}
 		
 	}
+	
 	
 	private void getNewCourseCredentials(NewCourseBean newCourseBean){
 		
