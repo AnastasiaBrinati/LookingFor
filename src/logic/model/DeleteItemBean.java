@@ -14,8 +14,8 @@ public class DeleteItemBean {
 	public String getOrganizationName() {
 		return organizationName;
 	}
-	public void setOrganizationName(String organizationName) {
-		this.organizationName = organizationName;
+	public void setOrganizationName() {
+		this.organizationName = OrganizationProfile.getName();
 	}
 
 }
