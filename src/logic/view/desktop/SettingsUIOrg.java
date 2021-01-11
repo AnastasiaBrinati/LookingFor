@@ -240,7 +240,7 @@ public class SettingsUIOrg extends JFrame {
 															homeButton.setContentAreaFilled(false);
 															
 															homeButton.setContentAreaFilled(false);
-															exitButton.setBounds(1226, 0, 71, 72);
+															exitButton.setBounds(1219, 0, 78, 72);
 															
 															headerPanel.add(exitButton);
 			

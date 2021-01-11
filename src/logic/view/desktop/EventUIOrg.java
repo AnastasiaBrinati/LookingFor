@@ -48,8 +48,8 @@ public class EventUIOrg extends JFrame {
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("\u2630");
-	private JButton exitButton = new JButton("");
-	private JButton homeButton = new JButton("");
+	private JButton exitButton = new JButton("\u2398");
+	private JButton homeButton = new JButton("\u2302");
 	
 	private JLabel priceLbl = new JLabel("$15.00");
 	private JLabel organizationLbl = new JLabel("Organization");
@@ -81,9 +81,10 @@ public class EventUIOrg extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);
 		panel.add(lblNewLabel);
-		
+		settingsButton.setContentAreaFilled(false);
+		exitButton.setContentAreaFilled(false);
 		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(980, 0, 49, 49);
+		profileButton.setBounds(943, 0, 49, 49);
 		panel.add(profileButton);
 		settingsButton.setForeground(Color.WHITE);
 		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
@@ -122,12 +123,16 @@ public class EventUIOrg extends JFrame {
 		
 		profileButton.setContentAreaFilled(false);
 		*/
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
+		exitButton.setForeground(Color.WHITE);
 		
-		exitButton.setBounds(1039, 0, 49, 49);
+		exitButton.setBounds(1002, 0, 86, 67);
 		panel.add(exitButton);
+		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
+		homeButton.setForeground(Color.WHITE);
 		
 		homeButton.setContentAreaFilled(false);
-		homeButton.setBounds(336, 10, 40, 43);
+		homeButton.setBounds(336, -14, 79, 68);
 		panel.add(homeButton);
 		
 		JPanel mainPanel = new JPanel();
