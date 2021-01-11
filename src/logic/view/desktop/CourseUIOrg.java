@@ -101,24 +101,6 @@ public class CourseUIOrg extends JFrame {
 		exitButton.setForeground(Color.WHITE);
 		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 		
-		//Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
-		//settingsButton.setIcon(new ImageIcon(img3));
-		//settingsButton.setContentAreaFilled(false);
-
-		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
-		//exitButton.setIcon(new ImageIcon(img5));
-		//exitButton.setContentAreaFilled(false);
-
-		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
-		//exitButton.setIcon(new ImageIcon(img5));
-		exitButton.setContentAreaFilled(false);
-
-		
-		//Image img4=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
-		//profileButton.setIcon(new ImageIcon(img4));
-		profileButton.setContentAreaFilled(false);
-
-		
 		
 		profileButton.setContentAreaFilled(false);
 		backButton.setContentAreaFilled(false);
@@ -134,10 +116,7 @@ public class CourseUIOrg extends JFrame {
 		homeButton.setBounds(313, -27, 104, 97);
 		panel.add(homeButton);
 		backButton.setFont(new Font("Cambria Math", Font.PLAIN, 40));
-		backButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		
 		backButton.setForeground(Color.WHITE);
 		backButton.setBackground(new Color(204, 0, 0));
 		backButton.setBounds(90, 3, 85, 54);

@@ -18,12 +18,6 @@ public class DeleteItemBean {
 	public void setOrganizationName() {
 		this.organizationName = OrganizationProfile.getName();
 	}
-	public String getButtonName() {
-		return buttonName;
-		
-	}
-	public void setButtonName(String buttonCode) {
-		this.buttonName = buttonCode;
-	}
+	
 
 }

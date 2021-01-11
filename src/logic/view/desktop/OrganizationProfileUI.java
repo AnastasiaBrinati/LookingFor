@@ -3,6 +3,7 @@ package logic.view.desktop;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -26,7 +27,7 @@ public class OrganizationProfileUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	
+	private ArrayList<JButton> buttons;
 	//private ArrayList<JButton> coursesFrames;
 	 
 	private JPanel headerPanel = new JPanel();
@@ -547,7 +548,7 @@ public class OrganizationProfileUI extends JFrame {
 	public JButton createCourseFrame(String name) {
 
         JButton frame = new JButton(name);
-
+        buttons.add(frame);
         
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
@@ -565,6 +566,7 @@ public class OrganizationProfileUI extends JFrame {
 	public JButton createEventFrame(String name) {
 
         JButton frame = new JButton(name);
+        buttons.add(frame);
         
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
@@ -582,6 +584,8 @@ public class OrganizationProfileUI extends JFrame {
 	public JButton createCourtFrame(String name) {
 
         JButton frame = new JButton(name);
+        buttons.add(frame);
+        
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
         frame.setVisible(true);
@@ -697,7 +701,14 @@ public class OrganizationProfileUI extends JFrame {
 		
 	}
 	
-	
+	public void deleteThisButton(String courseName) {
+		for(int i=0; i<buttons.size();i++) {
+			if(buttons.get(i).getText().equals(courseName)) {
+				buttons.get(i).setVisible(false);
+				buttons.remove(i);
+			}
+		}
+	}
 	
 	public void resetNewCourseForm() {
 		titleTextField.setText("");
@@ -730,10 +741,8 @@ public class OrganizationProfileUI extends JFrame {
 	}
 	
 	
-	
 	public void setCredentials(String name, String location) {
 		organizationNameLbl.setText(name);
-		//set img
 	}
 	
 	public JButton getProfileButton() {
