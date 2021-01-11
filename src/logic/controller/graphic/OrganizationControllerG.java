@@ -3,6 +3,8 @@ package logic.controller.graphic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JPanel;
+
 import logic.controller.NewCourseBean;
 import logic.controller.NewCourtBean;
 import logic.controller.NewEventBean;
@@ -401,6 +403,12 @@ public class OrganizationControllerG{
 		newCourtBean.setSport(view.getSport());
 		newCourtBean.setAvailability(view.getEventAvailability());
 
+	}
+
+	public void deleteCourseButton(String buttonName) {
+		JPanel coursesPanel=view.getCoursesPanel();
+		
+	
 	}
 	
 

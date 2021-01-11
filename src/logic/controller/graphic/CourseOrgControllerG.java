@@ -84,9 +84,11 @@ public class CourseOrgControllerG {
 			@Override
 			public void actionPerformed(ActionEvent e){
 				DeleteItemBean deleteBean=new DeleteItemBean();
+				
 				setDeleteItemCredentials(deleteBean);
 				DeleteCourseController controller=DeleteCourseController.getInstance();
 				view.setVisible(false);
+				
 				try {
 					controller.deleteCourse(deleteBean);
 					
@@ -107,6 +109,7 @@ public class CourseOrgControllerG {
 	private void setDeleteItemCredentials(DeleteItemBean bean) {
 		bean.setItemName(view.getCourseName());
 		bean.setOrganizationName();
+		bean.setButtonName(view.getName());
 		
 		
 	}
