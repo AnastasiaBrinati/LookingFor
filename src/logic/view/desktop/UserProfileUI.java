@@ -26,7 +26,7 @@ public class UserProfileUI extends JFrame {
 	
 	private JPanel descriptionPanel = new JPanel();
 	private JLabel lblTitle = new JLabel("Sportee");
-	private JButton homeButton = new JButton("");
+	private JButton homeButton = new JButton("\u2302");
 	private JButton settingsButton = new JButton("\u2630");
 	
 	private final JLabel lblUsername = new JLabel("username");
@@ -39,7 +39,7 @@ public class UserProfileUI extends JFrame {
 	private final JPanel eventsPanel = new JPanel();
 	private final JButton backButton = new JButton("<-");
 	private final JButton RoutineButton = new JButton("MyRoutine");
-	private final JButton exitButton = new JButton("");
+	private final JButton exitButton = new JButton("\u2398");
 	private JLabel locationLbl = new JLabel("location");
 
 	public UserProfileUI() {
@@ -95,8 +95,10 @@ public class UserProfileUI extends JFrame {
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1297, 51);
 		headerPanel.setLayout(null);
+		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
+		homeButton.setForeground(Color.WHITE);
 
-		homeButton.setBounds(360, 0, 55, 51);
+		homeButton.setBounds(360, -11, 55, 62);
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);
 
@@ -116,7 +118,9 @@ public class UserProfileUI extends JFrame {
 		headerPanel.add(settingsButton);
 
 		contentPane.add(headerPanel);
-		exitButton.setBounds(1242, 0, 55, 51);
+		exitButton.setForeground(Color.WHITE);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
+		exitButton.setBounds(1226, 0, 71, 67);
 		
 		headerPanel.add(exitButton);
 		
