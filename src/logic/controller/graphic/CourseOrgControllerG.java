@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 import logic.controller.DeleteCourseController;
 import logic.model.CourseBean;
-import logic.model.DeleteItemBean;
 import logic.view.desktop.CourseUIOrg;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
