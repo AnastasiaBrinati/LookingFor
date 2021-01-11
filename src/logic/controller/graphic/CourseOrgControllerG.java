@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.model.CourseBean;
+import logic.model.DeleteItemBean;
 import logic.view.desktop.CourseUIOrg;
 import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.HomeUI;
@@ -76,9 +77,29 @@ public class CourseOrgControllerG {
 		};
 		view.getExitButton().addActionListener(gestoreExit);
 		
+		ActionListener gestoreDeleteCourse = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				DeleteItemBean deleteBean=new DeleteItemBean();
+				setDeleteItemCredentials(deleteBean);
+			}
+
+			
+
+		};
+		view.getDeleteButton().addActionListener(gestoreDeleteCourse);
+		
 		
 	}
 
+	private void setDeleteItemCredentials(DeleteItemBean bean) {
+		bean.setItemName(view.getName());
+		bean.setOrganizationName();
+		
+		
+	}
+	
 	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {
 		CourseBean courseBean = new CourseBean();
 		courseBean.setCourse(courseBean, courseName, organizationName);
