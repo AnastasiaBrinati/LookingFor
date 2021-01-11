@@ -43,16 +43,23 @@ public class HomeUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JPanel panel = new JPanel();
+	private JPanel headerPanel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("\u26F9");
 	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("\u2398");
+	private final JPanel choicePanel = new JPanel();
+	private JTextField textField;
+	
+	private JButton categoriesButton = new JButton("Categories");
+	private JButton homeButton = new JButton("Home");
+	private JPanel categoriesPanel = new JPanel();
+	private JPanel homePanel = new JPanel();
 
 	public HomeUI() {
 
 		setTitle("Sportee");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1102, 682);
 		contentPane = new JPanel();
@@ -60,25 +67,25 @@ public class HomeUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		panel.setBackground(new Color(255, 0, 0));
-		panel.setBounds(0, 0, 1088, 54);
-		contentPane.add(panel);
-		panel.setLayout(null);
+		headerPanel.setBackground(new Color(255, 0, 0));
+		headerPanel.setBounds(0, 0, 1088, 54);
+		contentPane.add(headerPanel);
+		headerPanel.setLayout(null);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
-		lblNewLabel.setBounds(707, -4, 151, 74);
-		panel.add(lblNewLabel);
+		lblNewLabel.setBounds(77, 11, 146, 43);
+		headerPanel.add(lblNewLabel);
 		profileButton.setForeground(Color.WHITE);
 		profileButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
 		
 		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(902, -4, 90, 63);
-		panel.add(profileButton);
+		profileButton.setBounds(926, -4, 90, 63);
+		headerPanel.add(profileButton);
 		settingsButton.setForeground(Color.WHITE);
 		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
 		settingsButton.setBounds(0, 1, 74, 53);
-		panel.add(settingsButton);
+		headerPanel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		
 		settingsButton.setContentAreaFilled(false);
@@ -107,14 +114,35 @@ public class HomeUI extends JFrame {
 		
 		
 		exitButton.setBounds(1014, -2, 74, 72);
-		panel.add(exitButton);
+		headerPanel.add(exitButton);
 		
-		JLabel lblNewLabel_1 = new JLabel("Home");
-		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Segoe Print", Font.PLAIN, 35));
-		lblNewLabel_1.setBounds(84, 10, 126, 31);
-		panel.add(lblNewLabel_1);
-		LineBorder lineBorder=new LineBorder(Color.white,8,true);
+		textField = new JTextField();
+		textField.setBounds(317, 11, 342, 33);
+		headerPanel.add(textField);
+		textField.setColumns(10);
+		
+		homePanel.setBounds(0, 95, 1088, 550);
+		contentPane.add(homePanel);
+		choicePanel.setBounds(0, 53, 1088, 42);
+		
+		contentPane.add(choicePanel);
+		choicePanel.setLayout(null);
+		homeButton.setForeground(Color.PINK);
+		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		
+		homeButton.setBackground(Color.RED);
+		homeButton.setBounds(0, 0, 513, 42);
+		choicePanel.add(homeButton);
+		categoriesButton.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		categoriesButton.setForeground(Color.WHITE);
+		
+		categoriesButton.setBackground(Color.RED);
+		categoriesButton.setBounds(511, 0, 577, 42);
+		choicePanel.add(categoriesButton);
+		
+		categoriesPanel.setBounds(0, 95, 1088, 550);
+		contentPane.add(categoriesPanel);
+		//LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
 	public JButton getProfileButton() {
@@ -125,6 +153,28 @@ public class HomeUI extends JFrame {
 	}
 	public JButton getExitButton() {
 		return exitButton;
+	}
+	public JButton getHomeButton() {
+		return homeButton;
+	}
+	public JButton getCategoriesButton() {
+		return categoriesButton;
+	}
+	
+	public void showCategories() {
+		
+		categoriesPanel.setVisible(true);
+		homePanel.setVisible(false);
+		homeButton.setForeground(Color.WHITE);
+		categoriesButton.setForeground(Color.PINK);
+		
+	}
+	
+	public void showHome() {
+		categoriesPanel.setVisible(false);
+		homePanel.setVisible(true);
+		homeButton.setForeground(Color.PINK);
+		categoriesButton.setForeground(Color.WHITE);
 	}
 }
 	
