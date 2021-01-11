@@ -65,6 +65,7 @@ public class CourseUIOrg extends JFrame {
 	JLabel monthlyPriceLbl = new JLabel("$50.00");
 	JLabel lblInstructor = new JLabel("Instructor");
 	JLabel availabilityLbl = new JLabel("7");
+	JButton deleteButton = new JButton("Delete ");
 	private final JButton backButton = new JButton("\u21E6");
 
 	public CourseUIOrg() {
@@ -171,7 +172,7 @@ public class CourseUIOrg extends JFrame {
 		sportLbl.setBounds(146, 47, 413, 14);
 		panel_1.add(sportLbl);
 		
-		JButton deleteButton = new JButton("Delete ");
+		
 		deleteButton.setForeground(Color.WHITE);
 		deleteButton.setBackground(Color.RED);
 		deleteButton.setBounds(920, 44, 133, 63);
@@ -244,6 +245,11 @@ public class CourseUIOrg extends JFrame {
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	public String getCourseName() {
+		return nameLbl.getText();
+	}
+	
+	
 
 	public JButton getHomeButton() {
 		
@@ -252,6 +258,9 @@ public class CourseUIOrg extends JFrame {
 	
 	public JButton getBackButton() {
 		return backButton;
+	}
+	public JButton getDeleteButton() {
+		return deleteButton;
 	}
 
 	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice,
