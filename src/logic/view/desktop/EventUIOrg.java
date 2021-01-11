@@ -47,7 +47,7 @@ public class EventUIOrg extends JFrame {
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
-	private JButton settingsButton = new JButton("");
+	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("");
 	private JButton homeButton = new JButton("");
 	
@@ -85,7 +85,9 @@ public class EventUIOrg extends JFrame {
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
-		settingsButton.setBounds(10, 5, 40, 43);
+		settingsButton.setForeground(Color.WHITE);
+		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
+		settingsButton.setBounds(0, 0, 69, 54);
 		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		/*

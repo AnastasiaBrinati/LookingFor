@@ -27,7 +27,7 @@ public class UserProfileUI extends JFrame {
 	private JPanel descriptionPanel = new JPanel();
 	private JLabel lblTitle = new JLabel("Sportee");
 	private JButton homeButton = new JButton("");
-	private JButton settingsButton = new JButton("");
+	private JButton settingsButton = new JButton("\u2630");
 	
 	private final JLabel lblUsername = new JLabel("username");
 	private final JLabel namelbl = new JLabel("name");
@@ -103,9 +103,11 @@ public class UserProfileUI extends JFrame {
 		searchBar = new JTextField();
 		searchBar.setBounds(416, 11, 349, 31);
 		searchBar.setColumns(10);
+		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
+		settingsButton.setForeground(Color.WHITE);
 
 		
-		settingsButton.setBounds(0, 0, 55, 51);
+		settingsButton.setBounds(0, 0, 62, 51);
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
 

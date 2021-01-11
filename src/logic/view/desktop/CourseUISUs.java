@@ -51,7 +51,7 @@ public class CourseUISUs extends JFrame {
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
 	private JButton homeButton = new JButton("");
-	private JButton settingsButton = new JButton("");
+	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("");
 	JLabel nameLbl = new JLabel("Name");
 	JLabel sportLbl = new JLabel("Sport");
@@ -87,12 +87,15 @@ public class CourseUISUs extends JFrame {
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
-		settingsButton.setBounds(10, 5, 40, 43);
+		settingsButton.setForeground(Color.WHITE);
+		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
+		settingsButton.setBounds(0, 0, 69, 54);
 		panel.add(settingsButton);
+		settingsButton.setContentAreaFilled(false);
 		//settingsButton.setEnabled(false);
 		
 		/*
-		settingsButton.setContentAreaFilled(false);
+		
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
 		//settingsButton.setIcon(new ImageIcon(img3));

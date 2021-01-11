@@ -74,8 +74,8 @@ public class HomeUI extends JFrame {
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
 		settingsButton.setForeground(Color.WHITE);
-		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 30));
-		settingsButton.setBounds(0, 1, 67, 53);
+		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
+		settingsButton.setBounds(0, 1, 74, 53);
 		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		

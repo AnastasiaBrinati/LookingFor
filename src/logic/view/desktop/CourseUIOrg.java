@@ -93,8 +93,8 @@ public class CourseUIOrg extends JFrame {
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
 		settingsButton.setForeground(Color.WHITE);
-		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 30));
-		settingsButton.setBounds(0, -23, 68, 97);
+		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
+		settingsButton.setBounds(0, -12, 68, 77);
 		panel.add(settingsButton);
 		settingsButton.setContentAreaFilled(false);
 		
