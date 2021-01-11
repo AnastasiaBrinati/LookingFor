@@ -125,7 +125,7 @@ public class CourseUIOrg extends JFrame {
 		
 		exitButton.setBounds(1017, 0, 71, 65);
 		panel.add(exitButton);
-		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 50));
+		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
 		homeButton.setForeground(Color.WHITE);
 		
 		

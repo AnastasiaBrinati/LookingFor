@@ -25,7 +25,7 @@ public class SettingsUISUs extends JFrame {
 	private JPanel headerPanel = new JPanel();
 
 	private JLabel lblTitle = new JLabel("Sportee");
-	private JButton homeButton = new JButton("");
+	private JButton homeButton = new JButton("\u2302");
 	
 	private final JPanel panel = new JPanel();
 	private final JButton credentialsButton = new JButton("Name");
@@ -64,7 +64,7 @@ public class SettingsUISUs extends JFrame {
 	private final JLabel pencilLbl4 = new JLabel("");
 	private final JLabel pencilLbl5 = new JLabel("");
 	private final JLabel pencilLbl6 = new JLabel("");
-	private final JButton exitButton = new JButton("");
+	private final JButton exitButton = new JButton("\u2398");
 	
 	private JPanel passwordPanel = new JPanel();
 	private JTextField textFieldNewPassword;
@@ -183,6 +183,8 @@ public class SettingsUISUs extends JFrame {
 				
 				Image img7=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
 				*/
+		exitButton.setForeground(Color.WHITE);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 		
 
 		//exitButton.setIcon(new ImageIcon(img7));
@@ -205,9 +207,10 @@ public class SettingsUISUs extends JFrame {
 		headerPanel.setForeground(new Color(255, 165, 0));
 		headerPanel.setBounds(0, 0, 1297, 54);
 		headerPanel.setLayout(null);
+		homeButton.setForeground(Color.WHITE);
+		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
 
-		homeButton.setBounds(367, 0, 48, 51);
-		homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Desktop\\ISPW\\Progetto\\Sporty\\Progetto\\ImagesSporty\\home-3-32.png"));
+		homeButton.setBounds(357, -16, 58, 70);
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);
 
@@ -257,7 +260,7 @@ public class SettingsUISUs extends JFrame {
 				//Image img8=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
 				//homeButton.setIcon(new ImageIcon(img8));
 				homeButton.setContentAreaFilled(false);
-				exitButton.setBounds(1240, 0, 57, 51);
+				exitButton.setBounds(1226, 0, 71, 67);
 				
 				headerPanel.add(exitButton);
 				

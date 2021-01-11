@@ -47,7 +47,7 @@ public class HomeUI extends JFrame {
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("\u2630");
-	private JButton exitButton = new JButton("");
+	private JButton exitButton = new JButton("\u2398");
 
 	public HomeUI() {
 
@@ -84,6 +84,8 @@ public class HomeUI extends JFrame {
 		//Image img3=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
 		//settingsButton.setIcon(new ImageIcon(img3));
 		settingsButton.setContentAreaFilled(false);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
+		exitButton.setForeground(Color.WHITE);
 		
 		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
 		//exitButton.setIcon(new ImageIcon(img5));
@@ -102,7 +104,7 @@ public class HomeUI extends JFrame {
 		profileButton.setContentAreaFilled(false);
 		
 		
-		exitButton.setBounds(1039, 0, 49, 49);
+		exitButton.setBounds(1014, -8, 74, 72);
 		panel.add(exitButton);
 		LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
