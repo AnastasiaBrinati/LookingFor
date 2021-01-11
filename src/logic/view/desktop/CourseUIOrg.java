@@ -52,7 +52,7 @@ public class CourseUIOrg extends JFrame {
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("\u2630");
-	private JButton exitButton = new JButton("");
+	private JButton exitButton = new JButton("\u2398");
 	private JButton homeButton = new JButton("\u2302");
 	JLabel nameLbl = new JLabel("Name");
 	JLabel sportLbl = new JLabel("Sport");
@@ -97,6 +97,8 @@ public class CourseUIOrg extends JFrame {
 		settingsButton.setBounds(0, -12, 68, 77);
 		panel.add(settingsButton);
 		settingsButton.setContentAreaFilled(false);
+		exitButton.setForeground(Color.WHITE);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
 		//settingsButton.setIcon(new ImageIcon(img3));
@@ -121,7 +123,7 @@ public class CourseUIOrg extends JFrame {
 		backButton.setContentAreaFilled(false);
 		
 		
-		exitButton.setBounds(1039, 0, 49, 49);
+		exitButton.setBounds(1017, 0, 71, 65);
 		panel.add(exitButton);
 		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 50));
 		homeButton.setForeground(Color.WHITE);

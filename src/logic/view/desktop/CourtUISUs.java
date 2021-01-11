@@ -51,8 +51,8 @@ public class CourtUISUs extends JFrame {
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("\u2630");
-	private JButton exitButton = new JButton("");
-	private JButton homeButton = new JButton("");
+	private JButton exitButton = new JButton("\u2398");
+	private JButton homeButton = new JButton("\u2302");
 
 	private JTextArea descriptionTextArea = new JTextArea();
 	private JLabel sportLbl = new JLabel("Sport");
@@ -71,7 +71,7 @@ public class CourtUISUs extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		exitButton.setContentAreaFilled(false);
 
 		panel.setBackground(new Color(255, 0, 0));
 		panel.setBounds(0, 0, 1088, 54);
@@ -82,13 +82,13 @@ public class CourtUISUs extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);
 		panel.add(lblNewLabel);
-		
+		settingsButton.setContentAreaFilled(false);
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
 		settingsButton.setForeground(Color.WHITE);
 		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
-		settingsButton.setBounds(0, 0, 71, 54);
+		settingsButton.setBounds(0, -5, 71, 63);
 		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		/*
@@ -122,13 +122,17 @@ public class CourtUISUs extends JFrame {
 		*/
 		
 		profileButton.setContentAreaFilled(false);
+		exitButton.setForeground(Color.WHITE);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 		
 		
-		exitButton.setBounds(1039, 0, 49, 49);
+		exitButton.setBounds(1017, 0, 71, 67);
 		panel.add(exitButton);
+		homeButton.setForeground(Color.WHITE);
+		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
 		
 		homeButton.setContentAreaFilled(false);
-		homeButton.setBounds(336, 10, 40, 43);
+		homeButton.setBounds(348, -13, 71, 67);
 		panel.add(homeButton);
 		
 		JPanel mainPanel = new JPanel();
