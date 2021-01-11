@@ -153,7 +153,7 @@ public class CourtUISUs extends JFrame {
 		
 		nameLbl.setForeground(new Color(255, 255, 255));
 		nameLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 23));
-		nameLbl.setBounds(146, 22, 61, 14);
+		nameLbl.setBounds(146, 11, 259, 25);
 		panel_1.add(nameLbl);
 		
 		sportLbl.setForeground(Color.WHITE);
