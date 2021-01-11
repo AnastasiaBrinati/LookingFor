@@ -158,8 +158,18 @@ public class Queries {
         System.out.println(sql);
         return stmt.executeQuery(sql);
 	}
+
+	public static int deleteCourse(Statement stmt, String itemName, String organizationName) throws SQLException {
+		 {
+			String deleteStatement = String.format("DELETE FROM  courses  WHERE name = '%s' AND organization = '%s' ", itemName,organizationName);
+	        System.out.println(deleteStatement);
+	        return stmt.executeUpdate(deleteStatement);
+			
+	    
+	}
+		
 	
   
 	
-}
+}}
 
