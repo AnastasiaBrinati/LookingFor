@@ -54,7 +54,7 @@ public class SettingsUIOrg extends JFrame {
 	private final JLabel pencilTextField2 = new JLabel("");
 	private final JLabel pencilTextField5 = new JLabel("");
 	private final JLabel pencilTextField4 = new JLabel("\u270E");
-	private final JButton exitButton = new JButton("");
+	private final JButton exitButton = new JButton("\u2398");
 	
 	private final JPanel passwordPanel = new JPanel();
 	private final JButton cancelButton3 = new JButton("Cancel");
@@ -83,6 +83,8 @@ public class SettingsUIOrg extends JFrame {
 		nameButton.setBackground(new Color(139, 0, 0));
 		nameButton.setBounds(10, 163, 287, 57);
 		panel.add(nameButton);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
+		exitButton.setForeground(Color.WHITE);
 		
 		//Image img5=new ImageIcon(this.getClass().getResource("/016-trash bin.png")).getImage();
 		//exitButton.setIcon(new ImageIcon(img5));
@@ -218,8 +220,10 @@ public class SettingsUIOrg extends JFrame {
 							headerPanel.setForeground(new Color(255, 165, 0));
 							headerPanel.setBounds(0, 0, 1297, 54);
 							headerPanel.setLayout(null);
+									homeButton.setForeground(Color.WHITE);
+									homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
 							
-									homeButton.setBounds(367, 0, 48, 51);
+									homeButton.setBounds(357, -12, 58, 63);
 									homeButton.setBorder(null);
 									homeButton.setContentAreaFilled(false);
 									
@@ -236,7 +240,7 @@ public class SettingsUIOrg extends JFrame {
 															homeButton.setContentAreaFilled(false);
 															
 															homeButton.setContentAreaFilled(false);
-															exitButton.setBounds(1239, 0, 58, 51);
+															exitButton.setBounds(1226, 0, 71, 72);
 															
 															headerPanel.add(exitButton);
 			

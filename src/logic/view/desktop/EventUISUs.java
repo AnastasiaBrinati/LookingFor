@@ -51,7 +51,7 @@ public class EventUISUs extends JFrame {
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("\u2630");
-	private JButton exitButton = new JButton("");
+	private JButton exitButton = new JButton("\u2398");
 	private JButton homeButton = new JButton("");
 	
 	private JLabel priceLbl = new JLabel("$15.00");
@@ -74,8 +74,10 @@ public class EventUISUs extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		settingsButton.setContentAreaFilled(false);
 
+		profileButton.setContentAreaFilled(false);
+		exitButton.setContentAreaFilled(false);
 		panel.setBackground(new Color(255, 0, 0));
 		panel.setBounds(0, 0, 1088, 54);
 		contentPane.add(panel);
@@ -87,7 +89,7 @@ public class EventUISUs extends JFrame {
 		panel.add(lblNewLabel);
 		
 		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(980, 0, 49, 49);
+		profileButton.setBounds(964, 0, 49, 49);
 		panel.add(profileButton);
 		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
 		settingsButton.setForeground(Color.WHITE);
@@ -126,8 +128,10 @@ public class EventUISUs extends JFrame {
 		
 		profileButton.setContentAreaFilled(false);
 		*/
+		exitButton.setForeground(Color.WHITE);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 		
-		exitButton.setBounds(1039, 0, 49, 49);
+		exitButton.setBounds(1017, 0, 71, 67);
 		panel.add(exitButton);
 		
 		homeButton.setContentAreaFilled(false);

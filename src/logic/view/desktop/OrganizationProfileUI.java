@@ -30,14 +30,14 @@ public class OrganizationProfileUI extends JFrame {
 	//private ArrayList<JButton> coursesFrames;
 	 
 	private JPanel headerPanel = new JPanel();
-	private JButton homeButton = new JButton("");
-	private final JButton exitButton = new JButton("");
+	private JButton homeButton = new JButton("\u2302");
+	private final JButton exitButton = new JButton("\u2398");
 	private final JPanel lateralPanel = new JPanel();
 	private JButton backButton = new JButton("<-");
 	private JButton coursesButton = new JButton("Courses");
 	private JButton eventsButton = new JButton("Events");
 	private JButton courtsButton = new JButton("Courts");
-	private JButton settingsButton = new JButton("sett");
+	private JButton settingsButton = new JButton("\u2630");
 
 	
 	private final JPanel descriptionPanel = new JPanel();
@@ -130,7 +130,7 @@ public class OrganizationProfileUI extends JFrame {
 		courtsPanel.setLayout(null);
 		newCourtPanel.setBackground(Color.GRAY);
 		newCourtPanel.setBounds(0, 0, 972, 572);
-		
+		settingsButton.setContentAreaFilled(false);
 		courtsPanel.add(newCourtPanel);
 		newCourtPanel.setLayout(null);
 		
@@ -208,8 +208,10 @@ public class OrganizationProfileUI extends JFrame {
 		addButtonCourt.setBounds(10, 57, 98, 48);
 		
 		upperPanel3.add(addButtonCourt);
+		exitButton.setForeground(Color.WHITE);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 	
-		exitButton.setBounds(1181, 0, 55, 54);
+		exitButton.setBounds(1171, 0, 65, 70);
 		exitButton.setIcon(null);
 		exitButton.setContentAreaFilled(false);
 		exitButton.setBorder(null);
@@ -221,7 +223,9 @@ public class OrganizationProfileUI extends JFrame {
 		headerPanel.setBounds(0, 0, 1400, 54);
 		headerPanel.setBackground(new Color(255, 0, 0));
 		headerPanel.setForeground(new Color(255, 165, 0));
-		homeButton.setBounds(314, 0, 45, 42);
+		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
+		homeButton.setForeground(Color.WHITE);
+		homeButton.setBounds(304, -11, 55, 65);
 		homeButton.setIcon(new ImageIcon(""));
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);
@@ -235,10 +239,11 @@ public class OrganizationProfileUI extends JFrame {
 		textField.setBounds(369, 12, 364, 30);
 		headerPanel.add(textField);
 		textField.setColumns(10);
+		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
 		
 		settingsButton.setBackground(UIManager.getColor("Button.background"));
-		settingsButton.setForeground(new Color(0, 0, 0));
-		settingsButton.setBounds(10, 0, 55, 54);
+		settingsButton.setForeground(Color.WHITE);
+		settingsButton.setBounds(0, 0, 77, 54);
 		headerPanel.add(settingsButton);
 		lateralPanel.setBounds(0, 53, 269, 660);
 		lateralPanel.setBackground(new Color(204, 0, 0));
