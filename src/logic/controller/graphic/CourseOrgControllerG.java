@@ -8,7 +8,6 @@ import logic.controller.DeleteCourseController;
 import logic.model.CourseBean;
 import logic.model.DeleteItemBean;
 import logic.view.desktop.CourseUIOrg;
-import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.OrganizationProfileUI;
@@ -83,24 +82,20 @@ public class CourseOrgControllerG {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				//DeleteItemBean deleteBean=new DeleteItemBean();
-				
-				//String buttonCode=e.getSource().getClass().getName();
-				//setDeleteItemCredentials(deleteBean,buttonCode);
+
 				DeleteCourseController controller=DeleteCourseController.getInstance();
 				view.setVisible(false);
 				
 				try {
 					controller.deleteCourse(view.getCourseName());
-					//cancella bottone
-					
+					OrganizationProfileUI orgUI = new OrganizationProfileUI();
+					OrganizationControllerG orgControllerG =OrganizationControllerG.getInstance(orgUI);
+					orgControllerG.deleteThisButton(view.getCourseName());
 				} catch (SQLException e1) {
 					
 					e1.printStackTrace();
 				}
-			}
-
-			
+			}			
 
 		};
 		view.getDeleteButton().addActionListener(gestoreDeleteCourse);
@@ -108,12 +103,6 @@ public class CourseOrgControllerG {
 		
 	}
 
-	private void setDeleteItemCredentials(DeleteItemBean bean,String buttonCode) {
-		bean.setItemName(view.getCourseName());
-		bean.setOrganizationName();
-		bean.setButtonName(buttonCode);
-
-	}
 	
 	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {
 		CourseBean courseBean = new CourseBean();
