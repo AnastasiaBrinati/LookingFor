@@ -542,6 +542,7 @@ public class OrganizationProfileUI extends JFrame {
 
         JButton frame = new JButton(name);
 
+        
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
         frame.setVisible(true);
