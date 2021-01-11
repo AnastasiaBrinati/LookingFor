@@ -1,6 +1,5 @@
 package logic.controller;
 
-
 import logic.model.Court;
 import logic.model.OrganizationProfile;
 
@@ -35,7 +34,6 @@ public class AddCourtController {
 		//newCourt.setOrganization(OrganizationProfile.getName());
 		
 		newCourt.addCourt(newCourt);
-		
 		OrganizationProfile.addCourt(newCourt);
 	}
 

@@ -61,6 +61,8 @@ public class CourseUISUs extends JFrame {
 	JLabel instructorNameLbl = new JLabel("John");
 	JLabel monthlyPriceLbl = new JLabel("$50.00");
 	JTextArea descriptionTextArea = new JTextArea();
+	
+	private JButton joinButton = new JButton("Join");
 
 	public CourseUISUs() {
 
@@ -162,7 +164,6 @@ public class CourseUISUs extends JFrame {
 		sportLbl.setBounds(146, 47, 277, 14);
 		panel_1.add(sportLbl);
 		
-		JButton joinButton = new JButton("Join");
 		joinButton.setForeground(new Color(255, 255, 255));
 		joinButton.setBackground(Color.RED);
 		joinButton.setBounds(884, 47, 157, 65);
@@ -248,7 +249,22 @@ public class CourseUISUs extends JFrame {
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	public JButton getJoinButton() {
+		return joinButton;
+	}
+
+	public String getName() {
+		return nameLbl.getText();
+	}
+	public String getOrganization() {
+		return organizationLbl.getText();
+	}
 	
+	@SuppressWarnings("deprecation")
+	public void disableJoinButton() {
+		joinButton.setText("joined");
+		joinButton.disable();
+	}
 
 	public void setCredentials(String name, String organization, String lessonPrice, String monthlyPrice, String description, String instructorName, String sport) {
 		// TODO Auto-generated method stub

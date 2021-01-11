@@ -81,7 +81,7 @@ public class CourseOrgControllerG {
 
 	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {
 		CourseBean courseBean = new CourseBean();
-		CourseBean.setCourse(courseBean, courseName, organizationName);
+		courseBean.setCourse(courseBean, courseName, organizationName);
 		view.setCredentials(courseBean.getName(),courseBean.getOrganization(),courseBean.getLessonPrice(),courseBean.getMonthlyPrice(),
 				courseBean.getDescription(),courseBean.getInstructorName(),courseBean.getSport());
 	}

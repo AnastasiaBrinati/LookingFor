@@ -73,7 +73,7 @@ public class CourseBean {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public static void setCourse(CourseBean courseBean,String courseName,String organizationName) throws Exception {
+	public CourseBean setCourse(CourseBean courseBean,String courseName,String organizationName) throws Exception {
 		// TODO Auto-generated method stub
 		Course course=new Course();
 		course=Course.setCourseCredentials(courseName,organizationName);
@@ -83,9 +83,9 @@ public class CourseBean {
 		courseBean.setMonthlyPrice(course.getMonthlyPrice());
 		courseBean.setSport(course.getSport());
 		courseBean.setAvailability(course.getAvailability());
-		courseBean.setDescription(course.getDescription());
+		courseBean.setDescription(course.getDescription());		
 		
-		
+		return courseBean;
 		
 	}
 	

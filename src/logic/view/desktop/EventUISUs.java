@@ -52,7 +52,6 @@ public class EventUISUs extends JFrame {
 	private JButton profileButton = new JButton("");
 	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("");
-<<<<<<< .mine
 	private JButton homeButton = new JButton("");
 	
 	private JLabel priceLbl = new JLabel("$15.00");
@@ -62,11 +61,9 @@ public class EventUISUs extends JFrame {
 	private JLabel sportLbl = new JLabel("Sport");
 	private JLabel dateLbl = new JLabel("$20.00");
 	private JTextArea descriptionTextArea = new JTextArea();
-||||||| .r261
-=======
-	private JButton homeButton = new JButton("");
->>>>>>> .r263
-
+	
+	private JButton joinButton = new JButton("Join");
+	
 	public EventUISUs() {
 
 		setTitle("Sportee");
@@ -133,12 +130,6 @@ public class EventUISUs extends JFrame {
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
 		
-<<<<<<< .mine
-||||||| .r261
-		JButton homeButton = new JButton("");
-=======
-		
->>>>>>> .r263
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(336, 10, 40, 43);
 		panel.add(homeButton);
@@ -164,7 +155,6 @@ public class EventUISUs extends JFrame {
 		sportLbl.setBounds(146, 47, 61, 14);
 		panel_1.add(sportLbl);
 		
-		JButton joinButton = new JButton("Join");
 		joinButton.setForeground(new Color(255, 255, 255));
 		joinButton.setBackground(new Color(0, 128, 0));
 		joinButton.setBounds(900, 44, 157, 65);
@@ -241,9 +231,11 @@ public class EventUISUs extends JFrame {
 	public JButton getExitButton() {
 		return exitButton;
 	}
-<<<<<<< .mine
 	public JButton getHomeButton() {
 		return homeButton;
+	}
+	public JButton getJoinButton() {
+		return joinButton;
 	}
 	
 	public void setCredentials(String name, String date, String price, String description, String sport, String organization, String availability) {
@@ -257,11 +249,6 @@ public class EventUISUs extends JFrame {
 		descriptionTextArea.setText(description);
 		
 	}
-||||||| .r261
-=======
-	public JButton getHomeButton() {
-		return homeButton;
-	}
->>>>>>> .r263
+
 }
 	

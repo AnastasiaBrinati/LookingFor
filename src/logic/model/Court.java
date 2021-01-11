@@ -9,9 +9,7 @@ public class Court {
 	private String availability;
 	private String price;
 	private String type;
-	
-	
-	
+		
 	
 	public String getName() {
 		return name;

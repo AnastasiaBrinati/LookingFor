@@ -3,6 +3,7 @@ package logic.controller.graphic;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import logic.controller.JoinCourseController;
 import logic.model.CourseBean;
 import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.HomeUI;
@@ -60,12 +61,32 @@ public class CourseSUsControllerG {
 		};
 		view.getExitButton().addActionListener(gestoreExit);
 		
+		ActionListener gestoreJoin = new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e){
+				JoinCourseController joinCourseController = JoinCourseController.getInstance();
+				try {
+					if(joinCourseController.join(view.getName(), view.getOrganization())) {
+						//wellDoneMessage
+						view.disableJoinButton();
+					}
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+
+		};
+		view.getJoinButton().addActionListener(gestoreJoin);
+		
 		
 	}
 
 	private static void setCourseCredentials(String courseName,String organizationName) throws Exception {
 		CourseBean courseBean = new CourseBean();
-		CourseBean.setCourse(courseBean, courseName, organizationName);
+		courseBean.setCourse(courseBean, courseName, organizationName);
 		view.setCredentials(courseBean.getName(),courseBean.getOrganization(),courseBean.getLessonPrice(),courseBean.getMonthlyPrice(),
 				courseBean.getDescription(),courseBean.getInstructorName(),courseBean.getSport());
 	}
