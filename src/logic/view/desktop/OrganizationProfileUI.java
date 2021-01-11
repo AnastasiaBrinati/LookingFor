@@ -27,7 +27,9 @@ public class OrganizationProfileUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private ArrayList<JButton> buttons;
+	private ArrayList<JButton> courses = new ArrayList<JButton>();
+	private ArrayList<JButton> events= new ArrayList<JButton>();
+	private ArrayList<JButton> courts= new ArrayList<JButton>();
 	//private ArrayList<JButton> coursesFrames;
 	 
 	private JPanel headerPanel = new JPanel();
@@ -548,7 +550,7 @@ public class OrganizationProfileUI extends JFrame {
 	public JButton createCourseFrame(String name) {
 
         JButton frame = new JButton(name);
-        buttons.add(frame);
+        courses.add(frame);
         
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
@@ -566,7 +568,7 @@ public class OrganizationProfileUI extends JFrame {
 	public JButton createEventFrame(String name) {
 
         JButton frame = new JButton(name);
-        buttons.add(frame);
+        events.add(frame);
         
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
@@ -584,7 +586,7 @@ public class OrganizationProfileUI extends JFrame {
 	public JButton createCourtFrame(String name) {
 
         JButton frame = new JButton(name);
-        buttons.add(frame);
+        courts.add(frame);
         
         frame.setBorder(new LineBorder(Color.BLACK));
         frame.setPreferredSize(new Dimension(100, 100));
@@ -702,10 +704,10 @@ public class OrganizationProfileUI extends JFrame {
 	}
 	
 	public void deleteThisButton(String courseName) {
-		for(int i=0; i<buttons.size();i++) {
-			if(buttons.get(i).getText().equals(courseName)) {
-				buttons.get(i).setVisible(false);
-				buttons.remove(i);
+		for(int i=0; i<courses.size();i++) {
+			if(courses.get(i).getText().equals(courseName)) {
+				courses.get(i).setVisible(false);
+				courses.remove(i);
 			}
 		}
 	}
