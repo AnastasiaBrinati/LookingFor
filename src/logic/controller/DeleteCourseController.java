@@ -20,23 +20,23 @@ public class DeleteCourseController {
 		return instance;
 	}
 	
-	public void deleteCourse(DeleteItemBean deleteBean) throws SQLException {
+	public void deleteCourse(String courseName) throws SQLException {
 		
 		CourseDAO courseDAO=new CourseDAO();
 		
 		//chiamo il dao per cancellare il corso desiderato
-		courseDAO.deleteCourse(deleteBean.getItemName(),deleteBean.getOrganizationName());
+		courseDAO.deleteCourse(courseName,OrganizationProfile.getName());
 		
 		//aggiorno il model
-		OrganizationProfile.deleteCourse(deleteBean.getItemName());
-		System.out.println("Course "+deleteBean.getItemName()+" has been removed from organization "+deleteBean.getOrganizationName());
+		OrganizationProfile.deleteCourse(courseName);
+		System.out.println("Course "+courseName+" has been removed from organization "+OrganizationProfile.getName());
 		System.out.println("All courses:");
 		OrganizationProfile.printAllCourses();
 		
 		//torno al profilo della Organizzazione,cancellando il bottone del vecchio corso
 		OrganizationProfileUI view=new OrganizationProfileUI();
 		OrganizationControllerG orgController=OrganizationControllerG.getInstance(view);
-		orgController.deleteCourseButton(deleteBean.getButtonName());
+		//orgController.deleteCourseButton(courseName.getButtonName());
 		
 		
 	}

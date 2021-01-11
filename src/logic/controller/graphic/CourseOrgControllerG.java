@@ -83,18 +83,18 @@ public class CourseOrgControllerG {
 
 			@Override
 			public void actionPerformed(ActionEvent e){
-				DeleteItemBean deleteBean=new DeleteItemBean();
+				//DeleteItemBean deleteBean=new DeleteItemBean();
 				
-				String buttonCode=e.getSource().getClass().getName();
-				setDeleteItemCredentials(deleteBean,buttonCode);
+				//String buttonCode=e.getSource().getClass().getName();
+				//setDeleteItemCredentials(deleteBean,buttonCode);
 				DeleteCourseController controller=DeleteCourseController.getInstance();
 				view.setVisible(false);
 				
 				try {
-					controller.deleteCourse(deleteBean);
+					controller.deleteCourse(view.getCourseName());
 					
 				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
+					
 					e1.printStackTrace();
 				}
 			}
