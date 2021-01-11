@@ -128,7 +128,9 @@ public class OrganizationControllerG{
 				try {
 					NewCourseBean.addCourse(newCourseBean);
 					view.setCoursesPanelVisible();
-					view.createCourseFrame(newCourseBean.getName());
+					OrganizationBean orgBean = new OrganizationBean();
+					String orgName = orgBean.getName();
+					displayOneCourse(newCourseBean.getName(), orgName);
 					
 				} catch (Exception e1) {
 					view.doubleCourseErrorMessage("Course already exists");
@@ -180,7 +182,9 @@ public class OrganizationControllerG{
 					try {
 						NewCourtBean.addCourt(newCourtBean);
 						view.setCourtsPanelVisible();
-						view.createCourtFrame(newCourtBean.getName());
+						OrganizationBean orgBean = new OrganizationBean();
+						String orgName = orgBean.getName();
+						displayOneCourt(newCourtBean.getName(), orgName);
 							
 					} catch (Exception e1) {
 							view.doubleCourtErrorMessage("Court already exists");
@@ -232,7 +236,9 @@ public class OrganizationControllerG{
 					try {
 						NewEventBean.addEvent(newEventBean);
 						view.setEventsPanelVisible();
-						view.createEventFrame(newEventBean.getName());
+						OrganizationBean orgBean = new OrganizationBean();
+						String orgName = orgBean.getName();
+						displayOneEvent(newEventBean.getName(), orgName);
 							
 					} catch (Exception e1) {
 							view.doubleEventErrorMessage("event already exists");
@@ -274,7 +280,58 @@ public class OrganizationControllerG{
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	//fine gestori
 	
-		
+	
+	private static void displayOneCourse(String courseName, String orgName) {
+		view.createCourseFrame(courseName).addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent e) {
+					
+					CourseUIOrg courseUI = new CourseUIOrg();
+						try {
+						   CourseOrgControllerG.getInstance(courseUI, courseName, orgName);
+						   view.setVisible(false);
+						} catch (Exception e1) {
+															
+						   e1.printStackTrace();
+						}
+														
+			}
+			});
+	}
+	
+	private static void displayOneCourt(String courtName, String orgName) {
+		view.createCourtFrame(courtName).addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				CourtUIOrg courtUI = new CourtUIOrg();
+				try {
+					CourtOrgControllerG.getInstance(courtUI, courtName, orgName);
+					view.setVisible(false);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+	}
+	
+	private static void displayOneEvent(String eventName, String orgName) {
+		view.createCourtFrame(eventName).addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				EventUIOrg eventUI = new EventUIOrg();
+				try {
+					EventOrgControllerG.getInstance(eventUI, eventName, orgName);
+					view.setVisible(false);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+	});
+	}
+	
 	
 	private static void displayCourses() {
 		
@@ -282,21 +339,7 @@ public class OrganizationControllerG{
 		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getCourses().size(); i++) {
 				String courseName = orgBean.getCourses().get(i).getName();
-				System.out.println("nome corso: " + courseName);
-				view.createCourseFrame(courseName).addActionListener(new ActionListener() {
-			      public void actionPerformed(ActionEvent e) {
-						
-						CourseUIOrg courseUI = new CourseUIOrg();
-							try {
-							   CourseOrgControllerG.getInstance(courseUI, courseName, orgName);
-							   view.setVisible(false);
-							} catch (Exception e1) {
-																
-							   e1.printStackTrace();
-							}
-															
-				}
-				});
+				displayOneCourse(courseName, orgName);
 		}
 		
 	}
@@ -307,21 +350,7 @@ public class OrganizationControllerG{
 		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getEvents().size(); i++) {
 				String eventName = orgBean.getEvents().get(i).getName();
-				System.out.println("nome evento: " + eventName);
-				view.createCourtFrame(eventName).addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-
-						EventUIOrg eventUI = new EventUIOrg();
-						try {
-							EventOrgControllerG.getInstance(eventUI, eventName, orgName);
-							view.setVisible(false);
-						} catch (Exception e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-						
-					}
-			});
+				displayOneEvent(eventName, orgName);
 		}
 		
 	}
@@ -332,20 +361,7 @@ public class OrganizationControllerG{
 		String orgName = orgBean.getName();
 		for(int i=0; i < orgBean.getCourts().size(); i++) {
 				String courtName = orgBean.getCourts().get(i).getName();
-				view.createCourtFrame(courtName).addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-
-						CourtUIOrg courtUI = new CourtUIOrg();
-						try {
-							CourtOrgControllerG.getInstance(courtUI, courtName, orgName);
-							view.setVisible(false);
-						} catch (Exception e1) {
-							// TODO Auto-generated catch block
-							e1.printStackTrace();
-						}
-						
-					}
-			});
+				displayOneCourt(courtName, orgName);
 		}
 		
 	}
