@@ -106,6 +106,12 @@ public class HomeUI extends JFrame {
 		
 		exitButton.setBounds(1014, -8, 74, 72);
 		panel.add(exitButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("Home");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lblNewLabel_1.setBounds(191, 10, 100, 31);
+		panel.add(lblNewLabel_1);
 		LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
