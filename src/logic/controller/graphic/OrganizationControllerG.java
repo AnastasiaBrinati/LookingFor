@@ -34,6 +34,7 @@ public class OrganizationControllerG{
 			displayEvents();
 			displayCourts();
 		}
+		
 		setCredentials();
 		viewOrganizationProfileUI();
 		
@@ -339,6 +340,7 @@ public class OrganizationControllerG{
 	
 	
 	private static void displayCourses() {
+		
 		
 		OrganizationBean orgBean = new OrganizationBean();
 		String orgName = orgBean.getName();
