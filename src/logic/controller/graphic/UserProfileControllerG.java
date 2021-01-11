@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 
 
 import logic.controller.ProfileBean;
+import logic.model.OrganizationBean;
+import logic.view.desktop.CourseUISUs;
+import logic.view.desktop.EventUISUs;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.UserProfileUI;
@@ -22,6 +25,8 @@ public class UserProfileControllerG {
 		if (instance == null) {
 			instance = new UserProfileControllerG(vista);
 			instance.assegnaGestori();
+			displayCourses();
+			displayEvents();
 		}
 		
 		setCredentials();
@@ -106,6 +111,64 @@ public class UserProfileControllerG {
 		};
 		view.getBackButton().addActionListener(gestoreBack);
 
+	}
+	
+	private static void displayOneCourse(String courseName, String orgName) {
+		
+		  view.createCourseFrame(courseName).addActionListener(new ActionListener() {
+	      public void actionPerformed(ActionEvent e) {
+				
+				CourseUISUs courseUI = new CourseUISUs();
+					try {
+					   CourseSUsControllerG.getInstance(courseUI, courseName, orgName);
+					   view.setVisible(false);
+					} catch (Exception e1) {
+														
+					   e1.printStackTrace();
+					}
+													
+		}
+		});
+	}
+	
+	private static void displayOneEvent(String eventName, String orgName) {
+		
+		view.createEventFrame(eventName).addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				EventUISUs eventUI = new EventUISUs();
+				try {
+					EventSUsControllerG.getInstance(eventUI, eventName, orgName);
+					view.setVisible(false);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			
+			}
+		});
+	}
+
+	private static void displayCourses() {
+		
+		ProfileBean profileBean = new ProfileBean();
+		for(int i=0; i < profileBean.getCourses().size(); i++) {
+				String courseName = profileBean.getCourses().get(i).getName();
+				String orgName = profileBean.getCourses().get(i).getOrganization();
+				displayOneCourse(courseName, orgName);
+		}
+		
+	}
+	
+	private static void displayEvents() {
+		
+		ProfileBean profileBean = new ProfileBean();
+		for(int i=0; i < profileBean.getEvents().size(); i++) {
+				String eventName = profileBean.getEvents().get(i).getName();
+				String orgName = profileBean.getEvents().get(i).getOrganization();
+				displayOneEvent(eventName, orgName);
+		}
+		
 	}
 
 }

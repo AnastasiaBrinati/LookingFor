@@ -1,20 +1,20 @@
 package logic.view.desktop;
 
 //import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Image;
 
 
-public class UserProfileUI extends JFrame {
+ public class UserProfileUI extends JFrame {
 
 	/**
 	 * 
@@ -38,7 +38,7 @@ public class UserProfileUI extends JFrame {
 	private final JPanel coursesPanel = new JPanel();
 	private final JPanel eventsPanel = new JPanel();
 	private final JButton backButton = new JButton("<-");
-	private final JButton RoutineButton = new JButton("MyRoutine");
+	private final JButton routineButton = new JButton("MyRoutine");
 	private final JButton exitButton = new JButton("\u2398");
 	private JLabel locationLbl = new JLabel("location");
 
@@ -78,17 +78,7 @@ public class UserProfileUI extends JFrame {
 										locationLbl.setFont(new Font("Tahoma", Font.PLAIN, 11));
 										locationLbl.setBounds(145, 107, 216, 24);
 										panel_1.add(locationLbl);
-								/*
-								DefaultListModel<String> listModel1 = new DefaultListModel<String>();
-								listModel1.addElement("none");
-								listModel1.addElement("Monday");
-								listModel1.addElement("Tuesday");
-								listModel1.addElement("Wednesday");
-								listModel1.addElement("Thursday");
-								listModel1.addElement("Friday");
-								listModel1.addElement("Saturday");
-								listModel1.addElement("Sunday");
-								*/
+							
 		
 		//header
 		headerPanel.setBackground(new Color(255, 0, 0));
@@ -141,15 +131,15 @@ public class UserProfileUI extends JFrame {
 		panel.add(lblTitle);
 		lblTitle.setForeground(new Color(255, 255, 255));
 		lblTitle.setFont(new Font("Bauhaus 93", Font.BOLD, 35));
-		backButton.setBackground(new Color(102, 205, 170));
+		backButton.setBackground(new Color(204, 0, 0));
 		backButton.setBounds(10, 107, 64, 36);
 		panel.add(backButton);
 		backButton.setFont(new Font("Arial Black", Font.PLAIN, 10));
-		coursesPanel.setBounds(307, 52, 990, 585);
+		coursesPanel.setBounds(307, 206, 990, 438);
 		contentPane.add(coursesPanel);
 		
 		contentPane.add(eventsPanel);
-		eventsPanel.setBounds(307, 52, 990, 585);
+		eventsPanel.setBounds(307, 206, 990, 438);
 		contentPane.add(eventsPanel);
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
@@ -159,7 +149,7 @@ public class UserProfileUI extends JFrame {
 		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
 		//exitButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\exit-32.png"));
 		exitButton.setContentAreaFilled(false);
-		RoutineButton.setForeground(Color.WHITE);
+		routineButton.setForeground(Color.WHITE);
 		
 		
 		
@@ -173,11 +163,11 @@ public class UserProfileUI extends JFrame {
 		//settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\settings-32.png"));
 		
 		
-		RoutineButton.setContentAreaFilled(true);
-		RoutineButton.setBackground(new Color(204, 0, 0));
-		RoutineButton.setBounds(10, 262, 287, 57);
+		routineButton.setContentAreaFilled(true);
+		routineButton.setBackground(new Color(204, 0, 0));
+		routineButton.setBounds(10, 338, 287, 57);
 		
-		panel.add(RoutineButton);
+		panel.add(routineButton);
 	
 		
 	}
@@ -208,7 +198,8 @@ public class UserProfileUI extends JFrame {
 		descriptionPanel.setVisible(true);
 		eventsPanel.setVisible(false);
 		coursesButton.setBackground(new Color(204,0,0));
-		eventsButton.setBackground(new Color(102, 205, 170));
+		eventsButton.setBackground(new Color(204,0,0));
+		routineButton.setBackground(new Color(204,0,0));
 	}
 	
 	public void setWorkoutPanelVisible() {
@@ -216,8 +207,9 @@ public class UserProfileUI extends JFrame {
 		coursesPanel.setVisible(false);
 		descriptionPanel.setVisible(false);
 		eventsPanel.setVisible(false);
-		coursesButton.setBackground(new Color(102, 205, 170));
-		eventsButton.setBackground(new Color(102, 205, 170));
+		coursesButton.setBackground(new Color(204,0,0));
+		eventsButton.setBackground(new Color(204,0,0));
+		routineButton.setBackground(new Color(139,0,0));
 	}
 	
 	public void setCoursesPanelVisible() {
@@ -227,6 +219,7 @@ public class UserProfileUI extends JFrame {
 		eventsPanel.setVisible(false);
 		coursesButton.setBackground(new Color(139,0,0));
 		eventsButton.setBackground(new Color(204,0,0));
+		routineButton.setBackground(new Color(204,0,0));
 		
 	}
 	
@@ -236,7 +229,8 @@ public class UserProfileUI extends JFrame {
 		descriptionPanel.setVisible(false);
 		eventsPanel.setVisible(true);
 		coursesButton.setBackground(new Color(204,0,0));
-		eventsButton.setBackground(new Color(139,0,0));	
+		eventsButton.setBackground(new Color(139,0,0));
+		routineButton.setBackground(new Color(204,0,0));
 	}
 	
 	public void setCredentials(String name, String surname, String username,String location) {
@@ -247,6 +241,38 @@ public class UserProfileUI extends JFrame {
 		locationLbl.setText(location);
 		
 	}
+	
+	public JButton createCourseFrame(String name) {
+
+        JButton frame = new JButton(name);
+
+        frame.setBorder(new LineBorder(Color.BLACK));
+        frame.setPreferredSize(new Dimension(100, 100));
+        frame.setVisible(true);
+        coursesPanel.add(frame);
+        coursesPanel.setVisible(true);
+        coursesPanel.revalidate();
+        coursesPanel.repaint();
+        
+        return frame;
+        
+    }
+
+	public JButton createEventFrame(String name) {
+
+        JButton frame = new JButton(name);
+        
+        frame.setBorder(new LineBorder(Color.BLACK));
+        frame.setPreferredSize(new Dimension(100, 100));
+        frame.setVisible(true);
+        eventsPanel.add(frame);
+        eventsPanel.setVisible(true);
+        eventsPanel.revalidate();
+        eventsPanel.repaint();
+        
+        return frame;
+        
+    }
 	
 	public JButton getExitButton() {
 		return exitButton;

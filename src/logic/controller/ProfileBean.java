@@ -1,5 +1,10 @@
 package logic.controller;
 
+import java.util.ArrayList;
+
+import logic.model.Course;
+import logic.model.Court;
+import logic.model.Event;
 import logic.model.UserProfile;
 
 public class ProfileBean {
@@ -11,7 +16,12 @@ public class ProfileBean {
 	public static String password;
 	private static String location;
 	
+	private static ArrayList<Course> courses = new ArrayList<Course>();
+	private static ArrayList<Event> events=new ArrayList<Event>();
+	private static ArrayList<Court> courts = new ArrayList<Court>();
+	
 	public ProfileBean() {
+		//costruttore
 	}
 	
 	
@@ -45,6 +55,26 @@ public class ProfileBean {
 	public void setPassword(String passwd) {
 		password = passwd;
 	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		ProfileBean.location = location;
+	}
+	
+	public ArrayList<Course> getCourses() {
+		return UserProfile.getCourses();
+	}
+	
+	public ArrayList<Event> getEvents() {
+		return UserProfile.getEvents();
+	}
+	
+	public ArrayList<Court> getCourt() {
+		return UserProfile.getCourts();
+	}
+	
+	
 	
 	public static void setCredentials(ProfileBean profileBean) {
 		profileBean.setName(UserProfile.getName());
@@ -55,13 +85,4 @@ public class ProfileBean {
 		profileBean.setLocation(UserProfile.getLocation());
 	}
 
-
-	public String getLocation() {
-		return location;
-	}
-
-
-	public void setLocation(String location) {
-		ProfileBean.location = location;
-	}
 }

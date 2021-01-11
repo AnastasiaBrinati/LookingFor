@@ -124,13 +124,24 @@ public class OrganizationProfileUI extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 		
+		descriptionTextfield.setBackground(new Color(220, 220, 220));
+		descriptionTextfield.setBounds(10, 66, 798, 119);
+		descriptionTextfield.setColumns(10);
+		descriptionPanel.setBounds(268, 145, 972, 568);
+		
+		contentPane.add(descriptionPanel);
+		descriptionPanel.setLayout(null);
+		lblNewLabel_1.setBounds(10, 41, 86, 14);
+		
+		descriptionPanel.add(lblNewLabel_1);				
+		descriptionPanel.add(descriptionTextfield);
+		
 		//courts
 		courtsPanel.setBounds(268, 145, 972, 568);
 		contentPane.add(courtsPanel);
 		courtsPanel.setLayout(null);
 		newCourtPanel.setBackground(Color.GRAY);
 		newCourtPanel.setBounds(0, 0, 972, 572);
-		settingsButton.setContentAreaFilled(false);
 		courtsPanel.add(newCourtPanel);
 		newCourtPanel.setLayout(null);
 		
@@ -208,6 +219,7 @@ public class OrganizationProfileUI extends JFrame {
 		addButtonCourt.setBounds(10, 57, 98, 48);
 		
 		upperPanel3.add(addButtonCourt);
+		settingsButton.setContentAreaFilled(false);
 		exitButton.setForeground(Color.WHITE);
 		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 	
@@ -486,18 +498,6 @@ public class OrganizationProfileUI extends JFrame {
 			coursesPanel.add(lowerPanel);
 			lowerPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			contentPane.add(coursesPanel);
-			
-			descriptionTextfield.setBackground(new Color(220, 220, 220));
-			descriptionTextfield.setBounds(10, 66, 798, 119);
-			descriptionTextfield.setColumns(10);
-			descriptionPanel.setBounds(268, 145, 972, 568);
-			
-			contentPane.add(descriptionPanel);
-			descriptionPanel.setLayout(null);
-			lblNewLabel_1.setBounds(10, 41, 86, 14);
-			
-			descriptionPanel.add(lblNewLabel_1);				
-			descriptionPanel.add(descriptionTextfield);
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
 		//coursesButton.setIcon(new ImageIcon(img3));

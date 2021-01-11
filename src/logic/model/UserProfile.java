@@ -64,18 +64,17 @@ public class UserProfile {
 		UserProfile.location = location;
 	} 	
 	
-	public ArrayList<Course> getCourses() {
+	public static ArrayList<Course> getCourses() {
 		return courses;
 	}
 	
-	public ArrayList<Event> getEvents() {
+	public static ArrayList<Event> getEvents() {
 		return events;
 	}
 	
-	public ArrayList<Court> getCourt() {
+	public static ArrayList<Court> getCourts() {
 		return courts;
 	}
-	
 	
 	
 	

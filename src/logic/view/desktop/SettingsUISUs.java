@@ -31,14 +31,11 @@ public class SettingsUISUs extends JFrame {
 	private final JButton credentialsButton = new JButton("Name");
 	private final JButton securityButton = new JButton("email");
 	private final JButton passwordButton = new JButton("password");
-	private final JButton courtsButton = new JButton("Courts");
-	private final JButton eventsButton = new JButton("Events");
 	
 	private final JPanel subtitlePanel = new JPanel();
 	private final JLabel subtitlelbl = new JLabel("Settings");
 	
 	private JPanel namePanel = new JPanel();
-	private final JLabel surnamelbl = new JLabel("Surname");
 	private final JTextField textFieldSurname = new JTextField();
 	private JLabel nameLbl = new JLabel("Name");
 	private final JTextField textFieldName = new JTextField();
@@ -79,6 +76,57 @@ public class SettingsUISUs extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+				
+		textFieldName.setBounds(223, 111, 241, 25);
+		textFieldName.setColumns(10);
+		namePanel.setBounds(305, 168, 992, 491);
+		
+		contentPane.add(namePanel);
+		namePanel.setLayout(null);
+		
+		nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		nameLbl.setBounds(49, 107, 116, 29);
+		namePanel.add(nameLbl);
+		
+		namePanel.add(textFieldName);
+		textFieldSurname.setColumns(10);
+		textFieldSurname.setBounds(223, 180, 241, 25);
+		
+		namePanel.add(textFieldSurname);
+		textFieldUsername.setColumns(10);
+		textFieldUsername.setBounds(223, 252, 241, 25);
+		
+		namePanel.add(textFieldUsername);
+		usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		usernamelbl.setBounds(49, 250, 134, 25);
+		
+		namePanel.add(usernamelbl);
+		saveButton.setBackground(new Color(255, 99, 71));
+		saveButton.setBounds(262, 355, 158, 38);
+		
+		namePanel.add(saveButton);
+		cancelButton.setBounds(94, 355, 158, 38);
+		namePanel.add(cancelButton);
+		pencilLbl1.setBounds(474, 39, 46, 44);
+		
+		namePanel.add(pencilLbl1);
+		pencilLbl2.setBounds(474, 128, 46, 44);
+		
+		namePanel.add(pencilLbl2);
+		pencilLbl3.setBounds(474, 233, 46, 44);
+		
+		namePanel.add(pencilLbl3);
+		
+		JLabel changeYourNamelbl = new JLabel("Change your name");
+		changeYourNamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		changeYourNamelbl.setBounds(49, 39, 260, 29);
+		namePanel.add(changeYourNamelbl);
+		
+		JLabel surnamelbl = new JLabel("Name");
+		surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
+		surnamelbl.setBounds(49, 180, 116, 29);
+		namePanel.add(surnamelbl);
 		
 		
 		
@@ -246,16 +294,6 @@ public class SettingsUISUs extends JFrame {
 		passwordButton.setBounds(10, 195, 287, 57);
 		
 		panel.add(passwordButton);
-		courtsButton.setForeground(Color.WHITE);
-		courtsButton.setBackground(new Color(204, 0, 0));
-		courtsButton.setBounds(10, 253, 287, 57);
-		
-		panel.add(courtsButton);
-		eventsButton.setForeground(Color.WHITE);
-		eventsButton.setBackground(new Color(204, 0, 0));
-		eventsButton.setBounds(10, 311, 287, 57);
-		
-		panel.add(eventsButton);
 		
 				//Image img8=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
 				//homeButton.setIcon(new ImageIcon(img8));
@@ -263,55 +301,6 @@ public class SettingsUISUs extends JFrame {
 				exitButton.setBounds(1226, 0, 71, 67);
 				
 				headerPanel.add(exitButton);
-				
-						
-				textFieldName.setBounds(223, 58, 241, 25);
-				textFieldName.setColumns(10);
-				namePanel.setBounds(305, 168, 992, 491);
-				
-				contentPane.add(namePanel);
-				namePanel.setLayout(null);
-				surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				surnamelbl.setBounds(49, 146, 134, 25);
-				namePanel.add(surnamelbl);
-				
-				nameLbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				nameLbl.setBounds(49, 54, 116, 29);
-				namePanel.add(nameLbl);
-				
-				namePanel.add(textFieldName);
-				textFieldSurname.setColumns(10);
-				textFieldSurname.setBounds(223, 148, 241, 25);
-				
-				namePanel.add(textFieldSurname);
-				textFieldUsername.setColumns(10);
-				textFieldUsername.setBounds(223, 252, 241, 25);
-				
-				namePanel.add(textFieldUsername);
-				usernamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				usernamelbl.setBounds(49, 250, 134, 25);
-				
-				namePanel.add(usernamelbl);
-				saveButton.setBackground(new Color(255, 99, 71));
-				saveButton.setBounds(262, 355, 158, 38);
-				
-				namePanel.add(saveButton);
-				cancelButton.setBounds(94, 355, 158, 38);
-				
-				surnamelbl.setFont(new Font("Arial", Font.PLAIN, 18));
-				surnamelbl.setBounds(49, 146, 134, 25);
-				
-				namePanel.add(surnamelbl);
-				namePanel.add(cancelButton);
-				pencilLbl1.setBounds(474, 39, 46, 44);
-				
-				namePanel.add(pencilLbl1);
-				pencilLbl2.setBounds(474, 128, 46, 44);
-				
-				namePanel.add(pencilLbl2);
-				pencilLbl3.setBounds(474, 233, 46, 44);
-				
-				namePanel.add(pencilLbl3);
 				/*
 				pencilLbl1.setIcon(new ImageIcon(img1));
 				pencilLbl2.setIcon(new ImageIcon(img2));
@@ -371,9 +360,9 @@ public class SettingsUISUs extends JFrame {
 		emailPanel.setVisible(false);
 		passwordPanel.setVisible(false);
 		
-		credentialsButton.setBackground(new Color(0, 128, 128));
-		securityButton.setBackground(new Color(102, 205, 170));
-		passwordButton.setBackground(new Color(102, 205, 170));
+		credentialsButton.setBackground(new Color(139,0,0));
+		securityButton.setBackground(new Color(204, 0, 0));
+		passwordButton.setBackground(new Color(204, 0, 0));
 		
 	}
 	
@@ -382,9 +371,9 @@ public class SettingsUISUs extends JFrame {
 		emailPanel.setVisible(true);
 		passwordPanel.setVisible(false);
 		
-		credentialsButton.setBackground(new Color(102, 205, 170));
-		securityButton.setBackground(new Color(0, 128, 128));
-		passwordButton.setBackground(new Color(102, 205, 170));
+		credentialsButton.setBackground(new Color(204, 0, 0));
+		securityButton.setBackground(new Color(139,0,0));
+		passwordButton.setBackground(new Color(204, 0, 0));
 		
 	}
 	
@@ -393,9 +382,9 @@ public class SettingsUISUs extends JFrame {
 		emailPanel.setVisible(false);
 		passwordPanel.setVisible(true);
 		
-		credentialsButton.setBackground(new Color(102, 205, 170));
-		securityButton.setBackground(new Color(102, 205, 170));
-		passwordButton.setBackground(new Color(0, 128, 128));
+		credentialsButton.setBackground(new Color(204, 0, 0));
+		securityButton.setBackground(new Color(204, 0, 0));
+		passwordButton.setBackground(new Color(139,0,0));
 		
 	}
 	
@@ -449,5 +438,4 @@ public class SettingsUISUs extends JFrame {
 	public void showErrorMessage2(String error) {
 		textFieldEmail.setText(error);
 	}
-	
 }
