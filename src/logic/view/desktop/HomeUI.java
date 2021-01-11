@@ -45,7 +45,7 @@ public class HomeUI extends JFrame {
 	private JPanel contentPane;
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
-	private JButton profileButton = new JButton("");
+	private JButton profileButton = new JButton("\u26F9");
 	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("\u2398");
 
@@ -69,9 +69,11 @@ public class HomeUI extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);
 		panel.add(lblNewLabel);
+		profileButton.setForeground(Color.WHITE);
+		profileButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
 		
 		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(980, 0, 49, 49);
+		profileButton.setBounds(902, -4, 90, 63);
 		panel.add(profileButton);
 		settingsButton.setForeground(Color.WHITE);
 		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
