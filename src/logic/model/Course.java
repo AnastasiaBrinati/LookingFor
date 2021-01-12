@@ -16,6 +16,8 @@ public class Course {
 	private String availability;
 	private String description;
 	
+	
+	
 	public String getName() {
 		return name;
 	}
