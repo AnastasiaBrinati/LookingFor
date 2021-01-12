@@ -65,16 +65,7 @@ import logic.view.desktop.SettingsUIOrg;
 			};
 			view.getSettingsButton().addActionListener(gestoreSettings);
 			
-			
-			ActionListener gestoreCategories = e -> {
-				view.showCategories();
-			};
-			view.getCategoriesButton().addActionListener(gestoreCategories);
-			
-			ActionListener gestoreHome = e -> {
-				view.showHome();
-			};
-			view.getHomeButton().addActionListener(gestoreHome);
+		
 			
 			
 		}

@@ -2,7 +2,9 @@ package logic.controller.graphic;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import logic.model.Sport;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SettingsUISUs;
@@ -21,6 +23,7 @@ public class HomeControllerGSUs {
 		if (instance == null) {
 			instance = new HomeControllerGSUs(vista);
 			instance.assegnaGestori();
+			setSports();
 		}
 		showHomepage();
 		return instance;
@@ -65,8 +68,18 @@ public class HomeControllerGSUs {
 		
 	}
 	
+	private static void setSports() {
+		
+			ArrayList<String> sports = new ArrayList<String>();
+			for (Sport sport : Sport.values()) {
+				  sports.add(sport.toString());
+			}
+			
+			view.setSportList(sports);
+
+	}
 	
-	public static void showHomepage() {
+	private static void showHomepage() {
 		view.setVisible(true);
 	}
 
