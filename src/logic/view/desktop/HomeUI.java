@@ -1,9 +1,11 @@
 package logic.view.desktop;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Toolkit;
 
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,10 +14,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.JComponent;
+
+import logic.model.Sport;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.border.BevelBorder;
@@ -35,6 +42,7 @@ import java.awt.Panel;
 import javax.swing.JMenuBar;
 import javax.swing.Box;
 import java.awt.SystemColor;
+import javax.swing.JList;
 
 public class HomeUI extends JFrame {
 
@@ -48,13 +56,12 @@ public class HomeUI extends JFrame {
 	private JButton profileButton = new JButton("\u26F9");
 	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("\u2398");
-	private final JPanel choicePanel = new JPanel();
 	private JTextField textField;
+	private JPanel lateralPanel = new JPanel();
+	private final JLabel citylbl = new JLabel("City");
 	
-	private JButton categoriesButton = new JButton("Categories");
-	private JButton homeButton = new JButton("Home");
-	private JPanel categoriesPanel = new JPanel();
-	private JPanel homePanel = new JPanel();
+	private JList<String> sportList = new JList<String>();
+	private DefaultListModel dm=new DefaultListModel();
 
 	public HomeUI() {
 
@@ -86,63 +93,54 @@ public class HomeUI extends JFrame {
 		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
 		settingsButton.setBounds(0, 1, 74, 53);
 		headerPanel.add(settingsButton);
-		//settingsButton.setEnabled(false);
-		
-		settingsButton.setContentAreaFilled(false);
-		
-		//Image img3=new ImageIcon(this.getClass().getResource("/002-settings.png")).getImage();
-		//settingsButton.setIcon(new ImageIcon(img3));
-		settingsButton.setContentAreaFilled(false);
+
 		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 		exitButton.setForeground(Color.WHITE);
 		
-		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
-		//exitButton.setIcon(new ImageIcon(img5));
-		exitButton.setContentAreaFilled(false);
-		
-		//Image img6=new ImageIcon(this.getClass().getResource("/settings-24.png")).getImage();
-		//settingsButton.setIcon(new ImageIcon(img6));
-		settingsButton.setContentAreaFilled(false);
-		
-		//Image img4=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
-		//profileButton.setIcon(new ImageIcon(img4));
-		profileButton.setContentAreaFilled(false);
-
-		
-		
-		profileButton.setContentAreaFilled(false);
-		
-		
 		exitButton.setBounds(1014, -2, 74, 72);
 		headerPanel.add(exitButton);
-		
+		settingsButton.setContentAreaFilled(false);
+		profileButton.setContentAreaFilled(false);
 		textField = new JTextField();
 		textField.setBounds(317, 11, 342, 33);
 		headerPanel.add(textField);
 		textField.setColumns(10);
+		lateralPanel.setBackground(Color.LIGHT_GRAY);
+		exitButton.setContentAreaFilled(false);
+		lateralPanel.setBounds(0, 53, 246, 592);
+		contentPane.add(lateralPanel);
+		lateralPanel.setLayout(null);
+		citylbl.setBounds(10, 20, 45, 26);
 		
-		homePanel.setBounds(0, 95, 1088, 550);
-		contentPane.add(homePanel);
-		choicePanel.setBounds(0, 53, 1088, 42);
+		lateralPanel.add(citylbl);
 		
-		contentPane.add(choicePanel);
-		choicePanel.setLayout(null);
-		homeButton.setForeground(Color.PINK);
-		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		JList<String> cityList = new JList<String>();
+		cityList.setBounds(10, 56, 226, 26);
+		lateralPanel.add(cityList);
 		
-		homeButton.setBackground(Color.RED);
-		homeButton.setBounds(0, 0, 513, 42);
-		choicePanel.add(homeButton);
-		categoriesButton.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		categoriesButton.setForeground(Color.WHITE);
+		JLabel sportlbl = new JLabel("Sport");
+		sportlbl.setBounds(10, 92, 45, 26);
+		lateralPanel.add(sportlbl);
 		
-		categoriesButton.setBackground(Color.RED);
-		categoriesButton.setBounds(511, 0, 577, 42);
-		choicePanel.add(categoriesButton);
+		sportList.setBounds(10, 128, 226, 26);
+		lateralPanel.add(sportList);
 		
-		categoriesPanel.setBounds(0, 95, 1088, 550);
-		contentPane.add(categoriesPanel);
-		//LineBorder lineBorder=new LineBorder(Color.white,8,true);
+		JList<String> courseEventCourtlbl = new JList<String>();
+		courseEventCourtlbl.setBounds(10, 200, 226, 26);
+		lateralPanel.add(courseEventCourtlbl);
+		
+		JButton filtersButton = new JButton("apply filters");
+		filtersButton.setBackground(Color.PINK);
+		filtersButton.setBounds(22, 262, 198, 36);
+		lateralPanel.add(filtersButton);
+		
+	}
+	
+	public void setSportList(String[] sports) {
+		for(String sport: sports) {
+			sportList.setModel(dm);
+			dm.addElement(sport);
+		}
 	}
 
 	public JButton getProfileButton() {
@@ -153,28 +151,6 @@ public class HomeUI extends JFrame {
 	}
 	public JButton getExitButton() {
 		return exitButton;
-	}
-	public JButton getHomeButton() {
-		return homeButton;
-	}
-	public JButton getCategoriesButton() {
-		return categoriesButton;
-	}
-	
-	public void showCategories() {
-		
-		categoriesPanel.setVisible(true);
-		homePanel.setVisible(false);
-		homeButton.setForeground(Color.WHITE);
-		categoriesButton.setForeground(Color.PINK);
-		
-	}
-	
-	public void showHome() {
-		categoriesPanel.setVisible(false);
-		homePanel.setVisible(true);
-		homeButton.setForeground(Color.PINK);
-		categoriesButton.setForeground(Color.WHITE);
 	}
 }
 	
