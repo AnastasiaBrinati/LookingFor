@@ -128,7 +128,8 @@ public class HomeUI extends JFrame {
 		lateralPanel.add(courseEventCourtlbl);
 		
 		JButton filtersButton = new JButton("apply filters");
-		filtersButton.setBackground(new Color(255, 175, 175));
+		filtersButton.setForeground(Color.WHITE);
+		filtersButton.setBackground(Color.GRAY);
 		filtersButton.setBounds(22, 262, 198, 36);
 		lateralPanel.add(filtersButton);
 		sportChoice.setBounds(10, 135, 226, 18);
