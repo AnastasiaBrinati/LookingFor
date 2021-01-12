@@ -37,12 +37,12 @@ import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
 import javax.swing.JLayeredPane;
-import java.awt.ScrollPane;
+
 import java.awt.Panel;
-import javax.swing.JMenuBar;
 import javax.swing.Box;
 import java.awt.SystemColor;
 import javax.swing.JList;
+import java.awt.Choice;
 
 public class HomeUI extends JFrame {
 
@@ -59,9 +59,8 @@ public class HomeUI extends JFrame {
 	private JTextField textField;
 	private JPanel lateralPanel = new JPanel();
 	private final JLabel citylbl = new JLabel("City");
-	
-	private JList<String> sportList = new JList<String>();
-	private DefaultListModel dm=new DefaultListModel();
+	//private DefaultListModel dm=new DefaultListModel();
+	private final Choice sportChoice = new Choice();
 
 	public HomeUI() {
 
@@ -122,9 +121,6 @@ public class HomeUI extends JFrame {
 		sportlbl.setBounds(10, 92, 45, 26);
 		lateralPanel.add(sportlbl);
 		
-		sportList.setBounds(10, 128, 226, 26);
-		lateralPanel.add(sportList);
-		
 		JList<String> courseEventCourtlbl = new JList<String>();
 		courseEventCourtlbl.setBounds(10, 200, 226, 26);
 		lateralPanel.add(courseEventCourtlbl);
@@ -133,13 +129,15 @@ public class HomeUI extends JFrame {
 		filtersButton.setBackground(Color.PINK);
 		filtersButton.setBounds(22, 262, 198, 36);
 		lateralPanel.add(filtersButton);
+		sportChoice.setBounds(10, 135, 226, 18);
+		
+		lateralPanel.add(sportChoice);
 		
 	}
 	
-	public void setSportList(String[] sports) {
+	public void setSportList(ArrayList<String> sports) {
 		for(String sport: sports) {
-			sportList.setModel(dm);
-			dm.addElement(sport);
+			sportChoice.add(sport);
 		}
 	}
 
@@ -153,4 +151,3 @@ public class HomeUI extends JFrame {
 		return exitButton;
 	}
 }
-	

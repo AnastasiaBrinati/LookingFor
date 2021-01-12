@@ -69,6 +69,7 @@ public class CourseUIOrg extends JFrame {
 	private final JButton backButton = new JButton("\u21E6");
 
 	public CourseUIOrg() {
+		setBackground(new Color(0, 51, 255));
 
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
@@ -80,7 +81,7 @@ public class CourseUIOrg extends JFrame {
 		contentPane.setLayout(null);
 		
 
-		panel.setBackground(new Color(255, 0, 0));
+		panel.setBackground(Color.RED);
 		panel.setBounds(0, 0, 1088, 54);
 		contentPane.add(panel);
 		panel.setLayout(null);
