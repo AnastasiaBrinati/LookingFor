@@ -104,12 +104,13 @@ public class HomeUI extends JFrame {
 		textField.setBounds(317, 11, 342, 33);
 		headerPanel.add(textField);
 		textField.setColumns(10);
-		lateralPanel.setBackground(Color.LIGHT_GRAY);
+		lateralPanel.setBackground(new Color(204, 0, 0));
 		exitButton.setContentAreaFilled(false);
 		lateralPanel.setBounds(0, 53, 246, 592);
 		contentPane.add(lateralPanel);
 		lateralPanel.setLayout(null);
-		citylbl.setBounds(10, 20, 45, 26);
+		citylbl.setForeground(Color.WHITE);
+		citylbl.setBounds(10, 29, 45, 26);
 		
 		lateralPanel.add(citylbl);
 		
@@ -118,7 +119,8 @@ public class HomeUI extends JFrame {
 		lateralPanel.add(cityList);
 		
 		JLabel sportlbl = new JLabel("Sport");
-		sportlbl.setBounds(10, 92, 45, 26);
+		sportlbl.setForeground(Color.WHITE);
+		sportlbl.setBounds(10, 103, 45, 26);
 		lateralPanel.add(sportlbl);
 		
 		JList<String> courseEventCourtlbl = new JList<String>();
@@ -126,7 +128,7 @@ public class HomeUI extends JFrame {
 		lateralPanel.add(courseEventCourtlbl);
 		
 		JButton filtersButton = new JButton("apply filters");
-		filtersButton.setBackground(Color.PINK);
+		filtersButton.setBackground(new Color(255, 175, 175));
 		filtersButton.setBounds(22, 262, 198, 36);
 		lateralPanel.add(filtersButton);
 		sportChoice.setBounds(10, 135, 226, 18);
