@@ -171,5 +171,11 @@ public class Queries {
 	
   
 	
-}}
+}
+
+	public static ResultSet selectCourseBySport(Statement stmt, String sport) throws SQLException {
+		String selectStatement = "SELECT * FROM courses where sport = '" + sport + "';";
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+	}}
 

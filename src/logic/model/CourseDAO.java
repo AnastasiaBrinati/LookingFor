@@ -122,4 +122,71 @@ public class CourseDAO {
     }
 	
         
-}}
+}
+
+	public List<Course> retreiveBySport(String sport) throws Exception {
+		
+	        Statement stmt = null;
+	        Connection conn = null;
+	        List<Course> foundCourses = new ArrayList<Course>();
+	        
+	        try {
+	            
+	            try {
+					conn = DriverManager.getConnection(DB_URL, USER, PASS);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+	            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+	            
+	            ResultSet rs = Queries.selectCourseBySport(stmt,sport);
+
+	            if (!rs.first()){ // rs empty
+	            	Exception e = new Exception("No results were found");
+	            	throw e;
+	            }
+	            
+	            rs.first();
+	            do{
+	              
+	            	String name=rs.getString("name");
+	            	String organization=rs.getString("organization");
+	            	String lessonPrice=rs.getString("lessonPrice");
+	            	String monthlyPrice=rs.getString("monthlyPrice");
+	            	String instructorName=rs.getString("instructorName");
+	            	String availability=rs.getString("availability");
+	            	String description = rs.getString("description");
+	            	Course foundCourse=new Course();
+	            	foundCourse.setName(name);
+	            	foundCourse.setOrganization(organization);
+	            	foundCourse.setLessonPrice(lessonPrice);
+	                foundCourse.setMonthlyPrice(monthlyPrice);
+	                foundCourse.setInstructorName(instructorName);
+	                foundCourse.setAvailability(availability);
+	                foundCourse.setDescription(description);
+	               
+	                foundCourses.add(foundCourse);
+
+	            }while(rs.next());
+	            
+	           
+	            rs.close();
+	        } finally {
+	            
+	            try {
+	                if (stmt != null)
+	                    stmt.close();
+	            } catch (SQLException se2) {
+	            }
+	            try {
+	                if (conn != null)
+	                    conn.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	            }
+	        }
+
+	        return foundCourses;
+	    }
+}
