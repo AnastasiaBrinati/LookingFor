@@ -62,6 +62,15 @@ public class HomeUI extends JFrame {
 
 	private final Choice sportChoice = new Choice();
 	private JButton filtersButton = new JButton("apply filters");
+	private Choice courseEventCourt = new Choice();
+	private JScrollPane panelHome = new JScrollPane();
+	
+	private int x;
+	private int y;
+	private int width;
+	private int height;
+	private int space=20;
+	
 
 	public HomeUI() {
 
@@ -124,7 +133,6 @@ public class HomeUI extends JFrame {
 		sportlbl.setBounds(10, 103, 45, 26);
 		lateralPanel.add(sportlbl);
 
-		Choice courseEventCourt = new Choice();
 
 		courseEventCourt.add("COURSE");
 		courseEventCourt.add("COURT");
@@ -140,6 +148,73 @@ public class HomeUI extends JFrame {
 		
 		lateralPanel.add(sportChoice);
 		
+		panelHome.setBounds(247, 53, 841, 592);
+		contentPane.add(panelHome);
+
+		
+		
+	}
+
+	public void cleanHome(){
+		
+		panelHome.removeAll();
+		panelHome.setVisible(true);
+        panelHome.revalidate();
+        panelHome.repaint();
+        
+        x=0;
+        y=0;
+        height=0;
+        width=0;
+		
+	}
+	
+	public JButton displayElement(String name, String org, int i, int j) {
+		
+		  x=10;
+	      y=10;
+	      width=260;
+	      height=270;
+	      
+			
+		
+		JPanel elementPanel = new JPanel();
+		elementPanel.setBounds((x+j*(width+space)), (y+i*(height+space)), width, height);
+		panelHome.add(elementPanel);
+		elementPanel.setLayout(null);
+		elementPanel.setBackground(Color.PINK);
+		
+		JLabel imgLbl = new JLabel("                  img");
+		imgLbl.setBounds(0, 0, 212, 134);
+		elementPanel.add(imgLbl);
+		
+		JLabel nameLbl = new JLabel(name);
+		nameLbl.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		nameLbl.setBounds(10, 144, 84, 13);
+		elementPanel.add(nameLbl);
+		
+		JLabel orgLbl = new JLabel(org);
+		orgLbl.setFont(new Font("Arial", Font.PLAIN, 13));
+		orgLbl.setBounds(10, 167, 99, 13);
+		elementPanel.add(orgLbl);
+		
+		JButton detailsButton = new JButton("view details");
+		detailsButton.setBackground(Color.PINK);
+		detailsButton.setForeground(Color.BLACK);
+		detailsButton.setBounds(52, 205, 103, 21);
+		elementPanel.add(detailsButton);
+		
+		//JSeparator separator = new JSeparator();
+		//separator.setForeground(Color.BLACK);
+		//separator.setBounds(0, 132, 212, 2);
+		//elementPanel.add(separator);
+		
+		panelHome.setVisible(true);
+        panelHome.revalidate();
+        panelHome.repaint();
+        
+        return detailsButton;
+     
 	}
 	
 	public void setSportList(ArrayList<String> sports) {
@@ -147,6 +222,15 @@ public class HomeUI extends JFrame {
 			sportChoice.add(sport);
 		}
 	}
+	
+	public String getSport() {
+		return sportChoice.getSelectedItem();
+	}
+	
+	public String getItemType() {
+		return courseEventCourt.getSelectedItem();
+	}
+	
 		
 	public JButton getFiltersButton() {
 		return filtersButton;

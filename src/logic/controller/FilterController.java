@@ -13,10 +13,12 @@ import logic.model.EventDAO;
 public class FilterController {
 	
 	private static FilterController instance=null;
+	
+	
 	private FilterController() {
 		
 	}
-	public FilterController getInstance() {
+	public static synchronized FilterController getInstance() {
 		if(instance==null) {
 			instance=new FilterController();
 		}
@@ -26,7 +28,7 @@ public class FilterController {
 	public ArrayList<String> applyFilters(String sport,String type) throws Exception {
 		
 		ArrayList<String> itemThenOrganizationList=new ArrayList<String>();
-		
+		System.out.println("going to retrive this type: "+ type);
 		
 		switch(type) {
 		
@@ -49,16 +51,21 @@ public class FilterController {
 		
 		
 	    case "EVENT":
+	    	
+	    	System.out.println("insert events");
 	    	EventDAO eventDAO=new EventDAO();
 			ArrayList<Event> foundEvents=new ArrayList<Event>();
 			foundEvents=eventDAO.retreiveBySport(sport);
-			for(int i=0;i<itemThenOrganizationList.size();i++) {
-					//posizioni pari inserisco il nome dell'evento
+			int i=0;
+			System.out.println("selected  " + foundEvents.get(0).getName());
+			while(i<foundEvents.size()) {
+
 					itemThenOrganizationList.add(foundEvents.get(i).getName());
-				    i++;
-					//posizioni dispari insersico nome organizzazione
+					System.out.println("inserting this specific event: " + foundEvents.get(i).getName());
 					itemThenOrganizationList.add(foundEvents.get(i).getOrganization());
-				
+					System.out.println("of this specific org: " + foundEvents.get(i).getOrganization());
+					i++;
+
 			}	
 		    break;
 	
@@ -67,7 +74,7 @@ public class FilterController {
         	CourtDAO courtDAO=new CourtDAO();
 			ArrayList<Court> foundCourts=new ArrayList<Court>();
 			foundCourts=courtDAO.retreiveBySport(sport);
-			for(int i=0;i<itemThenOrganizationList.size();i++) {
+			for(i=0;i<itemThenOrganizationList.size();i++) {
 					//posizioni pari inserisco il nome dell'evento
 					itemThenOrganizationList.add(foundCourts.get(i).getName());
 				    i++;

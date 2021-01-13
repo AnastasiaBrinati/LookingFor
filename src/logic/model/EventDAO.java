@@ -122,7 +122,7 @@ public class EventDAO {
 				}
 	            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 	            
-	            ResultSet rs = Queries.selectCourseBySport(stmt,sport);
+	            ResultSet rs = Queries.selectEventBySport(stmt,sport);
 	
 	            if (!rs.first()){ // rs empty
 	            	Exception e = new Exception("No results were found");
@@ -146,7 +146,7 @@ public class EventDAO {
 	            	
 	                foundEvent.setAvailability(availability);
 	                foundEvent.setDescription(description);
-	               
+	                System.out.println("this is the list of events found: "+foundEvent.getName());
 	                foundEvents.add(foundEvent);
 	
 	            }while(rs.next());
