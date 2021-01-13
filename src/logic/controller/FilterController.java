@@ -66,13 +66,13 @@ public class FilterController {
         case "COURT":
         	CourtDAO courtDAO=new CourtDAO();
 			ArrayList<Court> foundCourts=new ArrayList<Court>();
-			foundEvents=courtDAO.retreiveBySport(sport);
+			foundCourts=courtDAO.retreiveBySport(sport);
 			for(int i=0;i<itemThenOrganizationList.size();i++) {
 					//posizioni pari inserisco il nome dell'evento
-					itemThenOrganizationList.add(foundEvents.get(i).getName());
+					itemThenOrganizationList.add(foundCourts.get(i).getName());
 				    i++;
 					//posizioni dispari insersico nome organizzazione
-					itemThenOrganizationList.add(foundEvents.get(i).getOrganization());
+					itemThenOrganizationList.add(foundCourts.get(i).getOrganization());
 				
 			}	
 	        break;
