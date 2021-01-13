@@ -188,7 +188,7 @@ import javax.swing.SwingConstants;
 		
 	}
 	
-	public JButton getButtonSettings() {
+	public JButton getSettingsButton() {
 		return settingsButton;
 	}
 	
