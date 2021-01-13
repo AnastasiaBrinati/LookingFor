@@ -102,5 +102,75 @@ public class EventDAO {
                     conn.close();
         }
     }
+
+	public ArrayList<Event> retreiveBySport(String sport) throws SQLException {
+		
+		
+	
+
+	Statement stmt = null;
+	        Connection conn = null;
+	        ArrayList<Event> foundEvents = new ArrayList<Event>();
+	        
+	        try {
+	            
+	            try {
+					conn = DriverManager.getConnection(DB_URL, USER, PASS);
+				} catch (SQLException e1) {
+					
+					e1.printStackTrace();
+				}
+	            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+	            
+	            ResultSet rs = Queries.selectCourseBySport(stmt,sport);
+	
+	            if (!rs.first()){ // rs empty
+	            	Exception e = new Exception("No results were found");
+	            	throw e;
+	            }
+	            
+	            rs.first();
+	            do{
+	              
+	            	String name=rs.getString("name");
+	            	String organization=rs.getString("organization");
+	            	String price=rs.getString("price");
+	            	String availability=rs.getString("availability");
+	            	String description = rs.getString("description");
+	            	String date=rs.getString("date");
+	            	Event foundEvent=new Event();
+	            	foundEvent.setName(name);
+	            	foundEvent.setOrganization(organization);
+	            	foundEvent.setPrice(price);
+	            	foundEvent.setDate(date);
+	            	
+	                foundEvent.setAvailability(availability);
+	                foundEvent.setDescription(description);
+	               
+	                foundEvents.add(foundEvent);
+	
+	            }while(rs.next());
+	            
+	           
+	            rs.close();
+	        } catch (Exception e1) {
+				
+				e1.printStackTrace();
+			} finally {
+	            
+	            try {
+	                if (stmt != null)
+	                    stmt.close();
+	            } catch (SQLException se2) {
+	            }
+	            try {
+	                if (conn != null)
+	                    conn.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	            }
+	        }
+	
+	        return foundEvents;
     
-}
+}}

@@ -124,11 +124,11 @@ public class CourseDAO {
         
 }
 
-	public List<Course> retreiveBySport(String sport) throws Exception {
+	public ArrayList<Course> retreiveBySport(String sport) throws Exception {
 		
 	        Statement stmt = null;
 	        Connection conn = null;
-	        List<Course> foundCourses = new ArrayList<Course>();
+	        ArrayList<Course> foundCourses = new ArrayList<Course>();
 	        
 	        try {
 	            

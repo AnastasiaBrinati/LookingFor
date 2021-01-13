@@ -177,5 +177,18 @@ public class Queries {
 		String selectStatement = "SELECT * FROM courses where sport = '" + sport + "';";
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
-	}}
+	}
+
+	public static ResultSet selectEventBySport(Statement stmt, String sport) throws SQLException {
+		String selectStatement = "SELECT * FROM events where sport = '" + sport + "';";
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+	}
+        
+    public static ResultSet selectCourtBySport(Statement stmt, String sport) throws SQLException {
+    		String selectStatement = "SELECT * FROM courts where sport = '" + sport + "';";
+            System.out.println(selectStatement);
+            return stmt.executeQuery(selectStatement);
+    }	
+	}
 
