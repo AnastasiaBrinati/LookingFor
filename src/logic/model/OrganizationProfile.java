@@ -131,5 +131,23 @@ public class OrganizationProfile {
 		
 	}
 
+	public static void deleteCourt(String courtName) {
+		for(int i=0;i<courts.size();i++) {
+			if(courts.get(i).getName().equals(courtName)) {
+				courts.remove(i);
+			}
+		}
+		
+	}
+	
+	public static void deleteEvent(String eventName) {
+		for(int i=0;i<events.size();i++) {
+			if(events.get(i).getName().equals(eventName)) {
+				events.remove(i);
+			}
+		}
+		
+	}
+
 	
 }

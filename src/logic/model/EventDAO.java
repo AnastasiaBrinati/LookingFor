@@ -51,6 +51,27 @@ public class EventDAO {
         }
     }
     
+    public void deleteEvent(String eventName, String orgName) throws SQLException {
+		Statement stmt = null;
+        Connection conn = null;
+        try {
+        	 conn = DriverManager.getConnection(DB_URL, USER, PASS);
+        	 stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                     ResultSet.CONCUR_READ_ONLY);
+             Queries.deleteEvent(stmt,eventName,orgName);
+        	
+        	
+        }finally {
+            // STEP 5.2: Clean-up dell'ambiente        	
+            if (stmt != null)
+                stmt.close();
+            if (conn != null)
+                conn.close();
+    }
+		
+	}
+
+    
     public Event getEvent(String eventName,String organizationName) throws Exception {
         // STEP 1: dichiarazioni
         Statement stmt = null;
