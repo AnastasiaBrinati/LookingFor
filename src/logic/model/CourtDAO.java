@@ -3,6 +3,7 @@ package logic.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -97,6 +98,72 @@ public class CourtDAO {
 	                    conn.close();
 	        }
 	    }
+
+		public ArrayList<Court> retreiveBySport(String sport) {
+			Statement stmt = null;
+	        Connection conn = null;
+	        ArrayList<Court> foundCourts = new ArrayList<Court>();
+	        
+	        try {
+	            
+	            try {
+					conn = DriverManager.getConnection(DB_URL, USER, PASS);
+				} catch (SQLException e1) {
+					
+					e1.printStackTrace();
+				}
+	            stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+	            
+	            ResultSet rs = Queries.selectCourseBySport(stmt,sport);
+	
+	            if (!rs.first()){ // rs empty
+	            	Exception e = new Exception("No results were found");
+	            	throw e;
+	            }
+	            
+	            rs.first();
+	            do{
+	              
+	            	String name=rs.getString("name");
+	            	String organization=rs.getString("organization");
+	            	String price=rs.getString("price");
+	            	String availability=rs.getString("availability");
+	            	String description = rs.getString("description");
+	            	String date=rs.getString("date");
+	            	Court foundCourt=new Court();
+	            	foundCourt.setName(rs.getString("name"));
+		        	foundCourt.setPrice(rs.getString("price"));
+		        	foundCourt.setSport(rs.getString("sport"));
+		        	foundCourt.setType(rs.getString("type"));
+		        	foundCourt.setAvailability(rs.getString("availability"));
+		        	foundCourt.setDescription(rs.getString("description"));
+	                foundCourts.add(foundCourt);
+	
+	            }while(rs.next());
+	            
+	           
+	            rs.close();
+	        } catch (Exception e1) {
+				
+				e1.printStackTrace();
+			} finally {
+	            
+	            try {
+	                if (stmt != null)
+	                    stmt.close();
+	            } catch (SQLException se2) {
+	            }
+	            try {
+	                if (conn != null)
+	                    conn.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	            }
+	        }
+	
+	        return foundCourts;
+			
+		}
 
 		
 
