@@ -9,6 +9,7 @@ public class Court {
 	private String availability;
 	private String price;
 	private String type;
+	private String organization;
 		
 	
 	public String getName() {
@@ -66,6 +67,12 @@ public class Court {
 		CourtDAO courtDAO=new CourtDAO();
 		return courtDAO.getCourt(courtName,organizationName);
 
+	}
+	public String getOrganization() {
+		return organization;
+	}
+	public void setOrganization(String organization) {
+		this.organization = organization;
 	}
 	
 	
