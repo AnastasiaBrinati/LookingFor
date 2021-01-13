@@ -32,6 +32,7 @@ public class EventUIOrg extends JFrame {
 	private JLabel sportLbl = new JLabel("Sport");
 	private JLabel dateLbl = new JLabel("$20.00");
 	private JTextArea descriptionTextArea = new JTextArea();
+	JButton deleteButton = new JButton("Delete ");
 
 
 	public EventUIOrg() {
@@ -130,7 +131,7 @@ public class EventUIOrg extends JFrame {
 		sportLbl.setBounds(146, 47, 61, 14);
 		panel_1.add(sportLbl);
 		
-		JButton deleteButton = new JButton("Delete ");
+		
 		deleteButton.setForeground(Color.WHITE);
 		deleteButton.setBackground(Color.RED);
 		deleteButton.setBounds(915, 47, 133, 63);
@@ -221,6 +222,14 @@ public class EventUIOrg extends JFrame {
 		dateLbl.setText(date);
 		descriptionTextArea.setText(description);
 		
+	}
+	
+	public JButton getDeleteButton() {
+		return deleteButton;
+	}
+
+	public String getEventName() {
+		return nameLbl.getText();
 	}
 }
 	

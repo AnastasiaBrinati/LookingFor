@@ -3,6 +3,7 @@ package logic.view.desktop;
 import java.awt.Color;
 import java.awt.Toolkit;
 
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -34,6 +35,7 @@ public class CourtUIOrg extends JFrame {
 	private JLabel availabilityLbl = new JLabel("");
 	private JLabel typeLbl = new JLabel("");
 	private JTextArea descriptionTextArea = new JTextArea();
+	private JButton deleteButton = new JButton("Delete ");
 
 	public CourtUIOrg() {
 
@@ -130,7 +132,7 @@ public class CourtUIOrg extends JFrame {
 		sportLbl.setBounds(146, 47, 61, 14);
 		panel_1.add(sportLbl);
 		
-		JButton deleteButton = new JButton("Delete ");
+		
 		deleteButton.setForeground(new Color(255, 255, 255));
 		deleteButton.setBackground(new Color(255, 0, 0));
 		deleteButton.setBounds(932, 47, 133, 63);
@@ -192,6 +194,14 @@ public class CourtUIOrg extends JFrame {
 		priceLbl.setText(price+"$");
 		typeLbl.setText(type);
 		availabilityLbl.setText(availability);
+	}
+
+	public String getCourtName() {
+		return nameLbl.getText();
+	}
+
+	public JButton getDeleteButton() {
+		return deleteButton;
 	}
 }
 	
