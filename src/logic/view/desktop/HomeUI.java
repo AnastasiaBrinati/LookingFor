@@ -59,18 +59,9 @@ public class HomeUI extends JFrame {
 	private JTextField textField;
 	private JPanel lateralPanel = new JPanel();
 	private final JLabel citylbl = new JLabel("City");
-<<<<<<< .mine
-	//private DefaultListModel dm=new DefaultListModel();
+
 	private final Choice sportChoice = new Choice();
 	private JButton filtersButton = new JButton("apply filters");
-||||||| .r318
-	
-	private JList<String> sportList = new JList<String>();
-	private DefaultListModel dm=new DefaultListModel();
-=======
-	//private DefaultListModel dm=new DefaultListModel();
-	private final Choice sportChoice = new Choice();
->>>>>>> .r326
 
 	public HomeUI() {
 
@@ -132,16 +123,9 @@ public class HomeUI extends JFrame {
 		sportlbl.setForeground(Color.WHITE);
 		sportlbl.setBounds(10, 103, 45, 26);
 		lateralPanel.add(sportlbl);
-		
-<<<<<<< .mine
+
 		Choice courseEventCourt = new Choice();
-		
-||||||| .r318
-		sportList.setBounds(10, 128, 226, 26);
-		lateralPanel.add(sportList);
-		
-=======
->>>>>>> .r326
+
 		courseEventCourt.add("COURSE");
 		courseEventCourt.add("COURT");
 		courseEventCourt.add("EVENT");
