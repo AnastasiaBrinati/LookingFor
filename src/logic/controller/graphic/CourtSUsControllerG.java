@@ -35,27 +35,23 @@ public class CourtSUsControllerG {
 	
 	public void assegnaGestori() {
 		
-		ActionListener gestoreHome = new ActionListener(){
+		ActionListener gestoreHome = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				HomeUI homeview = new HomeUI();
 				HomeControllerGSUs.getInstance(homeview);
-			}
+			
 
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
-		ActionListener gestoreExit = new ActionListener(){
+		ActionListener gestoreExit = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
 				LoginControllerG.getInstance(loginUI);
-			}
+		
 
 		};
 		view.getExitButton().addActionListener(gestoreExit);

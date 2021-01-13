@@ -45,97 +45,71 @@ public class SettingsControllerGSUs {
 	
 	private static void assegnaGestori() {
 		
-		ActionListener gestoreHome = new ActionListener(){
+		ActionListener gestoreHome = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				HomeUI homeview = new HomeUI();
 				HomeControllerGSUs.getInstance(homeview);
-			}
-
+	
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
-		ActionListener gestoreCancel = new ActionListener(){
+		ActionListener gestoreCancel = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				setCredentials();
-			}
 
 		};
 		view.getCancelButton().addActionListener(gestoreCancel);
 		
-		ActionListener gestoreCancel2 = new ActionListener(){
+		ActionListener gestoreCancel2 = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				setCredentials();
-			}
-
+		
 		};
 		view.getCancelButton2().addActionListener(gestoreCancel2);
 		
-		ActionListener gestoreCancel3 = new ActionListener(){
+		ActionListener gestoreCancel3 = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				setCredentials();
-			}
 
 		};
 		view.getCancelButton3().addActionListener(gestoreCancel3);
 		
-		ActionListener gestoreExit = new ActionListener(){
+		ActionListener gestoreExit = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
 				LoginControllerG.getInstance(loginUI);
-				
-			}
 
 		};
 		view.getExitButton().addActionListener(gestoreExit);
 		
-		ActionListener gestoreCredentials = new ActionListener(){
+		ActionListener gestoreCredentials = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				view.setNamePanelVisible();
-			}
 
 		};
 		view.getCredentialsButton().addActionListener(gestoreCredentials);
 		
 		
-		ActionListener gestoreSecurity = new ActionListener(){
+		ActionListener gestoreSecurity = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
+		
 				view.setEmailPanelVisible();
-			}
 
 		};
 		view.getSecurityButton().addActionListener(gestoreSecurity);
 		
-		ActionListener gestorePassword = new ActionListener(){
+		ActionListener gestorePassword = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				view.setPasswordPanelVisible();
-			}
 
 		};
 		view.getPasswordButton().addActionListener(gestorePassword);
 		
-		ActionListener gestoreSave = new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e){
+		ActionListener gestoreSave = e -> {
+			
 				SettingsSUsBean settingBean = new SettingsSUsBean();
 				settingBean.setUsername(view.getUsername());
 				settingBean.setName(view.getName());
@@ -149,17 +123,13 @@ public class SettingsControllerGSUs {
 				}
 				setCredentials();
 				view.repaint();
-				
-			}
 
 		};
 		view.getSaveButton().addActionListener(gestoreSave);
 		
 		
-		ActionListener gestoreSave2 = new ActionListener(){
+		ActionListener gestoreSave2 = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				SettingsSUsBean settingBean = new SettingsSUsBean();
 				settingBean.setEmail(view.getEmail());
 				settingBean.setPassword(view.getPassword());
@@ -174,15 +144,12 @@ public class SettingsControllerGSUs {
 				setCredentials();
 				view.repaint();
 				
-			}
 
 		};
 		view.getSaveButton2().addActionListener(gestoreSave2);
 		
-		ActionListener gestoreSave3 = new ActionListener(){
+		ActionListener gestoreSave3 = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				SettingsSUsBean settingBean = new SettingsSUsBean();
 				settingBean.setNewPassword(view.getNewPassword());
 				settingBean.setPassword(view.getOldPassword());
@@ -197,7 +164,7 @@ public class SettingsControllerGSUs {
 				setCredentials();
 				view.repaint();
 				
-			}
+
 
 		};
 		view.getSaveButton3().addActionListener(gestoreSave3);

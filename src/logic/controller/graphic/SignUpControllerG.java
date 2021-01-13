@@ -63,21 +63,18 @@ public class SignUpControllerG {
 		view.getSignUpButton().addActionListener(gestoreSignUp);
 
 		
-		ActionListener gestoreDelete = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreDelete = e -> {
+			
 				view.resetForm();
 
-			}
 		};
 		view.getDeleteButton().addActionListener(gestoreDelete);
 		
 		
 		
 		
-		ActionListener gestoreLogin = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreLogin = e -> {
+			
 				
 				LoginUI loginView = new LoginUI();
 				LoginControllerG.getInstance(loginView);
@@ -85,7 +82,7 @@ public class SignUpControllerG {
 				
 				view.resetForm();
 				view.setVisible(false);
-			}
+
 		};
 		view.getLoginButton().addActionListener(gestoreLogin);
 		

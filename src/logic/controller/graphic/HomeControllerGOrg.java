@@ -32,16 +32,13 @@ import logic.view.desktop.SettingsUIOrg;
 
 		public void assegnaGestori() {
 			
-			ActionListener gestoreExit = new ActionListener(){
+			ActionListener gestoreExit = e -> {
 
-				@Override
-				public void actionPerformed(ActionEvent e){
 					LoginUI loginUI=new LoginUI();
 					loginUI.resetForm();
 					view.setVisible(false);
 					LoginControllerG.getInstance(loginUI);
-					
-				}
+				
 
 			};
 			view.getExitButton().addActionListener(gestoreExit);

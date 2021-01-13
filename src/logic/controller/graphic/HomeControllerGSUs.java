@@ -1,6 +1,5 @@
 package logic.controller.graphic;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
@@ -31,17 +30,13 @@ public class HomeControllerGSUs {
 
 	private void assegnaGestori() {
 		
-		ActionListener gestoreExit = new ActionListener(){
+		ActionListener gestoreExit = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
 				LoginControllerG.getInstance(loginUI);
 				
-			}
-
 		};
 		view.getExitButton().addActionListener(gestoreExit);
 		
@@ -71,7 +66,8 @@ public class HomeControllerGSUs {
 	private static void setSports() {
 		
 			ArrayList<String> sports = new ArrayList<String>();
-			for (Sport sport : Sport.values()) {
+			Sport[] listOfSports = Sport.values();
+			for (Sport sport : listOfSports) {
 				  sports.add(sport.toString());
 			}
 			

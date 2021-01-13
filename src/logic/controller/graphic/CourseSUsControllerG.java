@@ -36,35 +36,28 @@ public class CourseSUsControllerG {
 	
 	public void assegnaGestori() {
 		
-		ActionListener gestoreHome = new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e){
+		ActionListener gestoreHome = e -> {
 				view.setVisible(false);
 				HomeUI homeview = new HomeUI();
 				HomeControllerGSUs.getInstance(homeview);
-			}
-
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
-		ActionListener gestoreExit = new ActionListener(){
+		
+		
+		ActionListener gestoreExit = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
-				LoginUI loginUI=new LoginUI();
-				loginUI.resetForm();
-				view.setVisible(false);
-				LoginControllerG.getInstance(loginUI);
-			}
-
+			LoginUI loginUI=new LoginUI();
+			loginUI.resetForm();
+			view.setVisible(false);
+			LoginControllerG.getInstance(loginUI);
+			
 		};
 		view.getExitButton().addActionListener(gestoreExit);
-		
-		ActionListener gestoreJoin = new ActionListener(){
+	
+	
+		ActionListener gestoreJoin = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				JoinCourseController joinCourseController = JoinCourseController.getInstance();
 				try {
 					if(joinCourseController.join(view.getName(), view.getOrganization())) {
@@ -79,8 +72,6 @@ public class CourseSUsControllerG {
 					e1.printStackTrace();
 				}
 				
-			}
-
 		};
 		view.getJoinButton().addActionListener(gestoreJoin);
 		

@@ -56,36 +56,29 @@ public class OrganizationControllerG{
 	public void assegnaGestori(){
 		
 		
-		ActionListener gestoreExit = new ActionListener(){
+		ActionListener gestoreExit = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
 				LoginControllerG.getInstance(loginUI);
 				
-			}
 
 		};
 		view.getExitButton().addActionListener(gestoreExit);
 		
-		ActionListener gestoreLogin = new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e){
+		ActionListener gestoreLogin = e -> {
+			
 				view.setVisible(false);
 				LoginUI view = new LoginUI();
 				LoginControllerG.getInstance(view);
-			}
 		};
 		view.getProfileButton().addActionListener(gestoreLogin);
 		
-		ActionListener gestoreBack = new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreBack = e -> {
+		
 					view.setDescriptionPanelVisible();
-			}
+
 		};
 		view.getBackButton().addActionListener(gestoreBack);
 		
@@ -94,38 +87,31 @@ public class OrganizationControllerG{
 		////////////////////////////////////////////////////////////////////////
 		//Da qui inizia la sequenza di bottoni per il caso d'uso new course
 		//showing CoursesPanel
-		ActionListener gestoreCourses = new ActionListener() {
+		ActionListener gestoreCourses = e -> {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
 				view.setCoursesPanelVisible();
-			}
 		};
 		view.getCoursesButton().addActionListener(gestoreCourses);
 		
 		
 		//click on the add button on the CoursesPanel 
-		ActionListener gestoreAddCourse = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreAddCourse = e -> {
+			
 				view.showNewCoursePanel();
-			}
 		};
 		view.getAddCourseButton().addActionListener(gestoreAddCourse);
 		
 		
-		ActionListener gestoreCancelCourse = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreCancelCourse = e -> {
+	
 				view.resetNewCourseForm();
-			}
+	
 		};
 		view.getCancelCourseButton().addActionListener(gestoreCancelCourse);
 		
 		
-		ActionListener gestoreSaveCourse = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreSaveCourse = e -> {
+			
 				NewCourseBean newCourseBean = new NewCourseBean();
 				getNewCourseCredentials(newCourseBean);
 				try {
@@ -139,8 +125,7 @@ public class OrganizationControllerG{
 					view.doubleCourseErrorMessage("Course already exists");
 					e1.printStackTrace();
 				}
-				
-			}
+			
 		};
 		view.getSaveCourseButton().addActionListener(gestoreSaveCourse);		
 		//fine caso d'uso new course
@@ -148,31 +133,24 @@ public class OrganizationControllerG{
 		
 		/////////////////////////////////////////////////////////////////
 		//showing CourtsPanel
-        ActionListener gestoreCourts = new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
+        ActionListener gestoreCourts = e -> {
+		
 			 view.setCourtsPanelVisible();
-			}
 		};
 		view.getCourtsButton().addActionListener(gestoreCourts);
 		
 		
 		//click on the add button on the CourtsPanel 
-		ActionListener gestoreAddCourt = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreAddCourt = e -> {
+		
 					view.showNewCourtPanel();
-			}
 		};
 		view.getAddCourtButton().addActionListener(gestoreAddCourt);
 		
 		
-		ActionListener gestoreCancelCourt = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreCancelCourt = e -> {
+			
 				view.resetNewCourtForm();
-			}
 		};
 		view.getCancelCourtButton().addActionListener(gestoreCancelCourt);
 				
@@ -222,18 +200,15 @@ public class OrganizationControllerG{
 		view.getAddEventButton().addActionListener(gestoreAddEvent);
 		
 		
-		ActionListener gestoreCancelEvent = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreCancelEvent = e -> {
+		
 				view.resetNewEventForm();
-			}
 		};
 		view.getCancelEventButton().addActionListener(gestoreCancelEvent);
 				
 				
-		ActionListener gestoreSaveEvent = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreSaveEvent = e -> {
+		
 				NewEventBean newEventBean = new NewEventBean();
 				getNewEventCredentials(newEventBean);
 					try {
@@ -248,7 +223,7 @@ public class OrganizationControllerG{
 							e1.printStackTrace();
 						}
 						
-			}
+
 		};
 		view.getSaveEventButton().addActionListener(gestoreSaveEvent);
 		
@@ -256,25 +231,22 @@ public class OrganizationControllerG{
 		///////////////////////////////////////////////////////////////////
 		
 	
-        ActionListener gestoreHome = new ActionListener() {
+        ActionListener gestoreHome = e -> {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
 				HomeUI homeView = new HomeUI();
 				HomeControllerGOrg.getInstance(homeView);
 				view.setVisible(false);
-			}
+
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
-		ActionListener gestoreSettings = new ActionListener() {
+		ActionListener gestoreSettings = e -> {
 				
-				@Override
-				public void actionPerformed(ActionEvent e) {
+				
 					SettingsUIOrg settingUI = new SettingsUIOrg();
 					SettingsControllerGOrg.getInstance(settingUI);
 					view.setVisible(false);
-				}
+
 			};
 		view.getSettingButton().addActionListener(gestoreSettings);
 

@@ -37,22 +37,16 @@ public class LoginControllerG {
 	
 	public void assegnaGestori(){
 
-		ActionListener gestoreSignUp = new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e){
+		ActionListener gestoreSignUp = e -> {
+			
 				loginView.setVisible(false);
 				SignUpUI signInView = new SignUpUI();		
 				SignUpControllerG.getInstance(signInView);
-			}
 
 		};
 		loginView.getSignInButton().addActionListener(gestoreSignUp);
 		
-		ActionListener gestoreLogin = new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e){
+		ActionListener gestoreLogin = e -> {
 				
 				loginBean = new LoginBean();
 				loginBean.setUsername(loginView.getUsername());
@@ -80,7 +74,6 @@ public class LoginControllerG {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			}
 
 		};
 		loginView.getLoginButton().addActionListener(gestoreLogin);

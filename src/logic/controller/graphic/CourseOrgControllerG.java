@@ -10,6 +10,7 @@ import logic.view.desktop.CourseUIOrg;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.OrganizationProfileUI;
+import logic.view.desktop.UserProfileUI;
 
 public class CourseOrgControllerG {
 	
@@ -40,47 +41,42 @@ public class CourseOrgControllerG {
 		
 		
 		
-        ActionListener gestoreHome = new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				HomeUI homeView = new HomeUI();
-				HomeControllerGOrg.getInstance(homeView);
-				view.setVisible(false);
-			}
+		ActionListener gestoreProfile = e -> {
+			view.setVisible(false);
+			UserProfileUI vista = new UserProfileUI();
+			UserProfileControllerG.getInstance(vista);
+
 		};
-		view.getHomeButton().addActionListener(gestoreHome);
+		view.getProfileButton().addActionListener(gestoreProfile);
+		
+		
 		
 		//gestore per tornare indietro dal corso alla sezione corsi della organizzazione
-		ActionListener gestoreBack = new ActionListener(){
+		ActionListener gestoreBack = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				OrganizationProfileUI profileView = new OrganizationProfileUI();
 				OrganizationControllerG.getInstance(profileView);
-			}
+
 
 		};
 		view.getBackButton().addActionListener(gestoreBack);
 		
-		ActionListener gestoreExit = new ActionListener(){
+		
+		
+		ActionListener gestoreExit = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
-				LoginUI loginUI=new LoginUI();
-				loginUI.resetForm();
-				view.setVisible(false);
-				LoginControllerG.getInstance(loginUI);
-			}
-
+			LoginUI loginUI=new LoginUI();
+			loginUI.resetForm();
+			view.setVisible(false);
+			LoginControllerG.getInstance(loginUI);
+			
 		};
 		view.getExitButton().addActionListener(gestoreExit);
 		
-		ActionListener gestoreDeleteCourse = new ActionListener(){
+		
+		ActionListener gestoreDeleteCourse = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 
 				DeleteCourseController controller=DeleteCourseController.getInstance();
 				view.setVisible(false);
@@ -93,8 +89,7 @@ public class CourseOrgControllerG {
 				} catch (SQLException e1) {
 					
 					e1.printStackTrace();
-				}
-			}			
+				}		
 
 		};
 		view.getDeleteButton().addActionListener(gestoreDeleteCourse);

@@ -10,6 +10,7 @@ import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.EventUISUs;
 import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
+import logic.view.desktop.SettingsUISUs;
 import logic.view.desktop.UserProfileUI;
 
 public class UserProfileControllerG {
@@ -51,63 +52,57 @@ public class UserProfileControllerG {
 	
 	public void assegnaGestori(){
 		
-		ActionListener gestoreExit = new ActionListener(){
+		ActionListener gestoreExit = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				LoginUI loginUI=new LoginUI();
 				loginUI.resetForm();
 				view.setVisible(false);
 				LoginControllerG.getInstance(loginUI);
 				
-			}
-
 		};
 		view.getExitButton().addActionListener(gestoreExit);
 
 		
-		ActionListener gestoreHome = new ActionListener(){
+		ActionListener gestoreHome = e -> {
 
-			@Override
-			public void actionPerformed(ActionEvent e){
 				view.setVisible(false);
 				HomeUI vista=new HomeUI();
 				HomeControllerGSUs.getInstance(vista);
-							
-			}
 
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
+		ActionListener gestoreSetting = e -> {
+
+				view.setVisible(false);
+				SettingsUISUs view = new SettingsUISUs();
+				SettingsControllerGSUs.getInstance(view);
+
+		};
+		view.getHomeButton().addActionListener(gestoreSetting);
+		
 		
 		//showing CoursesPanel
-		ActionListener gestoreCourses = new ActionListener() {
-					
-			@Override
-			public void actionPerformed(ActionEvent e) {
+		ActionListener gestoreCourses = e -> {
+		
 					view.setCoursesPanelVisible();
-			}
+
 		};
 		view.getCoursesButton().addActionListener(gestoreCourses);
 		
 		
 		//showing EventsPanel
-		ActionListener gestoreEvents = new ActionListener() {
+		ActionListener gestoreEvents = e -> {
 					
-			@Override
-			public void actionPerformed(ActionEvent e) {
 					view.setEventsPanelVisible();
-			}
 		};
 		view.getEventsButton().addActionListener(gestoreEvents);
 		
 		
-		ActionListener gestoreBack = new ActionListener() {
+		ActionListener gestoreBack = e -> {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
 					view.setDescriptionPanelVisible();
-			}
+
 		};
 		view.getBackButton().addActionListener(gestoreBack);
 
