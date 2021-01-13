@@ -1,12 +1,13 @@
 package logic.controller.graphic;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.model.EventBean;
 import logic.view.desktop.EventUIOrg;
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
+import logic.view.desktop.OrganizationProfileUI;
+import logic.view.desktop.SettingsUIOrg;
 
 public class EventOrgControllerG {
 	
@@ -34,12 +35,21 @@ public class EventOrgControllerG {
 	
 	public void assegnaGestori() {
 		
-		ActionListener gestoreHome = e -> {
+		ActionListener gestoreSettings = e -> {
 
-				view.setVisible(false);
-				HomeUI homeview = new HomeUI();
-				HomeControllerGOrg.getInstance(homeview);
+			view.setVisible(false);
+			SettingsUIOrg settingsUI = new SettingsUIOrg();
+			SettingsControllerGOrg.getInstance(settingsUI);
+		
+
+		};
+		view.getSettingsButton().addActionListener(gestoreSettings);
+		
+		ActionListener gestoreHome = e -> {
 			
+				view.setVisible(false);
+				HomeUISUs homeview = new HomeUISUs();
+				HomeControllerGOrg.getInstance(homeview);
 
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
@@ -53,6 +63,16 @@ public class EventOrgControllerG {
 
 		};
 		view.getExitButton().addActionListener(gestoreExit);
+		
+		ActionListener gestoreProfile = e -> {
+
+			OrganizationProfileUI profileUI=new OrganizationProfileUI();
+			view.setVisible(false);
+			OrganizationControllerG.getInstance(profileUI);
+	
+
+		};
+		view.getProfileButton().addActionListener(gestoreProfile);
 		
 		
 	}

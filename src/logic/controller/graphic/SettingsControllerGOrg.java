@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import logic.controller.SettingsOrgBean;
 import logic.controller.SettingsSUsBean;
 import logic.model.OrganizationBean;
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SettingsUIOrg;
 
@@ -58,7 +58,7 @@ public class SettingsControllerGOrg {
 		ActionListener gestoreHome = e -> {
 
 				view.setVisible(false);
-				HomeUI homeview = new HomeUI();
+				HomeUISUs homeview = new HomeUISUs();
 				HomeControllerGOrg.getInstance(homeview);
 
 		};

@@ -34,12 +34,11 @@ import javax.swing.SwingConstants;
 	private final JLabel namelbl = new JLabel("name");
 	private JLabel surnamelbl = new JLabel("cognome");
 	private final JPanel panel = new JPanel();
-	private final JButton coursesButton = new JButton("Courses");
-	private final JButton eventsButton = new JButton("Events");
+	private final JButton coursesButton = new JButton("My Courses");
+	private final JButton eventsButton = new JButton("My Events");
 	private final JPanel coursesPanel = new JPanel();
 	private final JPanel eventsPanel = new JPanel();
 	private final JButton backButton = new JButton("<-");
-	private final JButton routineButton = new JButton("MyRoutine");
 	private final JButton exitButton = new JButton("\u2398");
 	private JLabel locationLbl = new JLabel("location");
 	private final JLabel lblNewLabel_4 = new JLabel("Profile");
@@ -91,7 +90,7 @@ import javax.swing.SwingConstants;
 		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
 		homeButton.setForeground(Color.WHITE);
 
-		homeButton.setBounds(360, -11, 55, 62);
+		homeButton.setBounds(362, -15, 55, 67);
 		homeButton.setBorder(null);
 		homeButton.setContentAreaFilled(false);
 
@@ -165,25 +164,6 @@ import javax.swing.SwingConstants;
 		searchButton.setBounds(764, 11, 71, 31);
 		
 		headerPanel.add(searchButton);
-		routineButton.setForeground(Color.WHITE);
-		
-		
-		
-		//Image img4=new ImageIcon(this.getClass().getResource("/034-flag.png")).getImage();
-		//eventsButton.setIcon(new ImageIcon(img4));
-		
-		//Image img= new ImageIcon(this.getClass().getResource("/house32.png")).getImage();
-		//homeButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\house-32.png"));
-		
-		//Image img2= new ImageIcon(this.getClass().getResource("/settings-32.png")).getImage();
-		//settingsButton.setIcon(new ImageIcon("C:\\Users\\giuli\\Downloads\\settings-32.png"));
-		
-		
-		routineButton.setContentAreaFilled(true);
-		routineButton.setBackground(new Color(204, 0, 0));
-		routineButton.setBounds(10, 338, 287, 57);
-		
-		panel.add(routineButton);
 	
 		
 	}
@@ -215,7 +195,6 @@ import javax.swing.SwingConstants;
 		eventsPanel.setVisible(false);
 		coursesButton.setBackground(new Color(204,0,0));
 		eventsButton.setBackground(new Color(204,0,0));
-		routineButton.setBackground(new Color(204,0,0));
 	}
 	
 	public void setWorkoutPanelVisible() {
@@ -225,7 +204,6 @@ import javax.swing.SwingConstants;
 		eventsPanel.setVisible(false);
 		coursesButton.setBackground(new Color(204,0,0));
 		eventsButton.setBackground(new Color(204,0,0));
-		routineButton.setBackground(new Color(139,0,0));
 	}
 	
 	public void setCoursesPanelVisible() {
@@ -235,7 +213,6 @@ import javax.swing.SwingConstants;
 		eventsPanel.setVisible(false);
 		coursesButton.setBackground(new Color(139,0,0));
 		eventsButton.setBackground(new Color(204,0,0));
-		routineButton.setBackground(new Color(204,0,0));
 		
 	}
 	
@@ -246,7 +223,6 @@ import javax.swing.SwingConstants;
 		eventsPanel.setVisible(true);
 		coursesButton.setBackground(new Color(204,0,0));
 		eventsButton.setBackground(new Color(139,0,0));
-		routineButton.setBackground(new Color(204,0,0));
 	}
 	
 	public void setCredentials(String name, String surname, String username,String location) {

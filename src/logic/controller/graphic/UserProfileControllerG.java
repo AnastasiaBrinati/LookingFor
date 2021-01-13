@@ -8,7 +8,7 @@ import logic.controller.ProfileBean;
 import logic.model.OrganizationBean;
 import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.EventUISUs;
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SettingsUISUs;
 import logic.view.desktop.UserProfileUI;
@@ -66,7 +66,7 @@ public class UserProfileControllerG {
 		ActionListener gestoreHome = e -> {
 
 				view.setVisible(false);
-				HomeUI vista=new HomeUI();
+				HomeUISUs vista=new HomeUISUs();
 				HomeControllerGSUs.getInstance(vista);
 
 		};

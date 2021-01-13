@@ -6,25 +6,24 @@ import java.util.ArrayList;
 
 import logic.controller.FilterController;
 import logic.model.Sport;
-import logic.view.desktop.CourseUIOrg;
 import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.CourtUISUs;
 import logic.view.desktop.EventUISUs;
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SettingsUISUs;
 import logic.view.desktop.UserProfileUI;
 
 public class HomeControllerGSUs {
 
-	private static HomeUI view;
+	private static HomeUISUs view;
 	private static HomeControllerGSUs instance = null;
 
-	private HomeControllerGSUs(HomeUI vista) {
+	private HomeControllerGSUs(HomeUISUs vista) {
 		HomeControllerGSUs.view = vista;
 	}
 
-	public static synchronized  HomeControllerGSUs getInstance(HomeUI vista) {
+	public static synchronized  HomeControllerGSUs getInstance(HomeUISUs vista) {
 		if (instance == null) {
 			instance = new HomeControllerGSUs(vista);
 			instance.assegnaGestori();

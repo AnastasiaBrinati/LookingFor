@@ -1,13 +1,13 @@
 package logic.controller.graphic;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.model.CourseBean;
 import logic.model.CourtBean;
 import logic.view.desktop.CourtUISUs;
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
+import logic.view.desktop.SettingsUISUs;
+import logic.view.desktop.UserProfileUI;
 
 public class CourtSUsControllerG {
 	
@@ -38,23 +38,44 @@ public class CourtSUsControllerG {
 		ActionListener gestoreHome = e -> {
 
 				view.setVisible(false);
-				HomeUI homeview = new HomeUI();
+				HomeUISUs homeview = new HomeUISUs();
 				HomeControllerGSUs.getInstance(homeview);
 			
 
 		};
 		view.getHomeButton().addActionListener(gestoreHome);
 		
-		ActionListener gestoreExit = e -> {
+		
+		ActionListener gestoreSettings = e -> {
 
-				LoginUI loginUI=new LoginUI();
-				loginUI.resetForm();
-				view.setVisible(false);
-				LoginControllerG.getInstance(loginUI);
+			view.setVisible(false);
+			SettingsUISUs settingsUI = new SettingsUISUs();
+			SettingsControllerGSUs.getInstance(settingsUI);
 		
 
 		};
+		view.getSettingsButton().addActionListener(gestoreSettings);
+		
+		ActionListener gestoreExit = e -> {
+
+			LoginUI loginUI=new LoginUI();
+			loginUI.resetForm();
+			view.setVisible(false);
+			LoginControllerG.getInstance(loginUI);
+	
+
+		};
 		view.getExitButton().addActionListener(gestoreExit);
+		
+		ActionListener gestoreProfile = e -> {
+
+				UserProfileUI profileUI=new UserProfileUI();
+				view.setVisible(false);
+				UserProfileControllerG.getInstance(profileUI);
+		
+
+		};
+		view.getProfileButton().addActionListener(gestoreProfile);
 		
 		
 	}

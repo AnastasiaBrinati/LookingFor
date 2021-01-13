@@ -3,41 +3,17 @@ package logic.view.desktop;
 import java.awt.Color;
 import java.awt.Toolkit;
 
-import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSeparator;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-import javax.swing.border.BevelBorder;
-import java.awt.GridBagLayout;
-import java.awt.Image;
 
-import javax.swing.JTabbedPane;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import javax.swing.JComboBox;
-import javax.swing.SwingConstants;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import javax.swing.JLayeredPane;
-import java.awt.ScrollPane;
-import java.awt.Panel;
-import javax.swing.JMenuBar;
-import javax.swing.Box;
 import java.awt.SystemColor;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 
 public class CourtUISUs extends JFrame {
@@ -47,9 +23,9 @@ public class CourtUISUs extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JPanel panel = new JPanel();
+	private JPanel menuBarPanel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
-	private JButton profileButton = new JButton("");
+	private JButton profileButton = new JButton("profile");
 	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("\u2398");
 	private JButton homeButton = new JButton("\u2302");
@@ -73,23 +49,23 @@ public class CourtUISUs extends JFrame {
 		contentPane.setLayout(null);
 		exitButton.setContentAreaFilled(false);
 
-		panel.setBackground(new Color(255, 0, 0));
-		panel.setBounds(0, 0, 1088, 54);
-		contentPane.add(panel);
-		panel.setLayout(null);
+		menuBarPanel.setBackground(new Color(255, 0, 0));
+		menuBarPanel.setBounds(0, 0, 1088, 54);
+		contentPane.add(menuBarPanel);
+		menuBarPanel.setLayout(null);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);
-		panel.add(lblNewLabel);
+		menuBarPanel.add(lblNewLabel);
 		settingsButton.setContentAreaFilled(false);
 		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(980, 0, 49, 49);
-		panel.add(profileButton);
+		profileButton.setBounds(931, 0, 98, 54);
+		menuBarPanel.add(profileButton);
 		settingsButton.setForeground(Color.WHITE);
 		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
-		settingsButton.setBounds(0, -5, 71, 63);
-		panel.add(settingsButton);
+		settingsButton.setBounds(0, 0, 71, 54);
+		menuBarPanel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		/*
 		settingsButton.setContentAreaFilled(false);
@@ -126,56 +102,56 @@ public class CourtUISUs extends JFrame {
 		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 		
 		
-		exitButton.setBounds(1017, 0, 71, 67);
-		panel.add(exitButton);
+		exitButton.setBounds(1010, 7, 98, 53);
+		menuBarPanel.add(exitButton);
 		homeButton.setForeground(Color.WHITE);
 		homeButton.setFont(new Font("Arial Black", Font.PLAIN, 60));
 		
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(348, -13, 71, 67);
-		panel.add(homeButton);
+		menuBarPanel.add(homeButton);
 		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBounds(0, 55, 1088, 588);
 		contentPane.add(mainPanel);
 		mainPanel.setLayout(null);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 0, 1088, 148);
-		panel_1.setBackground(new Color(47, 79, 79));
-		mainPanel.add(panel_1);
-		panel_1.setLayout(null);
+		JPanel titlePanel = new JPanel();
+		titlePanel.setBounds(0, 0, 1088, 148);
+		titlePanel.setBackground(new Color(47, 79, 79));
+		mainPanel.add(titlePanel);
+		titlePanel.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBackground(new Color(255, 0, 255));
 		lblNewLabel_1.setBounds(10, 11, 126, 126);
-		panel_1.add(lblNewLabel_1);
+		titlePanel.add(lblNewLabel_1);
 		
 		nameLbl.setForeground(new Color(255, 255, 255));
 		nameLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 23));
-		nameLbl.setBounds(146, 11, 259, 25);
-		panel_1.add(nameLbl);
+		nameLbl.setBounds(146, 11, 259, 26);
+		titlePanel.add(nameLbl);
 		
 		sportLbl.setForeground(Color.WHITE);
 		sportLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		sportLbl.setBounds(146, 47, 61, 14);
-		panel_1.add(sportLbl);
+		titlePanel.add(sportLbl);
 		
 		JButton bookButton = new JButton("Book");
 		bookButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		bookButton.setForeground(new Color(255, 255, 255));
-		bookButton.setBackground(new Color(0, 128, 0));
+		bookButton.setForeground(Color.BLACK);
+		bookButton.setBackground(Color.GRAY);
 		bookButton.setBounds(900, 44, 157, 65);
-		panel_1.add(bookButton);
+		titlePanel.add(bookButton);
 		
 		JLabel organizationLbl = new JLabel("Organization");
 		organizationLbl.setForeground(Color.WHITE);
 		organizationLbl.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
-		organizationLbl.setBounds(146, 72, 145, 14);
-		panel_1.add(organizationLbl);
+		organizationLbl.setBounds(146, 71, 145, 25);
+		titlePanel.add(organizationLbl);
 		
 		descriptionTextArea.setBackground(new Color(230, 230, 250));
 		descriptionTextArea.setBounds(61, 197, 758, 128);
@@ -220,7 +196,7 @@ public class CourtUISUs extends JFrame {
 		availabilityLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
 		availabilityLbl.setBounds(71, 485, 61, 14);
 		mainPanel.add(availabilityLbl);
-		LineBorder lineBorder=new LineBorder(Color.white,8,true);
+	
 	}
 
 	public JButton getProfileButton() {

@@ -15,7 +15,7 @@ import logic.view.desktop.LoginUI;
 import logic.view.desktop.CourseUIOrg;
 import logic.view.desktop.CourtUIOrg;
 import logic.view.desktop.EventUIOrg;
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 
 public class OrganizationControllerG{
 
@@ -233,7 +233,7 @@ public class OrganizationControllerG{
 	
         ActionListener gestoreHome = e -> {
 			
-				HomeUI homeView = new HomeUI();
+				HomeUISUs homeView = new HomeUISUs();
 				HomeControllerGOrg.getInstance(homeView);
 				view.setVisible(false);
 

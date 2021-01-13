@@ -1,12 +1,11 @@
 package logic.controller.graphic;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.controller.JoinCourseController;
 import logic.model.CourseBean;
 import logic.view.desktop.CourseUISUs;
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
 
 public class CourseSUsControllerG {
@@ -38,7 +37,7 @@ public class CourseSUsControllerG {
 		
 		ActionListener gestoreHome = e -> {
 				view.setVisible(false);
-				HomeUI homeview = new HomeUI();
+				HomeUISUs homeview = new HomeUISUs();
 				HomeControllerGSUs.getInstance(homeview);
 		};
 		view.getHomeButton().addActionListener(gestoreHome);

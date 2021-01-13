@@ -1,10 +1,9 @@
 package logic.controller.graphic;
 
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.SettingsUIOrg;
@@ -13,14 +12,14 @@ import logic.view.desktop.SettingsUIOrg;
 
 	public class HomeControllerGOrg {
 
-		private static HomeUI view;
+		private static HomeUISUs view;
 		private static HomeControllerGOrg instance = null;
 
-		private HomeControllerGOrg(HomeUI vista) {
+		private HomeControllerGOrg(HomeUISUs vista) {
 			view = vista;
 		}
 
-		public static synchronized  HomeControllerGOrg getInstance(HomeUI vista) {
+		public static synchronized  HomeControllerGOrg getInstance(HomeUISUs vista) {
 			if (instance == null) {
 				instance = new HomeControllerGOrg(vista);
 				instance.assegnaGestori();

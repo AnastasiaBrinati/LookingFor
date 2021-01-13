@@ -1,11 +1,10 @@
 package logic.controller.graphic;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import logic.model.EventBean;
 import logic.view.desktop.EventUISUs;
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
 
 public class EventSUsControllerG {
@@ -37,7 +36,7 @@ public class EventSUsControllerG {
 		ActionListener gestoreHome = e -> {
 
 				view.setVisible(false);
-				HomeUI homeview = new HomeUI();
+				HomeUISUs homeview = new HomeUISUs();
 				HomeControllerGSUs.getInstance(homeview);
 
 		};

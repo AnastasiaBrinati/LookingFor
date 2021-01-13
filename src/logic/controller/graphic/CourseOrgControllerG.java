@@ -1,13 +1,11 @@
 package logic.controller.graphic;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
 import logic.controller.DeleteCourseController;
 import logic.model.CourseBean;
 import logic.view.desktop.CourseUIOrg;
-import logic.view.desktop.HomeUI;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.OrganizationProfileUI;
 import logic.view.desktop.UserProfileUI;

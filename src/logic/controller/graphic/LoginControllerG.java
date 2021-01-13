@@ -1,9 +1,8 @@
 package logic.controller.graphic;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import logic.view.desktop.HomeUI;
+import logic.view.desktop.HomeUISUs;
 import logic.view.desktop.LoginUI;
 import logic.view.desktop.SignUpUI;
 import logic.controller.LoginBean;
@@ -57,11 +56,11 @@ public class LoginControllerG {
 					if(typeOfUser!=null) {
 						System.out.println("typeOfUser:"+ typeOfUser);
 					 if(typeOfUser.equals("singleuser")) {
-						HomeUI homepageView = new HomeUI();
+						HomeUISUs homepageView = new HomeUISUs();
 						HomeControllerGSUs.getInstance(homepageView);
 					 }
 					 else if(typeOfUser.equals("organization")) {
-						HomeUI homepageView = new HomeUI();
+						HomeUISUs homepageView = new HomeUISUs();
 						HomeControllerGOrg.getInstance(homepageView);
 						
 					 }
