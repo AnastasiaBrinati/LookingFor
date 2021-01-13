@@ -10,10 +10,10 @@ import logic.model.UserProfile;
 public class ProfileBean {
 	
 	private static String name;
-	public static String surname;
-	public static String username;
-	public static String email;
-	public static String password;
+	private static String surname;
+	private static String username;
+	private static String email;
+	private static String password;
 	private static String location;
 	
 	private static ArrayList<Course> courses = new ArrayList<Course>();

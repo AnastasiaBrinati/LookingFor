@@ -8,6 +8,7 @@ public class LoginBean {
 	private String password;
 	
 	public LoginBean() {
+		//constructor
 	}
 	
 	public void setUsername(String username) {

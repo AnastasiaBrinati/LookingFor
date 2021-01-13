@@ -60,6 +60,13 @@ public class HomeControllerGSUs {
 		};
 		view.getSettingsButton().addActionListener(gestoreSettings);
 		
+		ActionListener gestoreFilters = e -> {
+			
+			
+
+		};
+		view.getSettingsButton().addActionListener(gestoreFilters);
+		
 		
 	}
 	

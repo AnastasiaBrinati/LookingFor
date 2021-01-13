@@ -37,7 +37,7 @@ public class NewCourseBean {
 		return String.valueOf(lessonPrice);
 	}
 	public void setLessonPrice(String lessonPrice) {
-		this.lessonPrice = Float.parseFloat(lessonPrice);;
+		this.lessonPrice = Float.parseFloat(lessonPrice);
 	}
 	public String getSport() {
 		return sport;

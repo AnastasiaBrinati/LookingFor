@@ -2,12 +2,9 @@ package logic.controller;
 
 import java.sql.SQLException;
 
-import logic.controller.graphic.CourseOrgControllerG;
-import logic.controller.graphic.OrganizationControllerG;
 import logic.model.CourseDAO;
-import logic.model.DeleteItemBean;
 import logic.model.OrganizationProfile;
-import logic.view.desktop.OrganizationProfileUI;
+
 
 public class DeleteCourseController {
 	
@@ -30,9 +27,6 @@ public class DeleteCourseController {
 
 		//aggiorno il model
 		OrganizationProfile.deleteCourse(courseName);
-		System.out.println("Course "+courseName+" has been removed from organization "+orgName);
-
-		System.out.println("All courses:");
 		OrganizationProfile.printAllCourses();
 		
 		
