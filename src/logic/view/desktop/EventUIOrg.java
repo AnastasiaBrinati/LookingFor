@@ -21,7 +21,6 @@ public class EventUIOrg extends JFrame {
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
-	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("\u2398");
 	private JButton homeButton = new JButton("\u2302");
 	
@@ -32,7 +31,8 @@ public class EventUIOrg extends JFrame {
 	private JLabel sportLbl = new JLabel("Sport");
 	private JLabel dateLbl = new JLabel("$20.00");
 	private JTextArea descriptionTextArea = new JTextArea();
-	JButton deleteButton = new JButton("Delete ");
+	private JButton deleteButton = new JButton("Delete ");
+	private JButton backButton = new JButton("\u21E6");
 
 
 	public EventUIOrg() {
@@ -56,15 +56,10 @@ public class EventUIOrg extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);
 		panel.add(lblNewLabel);
-		settingsButton.setContentAreaFilled(false);
 		exitButton.setContentAreaFilled(false);
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(943, 0, 49, 49);
 		panel.add(profileButton);
-		settingsButton.setForeground(Color.WHITE);
-		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
-		settingsButton.setBounds(0, 0, 69, 54);
-		panel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		/*
 		settingsButton.setContentAreaFilled(false);
@@ -110,7 +105,7 @@ public class EventUIOrg extends JFrame {
 		homeButton.setBounds(336, -14, 79, 68);
 		panel.add(homeButton);
 		
-		JButton backButton = new JButton("\u21E6");
+		
 		backButton.setForeground(Color.WHITE);
 		backButton.setFont(new Font("Cambria Math", Font.PLAIN, 40));
 		backButton.setContentAreaFilled(false);
@@ -210,9 +205,7 @@ public class EventUIOrg extends JFrame {
 	public JButton getProfileButton() {
 		return profileButton;
 	}
-	public JButton getSettingsButton() {
-		return settingsButton;
-	}
+	
 	public JButton getExitButton() {
 		return exitButton;
 	}
@@ -234,6 +227,9 @@ public class EventUIOrg extends JFrame {
 	
 	public JButton getDeleteButton() {
 		return deleteButton;
+	}
+	public JButton getBackButton() {
+		return backButton;
 	}
 
 	public String getEventName() {

@@ -26,7 +26,6 @@ public class CourtUISUs extends JFrame {
 	private JPanel menuBarPanel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("profile");
-	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("\u2398");
 	private JButton homeButton = new JButton("\u2302");
 
@@ -36,6 +35,7 @@ public class CourtUISUs extends JFrame {
 	private JLabel priceLbl = new JLabel("$20.00");
 	private JLabel typeLbl = new JLabel("Synthetic");
 	private JLabel availabilityLbl = new JLabel("7");
+	private final JButton backButton = new JButton("\u21E6");
 
 	public CourtUISUs() {
 
@@ -58,14 +58,9 @@ public class CourtUISUs extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);
 		menuBarPanel.add(lblNewLabel);
-		settingsButton.setContentAreaFilled(false);
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(931, 0, 98, 54);
 		menuBarPanel.add(profileButton);
-		settingsButton.setForeground(Color.WHITE);
-		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
-		settingsButton.setBounds(0, 0, 71, 54);
-		menuBarPanel.add(settingsButton);
 		//settingsButton.setEnabled(false);
 		/*
 		settingsButton.setContentAreaFilled(false);
@@ -110,6 +105,13 @@ public class CourtUISUs extends JFrame {
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(348, -13, 71, 67);
 		menuBarPanel.add(homeButton);
+		backButton.setForeground(Color.WHITE);
+		backButton.setFont(new Font("Cambria Math", Font.PLAIN, 40));
+		backButton.setContentAreaFilled(false);
+		backButton.setBackground(new Color(204, 0, 0));
+		backButton.setBounds(98, 0, 85, 54);
+		
+		menuBarPanel.add(backButton);
 		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBounds(0, 55, 1088, 588);
@@ -202,16 +204,16 @@ public class CourtUISUs extends JFrame {
 	public JButton getProfileButton() {
 		return profileButton;
 	}
-	public JButton getSettingsButton() {
-		return settingsButton;
-	}
+	
 	public JButton getExitButton() {
 		return exitButton;
 	}
 	public JButton getHomeButton() {
 		return homeButton;
 	}
-	
+	public JButton getBackButton() {
+		return backButton;
+	}
 	public void setCredentials(String name, String price, String sport, String availability, String description, String type) {
 		
 		nameLbl.setText(name);

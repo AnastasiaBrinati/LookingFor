@@ -25,7 +25,6 @@ public class CourtUIOrg extends JFrame {
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
 	private JButton profileButton = new JButton("");
-	private JButton settingsButton = new JButton("");
 	private JButton exitButton = new JButton("");
 	private JButton homeButton = new JButton("");
 	
@@ -36,6 +35,7 @@ public class CourtUIOrg extends JFrame {
 	private JLabel typeLbl = new JLabel("");
 	private JTextArea descriptionTextArea = new JTextArea();
 	private JButton deleteButton = new JButton("Delete ");
+	private final JButton backButton = new JButton("\u21E6");
 
 	public CourtUIOrg() {
 
@@ -62,11 +62,6 @@ public class CourtUIOrg extends JFrame {
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
-		settingsButton.setBounds(10, 5, 40, 43);
-		panel.add(settingsButton);
-		//settingsButton.setEnabled(false);
-		
-		settingsButton.setContentAreaFilled(false);
 		/*
 		Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
 		settingsButton.setIcon(new ImageIcon(img3));
@@ -105,6 +100,13 @@ public class CourtUIOrg extends JFrame {
 	    homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(336, 10, 40, 43);
 		panel.add(homeButton);
+		backButton.setForeground(Color.WHITE);
+		backButton.setFont(new Font("Cambria Math", Font.PLAIN, 40));
+		backButton.setContentAreaFilled(false);
+		backButton.setBackground(new Color(204, 0, 0));
+		backButton.setBounds(112, 0, 85, 54);
+		
+		panel.add(backButton);
 		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBounds(0, 55, 1088, 588);
@@ -175,15 +177,16 @@ public class CourtUIOrg extends JFrame {
 	public JButton getProfileButton() {
 		return profileButton;
 	}
-	public JButton getSettingsButton() {
-		return settingsButton;
-	}
+	
 	public JButton getExitButton() {
 		return exitButton;
 	}
 
 	public JButton getHomeButton() {
 		return homeButton;
+	}
+	public JButton getBackButton() {
+		return backButton;
 	}
 	
 	public void setCredentials(String name, String price, String sport, String availability, String description, String type) {

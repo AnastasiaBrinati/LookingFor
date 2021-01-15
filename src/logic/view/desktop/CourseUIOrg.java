@@ -22,8 +22,6 @@ public class CourseUIOrg extends JFrame {
 	private JPanel contentPane;
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
-	private JButton profileButton = new JButton("");
-	private JButton settingsButton = new JButton("\u2630");
 	private JButton exitButton = new JButton("\u2398");
 	private JButton homeButton = new JButton("\u2302");
 	JLabel nameLbl = new JLabel("Name");
@@ -62,20 +60,8 @@ public class CourseUIOrg extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);
 		panel.add(lblNewLabel);
-		
-		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(980, 0, 49, 49);
-		panel.add(profileButton);
-		settingsButton.setForeground(Color.WHITE);
-		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
-		settingsButton.setBounds(0, -12, 68, 77);
-		panel.add(settingsButton);
-		settingsButton.setContentAreaFilled(false);
 		exitButton.setForeground(Color.WHITE);
 		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
-		
-		
-		profileButton.setContentAreaFilled(false);
 		backButton.setContentAreaFilled(false);
 		
 		
@@ -92,7 +78,7 @@ public class CourseUIOrg extends JFrame {
 		
 		backButton.setForeground(Color.WHITE);
 		backButton.setBackground(new Color(204, 0, 0));
-		backButton.setBounds(90, 3, 85, 54);
+		backButton.setBounds(90, 0, 104, 57);
 		
 		panel.add(backButton);
 		
@@ -179,7 +165,7 @@ public class CourseUIOrg extends JFrame {
 		lblAvailability.setFont(new Font("Dubai Medium", Font.PLAIN, 17));
 		lblAvailability.setBounds(61, 510, 113, 14);
 		mainPanel.add(lblAvailability);
-		
+		exitButton.setContentAreaFilled(false);
 		
 		availabilityLbl.setForeground(Color.BLACK);
 		availabilityLbl.setFont(new Font("Dubai Light", Font.PLAIN, 17));
@@ -187,12 +173,8 @@ public class CourseUIOrg extends JFrame {
 		mainPanel.add(availabilityLbl);
 	}
 
-	public JButton getProfileButton() {
-		return profileButton;
-	}
-	public JButton getSettingsButton() {
-		return settingsButton;
-	}
+	
+	
 	public JButton getExitButton() {
 		return exitButton;
 	}

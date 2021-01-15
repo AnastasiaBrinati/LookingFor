@@ -22,10 +22,8 @@ public class CourseUISUs extends JFrame {
 	private JPanel contentPane;
 	private JPanel panel = new JPanel();
 	private JLabel lblNewLabel = new JLabel("Sportee");
-	private JButton profileButton = new JButton("");
 	private JButton homeButton = new JButton("");
-	private JButton settingsButton = new JButton("\u2630");
-	private JButton exitButton = new JButton("");
+	private JButton exitButton = new JButton("\u2398");
 	JLabel nameLbl = new JLabel("Name");
 	JLabel sportLbl = new JLabel("Sport");
 	JLabel organizationLbl = new JLabel("Organization");
@@ -36,6 +34,7 @@ public class CourseUISUs extends JFrame {
 	JTextArea descriptionTextArea = new JTextArea();
 	
 	private JButton joinButton = new JButton("Join");
+	private final JButton backButton = new JButton("\u21E6");
 
 	public CourseUISUs() {
 
@@ -58,15 +57,6 @@ public class CourseUISUs extends JFrame {
 		lblNewLabel.setFont(new Font("Bauhaus 93", Font.PLAIN, 35));
 		lblNewLabel.setBounds(438, 10, 151, 44);
 		panel.add(lblNewLabel);
-		
-		profileButton.setBackground(SystemColor.info);
-		profileButton.setBounds(980, 0, 49, 49);
-		panel.add(profileButton);
-		settingsButton.setForeground(Color.WHITE);
-		settingsButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 40));
-		settingsButton.setBounds(0, 0, 69, 54);
-		panel.add(settingsButton);
-		settingsButton.setContentAreaFilled(false);
 		//settingsButton.setEnabled(false);
 		
 		/*
@@ -101,13 +91,22 @@ public class CourseUISUs extends JFrame {
 		
 		profileButton.setContentAreaFilled(false);
 		*/
+		exitButton.setForeground(Color.WHITE);
+		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
 		
-		exitButton.setBounds(1039, 0, 49, 49);
+		exitButton.setBounds(1009, 0, 79, 67);
 		panel.add(exitButton);
 		
 		homeButton.setContentAreaFilled(false);
 		homeButton.setBounds(373, 1, 55, 53);
 		panel.add(homeButton);
+		backButton.setForeground(Color.WHITE);
+		backButton.setFont(new Font("Cambria Math", Font.PLAIN, 40));
+		backButton.setContentAreaFilled(false);
+		backButton.setBackground(new Color(204, 0, 0));
+		backButton.setBounds(115, 0, 108, 54);
+		
+		panel.add(backButton);
 		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBounds(0, 55, 1088, 588);
@@ -209,12 +208,7 @@ public class CourseUISUs extends JFrame {
 		//LineBorder lineBorder=new LineBorder(Color.white,8,true);
 	}
 
-	public JButton getProfileButton() {
-		return profileButton;
-	}
-	public JButton getSettingsButton() {
-		return settingsButton;
-	}
+	
 	
 	public JButton getHomeButton() {
 		return homeButton;
@@ -224,6 +218,9 @@ public class CourseUISUs extends JFrame {
 	}
 	public JButton getJoinButton() {
 		return joinButton;
+	}
+	public JButton getBackButton() {
+		return backButton;
 	}
 
 	public String getName() {
