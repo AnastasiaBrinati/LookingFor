@@ -110,6 +110,14 @@ public class EventUIOrg extends JFrame {
 		homeButton.setBounds(336, -14, 79, 68);
 		panel.add(homeButton);
 		
+		JButton backButton = new JButton("\u21E6");
+		backButton.setForeground(Color.WHITE);
+		backButton.setFont(new Font("Cambria Math", Font.PLAIN, 40));
+		backButton.setContentAreaFilled(false);
+		backButton.setBackground(new Color(204, 0, 0));
+		backButton.setBounds(98, 0, 85, 54);
+		panel.add(backButton);
+		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBounds(0, 55, 1088, 588);
 		contentPane.add(mainPanel);
