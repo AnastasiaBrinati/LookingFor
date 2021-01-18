@@ -186,18 +186,21 @@ public class Queries {
 					
     }
 
+	//retreiving all courses from DB by a filter "sport"
 	public static ResultSet selectCourseBySport(Statement stmt, String sport) throws SQLException {
 		String selectStatement = "SELECT * FROM courses where sport = '" + sport + "';";
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
 	}
 
+	//retreiving all events from DB by a filter "sport"
 	public static ResultSet selectEventBySport(Statement stmt, String sport) throws SQLException {
 		String selectStatement = "SELECT * FROM events where sport = '" + sport + "';";
         System.out.println(selectStatement);
         return stmt.executeQuery(selectStatement);
 	}
-        
+    
+	//retreiving all courts from DB by a filter "sport"
     public static ResultSet selectCourtBySport(Statement stmt, String sport) throws SQLException {
     	String selectStatement = "SELECT * FROM courts where sport = '" + sport + "';";
         System.out.println(selectStatement);
