@@ -67,30 +67,30 @@ public class UserProfileDAO {
             		      	//get list of courses
             		   		stmtCourses = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             		   		
-            		   		ResultSet tupleCourses=Queries.getCourses(stmtCourses, username);
+            		   		ResultSet tupleCourses=Queries.getAllSubbedCourses(stmtCourses, username);
             		   		if(tupleCourses.first()) {
             		   			while(tupleCourses.next()) {
-            		   				UserProfile.addCourse(courseRetreiver(tupleCourses));
+            		   				UserProfile.addCourse(subbedCourseRetreiver(tupleCourses));
             		   			}
             		   			tupleCourses.close();
             		   		}
             		   		
             		   		//get list of events
             		   		stmtEvents = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            		   		ResultSet tupleEvents=Queries.getEvents(stmtEvents, username);
+            		   		ResultSet tupleEvents=Queries.getAllSubbedEvents(stmtEvents, username);
             		   		if(tupleEvents.first()) {
             		   			while(tupleEvents.next()) {
-            		   				UserProfile.addEvent(eventRetreiver(tupleEvents));
+            		   				UserProfile.addEvent(subbedEventRetreiver(tupleEvents));
             		   			}
             		   			tupleEvents.close();
             		   		}
             		   		
             		   	    //get list of courts
             		   		stmtCourts = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            		   		ResultSet tupleCourts=Queries.getCourts(stmtCourts, username);
+            		   		ResultSet tupleCourts=Queries.getAllBookedCourts(stmtCourts, username);
             		   		if(tupleCourts.first()) {
             		   			while(tupleCourts.next()) {
-            		   				UserProfile.addCourt(courtRetreiver(tupleCourts));
+            		   				UserProfile.addCourt(bookedCourtRetreiver(tupleCourts));
             		   			}
             		   			tupleCourts.close();
             		   		}
@@ -391,6 +391,167 @@ public class UserProfileDAO {
 			court.setDescription(description);
 			return court;
 	}
+	
+	public Course subbedCourseRetreiver(ResultSet tupleCourses) throws SQLException {
+	    String orgName=tupleCourses.getString("orgName");
+	    String courseName=tupleCourses.getString("courseName");
+	    
+	    Statement stmt=null;
+	    Connection conn=null;
+	    
+	    try {
+	        conn=DriverManager.getConnection(DB_URL,USER,PASS);
+		    stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+	        ResultSet rs=Queries.getUserCourse(stmt, courseName, orgName);
+	     
+	     
+	        String name=rs.getString("name");
+			String organization=rs.getString("organization");
+			String lessonPrice=rs.getString("lessonPrice");
+			String monthlyPrice=rs.getString("monthlyPrice");
+			String sport=rs.getString("sport");
+			String instructorName=rs.getString("instructorName");
+			String availability=rs.getString("availability");
+			String description=rs.getString("description");
+			
+			Course course=new Course();
+			course.setName(name);
+			course.setOrganization(organization);
+			course.setLessonPrice(lessonPrice);
+			course.setMonthlyPrice(monthlyPrice);
+			course.setSport(sport);
+			course.setInstructorName(instructorName);
+			course.setAvailability(availability);
+			course.setDescription(description);
+			rs.close();
+			return course;
+	    }
+	    finally {
+	    	 try {
+	                if (stmt != null)
+	                    stmt.close();
+	               
+	            } catch (SQLException se2) {
+	            }
+	            try {
+	                if (conn != null)
+	                    conn.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	            }
+				
+	    	
+	    }
+		
+		
+    }
+	
+	public Event subbedEventRetreiver(ResultSet tupleEvents) throws SQLException {
+	    String orgName=tupleEvents.getString("orgName");
+	    String courseName=tupleEvents.getString("courseName");
+	    
+	    Statement stmt=null;
+	    Connection conn=null;
+	    
+	    try {
+	        conn=DriverManager.getConnection(DB_URL,USER,PASS);
+		    stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+	        ResultSet rs=Queries.getUserCourse(stmt, courseName, orgName);
+	     
+	     
+	        String name=rs.getString("name");
+			String organization=rs.getString("organization");
+			String imgSrc=rs.getString("imgSrc");
+			String date=rs.getString("date");
+			String price=rs.getString("price");
+			String sport=rs.getString("sport");
+			
+			String availability=rs.getString("availability");
+			String description=rs.getString("description");
+			
+			Event event=new Event();
+			event.setName(name);
+			event.setOrganization(organization);
+			event.setImgSrc(imgSrc);
+			event.setDate(date);
+			event.setPrice(price);
+			event.setSport(sport);
+			event.setAvailability(availability);
+			event.setDescription(description);
+			rs.close();
+			return event;
+	    }
+	    finally {
+	    	 try {
+	                if (stmt != null)
+	                    stmt.close();
+	               
+	            } catch (SQLException se2) {
+	            }
+	            try {
+	                if (conn != null)
+	                    conn.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	            }
+				
+	    	
+	    }
+		
+		
+    }
+	
+	public Court bookedCourtRetreiver(ResultSet tupleCourts) throws SQLException {
+	    String orgName=tupleCourts.getString("orgName");
+	    String courseName=tupleCourts.getString("courseName");
+	    
+	    Statement stmt=null;
+	    Connection conn=null;
+	    
+	    try {
+	        conn=DriverManager.getConnection(DB_URL,USER,PASS);
+		    stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+	        ResultSet rs=Queries.getUserCourse(stmt, courseName, orgName);
+	     
+	        String name=rs.getString("name");
+			//String organization=tupleCourts.getString("organization");
+			String price=rs.getString("price");
+			String sport=rs.getString("sport");
+			String availability=rs.getString("availability");
+			String description=rs.getString("description");
+			String type=rs.getString("type");
+			Court court=new Court();
+			
+			court.setName(name);
+			//court.setOrganization(organization);
+			court.setType(type);
+			court.setSport(sport);
+			court.setPrice(price);
+			court.setAvailability(availability);
+			court.setDescription(description);
+	        
+			rs.close();
+			return court;
+	    }
+	    finally {
+	    	 try {
+	                if (stmt != null)
+	                    stmt.close();
+	               
+	            } catch (SQLException se2) {
+	            }
+	            try {
+	                if (conn != null)
+	                    conn.close();
+	            } catch (SQLException se) {
+	                se.printStackTrace();
+	            }
+				
+	    	
+	    }
+		
+		
+    }
 	
 	
 	public static boolean updatePassword(String newPassword,String username) throws SQLException {

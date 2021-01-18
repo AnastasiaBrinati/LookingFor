@@ -168,29 +168,23 @@ public class Queries {
 		 
 	}
 		
-		 public static int deleteCourt(Statement stmt, String itemName, String organizationName) throws SQLException {
+    public static int deleteCourt(Statement stmt, String itemName, String organizationName) throws SQLException {
 			 
-				String deleteStatement = String.format("DELETE FROM  courts  WHERE name = '%s' AND organization = '%s' ", itemName,organizationName);
-		        System.out.println(deleteStatement);
-		        return stmt.executeUpdate(deleteStatement);
+		String deleteStatement = String.format("DELETE FROM  courts  WHERE name = '%s' AND organization = '%s' ", itemName,organizationName);
+		System.out.println(deleteStatement);
+		return stmt.executeUpdate(deleteStatement);
 				
 		    
-		}
+	}
 			
-			 
-			 public static int deleteEvent(Statement stmt, String itemName, String organizationName) throws SQLException {
-				 {
-					String deleteStatement = String.format("DELETE FROM  events  WHERE name = '%s' AND organization = '%s' ", itemName,organizationName);
-			        System.out.println(deleteStatement);
-			        return stmt.executeUpdate(deleteStatement);
+		 
+	public static int deleteEvent(Statement stmt, String itemName, String organizationName) throws SQLException {
+		
+	    String deleteStatement = String.format("DELETE FROM  events  WHERE name = '%s' AND organization = '%s' ", itemName,organizationName);
+		System.out.println(deleteStatement);
+		return stmt.executeUpdate(deleteStatement);
 					
-			    
-			}
-				
-	
-  
-	
-}
+    }
 
 	public static ResultSet selectCourseBySport(Statement stmt, String sport) throws SQLException {
 		String selectStatement = "SELECT * FROM courses where sport = '" + sport + "';";
@@ -205,9 +199,32 @@ public class Queries {
 	}
         
     public static ResultSet selectCourtBySport(Statement stmt, String sport) throws SQLException {
-    		String selectStatement = "SELECT * FROM courts where sport = '" + sport + "';";
-            System.out.println(selectStatement);
-            return stmt.executeQuery(selectStatement);
-    }	
+    	String selectStatement = "SELECT * FROM courts where sport = '" + sport + "';";
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+    
+    //retreiving all courses where user is subscribed
+    public static ResultSet getAllSubbedCourses(Statement stmt, String username) throws SQLException {
+		String selectStatement = "SELECT * FROM joinedCourses where username = '" + username + "';";
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+    //retreiving all events where user is subscribed
+    public static ResultSet getAllSubbedEvents(Statement stmt, String username) throws SQLException {
+		String selectStatement = "SELECT * FROM joinedEvents where username = '" + username + "';";
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+    //retreiving all courts where user is subscribed
+    public static ResultSet getAllBookedCourts(Statement stmt, String username) throws SQLException {
+		String selectStatement = "SELECT * FROM bookedCourts where username = '" + username + "';";
+        System.out.println(selectStatement);
+        return stmt.executeQuery(selectStatement);
+    }
+
+	
+
+    
 	}
 
