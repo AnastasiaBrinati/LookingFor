@@ -41,7 +41,7 @@ public class EventUIOrg extends JFrame {
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1102, 682);
+		setBounds(100, 100, 1280, 780);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -49,7 +49,7 @@ public class EventUIOrg extends JFrame {
 		
 
 		panel.setBackground(new Color(255, 0, 0));
-		panel.setBounds(0, 0, 1088, 54);
+		panel.setBounds(0, 0, 1264, 54);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -115,12 +115,12 @@ public class EventUIOrg extends JFrame {
 		panel.add(backButton);
 		
 		JPanel mainPanel = new JPanel();
-		mainPanel.setBounds(0, 55, 1088, 588);
+		mainPanel.setBounds(0, 55, 1264, 686);
 		contentPane.add(mainPanel);
 		mainPanel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 0, 1088, 148);
+		panel_1.setBounds(0, 0, 1264, 148);
 		panel_1.setBackground(new Color(47, 79, 79));
 		mainPanel.add(panel_1);
 		panel_1.setLayout(null);

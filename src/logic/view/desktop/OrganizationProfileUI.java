@@ -122,7 +122,7 @@ public class OrganizationProfileUI extends JFrame {
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1254, 750);
+		setBounds(100, 100, 1280, 780);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
@@ -134,7 +134,7 @@ public class OrganizationProfileUI extends JFrame {
 		
 		
 		newCoursePanel.setBackground(new Color(211, 211, 211));
-		newCoursePanel.setBounds(0, 0, 972, 568);
+		newCoursePanel.setBounds(0, 0, 1002, 601);
 		coursesPanel.add(newCoursePanel);
 		newCoursePanel.setLayout(null);		
 		cancelCourseButton.setBounds(52, 498, 162, 40);
@@ -364,7 +364,7 @@ public class OrganizationProfileUI extends JFrame {
 		lblNewLabel_4.setBounds(104, 0, 149, 54);
 		
 		headerPanel.add(lblNewLabel_4);
-		lateralPanel.setBounds(0, 53, 269, 660);
+		lateralPanel.setBounds(0, 53, 269, 688);
 		lateralPanel.setBackground(new Color(204, 0, 0));
 		
 		contentPane.add(lateralPanel);
@@ -401,7 +401,7 @@ public class OrganizationProfileUI extends JFrame {
 		//profile header
 		JPanel subtitlePanel = new JPanel();
 		subtitlePanel.setBackground(new Color(192, 192, 192));
-		subtitlePanel.setBounds(268, 53, 972, 92);
+		subtitlePanel.setBounds(268, 53, 996, 92);
 		contentPane.add(subtitlePanel);
 		subtitlePanel.setLayout(null);
 										
