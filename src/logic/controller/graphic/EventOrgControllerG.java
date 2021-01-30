@@ -35,15 +35,7 @@ public class EventOrgControllerG {
 	
 	public void assegnaGestori() {
 		
-		ActionListener gestoreSettings = e -> {
-
-			view.setVisible(false);
-			SettingsUIOrg settingsUI = new SettingsUIOrg();
-			SettingsControllerGOrg.getInstance(settingsUI);
 		
-
-		};
-		view.getSettingsButton().addActionListener(gestoreSettings);
 		
 		ActionListener gestoreHome = e -> {
 			

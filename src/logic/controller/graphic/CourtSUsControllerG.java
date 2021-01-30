@@ -46,15 +46,7 @@ public class CourtSUsControllerG {
 		view.getHomeButton().addActionListener(gestoreHome);
 		
 		
-		ActionListener gestoreSettings = e -> {
-
-			view.setVisible(false);
-			SettingsUISUs settingsUI = new SettingsUISUs();
-			SettingsControllerGSUs.getInstance(settingsUI);
 		
-
-		};
-		view.getSettingsButton().addActionListener(gestoreSettings);
 		
 		ActionListener gestoreExit = e -> {
 

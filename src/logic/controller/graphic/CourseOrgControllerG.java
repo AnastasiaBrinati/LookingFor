@@ -39,13 +39,7 @@ public class CourseOrgControllerG {
 		
 		
 		
-		ActionListener gestoreProfile = e -> {
-			view.setVisible(false);
-			UserProfileUI vista = new UserProfileUI();
-			UserProfileControllerG.getInstance(vista);
-
-		};
-		view.getProfileButton().addActionListener(gestoreProfile);
+		
 		
 		
 		
