@@ -31,6 +31,7 @@ public class CourseSUsControllerG {
 	
 	private static void showCourseUI() {
 		view.setVisible(true);
+		view.setLocationRelativeTo(null);
 	}
 	
 	public void assegnaGestori() {

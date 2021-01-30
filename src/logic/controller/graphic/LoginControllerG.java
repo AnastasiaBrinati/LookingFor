@@ -31,6 +31,7 @@ public class LoginControllerG {
 	public static void showLoginUI() {
 		loginView.resetForm();
 		loginView.setVisible(true);
+		loginView.setLocationRelativeTo(null);
 	}
 
 	
@@ -39,7 +40,8 @@ public class LoginControllerG {
 		ActionListener gestoreSignUp = e -> {
 			
 				loginView.setVisible(false);
-				SignUpUI signInView = new SignUpUI();		
+				SignUpUI signInView = new SignUpUI();	
+				signInView.setLocationRelativeTo(null);
 				SignUpControllerG.getInstance(signInView);
 
 		};
@@ -55,10 +57,12 @@ public class LoginControllerG {
 					loginView.setVisible(false);
 					 if(typeOfUser.equals("singleuser")) {
 						HomeUISUs homepageView = new HomeUISUs();
+						homepageView.setLocationRelativeTo(null);
 						HomeControllerGSUs.getInstance(homepageView);
 					 }
 					 else if(typeOfUser.equals("organization")) {
 						HomeUISUs homepageView = new HomeUISUs();
+						homepageView.setLocationRelativeTo(null);
 						HomeControllerGOrg.getInstance(homepageView);
 						
 					 }

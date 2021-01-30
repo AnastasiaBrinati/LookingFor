@@ -191,6 +191,7 @@ public class HomeControllerGSUs {
 	
 	private static void showHomepage() {
 		view.setVisible(true);
+		view.setLocationRelativeTo(null);
 	}
 
 }

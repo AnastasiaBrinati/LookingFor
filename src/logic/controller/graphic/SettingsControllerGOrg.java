@@ -32,6 +32,7 @@ public class SettingsControllerGOrg {
 	
 	private static void showSettingsView() {
 		view.setVisible(true);
+		view.setLocationRelativeTo(null);
 	}
 	
 	private static void setCredentials() {

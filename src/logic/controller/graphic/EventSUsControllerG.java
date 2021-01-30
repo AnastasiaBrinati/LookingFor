@@ -29,6 +29,7 @@ public class EventSUsControllerG {
 	
 	private static void showEventUI() {
 		view.setVisible(true);
+		view.setLocationRelativeTo(null);
 	}
 	
 	public void assegnaGestori() {

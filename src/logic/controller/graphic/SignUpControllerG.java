@@ -17,6 +17,7 @@ public class SignUpControllerG {
 	private SignUpControllerG(SignUpUI vista) {
 		view = vista;
 		
+		
 	}
 
 	public static synchronized SignUpControllerG getInstance(SignUpUI vista) {
@@ -90,6 +91,7 @@ public class SignUpControllerG {
 	}
 	public static void showSignUpUI() {
 		view.setVisible(true);
+		view.setLocationRelativeTo(null);
 	}
 
 }

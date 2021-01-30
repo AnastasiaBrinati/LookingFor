@@ -45,6 +45,7 @@ public class OrganizationControllerG{
 	public static void viewOrganizationProfileUI() {
 		view.setVisible(true);
 		view.setDescriptionPanelVisible();
+		view.setLocationRelativeTo(null);
 	}
 	
 	public static void setCredentials() {
@@ -71,6 +72,7 @@ public class OrganizationControllerG{
 			
 				view.setVisible(false);
 				LoginUI view = new LoginUI();
+				view.setLocationRelativeTo(null);
 				LoginControllerG.getInstance(view);
 		};
 		view.getProfileButton().addActionListener(gestoreLogin);
@@ -262,6 +264,7 @@ public class OrganizationControllerG{
 		      public void actionPerformed(ActionEvent e) {
 					
 					CourseUIOrg courseUI = new CourseUIOrg();
+					courseUI.setLocationRelativeTo(null);
 						try {
 						   CourseOrgControllerG.getInstance(courseUI, courseName, orgName);
 						   view.setVisible(false);
@@ -280,6 +283,7 @@ public class OrganizationControllerG{
 			public void actionPerformed(ActionEvent e) {
 
 				CourtUIOrg courtUI = new CourtUIOrg();
+				courtUI.setLocationRelativeTo(null);
 				try {
 					CourtOrgControllerG.getInstance(courtUI, courtName, orgName);
 					view.setVisible(false);
@@ -298,6 +302,7 @@ public class OrganizationControllerG{
 			public void actionPerformed(ActionEvent e) {
 
 				EventUIOrg eventUI = new EventUIOrg();
+				eventUI.setLocationRelativeTo(null);
 				try {
 					EventOrgControllerG.getInstance(eventUI, eventName, orgName);
 					view.setVisible(false);

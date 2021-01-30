@@ -37,6 +37,7 @@ public class UserProfileControllerG {
 	
 	private static void showUserProfileUI() {
 		view.setVisible(true);
+		view.setLocationRelativeTo(null);
 	}
 
 	public static void setCredentials() {

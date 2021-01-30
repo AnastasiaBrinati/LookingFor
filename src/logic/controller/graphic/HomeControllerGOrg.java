@@ -69,6 +69,7 @@ import logic.view.desktop.SettingsUIOrg;
 		
 		public static void showHomepage() {
 			view.setVisible(true);
+			view.setLocationRelativeTo(null);
 		}
 
 	}

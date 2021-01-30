@@ -76,6 +76,7 @@ public class CourseOrgControllerG {
 				try {
 					controller.deleteCourse(view.getCourseName());
 					OrganizationProfileUI orgUI = new OrganizationProfileUI();
+					orgUI.setLocationRelativeTo(null);
 					OrganizationControllerG orgControllerG =OrganizationControllerG.getInstance(orgUI);
 					orgControllerG.deleteThisButton(view.getCourseName());
 				} catch (SQLException e1) {
