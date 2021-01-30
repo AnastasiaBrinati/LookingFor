@@ -58,7 +58,7 @@ import javax.swing.SwingConstants;
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1311, 683);
+		setBounds(100, 100, 1280, 780);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -89,7 +89,7 @@ import javax.swing.SwingConstants;
 										
 										subtitlePanel.add(scoreTitlelbl);
 								
-										descriptionPanel.setBounds(305, 206, 992, 438);
+										descriptionPanel.setBounds(305, 206, 992, 535);
 										descriptionPanel.setLayout(null);
 										
 										contentPane.add(descriptionPanel);
@@ -138,12 +138,12 @@ import javax.swing.SwingConstants;
 		contentPane.add(headerPanel);
 		exitButton.setForeground(Color.WHITE);
 		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
-		exitButton.setBounds(1229, -1, 86, 67);
+		exitButton.setBounds(1175, -1, 86, 67);
 		
 		headerPanel.add(exitButton);
 		
 		panel.setBackground(new Color(204, 0, 0));
-		panel.setBounds(0, 51, 307, 593);
+		panel.setBounds(0, 51, 307, 690);
 		panel.setLayout(null);
 		coursesButton.setForeground(Color.WHITE);
 		coursesButton.setBackground(new Color(204, 0, 0));

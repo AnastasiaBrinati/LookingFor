@@ -75,7 +75,7 @@ public class SettingsUISUs extends JFrame {
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1311, 696);
+		setBounds(100, 100, 1280, 780);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -84,7 +84,7 @@ public class SettingsUISUs extends JFrame {
 				
 		textFieldName.setBounds(223, 111, 241, 25);
 		textFieldName.setColumns(10);
-		namePanel.setBounds(305, 168, 992, 491);
+		namePanel.setBounds(305, 168, 992, 573);
 		
 		contentPane.add(namePanel);
 		namePanel.setLayout(null);
@@ -276,7 +276,7 @@ public class SettingsUISUs extends JFrame {
 		contentPane.add(headerPanel);
 														
 		panel.setBackground(new Color(204, 0, 0));
-		panel.setBounds(0, 54, 307, 605);
+		panel.setBounds(0, 54, 307, 687);
 		panel.setLayout(null);
 		credentialsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -306,7 +306,7 @@ public class SettingsUISUs extends JFrame {
 				//Image img8=new ImageIcon(this.getClass().getResource("/003-home.png")).getImage();
 				//homeButton.setIcon(new ImageIcon(img8));
 				homeButton.setContentAreaFilled(false);
-				exitButton.setBounds(1226, 0, 71, 67);
+				exitButton.setBounds(1166, 0, 71, 67);
 				
 				headerPanel.add(exitButton);
 				searchButton.setBackground(Color.DARK_GRAY);

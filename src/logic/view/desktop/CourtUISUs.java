@@ -43,7 +43,7 @@ public class CourtUISUs extends JFrame {
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1102, 682);
+		setBounds(100, 100, 1280, 780);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -51,7 +51,7 @@ public class CourtUISUs extends JFrame {
 		exitButton.setContentAreaFilled(false);
 
 		menuBarPanel.setBackground(new Color(255, 0, 0));
-		menuBarPanel.setBounds(0, 0, 1088, 54);
+		menuBarPanel.setBounds(0, 0, 1264, 54);
 		contentPane.add(menuBarPanel);
 		menuBarPanel.setLayout(null);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -115,12 +115,12 @@ public class CourtUISUs extends JFrame {
 		menuBarPanel.add(backButton);
 		
 		JPanel mainPanel = new JPanel();
-		mainPanel.setBounds(0, 55, 1088, 588);
+		mainPanel.setBounds(0, 55, 1264, 686);
 		contentPane.add(mainPanel);
 		mainPanel.setLayout(null);
 		
 		JPanel titlePanel = new JPanel();
-		titlePanel.setBounds(0, 0, 1088, 148);
+		titlePanel.setBounds(0, 0, 1264, 148);
 		titlePanel.setBackground(new Color(47, 79, 79));
 		mainPanel.add(titlePanel);
 		titlePanel.setLayout(null);
@@ -147,7 +147,7 @@ public class CourtUISUs extends JFrame {
 		});
 		bookButton.setForeground(Color.BLACK);
 		bookButton.setBackground(Color.GRAY);
-		bookButton.setBounds(900, 44, 157, 65);
+		bookButton.setBounds(1061, 47, 157, 65);
 		titlePanel.add(bookButton);
 		
 		JLabel organizationLbl = new JLabel("Organization");

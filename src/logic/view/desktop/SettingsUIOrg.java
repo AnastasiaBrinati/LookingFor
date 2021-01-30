@@ -72,14 +72,14 @@ public class SettingsUIOrg extends JFrame {
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1311, 696);
+		setBounds(100, 100, 1280, 780);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 							
 		panel.setBackground(new Color(204, 0, 0));
-		panel.setBounds(0, 54, 307, 605);
+		panel.setBounds(0, 54, 307, 687);
 		panel.setLayout(null);
 		
 		nameButton.setForeground(Color.WHITE);
@@ -98,7 +98,7 @@ public class SettingsUIOrg extends JFrame {
 		
 		
 		
-		emailPanel.setBounds(315, 179, 993, 480);
+		emailPanel.setBounds(315, 179, 993, 562);
 		contentPane.add(emailPanel);
 		emailPanel.setLayout(null);
 		
@@ -243,7 +243,7 @@ public class SettingsUIOrg extends JFrame {
 															homeButton.setContentAreaFilled(false);
 															
 															homeButton.setContentAreaFilled(false);
-															exitButton.setBounds(1219, 0, 78, 72);
+															exitButton.setBounds(1150, -3, 78, 72);
 															
 															headerPanel.add(exitButton);
 															searchButton.setVerticalAlignment(SwingConstants.TOP);

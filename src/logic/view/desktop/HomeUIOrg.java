@@ -52,14 +52,14 @@ public class HomeUIOrg extends JFrame {
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1102, 682);
+		setBounds(100, 100, 1280, 780);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		headerPanel.setBackground(new Color(255, 0, 0));
-		headerPanel.setBounds(0, 0, 1088, 54);
+		headerPanel.setBounds(0, 0, 1264, 54);
 		contentPane.add(headerPanel);
 		headerPanel.setLayout(null);
 		lblNewLabel.setForeground(new Color(255, 255, 255));
@@ -91,7 +91,7 @@ public class HomeUIOrg extends JFrame {
 		textField.setColumns(10);
 		lateralPanel.setBackground(new Color(204, 0, 0));
 		exitButton.setContentAreaFilled(false);
-		lateralPanel.setBounds(10, 53, 246, 592);
+		lateralPanel.setBounds(0, 53, 246, 688);
 		contentPane.add(lateralPanel);
 		lateralPanel.setLayout(null);
 		citylbl.setForeground(Color.WHITE);
@@ -123,7 +123,7 @@ public class HomeUIOrg extends JFrame {
 		
 		lateralPanel.add(sportChoice);
 		
-		panelHome.setBounds(247, 53, 841, 592);
+		panelHome.setBounds(247, 53, 1017, 688);
 		contentPane.add(panelHome);
 
 		
