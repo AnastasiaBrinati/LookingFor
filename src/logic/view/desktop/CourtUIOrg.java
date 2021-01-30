@@ -62,37 +62,6 @@ public class CourtUIOrg extends JFrame {
 		profileButton.setBackground(SystemColor.info);
 		profileButton.setBounds(980, 0, 49, 49);
 		panel.add(profileButton);
-		/*
-		Image img3=new ImageIcon(this.getClass().getResource("049-edit (1).png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img3));
-		settingsButton.setContentAreaFilled(false);
-
-		Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
-		exitButton.setIcon(new ImageIcon(img5));
-		exitButton.setContentAreaFilled(false);
-
-		//Image img5=new ImageIcon(this.getClass().getResource("/exit-32.png")).getImage();
-		//exitButton.setIcon(new ImageIcon(img5));
-		exitButton.setContentAreaFilled(false);
-
-		Image img6=new ImageIcon(this.getClass().getResource("/settings-24.png")).getImage();
-		settingsButton.setIcon(new ImageIcon(img6));
-		settingsButton.setContentAreaFilled(false);
-
-		//Image img6=new ImageIcon(this.getClass().getResource("/settings-24.png")).getImage();
-		//settingsButton.setIcon(new ImageIcon(img6));
-		settingsButton.setContentAreaFilled(false);
-
-		
-		//Image img4=new ImageIcon(this.getClass().getResource("/040-user.png")).getImage();
-		//profileButton.setIcon(new ImageIcon(img4));
-		profileButton.setContentAreaFilled(false);
-
-		
-		
-		profileButton.setContentAreaFilled(false);
-		
-		*/
 		
 		exitButton.setBounds(1039, 0, 49, 49);
 		panel.add(exitButton);
@@ -205,6 +174,10 @@ public class CourtUIOrg extends JFrame {
 
 	public JButton getDeleteButton() {
 		return deleteButton;
+	}
+
+	public AbstractButton getSettingsButton() {
+		return settingsButton;
 	}
 }
 	
