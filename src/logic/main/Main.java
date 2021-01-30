@@ -13,6 +13,7 @@ public class Main {
 			public void run() {
 
 				LoginUI view = new LoginUI();
+				view.setLocationRelativeTo(null);
 				LoginControllerG.getInstance(view);
 
 			}
