@@ -1,6 +1,5 @@
 package logic.controller;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import logic.model.Course;
@@ -14,10 +13,10 @@ public class FilterController {
 	
 	private static FilterController instance=null;
 	
-	
 	private FilterController() {
-		
+		//constructor
 	}
+	
 	public static synchronized FilterController getInstance() {
 		if(instance==null) {
 			instance=new FilterController();
@@ -27,58 +26,66 @@ public class FilterController {
 	
 	public ArrayList<String> applyFilters(String sport,String type) throws Exception {
 		
+		String castedType = "";
 		ArrayList<String> itemThenOrganizationList=new ArrayList<String>();
-		System.out.println("going to retrive this type: "+ type);
+		CourseDAO courseDAO=new CourseDAO();
+		EventDAO eventDAO=new EventDAO();
+		CourtDAO courtDAO=new CourtDAO();
 		
 		switch(type) {
 		
+		case "ALL":
+			
+			castedType = "all";
+			type = "COURSE";
+			
 		case "COURSE":
 			
-			CourseDAO courseDAO=new CourseDAO();
 			ArrayList<Course> foundCourses=new ArrayList<Course>();
 			foundCourses=courseDAO.retreiveBySport(sport);
 			for(int i=0;i<itemThenOrganizationList.size();i++) {
-					//posizioni pari inserisco il nome del corso
+				
+					itemThenOrganizationList.add("COURSE");
+					i++;
 					itemThenOrganizationList.add(foundCourses.get(i).getName());
 				    i++;
-					//posizioni dispari insersico nome organizzazione
 					itemThenOrganizationList.add(foundCourses.get(i).getOrganization());
-				
+					if(castedType.equals("all")) {
+						type="EVENT";
+					}
 				
 			}
-			
-			break;
-		
+					
 		
 	    case "EVENT":
 	    	
-	    	System.out.println("insert events");
-	    	EventDAO eventDAO=new EventDAO();
 			ArrayList<Event> foundEvents=new ArrayList<Event>();
 			foundEvents=eventDAO.retreiveBySport(sport);
-			int i=0;
-			System.out.println("selected  " + foundEvents.get(0).getName());
-			while(i<foundEvents.size()) {
-
-					itemThenOrganizationList.add(foundEvents.get(i).getName());
-					System.out.println("inserting this specific event: " + foundEvents.get(i).getName());
-					itemThenOrganizationList.add(foundEvents.get(i).getOrganization());
-					System.out.println("of this specific org: " + foundEvents.get(i).getOrganization());
+			for(int i=0;i<itemThenOrganizationList.size();i++) {
+					
+					itemThenOrganizationList.add("EVENT");
 					i++;
+					itemThenOrganizationList.add(foundEvents.get(i).getName());
+					i++;
+					itemThenOrganizationList.add(foundEvents.get(i).getOrganization());
+
+					
+					if(castedType.equals("all")) {
+						type="COURT";
+					}
 
 			}	
-		    break;
-	
-	
+		  
         case "COURT":
-        	CourtDAO courtDAO=new CourtDAO();
+        	
 			ArrayList<Court> foundCourts=new ArrayList<Court>();
 			foundCourts=courtDAO.retreiveBySport(sport);
-			for(i=0;i<itemThenOrganizationList.size();i++) {
-					//posizioni pari inserisco il nome dell'evento
+			for(int i=0;i<itemThenOrganizationList.size();i++) {
+						
+					itemThenOrganizationList.add("COURT");
+					i++;
 					itemThenOrganizationList.add(foundCourts.get(i).getName());
 				    i++;
-					//posizioni dispari insersico nome organizzazione
 					itemThenOrganizationList.add(foundCourts.get(i).getOrganization());
 				
 			}	

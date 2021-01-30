@@ -59,7 +59,7 @@ public class NewCourtBean {
 	
 	
 	public static void addCourt(NewCourtBean bean) throws Exception {
-		AddCourtController addCourtController=new AddCourtController();
+		AddCourtController addCourtController=AddCourtController.getInstance();
 		addCourtController.addCourt(bean);
 	}
 	

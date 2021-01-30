@@ -35,7 +35,6 @@ public class SettingsControllerGSUs {
 	
 	private static void setCredentials() {
 		ProfileBean profileBean = new ProfileBean();
-		ProfileBean.setCredentials(profileBean);
 		String name = profileBean.getName();
 		String surname = profileBean.getSurname();
 		String username = profileBean.getUsername();

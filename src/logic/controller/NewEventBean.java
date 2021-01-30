@@ -59,7 +59,7 @@ public class NewEventBean {
 	}
 	
 	public static void addEvent(NewEventBean bean) throws Exception {
-		AddEventController addEventController=new AddEventController();
+		AddEventController addEventController=AddEventController.getInstance();
 		addEventController.addEvent(bean);
 	}
 	

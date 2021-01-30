@@ -1,7 +1,5 @@
 package logic.controller;
 
-import java.sql.SQLException;
-
 public class SettingsOrgBean {
 
 		private String name;
@@ -44,17 +42,17 @@ public class SettingsOrgBean {
 		
 
 		public static void changeName(SettingsOrgBean settingBean) throws Exception {
-			CustomizationController customizer = new CustomizationController();
+			CustomizationController customizer =CustomizationController.getInstance();
 			customizer.changeName(settingBean);
 		}
 		
 		public static void changeEmail(SettingsOrgBean settingBean) throws Exception {
-			CustomizationController customizer = new CustomizationController();
+			CustomizationController customizer =CustomizationController.getInstance();
 			customizer.changeEmail(settingBean);
 		}
 		
 		public static void changePassword(SettingsOrgBean settingBean) throws Exception {
-			CustomizationController customizer = new CustomizationController();
+			CustomizationController customizer =CustomizationController.getInstance();
 			customizer.changePassword(settingBean);
 		}
 }

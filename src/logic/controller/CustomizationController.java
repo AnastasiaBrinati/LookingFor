@@ -7,6 +7,19 @@ import logic.model.UserProfile;
 
 public class CustomizationController {
 	
+	
+	private static CustomizationController instance=null;
+	
+	private CustomizationController() {
+		//constructor
+	}
+	
+	public static CustomizationController getInstance() {
+		if(instance==null) {
+			instance=new CustomizationController();
+		}
+		return instance;
+	}
 
 	//single user
 	public void changeCredentialsName(SettingsSUsBean settingBean) throws SQLException {

@@ -7,8 +7,8 @@ public class AddCourseController {
 	
 	private static AddCourseController instance;
 	
-	public AddCourseController() {
-		//costruttore
+	private AddCourseController() {
+		//constructor
 	}
 		
 	public static synchronized AddCourseController getInstance() {

@@ -3,7 +3,6 @@ package logic.model;
 public class DeleteItemBean {
 	private String itemName;
 	private String organizationName;
-	private String buttonName;
 	
 	
 	public String getItemName() {

@@ -18,7 +18,7 @@ public class UserProfileDAO {
    
 
 	
-	public String goCheckAndTellMe(String username,String password) throws Exception {
+	public String goCheckAndTellMeUsername(String username,String password) throws Exception {
 		
 		//dichiarazioni 
 		Statement stmt=null;
@@ -33,7 +33,7 @@ public class UserProfileDAO {
 			conn=DriverManager.getConnection(DB_URL,USER,PASS);
 			
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = Queries.checkSignedUser(stmt, username);
+			ResultSet rs = Queries.checkSignedUserByUsername(stmt, username);
 			
 			if (!rs.first()){				
 					Exception e = new Exception("No username Found matching with username: "+username);
@@ -61,36 +61,33 @@ public class UserProfileDAO {
             		   		UserProfile.setUsername(username);
             		   		UserProfile.setPassword(password);
             		
-            		   		System.out.println(type);
-
-            		   		
             		      	//get list of courses
             		   		stmtCourses = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
             		   		
-            		   		ResultSet tupleCourses=Queries.getAllSubbedCourses(stmtCourses, username);
+            		   		ResultSet tupleCourses=Queries.getCourses(stmtCourses, username);
             		   		if(tupleCourses.first()) {
             		   			while(tupleCourses.next()) {
-            		   				UserProfile.addCourse(subbedCourseRetreiver(tupleCourses));
+            		   				UserProfile.addCourse(courseRetreiver(tupleCourses));
             		   			}
             		   			tupleCourses.close();
             		   		}
             		   		
             		   		//get list of events
             		   		stmtEvents = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            		   		ResultSet tupleEvents=Queries.getAllSubbedEvents(stmtEvents, username);
+            		   		ResultSet tupleEvents=Queries.getEvents(stmtEvents, username);
             		   		if(tupleEvents.first()) {
             		   			while(tupleEvents.next()) {
-            		   				UserProfile.addEvent(subbedEventRetreiver(tupleEvents));
+            		   				UserProfile.addEvent(eventRetreiver(tupleEvents));
             		   			}
             		   			tupleEvents.close();
             		   		}
             		   		
             		   	    //get list of courts
             		   		stmtCourts = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-            		   		ResultSet tupleCourts=Queries.getAllBookedCourts(stmtCourts, username);
+            		   		ResultSet tupleCourts=Queries.getCourts(stmtCourts, username);
             		   		if(tupleCourts.first()) {
             		   			while(tupleCourts.next()) {
-            		   				UserProfile.addCourt(bookedCourtRetreiver(tupleCourts));
+            		   				UserProfile.addCourt(courtRetreiver(tupleCourts));
             		   			}
             		   			tupleCourts.close();
             		   		}
@@ -184,6 +181,171 @@ public class UserProfileDAO {
 		
 			
 	}
+	
+	public String goCheckAndTellMeEmail(String email,String password) throws Exception {
+		
+		//dichiarazioni 
+		Statement stmt=null;
+		Statement stmtCourses = null;
+		Statement stmtEvents = null;
+		Statement stmtCourts = null;
+		Connection conn=null;
+		String type=null;
+		
+		try {
+			
+			conn=DriverManager.getConnection(DB_URL,USER,PASS);
+			
+			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+			ResultSet rs = Queries.checkSignedUserByEmail(stmt, email);
+			
+			if (!rs.first()){				
+					Exception e = new Exception("No email Found matching with email: "+email);
+	            	throw e;
+			}
+			
+            rs.first();
+            do{
+            	//verificare se la password è corretta
+            	String foundPassword=rs.getString("password");
+            	if(foundPassword.equals(password)) {
+            		type = rs.getString("type");
+            		if(type.equals("singleuser")) {
+            	
+            			    //setting the user profile 
+            		   		String nome = rs.getString("name");
+            		   		String cognome = rs.getString("surname");
+            		   		String username = rs.getString("username");
+            		   		String location=rs.getString("location");
+            		   		UserProfile.setName(nome);
+            		   		UserProfile.setSurname(cognome);
+            		   		UserProfile.setEmail(email);
+            		   		UserProfile.setLocation(location);
+            		   		UserProfile.setUsername(username);
+            		   		UserProfile.setPassword(password);
+            		
+            		      	//get list of courses
+            		   		stmtCourses = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            		   		
+            		   		ResultSet tupleCourses=Queries.getAllSubbedCourses(stmtCourses, username);
+            		   		if(tupleCourses.first()) {
+            		   			while(tupleCourses.next()) {
+            		   				UserProfile.addCourse(subbedCourseRetreiver(tupleCourses));
+            		   			}
+            		   			tupleCourses.close();
+            		   		}
+            		   		
+            		   		//get list of events
+            		   		stmtEvents = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            		   		ResultSet tupleEvents=Queries.getAllSubbedEvents(stmtEvents, username);
+            		   		if(tupleEvents.first()) {
+            		   			while(tupleEvents.next()) {
+            		   				UserProfile.addEvent(subbedEventRetreiver(tupleEvents));
+            		   			}
+            		   			tupleEvents.close();
+            		   		}
+            		   		
+            		   	    //get list of courts
+            		   		stmtCourts = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            		   		ResultSet tupleCourts=Queries.getAllBookedCourts(stmtCourts, username);
+            		   		if(tupleCourts.first()) {
+            		   			while(tupleCourts.next()) {
+            		   				UserProfile.addCourt(bookedCourtRetreiver(tupleCourts));
+            		   			}
+            		   			tupleCourts.close();
+            		   		}
+            		   		
+            		   		type="singleuser";
+
+            		   		
+            		      	
+            		}
+            		else {
+            			
+            			String username = rs.getString("username");
+            			//being an organization,I set the org profile
+        		   		OrganizationProfile.setName(username);
+        		   		//null:OrganizationProfile.setSurname(cognome);
+        		   		OrganizationProfile.setEmail(email);
+        		   		//OrganizationProfile.setUsername(username);
+        		   		OrganizationProfile.setPassword(password);
+        		   		OrganizationProfile.setLocation(rs.getString("location"));
+        		   		
+        		   		
+        		   		
+        		   		//get list of courses
+        		   		stmtCourses = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+        		   		
+        		   		ResultSet tupleCourses=Queries.getCourses(stmtCourses, username);
+        		   		if(tupleCourses.first()) {
+        		   			while(tupleCourses.next()) {
+        		   				OrganizationProfile.addCourse(courseRetreiver(tupleCourses));
+        		   			
+        		   			}
+        		   			tupleCourses.close();
+        		   		}
+        		   		
+        		   		//get list of events
+        		   		stmtEvents = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+        		   		ResultSet tupleEvents=Queries.getEvents(stmtEvents, username);
+        		   		if(tupleEvents.first()) {
+        		   			while(tupleEvents.next()) {
+        		   				OrganizationProfile.addEvent(eventRetreiver(tupleEvents));
+        		   			}
+        		   			tupleEvents.close();
+        		   		}
+        		   		
+        		   	    //get list of courts
+        		   		stmtCourts = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+        		   		ResultSet tupleCourts=Queries.getCourts(stmtCourts, username);
+        		   		if(tupleCourts.first()) {
+        		   			while(tupleCourts.next()) {
+        		   				OrganizationProfile.addCourt(courtRetreiver(tupleCourts));
+        		   			}
+        		   			tupleCourts.close();
+        		   		}
+        		   		
+        		   		type="organization";
+
+        		   		
+        		   		
+        		   		
+            		}
+            		
+            	}
+                
+
+            }while(rs.next());
+            
+            
+           return type;            
+            
+		}finally {
+			
+			
+            try {
+                if (stmt != null)
+                    stmt.close();
+                if (stmtCourses != null)
+                    stmtCourses.close();
+                if (stmtCourts != null)
+                    stmtCourts.close();
+                if (stmtEvents != null)
+                    stmtEvents.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+			
+		}
+		
+			
+	}
+
 
 	public static void addNewProfile(String name, String surname, String username, String email, String password,String type,String location) throws SQLException {
 		Statement stmt=null;

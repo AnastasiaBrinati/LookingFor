@@ -53,8 +53,6 @@ public class LoginControllerG {
 				try {
 					String typeOfUser = LoginBean.checkCredentials(loginBean);
 					loginView.setVisible(false);
-					if(typeOfUser!=null) {
-						System.out.println("typeOfUser:"+ typeOfUser);
 					 if(typeOfUser.equals("singleuser")) {
 						HomeUISUs homepageView = new HomeUISUs();
 						HomeControllerGSUs.getInstance(homepageView);
@@ -64,7 +62,7 @@ public class LoginControllerG {
 						HomeControllerGOrg.getInstance(homepageView);
 						
 					 }
-					}
+					
 					else {
 						//try again
 						System.out.println("typeOfUser found results to be null...");

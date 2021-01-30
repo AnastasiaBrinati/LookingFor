@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
-
 public class UserProfile {
 	
 	private static String name;
@@ -15,7 +14,7 @@ public class UserProfile {
 	private static String location;
 
 	private static ArrayList<Course> courses = new ArrayList<Course>();
-	private static ArrayList<Event> events=new ArrayList<Event>();
+	private static ArrayList<Event> events = new ArrayList<Event>();
 	private static ArrayList<Court> courts = new ArrayList<Court>();
 
 	 
@@ -78,10 +77,22 @@ public class UserProfile {
 	
 	
 	
-	public static String checkCredentials(String username, String password) throws Exception {
+	public static String checkCredentials(String credential, String password, String type) throws Exception {
 		usDAO = new UserProfileDAO();
-
-		String result = usDAO.goCheckAndTellMe(username,password); 
+		String result = null;
+		
+		switch(type) {
+				
+		case "username":
+				result = usDAO.goCheckAndTellMeUsername(credential,password); 
+				break;
+				
+		
+		case "email":
+				result = usDAO.goCheckAndTellMeEmail(credential,password); 
+				break;
+		}
+		
 		return result;
 		
 	}

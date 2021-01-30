@@ -12,7 +12,7 @@ public class CourtDAO {
 	
 		private static String USER = "u0uxwvy2unqsxnql";
 	    private static String PASS = "nH1ORFX9CBydKKphGtBO";
-	    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nh1orfx9cbydkkphgtbo@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
+	    private static String DB_URL = "jdbc:mysql://u0uxwvy2unqsxnql:nH1ORFX9CBydKKphGtBO@b2wbztxcuqyvqxgg5qkl-mysql.services.clever-cloud.com:3306/b2wbztxcuqyvqxgg5qkl";
 	    
 	    
 	    
@@ -126,15 +126,15 @@ public class CourtDAO {
 	              
 	            	String name=rs.getString("name");
 	            	String organization=rs.getString("organization");
-	            	String price=rs.getString("price");
+	            	//String price=rs.getString("price");
 	            	String availability=rs.getString("availability");
 	            	String description = rs.getString("description");
-	            	String date=rs.getString("date");
+	            	//String date=rs.getString("date");
 	            	Court foundCourt=new Court();
 	            	foundCourt.setName(rs.getString("name"));
-		        	foundCourt.setPrice(rs.getString("price"));
+		        	//foundCourt.setPrice(rs.getString("price"));
 		        	foundCourt.setSport(rs.getString("sport"));
-		        	foundCourt.setType(rs.getString("type"));
+		        	//foundCourt.setType(rs.getString("type"));
 		        	foundCourt.setAvailability(rs.getString("availability"));
 		        	foundCourt.setDescription(rs.getString("description"));
 	                foundCourts.add(foundCourt);

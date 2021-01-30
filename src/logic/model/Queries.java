@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class Queries {
 
 	//query to check if a user is signed or not 
-	public static ResultSet checkSignedUser(Statement stmt, String username) throws SQLException {
+	public static ResultSet checkSignedUserByUsername(Statement stmt, String username) throws SQLException {
 		
 		String sql = "SELECT * FROM users WHERE username = '" + username + "';";
 		
@@ -16,10 +16,9 @@ public class Queries {
 		
 	}
 	
-	//query to check if an organization is signed or not
-    public static ResultSet checkSignedOrganization(Statement stmt, String username, String password) throws SQLException {
+	public static ResultSet checkSignedUserByEmail(Statement stmt, String email) throws SQLException {
 		
-		String sql = "SELECT * FROM users WHERE name = '" + username + "';";
+		String sql = "SELECT * FROM users WHERE email = '" + email + "';";
 		
         System.out.println(sql);
         return stmt.executeQuery(sql);
@@ -49,7 +48,15 @@ public class Queries {
 	return stmt.executeQuery(sql);
 	
     }
-	
+    
+    public static ResultSet getUsers(Statement stmt,String name) throws SQLException {
+    	
+    	String sql="SELECT * FROM users WHERE name = '" + name + "';";
+    	System.out.println(sql);
+    	return stmt.executeQuery(sql);
+    	
+        }
+    
 	
 	//query to add a new Course to the DB
     public static int addCourse(Statement stmt, Course course) throws SQLException  {
@@ -160,13 +167,25 @@ public class Queries {
 	}
 
 	public static int deleteCourse(Statement stmt, String itemName, String organizationName) throws SQLException {
+<<<<<<< .mine
+||||||| .r335
+		 {
+=======
 		 
+>>>>>>> .r347
 			String deleteStatement = String.format("DELETE FROM  courses  WHERE name = '%s' AND organization = '%s' ", itemName,organizationName);
 	        System.out.println(deleteStatement);
 	        return stmt.executeUpdate(deleteStatement);
-			
 		 
 	}
+<<<<<<< .mine
+||||||| .r335
+		
+	
+  
+	
+}
+=======
 		
     public static int deleteCourt(Statement stmt, String itemName, String organizationName) throws SQLException {
 			 
@@ -185,6 +204,7 @@ public class Queries {
 		return stmt.executeUpdate(deleteStatement);
 					
     }
+>>>>>>> .r347
 
 	//retreiving all courses from DB by a filter "sport"
 	public static ResultSet selectCourseBySport(Statement stmt, String sport) throws SQLException {
@@ -228,6 +248,8 @@ public class Queries {
 
 	
 
+    
+    
     
 	}
 

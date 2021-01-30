@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 
 import logic.controller.ProfileBean;
-import logic.model.OrganizationBean;
 import logic.view.desktop.CourseUISUs;
 import logic.view.desktop.EventUISUs;
 import logic.view.desktop.HomeUISUs;
@@ -26,9 +25,9 @@ public class UserProfileControllerG {
 		if (instance == null) {
 			instance = new UserProfileControllerG(vista);
 			instance.assegnaGestori();
-			displayCourses();
-			displayEvents();
 		}
+		displayCourses();
+		displayEvents();
 		
 		setCredentials();
 		showUserProfileUI();
@@ -42,7 +41,6 @@ public class UserProfileControllerG {
 
 	public static void setCredentials() {
 		ProfileBean profileBean = new ProfileBean();
-		ProfileBean.setCredentials(profileBean);
 		String name = profileBean.getName();
 		String surname = profileBean.getSurname();
 		String username = profileBean.getUsername();
@@ -105,15 +103,32 @@ public class UserProfileControllerG {
 
 		};
 		view.getBackButton().addActionListener(gestoreBack);
+		
+		/*
+		ActionListener gestoreSearch = e -> {
+			
+			String item = view.getSearchText();
+			ResearchController researchController = ResearchController.getInstance();
+			//ResearchBean researchBean = new ResearchBean();
+			String result = researchController.research(item);
+			//
+			view.setVisible(false);
+			HomeUISUs vista=new HomeUISUs();
+			HomeControllerGSUs homeControllerG = HomeControllerGSUs.getInstance(vista);
+			homeControllerG.displayResearch(result);
 
+		};
+		view.getSearchButton().addActionListener(gestoreSearch);
+		*/
 	}
+	
 	
 	private static void displayOneCourse(String courseName, String orgName) {
 		
 		  view.createCourseFrame(courseName).addActionListener(new ActionListener() {
 	      public void actionPerformed(ActionEvent e) {
 				
-				CourseUISUs courseUI = new CourseUISUs();
+					CourseUISUs courseUI = new CourseUISUs();
 					try {
 					   CourseSUsControllerG.getInstance(courseUI, courseName, orgName);
 					   view.setVisible(false);
@@ -145,9 +160,10 @@ public class UserProfileControllerG {
 	}
 
 	private static void displayCourses() {
-		
+		view.resetCoursePanel();
 		ProfileBean profileBean = new ProfileBean();
 		for(int i=0; i < profileBean.getCourses().size(); i++) {
+				System.out.println("course" + i + ":" + profileBean.getCourses().get(i).getName());
 				String courseName = profileBean.getCourses().get(i).getName();
 				String orgName = profileBean.getCourses().get(i).getOrganization();
 				displayOneCourse(courseName, orgName);
@@ -156,7 +172,7 @@ public class UserProfileControllerG {
 	}
 	
 	private static void displayEvents() {
-		
+		view.resetEventPanel();
 		ProfileBean profileBean = new ProfileBean();
 		for(int i=0; i < profileBean.getEvents().size(); i++) {
 				String eventName = profileBean.getEvents().get(i).getName();

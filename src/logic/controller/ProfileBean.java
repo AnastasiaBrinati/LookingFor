@@ -9,59 +9,35 @@ import logic.model.UserProfile;
 
 public class ProfileBean {
 	
-	private static String name;
-	private static String surname;
-	private static String username;
-	private static String email;
-	private static String password;
-	private static String location;
-	
-	private static ArrayList<Course> courses = new ArrayList<Course>();
-	private static ArrayList<Event> events=new ArrayList<Event>();
-	private static ArrayList<Court> courts = new ArrayList<Court>();
-	
 	public ProfileBean() {
-		//costruttore
+		//constructor
 	}
 	
 	
 	public String getName() {
-		return name;
-	}
-	public void setName(String nome) {
-		name = nome;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public void setSurname(String cognome) {
-		surname = cognome;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String usern) {
-		username= usern;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String iemail) {
-		email = iemail;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String passwd) {
-		password = passwd;
-	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		ProfileBean.location = location;
+		return UserProfile.getName();
 	}
 	
+	public String getSurname() {
+		return UserProfile.getSurname();
+	}
+	
+	public String getUsername() {
+		return UserProfile.getUsername();
+	}
+	
+	public String getEmail() {
+		return UserProfile.getEmail();
+	}
+	
+	public String getPassword() {
+		return UserProfile.getPassword();
+	}
+	
+	public String getLocation() {
+		return UserProfile.getLocation();
+	}
+		
 	public ArrayList<Course> getCourses() {
 		return UserProfile.getCourses();
 	}
@@ -75,14 +51,4 @@ public class ProfileBean {
 	}
 	
 	
-	
-	public static void setCredentials(ProfileBean profileBean) {
-		profileBean.setName(UserProfile.getName());
-		profileBean.setSurname(UserProfile.getSurname());
-		profileBean.setUsername(UserProfile.getUsername());
-		profileBean.setEmail(UserProfile.getEmail());
-		profileBean.setPassword(UserProfile.getPassword());
-		profileBean.setLocation(UserProfile.getLocation());
-	}
-
 }

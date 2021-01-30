@@ -71,7 +71,7 @@ public class SignUpBean {
 	}
 	
 	public static void signUpUser(SignUpBean signUpBean) throws SQLException {
-		SignUpController controller=new SignUpController();
+		SignUpController controller=SignUpController.getInstance();
 		controller.signUpUser(signUpBean);
 	}
 	

@@ -86,8 +86,8 @@ public class HomeControllerGSUs {
 						
 					switch(itemType) {
 					
-					case "EVENT":
-					
+					case "ALL":
+						
 						view.displayElement(toDisplay.get(i), toDisplay.get(i+1),i/6, j%3).addActionListener(new ActionListener() {
 						
 						@Override
@@ -103,6 +103,7 @@ public class HomeControllerGSUs {
 						}
 					
 						});
+					
 						
 					case "COURSE":
 						
@@ -121,6 +122,24 @@ public class HomeControllerGSUs {
 							}
 						
 							});
+						
+					case "EVENT":
+						
+						view.displayElement(toDisplay.get(i), toDisplay.get(i+1),i/6, j%3).addActionListener(new ActionListener() {
+						
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							EventUISUs eventUI = new EventUISUs();
+							try {
+							   EventSUsControllerG.getInstance(eventUI, name, orgName);
+							   view.setVisible(false);
+							} catch (Exception e1) {
+																
+							   e1.printStackTrace();
+							}
+						}
+					
+						});
 						
 					case "COURT":
 							

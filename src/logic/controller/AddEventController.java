@@ -8,8 +8,8 @@ public class AddEventController {
 	
 	private static AddEventController instance;
 	
-	public AddEventController() {
-		//costruttore
+	private AddEventController() {
+		//constructor
 	}
 		
 	public static synchronized AddEventController getInstance() {

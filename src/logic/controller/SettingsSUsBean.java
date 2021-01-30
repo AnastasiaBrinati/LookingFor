@@ -59,17 +59,17 @@ public class SettingsSUsBean {
 	
 	
 	public static void changeUCredentialsName(SettingsSUsBean settingBean) throws SQLException {
-		CustomizationController customizer=new CustomizationController();
+		CustomizationController customizer=CustomizationController.getInstance();
 		customizer.changeCredentialsName(settingBean);
 	}
 	
 	public static void changeUCredentialsEmail(SettingsSUsBean settingBean) throws SQLException {
-		CustomizationController customizer=new CustomizationController();
+		CustomizationController customizer=CustomizationController.getInstance();
 		customizer.changeCredentialsEmail(settingBean);
 	}
 	
 	public static void changeUCredentialsPassword(SettingsSUsBean settingBean) throws SQLException {
-		CustomizationController customizer=new CustomizationController();
+		CustomizationController customizer=CustomizationController.getInstance();
 		customizer.changeCredentialsPassword(settingBean);
 	}
 	

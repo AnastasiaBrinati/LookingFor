@@ -4,8 +4,8 @@ public class PaymentController {
 	
 	private static PaymentController instance;
 	
-	public PaymentController() {
-		//costruttore
+	private PaymentController() {
+		//constructor
 	}
 		
 	public static synchronized PaymentController getInstance() {

@@ -7,8 +7,8 @@ public class AddCourtController {
 	
 	private static AddCourtController instance;
 	
-	public AddCourtController() {
-		//costruttore
+	private AddCourtController() {
+		//constructor
 	}
 		
 	public static synchronized AddCourtController getInstance() {

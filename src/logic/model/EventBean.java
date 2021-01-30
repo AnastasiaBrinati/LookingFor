@@ -1,9 +1,5 @@
 package logic.model;
 
-import java.awt.Color;
-
-import javax.swing.JButton;
-
 public class EventBean {
 
 	private String name;

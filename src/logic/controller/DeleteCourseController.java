@@ -10,6 +10,10 @@ public class DeleteCourseController {
 	
 	private static DeleteCourseController instance=null;
 	
+	private DeleteCourseController() {
+		//constructor
+	}
+	
 	public static DeleteCourseController getInstance() {
 		if(instance==null) {
 			instance=new DeleteCourseController();

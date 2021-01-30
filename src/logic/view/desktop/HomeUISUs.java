@@ -107,7 +107,7 @@ public class HomeUISUs extends JFrame {
 		sportlbl.setBounds(10, 103, 45, 26);
 		lateralPanel.add(sportlbl);
 
-
+		courseEventCourt.add("ALL");
 		courseEventCourt.add("COURSE");
 		courseEventCourt.add("COURT");
 		courseEventCourt.add("EVENT");

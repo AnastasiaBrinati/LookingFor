@@ -7,10 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
@@ -43,6 +41,16 @@ import javax.swing.SwingConstants;
 	private JLabel locationLbl = new JLabel("location");
 	private final JLabel lblNewLabel_4 = new JLabel("Profile");
 	private final JButton searchButton = new JButton("\uD83D\uDD0D");
+	
+	private static int countCourseX = 0;
+	private static int countCourseY = 0;
+	
+	private static int countEventX = 0;
+	private static int countEventY = 0;
+	private final JPanel newGamePanel = new JPanel();
+	private final JLabel lblNewLabel = new JLabel("Organize Your Match");
+	private final JButton matchButton = new JButton("+");
+	private final JLabel scoreTitlelbl = new JLabel("");
 
 	public UserProfileUI() {
 
@@ -53,34 +61,50 @@ import javax.swing.SwingConstants;
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-								
-										descriptionPanel.setBounds(305, 51, 992, 593);
-										descriptionPanel.setLayout(null);
 										
-										contentPane.add(descriptionPanel);
-										
-										JPanel panel_1 = new JPanel();
-										panel_1.setBackground(Color.LIGHT_GRAY);
-										panel_1.setBounds(0, 0, 992, 155);
-										descriptionPanel.add(panel_1);
-										panel_1.setLayout(null);
+										JPanel subtitlePanel = new JPanel();
+										subtitlePanel.setBackground(Color.LIGHT_GRAY);
+										subtitlePanel.setBounds(305, 51, 992, 154);
+										contentPane.add(subtitlePanel);
+										subtitlePanel.setLayout(null);
 										namelbl.setBounds(145, 11, 216, 24);
-										panel_1.add(namelbl);
+										subtitlePanel.add(namelbl);
 										namelbl.setFont(new Font("Tahoma", Font.PLAIN, 20));
 										surnamelbl.setBounds(145, 35, 284, 25);
-										panel_1.add(surnamelbl);
+										subtitlePanel.add(surnamelbl);
 										
 										surnamelbl.setFont(new Font("Tahoma", Font.PLAIN, 20));
 										lblUsername.setBounds(145, 71, 284, 25);
-										panel_1.add(lblUsername);
+										subtitlePanel.add(lblUsername);
 										
 										lblUsername.setFont(new Font("Tahoma", Font.BOLD, 20));
 										
 										
 										locationLbl.setFont(new Font("Tahoma", Font.PLAIN, 11));
 										locationLbl.setBounds(145, 107, 216, 24);
-										panel_1.add(locationLbl);
-							
+										subtitlePanel.add(locationLbl);
+										scoreTitlelbl.setBounds(707, 21, 45, 13);
+										
+										subtitlePanel.add(scoreTitlelbl);
+								
+										descriptionPanel.setBounds(305, 206, 992, 438);
+										descriptionPanel.setLayout(null);
+										
+										contentPane.add(descriptionPanel);
+										newGamePanel.setBackground(new Color(230, 230, 250));
+										newGamePanel.setBounds(10, 24, 272, 386);
+										
+										descriptionPanel.add(newGamePanel);
+										newGamePanel.setLayout(null);
+										lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 15));
+										lblNewLabel.setBounds(59, 104, 148, 45);
+										
+										newGamePanel.add(lblNewLabel);
+										matchButton.setBackground(new Color(95, 158, 160));
+										matchButton.setBounds(93, 159, 77, 70);
+										
+										newGamePanel.add(matchButton);
+															
 		
 		//header
 		headerPanel.setBackground(new Color(255, 0, 0));
@@ -112,7 +136,7 @@ import javax.swing.SwingConstants;
 		contentPane.add(headerPanel);
 		exitButton.setForeground(Color.WHITE);
 		exitButton.setFont(new Font("Cambria Math", Font.PLAIN, 50));
-		exitButton.setBounds(1211, 1, 86, 67);
+		exitButton.setBounds(1229, -1, 86, 67);
 		
 		headerPanel.add(exitButton);
 		
@@ -188,6 +212,21 @@ import javax.swing.SwingConstants;
 		return homeButton;
 	}
 	
+	public JButton getMatchButton() {
+		return matchButton;
+	}
+	
+	public JButton getExitButton() {
+		return exitButton;
+	}
+	public JButton getSearchButton() {
+		return searchButton;
+	}
+	
+	public String getSearchText() {
+		return searchBar.getText();
+	}
+	
 	public void setDescriptionPanelVisible() {
 		backButton.setVisible(false);
 		coursesPanel.setVisible(false);
@@ -197,14 +236,6 @@ import javax.swing.SwingConstants;
 		eventsButton.setBackground(new Color(204,0,0));
 	}
 	
-	public void setWorkoutPanelVisible() {
-		backButton.setVisible(true);
-		coursesPanel.setVisible(false);
-		descriptionPanel.setVisible(false);
-		eventsPanel.setVisible(false);
-		coursesButton.setBackground(new Color(204,0,0));
-		eventsButton.setBackground(new Color(204,0,0));
-	}
 	
 	public void setCoursesPanelVisible() {
 		backButton.setVisible(true);
@@ -233,43 +264,85 @@ import javax.swing.SwingConstants;
 		locationLbl.setText(location);
 		
 	}
+		
+	public void resetCoursePanel() {
+		coursesPanel.removeAll();
+	}
+	
+	public void resetEventPanel() {
+		eventsPanel.removeAll();
+	}
 	
 	public JButton createCourseFrame(String name) {
-
-        JButton frame = new JButton(name);
-
-        frame.setBorder(new LineBorder(Color.BLACK));
-        frame.setPreferredSize(new Dimension(100, 100));
-        frame.setVisible(true);
-        coursesPanel.add(frame);
-        coursesPanel.setVisible(true);
-        coursesPanel.revalidate();
-        coursesPanel.repaint();
-        
-        return frame;
+		
+		if(countCourseY==4) {
+			countCourseY=0;
+			countCourseX+=1;
+		}
+		
+		int height = 168;
+		int width = 120;
+		
+		JPanel coursePanel = new JPanel();
+		coursePanel.setBackground(Color.PINK);
+		coursePanel.setBounds(20+(countCourseY*(width+10)), 174+(countCourseX*(height+10)), width, height);
+		coursesPanel.add(coursePanel);
+		coursePanel.setLayout(null);
+		
+		JLabel imgLbl = new JLabel("img");
+		imgLbl.setBackground(Color.ORANGE);
+		imgLbl.setBounds(0, 0, 120, 87);
+		coursePanel.add(imgLbl);
+		
+		JButton showMoreButton = new JButton("Show More");
+		showMoreButton.setBounds(10, 137, 100, 21);
+		coursePanel.add(showMoreButton);
+		
+		JLabel courseNameLbl = new JLabel(name);
+		courseNameLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		courseNameLbl.setBounds(10, 97, 100, 21);
+		coursePanel.add(courseNameLbl);
+		
+		countCourseY+=1;
+		
+		return showMoreButton;
         
     }
 
 	public JButton createEventFrame(String name) {
 
-        JButton frame = new JButton(name);
-        
-        frame.setBorder(new LineBorder(Color.BLACK));
-        frame.setPreferredSize(new Dimension(100, 100));
-        frame.setVisible(true);
-        eventsPanel.add(frame);
-        eventsPanel.setVisible(true);
-        eventsPanel.revalidate();
-        eventsPanel.repaint();
-        
-        return frame;
+		if(countEventY==4) {
+			countEventY=0;
+			countEventX+=1;
+		}
+		
+		int height = 168;
+		int width = 120;
+		
+		JPanel eventPanel = new JPanel();
+		eventPanel.setBackground(Color.PINK);
+		eventPanel.setBounds(20+(countEventY*(width+10)), 174+(countEventX*(height+10)), width, height);
+		coursesPanel.add(eventPanel);
+		eventPanel.setLayout(null);
+		
+		JLabel imgLbl = new JLabel("img");
+		imgLbl.setBackground(Color.ORANGE);
+		imgLbl.setBounds(0, 0, 120, 87);
+		eventPanel.add(imgLbl);
+		
+		JButton showMoreButton = new JButton("Show More");
+		showMoreButton.setBounds(10, 137, 100, 21);
+		eventPanel.add(showMoreButton);
+		
+		JLabel courseNameLbl = new JLabel(name);
+		courseNameLbl.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		courseNameLbl.setBounds(10, 97, 100, 21);
+		eventPanel.add(courseNameLbl);
+		
+		countEventY+=1;
+		
+		return showMoreButton;
         
     }
 	
-	public JButton getExitButton() {
-		return exitButton;
-	}
-	public JButton getSearchButton() {
-		return searchButton;
-	}
 }

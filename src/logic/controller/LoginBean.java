@@ -3,7 +3,7 @@ package logic.controller;
 
 public class LoginBean {
 	
-	private static String email;
+	private String email=null;
 	private String username;
 	private String password;
 	
@@ -12,8 +12,13 @@ public class LoginBean {
 	}
 	
 	public void setUsername(String username) {
+		if(username.contains("@")) {
+				setEmail(username);
+				return;
+		}
 		this.username = username;
 	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -26,11 +31,14 @@ public class LoginBean {
 		return password;
 	}
 	
-	///////////////////////////
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
-	///////////////////////////
+	
 	
 	public static String checkCredentials(LoginBean lb) throws Exception {
 		LoginController loginController = LoginController.getInstance();
