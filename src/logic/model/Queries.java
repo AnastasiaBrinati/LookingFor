@@ -7,14 +7,14 @@ import java.sql.Statement;
 public class Queries {
 
 //query to check if a user is signed or not
-public static ResultSet checkSignedUserByUsername(Statement stmt, String username) throws SQLException {
+  public static ResultSet checkSignedUserByUsername(Statement stmt, String username) throws SQLException {
 
-String sql = "SELECT * FROM users WHERE username = '" + username + "';";
+    String sql = "SELECT * FROM users WHERE username = '" + username + "';";
 
-System.out.println(sql);
-return stmt.executeQuery(sql);
+    System.out.println(sql);
+    return stmt.executeQuery(sql);
 
-}
+  }
 
 public static ResultSet checkSignedUserByEmail(Statement stmt, String email) throws SQLException {
 
@@ -24,6 +24,8 @@ System.out.println(sql);
 return stmt.executeQuery(sql);
 
 }
+		
+	
 
 public static ResultSet getCourses(Statement stmt,String username) throws SQLException {
 
@@ -32,6 +34,8 @@ System.out.println(sql);
 return stmt.executeQuery(sql);
 
 }
+			
+		 
 
 public static ResultSet getEvents(Statement stmt,String username) throws SQLException {
 
