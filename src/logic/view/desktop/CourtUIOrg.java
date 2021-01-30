@@ -176,7 +176,10 @@ public class CourtUIOrg extends JFrame {
 	public JButton getDeleteButton() {
 		return deleteButton;
 	}
-
-	
+	/*
+	public JButton getSettingsButton() {
+		return settingsButton;
+	}
+	*/
 }
 	

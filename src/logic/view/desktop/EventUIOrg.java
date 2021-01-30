@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.jdesktop.swingx.JXDatePicker;
+
 import java.awt.Font;
 
 import java.awt.SystemColor;
@@ -47,7 +49,6 @@ public class EventUIOrg extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-
 		panel.setBackground(new Color(255, 0, 0));
 		panel.setBounds(0, 0, 1264, 54);
 		contentPane.add(panel);

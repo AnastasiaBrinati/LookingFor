@@ -13,6 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+
+import org.jdesktop.swingx.JXDatePicker;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
@@ -70,7 +73,6 @@ public class OrganizationProfileUI extends JFrame {
 	
 	//new event panel
 	private final JTextField eventNameTextField = new JTextField();
-	private final JTextField eventDateTextField = new JTextField();
 	private final JTextField eventSportTextField = new JTextField();
 	private final JTextField eventDescriptionTextField = new JTextField();
 	private final JTextField eventPriceTextField = new JTextField();
@@ -84,6 +86,7 @@ public class OrganizationProfileUI extends JFrame {
 	private final JButton saveEventButton = new JButton("Save");
 	private final JLabel lblNewLabel_3 = new JLabel("Enter new event infos:");
 	private final JButton cancelEventButton = new JButton("Cancel");
+	private JXDatePicker datePicker = new JXDatePicker();
 	
 	
 	private JTextField textField;
@@ -127,6 +130,92 @@ public class OrganizationProfileUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
+		eventNameTextField.setBounds(207, 89, 246, 20);
+		eventNameTextField.setColumns(10);
+		
+		eventsPanel.setBounds(268, 145, 972, 568);
+		contentPane.add(eventsPanel);
+		eventsPanel.setLayout(null);
+		newEventPanel.setBackground(Color.GRAY);
+		
+			newEventPanel.setBounds(0, 0, 972, 568);
+			eventsPanel.add(newEventPanel);
+			newEventPanel.setLayout(null);
+			
+			newEventPanel.add(eventNameTextField);
+			eventSportTextField.setColumns(10);
+			eventSportTextField.setBounds(207, 188, 246, 20);
+			
+			newEventPanel.add(eventSportTextField);
+			eventDescriptionTextField.setColumns(10);
+			eventDescriptionTextField.setBounds(207, 238, 246, 103);
+			
+			newEventPanel.add(eventDescriptionTextField);
+			eventPriceTextField.setColumns(10);
+			eventPriceTextField.setBounds(207, 375, 246, 20);
+			
+			newEventPanel.add(eventPriceTextField);
+			eventAvailabilityTextField.setColumns(10);
+			eventAvailabilityTextField.setBounds(207, 425, 246, 20);
+			
+			newEventPanel.add(eventAvailabilityTextField);
+			lblNewLabel_2.setForeground(Color.WHITE);
+			lblNewLabel_2.setBounds(151, 92, 46, 14);
+			
+			newEventPanel.add(lblNewLabel_2);
+			lblNewLabel_2_1.setForeground(Color.WHITE);
+			lblNewLabel_2_1.setBounds(151, 141, 46, 14);
+			
+			newEventPanel.add(lblNewLabel_2_1);
+			lblNewLabel_2_2.setForeground(Color.WHITE);
+			lblNewLabel_2_2.setBounds(151, 191, 46, 14);
+			
+			newEventPanel.add(lblNewLabel_2_2);
+			lblNewLabel_2_3.setForeground(Color.WHITE);
+			lblNewLabel_2_3.setBounds(128, 238, 69, 14);
+			
+			newEventPanel.add(lblNewLabel_2_3);
+			lblNewLabel_2_4.setForeground(Color.WHITE);
+			lblNewLabel_2_4.setBounds(151, 378, 46, 14);
+			
+			newEventPanel.add(lblNewLabel_2_4);
+			lblNewLabel_2_5.setForeground(Color.WHITE);
+			lblNewLabel_2_5.setBounds(128, 428, 69, 14);
+			
+			newEventPanel.add(lblNewLabel_2_5);
+			saveEventButton.setForeground(Color.WHITE);
+			saveEventButton.setBackground(Color.RED);
+			saveEventButton.setBounds(362, 496, 89, 23);
+			
+			newEventPanel.add(saveEventButton);
+			lblNewLabel_3.setForeground(Color.WHITE);
+			lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
+			lblNewLabel_3.setBounds(10, 44, 228, 14);
+			
+			newEventPanel.add(lblNewLabel_3);
+			cancelEventButton.setForeground(Color.WHITE);
+			cancelEventButton.setBackground(Color.DARK_GRAY);
+			cancelEventButton.setBounds(263, 496, 89, 23);
+			
+			newEventPanel.add(cancelEventButton);
+			
+			upperPanel2.setBounds(0, 0, 972, 134);
+			eventsPanel.add(upperPanel2);
+			upperPanel2.setLayout(null);
+			
+			JLabel eventsTitlelbl = new JLabel("Events");
+			eventsTitlelbl.setBounds(10, 10, 58, 22);
+			eventsTitlelbl.setFont(new Font("Arial Black", Font.PLAIN, 15));
+			upperPanel2.add(eventsTitlelbl);
+			
+			addButtonEvent.setBackground(Color.PINK);
+			addButtonEvent.setBounds(10, 51, 98, 48);
+			upperPanel2.add(addButtonEvent);
+			
+			lowerPanel2.setBounds(0, 135, 972, 433);
+			eventsPanel.add(lowerPanel2);
+		
+		
 		
 		//courses
 		coursesPanel.setBounds(268, 145, 972, 568);
@@ -418,95 +507,11 @@ public class OrganizationProfileUI extends JFrame {
 		organizationImageLbl.setIcon(new ImageIcon(""));
 		organizationImageLbl.setBounds(10, 11, 73, 71);
 		subtitlePanel.add(organizationImageLbl);
-		eventNameTextField.setBounds(207, 89, 246, 20);
-		eventNameTextField.setColumns(10);
 		
 		//events
-		eventsPanel.setBounds(268, 145, 972, 568);
-		contentPane.add(eventsPanel);
-		eventsPanel.setLayout(null);
-		newEventPanel.setBackground(Color.GRAY);
 		
-			newEventPanel.setBounds(0, 0, 972, 568);
-			eventsPanel.add(newEventPanel);
-			newEventPanel.setLayout(null);
-			
-			newEventPanel.add(eventNameTextField);
-			eventDateTextField.setColumns(10);
-			eventDateTextField.setBounds(207, 138, 246, 20);
-			
-			newEventPanel.add(eventDateTextField);
-			eventSportTextField.setColumns(10);
-			eventSportTextField.setBounds(207, 188, 246, 20);
-			
-			newEventPanel.add(eventSportTextField);
-			eventDescriptionTextField.setColumns(10);
-			eventDescriptionTextField.setBounds(207, 238, 246, 103);
-			
-			newEventPanel.add(eventDescriptionTextField);
-			eventPriceTextField.setColumns(10);
-			eventPriceTextField.setBounds(207, 375, 246, 20);
-			
-			newEventPanel.add(eventPriceTextField);
-			eventAvailabilityTextField.setColumns(10);
-			eventAvailabilityTextField.setBounds(207, 425, 246, 20);
-			
-			newEventPanel.add(eventAvailabilityTextField);
-			lblNewLabel_2.setForeground(Color.WHITE);
-			lblNewLabel_2.setBounds(151, 92, 46, 14);
-			
-			newEventPanel.add(lblNewLabel_2);
-			lblNewLabel_2_1.setForeground(Color.WHITE);
-			lblNewLabel_2_1.setBounds(151, 141, 46, 14);
-			
-			newEventPanel.add(lblNewLabel_2_1);
-			lblNewLabel_2_2.setForeground(Color.WHITE);
-			lblNewLabel_2_2.setBounds(151, 191, 46, 14);
-			
-			newEventPanel.add(lblNewLabel_2_2);
-			lblNewLabel_2_3.setForeground(Color.WHITE);
-			lblNewLabel_2_3.setBounds(128, 238, 69, 14);
-			
-			newEventPanel.add(lblNewLabel_2_3);
-			lblNewLabel_2_4.setForeground(Color.WHITE);
-			lblNewLabel_2_4.setBounds(151, 378, 46, 14);
-			
-			newEventPanel.add(lblNewLabel_2_4);
-			lblNewLabel_2_5.setForeground(Color.WHITE);
-			lblNewLabel_2_5.setBounds(128, 428, 69, 14);
-			
-			newEventPanel.add(lblNewLabel_2_5);
-			saveEventButton.setForeground(Color.WHITE);
-			saveEventButton.setBackground(Color.RED);
-			saveEventButton.setBounds(362, 496, 89, 23);
-			
-			newEventPanel.add(saveEventButton);
-			lblNewLabel_3.setForeground(Color.WHITE);
-			lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
-			lblNewLabel_3.setBounds(10, 44, 228, 14);
-			
-			newEventPanel.add(lblNewLabel_3);
-			cancelEventButton.setForeground(Color.WHITE);
-			cancelEventButton.setBackground(Color.DARK_GRAY);
-			cancelEventButton.setBounds(263, 496, 89, 23);
-			
-			newEventPanel.add(cancelEventButton);
-			
-			upperPanel2.setBounds(0, 0, 972, 134);
-			eventsPanel.add(upperPanel2);
-			upperPanel2.setLayout(null);
-			
-			JLabel eventsTitlelbl = new JLabel("Events");
-			eventsTitlelbl.setBounds(10, 10, 58, 22);
-			eventsTitlelbl.setFont(new Font("Arial Black", Font.PLAIN, 15));
-			upperPanel2.add(eventsTitlelbl);
-			
-			addButtonEvent.setBackground(Color.PINK);
-			addButtonEvent.setBounds(10, 51, 98, 48);
-			upperPanel2.add(addButtonEvent);
-			
-			lowerPanel2.setBounds(0, 135, 972, 433);
-			eventsPanel.add(lowerPanel2);
+		newEventPanel.add(datePicker);
+		datePicker.setBounds(207, 138, 246, 20);
 		
 		//Image img3=new ImageIcon(this.getClass().getResource("/046-hierarchy.png")).getImage();
 		//coursesButton.setIcon(new ImageIcon(img3));
@@ -726,7 +731,7 @@ public class OrganizationProfileUI extends JFrame {
 	public void resetNewEventForm() {
 		eventNameTextField.setText("");
 		eventSportTextField.setText("");
-		eventDateTextField.setText("");
+		//eventDateTextField.setText("");
 		eventDescriptionTextField.setText("");
 		eventPriceTextField.setText("");
 		eventAvailabilityTextField.setText("");
@@ -833,10 +838,11 @@ public class OrganizationProfileUI extends JFrame {
 		public String getEventName() {
 			return eventNameTextField.getText();
 		}
-		
+		/*
 		public String getEventDate() {
 			return eventDateTextField.getText();	
 		}
+		*/
 		public String getEventDescription() {
 			return eventDescriptionTextField.getText();
 		}
