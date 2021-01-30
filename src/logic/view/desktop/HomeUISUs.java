@@ -47,6 +47,8 @@ public class HomeUISUs extends JFrame {
 	
 
 	public HomeUISUs() {
+		
+		this.setLocationRelativeTo(null);
 
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(""));

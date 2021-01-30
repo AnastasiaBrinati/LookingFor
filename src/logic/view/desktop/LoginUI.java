@@ -39,6 +39,7 @@ public class LoginUI extends JFrame {
 	// Create the frame.
 	public LoginUI()  {
 	
+		this.setLocationRelativeTo(null);
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\biril\\Downloads\\loginIcon.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

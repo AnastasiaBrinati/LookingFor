@@ -71,6 +71,7 @@ public class SettingsUISUs extends JFrame {
 	private final JButton searchButton = new JButton("\uD83D\uDD0D");
 
 	public SettingsUISUs() {
+		this.setLocationRelativeTo(null);
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

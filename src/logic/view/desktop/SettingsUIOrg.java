@@ -68,6 +68,7 @@ public class SettingsUIOrg extends JFrame {
 	
 
 	public SettingsUIOrg() {
+		this.setLocationRelativeTo(null);
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

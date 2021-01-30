@@ -53,6 +53,8 @@ import javax.swing.SwingConstants;
 	private final JLabel scoreTitlelbl = new JLabel("");
 
 	public UserProfileUI() {
+		
+		this.setLocationRelativeTo(null);
 
 		setTitle("Sporty");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

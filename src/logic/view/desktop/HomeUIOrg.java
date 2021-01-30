@@ -48,6 +48,7 @@ public class HomeUIOrg extends JFrame {
 
 	public HomeUIOrg() {
 
+		this.setLocationRelativeTo(null);
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

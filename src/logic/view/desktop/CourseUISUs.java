@@ -38,6 +38,7 @@ public class CourseUISUs extends JFrame {
 
 	public CourseUISUs() {
 
+		this.setLocationRelativeTo(null);
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -56,6 +56,8 @@ public class SignUpUI extends JFrame {
 	// Create the frame.
 	public SignUpUI() {
 		
+		this.setLocationRelativeTo(null);
+		
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(""));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

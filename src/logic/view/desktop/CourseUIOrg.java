@@ -39,6 +39,7 @@ public class CourseUIOrg extends JFrame {
 	private final JButton backButton = new JButton("\u21E6");
 
 	public CourseUIOrg() {
+		this.setLocationRelativeTo(null);
 		setBackground(new Color(0, 51, 255));
 
 		setTitle("Sportee");

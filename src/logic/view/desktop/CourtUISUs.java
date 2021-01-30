@@ -39,6 +39,7 @@ public class CourtUISUs extends JFrame {
 
 	public CourtUISUs() {
 
+		this.setLocationRelativeTo(null);
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

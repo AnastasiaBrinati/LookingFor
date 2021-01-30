@@ -39,6 +39,7 @@ public class CourtUIOrg extends JFrame {
 
 	public CourtUIOrg() {
 
+		this.setLocationRelativeTo(null);
 		setTitle("Sportee");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\giuli\\Downloads\\icons8-basketball-64.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -176,8 +177,6 @@ public class CourtUIOrg extends JFrame {
 		return deleteButton;
 	}
 
-	public AbstractButton getSettingsButton() {
-		return settingsButton;
-	}
+	
 }
 	
