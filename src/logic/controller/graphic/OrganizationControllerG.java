@@ -366,7 +366,7 @@ public class OrganizationControllerG{
 	private void getNewEventCredentials(NewEventBean newEventBean){
 		
 		newEventBean.setName(view.getEventName());
-		newEventBean.setDate(view.getEventDate());
+		//newEventBean.setDate(view.getEventDate());
 		newEventBean.setSport(view.getEventSport());
 		newEventBean.setDescription(view.getEventDescription());
 		newEventBean.setPrice(view.getEventPrice());
